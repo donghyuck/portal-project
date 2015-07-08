@@ -111,6 +111,7 @@
 					imageDataUrl: "",
 					imageEffect: "carousel",
 					imageSort: "name",
+					imageSortDir: "asc",
 					editable : false,
 					visible : true,
 					useWrapMode : false,
@@ -304,8 +305,7 @@
 								}
 								
 							renderTo.find("input[type=radio][name=image-sorting]").on("change", function () {						
-								//that.page.properties.imageEffect = this.value; 
-								common.ui.listview(listview).dataSource.sort({field: this.value, dir: "desc"});
+								common.ui.listview(listview).dataSource.sort({field: this.imageSort, dir: this.imageSortDir});
 							});
 														
 							common.ui.listview(listview).dataSource.read();
@@ -1319,7 +1319,16 @@
 				                            <div class="inline-group">	
 				                                <label class="radio"><input type="radio" name="image-sorting" value="name" data-bind="checked: imageSort" ><i class="rounded-x"></i>이름</label>
 				                                <label class="radio"><input type="radio" name="image-sorting" value="creationDate" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
-				                            </div>										
+				                            </div>			
+				                            <div class="btn-group btn-group-sm">
+				                            	<label class="btn btn-success">
+				                            		<input type="radio" name="image-sorting-src" value="asc"/>				                            		ASC
+				                            	</div>
+				                            	<label class="btn btn-success">
+				                            		<input type="radio" name="image-sorting-dir" value="desc"/>
+				                            		DESC
+				                            	</div>
+				                            </div>							
 									</div>
 								</div>	
 							</section>
