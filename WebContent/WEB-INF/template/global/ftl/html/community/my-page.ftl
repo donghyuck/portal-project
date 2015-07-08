@@ -1322,10 +1322,10 @@
 				                            </div>			
 				                            <div class="btn-group btn-group-sm">
 				                            	<label class="btn btn-success">
-				                            		<input type="radio" name="image-sorting-src" value="asc"/>				                            		ASC
+				                            		<input type="radio" name="image-sorting-src" value="asc" data-bind="checked: imageSortDir" />				                            		ASC
 				                            	</div>
 				                            	<label class="btn btn-success">
-				                            		<input type="radio" name="image-sorting-dir" value="desc"/>
+				                            		<input type="radio" name="image-sorting-dir" value="desc" data-bind="checked: imageSortDir"/>
 				                            		DESC
 				                            	</div>
 				                            </div>							
