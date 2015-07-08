@@ -304,7 +304,7 @@
 									});
 								}
 								
-							renderTo.find("input[type=radio][name=image-sorting]").on("change", function () {						
+							renderTo.find("input[type=radio][name=image-sorting], input[type=radio][name=image-sorting-dir]").on("change", function () {						
 								common.ui.listview(listview).dataSource.sort({field: this.imageSort, dir: this.imageSortDir});
 							});
 														
@@ -1316,23 +1316,14 @@
 									</div>
 									<div class="col-sm-6">
 									    <label class="label">정렬 </label>
-								     	<div class="radio radio-info radio-inline">
-                                            <input type="radio" value="name" id="my-page-post-image-sorting-name" name="image-sorting" data-bind="checked: imageSort">
-                                            <label for="my-page-post-image-sorting-name">mansory</label>
-                                        </div>
-                                        <div class="radio radio-inline">
-                                            <input type="radio" value="creationDate" id="my-page-post-image-sorting-date" name="image-sorting" data-bind="checked: imageSort">
-                                            <label for="my-page-post-image-sorting-date"> Active </label>
-                                        </div>
-                                        
-									        
 				                            <div class="inline-group">	
 				                                <label class="radio"><input type="radio" name="image-sorting" value="name" data-bind="checked: imageSort" ><i class="rounded-x"></i>이름</label>
 				                                <label class="radio"><input type="radio" name="image-sorting" value="creationDate" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
 				                            </div>			
 				                            <div class="btn-group btn-group-sm" data-toggle="buttons">
 				                            	<label class="btn btn-success">
-				                            		<input type="radio" name="image-sorting-src" value="asc" data-bind="checked: imageSortDir" />				                            		ASC
+				                            		<input type="radio" name="image-sorting-dir" value="asc" data-bind="checked: imageSortDir" />
+				                            		ASC
 				                            	</label>
 				                            	<label class="btn btn-success">
 				                            		<input type="radio" name="image-sorting-dir" value="desc" data-bind="checked: imageSortDir"/>
