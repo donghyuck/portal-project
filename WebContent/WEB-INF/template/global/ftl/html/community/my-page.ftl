@@ -170,8 +170,7 @@
 								success : function(response){
 									if( response.pageId ){
 										renderTo.find('.collapse').collapse('hide');
-										$this.set( "editable" , true ) ;	
-										$this.setPage( new common.ui.data.Page(response) );						
+										$this.setSource( new common.ui.data.Page(response) );							
 									}						
 								},
 								complete : function(e){
@@ -189,11 +188,20 @@
 						if( $this.photo ){
 							$this.page.properties.imageEffect = $this.imageEffect;
 							$this.page.properties.imageSort = $this.imageSort;
-						}
-						
-						alert( kendo.stringify($this.page) );
-									
-						btn.button('reset');
+						}						
+						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
+							data : kendo.stringify($this.page) ,
+							contentType : "application/json",
+							success : function(response){
+								if( response.pageId ){
+									renderTo.find('.collapse').collapse('hide');
+									$this.setSource( new common.ui.data.Page(response) );						
+								}						
+							},
+							complete : function(e){
+								btn.button('reset');
+							}							
+						});						
 						return false;
 					},	
 					setPostType : function(postType){
@@ -202,8 +210,7 @@
 							that.set('postType', postType);	
 						}else{
 							that.set('postType', "text");
-						}
-						
+						}						
 						if( that.page.pageId > 0 ){
 							that.set('editable', true);
 							if( that.postType === "photo"){
