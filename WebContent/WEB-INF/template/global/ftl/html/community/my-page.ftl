@@ -1271,7 +1271,7 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="separator-2"></div>
-										<p class="text-primary">이미지 출처와 URL을 입력하세요.</p>
+										<p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>
 										<div class="image-listview"></div>
 									</div>
 									<div class="col-sm-6 upload-by-url">									
