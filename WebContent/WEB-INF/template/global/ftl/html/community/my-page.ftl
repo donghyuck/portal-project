@@ -1318,7 +1318,7 @@
 									        <label class="label">정렬 </label>
 				                            <div class="inline-group">	
 				                                <label class="radio"><input type="radio" name="image-sorting" value="name" data-bind="checked: imageSort" ><i class="rounded-x"></i>이름</label>
-				                                <label class="radio"><input type="radio" name="image-sorting" value="date" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
+				                                <label class="radio"><input type="radio" name="image-sorting" value="creationDate" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
 				                            </div>										
 									</div>
 								</div>	
