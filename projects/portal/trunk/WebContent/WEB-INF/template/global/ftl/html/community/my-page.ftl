@@ -271,11 +271,19 @@
 							that.set('imageEffect', that.page.properties.imageEffect );
 						}
 						if( that.page.properties.imageSort ){
-							that.set('imageSort' , that.page.properties.imageSort )
-							that.set('imageSortDir' , that.page.properties.imageSortDir || "desc" )
+							that.set('imageSort' , that.page.properties.imageSort );
 						}	
-												
+						if( that.page.properties.imageSortDir ){
+							that.set('imageSortDir' , that.page.properties.imageSortDir );
+						}													
 						if( that.photo && that.page.pageId > 0 ){
+							if( that.imageSort === null ){	
+								that.set("imageSort", "name");
+							}	
+							if( that.imageSortDir === null ){
+								that.set("imageSortDir", "desc");
+							}
+							
 								var upload = renderTo.find("input[name='photo'][type=file]");		
 								var listview =  renderTo.find(".image-listview");								
 								if (!common.ui.exists(listview)) {
