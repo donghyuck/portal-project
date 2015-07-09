@@ -178,13 +178,13 @@
 						if($this.postType.length >0){
 							$this.page.properties.postType = $this.postType;	
 						}					
-						if( $this.pageSource.length > 0 ){
+						if( $this.pageSource != null && $this.pageSource.length > 0 ){
 							$this.page.properties.source = $this.pageSource;
 						} 
-						if( $this.pageSourceUrl.length > 0 ){
+						if( $this.pageSourceUrl !=null && $this.pageSourceUrl.length > 0 ){
 							$this.page.properties.url = $this.pageSourceUrl;
 						}						
-						if( $this.tagsString.length > 0 ){
+						if( $this.tagsString != null && $this.tagsString.length > 0 ){
 							$this.page.properties.tagsString = $this.page.tagsString;
 						}						
 						if( $this.postType === 'photo' ){						
