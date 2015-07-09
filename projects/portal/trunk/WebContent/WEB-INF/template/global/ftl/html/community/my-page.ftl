@@ -191,9 +191,7 @@
 							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
 								$this.page.bodyContent.bodyText = html;							
 							});
-						}			
-						
-						/*			
+						}				
 						
 						btn.button('loading');			
 						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
@@ -209,7 +207,7 @@
 								btn.button('reset');
 							}							
 						});		
-						*/				
+									
 						return false;
 					},	
 					setPostType : function(postType){
