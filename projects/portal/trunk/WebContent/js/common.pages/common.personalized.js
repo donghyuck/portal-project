@@ -77,8 +77,8 @@
 		var carousel_template = template($('#image-broswer-photo-carousel-template').html());
 		var carousel_inner_template = template($("#image-broswer-photo-carousel-inner-template").html());						
 		var carousel_indicators_template = template($("#image-broswer-photo-carousel-indicators-template").html());	
-		var thumbnail_url_template : template('/download/image/#= imageId #/#= name #?width=150&height=150');		
-		var image_url_template : template('/download/image/#= linkId #');
+		var thumbnail_url_template = template('/download/image/#= imageId #/#= name #?width=150&height=150');		
+		var image_url_template = template('/download/image/#= linkId #');
 		var html = $( carousel_template({ 
 			'uid':uid ,
 			'width':null
@@ -124,6 +124,7 @@
 	}
 	
 	extend(common.ui, {	
+		CarouselSlide : CarouselSlide,
 		DialogSwitcher : DialogSwitcher
 	});
 	
