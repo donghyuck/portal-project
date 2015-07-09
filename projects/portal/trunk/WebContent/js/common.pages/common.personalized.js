@@ -74,7 +74,7 @@
 	    }	
     });
 	
-	function CarouselSlide( items, renderTo ){
+	function CarouselSlide( items, renderTo, callback ){
 		var uid = guid().toLowerCase() ;		
 		var carousel_template = template($('#image-broswer-photo-carousel-template').html());
 		var carousel_inner_template = template($("#image-broswer-photo-carousel-inner-template").html());						
@@ -91,7 +91,7 @@
 		var total = items.length;
 		var count = 0;
 		
-		console.log( total );
+		//console.log( total );
 		
 		kendo.ui.progress(renderTo, true);
 		$.each( items, function(index, value){			
@@ -132,44 +132,8 @@
 						kendo.ui.progress(renderTo, false);
 					}	
 				}
-		});
-			
-			/**
-			ajax("/data/images/link.json?output=json", {
-				data : { imageId : image.imageId },	
-				success : function(data) {						
-					if(!defined(data.error)){			
-						console.log( kendo.stringify(data) );
-						console.log( thumbnail_url_template(image) );
-						carousel_indicators.append(
-							carousel_indicators_template({
-								'active': count === 0,
-								'uid':uid, 
-								'index':count,
-								thumbnail : true,
-								thumbnailUrl : thumbnail_url_template(image)
-							})	
-						);
-						carousel_inner.append(
-							carousel_inner_template({ 
-								'active': count === 0,
-								'index':count,
-								'uid':uid, 
-								url: image_url_template( data ),																	
-								thumbnail : true
-							})		
-						);
-						count ++ ;		
-						if(count == total) {
-							//that.trigger(APPLY, { 'html' : html[0].outerHTML });									
-						}
-					}
-				}					
-			});
-			*/		
+			});	
 		});	
-		
-		alert( html[0].outerHTML);
 	}
 	
 	extend(common.ui, {	
