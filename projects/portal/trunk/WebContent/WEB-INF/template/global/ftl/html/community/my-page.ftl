@@ -190,7 +190,7 @@
 							$this.page.properties.imageEffect = $this.imageEffect;
 							$this.page.properties.imageSort = $this.imageSort;
 							var listview =  renderTo.find(".image-listview");
-							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo);
+							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'));
 						}			
 						
 						/*			
