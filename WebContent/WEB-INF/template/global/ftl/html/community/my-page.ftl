@@ -184,16 +184,20 @@
 					update : function(e){
 						var $this = this, 
 						btn = $(e.target);						
-						btn.button('loading');			
+						
 						
 						if( $this.photo ){
 							$this.page.properties.imageEffect = $this.imageEffect;
 							$this.page.properties.imageSort = $this.imageSort;
 							var listview =  renderTo.find(".image-listview");
-							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'));
+							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
+								this.page.bodyContent.bodyText = html;							
+							});
 						}			
 						
 						/*			
+						
+						btn.button('loading');			
 						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
 							data : kendo.stringify($this.page) ,
 							contentType : "application/json",
