@@ -192,7 +192,7 @@
 							$this.page.properties.url = $this.pageSourceUrl;
 						}						
 						
-						if( $this.tagsString != null && $this.tagsString.length > 0 ){
+						if( $this.page.tagsString != null && $this.page.tagsString.length > 0 ){
 							$this.page.properties.tagsString = $this.page.tagsString;
 						}		
 										
