@@ -89,7 +89,9 @@
 		var carousel_indicators = html.find(".carousel-indicators");		
 		var total = items.length;
 		var count = 0;
+		console.log( total )
 		$.each( items, function(index, value){			
+			console.log( kendo.stringify (value) );
 			ajax("/data/images/link.json?output=json", {
 				data : { imageId : value.imageId },	
 				success : function(data) {						
