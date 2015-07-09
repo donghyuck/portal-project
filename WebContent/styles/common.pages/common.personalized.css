@@ -2517,6 +2517,11 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .my-page-post-form  .modal-header {
 	border-bottom: 1px dashed #e5e5e5;
 }
+
+.my-page-post-form  .modal-header button.close {
+	z-index : 0;	
+}
+
 .my-page-post-form  .sky-form {
 	border : 0;		
 }
