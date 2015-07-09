@@ -1330,7 +1330,7 @@
 				                                <label class="radio"><input type="radio" name="image-sorting" value="name" data-bind="checked: imageSort" ><i class="rounded-x"></i>이름</label>
 				                                <label class="radio"><input type="radio" name="image-sorting" value="creationDate" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
 				                            </div>			
-				                            <div class="btn-group btn-group-sm" data-toggle="buttons">
+				                            <div class="btn-group btn-group-xs pull-right" data-toggle="buttons">
 				                            	<label class="btn btn-success rounded-left">
 				                            		<input type="radio" name="image-sorting-dir" value="asc" data-bind="checked: imageSortDir" />
 				                            		ASC
