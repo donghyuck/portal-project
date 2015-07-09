@@ -315,6 +315,7 @@
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
+											this.dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 										}
 									});
 									common.ui.scroll.slim(listview,{height:'300px'});
