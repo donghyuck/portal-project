@@ -106,6 +106,7 @@
 					count ++ ;
 					if( count === total )
 					{
+						
 						var idx = 0;
 						$.each( items , function(idx, val){
 							carousel_indicators.append(
@@ -128,7 +129,9 @@
 								);
 							idx ++;							
 						});
-						if(definde(callback)){
+						
+						
+						if(defined(callback)){
 							callback(html[0].outerHTML);
 						}
 						//alert( html[0].outerHTML );
