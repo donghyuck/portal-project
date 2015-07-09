@@ -186,9 +186,11 @@
 						if( $this.pageSourceUrl !=null && $this.pageSourceUrl.length > 0 ){
 							$this.page.properties.url = $this.pageSourceUrl;
 						}						
+						
 						if( $this.tagsString != null && $this.tagsString.length > 0 ){
 							$this.page.properties.tagsString = $this.page.tagsString;
-						}						
+						}		
+										
 						if( $this.postType === 'photo' ){						
 							$this.page.properties.imageEffect = $this.imageEffect;
 							$this.page.properties.imageSort = $this.imageSort;
