@@ -177,8 +177,11 @@
 					},
 					_setProperties : function(){
 						var $this = this;						
-						if($this.postType.length >0){
+						if($this.postType.length > 0){
 							$this.page.properties.postType = $this.postType;	
+						}
+						if($this.page.name.length === 0 && $this.page.title.length > 0 ){
+							$this.page.name = $this.page.title;	
 						}					
 						if( $this.pageSource != null && $this.pageSource.length > 0 ){
 							$this.page.properties.source = $this.pageSource;
