@@ -102,7 +102,7 @@
 								'uid':uid, 
 								'index':count,
 								thumbnail : true,
-								thumbnaiUrll : thumbnail_url_template(data)
+								thumbnailUrl : thumbnail_url_template(value)
 							})	
 						);
 						carousel_inner.append(
