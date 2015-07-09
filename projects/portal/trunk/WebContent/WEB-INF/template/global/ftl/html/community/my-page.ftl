@@ -1342,7 +1342,7 @@
 					<div class="modal-footer">
 						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left rounded" type="button">닫기</button>
 						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-action="create" data-bind="{invisible:editable, click:create}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">다음</button>
-						<button class="btn btn-flat btn-info rounded" type="button" data-bind="enabled:editable, click:update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저</button>
+						<button class="btn btn-flat btn-info rounded" type="button" data-bind="enabled:editable, click:update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장 </button>
 					</div>
 				</div>								
 			</div>	
