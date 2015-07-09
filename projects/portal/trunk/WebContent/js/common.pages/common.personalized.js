@@ -98,6 +98,7 @@
 				success : function(data) {						
 					if(!defined(data.error)){			
 						console.log( kendo.stringify(data) );
+						console.log( thumbnail_url_template(image) );
 						carousel_indicators.append(
 							carousel_indicators_template({
 								'active': count === 0,
