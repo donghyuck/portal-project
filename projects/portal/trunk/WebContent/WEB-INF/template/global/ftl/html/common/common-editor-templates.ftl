@@ -368,7 +368,7 @@
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-indicators-template">	
 	<li data-target="\\##=uid#" data-slide-to="#= index #" class="#if(active){# active #}#">
 		#if(thumbnail){#
-		<img src="#= thumbnaiUrl #" alt="..."/>
+		<img src="#=thumbnaiUrl #" alt="..."/>
 		#}#
 	</li>
 </script>
