@@ -191,7 +191,7 @@
 							$this.page.properties.imageSort = $this.imageSort;
 							var listview =  renderTo.find(".image-listview");
 							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
-								this.page.bodyContent.bodyText = html;							
+								$this.page.bodyContent.bodyText = html;							
 							});
 						}			
 						
