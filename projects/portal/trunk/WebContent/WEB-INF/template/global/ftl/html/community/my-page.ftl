@@ -153,19 +153,7 @@
 						if( $this.validate() ){
 							btn.button('loading');
 							$this.page.bodyContent.bodyText = "";
-							$this.page.properties.postType = $this.postType;
-							if( $this.page.name.length == 0 ){
-								$this.page.set("name" , $this.page.title ) ;
-							}
-							if( $this.pageSource.length > 0 ){
-								$this.page.properties.source = $this.pageSource;
-							} 
-							if( $this.pageSourceUrl.length > 0 ){
-								$this.page.properties.url = $this.pageSourceUrl;
-							}						
-							if( $this.page.tagsString.length > 0 ){
-								$this.page.properties.tagsString = $this.page.tagsString;
-							}
+							$this._setProperties();
 							$this._save(btn);
 							/*
 							common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
@@ -184,6 +172,25 @@
 							*/
 						}
 						return false;
+					},
+					_setProperties : function(){
+						var $this = this;						
+						if($this.postType.length >0){
+							$this.page.properties.postType = $this.postType;	
+						}					
+						if( $this.pageSource.length > 0 ){
+							$this.page.properties.source = $this.pageSource;
+						} 
+						if( $this.pageSourceUrl.length > 0 ){
+							$this.page.properties.url = $this.pageSourceUrl;
+						}						
+						if( $this.tagsString.length > 0 ){
+							$this.page.properties.tagsString = $this.page.tagsString;
+						}						
+						if( $this.postType === 'photo' ){						
+							$this.page.properties.imageEffect = $this.imageEffect;
+							$this.page.properties.imageSort = $this.imageSort;
+						}
 					},
 					_save : function( progress ){		
 						var $this = this;			
@@ -205,9 +212,8 @@
 					update : function(e){
 						var $this = this, 
 						btn = $(e.target);
+						$this._setProperties();
 						if( $this.photo ){
-							$this.page.properties.imageEffect = $this.imageEffect;
-							$this.page.properties.imageSort = $this.imageSort;
 							var listview =  renderTo.find(".image-listview");
 							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
 								$this.page.bodyContent.bodyText = html;								
