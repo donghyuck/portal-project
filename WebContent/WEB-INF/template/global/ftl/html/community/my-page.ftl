@@ -248,6 +248,24 @@
 						//if( that.page.pageId > 0){
 						//that.set('editable', true);
 						that.setPostType(that.page.properties.postType||postType); 
+						if( that.page.properties.source ){
+							that.set('pageSource', that.page.properties.source);
+						}else{
+							that.set('pageSource', "");
+						} 						
+						if( that.page.properties.url ){
+							that.set('pageSourceUrl', that.page.properties.url);
+						}else{
+							that.set('pageSourceUrl', "");
+						}
+						if( that.page.properties.imageEffect ){
+							that.set('imageEffect', that.page.properties.imageEffect );
+						}
+						if( that.page.properties.imageSort ){
+							that.set('imageSort' , that.page.properties.imageSort )
+							that.set('imageSortDir' , that.page.properties.imageSortDir || "desc" )
+						}	
+												
 						if( that.photo && that.page.pageId > 0 ){
 								var upload = renderTo.find("input[name='photo'][type=file]");		
 								var listview =  renderTo.find(".image-listview");								
@@ -324,19 +342,10 @@
 								
 							renderTo.find("input[type=radio][name=image-sorting], input[type=radio][name=image-sorting-dir]").on("change", function () {						
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
-							});														
+							});												
 							common.ui.listview(listview).dataSource.read();
 						}
-						if( that.page.properties.source ){
-							that.set('pageSource', that.page.properties.source);
-						}else{
-							that.set('pageSource', "");
-						} 						
-						if( that.page.properties.url ){
-							that.set('pageSourceUrl', that.page.properties.url);
-						}else{
-							that.set('pageSourceUrl', "");
-						}						
+						
 					},
 					uploadImageByUrl: function(e){
 						var $this = this, 
