@@ -165,6 +165,8 @@
 							if( $this.page.tagsString.length > 0 ){
 								$this.page.properties.tagsString = $this.page.tagsString;
 							}
+							$this._save(btn);
+							/*
 							common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
 								data : kendo.stringify($this.page) ,
 								contentType : "application/json",
@@ -178,22 +180,12 @@
 									btn.button('reset');
 								}							
 							});	
+							*/
 						}
 						return false;
 					},
-					update : function(e){
-						var $this = this, 
-						btn = $(e.target);
-						if( $this.photo ){
-							$this.page.properties.imageEffect = $this.imageEffect;
-							$this.page.properties.imageSort = $this.imageSort;
-							var listview =  renderTo.find(".image-listview");
-							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
-								$this.page.bodyContent.bodyText = html;							
-							});
-						}				
-						
-						btn.button('loading');			
+					_save : function( progress ){		
+						var $this = this;			
 						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
 							data : kendo.stringify($this.page) ,
 							contentType : "application/json",
@@ -204,10 +196,24 @@
 								}						
 							},
 							complete : function(e){
-								btn.button('reset');
+								if( progress )
+									progress.button('reset');
 							}							
-						});		
-									
+						});	
+					}, 
+					update : function(e){
+						var $this = this, 
+						btn = $(e.target);
+						if( $this.photo ){
+							$this.page.properties.imageEffect = $this.imageEffect;
+							$this.page.properties.imageSort = $this.imageSort;
+							var listview =  renderTo.find(".image-listview");
+							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
+								$this.page.bodyContent.bodyText = html;								
+								btn.button('loading');			
+								$this._save(btn);					
+							});
+						}			
 						return false;
 					},	
 					setPostType : function(postType){
