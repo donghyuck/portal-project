@@ -140,7 +140,7 @@
 						renderTo.find("form label[for]").removeClass("state-error");					
 						renderTo.find("form em[for]").remove();		
 						
-						alert($this.page.title + "," + $this.page.title.length):				
+						alert($this.page.title + "," + $this.page.title.length);				
 						if( $this.page.title.length === 0 )  
 						{
 							var template = kendo.template('<em for="#:name#" class="invalid">#: msg#</em>');
