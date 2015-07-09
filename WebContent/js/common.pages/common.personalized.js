@@ -97,6 +97,7 @@
 			console.log( kendo.stringify (value) );
 			var image = value;
 			ajax("/data/images/link.json?output=json", {
+				data : { imageId : image.imageId },	
 				success : function(data) {		
 					if(!defined(data.error)){
 						image.set("linkUrl",  image_url_template( data ) );						
