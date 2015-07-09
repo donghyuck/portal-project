@@ -113,6 +113,7 @@
 					imageEffect: "carousel",
 					imageSort: "name",
 					imageSortDir: "asc",
+					imageLayoutChanged : false,
 					editable : false,
 					visible : true,
 					useWrapMode : false,
@@ -316,17 +317,16 @@
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
 											this.dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
+											that.set('imageLayoutChanged', false);
 										}
 									});
-									common.ui.scroll.slim(listview,{height:'300px'});
-									
+									common.ui.scroll.slim(listview,{height:'300px'});									
 									listview.on("mouseenter",".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 									}).on("mouseleave", ".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 									});
-								}
-								
+								}								
 								if(!common.ui.exists(upload)){
 									common.ui.upload( upload, {
 										async : {
@@ -344,6 +344,7 @@
 								
 							renderTo.find("input[type=radio][name=image-sorting], input[type=radio][name=image-sorting-dir]").on("change", function () {						
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
+								that.set('imageLayoutChanged', true);
 							});												
 							common.ui.listview(listview).dataSource.read();
 						}
