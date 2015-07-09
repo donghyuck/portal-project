@@ -189,7 +189,11 @@
 						if( $this.photo ){
 							$this.page.properties.imageEffect = $this.imageEffect;
 							$this.page.properties.imageSort = $this.imageSort;
-						}						
+							var listview =  renderTo.find(".image-listview");
+							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), {});
+						}			
+						
+						/*			
 						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
 							data : kendo.stringify($this.page) ,
 							contentType : "application/json",
@@ -202,7 +206,8 @@
 							complete : function(e){
 								btn.button('reset');
 							}							
-						});						
+						});		
+						*/				
 						return false;
 					},	
 					setPostType : function(postType){
