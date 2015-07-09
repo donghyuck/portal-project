@@ -67,12 +67,6 @@
     });
 	
 	function CarouselSlide( items, options ){
-		
-		var active_list_view =  active_pane.find(".image-listview");
-		var active_datasource = active_list_view.data('kendoListView').dataSource;		
-		var active_my_selected = active_pane.find(".image-selected");		
-		
-		
 		var uid = guid().toLowerCase() ;		
 		var carousel_template = template($('#image-broswer-photo-carousel-template').html());
 		var carousel_inner_template = template($("#image-broswer-photo-carousel-inner-template").html());						
