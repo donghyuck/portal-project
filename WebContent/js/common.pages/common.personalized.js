@@ -10,6 +10,7 @@
 	guid = common.guid, 
 	template = kendo.template, 
 	ajax = common.ui.ajax, 
+	progress = kendo.ui.progress,
 	defined = common.ui.defined ;
     
 	var DialogSwitcher =  Widget.extend({
@@ -89,10 +90,26 @@
 		var carousel_indicators = html.find(".carousel-indicators");		
 		var total = items.length;
 		var count = 0;
-		console.log( total )
+		
+		console.log( total );
+		kendo.ui.progress($('body'), true);
 		$.each( items, function(index, value){			
 			console.log( kendo.stringify (value) );
 			var image = value;
+			ajax("/data/images/link.json?output=json", {
+				success : function(data) {		
+					if(!defined(data.error)){
+						image.set("linkUrl",  image_url_template( data ) );						
+					}
+					count ++ ;
+					if( count === total )
+					{
+						kendo.ui.progress($('body'), false);						
+					}	
+				}
+			});
+			
+			/**
 			ajax("/data/images/link.json?output=json", {
 				data : { imageId : image.imageId },	
 				success : function(data) {						
@@ -123,7 +140,8 @@
 						}
 					}
 				}					
-			});		
+			});
+			*/		
 		});	
 		
 		alert( html[0].outerHTML);
