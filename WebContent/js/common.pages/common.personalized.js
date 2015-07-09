@@ -88,7 +88,7 @@
 		var carousel_inner = html.find(".carousel-inner");						
 		var carousel_indicators = html.find(".carousel-indicators");		
 		var total = items.length;
-		
+		var count = 0;
 		$.each( items, function(index, value){			
 			ajax("/data/images/link.json?output=json", {
 				data : { imageId : value.imageId },	
