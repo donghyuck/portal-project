@@ -123,7 +123,7 @@
 							renderTo.find("button[data-action=create]").click();
 						}
 					 	// 
-						return false;
+						//return false;
 					},
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
