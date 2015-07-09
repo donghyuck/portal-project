@@ -119,9 +119,10 @@
 						var $this = this, 
 						input = $(e.target);
 						if( $this.page.pageId === 0 && e.keyCode === 13 )  {
+							e.preventDefault();
 							renderTo.find("button[data-action=create]").click();
 						}
-						 e.preventDefault(); 
+					 	// 
 						return false;
 					},
 					stateSource : [
