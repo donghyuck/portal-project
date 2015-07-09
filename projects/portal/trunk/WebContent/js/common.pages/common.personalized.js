@@ -3,7 +3,7 @@
  * dependency : jquery
  */
 ;(function($, undefined) {
-	var kendo = window.kendo, ui = kendo.ui, Widget = ui.Widget, extend = $.extend ;
+	var kendo = window.kendo, ui = kendo.ui, Widget = ui.Widget, extend = $.extend, guid = common.guid, template = kendo.template ;
     
 	var DialogSwitcher =  Widget.extend({
 		// initialization code goes here
@@ -66,6 +66,62 @@
 	    }	
     });
 	
+	function CarouselSlide( items, options ){
+		
+		var active_list_view =  active_pane.find(".image-listview");
+		var active_datasource = active_list_view.data('kendoListView').dataSource;		
+		var active_my_selected = active_pane.find(".image-selected");		
+		
+		
+		var uid = guid().toLowerCase() ;		
+		var carousel_template = template($('#image-broswer-photo-carousel-template').html());
+		var carousel_inner_template = template($("#image-broswer-photo-carousel-inner-template").html());						
+		var carousel_indicators_template = template($("#image-broswer-photo-carousel-indicators-template").html());	
+		var thumbnail_url_template : template('/download/image/#= imageId #/#= name #?width=150&height=150');		
+		var image_url_template : template('/download/image/#= linkId #');
+		var html = $( carousel_template({ 
+			'uid':uid ,
+			'width':null
+		}));
+		
+		var carousel_inner = html.find(".carousel-inner");						
+		var carousel_indicators = html.find(".carousel-indicators");		
+		var total = items.length;
+		
+		$.each( items, function(index, value){			
+			ajax("/data/images/link.json?output=json", {
+				data : { imageId : value.imageId },	
+				success : function(data) {						
+					if(!defined(data.error)){			
+						carousel_indicators.append(
+							carousel_indicators_template({
+								'active': count === 0,
+								'uid':uid, 
+								'index':count,
+								thumbnail : true,
+								thumbnaiUrll : thumbnail_url_template(data)
+							})	
+						);
+						carousel_inner.append(
+							carousel_inner_template({ 
+								'active': count === 0,
+								'index':count,
+								'uid':uid, 
+								url: image_url_template( data ),																	
+								thumbnail : true
+							})		
+						);
+						count ++ ;		
+						if(count == total) {
+							//that.trigger(APPLY, { 'html' : html[0].outerHTML });									
+						}
+					}
+				}					
+			});		
+		});	
+		
+		alert( html[0].outerHTML);
+	}
 	
 	extend(common.ui, {	
 		DialogSwitcher : DialogSwitcher
