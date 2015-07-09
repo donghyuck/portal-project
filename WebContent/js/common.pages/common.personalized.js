@@ -92,7 +92,7 @@
 		var count = 0;
 		
 		console.log( total );
-		kendo.ui.progress($('body'), true);
+		kendo.ui.progress($('#my-page-post-modal'), true);
 		$.each( items, function(index, value){			
 			console.log( kendo.stringify (value) );
 			var image = value;
