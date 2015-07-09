@@ -92,8 +92,9 @@
 		console.log( total )
 		$.each( items, function(index, value){			
 			console.log( kendo.stringify (value) );
+			var image = value;
 			ajax("/data/images/link.json?output=json", {
-				data : { imageId : value.imageId },	
+				data : { imageId : image.imageId },	
 				success : function(data) {						
 					if(!defined(data.error)){			
 						carousel_indicators.append(
@@ -102,7 +103,7 @@
 								'uid':uid, 
 								'index':count,
 								thumbnail : true,
-								thumbnailUrl : thumbnail_url_template(value)
+								thumbnailUrl : thumbnail_url_template(image)
 							})	
 						);
 						carousel_inner.append(
