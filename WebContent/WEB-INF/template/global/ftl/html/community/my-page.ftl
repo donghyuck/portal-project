@@ -303,6 +303,7 @@
 												data : "images",
 												total : "totalCount"
 											},
+											serverSorting : false,
 											sort: {	field: "name", dir:"desc" },
 											serverPaging : false
 										},
