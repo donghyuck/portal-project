@@ -2378,7 +2378,7 @@
 													'uid':uid, 
 													'index':count,
 													thumbnail : imageOptions.get('thumbnail'),
-													thumbnaiUrl : objectEl.attr('src')
+													thumbnailUrl : objectEl.attr('src')
 												})	
 											);
 											carousel_inner.append(
