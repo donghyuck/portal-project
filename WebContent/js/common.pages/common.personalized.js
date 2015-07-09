@@ -128,8 +128,8 @@
 								);
 							idx ++;							
 						});
-						alert( html[0].outerHTML );
-						kendo.ui.progress(renderTo, false);
+						//alert( html[0].outerHTML );
+						//kendo.ui.progress(renderTo, false);
 					}	
 				}
 			});	
