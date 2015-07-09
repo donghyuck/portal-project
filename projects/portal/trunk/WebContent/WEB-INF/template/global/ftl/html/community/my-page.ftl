@@ -323,6 +323,7 @@
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
+											colsole.log("sorting");
 											this.dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 											that.set('imageLayoutChanged', false);
 										}
