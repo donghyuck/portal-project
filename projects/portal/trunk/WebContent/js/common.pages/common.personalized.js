@@ -128,6 +128,9 @@
 								);
 							idx ++;							
 						});
+						if(definde(callback)){
+							callback(html[0].outerHTML);
+						}
 						//alert( html[0].outerHTML );
 						//kendo.ui.progress(renderTo, false);
 					}	
