@@ -74,7 +74,7 @@
 	    }	
     });
 	
-	function CarouselSlide( items, options ){
+	function CarouselSlide( items, renderTo ){
 		var uid = guid().toLowerCase() ;		
 		var carousel_template = template($('#image-broswer-photo-carousel-template').html());
 		var carousel_inner_template = template($("#image-broswer-photo-carousel-inner-template").html());						
@@ -92,7 +92,8 @@
 		var count = 0;
 		
 		console.log( total );
-		kendo.ui.progress($('#my-page-post-modal'), true);
+		
+		kendo.ui.progress(renderTo, true);
 		$.each( items, function(index, value){			
 			console.log( kendo.stringify (value) );
 			var image = value;
@@ -105,10 +106,33 @@
 					count ++ ;
 					if( count === total )
 					{
-						kendo.ui.progress($('body'), false);						
+						var idx = 0;
+						$.each( items , function(idx, val){
+							carousel_indicators.append(
+									carousel_indicators_template({
+										'active': idx === 0,
+										'uid':uid, 
+										'index':idx,
+										thumbnail : true,
+										thumbnailUrl : thumbnail_url_template(val)
+									})	
+								);
+							carousel_inner.append(
+									carousel_inner_template({ 
+										'active': idx === 0,
+										'index':idx,
+										'uid':uid, 
+										url: val.linkUrl,																	
+										thumbnail : true
+									})		
+								);
+							idx ++;							
+						});
+						alert( html[0].outerHTML );
+						kendo.ui.progress(renderTo, false);
 					}	
 				}
-			});
+		});
 			
 			/**
 			ajax("/data/images/link.json?output=json", {
