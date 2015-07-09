@@ -324,9 +324,9 @@
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
-											console.log("sorting");
-											this.dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
-											that.set('imageLayoutChanged', false);
+											//console.log("sorting");
+											//this.dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
+											//that.set('imageLayoutChanged', false);
 										}
 									});
 									common.ui.scroll.slim(listview,{height:'300px'});									
@@ -356,6 +356,7 @@
 								that.set('imageLayoutChanged', true);
 							});												
 							common.ui.listview(listview).dataSource.read();
+							
 						}
 						
 					},
