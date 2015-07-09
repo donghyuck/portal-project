@@ -97,6 +97,7 @@
 				data : { imageId : image.imageId },	
 				success : function(data) {						
 					if(!defined(data.error)){			
+						console.log( kendo.stringify(data) );
 						carousel_indicators.append(
 							carousel_indicators_template({
 								'active': count === 0,
