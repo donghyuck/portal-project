@@ -336,7 +336,7 @@
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
-											//console.log("loading");
+											console.log("loading from remote");
 											//this.refresh();
 											//this.dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 											//that.set('imageLayoutChanged', false);
@@ -369,7 +369,7 @@
 								that.set('imageLayoutChanged', true);
 							});												
 							common.ui.listview(listview).dataSource.read().then(function(){
-								console.log('loading data from remote');
+								console.log('sorting');
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 							});							
 						}
