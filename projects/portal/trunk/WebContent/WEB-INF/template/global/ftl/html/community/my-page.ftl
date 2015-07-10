@@ -312,8 +312,12 @@
 												total : "totalCount"
 											},
 											serverSorting : false,
-											sort: {	field: "name", dir:"desc" },
-											serverPaging : false
+											/*sort: {	field: "name", dir:"desc" },*/
+											serverPaging : false,
+											change: function(e){
+												console.log("sorting");
+												this.sort({field: that.imageSort, dir: that.imageSortDir});
+											}
 										},
 										autoBind:false,
 										selectable : "multiple",
@@ -332,7 +336,8 @@
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
-											console.log("loading");
+											//console.log("loading");
+											//this.refresh();
 											//this.dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 											//that.set('imageLayoutChanged', false);
 										}
@@ -363,8 +368,7 @@
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 								that.set('imageLayoutChanged', true);
 							});												
-							common.ui.listview(listview).dataSource.read();
-							
+							common.ui.listview(listview).dataSource.read();							
 						}
 						
 					},
