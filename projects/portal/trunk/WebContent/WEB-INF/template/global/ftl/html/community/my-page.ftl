@@ -369,7 +369,7 @@
 								that.set('imageLayoutChanged', true);
 							});												
 							common.ui.listview(listview).dataSource.read().then(function(){
-								console.log('sorting');
+								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 							});							
 						}
