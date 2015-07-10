@@ -43,7 +43,7 @@
 				
 				common.ui.setup({
 					features:{
-						wallpaper : true,
+						wallpaper : false,
 						lightbox : true,
 						spmenu : false,
 						morphing : false,
@@ -199,6 +199,7 @@
 						if( $this.postType === 'photo' ){						
 							$this.page.properties.imageEffect = $this.imageEffect;
 							$this.page.properties.imageSort = $this.imageSort;
+							$this.page.properties.imageSortDir = $this.imageSortDir;
 						}
 					},
 					_save : function( progress ){		
@@ -277,6 +278,7 @@
 							that.set('imageSortDir' , that.page.properties.imageSortDir );
 						}													
 						if( that.photo && that.page.pageId > 0 ){
+						
 							if( that.imageSort === null ){	
 								that.set("imageSort", "name");
 							}	
