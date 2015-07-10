@@ -1389,8 +1389,7 @@
 					                            	</label>
 					                            </div>	
 									    	</div>
-									    </div>
-									    
+									    </div>									    
 				                        <button class="btn btn-flat btn-success rounded" type="button" data-bind="enabled:editable, click:updateLayout" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 적용 </button>    						
 									</div>
 								</div>	
