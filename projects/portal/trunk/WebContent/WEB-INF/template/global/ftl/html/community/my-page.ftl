@@ -311,12 +311,12 @@
 												data : "images",
 												total : "totalCount"
 											},
-											serverSorting : false,
-											/*sort: {	field: "name", dir:"desc" },*/
+											//serverSorting : false,
+											//sort: {	field: "name", dir:"desc" },
 											serverPaging : false,
 											change: function(e){
-												console.log("sorting");
-												this.sort({field: that.imageSort, dir: that.imageSortDir});
+												//console.log("sorting");
+												//this.sort({field: that.imageSort, dir: that.imageSortDir});
 											}
 										},
 										autoBind:false,
@@ -368,7 +368,9 @@
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 								that.set('imageLayoutChanged', true);
 							});												
-							common.ui.listview(listview).dataSource.read();							
+							common.ui.listview(listview).dataSource.read().then(function(){
+								console.log('loading data from remote');
+							});							
 						}
 						
 					},
