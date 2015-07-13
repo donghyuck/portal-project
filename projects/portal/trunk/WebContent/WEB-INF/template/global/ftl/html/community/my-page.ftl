@@ -1357,7 +1357,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="image-layout m-t-md" data-bind="css:{'image-layout-updated': imageLayoutChanged}">
+								<div class="image-layout m-t-md" data-bind="css:{image-layout-updated: imageLayoutChanged}">
 									<div class="row">
 										<div class="col-sm-6">
 										        <label class="label">Effect</label>
