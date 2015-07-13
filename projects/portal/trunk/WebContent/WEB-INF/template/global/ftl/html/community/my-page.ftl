@@ -1325,7 +1325,8 @@
 											</label>
 											<label class="input">
 												<i class="icon-append fa fa-globe text-info"></i>
-												<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl"></label>																													
+												<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl"></label>		
+												<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>																											
 													
 							</fieldset>
 					</form>
