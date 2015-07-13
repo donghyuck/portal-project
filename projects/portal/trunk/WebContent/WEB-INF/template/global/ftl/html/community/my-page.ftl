@@ -169,7 +169,7 @@
 						
 						if( $this.photo ){
 							var listview =  renderTo.find(".image-listview");		
-							if( $this.get('imageLayoutChanged'){
+							if( $this.get('imageLayoutChanged')){
 								common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
 									$this.page.bodyContent.bodyText = html;								
 									btn.button('loading');			
