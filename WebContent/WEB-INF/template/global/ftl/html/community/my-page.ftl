@@ -138,9 +138,7 @@
 					validate : function (){
 						var $this = this, hasError = false;		
 						renderTo.find("form label[for]").removeClass("state-error");					
-						renderTo.find("form em[for]").remove();		
-						
-						alert($this.page.title + "," + $this.page.title.length);				
+						renderTo.find("form em[for]").remove();					
 						if( $this.page.title.length === 0 )  
 						{
 							var template = kendo.template('<em for="#:name#" class="invalid">#: msg#</em>');
@@ -158,25 +156,37 @@
 							btn.button('loading');
 							$this.page.bodyContent.bodyText = "";
 							$this._setProperties();
-							$this._save(btn);
-							/*
-							common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
-								data : kendo.stringify($this.page) ,
-								contentType : "application/json",
-								success : function(response){
-									if( response.pageId ){
-										renderTo.find('.collapse').collapse('hide');
-										$this.setSource( new common.ui.data.Page(response) );							
-									}						
-								},
-								complete : function(e){
-									btn.button('reset');
-								}							
-							});	
-							*/
+							$this._save(function(){
+								btn.button('reset');
+							});
 						}
 						return false;
 					},
+					update : function(e){
+						var $this = this, 
+						btn = $(e.target);
+						$this._setProperties();
+						
+						if( $this.photo ){
+							var listview =  renderTo.find(".image-listview");		
+							if( $this.get('imageLayoutChanged'){
+								common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
+									$this.page.bodyContent.bodyText = html;								
+									btn.button('loading');			
+									$this._save(function(){									
+										btn.button('reset');
+									});	
+													
+								});							
+							}else{
+								btn.button('loading');			
+								$this._save(function(){									
+									btn.button('reset');
+								});								
+							}
+						}			
+						return false;
+					},	
 					_setProperties : function(){
 						var $this = this;						
 						if($this.postType.length > 0){
@@ -202,37 +212,26 @@
 							$this.page.properties.imageSortDir = $this.imageSortDir;
 						}
 					},
-					_save : function( progress ){		
+					_save : function( callback ){		
 						var $this = this;			
 						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
 							data : kendo.stringify($this.page) ,
 							contentType : "application/json",
 							success : function(response){
 								if( response.pageId ){
-									renderTo.find('.collapse').collapse('hide');
+									if( !$this.get('imageLayoutChanged') && $this.page.pageId == 0 ){
+										renderTo.find('.collapse').collapse('hide');
+										$this.set('imageLayoutChanged', true);
+									}
 									$this.setSource( new common.ui.data.Page(response) );						
 								}						
 							},
 							complete : function(e){
-								if( progress )
-									progress.button('reset');
+								if( callback )
+									callback();
 							}							
 						});	
 					}, 
-					update : function(e){
-						var $this = this, 
-						btn = $(e.target);
-						$this._setProperties();
-						if( $this.photo ){
-							var listview =  renderTo.find(".image-listview");
-							common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
-								$this.page.bodyContent.bodyText = html;								
-								btn.button('loading');			
-								$this._save(btn);					
-							});
-						}			
-						return false;
-					},	
 					setPostType : function(postType){
 						var that = this;
 						if(postType){
@@ -255,9 +254,8 @@
 					setSource: function(page, postType){
 						var that = this;
 						page.copy(that.page);					
-						//if( that.page.pageId > 0){
-						//that.set('editable', true);
 						that.setPostType(that.page.properties.postType||postType); 
+						$this.set('imageLayoutChanged', false);
 						if( that.page.properties.source ){
 							that.set('pageSource', that.page.properties.source);
 						}else{
@@ -277,16 +275,14 @@
 						if( that.page.properties.imageSortDir ){
 							that.set('imageSortDir' , that.page.properties.imageSortDir );
 						}													
-						if( that.photo && that.page.pageId > 0 ){
-						
+						if( that.photo && that.page.pageId > 0 ){						
 							if( that.imageSort === null ){	
 								that.set("imageSort", "name");
 							}	
 							if( that.imageSortDir === null ){
 								that.set("imageSortDir", "desc");
 							}
-							
-								var upload = renderTo.find("input[name='photo'][type=file]");		
+							var upload = renderTo.find("input[name='photo'][type=file]");		
 								var listview =  renderTo.find(".image-listview");								
 								if (!common.ui.exists(listview)) {
 									common.ui.listview( listview, {
@@ -350,21 +346,21 @@
 									}).on("mouseleave", ".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 									});
-								}								
-								if(!common.ui.exists(upload)){
-									common.ui.upload( upload, {
-										async : {
-											saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
-										},
-										localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
-										upload: function (e) {				
-											e.data = { objectType: 31 , objectId: that.page.pageId };
-										},								
-										success: function (e) {									
+							}								
+							if(!common.ui.exists(upload)){
+								common.ui.upload( upload, {
+									async : {
+										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
+									},
+									localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+									upload: function (e) {				
+										e.data = { objectType: 31 , objectId: that.page.pageId };
+									},								
+									success: function (e) {									
 											common.ui.listview(listview).dataSource.read();
-										}
-									});
-								}
+									}
+								});
+							}
 								
 							renderTo.find("input[type=radio][name=image-sorting], input[type=radio][name=image-sorting-dir]").on("change", function () {						
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
