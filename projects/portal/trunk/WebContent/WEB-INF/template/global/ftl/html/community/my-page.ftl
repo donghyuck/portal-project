@@ -165,18 +165,16 @@
 					update : function(e){
 						var $this = this, 
 						btn = $(e.target);
-						$this._setProperties();
-						
+						$this._setProperties();						
 						if( $this.photo ){
-							var listview =  renderTo.find(".image-listview");		
+							var listview =  renderTo.find(".image-listview");							
 							if( $this.get('imageLayoutChanged')){
 								common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
 									$this.page.bodyContent.bodyText = html;								
 									btn.button('loading');			
 									$this._save(function(){									
 										btn.button('reset');
-									});	
-													
+									});														
 								});							
 							}else{
 								btn.button('loading');			
@@ -221,7 +219,9 @@
 								if( response.pageId ){
 									if( !$this.get('imageLayoutChanged') && $this.page.pageId == 0 ){
 										renderTo.find('.collapse').collapse('hide');
-										$this.set('imageLayoutChanged', true);
+										$this.set('imageLayoutChanged', false);										
+										common.ui.listview($("#my-page-listview")).refresh();
+										renderTo.modal('hide');
 									}
 									$this.setSource( new common.ui.data.Page(response) );						
 								}						
