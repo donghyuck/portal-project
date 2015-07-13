@@ -334,6 +334,9 @@
 			
 			if(this.get('tagsString'))
 				target.set('tagsString', this.get('tagsString'));
+			else
+				target.set('tagsString', "");
+			
 		}
 	});
 	
