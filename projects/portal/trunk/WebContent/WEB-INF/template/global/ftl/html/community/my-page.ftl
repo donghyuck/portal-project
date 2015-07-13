@@ -1357,7 +1357,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="image-layout m-t-md" data-bind="css:{image-layout-updated: imageLayoutChanged}">
+								<div class="image-layout m-t-md">
 									<div class="row">
 										<div class="col-sm-6">
 									    	<label class="label">Effect</label>
@@ -1377,7 +1377,7 @@
 										    	</div>
 										    	<div class="col-xs-6">
 											    	<div class="btn-group btn-group-sm pull-right" data-toggle="buttons">
-						                            	<label class="btn btn-default btn-flat btn-outline rounded-left">
+						                             	<label class="btn btn-default btn-flat btn-outline rounded-left">
 						                            		<input type="radio" name="image-sorting-dir" value="asc" data-bind="checked: imageSortDir" />
 						                            		ASC
 						                            	</label>
