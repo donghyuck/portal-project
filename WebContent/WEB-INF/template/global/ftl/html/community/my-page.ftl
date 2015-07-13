@@ -219,11 +219,14 @@
 								if( response.pageId ){
 									if( !$this.get('imageLayoutChanged') && $this.page.pageId == 0 ){
 										renderTo.find('.collapse').collapse('hide');
-										$this.set('imageLayoutChanged', false);										
+										$this.set('imageLayoutChanged', true);				
+										$this.setSource( new common.ui.data.Page(response) );
+									}else{																
 										common.ui.listview($("#my-page-listview")).refresh();
 										renderTo.modal('hide');
 									}
-									$this.setSource( new common.ui.data.Page(response) );						
+									
+												
 								}						
 							},
 							complete : function(e){
