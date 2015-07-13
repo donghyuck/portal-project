@@ -2571,6 +2571,18 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	border-bottom : 1px solid #fff;
 }
 
+.my-page-post-form .image-layout {
+	padding:15px;
+	border:0;
+	background-color:#f5f7fa;
+	border-radius : 8px!important;
+}
+
+.my-page-post-form .image-layout.image-layout-updated {
+	background-color:rgba(255,45,85, .1);
+} 
+
+
 /*
 .simple-post-compose {
 	background: rgba(0, 0, 0, 0.4);	
