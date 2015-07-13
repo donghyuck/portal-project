@@ -1357,38 +1357,38 @@
 										</div>
 									</div>
 								</div>
-								<hr class="m-t-sm m-b-sm"/>
-								<div class="row">
-									<div class="col-sm-6">
-									        <label class="label">Effect</label>
-				                            <div class="inline-group">	
-				                                <label class="radio"><input type="radio" name="image-effect" value="mansory" data-bind="checked: imageEffect" ><i class="rounded-x"></i>Mansory</label>
-				                                <label class="radio"><input type="radio" name="image-effect" value="carousel" data-bind="checked: imageEffect"><i class="rounded-x"></i>Carousel Slide</label>
-				                            </div>									
-									</div>
-									<div class="col-sm-6">
-									    <label class="label">정렬 </label>
-									    <div class="row">
-									    	<div class="col-xs-6">
-										    	<div class="inline-group">	
-					                                <label class="radio"><input type="radio" name="image-sorting" value="name" data-bind="checked: imageSort" ><i class="rounded-x"></i>이름</label>
-					                                <label class="radio"><input type="radio" name="image-sorting" value="creationDate" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
-					                            </div>	
-									    	</div>
-									    	<div class="col-xs-6">
-										    	<div class="btn-group btn-group-sm pull-right" data-toggle="buttons">
-					                            	<label class="btn btn-default btn-flat btn-outline rounded-left">
-					                            		<input type="radio" name="image-sorting-dir" value="asc" data-bind="checked: imageSortDir" />
-					                            		ASC
-					                            	</label>
-					                            	<label class="btn btn-default btn-flat btn-outline rounded-right">
-					                            		<input type="radio" name="image-sorting-dir" value="desc" data-bind="checked: imageSortDir"/>
-					                            		DESC
-					                            	</label>
-					                            </div>	
-									    	</div>
-									    </div>									    
-				                        <button class="btn btn-flat btn-success rounded" type="button" data-bind="enabled:editable, click:updateLayout" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 적용 </button>    						
+								<div class="image-layout m-t-md" data-bind="css:{'image-layout-updated': imageLayoutChanged}">
+									<div class="row">
+										<div class="col-sm-6">
+										        <label class="label">Effect</label>
+					                            <div class="inline-group">	
+					                                <label class="radio"><input type="radio" name="image-effect" value="mansory" data-bind="checked: imageEffect" ><i class="rounded-x"></i>Mansory</label>
+					                                <label class="radio"><input type="radio" name="image-effect" value="carousel" data-bind="checked: imageEffect"><i class="rounded-x"></i>Carousel Slide</label>
+					                            </div>									
+										</div>
+										<div class="col-sm-6">
+										    <label class="label">정렬 </label>
+										    <div class="row">
+										    	<div class="col-xs-6">
+											    	<div class="inline-group">	
+						                                <label class="radio"><input type="radio" name="image-sorting" value="name" data-bind="checked: imageSort" ><i class="rounded-x"></i>이름</label>
+						                                <label class="radio"><input type="radio" name="image-sorting" value="creationDate" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
+						                            </div>	
+										    	</div>
+										    	<div class="col-xs-6">
+											    	<div class="btn-group btn-group-sm pull-right" data-toggle="buttons">
+						                            	<label class="btn btn-default btn-flat btn-outline rounded-left">
+						                            		<input type="radio" name="image-sorting-dir" value="asc" data-bind="checked: imageSortDir" />
+						                            		ASC
+						                            	</label>
+						                            	<label class="btn btn-default btn-flat btn-outline rounded-right">
+						                            		<input type="radio" name="image-sorting-dir" value="desc" data-bind="checked: imageSortDir"/>
+						                            		DESC
+						                            	</label>
+						                            </div>	
+										    	</div>
+										    </div>				
+										</div>
 									</div>
 								</div>	
 							</section>
