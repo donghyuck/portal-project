@@ -1343,7 +1343,7 @@
 									<div class="col-sm-6 upload-by-url">	
 										<div class="separator-2"></div>
 										<p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
-										<input type="file" name="photo" />	
+										<input type="file" name="photo" />
 										<div class="m-t-lg">
 											<div class="separator-2"></div>
 											<p class="text-primary">출처와 URL을 입력하세요.</p>
@@ -1360,12 +1360,12 @@
 								<div class="image-layout m-t-md" data-bind="css:{image-layout-updated: imageLayoutChanged}">
 									<div class="row">
 										<div class="col-sm-6">
-										        <label class="label">Effect</label>
-					                            <div class="inline-group">	
-					                                <label class="radio"><input type="radio" name="image-effect" value="mansory" data-bind="checked: imageEffect" ><i class="rounded-x"></i>Mansory</label>
-					                                <label class="radio"><input type="radio" name="image-effect" value="carousel" data-bind="checked: imageEffect"><i class="rounded-x"></i>Carousel Slide</label>
-					                            </div>									
-										</div>
+									    	<label class="label">Effect</label>
+					                        <div class="inline-group">	
+					                            <label class="radio"><input type="radio" name="image-effect" value="mansory" data-bind="checked: imageEffect" ><i class="rounded-x"></i>Mansory</label>
+					                            <label class="radio"><input type="radio" name="image-effect" value="carousel" data-bind="checked: imageEffect"><i class="rounded-x"></i>Carousel Slide</label>
+					                        </div>									
+										</div>										
 										<div class="col-sm-6">
 										    <label class="label">정렬 </label>
 										    <div class="row">
