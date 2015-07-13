@@ -255,7 +255,7 @@
 						var that = this;
 						page.copy(that.page);					
 						that.setPostType(that.page.properties.postType||postType); 
-						$this.set('imageLayoutChanged', false);
+						that.set('imageLayoutChanged', false);
 						if( that.page.properties.source ){
 							that.set('pageSource', that.page.properties.source);
 						}else{
