@@ -1294,43 +1294,44 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<form id="my-post-modal-settings" action="#" class="sky-form modal-settings collapse">
-							<header>
-								고급옵션
-								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="false" aria-controls="my-post-modal-settings"></span>
-							</header>
-							<fieldset>                  
-										<section>
-											<div class="separator-2"></div>
-											<label class="label">파일</label>	
-											<label class="input">
-												<input type="text" name="name" placeholder="파일 이름을 입력하세요." data-bind="value: page.name">
-											</label>
-										</section>										
-										<section>
-											<label class="label">요약</label>	
-											<label class="textarea textarea-expandable">
-												<textarea rows="4" name="summary" placeholder="조금 더 자세하게 알려 주세요" data-bind="value: page.summary"></textarea>
-											</label>
-										</section>
-										<section>
-											<label class="label">테그</label>
-											<label class="input">
-												<i class="icon-append fa fa-tag text-info"></i>
-												<input type="text" name="tags" data-bind="value:page.tagsString">
-											</label>
-											<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
-										</section>
-										<section>
-											<label class="label">출처</label>
-											<label class="input">
-												<input type="text" name="source" placeholder="출처 이름을 입력하세요." data-bind="value: pageSource">
-											</label>
-											<label class="input">
-												<i class="icon-append fa fa-globe text-info"></i>
-												<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl"></label>		
-												<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>																											
-													
-							</fieldset>
+						<header>
+							고급옵션
+							<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="false" aria-controls="my-post-modal-settings"></span>
+						</header>
+						<fieldset>                  
+							<section>
+								<div class="separator-2"></div>
+								<label class="label">파일</label>	
+								<label class="input">
+									<input type="text" name="name" placeholder="파일 이름을 입력하세요." data-bind="value: page.name">
+								</label>
+							</section>										
+							<section>
+								<label class="label">요약</label>	
+								<label class="textarea textarea-expandable">
+									<textarea rows="4" name="summary" placeholder="조금 더 자세하게 알려 주세요" data-bind="value: page.summary"></textarea>
+								</label>
+							</section>
+							<section>
+								<label class="label">테그</label>
+								<label class="input">
+									<i class="icon-append fa fa-tag text-info"></i>
+									<input type="text" name="tags" data-bind="value:page.tagsString">
+								</label>
+								<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
+							</section>
+							<section>
+								<label class="label">출처</label>
+								<label class="input">
+									<input type="text" name="source" placeholder="출처 이름을 입력하세요." data-bind="value: pageSource">
+								</label>
+								<label class="input">
+									<i class="icon-append fa fa-globe text-info"></i>
+									<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl">
+								</label>		
+								<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>	
+							</section>	
+						</fieldset>
 					</form>
 					<form action="#" class="sky-form">
 						<fieldset>
