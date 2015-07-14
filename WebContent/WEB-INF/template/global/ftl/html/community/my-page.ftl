@@ -439,7 +439,8 @@
 					}else if (renderTo.data("modal").link) {
 						msg = common.ui.options.messages.title.link;					
 					}else if (renderTo.data("modal").quote ){
-						renderTo.data("modal").page.bodyContent.bodyText = common.ui.options.messages.bodyText.quote;						
+						if(renderTo.data("modal").page.pageId === 0)
+							renderTo.data("modal").page.bodyContent.bodyText = common.ui.options.messages.bodyText.quote;						
 					}								
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
