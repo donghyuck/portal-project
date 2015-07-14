@@ -186,6 +186,7 @@
 								}
 							}else if ($this.quote){
 								btn.button('loading');			
+								$this.page.bodyContent.bodyText = renderTo.find('.quote.k-editor-inline').data('kendoEditor').value();
 								$this._save(function(){									
 									btn.button('reset');
 								});						
