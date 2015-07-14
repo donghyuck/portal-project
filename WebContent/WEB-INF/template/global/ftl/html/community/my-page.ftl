@@ -1371,8 +1371,7 @@
 							<section data-bind="visible:quote">
 								<i class="fa fa-quote-left"></i>
 								<div class="quote" data-role="editor"
-								                   data-tools="{'bold', 'italic', 'underline', 'skrikethrough'}" 
-								                    >
+								                   data-tools="{'bold', 'italic', 'underline'}">
 								<blockquote>
 								
 								fdsafdsa
