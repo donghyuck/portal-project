@@ -412,7 +412,7 @@
 					if(switcher && switcher.isOpen){
 						switcher.close();
 					}
-					renderTo.find("form input[name=title]").attr('placeholder', common.ui.personalized.options.messages.title.text );
+					renderTo.find("form input[name=title]").attr('placeholder', common.ui.options.messages.title.text );
 				});						
 				renderTo.on('hidden.bs.modal', function(e){					
 					renderTo.find("form label[for]").removeClass("state-error");					
