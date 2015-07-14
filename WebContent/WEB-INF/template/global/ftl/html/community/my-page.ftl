@@ -1380,7 +1380,7 @@
 								</label>
 							</section>
 							<section data-bind="visible:quote">
-								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline']" data-bind="html:page.bodyContent.bodyText">
+								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline']" data-bind="value:page.bodyContent.bodyText">
 									<blockquote>
 										<p>인용구</p>
 										<footer>출처</footer>
