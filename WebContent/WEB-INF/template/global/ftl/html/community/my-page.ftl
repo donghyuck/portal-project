@@ -106,6 +106,7 @@
 					text:true,
 					photo:false,
 					link:false,
+					quote:false,
 					authorPhotoUrl : "/images/common/no-avatar.png",
 					pageSource : "",
 					pageSourceUrl : "",
@@ -125,8 +126,6 @@
 							e.preventDefault();
 							renderTo.find("button[data-action=create]").click();
 						}
-					 	// 
-						//return false;
 					},
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
@@ -199,12 +198,10 @@
 						} 
 						if( $this.pageSourceUrl !=null && $this.pageSourceUrl.length > 0 ){
 							$this.page.properties.url = $this.pageSourceUrl;
-						}						
-						
+						}							
 						if( $this.page.tagsString != null && $this.page.tagsString.length > 0 ){
 							$this.page.properties.tagsString = $this.page.tagsString;
-						}		
-										
+						}				
 						if( $this.postType === 'photo' ){						
 							$this.page.properties.imageEffect = $this.imageEffect;
 							$this.page.properties.imageSort = $this.imageSort;
@@ -247,7 +244,7 @@
 						that.set("photo", false);
 						that.set("text", false);
 						that.set("link", false);	
-												
+						that.set("quote", false);							
 						if( that.page.pageId > 0 ){
 							that.set('editable', true);
 							if( that.postType === "photo"){
@@ -1370,6 +1367,19 @@
 									<i class="icon-append fa fa-asterisk"></i>
 									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title, events:{keypress: keypress}">
 								</label>
+							</section>
+							<section data-bind="visible:quote">
+								<i class="fa fa-quote-left"></i>
+								<div class="quote" data-role="editor"
+								                   data-tools="{'bold', 'italic', 'underline', 'skrikethrough'}" 
+								                    >
+								<blockquote>
+								
+								fdsafdsa
+								
+								</blockquote>
+								</div>
+								<i class="fa fa-quote-right"></i>
 							</section>
 							<section data-bind="visible:photo">
 								<div class="row">
