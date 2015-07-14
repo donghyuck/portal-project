@@ -147,6 +147,15 @@
 		DialogSwitcher : DialogSwitcher
 	});
 	
+	common.ui.personalized.options.messages = extend( common.ui.personalized.options.messages, {			
+		title : {
+			image : "무엇에 대한 사진인가요?",
+			text : "무엇에 대한 글인가요?",
+			link : "무엇에 대한 웹 페이지인가요?"
+		}	
+	});
+	
+	
 })(jQuery);
 
 
