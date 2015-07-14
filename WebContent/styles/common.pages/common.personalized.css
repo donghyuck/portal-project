@@ -2602,6 +2602,13 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background:none;
 }
 
+.my-page-post-form blockquote footer {
+	background:none;
+	padding:0;
+	border:0;
+}
+
+
 
 /*
 .simple-post-compose {
