@@ -428,11 +428,6 @@
 		}	
 	});	
 	
-	
-	extend( common.ui.data, {
-		userPhotoUrl : photoUrl		
-	});
-	
 })(jQuery);
 
 ;(function($, undefined) {
