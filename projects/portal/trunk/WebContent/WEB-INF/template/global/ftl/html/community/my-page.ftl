@@ -117,6 +117,7 @@
 					imageSortDir: "asc",
 					imageLayoutChanged : false,
 					editable : false,
+					followUp : false,
 					visible : true,
 					useWrapMode : false,
 					keypress : function(e){
@@ -267,7 +268,7 @@
 								that.set("link", true);
 							}else if ( that.postType === "quote") {
 								that.set("quote", true);
-								that.set('editable', true);
+								that.set("followUp", true );
 							}else{
 								that.set("text", true);	
 							}
@@ -278,10 +279,12 @@
 						page.copy(that.page);					
 						that.setPostType(that.page.properties.postType||postType); 
 						
-						if(that.page.pageId >0 ){
+						if(that.page.pageId > 0 ){
 							that.set("authorPhotoUrl", that.page.authorPhotoUrl );
+							that.set("followUp", false );
 						}else{
 							that.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);
+							that.set("followUp", true );
 						}
 						
 						that.set('imageLayoutChanged', false);
@@ -1452,7 +1455,7 @@
 					</form>
 					<div class="modal-footer">
 						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left rounded" type="button">닫기</button>
-						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-action="create" data-bind="{invisible:editable, click:create}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">다음</button>
+						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-action="create" data-bind="{visible:followUp, click:create}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">다음</button>
 						<button class="btn btn-flat btn-info rounded" type="button" data-bind="enabled:editable, click:update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장 </button>
 					</div>
 				</div>								
