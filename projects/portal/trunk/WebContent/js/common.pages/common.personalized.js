@@ -154,7 +154,10 @@
 			image : "무엇에 대한 사진인가요?",
 			text : "무엇에 대한 글인가요?",
 			link : "무엇에 대한 웹 페이지인가요?"
-		}	
+		},
+		bodyText {
+			quote : "<blockquote><p>인용구</p><footer>출처</footer></blockquote>"			
+		}
 	});
 	
 	
