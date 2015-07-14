@@ -1393,7 +1393,7 @@
 								</label>
 							</section>
 							<section data-bind="visible:quote">
-								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting']"  >
+								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting']" data-bind="value:page.bodyContent.bodyText" >
 								</div>
 							</section>
 							<section data-bind="visible:photo">
