@@ -182,6 +182,11 @@
 									btn.button('reset');
 								});								
 							}
+						}else if ($this.quote){
+							btn.button('loading');			
+							$this._save(function(){									
+								btn.button('reset');
+							});						
 						}			
 						return false;
 					},	
@@ -215,16 +220,14 @@
 							contentType : "application/json",
 							success : function(response){
 								if( response.pageId ){
-									if( !$this.get('imageLayoutChanged') && $this.page.pageId == 0 ){
+									if( $this.photo && !$this.get('imageLayoutChanged') && $this.page.pageId == 0 ){
 										renderTo.find('.collapse').collapse('hide');
 										$this.set('imageLayoutChanged', true);				
 										$this.setSource( new common.ui.data.Page(response) );
 									}else{																
 										common.ui.listview($("#my-page-listview")).refresh();
 										renderTo.modal('hide');
-									}
-									
-												
+									}		
 								}						
 							},
 							complete : function(e){
@@ -431,10 +434,13 @@
 
 				renderTo.on('show.bs.modal', function(e){		
 					var msg = common.ui.options.messages.title.text ;
-					if( renderTo.data("modal").photo )
+					if( renderTo.data("modal").photo ){
 						msg = common.ui.options.messages.title.photo;
-					else if (renderTo.data("modal").link) 
-						msg = common.ui.options.messages.title.link;												
+					}else if (renderTo.data("modal").link) {
+						msg = common.ui.options.messages.title.link;					
+					}else if (renderTo.data("modal").quote ){
+						renderTo.data("modal").page.bodyContent.bodyText = common.ui.options.messages.bodyText.quote;						
+					}								
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
 				renderTo.on('shown.bs.modal', function(e){			
@@ -1373,7 +1379,7 @@
 								</label>
 							</section>
 							<section data-bind="visible:quote">
-								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline']">
+								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline']" data-bind="html:page.bodyContent.bodyText">
 									<blockquote>
 										<p>인용구</p>
 										<footer>출처</footer>
