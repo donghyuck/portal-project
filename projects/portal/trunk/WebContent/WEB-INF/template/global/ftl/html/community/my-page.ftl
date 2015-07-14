@@ -440,7 +440,9 @@
 						msg = common.ui.options.messages.title.link;					
 					}else if (renderTo.data("model").postType === "quote" ){
 						if(renderTo.data("model").page.pageId === 0)
-							renderTo.data("model").page.bodyContent.bodyText = common.ui.options.messages.bodyText.quote;						
+							renderTo.find('.quote.k-editor-inline').data('kendoEditor').value(common.ui.options.messages.bodyText.quote);	
+						else
+							renderTo.find('.quote.k-editor-inline').data('kendoEditor').value(renderTo.data("model").page.bodyContent.bodyText);					
 					}								
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
