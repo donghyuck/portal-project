@@ -427,6 +427,12 @@
 			writerQueueLength : { type: "number", editable: false, defaultValue: 0 }			
 		}	
 	});	
+	
+	
+	extend( common.ui.data, {
+		userPhotoUrl : photoUrl		
+	});
+	
 })(jQuery);
 
 ;(function($, undefined) {
