@@ -250,7 +250,8 @@
 						that.set("photo", false);
 						that.set("text", false);
 						that.set("link", false);	
-						that.set("quote", false);							
+						that.set("quote", false);	
+						that.set("followUp", false );						
 						if( that.page.pageId > 0 ){
 							that.set('editable', true);
 							if( that.postType === "photo"){
@@ -263,7 +264,7 @@
 								that.set("text", true);	
 							}
 						}else{
-							that.set('editable', false);
+							that.set('editable', false);							
 							if ( that.postType === "link") {
 								that.set("link", true);
 							}else if ( that.postType === "photo") {
@@ -283,10 +284,10 @@
 						
 						if(that.page.pageId > 0 ){
 							that.set("authorPhotoUrl", that.page.authorPhotoUrl );
-							that.set("followUp", false );
+							
 						}else{
 							that.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);
-							that.set("followUp", true );
+							
 						}
 						
 						that.set('imageLayoutChanged', false);
