@@ -427,18 +427,21 @@
 						return false;						
 					}
 				});				
-				renderTo.on('shown.bs.modal', function(e){			
-					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
-					if(switcher && switcher.isOpen){
-						switcher.close();
-					}
+
+				renderTo.on('show.bs.modal', function(e){		
 					var msg = common.ui.options.messages.title.text ;
 					if( renderTo.data("modal").photo )
 						msg = common.ui.options.messages.title.photo;
 					else if (renderTo.data("modal").link) 
 						msg = common.ui.options.messages.title.link;												
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
-				});						
+				});			
+				renderTo.on('shown.bs.modal', function(e){			
+					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
+					if(switcher && switcher.isOpen){
+						switcher.close();
+					}
+				});			
 				renderTo.on('hidden.bs.modal', function(e){					
 					renderTo.find("form label[for]").removeClass("state-error");					
 					renderTo.find("form em[for]").remove();					
