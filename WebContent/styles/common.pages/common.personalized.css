@@ -2583,7 +2583,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 } 
 
 .my-page-post-form .quote {
-	display:inline-block;
+	/*display:inline-block;*/
 	vertical-align:top;	
 }
 
