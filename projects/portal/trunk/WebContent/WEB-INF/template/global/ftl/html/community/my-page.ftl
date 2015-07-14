@@ -282,13 +282,10 @@
 						var that = this;
 						page.copy(that.page);					
 						that.setPostType(that.page.properties.postType||postType); 
-						
 						if(that.page.pageId > 0 ){
-							that.set("authorPhotoUrl", that.page.authorPhotoUrl );
-							
+							that.set("authorPhotoUrl", that.page.authorPhotoUrl() );							
 						}else{
-							that.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);
-							
+							that.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);							
 						}
 						
 						that.set('imageLayoutChanged', false);
