@@ -1415,18 +1415,19 @@
 				<div class="container">
 					<span class="close close-white" data-dialog-close  aria-label="Close"></span>
 					<div class="row ">
-						<div class="col-md-3 col-sm-4 col-xs-6 content-boxes-v6 color-flat-lime">
-							<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="quote">
-								<i class="rounded-x fa fa-quote-left fa-3x"></i>
-							</button>
-							<p>읽으면 힘이되는 좋을 글들을 공유하세요.</p>
-						</div>						
+					
 						<div class="col-md-3 col-sm-4 col-xs-6 content-boxes-v6 color-flat-sky">
 							<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="text">
 								<i class="rounded-x fa fa-font fa-3x"></i>
 							</button>
 							<p>생각나는 것을 기록하고, 공유하세요.</p>
 						</div>			
+						<div class="col-md-3 col-sm-4 col-xs-6 content-boxes-v6 color-flat-lime">
+							<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="quote">
+								<i class="rounded-x fa fa-quote-left fa-3x"></i>
+							</button>
+							<p>읽으면 힘이되는 좋을 글들을 공유하세요.</p>
+						</div>							
 						<div class="col-md-3 col-sm-4 col-xs-6 content-boxes-v6 color-flat-red">
 							<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="photo">
 								<i class="rounded-x fa fa-camera-retro fa-3x"></i>
