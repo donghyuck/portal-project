@@ -434,13 +434,13 @@
 
 				renderTo.on('show.bs.modal', function(e){		
 					var msg = common.ui.options.messages.title.text ;
-					if( renderTo.data("modal").photo ){
+					if( renderTo.data("model").postType === "photo" ){
 						msg = common.ui.options.messages.title.photo;
-					}else if (renderTo.data("modal").link) {
+					}else if (renderTo.data("model").postType === "link") {
 						msg = common.ui.options.messages.title.link;					
-					}else if (renderTo.data("modal").quote ){
-						if(renderTo.data("modal").page.pageId === 0)
-							renderTo.data("modal").page.bodyContent.bodyText = common.ui.options.messages.bodyText.quote;						
+					}else if (renderTo.data("model").postType === "quote" ){
+						if(renderTo.data("model").page.pageId === 0)
+							renderTo.data("model").page.bodyContent.bodyText = common.ui.options.messages.bodyText.quote;						
 					}								
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
@@ -456,9 +456,9 @@
 					renderTo.find('.collapse').collapse('hide');
 				});				
 				kendo.bind(renderTo, observable);
-				renderTo.data("modal", observable );
+				renderTo.data("model", observable );
 			}
-			renderTo.data("modal").setSource(page, postType);
+			renderTo.data("model").setSource(page, postType);
 			renderTo.modal('show');
 			
 		}		
