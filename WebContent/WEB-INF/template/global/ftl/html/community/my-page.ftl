@@ -223,8 +223,8 @@
 							contentType : "application/json",
 							success : function(response){
 								if( response.pageId ){
-									if( $this.photo && !$this.get('imageLayoutChanged') && $this.page.pageId == 0 ){
-										renderTo.find('.collapse').collapse('hide');
+									if( $this.postType === 'photo' && !$this.get('imageLayoutChanged') && $this.page.pageId == 0 ){
+										//renderTo.find('.collapse').collapse('hide');
 										$this.set('imageLayoutChanged', true);				
 										$this.setSource( new common.ui.data.Page(response) );
 									}else{																
