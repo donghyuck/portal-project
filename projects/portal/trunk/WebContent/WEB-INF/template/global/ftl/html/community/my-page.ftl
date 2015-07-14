@@ -360,7 +360,8 @@
 										e.data = { objectType: 31 , objectId: that.page.pageId };
 									},								
 									success: function (e) {									
-											common.ui.listview(listview).dataSource.read();
+										that.set('imageLayoutChanged', true);			
+										common.ui.listview(listview).dataSource.read();
 									}
 								});
 							}
@@ -392,7 +393,8 @@
 							common.ui.data.image.uploadByUrl( {
 								data : { objectType : 31, objectId: $this.page.pageId, sourceUrl : $this.imageSourceUrl,  imageUrl : $this.imageDataUrl},
 								success : function(response){
-									var listview =  renderTo.find(".image-listview");		
+									var listview =  renderTo.find(".image-listview");	
+									$this.set('imageLayoutChanged', true);				
 									common.ui.listview(listview).dataSource.read();	
 									$this.set("imageSourceUrl", "");
 									$this.set("imageDataUrl", "");
