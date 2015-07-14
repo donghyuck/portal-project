@@ -416,11 +416,8 @@
 					if( renderTo.data("modal").photo )
 						msg = common.ui.options.messages.title.photo;
 					else if (renderTo.data("modal").link) 
-						msg = common.ui.options.messages.title.link;	
-					
-					alert (renderTo.data("modal").photo ) ;
-												
-					renderTo.find("form input[name=title]").attr('placeholder', common.ui.options.messages.title.text );
+						msg = common.ui.options.messages.title.link;													
+					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});						
 				renderTo.on('hidden.bs.modal', function(e){					
 					renderTo.find("form label[for]").removeClass("state-error");					
