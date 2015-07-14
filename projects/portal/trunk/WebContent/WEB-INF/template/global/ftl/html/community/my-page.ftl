@@ -262,6 +262,7 @@
 								that.set("link", true);
 							}else if ( that.postType === "quote") {
 								that.set("quote", true);
+								that.set('editable', true);
 							}else{
 								that.set("text", true);	
 							}
