@@ -2436,7 +2436,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 
 /** ------------------------------------------------- */
-/** dialog switcher		                                   */
+/** dialog switcher		                              */
 /** ------------------------------------------------- */
 
 .dialog-switcher{
@@ -2581,6 +2581,26 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .my-page-post-form .image-layout.image-layout-updated {
 	background-color:rgba(255,45,85, .1);
 } 
+
+.my-page-post-form .quote {
+	display:inline-block;
+	vertical-align:top;	
+}
+
+.my-page-post-form .k-editor-inline {
+	margin:0;
+	padding:21px 21px 11px;
+	border-width:0;
+	box-shadow:none;
+	background:none;	
+}
+
+.my-page-post-form .k-editor-inline.k-state-active {
+	border-width:1px;
+	border-color:#bbb;
+	padding:20px 20px 10px;
+	background:none;
+}
 
 
 /*
