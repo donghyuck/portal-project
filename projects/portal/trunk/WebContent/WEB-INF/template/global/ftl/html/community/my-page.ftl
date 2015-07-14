@@ -1318,7 +1318,7 @@
 				<div class="modal-content my-page-post-form">
 					<div class="modal-header">
 						<div class="author">
-							<img data-bind="attr:{src:page.authorPhotoUrl}" src="/download/profile/andang?width=150&amp;height=150" style="margin-right:10px;">
+							<img data-bind="attr:{src:authorPhotoUrl}" style="margin-right:10px;">
 						</div>
 						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-post-modal-settings" area-expanded="false" aria-controls="my-post-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
