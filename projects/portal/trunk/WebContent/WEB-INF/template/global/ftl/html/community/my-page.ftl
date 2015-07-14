@@ -416,7 +416,9 @@
 					if( renderTo.data("modal").photo )
 						msg = common.ui.options.messages.title.photo;
 					else if (renderTo.data("modal").link) 
-						msg = common.ui.options.messages.title.link;													
+						msg = common.ui.options.messages.title.link;	
+					alert ( msg );
+					alert (renderTo.data("modal").photo );													
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});						
 				renderTo.on('hidden.bs.modal', function(e){					
