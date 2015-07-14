@@ -165,28 +165,30 @@
 					update : function(e){
 						var $this = this, 
 						btn = $(e.target);
-						$this._setProperties();						
-						if( $this.photo ){
-							var listview =  renderTo.find(".image-listview");							
-							if( $this.get('imageLayoutChanged')){
-								common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
-									$this.page.bodyContent.bodyText = html;								
+						$this._setProperties();	
+						if( $this.validate() ){					
+							if( $this.photo ){
+								var listview =  renderTo.find(".image-listview");							
+								if( $this.get('imageLayoutChanged')){
+									common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
+										$this.page.bodyContent.bodyText = html;								
+										btn.button('loading');			
+										$this._save(function(){									
+											btn.button('reset');
+										});														
+									});							
+								}else{
 									btn.button('loading');			
 									$this._save(function(){									
 										btn.button('reset');
-									});														
-								});							
-							}else{
+									});								
+								}
+							}else if ($this.quote){
 								btn.button('loading');			
 								$this._save(function(){									
 									btn.button('reset');
-								});								
+								});						
 							}
-						}else if ($this.quote){
-							btn.button('loading');			
-							$this._save(function(){									
-								btn.button('reset');
-							});						
 						}			
 						return false;
 					},	
