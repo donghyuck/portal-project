@@ -2590,14 +2590,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .my-page-post-form .k-editor-inline {
 	margin:0;
 	padding:21px 21px 11px;
-	border-width:0;
+	border:1px solid #e5e5e5;
+	border-radius:4px!important;
 	box-shadow:none;
 	background:none;	
 }
 
 .my-page-post-form .k-editor-inline.k-state-active {
-	border-width:1px;
-	border-color:#bbb;
+	border:#bbb solid 1px;
 	padding:20px 20px 10px;
 	background:none;
 }
