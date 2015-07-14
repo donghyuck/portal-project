@@ -266,12 +266,13 @@
 							that.set('editable', false);
 							if ( that.postType === "link") {
 								that.set("link", true);
-							if ( that.postType === "photo") {
+							}else if ( that.postType === "photo") {
 								that.set("followUp", true );
 							}else if ( that.postType === "quote") {
 								that.set("quote", true);
 							}else{
 								that.set("text", true);	
+								that.set("followUp", true );
 							}
 						}
 					},
