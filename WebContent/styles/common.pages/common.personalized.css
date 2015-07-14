@@ -2598,7 +2598,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .my-page-post-form .k-editor-inline.k-state-active {
 	border:#bbb solid 1px;
-	padding:20px 20px 10px;
+	/*padding:20px 20px 10px;*/
 	background:none;
 }
 
