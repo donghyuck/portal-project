@@ -1369,16 +1369,12 @@
 								</label>
 							</section>
 							<section data-bind="visible:quote">
-								<i class="fa fa-quote-left"></i>
-								<div class="quote" data-role="editor"
-								                   data-tools="['bold', 'italic', 'underline']">
-								<blockquote>
-								
-								fdsafdsa
-								
-								</blockquote>
+								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline']">
+									<blockquote>
+										<p>인용구</p>
+										<footer>출처</footer>
+									</blockquote>
 								</div>
-								<i class="fa fa-quote-right"></i>
 							</section>
 							<section data-bind="visible:photo">
 								<div class="row">
