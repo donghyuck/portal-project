@@ -271,6 +271,7 @@
 								that.set("followUp", true );
 							}else if ( that.postType === "quote") {
 								that.set("quote", true);
+								that.set('editable', true);			
 							}else{
 								that.set("text", true);	
 								that.set("followUp", true );
