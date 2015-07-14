@@ -1415,7 +1415,7 @@
 				<div class="container">
 					<span class="close close-white" data-dialog-close  aria-label="Close"></span>
 					<div class="row ">
-						<div class="col-md-3 col-sm-4 col-xs-6 content-boxes-v6 color-flat-sky">
+						<div class="col-md-3 col-sm-4 col-xs-6 content-boxes-v6 color-flat-lime">
 							<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="quote">
 								<i class="rounded-x fa fa-quote-left fa-3x"></i>
 							</button>
