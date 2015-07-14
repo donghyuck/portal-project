@@ -448,12 +448,13 @@
 						msg = common.ui.options.messages.title.photo;
 					}else if (renderTo.data("model").postType === "link") {
 						msg = common.ui.options.messages.title.link;					
-					}else if (renderTo.data("model").postType === "quote" ){
+					}
+					/*else if (renderTo.data("model").postType === "quote" ){
 						if(renderTo.data("model").page.pageId === 0)
 							renderTo.find('.quote.k-editor-inline').data('kendoEditor').value(common.ui.options.messages.bodyText.quote);	
 						else
 							renderTo.find('.quote.k-editor-inline').data('kendoEditor').value(renderTo.data("model").page.bodyContent.bodyText);					
-					}								
+					}								*/
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
 				renderTo.on('shown.bs.modal', function(e){			
@@ -1392,11 +1393,7 @@
 								</label>
 							</section>
 							<section data-bind="visible:quote">
-								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting']" >
-									<blockquote>
-										<p>인용구</p>
-										<footer>출처</footer>
-									</blockquote>
+								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting']"  >
 								</div>
 							</section>
 							<section data-bind="visible:photo">
