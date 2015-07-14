@@ -235,23 +235,38 @@
 							}							
 						});	
 					}, 
+					
 					setPostType : function(postType){
 						var that = this;
 						if(postType){
 							that.set('postType', postType);	
 						}else{
 							that.set('postType', "text");
-						}						
+						}				
+						that.set("photo", false);
+						that.set("text", false);
+						that.set("link", false);	
+												
 						if( that.page.pageId > 0 ){
 							that.set('editable', true);
 							if( that.postType === "photo"){
 								that.set("photo", true);
+							}else if ( that.postType === "link") {
+								that.set("link", true);
+							}else if ( that.postType === "quote") {
+								that.set("quote", true);
 							}else{
-								that.set("photo", false);
+								that.set("text", true);	
 							}
 						}else{
 							that.set('editable', false);
-							that.set("photo", false);
+							if ( that.postType === "link") {
+								that.set("link", true);
+							}else if ( that.postType === "quote") {
+								that.set("quote", true);
+							}else{
+								that.set("text", true);	
+							}
 						}
 					},
 					setSource: function(page, postType){
