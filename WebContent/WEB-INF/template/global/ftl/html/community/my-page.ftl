@@ -26,7 +26,7 @@
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
 			'<@spring.url "/js/jquery.masonry/masonry.pkgd.min.js"/>',		
 			'<@spring.url "/js/imagesloaded/imagesloaded.pkgd.min.js"/>',		
-			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',		
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
 			'<@spring.url "/js/bootstrap/3.3.5/bootstrap.min.js"/>',			
@@ -1389,7 +1389,7 @@
 								</label>
 							</section>
 							<section data-bind="visible:quote">
-								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting', 'createLink', 'unlink', 'insertHtml', 'viewHtml' ]" data-bind="value:page.bodyContent.bodyText" >
+								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting', 'createLink', 'unlink']" data-bind="value:page.bodyContent.bodyText" >
 								</div>
 							</section>
 							<section data-bind="visible:photo">
