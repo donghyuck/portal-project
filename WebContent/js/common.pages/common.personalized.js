@@ -147,7 +147,9 @@
 		DialogSwitcher : DialogSwitcher
 	});
 	
-	common.ui.personalized.options.messages = extend( common.ui.personalized.options.messages, {			
+	
+	common.ui.options = common.ui.options || {};
+	common.ui.options.messages = extend( common.ui.options.messages, {			
 		title : {
 			image : "무엇에 대한 사진인가요?",
 			text : "무엇에 대한 글인가요?",
