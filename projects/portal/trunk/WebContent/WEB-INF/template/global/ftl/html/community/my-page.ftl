@@ -1398,8 +1398,26 @@
 							<section>
 							
 							<input type="checkbox" class="js-switch" checked />
-					
-							
+
+
+								<!-- Nav tabs -->																	
+								<ul class="nav nav-tabs" role="tablist" i="my-page-post-tabs">
+									<li role="presentation" class="m-l-sm active"><a href="#my-page-post-tabs-html" aria-controls="my-page-post-tabs-html" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+									<li role="presentation"><a href="#my-page-post-tabs-code" aria-controls="my-page-post-tabs-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+								</ul>	
+								<!-- Tab panes -->
+								<div class="tab-content no-padding">
+									<div role="tabpanel" class="tab-pane active" id="my-page-post-tabs-html">
+										<textarea id="my-page-post-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
+									</div>
+									<div role="tabpanel" class="tab-pane" id="my-page-post-tabs-code">
+										<div class="page-editor-options">
+											<label class="toggle">
+												<input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label>
+										</div>
+										<div id="my-page-post-editor-code-body"></div>
+									</div>
+								</div>							
 							</section> 
 							<!-- photo -->
 							<section data-bind="visible:photo">
