@@ -1425,7 +1425,7 @@
 											<label class="toggle">
 												<input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label>
 										</div>
-										<div id="my-page-post-editor-code-body"></div>
+										<div id="my-page-post-editor-code-body" class="m-t-xs"></div>
 									</div>
 								</div>							
 							</section> 
