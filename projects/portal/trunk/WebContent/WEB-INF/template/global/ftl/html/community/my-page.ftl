@@ -1796,7 +1796,7 @@
 		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
 		#if (properties.postType && properties.postType === 'quote' ){#
-		#= bodyContent.bodyText#
+		#: bodyContent.bodyText#
 		#}#
 		#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
 			<div class="hover-mask"></div>
