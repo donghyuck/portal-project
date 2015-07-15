@@ -2443,6 +2443,12 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .ibox-title.cover blockquote p {
 	font-size : 1em;	
 }
+
+.ibox-title.cover img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 /** ------------------------------------------------- */
 /** dialog switcher		                              */
 /** ------------------------------------------------- */
