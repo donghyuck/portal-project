@@ -71,8 +71,8 @@ function createEditor( renderToString, bodyEditor, options ){
 
 var DEFAULT_HTML_EDITOR_STYLESHEETS = [
  	"/styles/fonts/nanumgothic.css",
-	"/styles/bootstrap/3.3.4/bootstrap.min.css",
-	"/styles/fonts/nanumgothic.css",
+	"/styles/bootstrap/3.3.5/bootstrap.min.css",
+	"/styles/common/editor.css",
 	"/styles/common.themes/unify/style.css",
 	"/styles/common/common.ui.css"
 ];
