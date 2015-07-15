@@ -1087,7 +1087,7 @@
 		
 		.page-editor-options {
 			position : absolute;
-			top: 182px;
+			top: 10px;
 			right: 55px;
 		}
 		
