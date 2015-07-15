@@ -118,6 +118,7 @@
 					imageLayoutChanged : false,
 					editable : false,
 					followUp : false,
+					fullEditorMode : false,
 					visible : true,
 					useWrapMode : false,
 					keypress : function(e){
@@ -239,7 +240,6 @@
 							}							
 						});	
 					}, 
-					
 					setPostType : function(postType){
 						var that = this;
 						if(postType){
@@ -1388,11 +1388,11 @@
 									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title, events:{keypress: keypress}">
 								</label>
 							</section>
-							<section data-bind="visible:quote">
+							<section data-bind="visible:quote, invisible:fullEditorMode">
 								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting', 'createLink', 'unlink']" data-bind="value:page.bodyContent.bodyText" >
 								</div>
 							</section>
-							<section data-bind="visible:photo">
+							<section data-bind="visible:photo,invisible:fullEditorMode">
 								<div class="row">
 									<div class="col-sm-6">										
 										<div class="image-listview"></div>
