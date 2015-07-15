@@ -224,10 +224,15 @@
 							contentType : "application/json",
 							success : function(response){
 								if( response.pageId ){
-									if( $this.postType === 'photo' && !$this.get('imageLayoutChanged') && $this.page.pageId == 0 ){
-										//renderTo.find('.collapse').collapse('hide');
-										$this.set('imageLayoutChanged', true);				
-										$this.setSource( new common.ui.data.Page(response) );
+									if( $this.postType === 'photo'){
+										if(!$this.get('imageLayoutChanged') && $this.page.pageId == 0){
+											$this.set('imageLayoutChanged', true);				
+											$this.setSource( new common.ui.data.Page(response) );
+										}
+									}else if ($this.postType === 'text'){
+										if( $this.page.pageId == 0 ){
+											$this.setSource( new common.ui.data.Page(response) );
+										}
 									}else{																
 										common.ui.listview($("#my-page-listview")).refresh();
 										renderTo.modal('hide');
