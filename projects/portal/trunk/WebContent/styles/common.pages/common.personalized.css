@@ -2608,6 +2608,10 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	border:0;
 }
 
+.my-page-post-form .tab-pane table.k-editor {
+	border : 0;
+	height : 500px;
+}
 
 
 /*
