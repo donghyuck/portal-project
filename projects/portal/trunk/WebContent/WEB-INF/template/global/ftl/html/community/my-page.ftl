@@ -1405,7 +1405,7 @@
 								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting', 'createLink', 'unlink']" data-bind="value:page.bodyContent.bodyText" >
 								</div>
 							</section>
-							<section>
+							<section data-bind="visible:text">
 								<!-- Nav tabs -->																	
 								<ul class="nav nav-pills" role="tablist" id="my-page-post-tabs">
 									<li role="presentation" class="m-l-sm active"><a href="#my-page-post-tabs-html" aria-controls="my-page-post-tabs-html" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
