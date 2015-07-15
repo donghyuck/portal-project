@@ -1088,7 +1088,7 @@
 		.page-editor-options {
 			position : absolute;
 			top: 10px;
-			right: 55px;
+			right: 10px;
 		}
 		
 		.ace_editor{
