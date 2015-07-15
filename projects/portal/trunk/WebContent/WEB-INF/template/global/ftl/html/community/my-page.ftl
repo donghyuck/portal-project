@@ -672,8 +672,8 @@
 						createMyPageViewer(item);
 						break;		
 						case 'edit':						
-						//createPagePostModal(item);	
-						createMyPageViewer(item, true);
+						createPagePostModal(item);	
+						//createMyPageViewer(item, true);
 						break;	
 						case 'delete':
 						deletePage(item, $this );					
