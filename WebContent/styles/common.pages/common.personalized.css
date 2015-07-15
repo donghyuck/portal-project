@@ -2613,6 +2613,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	height : 500px;
 }
 
+.my-page-post-form .tab-pane .ace_editor {
+	top-padding:6px;
+}
 
 /*
 .simple-post-compose {
