@@ -121,6 +121,11 @@
 					followUp : false,
 					visible : true,
 					useWrapMode : false,
+					useWrap : function(e){
+						var $this = this;
+						if( $this.get('editable') )
+							ace.edit("my-page-code-editor").getSession().setUseWrapMode($this.useWrapMode);
+					},
 					keypress : function(e){
 						var $this = this, 
 						input = $(e.target);
