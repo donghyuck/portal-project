@@ -234,7 +234,7 @@
 											$this.setSource( new common.ui.data.Page(response) );
 										}
 									}else{																
-										common.ui.listview($("#my-page-listview")).refresh();
+										common.ui.listview($("#my-page-listview")).dataSource.read();
 										renderTo.modal('hide');
 									}		
 								}						
@@ -1401,6 +1401,7 @@
 						<fieldset>
 							<section>
 								<label class="label">주제 <span data-bind="text:postType"></span></label>
+								마지막 업데이트 일자 : <span data-bind="{ text: page.formattedModifiedDate }"></span>
 								<label class="input" for="title">
 									<i class="icon-append fa fa-asterisk"></i>
 									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title, events:{keypress: keypress}">
