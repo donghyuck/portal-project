@@ -467,6 +467,16 @@
 				
 				//var switchery = new Switchery($('.js-switch'), { size: 'small' });
 				
+				var editorTo =  $("#my-page-post-editor" );
+				createEditor( "my-page" , editorTo, { 
+					modal : false , 
+					appendTo: $("#my-page-post-editor-code-body"), 
+					tab: $("#my-page-post-tabs"), 
+					pageSize : 15,
+					objectType : 31,
+					useWrapMode : true 
+				});	
+				
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );
 			}
