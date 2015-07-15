@@ -125,7 +125,7 @@
 		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
 				<div class='modal-header'>
-					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'></button>
 					<h5 class='modal-title'>#if( title ){# #: title # #} else { # 이미지 삽입 #}#</h5>
 				</div>
 				<div class="modal-body no-padding">		
