@@ -2617,6 +2617,10 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	top-padding:6px;
 }
 
+.my-page-post-form .sky-form section {
+	positon:relative;
+	margin-bottom:10px;
+}
 
 /* Nav pills
 ---------------------------------- */
