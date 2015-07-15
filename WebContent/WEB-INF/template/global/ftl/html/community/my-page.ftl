@@ -273,7 +273,7 @@
 								that.set("quote", true);
 								that.set('editable', true);			
 							}else{
-								that.set("text", true);	
+								that.set("text", false);	
 								that.set("followUp", true );
 							}
 						}
