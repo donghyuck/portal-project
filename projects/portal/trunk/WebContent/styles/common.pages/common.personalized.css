@@ -2438,10 +2438,10 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .ibox-title.cover blockquote { 
 	margin :5px;
 	border-left: 3px solid #34aadc;
-	font-size : .9em;
+	font-size : 1em;
 }
 .ibox-title.cover blockquote p {
-	font-size : .9em;	
+	font-size : 1em;	
 }
 /** ------------------------------------------------- */
 /** dialog switcher		                              */
