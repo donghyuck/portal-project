@@ -31,7 +31,8 @@
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
 			'<@spring.url "/js/bootstrap/3.3.5/bootstrap.min.js"/>',			
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
-			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>',			
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>',	
+			'<@spring.url "/js/common.plugins/switchery.min.js"/>',			
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>',
@@ -1391,6 +1392,13 @@
 								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting', 'createLink', 'unlink']" data-bind="value:page.bodyContent.bodyText" >
 								</div>
 							</section>
+							<section>
+							
+							<input type="checkbox" class="js-switch" checked />
+					
+							
+							</section> 
+							<!-- photo -->
 							<section data-bind="visible:photo">
 								<div class="row">
 									<div class="col-sm-6">										
@@ -1448,6 +1456,7 @@
 									</div>
 								</div>	
 							</section>
+							<!-- /.photo -->
 						</fieldset>
 					</form>
 					<div class="modal-footer">
