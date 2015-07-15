@@ -1401,7 +1401,7 @@
 						<fieldset>
 							<section>
 								<!--<label class="label">주제 <span data-bind="text:postType"></span></label>-->
-								<p class="text-right text-danger" data-bind="visible:editable">마지막 업데이트 일자 : <span data-bind="{ text: page.formattedModifiedDate }"></span></p>
+								<p class="text-right text-danger small" data-bind="visible:editable">마지막 업데이트 일자 : <span data-bind="{ text: page.formattedModifiedDate }"></span></p>
 								<label class="input" for="title">
 									<i class="icon-append fa fa-asterisk"></i>
 									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title, events:{keypress: keypress}">
