@@ -1113,8 +1113,9 @@
 					#if ( tagsString.length > 0 ){#
 						<p class="page-description" ><i class="fa fa-tags"></i> #: tagsString #</p>
 					#}#
+					#if ( summary != null && summary.length > 0 ){#
 						<p class="page-description">#: summary #</p>
-
+					#}#
 						<ul class="list-inline grid-boxes-news">
 								<li><i class="fa fa-eye"> </i> <span class="view-page-count">#: viewCount #</span></li>
 								<li>|</li>
