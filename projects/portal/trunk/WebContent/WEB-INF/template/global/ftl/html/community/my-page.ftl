@@ -1794,7 +1794,7 @@
 		<div class="ibox-title cover">
 		#if (properties.postType && properties.postType === 'quote' ){#
 		#= bodyContent.bodyText #
-		#}else if (bodyContent.imageCount > 0) #
+		#}else if (bodyContent.imageCount > 0){ #
 		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
 		#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
