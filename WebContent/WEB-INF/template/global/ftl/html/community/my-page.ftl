@@ -465,7 +465,7 @@
 					renderTo.find('.collapse').collapse('hide');
 				});				
 				
-				var switchery = new Switchery($('.js-switch'), { size: 'small' });
+				//var switchery = new Switchery($('.js-switch'), { size: 'small' });
 				
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );
