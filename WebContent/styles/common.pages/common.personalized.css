@@ -2439,6 +2439,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	margin :5px;
 	border-left: 3px solid #34aadc;
 	font-size : 1em;
+	line-height: 1.1em;
 }
 .ibox-title.cover blockquote p {
 	font-size : 1em;	
@@ -2479,6 +2480,10 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
  	font-size: 12px;
   	line-height: 15px;
   	word-wrap: break-word;
+}
+
+.ibox.summary .ibox-title.cover blockquote, .ibox.summary .ibox-title.cover p {
+	color:#8e8e93;
 }
 
 	
