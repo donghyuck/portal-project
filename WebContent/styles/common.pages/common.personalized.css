@@ -2444,11 +2444,18 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	font-size : 1em;	
 }
 
-.ibox-title.cover img{
+.ibox-title.cover img {
   display: block;
   max-width: 100%;
   height: auto;
 }
+
+.ibox.summary .page-credits
+{
+	border-top: 1px dashed 	#e7eaec;
+}
+
+	
 /** ------------------------------------------------- */
 /** dialog switcher		                              */
 /** ------------------------------------------------- */
