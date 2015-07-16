@@ -1817,7 +1817,7 @@
 			<p class="page-tags" ><i class="fa fa-tags"></i> #: tagsString #</p>
 			#}#
 			#if (summary!= null) {#
-			<p>#: summary #</p>
+			<p class="page-description">#: summary #</p>
 			#}#
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="text-right">
