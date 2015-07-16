@@ -2455,6 +2455,11 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	border-top: 1px dashed 	#e7eaec;
 }
 
+.ibox.summary .page-meta {
+	margin-top:0px;
+}
+
+
 	
 /** ------------------------------------------------- */
 /** dialog switcher		                              */
