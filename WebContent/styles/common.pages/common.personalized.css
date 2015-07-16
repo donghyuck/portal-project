@@ -2468,6 +2468,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	color:#8e8e93;
 }
 
+.ibox.summary .page-meta .page-tags {
+	color:#ccc;
+	margin: 10px 0;
+	margin-top:0;
+ 	font-size: 12px;
+  	line-height: 15px;
+  	word-wrap: break-word;
+}
 
 	
 /** ------------------------------------------------- */
