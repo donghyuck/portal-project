@@ -44,7 +44,7 @@
 				
 				common.ui.setup({
 					features:{
-						wallpaper : false,
+						wallpaper : true,
 						lightbox : true,
 						spmenu : false,
 						morphing : false,
