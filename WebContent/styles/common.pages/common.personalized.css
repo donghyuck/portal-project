@@ -2463,6 +2463,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	padding : 5px 10px!important;
 }
 
+.ibox.summary .ibox-content h2 {
+	font-size : .9em;
+}
 .ibox.summary .page-meta .page-description{
 	margin-top:0px;
 	color:#8e8e93;
