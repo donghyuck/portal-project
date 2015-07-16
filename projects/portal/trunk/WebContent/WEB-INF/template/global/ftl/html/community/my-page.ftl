@@ -476,7 +476,7 @@
 					tab: $("#my-page-post-tabs"), 
 					pageSize : 15,
 					objectType : 31,
-					useWrapMode : true 
+					useWrapMode : observable.useWrapMode 
 				});	
 				
 				kendo.bind(renderTo, observable);
