@@ -1814,7 +1814,7 @@
 				<li><i class="fa fa-comment-o"></i> #: commentCount#</li>				
 			</ul>        
 			#if ( tagsString.length > 0 ){#            
-			<p><i class="fa fa-tags"></i> #: tagsString #</p>
+			<p class="page-tags" ><i class="fa fa-tags"></i> #: tagsString #</p>
 			#}#
 			#if (summary!= null) {#
 			<p>#: summary #</p>
