@@ -1110,7 +1110,7 @@
 				#}#
 					<div class="page-meta no-margin-hr">
 					#if ( tagsString.length > 0 ){#
-						<p class="page-description" ><i class="fa fa-tags"></i> #: tagsString #</p>
+						<p class="page-tags" ><i class="fa fa-tags"></i> #: tagsString #</p>
 					#}#
 					#if ( summary != null && summary.length > 0 ){#
 						<p class="page-description">#: summary #</p>
