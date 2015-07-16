@@ -2464,7 +2464,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 
 .ibox.summary .ibox-content h2 {
-	font-size : 1.1em;
+  font-size: 1.3em;
+  line-height: 1.4em;	
 }
 .ibox.summary .page-meta .page-description{
 	margin-top:0px;
