@@ -2463,6 +2463,10 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	padding : 5px 10px!important;
 }
 
+.ibox.summary .page-meta .page-description{
+	margin-top:0px;
+}
+
 
 	
 /** ------------------------------------------------- */
