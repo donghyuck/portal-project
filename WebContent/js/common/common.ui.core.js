@@ -100,7 +100,7 @@
 		}
 		return {url: url, params: obj};	
 	}
-			
+	
 	extend(common, {	
 		ui: common.ui || {},
 		random : common.random || random,
@@ -973,6 +973,32 @@
 		handleAjaxError(e.xhr);
 	}
 
+	
+	function enableStackingBootstrapModal(renderTo){		
+		renderTo.on('hidden.bs.modal', function( event ) {
+            $(this).removeClass( 'fv-modal-stack' );
+            $('body').data( 'fv_open_modals', $('body').data( 'fv_open_modals' ) - 1 );
+            });
+		
+		renderTo.on( 'shown.bs.modal', function ( event ) {            
+			// keep track of the number of open modals            
+            if ( typeof( $('body').data( 'fv_open_modals' ) ) == 'undefined' )
+            {
+              $('body').data( 'fv_open_modals', 0 );
+            } 
+            // if the z-index of this modal has been set, ignore.
+            if ( $(this).hasClass( 'fv-modal-stack' ) )
+            {
+                 return;
+            }            
+            $(this).addClass( 'fv-modal-stack' );
+            $('body').data( 'fv_open_modals', $('body').data( 'fv_open_modals' ) + 1 );
+            $(this).css('z-index', 1040 + (10 * $('body').data( 'fv_open_modals' )));
+            $( '.modal-backdrop' ).not( '.fv-modal-stack' ).css( 'z-index', 1039 + (10 * $('body').data( 'fv_open_modals' )));
+            $( '.modal-backdrop' ).not( 'fv-modal-stack' ).addClass( 'fv-modal-stack' ); 
+		});
+	}
+	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		error : error,
@@ -1006,6 +1032,9 @@
 		backstretch : common.ui.backstretch || backstretch,
 		data : common.ui.data || {},
 		notification : common.ui.notification || notification,
+		bootstrap : {
+			enableStackingModal: common.ui.bootstrap.enableStackingModal || enableStackingBootstrapModal
+		},
 		connect : common.ui.connect || {}
 	});
 	
@@ -2452,16 +2481,19 @@
 							}
 					}
 				});	
-
-					my_insert_options_up.click(function(e){
-						my_insert_options.collapse('hide');
-					});
-					my_insert_options.on('show.bs.collapse', function () {
-					});
+				
 					
-					my_insert_options.on('hide.bs.collapse', function () {
-					});
+				my_insert_options_up.click(function(e){
+					my_insert_options.collapse('hide');
+				});
 					
+				my_insert_options.on('show.bs.collapse', function () {
+						
+				});					
+				my_insert_options.on('hide.bs.collapse', function () {
+					
+				});
+				enableStackingModal(that._modal())
 			},
 			_activePane : function() {
 				var that = this;
