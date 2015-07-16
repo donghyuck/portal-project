@@ -2459,8 +2459,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	margin-top:0px;
 }
 
-.ibox.summary .ibox-content {
-	padding : 5px!important;
+.ibox.summary .ibox-content:first {
+	padding : 5px 10px!important;
 }
 
 
