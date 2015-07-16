@@ -2493,7 +2493,7 @@
 				my_insert_options.on('hide.bs.collapse', function () {
 					
 				});
-				enableStackingModal(that._modal())
+				common.ui.bootstrap.enableStackingModal(that._modal())
 			},
 			_activePane : function() {
 				var that = this;
