@@ -1101,7 +1101,7 @@
 			#if( bodyContent.imageCount > 0 ){#
 			<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
-			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: kendo.toString( modifiedDate , "D") # }else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
+			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: kendo.toString( modifiedDate , "D")# # }else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
 				<div class="hover-mask"></div>
 			</div>			
 			<div class="ibox-content">
