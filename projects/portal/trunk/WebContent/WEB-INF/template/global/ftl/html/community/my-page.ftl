@@ -1804,6 +1804,7 @@
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
+			<div class="page-meta no-margin-hr">
 			<ul class="list-inline">
 				<li>#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 				<li>|</li>
@@ -1819,6 +1820,7 @@
 			#if (summary!= null) {#
 			<p class="page-description">#: summary #</p>
 			#}#
+			</div>
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="text-right">
 					<div class="btn-group">				
