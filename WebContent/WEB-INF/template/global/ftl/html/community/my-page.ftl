@@ -447,7 +447,7 @@
 						return false;						
 					}
 				});				
-
+				common.ui.bootstrap.enableStackingModal(renderTo);
 				renderTo.on('show.bs.modal', function(e){		
 					var msg = common.ui.options.messages.title.text ;
 					if( renderTo.data("model").postType === "photo" ){
@@ -455,12 +455,6 @@
 					}else if (renderTo.data("model").postType === "link") {
 						msg = common.ui.options.messages.title.link;					
 					}
-					/*else if (renderTo.data("model").postType === "quote" ){
-						if(renderTo.data("model").page.pageId === 0)
-							renderTo.find('.quote.k-editor-inline').data('kendoEditor').value(common.ui.options.messages.bodyText.quote);	
-						else
-							renderTo.find('.quote.k-editor-inline').data('kendoEditor').value(renderTo.data("model").page.bodyContent.bodyText);					
-					}								*/
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
 				renderTo.on('shown.bs.modal', function(e){			
@@ -469,10 +463,10 @@
 						switcher.close();
 					}
 				});			
-				renderTo.on('hidden.bs.modal', function(e){					
+				renderTo.on('hide.bs.modal', function(e){					
 					renderTo.find("form label[for]").removeClass("state-error");					
 					renderTo.find("form em[for]").remove();					
-					renderTo.find('.collapse').collapse('hide');
+					//renderTo.find('.collapse').collapse('hide');
 				});				
 				
 				//var switchery = new Switchery($('.js-switch'), { size: 'small' });
