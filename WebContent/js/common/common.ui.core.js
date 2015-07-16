@@ -1033,7 +1033,7 @@
 		data : common.ui.data || {},
 		notification : common.ui.notification || notification,
 		bootstrap : {
-			enableStackingModal: common.ui.bootstrap.enableStackingModal || enableStackingBootstrapModal
+			enableStackingModal: enableStackingBootstrapModal
 		},
 		connect : common.ui.connect || {}
 	});
