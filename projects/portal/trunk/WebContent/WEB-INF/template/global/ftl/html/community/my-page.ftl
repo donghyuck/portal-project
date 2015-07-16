@@ -447,7 +447,7 @@
 						return false;						
 					}
 				});				
-				common.ui.bootstrap.enableStackingModal(renderTo);
+				
 				renderTo.on('show.bs.modal', function(e){		
 					var msg = common.ui.options.messages.title.text ;
 					if( renderTo.data("model").postType === "photo" ){
@@ -467,10 +467,8 @@
 					renderTo.find("form label[for]").removeClass("state-error");					
 					renderTo.find("form em[for]").remove();					
 					//renderTo.find('.collapse').collapse('hide');
-				});				
-				
-				//var switchery = new Switchery($('.js-switch'), { size: 'small' });
-				
+				});		
+				common.ui.bootstrap.enableStackingModal(renderTo);		
 				var editorTo =  $("#my-page-post-editor" );
 				createEditor( "my-page" , editorTo, { 
 					modal : false , 
