@@ -190,7 +190,7 @@
 										btn.button('reset');
 									});								
 								}
-							}else if ($this.quote){
+							}else{
 								btn.button('loading');											
 								$this._save(function(){									
 									btn.button('reset');
@@ -1093,7 +1093,7 @@
 					objectType : 31,
 					useWrapMode : observable.useWrapMode 
 				});	
-			}			
+			}					
 			
 			var dialogFx = common.ui.dialog( renderTo );	
 			if( !dialogFx.isOpen ){						
