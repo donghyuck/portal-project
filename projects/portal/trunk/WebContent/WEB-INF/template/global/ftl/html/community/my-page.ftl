@@ -450,7 +450,8 @@
 						}
 						return false;						
 					}
-				});				
+				});			
+					
 				renderTo.on('show.bs.modal', function(e){		
 					var msg = common.ui.options.messages.title.text ;
 					if( renderTo.data("model").postType === "photo" ){
@@ -460,17 +461,26 @@
 					}
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
+				/**
 				renderTo.on('shown.bs.modal', function(e){			
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher && switcher.isOpen){
 						switcher.close();
 					}
 				});			
+				**/
 				renderTo.on('hide.bs.modal', function(e){					
 					renderTo.find("form label[for]").removeClass("state-error");					
 					renderTo.find("form em[for]").remove();	
 				});		
-				common.ui.bootstrap.enableStackingModal(renderTo);		
+				
+				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
+					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
+					if(switcher && switcher.isOpen){
+						switcher.close();
+					}
+				} } );	
+					
 				var editorTo =  $("#my-page-post-editor" );
 				createEditor( "my-page" , editorTo, { 
 					modal : false , 
