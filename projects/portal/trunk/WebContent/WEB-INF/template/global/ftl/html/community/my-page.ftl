@@ -451,7 +451,6 @@
 						return false;						
 					}
 				});				
-				
 				renderTo.on('show.bs.modal', function(e){		
 					var msg = common.ui.options.messages.title.text ;
 					if( renderTo.data("model").postType === "photo" ){
@@ -486,7 +485,6 @@
 			}
 			renderTo.data("model").setSource(page, postType);
 			renderTo.modal('show');
-			
 		}		
 		<!-- ============================== -->
 		<!-- Pool							-->
@@ -637,7 +635,7 @@
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() , full:false}
 							}
 						},
 						requestStart: function(e){				
