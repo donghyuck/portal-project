@@ -494,7 +494,7 @@
 						renderTo.data("model").setSource(new common.ui.data.Page(response), postType);
 						renderTo.modal('show');	
 					},
-					always: function(e){
+					complete: function(e){
 						kendo.ui.progress(targetEle, false);	
 					}	
 				} );
