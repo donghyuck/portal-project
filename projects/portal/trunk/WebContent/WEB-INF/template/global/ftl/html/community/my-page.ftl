@@ -486,8 +486,21 @@
 			
 			if( page.get("pageId") > 0 && !common.ui.defined( page.bodyContent.bodyText) ){
 				console.log("now get remote data.");
-			
-			
+				var targetEle = $('.item[data-object-id=' + source + ']');					
+				kendo.ui.progress(targetEle, true);	
+				common.ui.ajax( '<@spring.url "/data/pages/get.json?output=json"/>', {
+					data : { pageId : page.get("pageId") },
+					success: function(response){ 
+						renderTo.data("model").setSource(new common.ui.data.Page(response), postType);
+						renderTo.modal('show');	
+					},
+					always: function(e){
+						kendo.ui.progress(targetEle, false);	
+					}	
+				} );
+			}else{
+				renderTo.data("model").setSource(page, postType);
+				renderTo.modal('show');			
 			}
 			/**
 			if( !dialogFx.isOpen ){
@@ -511,8 +524,7 @@
 				}
 			}						
 			**/
-			renderTo.data("model").setSource(page, postType);
-			renderTo.modal('show');
+
 			
 			
 		}		
