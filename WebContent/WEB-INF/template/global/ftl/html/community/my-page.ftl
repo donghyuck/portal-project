@@ -485,7 +485,7 @@
 			}
 			
 			if( page.get("pageId") > 0 && !common.ui.defined( page.bodyContent.bodyText) ){
-				colsole.log("now get remote data.");
+				console.log("now get remote data.");
 			
 			
 			}
