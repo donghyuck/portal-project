@@ -486,7 +486,7 @@
 			
 			if( page.get("pageId") > 0 && !common.ui.defined( page.bodyContent.bodyText) ){
 				console.log("now get remote data.");
-				var targetEle = $('.item[data-object-id=' + source + ']');					
+				var targetEle = $('.item[data-object-id=' + page.get("pageId") + ']');					
 				kendo.ui.progress(targetEle, true);	
 				common.ui.ajax( '<@spring.url "/data/pages/get.json?output=json"/>', {
 					data : { pageId : page.get("pageId") },
