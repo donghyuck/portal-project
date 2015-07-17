@@ -461,14 +461,7 @@
 					}
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
-				/**
-				renderTo.on('shown.bs.modal', function(e){			
-					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
-					if(switcher && switcher.isOpen){
-						switcher.close();
-					}
-				});			
-				**/
+
 				renderTo.on('hide.bs.modal', function(e){					
 					renderTo.find("form label[for]").removeClass("state-error");					
 					renderTo.find("form em[for]").remove();	
@@ -512,31 +505,6 @@
 				renderTo.data("model").setSource(page, postType);
 				renderTo.modal('show');			
 			}
-			/**
-			if( !dialogFx.isOpen ){
-				if( typeof source == 'number' ){					
-					var targetEle = $('.item[data-object-id=' + source + ']');					
-					kendo.ui.progress(targetEle, true);	
-					common.ui.ajax( 
-					'<@spring.url "/data/pages/get.json?output=json"/>', {
-						data : { pageId : source , count: 1 },
-						success: function(response){ 
-							renderTo.data("model").setPage( new common.ui.data.Page(response) );
-							renderTo.data("model").set( "editable" , isEditable) ;	
-							kendo.ui.progress(targetEle, false);	
-							dialogFx.open();
-						}	
-					} );
-				}else if ( typeof source == 'object' ){
-					renderTo.data("model").setPage(source);
-					renderTo.data("model").set( "editable" , isEditable) ;	
-					dialogFx.open();
-				}
-			}						
-			**/
-
-			
-			
 		}		
 		<!-- ============================== -->
 		<!-- Pool							-->
