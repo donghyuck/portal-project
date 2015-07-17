@@ -483,7 +483,7 @@
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );
 			}
-			alert( 
+			
 			if( source.get("pageId") > 0 && !common.ui.defined( source.bodyContent.bodyText) ){
 				colsole.log("now get remote data.");
 			
