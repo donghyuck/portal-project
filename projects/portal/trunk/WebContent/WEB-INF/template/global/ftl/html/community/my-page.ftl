@@ -484,7 +484,7 @@
 				renderTo.data("model", observable );
 			}
 			
-			if( source.get("pageId") > 0 && !common.ui.defined( source.bodyContent.bodyText) ){
+			if( page.get("pageId") > 0 && !common.ui.defined( page.bodyContent.bodyText) ){
 				colsole.log("now get remote data.");
 			
 			
