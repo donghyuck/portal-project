@@ -483,8 +483,38 @@
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );
 			}
+			alert( 
+			if( source.get("pageId") > 0 && !common.ui.defined( source.bodyContent.bodyText) ){
+				colsole.log("now get remote data.");
+			
+			
+			}
+			/**
+			if( !dialogFx.isOpen ){
+				if( typeof source == 'number' ){					
+					var targetEle = $('.item[data-object-id=' + source + ']');					
+					kendo.ui.progress(targetEle, true);	
+					common.ui.ajax( 
+					'<@spring.url "/data/pages/get.json?output=json"/>', {
+						data : { pageId : source , count: 1 },
+						success: function(response){ 
+							renderTo.data("model").setPage( new common.ui.data.Page(response) );
+							renderTo.data("model").set( "editable" , isEditable) ;	
+							kendo.ui.progress(targetEle, false);	
+							dialogFx.open();
+						}	
+					} );
+				}else if ( typeof source == 'object' ){
+					renderTo.data("model").setPage(source);
+					renderTo.data("model").set( "editable" , isEditable) ;	
+					dialogFx.open();
+				}
+			}						
+			**/
 			renderTo.data("model").setSource(page, postType);
 			renderTo.modal('show');
+			
+			
 		}		
 		<!-- ============================== -->
 		<!-- Pool							-->
