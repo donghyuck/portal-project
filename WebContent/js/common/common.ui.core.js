@@ -974,13 +974,20 @@
 	}
 
 	
-	function enableStackingBootstrapModal(renderTo){		
+	function enableStackingBootstrapModal(renderTo, handlers){		
 		renderTo.on('hidden.bs.modal', function( event ) {
+			if( handlers && isFunction(handlers['hidden.bs.modal'] ) ){
+            	handlers['hidden.bs.modal']();
+            }
+			
             $(this).removeClass( 'fv-modal-stack' );
             $('body').data( 'fv_open_modals', $('body').data( 'fv_open_modals' ) - 1 );
             });
 		
-		renderTo.on( 'shown.bs.modal', function ( event ) {            
+		renderTo.on( 'shown.bs.modal', function ( event ) {			
+            if( handlers && isFunction(handlers['shown.bs.modal'] ) ){
+            	handlers['shown.bs.modal']();
+            }
 			// keep track of the number of open modals            
             if ( typeof( $('body').data( 'fv_open_modals' ) ) == 'undefined' )
             {
