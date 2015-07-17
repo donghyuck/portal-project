@@ -292,6 +292,10 @@
 						var that = this;
 						page.copy(that.page);					
 						that.setPostType(that.page.properties.postType||postType); 
+						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
+							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
+						}
+						
 						if(that.page.pageId > 0 ){
 							that.set("authorPhotoUrl", that.page.authorPhotoUrl() );							
 						}else{
@@ -465,8 +469,7 @@
 				});			
 				renderTo.on('hide.bs.modal', function(e){					
 					renderTo.find("form label[for]").removeClass("state-error");					
-					renderTo.find("form em[for]").remove();					
-					//renderTo.find('.collapse').collapse('hide');
+					renderTo.find("form em[for]").remove();	
 				});		
 				common.ui.bootstrap.enableStackingModal(renderTo);		
 				var editorTo =  $("#my-page-post-editor" );
@@ -477,8 +480,7 @@
 					pageSize : 15,
 					objectType : 31,
 					useWrapMode : observable.useWrapMode 
-				});	
-				
+				});				
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );
 			}
