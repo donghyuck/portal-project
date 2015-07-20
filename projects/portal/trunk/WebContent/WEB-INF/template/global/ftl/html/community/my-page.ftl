@@ -18,6 +18,7 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/common/awesome-bootstrap-checkbox.css"/>',
+			
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
 			'css!<@spring.url "/styles/codrops/codrops.dialog-sally.css"/>',					
@@ -1624,7 +1625,7 @@
 		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">
-				<div class="container">
+				
 					<div class="row">
 						<div class="col-sm-12">						
 							<div class="ibox float-e-margins">
@@ -1798,7 +1799,7 @@
 							</div>
 						</div>
 					</div>					
-				</div>				
+						
 			</div>
 		</div>	
 	<!-- START TEMPLATE -->				
