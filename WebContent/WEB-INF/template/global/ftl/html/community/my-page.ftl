@@ -1454,8 +1454,8 @@
 									<li>|</li>
 									<li><span>댓글:</span> <span data-bind="{ text: page.commentCount }"></span></li>
 									<li>|</li>																								
-									<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
-									<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+									<li>작성일: <span data-bind="{ text: page.formattedCreationDate }"></span></li>
+									<li>수정일: <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
 								</ul>  
 							</div>
 							<div class="separator-2"></div>
