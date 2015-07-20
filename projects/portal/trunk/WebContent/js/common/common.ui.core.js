@@ -479,7 +479,6 @@
 			
 			if(features.lightbox){				
 				lightbox();
-				masonry();
 			}
 			if(features.morphing){				
 				$(document).on("click","[data-toggle='morphing'], [data-action='morphing']", function(e){
@@ -631,28 +630,6 @@
 				}
 			}
 		};
-	
-	var DEFAULT_MASONRY_OPTIONS = {
-			itemSelector:'.grid-item',	
-			columWidth:"40%"
-		};	
-	
-	function masonry(){
-		console.log("masonry html detacted.");
-		$(document).on('DOMNodeInserted', function(e){
-			var $this = $(e.target);
-			var opt = {} ;
-			if($this.data('masonry-options')){
-				opt = extend({}, DEFAULT_MASONRY_OPTIONS, $this.data('masonry-options'));
-				
-			}else{
-				opt = DEFAULT_MASONRY_OPTIONS;
-			}
-			$this.masonry(opt);			
-		});
-		
-		
-	} 
 	
 	function lightbox (){		
 		
