@@ -1635,9 +1635,9 @@
 					</div>
 					<article>
 						<div class="p-sm bg-gray">
-							<div class="author margin-bottom-20">
+							<div class="author">
 								<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-								<ul class="list-inline grid-boxes-news">
+								<ul class="list-inline">
 									<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
 									<li>|</li>
 									<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
@@ -1650,6 +1650,7 @@
 									<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
 								</ul>  
 							</div>
+							<p class="text-muted" data-bind="text:page.summary"></p>
                         </div>
                     </article>                               					
 					<div class="modal-body">
