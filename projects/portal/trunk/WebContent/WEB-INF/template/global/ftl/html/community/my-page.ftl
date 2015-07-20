@@ -1625,6 +1625,12 @@
 		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">
+			
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">			
+				
+				</div>
+			</div>	
 				
 					<div class="row">
 						<div class="col-sm-12">						
@@ -1669,6 +1675,7 @@
 											<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div></section>																		
 										</section>			
 									</fieldset>
+									
 									<fieldset data-bind="visible:advencedSetting">									
 										<section>
 											<label class="label">파일</label>
