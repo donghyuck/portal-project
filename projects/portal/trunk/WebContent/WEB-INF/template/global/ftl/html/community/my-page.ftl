@@ -817,10 +817,10 @@
 					page : new common.ui.data.Page(),
 					pageSource : "",
 					pageSourceUrl : "",
-					editable : false
+					editable : false,
 					close:function(e){
-						 common.ui.dialog( renderTo ).close();
-						 return false;
+					    common.ui.dialog( renderTo ).close();
+						return false;
 					},
 					exportPdf: function(e){
 						var $this = this, 
