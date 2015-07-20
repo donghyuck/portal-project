@@ -666,8 +666,9 @@
 			$this.magnificPopup(cfg);
 		} );
 				
-		// live click evnet ..
-		$(document).on("click","[data-toggle='lightbox']", function(e){					
+		// live click event ..
+		$(document).on("click","[data-toggle='lightbox']", function(e){			
+			console.log("lightbox ... ");
 			var $this = $(this), config = {};				
 			if($this.data("plugin-options")) {
 				config = extend({}, DEFAULT_LIGHTBOX_OPTIONS, $this.data("plugin-options"));	
