@@ -1463,10 +1463,7 @@
 							<p class="text-muted" data-bind="text:page.summary"></p>
                         </div>
                     </article>                               					
-					<div class="modal-body">
-						<div class="tag-box tag-box-v4 no-margin-b">                    
-                    		<p data-bind="text:page.summary"></p>
-                    	</div>						
+					<div class="modal-body">					
 						<div data-bind="{html:page.bodyContent.bodyText}" class="atricle"></div>
 					</div>				
 				</div>
