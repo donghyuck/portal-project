@@ -227,6 +227,8 @@
 					},
 					_save : function( callback ){		
 						var $this = this;			
+						
+						console.log ( kendo.stringify ($this.page) );
 						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
 							data : kendo.stringify($this.page) ,
 							contentType : "application/json",
