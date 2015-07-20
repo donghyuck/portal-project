@@ -1629,11 +1629,10 @@
 			<div class="modal-dialog modal-lg ">
 				<div class="modal-content my-page-post-form">			
 					<div class="modal-header">
-						<span data-bind="{text: page.title, invisible:editable }"></span>
+						<span data-bind="{text: page.title}"></span>
 						<button aria-hidden="true" data-dialog-close class="close" type="button"></button>
 					</div>
-
-					<article data-bind="{invisible:editable}" >
+					<article>
 						<div class="p-sm bg-gray">
 							<div class="author margin-bottom-20">
 								<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
@@ -1651,13 +1650,12 @@
 								</ul>  
 							</div>
                         </div>
-                    </article> 
-                               					
+                    </article>                               					
 					<div class="modal-body">
-										<div class="tag-box tag-box-v4 no-margin-b">                    
-                    						<p data-bind="text:page.summary"></p>
-                    					</div>						
-					
+						<div class="tag-box tag-box-v4 no-margin-b">                    
+                    		<p data-bind="text:page.summary"></p>
+                    	</div>						
+						<div data-bind="{html:page.bodyContent.bodyText}" class="atricle"></div>
 					</div>				
 				</div>
 			</div>	
