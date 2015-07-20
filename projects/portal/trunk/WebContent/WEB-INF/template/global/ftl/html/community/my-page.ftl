@@ -1459,6 +1459,7 @@
 									<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
 								</ul>  
 							</div>
+							<div class="separator-2"></div>
 							<p class="text-muted" data-bind="text:page.summary"></p>
                         </div>
                     </article>                               					
