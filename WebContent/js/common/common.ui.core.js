@@ -638,6 +638,7 @@
 		};	
 	
 	function masonry(){
+		console.log("masonry html detacted.");
 		$(document).on('DOMNodeInserted', function(e){
 			var $this = $(e.target);
 			var opt = {} ;
@@ -647,8 +648,7 @@
 			}else{
 				opt = DEFAULT_MASONRY_OPTIONS;
 			}
-			
-			
+			$this.masonry(opt);			
 		});
 		
 		
