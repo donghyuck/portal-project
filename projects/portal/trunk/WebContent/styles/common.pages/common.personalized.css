@@ -2562,7 +2562,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	height:30px;
 }
 
-.my-page-post-form {
+.my-page-post-form, .my-page-view-form {
 	border-radius: 6px !important;
 }
 
