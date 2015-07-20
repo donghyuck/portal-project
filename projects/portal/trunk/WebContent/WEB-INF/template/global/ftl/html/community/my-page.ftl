@@ -1437,7 +1437,7 @@
 			<div class="modal-dialog modal-lg ">
 				<div class="modal-content my-page-view-form">			
 					<div class="modal-header">
-						<span data-bind="{text: page.title}"></span>
+						<h2 data-bind="{text: page.title}"></h2>
 						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-post-modal-settings" area-expanded="false" aria-controls="my-post-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
 						<button aria-hidden="true" data-dialog-close class="close" type="button"></button>
 					</div>
