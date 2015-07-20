@@ -1628,7 +1628,11 @@
 			
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">			
-				
+					<div class="modal-header">
+						<span data-bind="{text: page.title, invisible:editable }"></span>
+						<button aria-hidden="true" data-dialog-close class="close" type="button"></button>
+					</div>
+									
 				</div>
 			</div>	
 				
