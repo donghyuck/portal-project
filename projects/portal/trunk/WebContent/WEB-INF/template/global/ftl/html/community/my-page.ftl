@@ -1472,7 +1472,7 @@
 			</div>	
 				
 			</div>
-		</div>	
+	</div>	
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<div class="col-md-3 col-sm-4  item" style="display:none;" data-object-id="#=pageId#">
