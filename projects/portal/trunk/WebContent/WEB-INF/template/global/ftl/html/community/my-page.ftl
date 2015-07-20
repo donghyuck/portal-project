@@ -1054,15 +1054,15 @@
 					data : observable,
 					autoBind: true,
 					"open":function(e){		
-					//	$("body").css("overflow-y", "hidden");
+						$("body").css("overflow-y", "hidden");
 					},
 					"opened" : function(e){		
-					//	renderTo.find(".dialog__content").css("overflow-y", "auto");
+						renderTo.find(".dialog__content").css("overflow-y", "auto");
 					},
 					"close":function(e){			
-					//	renderTo.find(".dialog__content").css("overflow-y", "hidden");
+						renderTo.find(".dialog__content").css("overflow-y", "hidden");
 					//	$("body").css("overflow-x", "hidden");					
-					//	$("body").css("overflow-y", "auto");		
+						$("body").css("overflow-y", "auto");		
 					}
 				});		
 				var bodyEditor =  $("#my-page-editor" );
