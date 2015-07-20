@@ -2681,7 +2681,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
   	line-height: 1.3em;
 }
 
-
+/* lightbox
+---------------------------------- */
+.mfp-bg {  
+  z-index: 2084;
+}
+.mfp-wrap {
+  z-index: 2085;
+}
 /* Nav pills
 ---------------------------------- */
 .nav-pills > li > a {
