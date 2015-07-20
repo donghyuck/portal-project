@@ -667,7 +667,7 @@
 		} );
 				
 		// live click event ..
-		$(document).on("click","[data-toggle='lightbox']", function(e){			
+		$(document).on("click","[data-toggle='lightbox'],[data-ride='lightbox']", function(e){			
 			console.log("lightbox ... ");
 			var $this = $(this), config = {};				
 			if($this.data("plugin-options")) {
