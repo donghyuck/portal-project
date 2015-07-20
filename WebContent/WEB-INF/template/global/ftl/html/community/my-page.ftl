@@ -1077,10 +1077,24 @@
 			}					
 			
 			var dialogFx = common.ui.dialog( renderTo );	
-			if( !dialogFx.isOpen ){						
-				renderTo.data("model").set( "editable" , isEditable) ;	
-				renderTo.data("model").setPage(source);					
-				dialogFx.open();
+			if( !dialogFx.isOpen ){	
+			
+				console.log("now get remote data.");
+				var targetEle = $('.item[data-object-id=' + source.get("pageId") + ']');					
+				kendo.ui.progress(targetEle, true);	
+				common.ui.ajax( '<@spring.url "/data/pages/get.json?output=json"/>', {
+					data : { pageId : source.get("pageId") },
+					success: function(response){ 
+						renderTo.data("model").setPage(new common.ui.data.Page(response));			
+						dialogFx.open();
+					},
+					complete: function(e){
+						kendo.ui.progress(targetEle, false);	
+					}	
+				} );
+				
+						
+				
 			}				
 		}
 		-->
