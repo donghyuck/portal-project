@@ -1633,32 +1633,30 @@
 						<button aria-hidden="true" data-dialog-close class="close" type="button"></button>
 					</div>
 
-								<article data-bind="{invisible:editable}" >
-									<div class="p-sm bg-gray">
-										<div class="author margin-bottom-20">
-											<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-											<ul class="list-inline grid-boxes-news">
-												<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
-												<li>|</li>
-												<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
-												<li>|</li>
-												<li><span>조회수:</span> <span data-bind="{ text: page.viewCount }"></span></li>
-												<li>|</li>
-												<li><span>댓글:</span> <span data-bind="{ text: page.commentCount }"></span></li>
-												<li>|</li>																								
-												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
-												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
-												
-											</ul>  
-										</div>
-										<div class="tag-box tag-box-v4 no-margin-b">                    
-                    						<p data-bind="text:page.summary"></p>
-                    					</div>
-                                	</div>
-                               </article> 
+					<article data-bind="{invisible:editable}" >
+						<div class="p-sm bg-gray">
+							<div class="author margin-bottom-20">
+								<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+								<ul class="list-inline grid-boxes-news">
+									<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
+									<li>|</li>
+									<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
+									<li>|</li>
+									<li><span>조회수:</span> <span data-bind="{ text: page.viewCount }"></span></li>
+									<li>|</li>
+									<li><span>댓글:</span> <span data-bind="{ text: page.commentCount }"></span></li>
+									<li>|</li>																								
+									<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
+									<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+								</ul>  
+							</div>
+                        </div>
+                    </article> 
                                					
 					<div class="modal-body">
-						
+										<div class="tag-box tag-box-v4 no-margin-b">                    
+                    						<p data-bind="text:page.summary"></p>
+                    					</div>						
 					
 					</div>				
 				</div>
