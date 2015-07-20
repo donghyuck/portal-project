@@ -2674,6 +2674,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	margin-bottom:10px;
 }
 
+
+.my-page-view-form .modal-header h2 {
+	padding: 1px;
+  	font-size: 1.3em;
+  	line-height: 1.3em;
+}
+
+
 /* Nav pills
 ---------------------------------- */
 .nav-pills > li > a {
