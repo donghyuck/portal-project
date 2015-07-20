@@ -631,8 +631,6 @@
 				}
 			}
 		};
-	{ "itemSelector": ".grid-item", "columWidth": 200 }'
-	
 	
 	var DEFAULT_MASONRY_OPTIONS = {
 			itemSelector:'.grid-item',	
