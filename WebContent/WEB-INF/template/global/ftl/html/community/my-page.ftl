@@ -1632,9 +1632,9 @@
 						<span data-bind="{text: page.title, invisible:editable }"></span>
 						<button aria-hidden="true" data-dialog-close class="close" type="button"></button>
 					</div>
-					<div class="modal-body">
+
 								<article data-bind="{invisible:editable}" >
-									<div class="ibox-content ibox-heading">
+									<div class="p-sm bg-gray">
 										<div class="author margin-bottom-20">
 											<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 											<ul class="list-inline grid-boxes-news">
@@ -1655,7 +1655,10 @@
                     						<p data-bind="text:page.summary"></p>
                     					</div>
                                 	</div>
-                                						
+                               </article> 
+                               					
+					<div class="modal-body">
+						
 					
 					</div>				
 				</div>
