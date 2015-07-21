@@ -398,7 +398,7 @@
 </script>
 
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-masonry-item-template">	
-	<div class="item">
+	<div class="item" data-mfp-src="#=imageUrl#" >
 		<img src="#=imageUrl#" alt="..." class="img-responsive" />
 	</div>
 </script>
