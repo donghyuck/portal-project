@@ -2333,7 +2333,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 /** masorny                                           */
 /** ------------------------------------------------- */
 [data-image-layout="masonry"] {
-	display: hidden;
+	visibility: hidden;
 }
 [data-image-layout="masonry"] .item {
 	padding : 5px; 
