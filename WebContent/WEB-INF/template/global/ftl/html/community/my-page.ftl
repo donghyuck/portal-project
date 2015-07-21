@@ -239,7 +239,7 @@
 					},
 					_save : function( callback ){		
 						var $this = this;		
-						console.log("remove save.");	
+						console.log("remote save.");	
 						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
 							data : kendo.stringify($this.page) ,
 							contentType : "application/json",
