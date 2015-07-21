@@ -854,6 +854,7 @@
 						}						
 					}
 				});
+				kendo.bind(renderTo, observable );
 				renderTo.data("model", observable);	
 			}
 			
