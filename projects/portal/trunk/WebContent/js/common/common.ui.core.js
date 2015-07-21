@@ -638,14 +638,6 @@
 		}		
 		// live data attribute 
 		$(document).on('DOMNodeInserted', '[data-start-gallery=true][data-ride=lightbox]', function(e){
-			/*var $this = $(this), config = {};
-			if($this.data("plugin-options")) {
-				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
-			}else{
-				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
-			}	
-			*/
-			
 			var $this = $(e.target);
 			var cfg = {};
 			if($this.data("plugin-options")) {
@@ -667,7 +659,7 @@
 		} );
 				
 		// live click event ..
-		$(document).on("click","[data-toggle='lightbox'],[data-ride='lightbox']", function(e){			
+		$(document).on("click","[data-toggle='lightbox']", function(e){			
 			console.log("lightbox ... ");
 			var $this = $(this), config = {};				
 			if($this.data("plugin-options")) {
@@ -968,8 +960,7 @@
 		return renderTo.data("kendoNotification");
 	};
 	
-	function error ( e ){
-				
+	function error ( e ){				
 		handleAjaxError(e.xhr);
 	}
 
@@ -2652,8 +2643,7 @@
 					var that = this;
 					
 					if (typeof that.options.template === UNDEFINED) {
-						return kendo
-								.template("<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>"
+						return kendo.template("<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>"
 										+ "<div class='modal-dialog modal-lg'>"
 										+ "<div class='modal-content'>"
 										+ "<div class='modal-header'>"
