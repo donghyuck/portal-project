@@ -181,13 +181,25 @@
 							if( $this.photo ){
 								var listview =  renderTo.find(".image-listview");							
 								if( $this.get('imageLayoutChanged')){
-									common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
-										$this.page.bodyContent.bodyText = html;								
-										btn.button('loading');			
-										$this._save(function(){									
-											btn.button('reset');
-										});														
-									});							
+									if(isCarouselSlideLayout($this.page)){
+										common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
+											$this.page.bodyContent.bodyText = html;								
+											btn.button('loading');			
+											$this._save(function(){									
+												btn.button('reset');
+											});														
+										});										
+									}else if (isMasonryLayout($this.page)) {
+										common.ui.MasonryLayout( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
+											$this.page.bodyContent.bodyText = html;								
+											btn.button('loading');			
+											$this._save(function(){									
+												btn.button('reset');
+											});														
+										});	
+									}
+	
+														
 								}else{
 									btn.button('loading');			
 									$this._save(function(){									
@@ -1367,7 +1379,7 @@
 										<div class="col-sm-6">
 									    	<label class="label">Effect</label>
 					                        <div class="inline-group">	
-					                            <label class="radio"><input type="radio" name="image-effect" value="mansory" data-bind="checked: imageEffect" ><i class="rounded-x"></i>Mansory</label>
+					                            <label class="radio"><input type="radio" name="image-effect" value="masonry" data-bind="checked: imageEffect" ><i class="rounded-x"></i>Mansory</label>
 					                            <label class="radio"><input type="radio" name="image-effect" value="carousel" data-bind="checked: imageEffect"><i class="rounded-x"></i>Carousel Slide</label>
 					                        </div>									
 										</div>										
