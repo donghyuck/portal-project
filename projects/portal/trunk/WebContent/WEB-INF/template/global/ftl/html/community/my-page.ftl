@@ -346,8 +346,9 @@
 								that.set("imageSortDir", "desc");
 							}
 							var upload = renderTo.find("input[name='photo'][type=file]");		
-								var listview =  renderTo.find(".image-listview");								
-								if (!common.ui.exists(listview)) {
+							var listview =  renderTo.find(".image-listview");								
+						
+							if (!common.ui.exists(listview)) {
 									common.ui.listview( listview, {
 										dataSource : {
 											type : 'json',
@@ -409,6 +410,15 @@
 									}).on("mouseleave", ".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 									});
+									
+									renderTo.find("input[type=radio][name=image-sorting], input[type=radio][name=image-sorting-dir]").on("change", function () {						
+										common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
+										that.set('imageLayoutChanged', true);
+									});	
+									renderTo.find("input[type=radio][name=image-effect]").on("change", function () {
+										that.set('imageLayoutChanged', true);
+									});
+									
 							}								
 							if(!common.ui.exists(upload)){
 								common.ui.upload( upload, {
@@ -425,11 +435,8 @@
 									}
 								});
 							}
-								
-							renderTo.find("input[type=radio][name=image-sorting], input[type=radio][name=image-sorting-dir]").on("change", function () {						
-								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
-								that.set('imageLayoutChanged', true);
-							});												
+	
+																	
 							common.ui.listview(listview).dataSource.read().then(function(){
 								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
