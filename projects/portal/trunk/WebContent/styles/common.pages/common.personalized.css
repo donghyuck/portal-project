@@ -2713,6 +2713,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	padding: 1px;
   	font-size: 1.3em;
   	line-height: 1.3em;
+    margin-bottom: 0;
+    margin-top: 2px;
 }
 
 /* lightbox
