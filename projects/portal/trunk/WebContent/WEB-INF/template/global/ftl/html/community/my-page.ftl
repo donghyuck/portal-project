@@ -851,7 +851,16 @@
 							that.set('pageSourceUrl', that.page.properties.url);
 						}else{
 							that.set('pageSourceUrl', "");
-						}						
+						}			
+						
+						if( that.page.properties.postType ){
+							console.log(that.page.properties.postType);
+						}
+						if( that.page.properties.imageEffect ){
+							console.log(that.page.properties.imageEffect);
+						}
+						
+									
 					}
 				});
 				kendo.bind(renderTo, observable );
