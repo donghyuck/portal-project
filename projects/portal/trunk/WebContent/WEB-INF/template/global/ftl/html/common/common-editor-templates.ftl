@@ -398,7 +398,7 @@
 </script>
 
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-masonry-item-template">	
-	<div class="col-md-3 col-sm-4 item">
+	<div class="item">
 		<img src="#=imageUrl#" alt="..." class="img-responsive" />
 	</div>
 </script>
