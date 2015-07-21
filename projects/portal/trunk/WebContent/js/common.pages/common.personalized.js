@@ -74,6 +74,48 @@
 	    }	
     });
 	
+	
+	function MasonryLayout( items, renderTo, callback ){
+		var uid = guid().toLowerCase() ;	
+		var masonry_template = template($('#image-broswer-photo-masonry-template').html());
+		var masonry_item_template = template($('#image-broswer-photo-masonry-item-template').html());
+		var thumbnail_url_template = template('/download/image/#= imageId #/#= name #?width=150&height=150');		
+		var image_url_template = template('/download/image/#= linkId #');
+		
+		var html = $( carousel_template({ 'uid':uid }) );
+		var total = items.length;
+		var count = 0;
+		kendo.ui.progress(renderTo, true);
+		$.each( items, function(index, value){			
+			console.log( kendo.stringify (value) );
+			var image = value;
+			ajax("/data/images/link.json?output=json", {
+				data : { imageId : image.imageId },	
+				success : function(data) {		
+					if(!defined(data.error)){
+						image.set("imageUrl",  image_url_template( data ) );		
+						image.set("thumbnailUrl",  thumbnail_url_template( data ) );		
+					}
+					count ++ ;
+					if( count === total )
+					{			
+						var idx = 0;
+						$.each( items , function(idx, val){							
+							html.append(
+								masonry_item_template(val)	
+							);							
+						});
+						
+						if(defined(callback)){
+							callback(html[0].outerHTML);
+						}
+						kendo.ui.progress(renderTo, false);
+					}	
+				}
+			});	
+		});		
+	} 
+	
 	function CarouselSlide( items, renderTo, callback ){
 		var uid = guid().toLowerCase() ;		
 		var carousel_template = template($('#image-broswer-photo-carousel-template').html());
@@ -144,6 +186,7 @@
 	
 	extend(common.ui, {	
 		CarouselSlide : CarouselSlide,
+		MasonryLayout : MasonryLayout,
 		DialogSwitcher : DialogSwitcher
 	});
 	
@@ -163,7 +206,23 @@
 	
 })(jQuery);
 
+function isCarouselSlideLayout(page){
+	if(page.properties.postType && page.properties.imageEffect ){
+		if( page.properties.postType === 'photo') && page.properties.imageEffect === 'carousel' ){
+			return true;
+		}
+	}
+	return false;	
+}
 
+function isMasonryLayout(page){
+	if(page.properties.postType && page.properties.imageEffect ){
+		if( page.properties.postType === 'photo') && page.properties.imageEffect === 'masonry' ){
+			return true;
+		}
+	}
+	return false;	
+}
 
 function preparePersonalizedArea( element, minCount, colSize ){	
 	
