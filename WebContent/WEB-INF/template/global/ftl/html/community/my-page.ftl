@@ -866,17 +866,21 @@
 							that.set('pageSourceUrl', that.page.properties.url);
 						}else{
 							that.set('pageSourceUrl', "");
-						}			
-						if(	isMasonryLayout(that.page) ){
+						}								
+					}
+				});
+				
+				renderTo.on('show.bs.modal', function(e){		
+					if(	isMasonryLayout(that.page) ){
 							var masonryEl = renderTo.find("[data-image-layout=masonry]");
 							masonryEl.imagesLoaded( function(){
 							  masonryEl.masonry({
 							    itemSelector : '.item'
 							  });
 							});
-						}								
 					}
 				});
+				
 				kendo.bind(renderTo, observable );
 				renderTo.data("model", observable);	
 			}
