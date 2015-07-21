@@ -649,13 +649,16 @@
 				renderTo.masonry({	
 					columnWidth: '.item',
 					itemSelector: '.item',
-					isAnimated: true,
-					isResizable:true
+					isFitWidth: true,
+					isResizable:true,
+					transitionDuration: 0
 				});
 			}	
 							
 			if( !common.ui.exists( renderTo ) ){		
-				var msnry = renderTo.data('masonry');	
+				
+				var masonry = renderTo.data('masonry');	
+				
 				common.ui.listview( renderTo, {
 					dataSource: {
 						transport: { 
@@ -686,8 +689,8 @@
 					dataBound: function(e){		
 						var elem = 	this.element.children();	
 						elem.imagesLoaded(function(){
-							msnry.appended(elem);
-							msnry.layout();
+							masonry.appended(elem);
+							masonry.layout();
 						});
 						
 					},
