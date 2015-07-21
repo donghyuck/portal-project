@@ -439,6 +439,7 @@
 																	
 							common.ui.listview(listview).dataSource.read().then(function(){
 								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
+								that.set('imageLayoutChanged', false);
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 							});							
 						}
