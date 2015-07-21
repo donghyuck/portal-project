@@ -177,7 +177,8 @@
 						var $this = this, 
 						btn = $(e.target);
 						$this._setProperties();	
-						if( $this.validate() ){					
+						if( $this.validate() ){			
+							console.log('imageLayoutChanged:' + $this.get('imageLayoutChanged') );		
 							if( $this.photo ){
 								var listview =  renderTo.find(".image-listview");							
 								if( $this.get('imageLayoutChanged')){
@@ -237,9 +238,8 @@
 						}
 					},
 					_save : function( callback ){		
-						var $this = this;			
-						
-						console.log ( kendo.stringify ($this.page) );
+						var $this = this;		
+						console.log("remove save.");	
 						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
 							data : kendo.stringify($this.page) ,
 							contentType : "application/json",
