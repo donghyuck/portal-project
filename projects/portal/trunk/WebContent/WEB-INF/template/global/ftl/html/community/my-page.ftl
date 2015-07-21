@@ -817,7 +817,7 @@
 				renderTo.on('show.bs.modal', function(e){		
 					common.ui.animate_v2(modalEl, "zoomIn");
 				});
-				renderTo.on('hide.bs.modal', function(e){		
+				renderTo.on('hide.bs.dropdown', function(e){		
 					modalEl.addClass("animated zoomOut");
 				});
 			}
