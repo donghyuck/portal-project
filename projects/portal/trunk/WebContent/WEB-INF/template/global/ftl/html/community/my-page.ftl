@@ -871,7 +871,7 @@
 				});
 				
 				renderTo.on('show.bs.modal', function(e){		
-					if(	isMasonryLayout(that.page) ){
+					if(	isMasonryLayout(source) ){
 							var masonryEl = renderTo.find("[data-image-layout=masonry]");
 							masonryEl.imagesLoaded( function(){
 							  masonryEl.masonry({
