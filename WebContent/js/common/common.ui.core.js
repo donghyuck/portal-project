@@ -645,7 +645,7 @@
 			}else{
 				cfg = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
 			}	
-			console.log( "magnific popup .... " );
+			console.log( "magnific popup .... " + cfg.delegate );
 			$this.magnificPopup(cfg);
 		} );
 				
