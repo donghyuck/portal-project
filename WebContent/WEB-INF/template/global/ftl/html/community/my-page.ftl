@@ -813,13 +813,6 @@
 			var renderTo = $("#my-page-view-modal");	
 			if( !renderTo.data('bs.modal') )
 			{
-				var modalEl = renderTo.find('.modal-dialog');
-				renderTo.on('show.bs.modal', function(e){		
-					common.ui.animate_v2(modalEl, "zoomIn");
-				});
-				renderTo.on('hide.bs.dropdown', function(e){		
-					modalEl.addClass("animated zoomOut");
-				});
 			}
 			renderTo.modal('show');		
 		}				
@@ -1345,7 +1338,7 @@
 			</div>	
 		</div>	
 		
-		<div id="my-page-view-modal" role="dialog" class="modal" data-backdrop="static" data-animation="false" data-effect="zoom">
+		<div id="my-page-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-view-form">	
 					<div class="modal-header">
