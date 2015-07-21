@@ -82,7 +82,7 @@
 		var thumbnail_url_template = template('/download/image/#= imageId #/#= name #?width=150&height=150');		
 		var image_url_template = template('/download/image/#= linkId #');
 		
-		var html = $( carousel_template({ 'uid':uid }) );
+		var html = $( masonry_template({ 'uid':uid }) );
 		var total = items.length;
 		var count = 0;
 		kendo.ui.progress(renderTo, true);
