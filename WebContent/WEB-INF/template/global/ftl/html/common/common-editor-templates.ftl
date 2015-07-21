@@ -392,7 +392,7 @@
 </script>
 
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-masonry-template">	
-<div id="#=uid#" data-image-layout="masonry">
+<div id="#=uid#" data-image-layout="masonry" data-start-gallery="true" data-ride="lightbox" data-plugin-options="{delegate:'.item'}">
 
 </div>
 </script>
