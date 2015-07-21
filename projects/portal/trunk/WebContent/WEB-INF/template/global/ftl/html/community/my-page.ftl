@@ -209,6 +209,7 @@
 								btn.button('loading');											
 								$this._save(function(){									
 									btn.button('reset');
+									renderTo.modal("hide");
 								});						
 							}
 						}			
