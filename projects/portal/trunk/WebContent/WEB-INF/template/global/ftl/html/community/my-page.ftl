@@ -810,6 +810,16 @@
 		}  
 						
 		function createMyPageViewer(source){	
+			var renderTo = $("#my-page-view-modal");	
+			if( !renderTo.data('bs.modal')
+			{
+				renderTo.on('show.bs.modal', function(e){		
+				
+				});
+			}
+			renderTo.modal('show');		
+		}				
+		function createMyPageViewer2(source){	
 		
 		
 		
