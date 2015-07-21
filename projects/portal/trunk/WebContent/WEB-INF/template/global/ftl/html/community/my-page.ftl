@@ -870,7 +870,7 @@
 					}
 				});
 				
-				renderTo.on('show.bs.modal', function(e){		
+				renderTo.on('shown.bs.modal', function(e){		
 					if(	isMasonryLayout(source) ){
 							var masonryEl = renderTo.find("[data-image-layout=masonry]");
 							masonryEl.imagesLoaded( function(){
