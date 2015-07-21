@@ -2306,13 +2306,12 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 /** ------------------------------------------------- */
 /** modal effecther		                              */
 /** ------------------------------------------------- */
-[data-effect="zoom"]{
-	.modal.fade .modal-dialog 
-	{
+.modal.fade[data-effect="zoom"] .modal-dialog {
+	
 		background:#000;
 		
-	}
-]
+
+}
 
 /** ------------------------------------------------- */
 /** Dialog, ibox                                      */
