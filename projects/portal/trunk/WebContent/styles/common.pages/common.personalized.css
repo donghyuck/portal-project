@@ -2304,7 +2304,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 
 /** ------------------------------------------------- */
-/** modal effecther		                              */
+/** modal animation effect		                      */
 /** ------------------------------------------------- */
 .modal.fade[data-effect="zoom"] .modal-dialog {
     -webkit-transform: scale(0.1);
@@ -2329,7 +2329,13 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     opacity: 1;
 }
 
-
+/** ------------------------------------------------- */
+/** masorny                                           */
+/** ------------------------------------------------- */
+[data-image-layout="masonry"] .item {
+	padding : 5px; 
+	max-width:200px;
+}
 
 /** ------------------------------------------------- */
 /** Dialog, ibox                                      */
@@ -2870,7 +2876,7 @@ img[data-ride=lightbox]:hover{
 	background: #24AD61;
 }
 /** ------------------------------------------------- */
-/** buttons				                                       */
+/** buttons				                              */
 /** ------------------------------------------------- */
 .footer-buttons-wrapper {
 	bottom: 14px;
