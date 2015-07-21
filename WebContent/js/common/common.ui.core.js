@@ -616,7 +616,11 @@
 			image: {
 				verticalFit: true,
 				titleSrc: function(item) {
-					return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+					
+					if( item.el.attr('title') && item.el.attr('data-source') )
+						return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+					
+					return "";
 				}
 			},
 			gallery: {
