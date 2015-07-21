@@ -640,6 +640,9 @@
 		$(document).on('DOMNodeInserted', '[data-start-gallery=true][data-ride=lightbox]', function(e){
 			var $this = $(e.target);
 			var cfg = {};
+			
+			console.log( "magnific popup options: " + $this.data("plugin-options"));
+					
 			if($this.data("plugin-options")) {
 				cfg = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
 			}else{
