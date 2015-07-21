@@ -813,9 +813,74 @@
 			var renderTo = $("#my-page-view-modal");	
 			if( !renderTo.data('bs.modal') )
 			{
+				var observable =  common.ui.observable({
+					page : new common.ui.data.Page(),
+					pageSource : "",
+					pageSourceUrl : "",
+					editable : false,
+					close:function(e){
+					    renderTo.model('hide');
+						return false;
+					},
+					exportPdf: function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');	
+						if( $this.page.pageId  > 0 ) {
+							kendo.drawing.drawDOM(renderTo.find("article")).then(function(group) {
+								return kendo.drawing.exportPDF(group, {
+								paperSize: "auto",
+								margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+								});
+							}).done(function(data) {
+								kendo.saveAs({
+								dataURI: data,
+								fileName:  $this.page.name + ".pdf",
+								proxyURL: "/downlaod/export"
+								});
+								btn.button('reset');
+							});
+						}
+						return false;
+					},								
+					setSource: function(page){
+						var that = this;
+						page.copy(that.page);						
+						if( that.page.properties.source ){
+							that.set('pageSource', that.page.properties.source);
+						}else{
+							that.set('pageSource', "");
+						} 
+						if( that.page.properties.url ){
+							that.set('pageSourceUrl', that.page.properties.url);
+						}else{
+							that.set('pageSourceUrl', "");
+						}						
+					}
+				});
+				renderTo.data("model", observable);	
 			}
-			renderTo.modal('show');		
-		}				
+			
+			if( source.get("pageId") > 0 && !common.ui.defined( source.bodyContent.bodyText) ){
+				console.log("now get remote data.");
+				var targetEle = $('.item[data-object-id=' + page.get("pageId") + ']');					
+				kendo.ui.progress(targetEle, true);	
+				common.ui.ajax( '<@spring.url "/data/pages/get.json?output=json"/>', {
+					data : { pageId : source.get("pageId") },
+					success: function(response){ 
+						renderTo.data("model").setSource(new common.ui.data.Page(response));
+						renderTo.modal('show');	
+					},
+					complete: function(e){
+						kendo.ui.progress(targetEle, false);	
+					}	
+				} );
+			}
+		}
+		
+		
+		
+						
 		function createMyPageViewer2(source){	
 		
 		
