@@ -645,16 +645,7 @@
 			}else{
 				cfg = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
 			}	
-			
-			console.log( "============================" );
-			/*if( $this.children("a").length > 0  ){
-				$.each( $this.children("a"), function( index,  item){
-					config.items.push({
-						src : $(item).attr("href")
-					});
-				});	
-			}			
-			*/
+			console.log( "magnific popup .... " );
 			$this.magnificPopup(cfg);
 		} );
 				
