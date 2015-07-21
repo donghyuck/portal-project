@@ -197,9 +197,7 @@
 												btn.button('reset');
 											});														
 										});	
-									}
-	
-														
+									}														
 								}else{
 									btn.button('loading');			
 									$this._save(function(){									
