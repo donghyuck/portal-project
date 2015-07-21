@@ -2725,6 +2725,16 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .mfp-wrap {
   z-index: 2085;
 }
+
+img[data-ride=lightbox]{
+	cursor: -webkit-zoom-in;
+	opacity: 1; 
+}
+
+img[data-ride=lightbox]:hover{
+	opacity: .6; 
+}
+
 /* Nav pills
 ---------------------------------- */
 .nav-pills > li > a {
