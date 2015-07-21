@@ -392,14 +392,14 @@
 </script>
 
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-masonry-template">	
-<div id="#=uid#" data-image-layout="masonry" class="row">
+<div id="#=uid#" data-image-layout="masonry">
 
 </div>
 </script>
 
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-masonry-item-template">	
 	<div class="col-md-3 col-sm-4 item">
-		<img src="#=imageUrl#" alt="..." class="img-responsive " />
+		<img src="#=imageUrl#" alt="..."/>
 	</div>
 </script>
 
