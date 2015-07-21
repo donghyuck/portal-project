@@ -649,7 +649,6 @@
 				renderTo.masonry({	
 					columnWidth: '.item',
 					itemSelector: '.item',
-					isFitWidth: true,
 					isResizable:true,
 					transitionDuration: 0
 				});
