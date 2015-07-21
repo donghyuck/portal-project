@@ -586,6 +586,11 @@
 }
 
 /**
+ * Mansory 
+ */
+
+
+/**
  * Commentary 
  */
 .commentary {
@@ -2297,8 +2302,20 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	border-radius: 0 0 8px 8px !important;
 }
 
+
 /** ------------------------------------------------- */
-/** Dialog, ibox                                              */
+/** modal effecther		                              */
+/** ------------------------------------------------- */
+[data-effect="zoom"]{
+	.modal.fade .modal-dialog 
+	{
+		background:#000;
+		
+	}
+]
+
+/** ------------------------------------------------- */
+/** Dialog, ibox                                      */
 /** ------------------------------------------------- */
 .dialog.bg-glass .dialog__overlay {
 	background: rgba(55, 58, 71, 0.2);
