@@ -2732,7 +2732,7 @@ img[data-ride=lightbox]{
 }
 
 img[data-ride=lightbox]:hover{
-	opacity: .6; 
+	opacity: .8; 
 }
 
 /* Nav pills
