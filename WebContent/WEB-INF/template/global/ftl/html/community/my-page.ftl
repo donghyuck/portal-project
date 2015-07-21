@@ -815,7 +815,7 @@
 			{
 				var modalEl = renderTo.find('.modal-dialog');
 				renderTo.on('show.bs.modal', function(e){		
-					animate_v2(modalEl, "zoomIn");
+					common.ui.animate_v2(modalEl, "zoomIn");
 				});
 			}
 			renderTo.modal('show');		
