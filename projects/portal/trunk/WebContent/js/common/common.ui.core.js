@@ -644,7 +644,7 @@
 			console.log( "magnific popup options: " + $this.data("plugin-options"));
 					
 			if($this.data("plugin-options")) {
-				cfg = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
+				cfg = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $.parseJSON($this.data("plugin-options")) );	
 			}else{
 				cfg = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
 			}	
