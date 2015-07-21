@@ -875,13 +875,10 @@
 						console.log('masonry...');
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
 						masonryEl.imagesLoaded( function(){
-						  	var $masonry = masonryEl.masonry({
+						  	masonryEl.masonry({
 						    	itemSelector : '.item'
 						  	});
-						  	$masonry.one( 'layoutComplete', function() {
-						  		console.log("masonry show..");
-  								masonryEl.css('visibility', 'visible');
-							});
+						  	masonryEl.css('visibility', 'visible');
 						});
 					}
 				});
