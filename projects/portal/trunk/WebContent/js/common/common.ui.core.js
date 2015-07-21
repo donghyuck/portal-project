@@ -616,7 +616,7 @@
 			image: {
 				verticalFit: true,
 				titleSrc: function(item) {
-					
+					//console.log( "title:" +  );
 					if( item.el.attr('title') && item.el.attr('data-source') )
 						return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
 					
