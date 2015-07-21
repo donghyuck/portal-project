@@ -670,12 +670,9 @@
 					isResizable:true,
 					transitionDuration: 0
 				});
-			}	
-							
-			if( !common.ui.exists( renderTo ) ){		
-				
-				var masonry = renderTo.data('masonry');	
-				
+			}								
+			if( !common.ui.exists( renderTo ) ){
+				var masonry = renderTo.data('masonry');					
 				common.ui.listview( renderTo, {
 					dataSource: {
 						transport: { 
@@ -870,15 +867,14 @@
 						}else{
 							that.set('pageSourceUrl', "");
 						}			
-						
-						if( that.page.properties.postType ){
-							console.log(that.page.properties.postType);
-						}
-						if( that.page.properties.imageEffect ){
-							console.log(that.page.properties.imageEffect);
-						}
-						
-									
+						if(	isMasonryLayout(that.page) ){
+							var masonryEl = renderTo.find("[data-image-layout=masonry]");
+							masonryEl.imagesLoaded( function(){
+							  masonryEl.masonry({
+							    itemSelector : '.item'
+							  });
+							});
+						}								
 					}
 				});
 				kendo.bind(renderTo, observable );
