@@ -1,6 +1,6 @@
 
 <!-- ============================== -->
-<!-- Image Broswer Template                            -->
+<!-- Image Broswer Template         -->
 <!-- ============================== -->
 <script id="image-broswer-template" type="text/x-kendo-template">
 	<style type="text/css" media="screen">
@@ -389,4 +389,18 @@
 	  </a>	
 </div>
 </div>	
-</script>	
+</script>
+
+<script type="text/x-kendo-tmpl" id="image-broswer-photo-masonry-template">	
+<div id="#=uid#" data-image-layout="masonry">
+
+</div>
+</script>
+
+<script type="text/x-kendo-tmpl" id="image-broswer-photo-masonry-item-template">	
+	<div class="item">
+		<img src="#=imageUrl#" alt="..."/>
+	</div>
+</script>
+
+	
