@@ -872,12 +872,15 @@
 				
 				renderTo.on('shown.bs.modal', function(e){		
 					if(	isMasonryLayout(source) ){
-							var masonryEl = renderTo.find("[data-image-layout=masonry]");
-							masonryEl.imagesLoaded( function(){
-							  masonryEl.masonry({
-							    itemSelector : '.item'
-							  });
+						var masonryEl = renderTo.find("[data-image-layout=masonry]");
+						masonryEl.imagesLoaded( function(){
+						  	masonryEl.masonry({
+						    	itemSelector : '.item'
+						  	});
+						  	masonryEl.one( 'layoutComplete', function() {
+  								masonryEl.css('visibility', 'visible');
 							});
+						});
 					}
 				});
 				
