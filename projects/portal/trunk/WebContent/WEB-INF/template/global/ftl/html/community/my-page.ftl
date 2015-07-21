@@ -872,12 +872,14 @@
 				
 				renderTo.on('shown.bs.modal', function(e){		
 					if(	isMasonryLayout(source) ){
+						console.log('masonry...');
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
 						masonryEl.imagesLoaded( function(){
-						  	masonryEl.masonry({
+						  	var $masonry = masonryEl.masonry({
 						    	itemSelector : '.item'
 						  	});
-						  	masonryEl.one( 'layoutComplete', function() {
+						  	$masonry.one( 'layoutComplete', function() {
+						  		console.log("masonry show..");
   								masonryEl.css('visibility', 'visible');
 							});
 						});
