@@ -712,7 +712,7 @@
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
 					switch( action ){
 						case 'view':						
-						createMyPageViewer(item);
+						createPageViewModal(item);
 						break;		
 						case 'edit':						
 						createPagePostModal(item);	
@@ -809,7 +809,7 @@
 			return false;					
 		}  
 						
-		function createMyPageViewer(source){	
+		function createPageViewModal(source){	
 			var renderTo = $("#my-page-view-modal");	
 			if( !renderTo.data('bs.modal') )
 			{
@@ -818,10 +818,6 @@
 					pageSource : "",
 					pageSourceUrl : "",
 					editable : false,
-					close:function(e){
-					    renderTo.model('hide');
-						return false;
-					},
 					exportPdf: function(e){
 						var $this = this, 
 						btn = $(e.target);						
@@ -1407,13 +1403,32 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-view-form">	
 					<div class="modal-header">
+						<h2 data-bind="{text: page.title}"></h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<article>
-					
+						<div class="p-sm bg-gray">
+							<div class="author">
+							    <img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+								<ul class="list-inline">
+									<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
+									<li>|</li>
+									<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
+									<li>|</li>
+									<li><span>조회수:</span> <span data-bind="{ text: page.viewCount }"></span></li>
+									<li>|</li>
+									<li><span>댓글:</span> <span data-bind="{ text: page.commentCount }"></span></li>
+									<li>|</li>																								
+									<li>작성일: <span data-bind="{ text: page.formattedCreationDate }"></span></li>
+									<li>수정일: <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+								</ul>  
+							</div>
+							<div class="separator-2"></div>
+						    <p class="text-muted" data-bind="text:page.summary"></p>
+	                    </div>
 					</article>
 					<div class="modal-body">
-					
+						<div data-bind="{html:page.bodyContent.bodyText}" class="atricle"></div>
 					</div>
 				</div>
 			</div>
