@@ -522,7 +522,6 @@
 				});
 				
 				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
-					
 					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(
 							common.ui.data.properties.datasource({
 									transport: { 
@@ -923,7 +922,7 @@
 				
 				renderTo.on('shown.bs.modal', function(e){		
 					if(	isMasonryLayout(source) ){
-						console.log('masonry...');
+						console.log('masonry... prepare');
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
 						masonryEl.imagesLoaded( function(){
 						  	masonryEl.masonry({
