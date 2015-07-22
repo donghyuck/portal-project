@@ -341,7 +341,7 @@
 						}	
 						if( that.page.properties.imageSortDir ){
 							that.set('imageSortDir' , that.page.properties.imageSortDir );
-						}													
+						}									
 						if( that.photo && that.page.pageId > 0 ){						
 							if( that.imageSort === null ){	
 								that.set("imageSort", "name");
@@ -351,8 +351,6 @@
 							}
 							var upload = renderTo.find("input[name='photo'][type=file]");		
 							var listview =  renderTo.find(".image-listview");								
-							var grid = $("#my-post-modal-settings .page-props-grid");	
-							
 							if (!common.ui.exists(listview)) {
 									common.ui.listview( listview, {
 										dataSource : {
@@ -423,8 +421,30 @@
 										that.set('imageLayoutChanged', true);
 									});									
 							}	
-							
-							if(!common.ui.exists(grid)){
+							if(!common.ui.exists(upload)){
+								common.ui.upload( upload, {
+									async : {
+										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
+									},
+									localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+									upload: function (e) {				
+										e.data = { objectType: 31 , objectId: that.page.pageId };
+									},								
+									success: function (e) {									
+										that.set('imageLayoutChanged', true);			
+										common.ui.listview(listview).dataSource.read();
+									}
+								});
+							}								
+							common.ui.listview(listview).dataSource.read().then(function(){
+								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
+								that.set('imageLayoutChanged', false);
+								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
+							});							
+						}	
+
+						// page properties ... 
+						if(that.page.pageId > 0 & !common.ui.exists(grid)){
 								common.ui.grid(grid, {				
 									//dataSource : common.ui.data.page.properties.datasource(that.page),					
 									columns: [
@@ -446,29 +466,8 @@
 										this.refresh();
 									}
 								});							
-							}						
-							
-							if(!common.ui.exists(upload)){
-								common.ui.upload( upload, {
-									async : {
-										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
-									},
-									localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
-									upload: function (e) {				
-										e.data = { objectType: 31 , objectId: that.page.pageId };
-									},								
-									success: function (e) {									
-										that.set('imageLayoutChanged', true);			
-										common.ui.listview(listview).dataSource.read();
-									}
-								});
-							}								
-							common.ui.listview(listview).dataSource.read().then(function(){
-								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
-								that.set('imageLayoutChanged', false);
-								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
-							});							
-						}						
+						}
+												
 					},
 					uploadImageByUrl: function(e){
 						var $this = this, 
@@ -523,6 +522,7 @@
 				
 				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
 					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(
+						
 							common.ui.data.properties.datasource({
 									transport: { 
 										read: { url:"/data/pages/properties/list.json?output=json", type:'GET' },
