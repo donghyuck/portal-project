@@ -11,13 +11,14 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
+				
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
 				
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/common/awesome-bootstrap-checkbox.css"/>',
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
 			
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
@@ -45,7 +46,6 @@
 			'<@spring.url "/js/common.pages/common.code-editor.js"/>'
 			],			
 			complete: function() {		
-				
 				common.ui.setup({
 					features:{
 						wallpaper : true,
@@ -410,16 +410,14 @@
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 									}).on("mouseleave", ".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-									});
-									
+									});									
 									renderTo.find("input[type=radio][name=image-sorting], input[type=radio][name=image-sorting-dir]").on("change", function () {						
 										common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 										that.set('imageLayoutChanged', true);
 									});	
 									renderTo.find("input[type=radio][name=image-effect]").on("change", function () {
 										that.set('imageLayoutChanged', true);
-									});
-									
+									});									
 							}								
 							if(!common.ui.exists(upload)){
 								common.ui.upload( upload, {
@@ -435,16 +433,13 @@
 										common.ui.listview(listview).dataSource.read();
 									}
 								});
-							}
-	
-																	
+							}									
 							common.ui.listview(listview).dataSource.read().then(function(){
 								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
 								that.set('imageLayoutChanged', false);
 								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
 							});							
-						}
-						
+						}						
 					},
 					uploadImageByUrl: function(e){
 						var $this = this, 
@@ -475,8 +470,7 @@
 						}
 						return false;						
 					}
-				});			
-					
+				});								
 				renderTo.on('show.bs.modal', function(e){		
 					var msg = common.ui.options.messages.title.text ;
 					if( renderTo.data("model").postType === "photo" ){
@@ -486,19 +480,16 @@
 					}
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
-
 				renderTo.on('hide.bs.modal', function(e){					
 					renderTo.find("form label[for]").removeClass("state-error");					
 					renderTo.find("form em[for]").remove();	
-				});		
-				
+				});						
 				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher && switcher.isOpen){
 						switcher.close();
 					}
-				} } );	
-					
+				} } );						
 				var editorTo =  $("#my-page-post-editor" );
 				createEditor( "my-page" , editorTo, { 
 					modal : false , 
@@ -510,8 +501,7 @@
 				});				
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );
-			}
-			
+			}			
 			if( page.get("pageId") > 0 && !common.ui.defined( page.bodyContent.bodyText) ){
 				console.log("now get remote data.");
 				var targetEle = $('.item[data-object-id=' + page.get("pageId") + ']');					
@@ -882,12 +872,10 @@
 						  	masonryEl.css('visibility', 'visible');
 						});
 					}
-				});
-				
+				});				
 				kendo.bind(renderTo, observable );
 				renderTo.data("model", observable);	
-			}
-			
+			}			
 			if( source.get("pageId") > 0 && !common.ui.defined( source.bodyContent.bodyText) ){
 				console.log("now get remote data.");
 				var targetEle = $('.item[data-object-id=' + source.get("pageId") + ']');					
@@ -903,15 +891,9 @@
 					}	
 				} );
 			}
-		}
-		
-		
-		
+		}		
 						
 		function createMyPageViewer2(source){	
-		
-		
-		
 			var renderTo = $("#my-page-viewer");			
 			if( ! common.ui.exists(renderTo) ){
 				var observable =  common.ui.observable({
