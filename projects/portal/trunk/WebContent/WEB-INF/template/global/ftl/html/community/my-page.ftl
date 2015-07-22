@@ -308,7 +308,9 @@
 					setSource: function(page, postType){
 						var that = this;
 						page.copy(that.page);					
+						
 						that.setPostType(that.page.properties.postType||postType); 
+						
 						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
 							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
 						}
@@ -320,6 +322,7 @@
 						}
 						
 						that.set('imageLayoutChanged', false);
+						
 						if( that.page.properties.source ){
 							that.set('pageSource', that.page.properties.source);
 						}else{
@@ -348,7 +351,8 @@
 							}
 							var upload = renderTo.find("input[name='photo'][type=file]");		
 							var listview =  renderTo.find(".image-listview");								
-						
+							var grid = $("#my-post-modal-settings .page-props-grid");	
+							
 							if (!common.ui.exists(listview)) {
 									common.ui.listview( listview, {
 										dataSource : {
@@ -418,7 +422,34 @@
 									renderTo.find("input[type=radio][name=image-effect]").on("change", function () {
 										that.set('imageLayoutChanged', true);
 									});									
-							}								
+							}	
+							
+							if(!common.ui.exists(grid)){
+								common.ui.grid(grid, {
+									columns: [
+										{ title: "속성", field: "name" },
+										{ title: "값",   field: "value" },
+										{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+									],
+									pageable: false,
+									resizable: true,
+									editable : true,
+									scrollable: true,
+									autoBind: false,
+									toolbar: [
+										{ name: "create", text: "추가" },
+										{ name: "save", text: "저장" },
+										{ name: "cancel", text: "취소" }
+									],				     
+									change: function(e) {
+										this.refresh();
+									}
+								});	
+								//renderTo.find(".sky-form").slimScroll({
+								//	height: "500px"
+								//});							
+							}							
+							
 							if(!common.ui.exists(upload)){
 								common.ui.upload( upload, {
 									async : {
@@ -433,7 +464,8 @@
 										common.ui.listview(listview).dataSource.read();
 									}
 								});
-							}									
+							}	
+															
 							common.ui.listview(listview).dataSource.read().then(function(){
 								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
 								that.set('imageLayoutChanged', false);
@@ -1274,12 +1306,12 @@
 							<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="false" aria-controls="my-post-modal-settings"></span>
 						</header>
 
-						<section class="p-xs" style="margin:0" data-bind="visible:editable">
-							<button class="btn btn-flat btn-labeled btn-primary rounded pull-right" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="true" aria-controls="my-post-modal-settings-props">
+						<section class="p-xs text-right" style="margin:0" data-bind="visible:editable">
+							<button class="btn btn-flat btn-labeled btn-primary rounded" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="true" aria-controls="my-post-modal-settings-props">
 								<span class="btn-label icon fa fa-camera-retro"></span> 프로퍼티
 							</button>						  
 							<div class="collapse in" id="my-post-modal-settings-props" aria-expanded="true">
-							  <div class="props"/>
+							  <div class="page-props-grid"/>
 							</div>
 						</section>
 
