@@ -428,10 +428,10 @@
 								common.ui.grid(grid, {									
 									dataSource : {
 										transport: { 
-											read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
-											create: { url:'/data/pages/properties/update.json?output=json', type:'post', contentType:"application/json"},
-											update: { url:'/data/pages/properties/update.json?output=json', type:'post', contentType:"application/json"},
-											destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post', contentType:"application/json"},
+											read: { url:'/data/pages/properties/list.json?output=json', type:'POST' },
+											create: { url:'/data/pages/properties/update.json?output=json', type:'POST', contentType:"application/json"},
+											update: { url:'/data/pages/properties/update.json?output=json', type:'POST', contentType:"application/json"},
+											destroy: { url:'/data/pages/properties/delete.json?output=json', type:'POST', contentType:"application/json"},
 									 		parameterMap: function (options, operation){			
 										 		if (operation !== "read" && options.models) {
 										 			return { pageId: that.page.pageId, items: kendo.stringify(options.models)};
