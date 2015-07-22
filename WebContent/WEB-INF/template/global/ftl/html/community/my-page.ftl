@@ -522,8 +522,22 @@
 				});
 				
 				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
+					
 					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(
-						common.ui.data.page.properties.datasource(renderTo.data("model").page)
+							common.ui.data.properties.datasource({
+									transport: { 
+										read: { url:"/data/pages/properties/list.json?output=json", type:'GET' },
+										create: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + observable.page.pageId, type:'POST' ,contentType : "application/json" },
+										update: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + observable.page.pageId, type:'POST'  ,contentType : "application/json"},
+										destroy: { url:"/data/pages/properties/delete.json?output=json" +  "&pageId=" + observable.page.pageId, type:'POST' ,contentType : "application/json"},
+								 		parameterMap: function (options, operation){			
+											if (operation !== "read" && options.models) {
+												return kendo.stringify(options.models);
+											} 
+											return { fileId: observable.page.pageId }
+										}
+									}
+							})
 					);
 				});
 				
