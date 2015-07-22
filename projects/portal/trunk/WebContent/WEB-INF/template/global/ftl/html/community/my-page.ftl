@@ -425,7 +425,8 @@
 							}	
 							
 							if(!common.ui.exists(grid)){
-								common.ui.grid(grid, {									
+								common.ui.grid(grid, {				
+									dataSource : common.ui.data.page.properties.datasource(that.page),					
 									columns: [
 										{ title: "속성", field: "name" },
 										{ title: "값",   field: "value" },
@@ -435,7 +436,7 @@
 									resizable: true,
 									editable : true,
 									scrollable: true,
-									autoBind: true,
+									autoBind: false,
 									toolbar: [
 										{ name: "create", text: "추가" },
 										{ name: "save", text: "저장" },
@@ -521,9 +522,7 @@
 				});
 				
 				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
-					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(
-						common.ui.data.page.properties.datasource(renderTo.data("model").page)
-					);					
+					common.ui.grid($("#my-post-modal-settings .page-props-grid")).dataSource.read();			
 				});
 				
 				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
