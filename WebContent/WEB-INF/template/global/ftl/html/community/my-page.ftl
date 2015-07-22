@@ -539,9 +539,7 @@
 				});			
 				
 				$('#my-post-modal-settings').on('hide.bs.collapse', function(e){
-					if( renderTo.data("model").page.pageId > 0 ){
-						//$('#my-post-modal-settings-props').collapse('hide');
-					}
+					$('#my-post-modal-settings-props').collapse('hide');
 				});
 				
 				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
