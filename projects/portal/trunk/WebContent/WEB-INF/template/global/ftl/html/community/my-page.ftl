@@ -521,7 +521,9 @@
 				});
 				
 				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
-					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(renderTo.data("model").page);					
+					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(
+						common.ui.data.page.properties.datasource(renderTo.data("model").page)
+					);					
 				});
 				
 				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
