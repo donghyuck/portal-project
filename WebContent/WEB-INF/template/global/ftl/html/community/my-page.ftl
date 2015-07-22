@@ -481,6 +481,8 @@
 									}
 								});
 							}	
+							
+							
 															
 							common.ui.listview(listview).dataSource.read().then(function(){
 								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
@@ -518,7 +520,8 @@
 						}
 						return false;						
 					}
-				});								
+				});		
+										
 				renderTo.on('show.bs.modal', function(e){		
 					var msg = common.ui.options.messages.title.text ;
 					if( renderTo.data("model").postType === "photo" ){
@@ -528,16 +531,27 @@
 					}
 					renderTo.find("form input[name=title]").attr('placeholder', msg );
 				});			
+				
 				renderTo.on('hide.bs.modal', function(e){					
 					renderTo.find("form label[for]").removeClass("state-error");					
 					renderTo.find("form em[for]").remove();	
-				});						
+					$('#my-post-modal-settings').collapse('hide');					
+				});			
+				
+				$('#my-post-modal-settings').on('hide.bs.collapse', function(e){
+					if( renderTo.data("model").page.pageId > 0 ){
+						$('#my-post-modal-settings-props').collapse('hide');
+					}
+				});
+							
+				
 				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher && switcher.isOpen){
 						switcher.close();
 					}
-				} } );						
+				} } );			
+							
 				var editorTo =  $("#my-page-post-editor" );
 				createEditor( "my-page" , editorTo, { 
 					modal : false , 
@@ -547,9 +561,11 @@
 					objectType : 31,
 					useWrapMode : observable.useWrapMode 
 				});				
+				
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );
-			}			
+			}		
+				
 			if( page.get("pageId") > 0 && !common.ui.defined( page.bodyContent.bodyText) ){
 				console.log("now get remote data.");
 				var targetEle = $('.item[data-object-id=' + page.get("pageId") + ']');					
