@@ -464,7 +464,7 @@
 										this.refresh();
 									}
 								});							
-							}							
+							}						
 							
 							if(!common.ui.exists(upload)){
 								common.ui.upload( upload, {
@@ -480,10 +480,7 @@
 										common.ui.listview(listview).dataSource.read();
 									}
 								});
-							}	
-							
-							
-															
+							}								
 							common.ui.listview(listview).dataSource.read().then(function(){
 								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
 								that.set('imageLayoutChanged', false);
@@ -540,6 +537,10 @@
 				
 				$('#my-post-modal-settings').on('hidden.bs.collapse', function(e){
 					$('#my-post-modal-settings-props').collapse('hide');
+				});
+				
+				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
+					common.ui.grid($("#my-post-modal-settings .page-props-grid")).dataSource.read();
 				});
 				
 				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
