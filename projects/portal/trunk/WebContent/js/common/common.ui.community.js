@@ -603,24 +603,16 @@
 	
 	common.ui.data.page = common.ui.data.page || {};
 	
-	extend(common.ui.data,{		
-		page: {
+	extend(common.ui.data.page,{		
 			properties : {		
 				datasource: pagePorpertyDataSource
 			}
-		},
-		image : {
-			share : sharing,
-			unshare : unsharing,
-			streams : details			
-		}
 	});
-	/*
+
 	extend(common.ui.data.image, {
 		share : sharing,
 		unshare : unsharing,
 		streams : details
 	});
-*/
 	
 })(jQuery);
