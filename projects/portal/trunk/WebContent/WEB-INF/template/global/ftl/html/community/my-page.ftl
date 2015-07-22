@@ -538,7 +538,7 @@
 					$('#my-post-modal-settings').collapse('hide');					
 				});			
 				
-				$('#my-post-modal-settings').on('hide.bs.collapse', function(e){
+				$('#my-post-modal-settings').on('hidden.bs.collapse', function(e){
 					$('#my-post-modal-settings-props').collapse('hide');
 				});
 				
