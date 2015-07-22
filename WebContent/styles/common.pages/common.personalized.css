@@ -2726,6 +2726,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     margin-top: 2px;
 }
 
+.my-page-post-form .modal-settings .page-props-grid {
+	width : 339px;
+}
 .my-page-post-form .modal-settings .page-props-grid .k-grid-content {
 	  min-height: 100px;
 }
