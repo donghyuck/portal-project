@@ -1273,6 +1273,17 @@
 							고급옵션
 							<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="false" aria-controls="my-post-modal-settings"></span>
 						</header>
+
+						<button class="btn btn-flat btn-labeled btn-primary" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="false" aria-controls="my-post-modal-settings-props">
+						  <span class="btn-label icon fa fa-camera-retro"></span>
+						  프로퍼티
+						</button>
+						<div class="collapse" id="my-post-modal-settings-props">
+						  <div class="well">
+						    ...
+						  </div>
+						</div>
+
 						<fieldset>                  
 							<section>
 								<div class="separator-2"></div>
