@@ -204,7 +204,11 @@
 	});
 	
 	
+	
 })(jQuery);
+
+
+
 
 function isCarouselSlideLayout(page){
 	if(page.properties.postType && page.properties.imageEffect ){
