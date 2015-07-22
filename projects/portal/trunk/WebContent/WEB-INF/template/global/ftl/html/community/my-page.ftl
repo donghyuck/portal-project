@@ -1341,13 +1341,13 @@
 						</fieldset>
 						<fieldset data-bind="visible:editable">
 							<section class="text-right">
-								<div class="separator-2"></div>
-								<button class="btn btn-flat btn-labeled btn-primary rounded" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="true" aria-controls="my-post-modal-settings-props">
+								<button class="btn btn-flat btn-labeled btn-primary btn-sm rounded" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="true" aria-controls="my-post-modal-settings-props">
 									<span class="btn-label icon fa fa-camera-retro"></span> 프로퍼티
 								</button>
 							</section>				  
 							<div class="collapse in" id="my-post-modal-settings-props" aria-expanded="true">
-							  <div class="page-props-grid"/>
+								<div class="separator-2"></div>
+							  	<div class="page-props-grid"/>
 							</div>
 						</fieldset>
 												
