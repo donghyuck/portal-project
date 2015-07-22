@@ -501,6 +501,7 @@
 	
 	var ui = common.ui, 
 	ajax = common.ui.ajax, 
+	DataSource = kendo.data.DataSource,
 	handleAjaxError = common.ui.handleAjaxError, 
 	isFunction = kendo.isFunction, 
 	extend = $.extend;
