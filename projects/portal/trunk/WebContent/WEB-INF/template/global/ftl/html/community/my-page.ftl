@@ -543,7 +543,6 @@
 						$('#my-post-modal-settings-props').collapse('hide');
 					}
 				});
-							
 				
 				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
