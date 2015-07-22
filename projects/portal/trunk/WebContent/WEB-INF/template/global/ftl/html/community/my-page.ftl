@@ -523,7 +523,7 @@
 				
 				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
 					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(
-						common.ui.data.page.properties.datasoruce(renderTo.data("model").page);
+						common.ui.data.page.properties.datasoruce(renderTo.data("model").page)
 					);
 				});
 				
