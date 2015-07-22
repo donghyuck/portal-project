@@ -1342,7 +1342,7 @@
 						<fieldset data-bind="visible:editable">
 							<section class="text-right">
 								<button class="btn btn-flat btn-labeled btn-primary btn-sm rounded" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="true" aria-controls="my-post-modal-settings-props">
-									<span class="btn-label icon fa fa-camera-retro"></span> 프로퍼티
+									<span class="btn-label icon fa fa-camera-retro"></span> 속성 
 								</button>
 							</section>				  
 							<div class="collapse in" id="my-post-modal-settings-props" aria-expanded="true">
