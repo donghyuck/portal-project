@@ -445,7 +445,7 @@
 
 						// page properties ... 
 						var $grid = $("#my-post-modal-settings .page-props-grid");
-						if(that.page.pageId > 0 & !common.ui.exists(grid)){
+						if(that.page.pageId > 0 & !common.ui.exists($grid)){
 								common.ui.grid($grid, {				
 									//dataSource : common.ui.data.page.properties.datasource(that.page),					
 									columns: [
