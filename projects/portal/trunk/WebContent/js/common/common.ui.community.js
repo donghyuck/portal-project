@@ -498,7 +498,14 @@
 
 ;
 (function($, undefined) {
-	var ui = common.ui, ajax = common.ui.ajax, handleAjaxError = common.ui.handleAjaxError, isFunction = kendo.isFunction, extend = $.extend;
+	
+	var ui = common.ui, 
+	ajax = common.ui.ajax, 
+	handleAjaxError = common.ui.handleAjaxError, 
+	isFunction = kendo.isFunction, 
+	extend = $.extend;
+	
+	
 
 	function unsharing(imageId, callback) {
 		$.ajax({
@@ -549,10 +556,62 @@
 	}
 	;
 
+	function attachmentPorpertyDataSource(fileId){
+		return DataSource.create({		
+			transport: { 
+				read: { url:"/data/files/properties/list.json?output=json", type:'GET' },
+				create: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + fileId, type:'POST' ,contentType : "application/json" },
+				update: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + fileId, type:'POST'  ,contentType : "application/json"},
+				destroy: { url:"/data/files/properties/delete.json?output=json" +  "&fileId=" + fileId, type:'POST' ,contentType : "application/json"},
+		 		parameterMap: function (options, operation){			
+					if (operation !== "read" && options.models) {
+						return kendo.stringify(options.models);
+					} 
+					return { fileId: fileId }
+				}
+			},						
+			batch: true, 
+			schema: {
+				model: common.ui.data.Property
+			},
+			error:handleAjaxError
+		});
+	}
+	
+	function pagePorpertyDataSource(page){
+		return DataSource.create({		
+			transport: { 
+				read: { url:"/data/pages/properties/list.json?output=json", type:'GET' },
+				create: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + page.pageId , type:'POST' ,contentType : "application/json" },
+				update: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + page.pageId, type:'POST'  ,contentType : "application/json"},
+				destroy: { url:"/data/pages/properties/delete.json?output=json" +  "&pageId=" + page.pageId, type:'POST' ,contentType : "application/json"},
+		 		parameterMap: function (options, operation){			
+					if (operation !== "read" && options.models) {
+						return kendo.stringify(options.models);
+					} 
+					return { pageId: page.pageId }
+				}
+			},						
+			batch: true, 
+			schema: {
+				model: common.ui.data.Property
+			},
+			error:handleAjaxError
+		});
+	}
+	
+	var common.ui.data.page = common.ui.data.page || {};
+	extend(common.ui.data.page, {
+		properties : {		
+			datasource: pagePorpertyDataSource
+		}		
+	});
+	
 	extend(common.ui.data.image, {
 		share : sharing,
 		unshare : unsharing,
 		streams : details
 	});
 
+	
 })(jQuery);
