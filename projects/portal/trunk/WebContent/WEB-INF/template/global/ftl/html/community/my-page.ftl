@@ -1274,15 +1274,14 @@
 							<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="false" aria-controls="my-post-modal-settings"></span>
 						</header>
 
-						<button class="btn btn-flat btn-labeled btn-primary" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="false" aria-controls="my-post-modal-settings-props">
-						  <span class="btn-label icon fa fa-camera-retro"></span>
-						  프로퍼티
-						</button>
-						<div class="collapse" id="my-post-modal-settings-props">
-						  <div class="well">
-						    ...
-						  </div>
-						</div>
+						<section class="p-xs" style="margin:0" data-bind="visible:editable">
+							<button class="btn btn-flat btn-labeled btn-primary rounded pull-right" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="true" aria-controls="my-post-modal-settings-props">
+								<span class="btn-label icon fa fa-camera-retro"></span> 프로퍼티
+							</button>						  
+							<div class="collapse in" id="my-post-modal-settings-props" aria-expanded="true">
+							  <div class="props"/>
+							</div>
+						</section>
 
 						<fieldset>                  
 							<section>
