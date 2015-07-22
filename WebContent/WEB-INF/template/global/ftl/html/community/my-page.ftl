@@ -534,7 +534,7 @@
 											if (operation !== "read" && options.models) {
 												return kendo.stringify(options.models);
 											} 
-											return { fileId: observable.page.pageId }
+											return { pageId: observable.page.pageId }
 										}
 									}
 							})
