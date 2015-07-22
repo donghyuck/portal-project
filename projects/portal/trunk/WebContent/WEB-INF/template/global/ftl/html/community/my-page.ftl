@@ -1305,16 +1305,6 @@
 							고급옵션
 							<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="false" aria-controls="my-post-modal-settings"></span>
 						</header>
-
-						<section class="p-xs text-right" style="margin:0" data-bind="visible:editable">
-							<button class="btn btn-flat btn-labeled btn-primary rounded" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="true" aria-controls="my-post-modal-settings-props">
-								<span class="btn-label icon fa fa-camera-retro"></span> 프로퍼티
-							</button>						  
-							<div class="collapse in" id="my-post-modal-settings-props" aria-expanded="true">
-							  <div class="page-props-grid"/>
-							</div>
-						</section>
-
 						<fieldset>                  
 							<section>
 								<div class="separator-2"></div>
@@ -1349,6 +1339,18 @@
 								<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>	
 							</section>	
 						</fieldset>
+						<fieldset data-bind="visible:editable">
+							<section class="text-right">
+								<div class="separator-2"></div>
+								<button class="btn btn-flat btn-labeled btn-primary rounded" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="true" aria-controls="my-post-modal-settings-props">
+									<span class="btn-label icon fa fa-camera-retro"></span> 프로퍼티
+								</button>
+							</section>				  
+							<div class="collapse in" id="my-post-modal-settings-props" aria-expanded="true">
+							  <div class="page-props-grid"/>
+							</div>
+						</fieldset>
+												
 					</form>
 					<form action="#" class="sky-form">
 						<fieldset>
