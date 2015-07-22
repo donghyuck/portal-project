@@ -435,7 +435,7 @@
 									resizable: true,
 									editable : true,
 									scrollable: true,
-									autoBind: ture,
+									autoBind: true,
 									toolbar: [
 										{ name: "create", text: "추가" },
 										{ name: "save", text: "저장" },
