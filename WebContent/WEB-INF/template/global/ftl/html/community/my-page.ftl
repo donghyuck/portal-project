@@ -425,7 +425,26 @@
 							}	
 							
 							if(!common.ui.exists(grid)){
-								common.ui.grid(grid, {
+								common.ui.grid(grid, {									
+									dataSource : {
+										transport: { 
+											read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
+											create: { url:'/data/pages/properties/update.json?output=json', type:'post' },
+											update: { url:'/data/pages/properties/update.json?output=json', type:'post'  },
+											destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
+									 		parameterMap: function (options, operation){			
+										 		if (operation !== "read" && options.models) {
+										 			return { pageId: that.page.pageId, items: kendo.stringify(options.models)};
+												} 
+												return { pageId: that.page.pageId }
+											}
+										},	
+										batch: true, 
+										schema: {
+											model: common.ui.data.Property
+										},
+										error:common.ui.handleAjaxError
+									},
 									columns: [
 										{ title: "속성", field: "name" },
 										{ title: "값",   field: "value" },
@@ -444,10 +463,7 @@
 									change: function(e) {
 										this.refresh();
 									}
-								});	
-								//renderTo.find(".sky-form").slimScroll({
-								//	height: "500px"
-								//});							
+								});							
 							}							
 							
 							if(!common.ui.exists(upload)){
