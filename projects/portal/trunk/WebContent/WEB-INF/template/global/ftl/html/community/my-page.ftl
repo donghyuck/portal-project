@@ -426,25 +426,6 @@
 							
 							if(!common.ui.exists(grid)){
 								common.ui.grid(grid, {									
-									dataSource : {
-										transport: { 
-											read: { url:'/data/pages/properties/list.json?output=json', type:'POST' },
-											create: { url:'/data/pages/properties/update.json?output=json', type:'POST', contentType:"application/json"},
-											update: { url:'/data/pages/properties/update.json?output=json', type:'POST', contentType:"application/json"},
-											destroy: { url:'/data/pages/properties/delete.json?output=json', type:'POST', contentType:"application/json"},
-									 		parameterMap: function (options, operation){			
-										 		if (operation !== "read" && options.models) {
-										 			return { pageId: that.page.pageId, items: kendo.stringify(options.models)};
-												} 
-												return { pageId: that.page.pageId }
-											}
-										},	
-										batch: true, 
-										schema: {
-											model: common.ui.data.Property
-										},
-										error:common.ui.handleAjaxError
-									},
 									columns: [
 										{ title: "속성", field: "name" },
 										{ title: "값",   field: "value" },
@@ -454,7 +435,7 @@
 									resizable: true,
 									editable : true,
 									scrollable: true,
-									autoBind: false,
+									autoBind: ture,
 									toolbar: [
 										{ name: "create", text: "추가" },
 										{ name: "save", text: "저장" },
@@ -540,7 +521,7 @@
 				});
 				
 				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
-					common.ui.grid($("#my-post-modal-settings .page-props-grid")).dataSource.read();
+					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(renderTo.data("model").page);					
 				});
 				
 				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
