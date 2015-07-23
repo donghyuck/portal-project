@@ -710,7 +710,7 @@
 	                        </div>
 	                  </article>  
 					<div class="modal-body">
-					
+						<div data-bind="{html:page.bodyContent.bodyText}" ></div>
 					</div>
 				</div>
 			</div>	
