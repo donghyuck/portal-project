@@ -283,8 +283,12 @@
 		
 		function createMyPageViewModal(source){
 			var renderTo = $("#my-page-view-modal");	
+			if( !renderTo.data('bs.modal') ){
 			
-		
+			
+			
+			}
+			renderTo.modal('show');	
 		}
 		
 		function createMyPageViewer(source, isEditable){
