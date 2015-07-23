@@ -287,6 +287,10 @@
 					page : new common.ui.data.Page(),
 					pageSource : "",
 					pageSourceUrl : "",
+					commentary : function(){
+						createMyPageCommentary(this.page);
+						return false;
+					},
 					setPage: function(page){
 						var that = this;
 						page.copy(that.page);						
