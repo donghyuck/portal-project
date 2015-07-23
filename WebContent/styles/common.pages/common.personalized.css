@@ -2748,12 +2748,12 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
   z-index: 2085;
 }
 
-img[data-ride=lightbox]{
+img[data-toggle=lightbox]{
 	cursor: -webkit-zoom-in;
 	opacity: 1; 
 }
 
-img[data-ride=lightbox]:hover{
+img[data-toggle=lightbox]:hover{
 	opacity: .8; 
 }
 
