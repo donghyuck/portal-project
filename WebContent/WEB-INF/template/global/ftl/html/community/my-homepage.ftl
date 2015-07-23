@@ -319,7 +319,7 @@
 						  	masonryEl.on( 'layoutComplete', function() {
 						  		console.log('masonry layout complete.');
 						  	});
-						  	kendo.ui.progress(masonryEl, false);
+						  	//kendo.ui.progress(masonryEl, false);
 						  	masonryEl.css('visibility', 'visible');
 						});
 					}
