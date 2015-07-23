@@ -283,6 +283,7 @@
 		
 		function createMyPageViewModal(source){
 			var renderTo = $("#my-page-view-modal");	
+			
 		
 		}
 		
@@ -643,7 +644,16 @@
 		</div>	
 		
 		<div id="my-page-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-		
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">	
+					<div class="modal-header">
+					
+					</div>
+					<div class="modal-body">
+					
+					</div>
+				</div>
+			</div>	
 		</div>
 		
 		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
