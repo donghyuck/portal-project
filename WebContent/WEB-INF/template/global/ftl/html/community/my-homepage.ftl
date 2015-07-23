@@ -704,8 +704,11 @@
 						<span data-bind="{text: page.title}"></span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<article>
-							<div class="p-sm bg-gray">
+					<article class="summary">
+						<div class="buttons-wrapper">				
+							<button class="btn btn-sm btn-primary btn-labeled btn-flat btn-outline"><span class="btn-label icon fa fa-comment-o"></span>댓글 남기기</button>
+						</div>
+
 								<div class="author">
 									<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 									<ul class="list-inline">
@@ -723,8 +726,7 @@
 								</div>
 								<div class="separator-2"></div>
 								<p class="text-muted" data-bind="text:page.summary"></p>
-	                        </div>
-	                  </article>  
+                    </article>  
 					<div class="modal-body">
 						<div data-bind="{html:page.bodyContent.bodyText}" ></div>
 					</div>
