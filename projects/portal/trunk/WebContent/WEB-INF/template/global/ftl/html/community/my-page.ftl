@@ -180,37 +180,33 @@
 						if( $this.validate() ){			
 							console.log('imageLayoutChanged:' + $this.get('imageLayoutChanged') );		
 							if( $this.photo ){
-								var listview =  renderTo.find(".image-listview");							
+								var listview =  renderTo.find(".image-listview");			
+								var completeFn = function(){
+									btn.button('reset');
+									common.ui.listview($("#my-page-listview")).dataSource.read();
+									renderTo.modal("hide");
+								};				
 								if( $this.get('imageLayoutChanged')){
 									if(isCarouselSlideLayout($this.page)){
 										common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
 											$this.page.bodyContent.bodyText = html;								
 											btn.button('loading');			
-											$this._save(function(){									
-												btn.button('reset');
-											});														
+											$this._save(completeFn);														
 										});										
 									}else if (isMasonryLayout($this.page)) {
 										common.ui.MasonryLayout( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
 											$this.page.bodyContent.bodyText = html;								
 											btn.button('loading');			
-											$this._save(function(){									
-												btn.button('reset');
-											});														
+											$this._save(completeFn);														
 										});	
 									}														
 								}else{
 									btn.button('loading');			
-									$this._save(function(){									
-										btn.button('reset');
-									});								
+									$this._save(completeFn);								
 								}
 							}else{
 								btn.button('loading');											
-								$this._save(function(){									
-									btn.button('reset');
-									renderTo.modal("hide");
-								});						
+								$this._save(completeFn);						
 							}
 						}			
 						return false;
