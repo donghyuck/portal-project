@@ -211,7 +211,7 @@
 			}			
 			if(renderTo.is(":hidden")){
 				renderTo.data("model").setPage( source ) ;
-				$("body").css("overflow", "hidden");
+				//$("body").css("overflow", "hidden");
 				renderTo.show();
 			}			
 		}
