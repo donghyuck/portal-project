@@ -728,7 +728,7 @@
 					</div>
 					<article class="summary">
 						<div class="buttons-wrapper">				
-							<button class="btn btn-sm btn-primary btn-labeled btn-flat btn-outline" data-bind="click:commentary"><span class="btn-label icon fa fa-comment-o"></span>댓글 남기기</button>
+							<button class="btn btn-sm btn-primary btn-labeled btn-flat btn-outline rounded" data-bind="click:commentary"><span class="btn-label icon fa fa-comment-o"></span>댓글 남기기</button>
 						</div>
 
 								<div class="author">
