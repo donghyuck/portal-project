@@ -307,17 +307,13 @@
 				
 				renderTo.on('shown.bs.modal', function(e){		
 					if(	isMasonryLayout(observable.page) ){
-						console.log('masonry layout start.');
-						
+						console.log('masonry layout.');
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
 						kendo.ui.progress(renderTo, true);
 						masonryEl.imagesLoaded( function(){
 						  	masonryEl.masonry({
 						    	itemSelector : '.item'
 						  	});
-						  	//masonryEl.on( 'layoutComplete', function() {
-						  	//	console.log('masonry layout complete.');
-						  	//});
 						  	kendo.ui.progress(renderTo, false);
 						  	masonryEl.css('visibility', 'visible');
 						});
