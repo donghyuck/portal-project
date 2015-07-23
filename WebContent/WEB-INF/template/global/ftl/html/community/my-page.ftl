@@ -105,6 +105,7 @@
 		function createPagePostModal( page, postType ){
 			var renderTo = $("#my-page-post-modal");
 			if( !renderTo.data('bs.modal')){			
+				var editorTo =  $("#my-page-post-editor" );
 				var observable =  common.ui.observable({
 					page : new common.ui.data.Page(),
 					postType: "text",
@@ -185,10 +186,8 @@
 									common.ui.listview($("#my-page-listview")).dataSource.read();
 									renderTo.modal("hide");
 								};	
-								
 							if( $this.photo ){
 								var listview =  renderTo.find(".image-listview");			
-											
 								if( $this.get('imageLayoutChanged')){
 									if(isCarouselSlideLayout($this.page)){
 										common.ui.CarouselSlide( common.ui.listview( listview ).dataSource.view(), renderTo.find('.modal-dialog'), function(html){
@@ -207,6 +206,12 @@
 									btn.button('loading');			
 									$this._save(completeFn);								
 								}
+							}else if ($this.text){
+								if( editorTo.data('kendoEditor') ){
+									$this.page.bodyContent.bodyText = editorTo.data('kendoEditor').value();		
+								}	
+								btn.button('loading');											
+								$this._save(completeFn);
 							}else{
 								btn.button('loading');											
 								$this._save(completeFn);						
@@ -545,9 +550,8 @@
 					if(switcher && switcher.isOpen){
 						switcher.close();
 					}
-				} } );			
-							
-				var editorTo =  $("#my-page-post-editor" );
+				} } );		
+				
 				createEditor( "my-page" , editorTo, { 
 					modal : false , 
 					appendTo: $("#my-page-post-editor-code-body"), 
