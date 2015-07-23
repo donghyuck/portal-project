@@ -937,7 +937,11 @@
 					<div class="ibox">
 						<div class="ibox-content no-border">
 							<div class="page-credits bg-white" data-bind="{html:pageCreditHtml}" ></div>
-							<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
+							<div class="shadow-wrapper" style="max-width:500px;">
+								<div class="box-shadow shadow-effect-2 ">
+									<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
+								</div>	
+							</div>
 							<h2 data-bind="text:title" class="headline"></h2>
 							<p data-bind="text:summary"></p>
 						</div>
