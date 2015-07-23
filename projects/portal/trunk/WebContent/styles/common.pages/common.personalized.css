@@ -2329,6 +2329,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     opacity: 1;
 }
 
+
 /** ------------------------------------------------- */
 /** masorny                                           */
 /** ------------------------------------------------- */
@@ -2580,7 +2581,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	
 }
 
-
+/** ------------------------------------------------- */
+/** page modal			                              */
+/** ------------------------------------------------- */
 .modal-dialog .modal-header .close {
 	right: 0px;
 	top: 4px;
@@ -2737,6 +2740,19 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .modal .modal-flat .modal-content {
 	border : 0;
 	box-shadow : none;
+}
+
+.modal .modal-flat .modal-content .summary {
+	position:relative;
+	background: #f5f5f5!important;
+	padding : 15px;
+}
+
+.modal .modal-flat .modal-content .summary .buttons-wrapper {
+	position:absolute;
+	top: 5px;
+    right: 5px;
+    z-index: 680;
 }
 
 /* lightbox
