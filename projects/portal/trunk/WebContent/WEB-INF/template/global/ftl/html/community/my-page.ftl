@@ -744,8 +744,6 @@
 						batch: false,
 						pageSize: 15,
 						serverPaging: true,
-						serverFiltering: false,
-						serverSorting: false,
 						filter: {
 							field: "pageState", operator: "eq", value: "PUBLISHED"
 						}
