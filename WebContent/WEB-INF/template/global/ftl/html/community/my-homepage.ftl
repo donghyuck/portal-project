@@ -648,6 +648,13 @@
 		</div>	
 		
 		<div id="my-page-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+		
+		
+			<article class="ibox">
+				 <div class="ibox-title">ww</div>
+				 <section>ss</section>
+			</article>
+			
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">	
 					<div class="modal-header">
