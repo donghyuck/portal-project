@@ -316,7 +316,7 @@
 						  	masonryEl.masonry({
 						    	itemSelector : '.item'
 						  	});
-						  	masonryEl.one( 'layoutComplete', function( event, laidOutItems ) {
+						  	masonryEl.on( 'layoutComplete', function() {
 						  		console.log('masonry layout complete.');
 						  	});
 						  	kendo.ui.progress(masonryEl, false);
