@@ -2338,7 +2338,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 [data-image-layout="masonry"] .item {
 	padding : 5px; 
-	max-width:200px;
+	max-width:285px;
 }
 
 /** ------------------------------------------------- */
