@@ -651,6 +651,7 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">	
 					<div class="modal-header">
+						<span data-bind="{text: page.title}"></span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
