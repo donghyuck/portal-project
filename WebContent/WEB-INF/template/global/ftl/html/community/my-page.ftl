@@ -182,6 +182,7 @@
 							if( $this.photo ){
 								var listview =  renderTo.find(".image-listview");			
 								var completeFn = function(){
+									console.log('execute complate ...');									
 									btn.button('reset');
 									common.ui.listview($("#my-page-listview")).dataSource.read();
 									renderTo.modal("hide");
