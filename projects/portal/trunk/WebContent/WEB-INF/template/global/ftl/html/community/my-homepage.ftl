@@ -185,7 +185,7 @@
 							$this.set("pageCreditHtml", pageCreditHtml);
 							$this.set("title", title);
 							$this.set("summary", summary);
-							$this.set("commentBody", "");							
+							$this.set("commentBody", "");
 							listview.dataSource.read({pageId: source });
 						}					
 					}
@@ -193,7 +193,6 @@
 				renderTo.data("model", observable);			
 				common.ui.bind( renderTo, observable );				
 				$('.close[data-commentary-close]').click(function(){					
-					$("body").css("overflow", "auto");
 					renderTo.hide();
 				});
 			}			
