@@ -523,7 +523,7 @@
 				
 				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
 					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(
-						
+						common.ui.data.page.properties.datasource(observable.page)/*		
 							common.ui.data.properties.datasource({
 									transport: { 
 										read: { url:"/data/pages/properties/list.json?output=json", type:'GET' },
@@ -537,7 +537,7 @@
 											return { pageId: observable.page.pageId }
 										}
 									}
-							})
+							})*/
 					);
 				});
 				
