@@ -214,8 +214,8 @@
 				});
 				
 				var msnry = renderTo.data('masonry');				
-				createMyAnnouncement(renderTo, msnry);
-								
+				createMyAnnouncement(renderTo, msnry);		
+										
 				var dataSource = new kendo.data.DataSource({				
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/published/list.json?output=json"/>', type: 'POST' },
@@ -230,7 +230,7 @@
 						},						
 						error:common.ui.handleAjaxError,
 						batch: false,						
-						pageSize: 9,
+						pageSize: 8,
 						selectable: false, 
 						serverPaging: true,
 						serverFiltering: false,
@@ -279,7 +279,12 @@
 				});	
 			}
 		}
-
+		
+		function createMyPageViewModal(source){
+			var renderTo = $("#my-page-view-modal");	
+		
+		}
+		
 		function createMyPageViewer(source, isEditable){
 			var isEditable = isEditable || false;		
 			var renderTo = $("#my-page-viewer");			
@@ -634,7 +639,11 @@
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
-		</div>				
+		</div>	
+		
+		<div id="my-page-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+		
+		</div>
 		
 		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay bg-white"></div>
