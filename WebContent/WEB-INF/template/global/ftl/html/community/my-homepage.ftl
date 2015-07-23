@@ -286,7 +286,7 @@
 			if( !renderTo.data('bs.modal') ){
 				var observable =  common.ui.observable({
 					page : new common.ui.data.Page()
-				};
+				});
 				kendo.bind(renderTo, observable );
 			}
 			renderTo.modal('show');	
