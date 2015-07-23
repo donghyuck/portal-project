@@ -1319,7 +1319,7 @@
 			
 		<!-- Page Edit Modal -->
 		
-		<div id="my-page-post-modal" role="dialog" class="modal fade" data-backdrop="static">
+		<div id="my-page-post-modal" role="dialog" class="modal bg-white fade" data-backdrop="static">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-post-form">
 					<div class="modal-header">
