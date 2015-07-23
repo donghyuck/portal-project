@@ -270,7 +270,8 @@
 					var objectId = $this.data("object-id");					
 					var item = dataSource.get(objectId);		
 					if( action == 'view' ){
-						createMyPageViewer(objectId);					
+						createMyPageViewModal(objectId);
+						//createMyPageViewer(objectId);					
 					}else
 					if( action == 'comment' ){
 						createMyPageCommentary(objectId);					
