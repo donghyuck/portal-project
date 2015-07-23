@@ -2733,6 +2733,12 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	  min-height: 100px;
 }
 
+
+.modal .modal-flat .modal-content {
+	border : 0;
+	box-shadow : none;
+}
+
 /* lightbox
 ---------------------------------- */
 .mfp-bg {  
