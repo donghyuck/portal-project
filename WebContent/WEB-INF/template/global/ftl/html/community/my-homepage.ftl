@@ -104,8 +104,9 @@
 		
 		var ONE_PIXEL_IMG_SRC_DATA = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 		
-		function createMyPageCommentary(pageId){			
+		function createMyPageCommentary(source){			
 			var renderTo = $("#my-page-commentary");			
+			
 			if( !renderTo.data("model") ){				
 				var listview = common.ui.listview($("#my-page-commentary-listview"), {
 					dataSource: {
@@ -169,24 +170,36 @@
 						});	
 						return false;						
 					},
-					setPage : function(source){
+					setPage : function(page){
 						var $this = this;
-						if( typeof source == 'number'){							
-							var title = $(".item [data-action=view][data-object-id=" + source + "]").text();
-							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
-							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
-							var pageCreditHtml = $(".item[data-object-id="+source+"] .page-credits").html();							
+						if( typeof page == 'number'){							
+							var title = $(".item [data-action=view][data-object-id=" + page + "]").text();
+							var summary = $(".item[data-object-id=" + page + "]  .page-meta .page-description").text();
+							var coverImgEle = $(".item[data-object-id=" + page + "] .cover img");
+							var pageCreditHtml = $(".item[data-object-id="+page+"] .page-credits").html();							
 							if( coverImgEle.length == 1 ){
 								$this.set("coverPhotoUrl", coverImgEle.attr("src"));
 							}else{
 								$this.set( "coverPhotoUrl", ONE_PIXEL_IMG_SRC_DATA);
 							}							
-							$this.set("pageId", source );
+							$this.set("pageId", page );
 							$this.set("pageCreditHtml", pageCreditHtml);
 							$this.set("title", title);
 							$this.set("summary", summary);
 							$this.set("commentBody", "");
-							listview.dataSource.read({pageId: source });
+							listview.dataSource.read({pageId: page });
+						}else{
+							if( page.bodyContent.imageCount > 0 ){
+								$this.set("coverPhotoUrl", page.bodyContent.firstImageSrc );
+							}else{
+								$this.set( "coverPhotoUrl", ONE_PIXEL_IMG_SRC_DATA);
+							}							
+							$this.set("pageId", page.pageId );
+							$this.set("pageCreditHtml", "");
+							$this.set("title", page.title);
+							$this.set("summary", page.summary);
+							$this.set("commentBody", "");
+							listview.dataSource.read({pageId: page.pageId });	
 						}					
 					}
 				});
@@ -197,7 +210,7 @@
 				});
 			}			
 			if(renderTo.is(":hidden")){
-				renderTo.data("model").setPage( pageId ) ;
+				renderTo.data("model").setPage( source ) ;
 				$("body").css("overflow", "hidden");
 				renderTo.show();
 			}			
