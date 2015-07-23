@@ -1966,7 +1966,7 @@
 			lightboxGalleryImage : template (
 					'<a href="#: url #" class="fancybox img-hover-v1"><img src="#if(thumbnail){##= thumbnaiUrll ##}else{##=url##}#" class="#= css #"></a>'	
 			),
-			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-ride="lightbox" #}# #if(gallery){# data-gallery #}#  #if(uid){# data-uid="#=uid#" #}#  />'),
+			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-toggle="lightbox" #}# #if(gallery){# data-gallery #}#  #if(uid){# data-uid="#=uid#" #}#  />'),
 			linkUrl : template('/download/image/#= linkId #'),
 			thumbnailUrl : template('/download/image/#= imageId #/#= name #?width=150&height=150'),
 			download : template('/download/image/#=imageId#/#=name#')
