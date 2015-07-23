@@ -205,13 +205,18 @@
 				});
 				renderTo.data("model", observable);			
 				common.ui.bind( renderTo, observable );				
-				$('.close[data-commentary-close]').click(function(){					
+				$('.close[data-commentary-close]').click(function(){	
+					if(!$("body").hasClass('modal-open')){
+						$("body").css("overflow", "auto");
+					}					
 					renderTo.hide();
 				});
 			}			
 			if(renderTo.is(":hidden")){
 				renderTo.data("model").setPage( source ) ;
-				//$("body").css("overflow", "hidden");
+				if(!$("body").hasClass('modal-open')){
+					$("body").css("overflow", "hidden");
+				}
 				renderTo.show();
 			}			
 		}
