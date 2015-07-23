@@ -1115,7 +1115,7 @@
 					#if ( summary != null && summary.length > 0 ){#
 						<p class="page-description">#: summary #</p>
 					#}#
-						<ul class="list-inline page-tools">
+						<ul class="list-inline page-tools">			
 								<li><i class="fa fa-eye"> </i> <span class="view-page-count">#: viewCount #</span></li>
 								<li>|</li>
 								<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">#: commentCount #</span></a></li>	
