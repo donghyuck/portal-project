@@ -1433,7 +1433,13 @@
 											<label class="input"><i class="icon-append fa fa-globe"></i>
 											<input type="url" name="imageDataUrl" placeholder="이미지 URL" data-bind="value:imageDataUrl"/>
 											</label>
+			
+											<button class="btn btn-flat btn-labeled btn-warning btn-sm rounded" type="button" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">
+												<span class="btn-label icon fa fa-upload"></span> 업로드 
+											</button>
+								<!--
 											<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
+								-->
 										</div>
 									</div>
 								</div>
