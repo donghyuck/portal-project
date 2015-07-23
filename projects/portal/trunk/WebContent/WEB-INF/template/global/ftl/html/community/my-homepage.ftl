@@ -648,7 +648,7 @@
 		</div>	
 		
 		<div id="my-page-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-			<div class="modal-dialog modal-lg ">
+			<div class="modal-dialog modal-lg modal-flat ">
 				<div class="modal-content">	
 					<div class="modal-header">
 						<span data-bind="{text: page.title}"></span>
