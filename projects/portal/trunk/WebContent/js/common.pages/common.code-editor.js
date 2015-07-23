@@ -136,9 +136,11 @@ function createCodeEditor( renderToString, editor, options ) {
 				this.ace = ace;
 			},
 			open : function(){		
+				console.log("set code value by editor");	
 				this.ace.setValue( this.editor.data("kendoEditor").value() )
 			},
 			close : function(){
+				console.log("set editer value by code");
 				this.editor.data("kendoEditor").value( this.ace.getValue() );
 			}				
 		});
