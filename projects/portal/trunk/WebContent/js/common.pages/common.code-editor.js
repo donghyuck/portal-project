@@ -142,7 +142,7 @@ function createCodeEditor( renderToString, editor, options ) {
 			close : function(){
 				console.log("set editer value by code");
 				this.editor.data("kendoEditor").value( this.ace.getValue() );
-				this.editor.data("kendoEditor").update();
+				console.log( this.editor.data("kendoEditor").value() );
 			}				
 		});
 		
