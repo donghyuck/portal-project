@@ -303,6 +303,25 @@
 						}								
 					}
 				});
+				
+				
+				renderTo.on('shown.bs.modal', function(e){		
+					if(	isMasonryLayout(source) ){
+						console.log('masonry... prepare');
+						
+						var masonryEl = renderTo.find("[data-image-layout=masonry]");
+						kendo.ui.progress(masonryEl, true);
+						
+						masonryEl.imagesLoaded( function(){
+						  	masonryEl.masonry({
+						    	itemSelector : '.item'
+						  	});
+						  	kendo.ui.progress(masonryEl, false);
+						  	masonryEl.css('visibility', 'visible');
+						});
+					}
+				});
+								
 				kendo.bind(renderTo, observable );
 				renderTo.data("model", observable);	
 			}
