@@ -310,8 +310,7 @@
 						console.log('masonry layout start.');
 						
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
-						kendo.ui.progress(masonryEl, true);
-						
+						kendo.ui.progress(renderTo.find('modal-body:first'), true);
 						masonryEl.imagesLoaded( function(){
 						  	masonryEl.masonry({
 						    	itemSelector : '.item'
