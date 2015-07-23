@@ -285,11 +285,44 @@
 			var renderTo = $("#my-page-view-modal");	
 			if( !renderTo.data('bs.modal') ){
 				var observable =  common.ui.observable({
-					page : new common.ui.data.Page()
+					page : new common.ui.data.Page(),
+					pageSource : "",
+					pageSourceUrl : "",
+					setPage: function(page){
+						var that = this;
+						page.copy(that.page);						
+						if( that.page.properties.source ){
+							that.set('pageSource', that.page.properties.source);
+						}else{
+							that.set('pageSource', "");
+						} 
+						if( that.page.properties.url ){
+							that.set('pageSourceUrl', that.page.properties.url);
+						}else{
+							that.set('pageSourceUrl', "");
+						}								
+					}
 				});
 				kendo.bind(renderTo, observable );
+				renderTo.data("model", observable);	
 			}
-			renderTo.modal('show');	
+			
+			if( typeof source == 'number' ){					
+				var targetEle = $('.item[data-object-id=' + source + ']');					
+				kendo.ui.progress(targetEle, true);	
+				common.ui.ajax( 
+					'<@spring.url "/data/pages/get.json?output=json"/>', {
+						data : { pageId : source , count: 1 },
+						success: function(response){ 
+							renderTo.data("model").setPage( new common.ui.data.Page(response) );
+							kendo.ui.progress(targetEle, false);	
+							renderTo.modal('show');	
+						}	
+				} );
+			}else if ( typeof source == 'object' ){
+				renderTo.data("model").setPage(source);
+				renderTo.modal('show');	
+			}
 		}
 		
 		function createMyPageViewer(source, isEditable){
