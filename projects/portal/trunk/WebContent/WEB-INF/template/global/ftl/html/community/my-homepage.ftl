@@ -306,7 +306,7 @@
 				
 				
 				renderTo.on('shown.bs.modal', function(e){		
-					if(	isMasonryLayout(source) ){
+					if(	isMasonryLayout(observable.page) ){
 						console.log('masonry layout start.');
 						
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
