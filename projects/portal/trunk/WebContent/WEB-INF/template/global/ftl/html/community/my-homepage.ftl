@@ -315,10 +315,10 @@
 						  	masonryEl.masonry({
 						    	itemSelector : '.item'
 						  	});
-						  	masonryEl.on( 'layoutComplete', function() {
-						  		console.log('masonry layout complete.');
-						  	});
-						  	//kendo.ui.progress(masonryEl, false);
+						  	//masonryEl.on( 'layoutComplete', function() {
+						  	//	console.log('masonry layout complete.');
+						  	//});
+						  	kendo.ui.progress(renderTo, false);
 						  	masonryEl.css('visibility', 'visible');
 						});
 					}
