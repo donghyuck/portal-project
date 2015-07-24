@@ -114,6 +114,7 @@
 					link:false,
 					quote:false,
 					authorPhotoUrl : "/images/common/no-avatar.png",
+					adultContent : false,
 					pageSource : "",
 					pageSourceUrl : "",
 					imageSourceUrl : "",
@@ -241,6 +242,9 @@
 							$this.page.properties.imageSort = $this.imageSort;
 							$this.page.properties.imageSortDir = $this.imageSortDir;
 						}
+						if( $this.adultContent ){
+							$this.page.properties.adultContent = $this.adultContent ;
+						}
 					},
 					_save : function( callback ){		
 						var $this = this;		
@@ -337,6 +341,11 @@
 						}else{
 							that.set('pageSourceUrl', "");
 						}
+						if(that.page.properties.adultContent){
+							that.set('adultContent', that.page.properties.adultContent);
+						}else{
+							that.set('adultContent', false);
+						}						
 						if( that.page.properties.imageEffect ){
 							that.set('imageEffect', that.page.properties.imageEffect );
 						}
@@ -709,8 +718,8 @@
 		
 		
 		<!-- ============================== -->
-		<!-- Page														-->
-		<!-- ============================== -->		
+		<!-- Page ListView  				-->
+		<!-- ============================== -->			
 		function getMyPageOwnerId(){
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
@@ -782,8 +791,7 @@
 						createPageViewModal(item);
 						break;		
 						case 'edit':						
-						createPagePostModal(item);	
-						//createMyPageViewer(item, true);
+						createPagePostModal(item);
 						break;	
 						case 'delete':
 						deletePage(item, $this );					
@@ -875,7 +883,9 @@
 			}
 			return false;					
 		}  
-						
+		<!-- ============================== -->
+		<!-- Page View Modal				-->
+		<!-- ============================== -->								
 		function createPageViewModal(source){	
 			var renderTo = $("#my-page-view-modal");	
 			if( !renderTo.data('bs.modal') )
@@ -953,6 +963,10 @@
 				} );
 			}
 		}		
+					
+					
+					
+					
 						
 		function createMyPageViewer2(source){	
 			var renderTo = $("#my-page-viewer");			
@@ -1367,6 +1381,13 @@
 								</label>		
 								<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>	
 							</section>	
+							<section>
+                           	 <label class="label">성인 콘텐츠</label>
+                           	<div class="inline-group">
+                               	<label class="checkbox text-danger"><input type="checkbox" name="image-checkbox-adultContent" data-bind="checked: adultContent" value="true" data-type="boolean" ><i></i><span class="text-danger small">19세 미만의 청소년에게 부적절한 내용</span></label>                                
+                                <div class="note">체크한 경우 방문자에게 경고 메시지가 표시됩니다.</div>	
+                            </div>
+                        </section>							
 						</fieldset>
 						<fieldset data-bind="visible:editable">
 							<section class="text-right">
