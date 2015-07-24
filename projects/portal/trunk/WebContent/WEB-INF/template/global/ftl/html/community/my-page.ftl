@@ -874,7 +874,8 @@
 						target.button('reset');	
 					}
 					console.log("hasError:"+hasError);
-					common.ui.listview( $("#my-page-listview") ).dataSource.read();									
+					if( !hasError )
+						common.ui.listview( $("#my-page-listview") ).dataSource.read();									
 				});				
 			}else{
 				alert("게시할 수 없습니다.");	
