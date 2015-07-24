@@ -287,6 +287,12 @@
 				editable : true
 			}
 		},
+		adultContent : function(){
+			if(this.properties.adultContent )
+				return true;
+			else
+				return false;			
+		},
 		authorPhotoUrl : function() {
 			if (typeof this.get("user") === 'object' && this.get("user") != null)
 				return "/download/profile/" + this.get("user").username + "?width=150&height=150";
