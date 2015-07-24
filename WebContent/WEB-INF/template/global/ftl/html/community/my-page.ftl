@@ -869,10 +869,11 @@
 					target.button('loading');	
 				}
 				page.pageState = PAGE_STATES.PUBLISHED;
-				updatePageState( page , function(){
+				updatePageState( page , function(hasError){
 					if( common.ui.defined( target )){	
 						target.button('reset');	
 					}
+					console.log("hasError:"+hasError);
 					common.ui.listview( $("#my-page-listview") ).dataSource.read();									
 				});				
 			}else{
