@@ -330,9 +330,15 @@ function updatePageState(page, callback ){
 		data : kendo.stringify(page) ,
 		contentType : "application/json",
 		complete : function(jqXHR, textStatus ){
+			var hasError = false;
+			if(jqXHR.responseJSON ){
+				if( jqXHR.responseJSON.error )
+					hasError = true;
+			}
+			
 			console.log(kendo.stringify(jqXHR) );
 			if( common.ui.defined( callback )){	
-				callback();
+				callback(hasError);
 			}									
 		}							
 	});		
