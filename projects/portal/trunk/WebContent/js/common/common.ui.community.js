@@ -289,7 +289,7 @@
 		},
 		adultContent : function(){
 			if(this.properties.adultContent )
-				return true;
+				return this.properties.adultContent;
 			else
 				return false;			
 		},
