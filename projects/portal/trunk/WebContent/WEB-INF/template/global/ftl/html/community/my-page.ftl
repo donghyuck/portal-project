@@ -1387,7 +1387,7 @@
 							<section>
                            	 <label class="label">성인 콘텐츠</label>
                            	<div class="inline-group">
-                               	<label class="checkbox text-danger"><input type="checkbox" name="image-checkbox-adultContent" data-bind="checked: adultContent" value="true" data-type="boolean" >
+                               	<label class="checkbox text-danger"><input type="checkbox" name="image-checkbox-adultContent" data-bind="checked:adultContent" value="true" >
                                		<i></i>
                                		<span class="text-danger small">19세 미만의 청소년에게 부적절한 내용</span>
                                	</label>   
