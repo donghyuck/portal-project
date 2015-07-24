@@ -341,16 +341,8 @@
 						}else{
 							that.set('pageSourceUrl', "");
 						}
-						
-						
-						
-						if(that.page.properties.adultContent){
-							that.set('adultContent', that.page.adultContent());
-						}else{
-							that.set('adultContent', false);
-						}		
-						console.log("audlt content check:" + that.adultContent );
-										
+						that.set('adultContent', that.page.adultContent());
+						console.log("adult content check:" + that.adultContent );										
 						if( that.page.properties.imageEffect ){
 							that.set('imageEffect', that.page.properties.imageEffect );
 						}
@@ -1387,7 +1379,6 @@
 								<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>	
 							</section>	
 							<section>
-								<input type="checkbox" name="page-post-checkbox-adultContent" data-bind="checked:adultContent" value="true" >
                            		<label class="label">성인 콘텐츠</label>
                            		<div class="inline-group">
                                		<label class="checkbox text-danger"><input type="checkbox" name="page-post-checkbox-adultContent" data-bind="checked:adultContent" value="true" >
