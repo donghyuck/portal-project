@@ -341,11 +341,14 @@
 						}else{
 							that.set('pageSourceUrl', "");
 						}
+						
+						console.log("audlt content check:" + that.page.adultContent() );
 						if(that.page.properties.adultContent){
-							that.set('adultContent', that.page.properties.adultContent);
+							that.set('adultContent', that.page.adultContent());
 						}else{
 							that.set('adultContent', false);
-						}						
+						}		
+										
 						if( that.page.properties.imageEffect ){
 							that.set('imageEffect', that.page.properties.imageEffect );
 						}
