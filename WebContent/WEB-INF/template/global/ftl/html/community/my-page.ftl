@@ -1697,6 +1697,7 @@
 		# if (bodyContent.imageCount > 0){ #
 		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
+		#: adultContent() #
 		# if (adultContent()){ #
 			<span class="label label-danger rounded-3x" style="left: 0;right: inherit;">19+</span>
 		# } #
