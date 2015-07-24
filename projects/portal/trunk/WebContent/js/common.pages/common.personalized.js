@@ -220,8 +220,8 @@ function isCarouselSlideLayout(page){
 }
 
 function isMasonryLayout(page){
-	if(page.properties.postType && page.properties.imageEffect ){
-		if( page.properties.postType === 'photo' && page.properties.imageEffect === 'masonry' ){
+	if(page.properties.imageEffect ){
+		if( page.properties.imageEffect === 'masonry' ){
 			return true;
 		}
 	}
