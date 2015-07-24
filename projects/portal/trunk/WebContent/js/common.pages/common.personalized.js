@@ -329,7 +329,8 @@ function updatePageState(page, callback ){
 	common.ui.ajax( '/data/pages/update_state.json?output=json', {
 		data : kendo.stringify(page) ,
 		contentType : "application/json",
-		complete : function(e){
+		complete : function(jqXHR, textStatus ){
+			console.log(kendo.stringify(jqXHR) );
 			if( common.ui.defined( callback )){	
 				callback();
 			}									
