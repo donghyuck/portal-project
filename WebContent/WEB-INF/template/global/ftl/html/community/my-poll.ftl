@@ -140,7 +140,11 @@
 				});		
 										
 				// event for new page
-						
+				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
+					var poll = new common.ui.data.Poll();
+					//poll.set("objectType", getMyPageOwnerId());					
+					createPollPostModal(poll);
+				});		
 			}	
 		}
 		
