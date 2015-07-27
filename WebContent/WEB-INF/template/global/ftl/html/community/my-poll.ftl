@@ -457,38 +457,6 @@
 				</article>
 			</div>
 			</div>
-			<div class="bg-white">
-				<div class="container content" >					
-					<div class="row">	
-						<div class="col-sm-6">
-							<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>		
-						</div>	
-						<div class="col-sm-6">
-							<h4><i class="icon-flat microphone m-b-n-sm"></i> <small class="text-muted">설문을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
-							<div class="p-md">                                        
-                                        
-                                        <p>설문 상태</p>
-                                        <div class="radio radio-info radio-inline">
-                                            <input type="radio" id="my-poll-listview-state-all" value="option1" name="my-poll-listview-state" checked="">
-                                            <label for="my-poll-listview-state-all">전체</label>
-                                        </div>
-                                        <div class="radio radio-inline">
-                                            <input type="radio" id="my-poll-listview-state-active" value="option2" name="my-poll-listview-state">
-                                            <label for="my-poll-listview-state-active"> Active </label>
-                                        </div>
-                                        <div class="radio radio-inline">
-                                            <input type="radio" id="my-poll-listview-state-live" value="option2" name="my-poll-listview-state">
-                                            <label for="my-poll-listview-state-live"> Live </label>
-                                        </div>                                        
-                                    </div>
-                                    
-							<div id="my-poll-listview" class="ibox-content inspinia-timeline"></div>
-							
-						</div>								
-					</div>				
-				</div>
-			</div>		
-			
 			<!-- ./END MAIN CONTENT -->		 		
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
@@ -857,71 +825,7 @@
 		
 
 	<!-- START TEMPLATE -->				
-	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="col-md-3 col-sm-4  item" style="display:none;" data-object-id="#=pageId#">
-	<div class="ibox summary float-e-margins">
-		<div class="ibox-title cover">
-		# if (bodyContent.imageCount > 0){ #
-		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
-		#}#
-		# if (adultContent()){ #
-			<span class="label label-danger rounded-3x" style="left: 0;right: inherit;">19+</span>
-		# } #
-		#if ( pageState === "PUBLISHED" ) { #
-			<span class="label label-success">#: pageState #</span>
-		#}else if( pageState === "DELETED" ) {# 
-			<span class="label label-default">#: pageState #</span> 
-		#}else{# 
-			<span class="label label-danger">#: pageState #</span> 
-		#}#
-			<div class="hover-mask"></div>
-		</div>
-		<div class="ibox-content">			
-			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
-			<h2 class="text-muted">#:title#</a></h2>
-			#}#
-			<div class="page-meta no-margin-hr">
-			<ul class="list-inline">
-				<li>#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
-				<li>|</li>
-				<li>#: kendo.toString( modifiedDate , "D") #</li>
-				<li>|</li>
-				<li><i class="fa fa-eye"></i> #: viewCount#</li>
-				<li>|</li>
-				<li><i class="fa fa-comment-o"></i> #: commentCount#</li>				
-			</ul>        
-			#if ( tagsString.length > 0 ){#            
-			<p class="page-tags" ><i class="fa fa-tags"></i> #: tagsString #</p>
-			#}#
-			#if (summary!= null) {#
-			<p class="page-description">#: summary #</p>
-			#}#
-			</div>
-			# if( getCurrentUser().userId === user.userId ) { # 	
-				<div class="text-right">
-					<div class="btn-group">				
-						#if( pageState !=  'DELETED' ){#
-						<button class="btn btn-info btn-flat btn-outline rounded-left btn-sm" data-action="edit" data-object-id="#=pageId#"> 편집</button>
-						#}#
-						#if( pageState === 'PUBLISHED' ){#
-						<button class="btn btn-info btn-flat btn-outline btn-sm" data-action="share" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 공유</button>		
-						#}else{#
-							#if( pageState != 'DELETED'){# 
-							<button class="btn btn-info btn-flat btn-outline btn-sm" data-action="publish" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 게시</button>
-							#}#						
-						#}#
-					</div>				
-					#if( pageState ===  'DELETED' ){#						
-					<button class="btn btn-default btn-flat btn-outline rounded btn-sm" data-action="restore" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">임시저장 이동</button>		
-					#}else{#
-					<button class="btn btn-danger btn-flat btn-outline rounded-right btn-sm" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
-					#}#			
-				</div>	
-			#}#			
-		</div>
-	</div>
-	</div>
-	</script>	
+
 	<script id="my-poll-listview-template" type="text/x-kendo-template">
 	<div class="timeline-item">
 		<div class="row">
@@ -972,9 +876,9 @@
 	<div class="k-widget">
 		#:optionText#
 		<div class="edit-buttons">
-                <a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
-                <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
-            </div>
+            <a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
+            <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
+        </div>
 	</div>
 	</script>	
 	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
