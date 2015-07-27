@@ -475,8 +475,37 @@
 				<div class="modal-content my-page-view-form">	
 					<div class="modal-header">
 						<h2>ss</h2>
+						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings">
+							<i class="icon-flat icon-flat settings"></i>						
+						</span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
+					<form id="my-poll-modal-settings" action="#" class="sky-form modal-settings collapse">
+							<header>
+								옵션
+								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-poll-modal-settings"></span>
+							</header>
+							<fieldset>                  
+								<section>
+								<div class="separator-2"></div>
+								<label class="label">시작일</label>
+								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
+								<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
+								</section>
+								<div class="hr-line-dashed"></div>
+								<section>			
+								<label class="label">종료일</label>							
+								<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
+								<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
+								</section>			
+								<div class="hr-line-dashed"></div>
+								<section>			
+								<label class="label">만료일</label>
+								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
+								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
+								</section>
+							</fieldset>        					
+					</form>
 					<div class="modal-body">
 						
 					</div>
