@@ -421,22 +421,16 @@
 							<div class="col col-md-6">
 								<section>
 									<label class="label"> 상태 필터</label>							
-									<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-list-filter">
+									<div class="btn-group btn-group-sm" data-toggle="buttons" id="poll-list-filter">
 										<label class="btn btn-success  rounded-left">
-										<input type="radio" name="page-list-view-filters"  value="ALL"> 전체 </span>)
+										<input type="radio" name="poll-list-view-filters"  value="ALL"> 전체 </span>)
 										</label>
 										<label class="btn btn-success active">
-											<input type="radio" name="page-list-view-filters"  value="PUBLISHED"><i class="fa fa-filter"></i> PUBLISHED
-										</label><!--
-													<label class="btn btn-success">
-														<input type="radio" name="page-list-view-filters"  value="ARCHIVED"><i class="fa fa-filter"></i> ARCHIVED
-													</label>	-->
-										<label class="btn btn-success">
-											<input type="radio" name="page-list-view-filters"  value="INCOMPLETE"><i class="fa fa-filter"></i> INCOMPLETE
-										</label>													
+											<input type="radio" name="poll-list-view-filters"  value="ACTIVE"><i class="fa fa-filter"></i> ACTIVE
+										</label>
 										<label class="btn btn-success rounded-right">
-											<input type="radio" name="page-list-view-filters"  value="DELETED"><i class="fa fa-filter"></i> DELETED
-										</label>	
+											<input type="radio" name="poll-list-view-filters"  value="LIVE"><i class="fa fa-filter"></i> LIVE
+										</label>
 									</div>
 								</section>															
 							</div><!--
