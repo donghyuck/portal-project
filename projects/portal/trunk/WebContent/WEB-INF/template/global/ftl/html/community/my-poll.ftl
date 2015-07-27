@@ -472,7 +472,7 @@
 		<!-- Poll Edit Modal -->
 		<div id="my-poll-view-modal" role="dialog" class="modal fade" data-backdrop="static">
 			<div class="modal-dialog modal-lg">
-				<div class="modal-content my-page-view-form">	
+				<div class="modal-content my-page-post-form">	
 					<div class="modal-header">
 						<h2>ss</h2>
 						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings">
