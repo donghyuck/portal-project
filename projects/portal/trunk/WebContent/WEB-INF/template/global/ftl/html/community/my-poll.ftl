@@ -135,12 +135,17 @@
 					$this = $(this);		
 					var objectId = $this.data("object-id");	
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
-					openMyPollModal(item);
+					//openMyPollModal(item);
+					createPollPostModal(item);
 				});		
 										
 				// event for new page
 						
 			}	
+		}
+		
+		function createPollPostModal(source){
+			var renderTo = $("#my-poll-view-modal");	
 		}
 		
 		function createMyPollModal(){
@@ -454,7 +459,20 @@
 			<!-- ./END FOOTER -->					
 		</div>			
 			
-		<!-- Page Edit Modal -->
+		<!-- Poll Edit Modal -->
+		<div id="my-poll-view-modal" role="dialog" class="modal fade" data-backdrop="static">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content my-page-view-form">	
+					<div class="modal-header">
+						<h2>ss</h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>
+					<div class="modal-body">
+						
+					</div>
+				</div>
+			</div>		
+		</div>
 		
 		<div id="my-page-post-modal" role="dialog" class="modal fade" data-backdrop="static">
 			<div class="modal-dialog modal-lg">
