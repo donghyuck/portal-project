@@ -146,6 +146,12 @@
 		
 		function createPollPostModal(source){
 			var renderTo = $("#my-poll-view-modal");	
+			if( !renderTo.data('bs.modal') )
+			{
+			
+			}
+			
+			renderTo.modal('show');	
 		}
 		
 		function createMyPollModal(){
