@@ -2582,8 +2582,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 
 /** ------------------------------------------------- */
-/** page modal			                              */
+/** page modal, sky-form                              */
 /** ------------------------------------------------- */
+
+.sky-form.my-page-form fieldset.rounded-top {
+    border-radius: 8px 8px 0 0 !important;
+}
+
+
 .modal-dialog .modal-header .close {
 	right: 0px;
 	top: 4px;
