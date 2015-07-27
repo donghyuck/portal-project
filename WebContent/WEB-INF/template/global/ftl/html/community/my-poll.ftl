@@ -517,6 +517,11 @@
 									<input type="text" name="title" placeholder="무엇에 대한 설문인가요 ?" data-bind="value:page.title, events:{keypress: keypress}">
 								</label>
 							</section>	
+							<section>
+								<label class="textarea textarea-expandable">
+									<textarea rows="3" name="description" placeholder="도움말 텍스트" data-bind="value:poll.description"></textarea>
+								</label>
+							</section>							
 						</fieldset>		
 					</form>					
 					<div class="modal-body">
