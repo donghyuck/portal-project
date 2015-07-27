@@ -519,7 +519,7 @@
 							</section>	
 							<section>
 								<label class="textarea textarea-expandable">
-									<textarea rows="3" name="description" placeholder="도움말 텍스트" data-bind="value:poll.description"></textarea>
+									<textarea rows="3" name="description" placeholder="설문 설명" data-bind="value:poll.description"></textarea>
 								</label>
 							</section>							
 						</fieldset>		
