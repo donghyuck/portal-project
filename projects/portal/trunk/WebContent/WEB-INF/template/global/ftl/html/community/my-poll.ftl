@@ -410,7 +410,7 @@
 						<div class="row">
 							<div class="col col-md-6">
 								<section>
-									<label class="label"> 소유자</label>
+									<label class="label"><i class="fa fa-lock"></i> 소유자</label>
 									<div id="my-page-source-list" class="inline-group">
 										<label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i> Me</label>										
 										<label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>  ${action.webSite.company.displayName}</label>
@@ -420,7 +420,7 @@
 							</div>
 							<div class="col col-md-6">
 								<section>
-									<label class="label"> 상태 필터</label>							
+									<label class="label"><i class="fa fa-filter"></i> 상태 필터</label>							
 									<div class="btn-group btn-group-sm" data-toggle="buttons" id="poll-list-filter">
 										<label class="btn btn-success  rounded-left">
 										<input type="radio" name="poll-list-view-filters"  value="ALL"> 전체 </span>)
