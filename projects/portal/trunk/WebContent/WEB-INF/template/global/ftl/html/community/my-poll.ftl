@@ -75,7 +75,14 @@
 				// END SCRIPT 				
 			}
 		}]);			
-		
+
+		<!-- ============================== -->
+		<!-- Page ListView  				-->
+		<!-- ============================== -->			
+		function getMyPollOwnerId(){
+			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
+		}
+				
 		<!-- ============================== -->
 		<!-- Pool							-->
 		<!-- ============================== -->		
@@ -111,13 +118,27 @@
 				});		
 				renderTo.removeClass('k-widget');
 
+				$("#my-poll-source-list input[type=radio][name=radio-inline]").on("change", function () {						
+					common.ui.listview(renderTo).dataSource.read();	
+				});	
+
+				$("input[name='poll-list-view-filters']").on("change", function () {
+					var pageState = this.value;
+					if( pageState == 'ALL' ){
+						common.ui.listview(renderTo).dataSource.filter({}); 
+					}else{
+						common.ui.listview(renderTo).dataSource.filter({ field: "pageState", operator: "eq", value: pageState}); 
+					}
+				});	
+								
 				$("#my-poll-listview").on( "click", "a[data-action=edit], button[data-action=edit]",  function(e){		
 					$this = $(this);		
 					var objectId = $this.data("object-id");	
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
 					openMyPollModal(item);
-				});								
-				createMyPollModal();				
+				});		
+										
+				//createMyPollModal();				
 			}	
 		}
 		
@@ -200,12 +221,7 @@
 		}
 		
 		
-		<!-- ============================== -->
-		<!-- Page ListView  				-->
-		<!-- ============================== -->			
-		function getMyPollOwnerId(){
-			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
-		}
+
 		-->
 		</script>		
 		<style scoped="scoped">		
