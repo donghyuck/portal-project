@@ -506,6 +506,14 @@
 								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
 								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
 								</section>
+								<section>
+									<label class="label">테그</label>
+									<label class="input">
+										<i class="icon-append fa fa-tag text-info"></i>
+										<input type="text" name="tags" data-bind="value:page.tagsString">
+									</label>
+									<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
+								</section>								
 							</fieldset>        					
 					</form>
 					<form action="#" class="sky-form">
@@ -514,7 +522,7 @@
 								<p class="text-right text-danger small" data-bind="visible:editable">마지막 업데이트 일자 : <span data-bind="{ text: page.formattedModifiedDate }"></span></p>
 								<label class="input" for="title">
 									<i class="icon-append fa fa-asterisk"></i>
-									<input type="text" name="title" placeholder="무엇에 대한 설문인가요 ?" data-bind="value:page.title, events:{keypress: keypress}">
+									<input type="text" name="title" placeholder="무엇에 대한 설문인가요 ?" data-bind="value:poll.name, events:{keypress: keypress}">
 								</label>
 							</section>	
 							<section>
