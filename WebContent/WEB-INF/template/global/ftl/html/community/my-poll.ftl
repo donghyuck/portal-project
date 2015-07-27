@@ -138,7 +138,8 @@
 					openMyPollModal(item);
 				});		
 										
-				//createMyPollModal();				
+				// event for new page
+						
 			}	
 		}
 		
