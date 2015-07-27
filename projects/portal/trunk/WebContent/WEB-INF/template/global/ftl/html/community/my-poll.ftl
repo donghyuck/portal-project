@@ -474,7 +474,9 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-post-form">	
 					<div class="modal-header">
-						<h2>ss</h2>
+						<div class="author">
+							<img data-bind="attr:{src:authorPhotoUrl}" style="margin-right:10px;">
+						</div>
 						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings">
 							<i class="icon-flat icon-flat settings"></i>						
 						</span>
@@ -482,7 +484,7 @@
 					</div>
 					<form id="my-poll-modal-settings" action="#" class="sky-form modal-settings collapse">
 							<header>
-								옵션
+								고급옵션
 								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-poll-modal-settings"></span>
 							</header>
 							<fieldset>                  
