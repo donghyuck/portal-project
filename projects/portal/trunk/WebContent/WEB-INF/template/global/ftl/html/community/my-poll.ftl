@@ -401,17 +401,7 @@
 			</#if>
 			<div class="footer-buttons-wrapper">
 				<div class="footer-buttons">
-					<div class="dropup">
-					<button class="btn-link hvr-pulse-shrink" type="button" id="dropdown-menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="icon-flat icon-flat pencil"></i></button>
-					<ul class="dropdown-menu" aria-labelledby="dropdown-menu1">
-						<li><a href="#" data-action="create" data-object-type="31">페이지 만들기</a></li>
-						<li><a href="#" data-action="post" data-object-type="31">만들기</a></li>
-						<li><a href="#" data-action="create" data-object-type="40">설문 만들기</a></li>
-						<li><a href="#">이벤트 & 공지 만들기</a></li>
-						<li class="disabled"><a href="#">장소 공유하기</a></li>
-						<li class="disabled"><a href="#">북마크 만들기 </a></li>
-					</ul>					
-					</div>
+					<button class="btn-link hvr-pulse-shrink" data-action="create" data-object-type="40"><i class="icon-flat microphone"></i></button>
 					<button class="btn-link hvr-pulse-shrink"><i class="icon-flat icon-flat help"></i></button>
 				</div>
 			</div>			
