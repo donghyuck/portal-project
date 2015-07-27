@@ -87,7 +87,7 @@
 						transport: { 
 							read: { url:'<@spring.url "/data/polls/list.json?output=json"/>', type: 'POST' }/*,
 							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPollOwnerId() }
 							}*/
 						},
 						requestStart: function(e){				
@@ -203,11 +203,9 @@
 		<!-- ============================== -->
 		<!-- Page ListView  				-->
 		<!-- ============================== -->			
-		function getMyPageOwnerId(){
+		function getMyPollOwnerId(){
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
-	
-
 		-->
 		</script>		
 		<style scoped="scoped">		
