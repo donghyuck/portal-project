@@ -1244,7 +1244,7 @@
 			</div>			
 			
 			<!-- START MAIN CONTENT -->
-			<div class="bg-section">
+			<div class="bg-white">
 			<div class="container content">			
 				<div class="sky-form my-page-form">
 					<fieldset>
