@@ -406,12 +406,12 @@
 			<div class="bg-white">
 			<div class="container content">			
 				<div class="sky-form my-page-form">
-					<fieldset>
+					<fieldset class="rounded-top">
 						<div class="row">
 							<div class="col col-md-6">
 								<section>
 									<label class="label"><i class="fa fa-lock"></i> 소유자</label>
-									<div id="my-page-source-list" class="inline-group">
+									<div id="my-poll-source-list" class="inline-group">
 										<label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i> Me</label>										
 										<label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>  ${action.webSite.company.displayName}</label>
 										<label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>  ${action.webSite.displayName}</label>
@@ -433,16 +433,13 @@
 										</label>
 									</div>
 								</section>															
-							</div><!--
-							<div class="col col-md-3 text-right">
-									<button type="button" class="btn btn-danger btn-lg btn-outline btn-flat" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
-							</div>-->
+							</div>
 						</div>	
 					</fieldset>
 				</div>				
 				<article class="my-page-wrapper">
-					<div id="my-page-listview" class="row"></div>
-					<div id="my-page-pager"></div>
+					<div id="my-poll-listview" class="row"></div>
+					<div id="my-poll-pager"></div>
 				</article>
 			</div>
 			</div>
