@@ -184,7 +184,7 @@
 				renderTo.data("model", observable);				
 				kendo.bind(renderTo, observable );
 			}
-			
+			renderTo.data("model").setSource(source);
 			renderTo.modal('show');	
 		}
 		
