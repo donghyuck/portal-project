@@ -157,7 +157,7 @@
 					followUp : false,
 					visible : true,
 					authorPhotoUrl : "/images/common/no-avatar.png",
-					create : functioin(){
+					create : function(){
 					
 					},
 					update : function(){
