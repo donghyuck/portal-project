@@ -173,6 +173,7 @@
 							this.set('editable', true);
 							this.set('followUp', false);
 							this.set("authorPhotoUrl", this.poll.authorPhotoUrl() );
+							
 							if (!common.ui.exists(listview)) {								
 								common.ui.grid(listview), {
 									dataSource : new kendo.data.DataSource({ 
