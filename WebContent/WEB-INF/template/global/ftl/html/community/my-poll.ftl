@@ -167,11 +167,37 @@
 						alert( kendo.stringify(this.poll) );					
 					},
 					setSource : function( source ){
-						source.copy( this.poll );		
+						source.copy( this.poll );	
+						var listview = $("#my-poll-options-grid");	
 						if( this.poll.pollId > 0 ){
 							this.set('editable', true);
 							this.set('followUp', false);
 							this.set("authorPhotoUrl", this.poll.authorPhotoUrl() );
+							if (!common.ui.exists(listview)) {								
+								common.ui.grid(listview), {
+									dataSource : new kendo.data.DataSource({ 
+										data: observable.poll.options ,
+										schema:{
+											model:{ id: "optionId",
+												fields:{
+													optionId : {editable: true, editable : true, defaultValue : 0},
+													optionText : {editable: true, editable : true, nullable:false }								
+												}
+											}
+										}
+									}),			
+									toolbar: [{ name: "create", text:"추가"}],
+									columns:[{
+										width: 50,
+										field: 'optionId',
+										title: "ID"},{
+										field: 'optionText',
+										title: "내용"},
+										{ command: [{ name : "edit" , text : {edit:"변경", update:"확인", cancel:"최소" }  }, {name:"destroy", text: "삭제" }], title: "&nbsp;", width: "250px" }				
+									],
+									editable: "inline"
+								});
+							}
 						}else{
 							this.set('editable', false);
 							this.set('followUp', true);
@@ -179,6 +205,8 @@
 							this.poll.endDate.setMonth(this.poll.startDate.getMonth()+1); 
 							this.poll.expireDate.setMonth(this.poll.endDate.getMonth()+1); 
 						} 		
+						
+						
 					}
 				});								
 				renderTo.data("model", observable);				
@@ -564,6 +592,12 @@
 								 설문은 부터 까지 진행되며 결과는 까지 볼수 있습니다. 고급옵션에서 변경할 수 있습니다.
 							</section>					
 						</fieldset>		
+						<fieldset data-bind="enabled:editable">
+							<div class="my-poll-options" >		
+								<label class="label">옵션</label>					
+								<div id="my-poll-options-grid"></div>
+							</div>								
+						</fieldset>							
 					</form>					
 					<div class="modal-body">
 						
