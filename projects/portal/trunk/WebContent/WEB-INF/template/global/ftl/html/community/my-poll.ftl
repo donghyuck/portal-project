@@ -171,11 +171,11 @@
 						if( this.poll.pollId > 0 ){
 							this.set('editable', true);
 							this.set('followUp', false);
-							that.set("authorPhotoUrl", that.page.authorPhotoUrl() );
+							this.set("authorPhotoUrl", that.page.authorPhotoUrl() );
 						}else{
 							this.set('editable', false);
 							this.set('followUp', true);
-							that.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);	
+							this.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);	
 							this.poll.endDate.setMonth(this.poll.startDate.getMonth()+1); 
 							this.poll.expireDate.setMonth(this.poll.endDate.getMonth()+1); 
 						} 		
