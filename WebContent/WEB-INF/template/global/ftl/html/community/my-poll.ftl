@@ -176,6 +176,8 @@
 							this.set('editable', false);
 							this.set('followUp', true);
 							that.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);	
+							this.poll.endDate.setMonth(this.poll.startDate.getMonth()+1); 
+							this.poll.expireDate.setMonth(this.poll.endDate.getMonth()+1); 
 						} 		
 					}
 				});								
@@ -547,7 +549,7 @@
 					<form action="#" class="sky-form">
 						<fieldset>
 							<section>
-								<p class="text-right text-danger small" data-bind="visible:editable">마지막 업데이트 일자 : <span data-bind="{ text: page.formattedModifiedDate }"></span></p>
+								<p class="text-right text-danger small" data-bind="visible:editable">마지막 업데이트 일자 : <span data-bind="{ text: poll.formattedModifiedDate }"></span></p>
 								<label class="input" for="title">
 									<i class="icon-append fa fa-asterisk"></i>
 									<input type="text" name="title" placeholder="무엇에 대한 설문인가요 ?" data-bind="value:poll.name, events:{keypress: keypress}">
