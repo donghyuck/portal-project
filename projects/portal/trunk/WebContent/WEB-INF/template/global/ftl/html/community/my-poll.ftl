@@ -590,7 +590,7 @@
 								</label>
 							</section>		
 							<section>
-								 설문은 부터 까지 진행되며 결과는 까지 볼수 있습니다. 고급옵션에서 변경할 수 있습니다.
+								 설문은 <span data-format="dd-MM-yyyy" data-bind="text: poll.startDate"></span>부터 <span data-format="dd-MM-yyyy" data-bind="text: oill.endDate"></span>까지 진행되며 결과는 <span data-format="dd-MM-yyyy" data-bind="text: poll.expireDate"></span> 까지 볼수 있습니다. 고급옵션에서 변경할 수 있습니다.
 							</section>					
 						</fieldset>		
 						<fieldset data-bind="enabled:editable">
