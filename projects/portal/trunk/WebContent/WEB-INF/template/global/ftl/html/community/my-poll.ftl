@@ -171,7 +171,7 @@
 						if( this.poll.pollId > 0 ){
 							this.set('editable', true);
 							this.set('followUp', false);
-							this.set("authorPhotoUrl", that.page.authorPhotoUrl() );
+							this.set("authorPhotoUrl", this.poll.authorPhotoUrl() );
 						}else{
 							this.set('editable', false);
 							this.set('followUp', true);
