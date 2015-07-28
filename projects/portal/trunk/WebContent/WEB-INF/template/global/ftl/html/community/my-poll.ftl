@@ -590,7 +590,7 @@
 								</label>
 							</section>		
 							<section>
-								 설문은 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.startDate"></span>부터 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.endDate"></span>까지 진행되며 결과는 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.expireDate"></span> 까지 볼수 있습니다. 이러한 설정은 <span data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings" aria-expanded="false">고급옵션</span>에서 변경할 수 있습니다.
+								 설문은 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.startDate"></span>부터 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.endDate"></span>까지 진행되며 결과는 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.expireDate"></span> 까지 볼수 있습니다. 이러한 설정은 <a href="#" class="btn-link" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings" aria-expanded="false">고급옵션</span>에서 변경할 수 있습니다.
 							</section>					
 						</fieldset>		
 						<fieldset data-bind="enabled:editable">
