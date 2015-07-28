@@ -160,7 +160,7 @@
 					create : functioin(){
 					
 					},
-					upcate : function(){
+					update : function(){
 					
 					},
 					saveOrUpdate : function(callback){
