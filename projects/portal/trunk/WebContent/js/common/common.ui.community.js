@@ -473,6 +473,12 @@
 			else
 				return "/images/common/no-avatar.png";
 		},
+		formattedCreationDate : function() {
+			return kendo.toString(this.get("creationDate"), "F");
+		},
+		formattedModifiedDate : function() {
+			return kendo.toString(this.get("modifiedDate"), "F");
+		},			
 		copy : function(target) {
 			target.pollId = this.get("pollId");
 			target.set("objectType", this.get("objectType"));
