@@ -529,7 +529,10 @@
 								<label class="textarea textarea-expandable">
 									<textarea rows="3" name="description" placeholder="설문 설명" data-bind="value:poll.description"></textarea>
 								</label>
-							</section>							
+							</section>		
+							<section>
+								 설문은 부터 까지 진행되며 결과는 까지 볼수 있습니다. 고급옵션에서 변경할 수 있습니다.
+							</section>					
 						</fieldset>		
 					</form>					
 					<div class="modal-body">
