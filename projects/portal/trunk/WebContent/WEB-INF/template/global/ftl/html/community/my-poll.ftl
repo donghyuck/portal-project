@@ -175,7 +175,7 @@
 							this.set("authorPhotoUrl", this.poll.authorPhotoUrl() );
 							
 							if (!common.ui.exists(listview)) {								
-								common.ui.grid(listview), {
+								common.ui.grid(listview, {
 									dataSource : new kendo.data.DataSource({ 
 										data: observable.poll.options ,
 										schema:{
