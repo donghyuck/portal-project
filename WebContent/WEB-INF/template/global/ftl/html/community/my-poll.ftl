@@ -135,7 +135,6 @@
 					$this = $(this);		
 					var objectId = $this.data("object-id");	
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
-					//openMyPollModal(item);
 					createPollPostModal(item);
 				});		
 										
@@ -152,7 +151,36 @@
 			var renderTo = $("#my-poll-view-modal");	
 			if( !renderTo.data('bs.modal') )
 			{
-			
+				var observable =  common.ui.observable({ 
+					poll : new common.ui.data.Poll(),
+					editable : false,
+					followUp : false,
+					visible : true,
+					authorPhotoUrl : "/images/common/no-avatar.png",
+					create : functioin(){
+					
+					},
+					upcate : function(){
+					
+					},
+					saveOrUpdate : function(callback){
+						alert( kendo.stringify(this.poll) );					
+					},
+					setSource : function( source ){
+						source.copy( this.poll );		
+						if( this.poll.pollId > 0 ){
+							this.set('editable', true);
+							this.set('followUp', false);
+							that.set("authorPhotoUrl", that.page.authorPhotoUrl() );
+						}else{
+							this.set('editable', false);
+							this.set('followUp', true);
+							that.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);	
+						} 		
+					}
+				});								
+				renderTo.data("model", observable);				
+				kendo.bind(renderTo, observable );
 			}
 			
 			renderTo.modal('show');	
