@@ -187,14 +187,15 @@
 											}
 										}
 									}),			
-									toolbar: [{ name: "create", text:"추가"}],
+									toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'), 
+									/*toolbar: [{ name: "create", text:"추가"}],*/
 									columns:[{
 										width: 50,
 										field: 'optionId',
 										title: "ID"},{
 										field: 'optionText',
 										title: "내용"},
-										{ command: [{ name : "edit" , text : {edit:"변경", update:"확인", cancel:"최소" }  }, {name:"destroy", text: "삭제" }], title: "&nbsp;", width: "250px" }				
+										{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }				
 									],
 									editable: "inline"
 								});
