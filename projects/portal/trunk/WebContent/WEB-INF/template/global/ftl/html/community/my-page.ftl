@@ -315,22 +315,17 @@
 					},
 					setSource: function(page, postType){
 						var that = this;
-						page.copy(that.page);					
-						
-						that.setPostType(that.page.properties.postType||postType); 
-						
+						page.copy(that.page);											
+						that.setPostType(that.page.properties.postType||postType); 						
 						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
 							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
-						}
-						
+						}						
 						if(that.page.pageId > 0 ){
 							that.set("authorPhotoUrl", that.page.authorPhotoUrl() );							
 						}else{
 							that.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);							
-						}
-						
-						that.set('imageLayoutChanged', false);
-						
+						}						
+						that.set('imageLayoutChanged', false);						
 						if( that.page.properties.source ){
 							that.set('pageSource', that.page.properties.source);
 						}else{
@@ -533,21 +528,7 @@
 				
 				$('#my-post-modal-settings-props').on('show.bs.collapse', function(e){
 					common.ui.grid($("#my-post-modal-settings .page-props-grid")).setDataSource(
-						common.ui.data.page.properties.datasource(observable.page)/*		
-							common.ui.data.properties.datasource({
-									transport: { 
-										read: { url:"/data/pages/properties/list.json?output=json", type:'GET' },
-										create: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + observable.page.pageId, type:'POST' ,contentType : "application/json" },
-										update: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + observable.page.pageId, type:'POST'  ,contentType : "application/json"},
-										destroy: { url:"/data/pages/properties/delete.json?output=json" +  "&pageId=" + observable.page.pageId, type:'POST' ,contentType : "application/json"},
-								 		parameterMap: function (options, operation){			
-											if (operation !== "read" && options.models) {
-												return kendo.stringify(options.models);
-											} 
-											return { pageId: observable.page.pageId }
-										}
-									}
-							})*/
+						common.ui.data.page.properties.datasource(observable.page)
 					);
 				});
 				
