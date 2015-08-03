@@ -752,7 +752,7 @@
 						error:common.ui.handleAjaxError,
 						batch: false,
 						pageSize: 15,
-						serverFilter: true,
+						serverFiltering: true,
 						serverPaging: true,
 						filter: {
 							field: "pageState", operator: "eq", value: "PUBLISHED"
