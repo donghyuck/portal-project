@@ -220,7 +220,7 @@ function isCarouselSlideLayout(page){
 }
 
 function isMasonryLayout(page){
-	console.log(page.properties);
+	//console.log(page.properties);
 	if(page.properties.imageEffect ){
 		if( page.properties.imageEffect === 'masonry' ){
 			return true;
