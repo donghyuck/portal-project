@@ -1274,7 +1274,7 @@
 									<label class="label"> 상태 필터</label>							
 									<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-list-filter">
 										<label class="btn btn-success  rounded-left">
-										<input type="radio" name="page-list-view-filters"  value="ALL"> 전체 </span>)
+										<input type="radio" name="page-list-view-filters"  value="NONE"> 전체 </span>)
 										</label>
 										<label class="btn btn-success active">
 											<input type="radio" name="page-list-view-filters"  value="PUBLISHED"><i class="fa fa-filter"></i> PUBLISHED
