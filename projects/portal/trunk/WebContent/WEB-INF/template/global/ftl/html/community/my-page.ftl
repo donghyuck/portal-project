@@ -720,7 +720,16 @@
 		function getMyPageOwnerId(){
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
-	
+		
+		function getMyPageState(){
+			var pageStateVal = $("input[name='page-list-view-filters']:checked").val();
+			if( common.ui.defined(pageStateEl))
+				return pageState;	
+			else
+				return "PUBLISHED";
+					
+		}
+		
 		function createMyPageListView(){		
 			var renderTo = $("#my-page-listview");
 			if( !renderTo.data('masonry')){			
@@ -738,7 +747,7 @@
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() , full:false}
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() , full:false, state:  getMyPageState()}
 							}
 						},
 						requestStart: function(e){				
