@@ -942,11 +942,9 @@
 				});
 				
 				renderTo.on('shown.bs.modal', function(e){		
-					console.log("masonry layout :" + isMasonryLayout(source) );
-					if(	isMasonryLayout(source) ){
-						console.log('masonry... prepare');
-						
-						
+					console.log("masonry layout :" + isMasonryLayout( renderTo.data("model").page ) );
+					if(	isMasonryLayout(renderTo.data("model").page) ){
+						console.log('masonry layout creating...');
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
 						kendo.ui.progress(masonryEl, true);	
 						masonryEl.imagesLoaded( function(){
