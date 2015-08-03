@@ -723,8 +723,8 @@
 		
 		function getMyPageState(){
 			var pageStateVal = $("input[name='page-list-view-filters']:checked").val();
-			if( common.ui.defined(pageStateEl))
-				return pageState;	
+			if( common.ui.defined(pageStateVal))
+				return pageStateVal;	
 			else
 				return "PUBLISHED";
 					
