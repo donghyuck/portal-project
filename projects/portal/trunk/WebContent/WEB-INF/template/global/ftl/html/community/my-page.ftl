@@ -927,12 +927,12 @@
 					if(	isMasonryLayout(renderTo.data("model").page) ){
 						console.log('masonry layout creating...');
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
-						kendo.ui.progress(masonryEl, true);	
+						kendo.ui.progress(renderTo, true);	
 						masonryEl.imagesLoaded( function(){
 						  	masonryEl.masonry({
 						    	itemSelector : '.item'
 						  	});
-						  	kendo.ui.progress(masonryEl, false);	
+						  	kendo.ui.progress(renderTo, false);	
 						  	masonryEl.css('visibility', 'visible');
 						});
 					}
