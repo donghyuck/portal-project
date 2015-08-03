@@ -942,7 +942,7 @@
 				});
 				
 				renderTo.on('shown.bs.modal', function(e){		
-					console.log("layout :" + isMasonryLayout(source) );
+					console.log("masonry layout :" + isMasonryLayout(source) );
 					if(	isMasonryLayout(source) ){
 						console.log('masonry... prepare');
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
