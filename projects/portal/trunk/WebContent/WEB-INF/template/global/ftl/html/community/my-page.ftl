@@ -180,7 +180,9 @@
 						btn = $(e.target);
 						$this._setProperties();	
 						if( $this.validate() ){			
+							
 							console.log('imageLayoutChanged:' + $this.get('imageLayoutChanged') );		
+							
 							var completeFn = function(){
 									console.log('execute complate ...');									
 									btn.button('reset');
@@ -346,7 +348,8 @@
 						}	
 						if( that.page.properties.imageSortDir ){
 							that.set('imageSortDir' , that.page.properties.imageSortDir );
-						}									
+						}				
+											
 						if( that.photo && that.page.pageId > 0 ){						
 							if( that.imageSort === null ){	
 								that.set("imageSort", "name");
@@ -426,6 +429,7 @@
 										that.set('imageLayoutChanged', true);
 									});									
 							}	
+							
 							if(!common.ui.exists(upload)){
 								common.ui.upload( upload, {
 									async : {
@@ -440,7 +444,8 @@
 										common.ui.listview(listview).dataSource.read();
 									}
 								});
-							}								
+							}	
+														
 							common.ui.listview(listview).dataSource.read().then(function(){
 								console.log('sorting' + that.imageSort + ", " + that.imageSortDir );
 								that.set('imageLayoutChanged', false);
@@ -451,27 +456,27 @@
 						// page properties ... 
 						var $grid = $("#my-post-modal-settings .page-props-grid");
 						if(that.page.pageId > 0 & !common.ui.exists($grid)){
-								common.ui.grid($grid, {				
-									//dataSource : common.ui.data.page.properties.datasource(that.page),					
-									columns: [
+							common.ui.grid($grid, {				
+								//dataSource : common.ui.data.page.properties.datasource(that.page),					
+								columns: [
 										{ title: "속성", field: "name" },
 										{ title: "값",   field: "value" },
 										{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
-									],
-									pageable: false,
-									resizable: true,
-									editable : true,
-									scrollable: true,
-									autoBind: true,
-									toolbar: [
-										{ name: "create", text: "추가" },
-										{ name: "save", text: "저장" },
-										{ name: "cancel", text: "취소" }
-									],				     
-									change: function(e) {
-										this.refresh();
-									}
-								});							
+								],
+								pageable: false,
+								resizable: true,
+								editable : true,
+								scrollable: true,
+								autoBind: true,
+								toolbar: [
+									{ name: "create", text: "추가" },
+									{ name: "save", text: "저장" },
+									{ name: "cancel", text: "취소" }
+								],				     
+								change: function(e) {
+									this.refresh();
+								}
+							});							
 						}
 												
 					},
@@ -1413,7 +1418,7 @@
 								</label>
 							</section>
 							<section data-bind="visible:quote">
-								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting', 'createLink', 'unlink']" data-bind="value:page.bodyContent.bodyText" >
+								<div class="quote" >
 								</div>
 							</section>
 							<section data-bind="visible:text">
@@ -1583,10 +1588,9 @@
 							<div data-bind="{html:page.bodyContent.bodyText}" class="atricle"></div>
 						</div>				
 					</div>
-				</div>	
-				
+				</div>					
 			</div>
-	</div>	
+		</div>	
 						
 		<div id="my-post-type-switcher" class="dialog-switcher" >		
 			<div class="dialog-switcher-content">
@@ -1771,35 +1775,6 @@
 			</div>
 		</div>
 	</div>
-	
-	<!--	<div class="ibox">
-			<div class="ibox-title">
-				<span class="label label-primary pull-right">NEW</span>
-				<h5><i class="fa fa-bar-chart"></i> #: name #</h5>
-			</div>
-			<div class="ibox-content">
-				<p class="text-muted"><small>#: description #</small></p>
-				<div class="team-members">
-					<a href="\\#"><img alt="member" class="img-circle" src="img/a1.jpg"></a>
-                                <a href="\\#"><img alt="member" class="img-circle" src="img/a2.jpg"></a>
-                                <a href="\\#"><img alt="member" class="img-circle" src="img/a3.jpg"></a>
-                                <a href="\\#"><img alt="member" class="img-circle" src="img/a5.jpg"></a>
-                                <a href="\\#"><img alt="member" class="img-circle" src="img/a6.jpg"></a>
-				</div>
-				<h3 class="heading-xs">결과<span class="pull-right">88%</span></h3>
-				<div class="progress progress-u progress-xs">
-					<div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
-					</div>
-				</div>
-				
-				<ul class="list-unstyled margin-bottom-30">
-					<li><strong>시작일:</strong> #: kendo.toString( startDate , "D") #</li>
-                	<li><strong>종료일:</strong>#: kendo.toString( endDate , "D") #</li>
-                	<li><strong>만료일:</strong> #: kendo.toString( expireDate , "D") #</li>
-                </ul>
-                <button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
-			</div>
-		</div>-->
 	</script>	
 	<script id="my-poll-option-template" type="text/x-kendo-template">
 	<div class="k-widget">
