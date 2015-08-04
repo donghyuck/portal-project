@@ -715,7 +715,7 @@
 			var renderTo = $("#my-page-listview");
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({	
-					columnWidth: '.item',
+					columnWidth: 300,
 					itemSelector: '.item',
 					isResizable:true,
 					transitionDuration: 0
@@ -1687,7 +1687,7 @@
 
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="col-md-3 col-sm-4  item" style="display:none;" data-object-id="#=pageId#">
+	<div class="item" style="display:none;" data-object-id="#=pageId#">
 	<div class="ibox summary float-e-margins">
 		<div class="ibox-title cover">
 		# if (bodyContent.imageCount > 0){ #
