@@ -753,7 +753,7 @@
 					dataBound: function(e){		
 						var elem = 	this.element.children();	
 						elem.imagesLoaded(function(){
-							console.log("image loaded..."):
+							console.log("image loaded...");
 							masonry.appended(elem);
 							masonry.layout();
 						});
