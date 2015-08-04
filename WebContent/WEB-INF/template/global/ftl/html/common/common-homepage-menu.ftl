@@ -72,7 +72,9 @@
                                                     		<#if item.description ??>
                                                     		<p>${item.description}</p>
                                                     		</#if>
+                                                    		<#if item.module ?? && item.module == "my-cloud">
                                                     		<button type="button" class="btn-u btn-u-dark">Read More</button>
+                                                    		</#if>
                                                 		</div>
 														<#list item.components as sub_item>
 															<#if sub_item.components?has_content >
