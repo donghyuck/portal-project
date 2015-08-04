@@ -1241,7 +1241,8 @@
 						<li class="disabled"><a href="#">북마크 만들기 </a></li>
 					</ul>					
 					</div>
-					<button class="btn-link hvr-pulse-shrink"><i class="icon-flat icon-flat help"></i></button>
+					<button class="btn-link hvr-pulse-shrink" type="button" data-action="post" data-object-type="31"><i class="icon-flat icon-flat help"></i></button>
+					<button class="btn-link hvr-pulse-shrink disabled"><i class="icon-flat icon-flat help"></i></button>
 				</div>
 			</div>			
 			
