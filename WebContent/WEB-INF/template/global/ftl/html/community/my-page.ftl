@@ -773,7 +773,11 @@
 				
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource,
-					pageSizes: [15, 25, 50, 100]
+					pageSizes: [15, 25, 50, 100],
+					messages: {
+						empty : "작성하신 페이지가 없습니다.",
+				        display: "Showing {0}-{1} from {2} data items"
+				    }
 				});	
 				
 				$("#my-page-listview").on( "click", "a[data-action], button[data-action]",  function(e){				
