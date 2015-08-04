@@ -1117,7 +1117,9 @@
 			overflow: hidden;	
 			//border: 1px solid #e7eaec;
 		}
-		
+		#my-page-listview .item {
+			width:300px;
+		}
 		#my-page-listview .ibox .ibox-content {
 			//background-color: #fafafa!important;
 		}
