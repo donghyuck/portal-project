@@ -64,9 +64,14 @@
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 									<ul class="dropdown-menu">
 										<li>
-											<div class="mega-menu-content disable-icons">
+											<div class="mega-menu-content">
 												<div class="container">
-													<div class="row equal-height">													
+													<div class="row">													
+														<div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
+                                                    		<h3 class="mega-menu-heading">Pellentes que nec diam lectus</h3>
+                                                    		<p>Proin pulvinar libero quis auctor pharet ra. Aenean fermentum met us orci, sedf eugiat augue pulvina r vitae. Nulla dolor nisl, molestie nec aliquam vitae, gravida sodals dolor...</p>
+                                                    		<button type="button" class="btn-u btn-u-dark">Read More</button>
+                                                		</div>
 														<#list item.components as sub_item>
 															<#if sub_item.components?has_content >
 															<div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30 no-border">
@@ -83,6 +88,7 @@
 															</#if>
 														</#list>
 													</div>
+												
 												</div>
 											</div>
 										</li>	
