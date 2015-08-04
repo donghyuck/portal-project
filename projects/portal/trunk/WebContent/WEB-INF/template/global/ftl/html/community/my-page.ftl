@@ -715,7 +715,7 @@
 			var renderTo = $("#my-page-listview");
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({	
-					columnWidth: 280,
+					columnWidth: '.col-sm-3',
 					gutter: 10,
 					itemSelector: '.item',
 					isResizable:true,
