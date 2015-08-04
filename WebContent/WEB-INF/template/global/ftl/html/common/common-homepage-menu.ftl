@@ -73,7 +73,7 @@
                                                     		<p>${item.description}</p>
                                                     		</#if>
                                                     		<#if item.module ?? && item.module == "my-cloud">
-                                                    		<img src="<@spring.url 'images/common/cloud_swiss_army_knife_nobg.png'/>" class="img-responsive"/>
+                                                    		<img src="<@spring.url '/images/common/cloud_swiss_army_knife_nobg.png'/>" class="img-responsive"/>
                                                     		<button type="button" class="btn-u btn-u-dark">Read More</button>
                                                     		</#if>
                                                 		</div>
