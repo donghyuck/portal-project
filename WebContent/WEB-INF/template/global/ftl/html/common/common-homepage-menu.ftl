@@ -77,7 +77,7 @@
                                                     		<button type="button" class="btn-u btn-u-dark">Read More</button>
                                                     		</#if>
                                                 		</div>
-                                                		<div class="col-md-9 col-sm-12 col-xs-12 md-margin-bottom-30"
+                                                		<div class="col-md-9 col-sm-12 col-xs-12 md-margin-bottom-30">
                                                 			<div class="row">
                                                 				<ul class="list-unstyled style-list">
 			                                                        <li><a href="#">All accessories</a></li>
