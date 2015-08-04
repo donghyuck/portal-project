@@ -716,7 +716,7 @@
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({	
 					columnWidth: '.col-sm-3',
-					gutter: 10,
+					//gutter: 10,
 					itemSelector: '.item',
 					isResizable:true,
 					transitionDuration: 0
