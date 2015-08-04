@@ -465,18 +465,18 @@
 								],
 								pageable: false,
 								resizable: true,
-								editable : true,
-								scrollable: true,
-								autoBind: true,
-								toolbar: [
-									{ name: "create", text: "추가" },
-									{ name: "save", text: "저장" },
-									{ name: "cancel", text: "취소" }
-								],				     
-								change: function(e) {
-									this.refresh();
-								}
-							});							
+									editable : true,
+									scrollable: true,
+									autoBind: true,
+									toolbar: [
+										{ name: "create", text: "추가" },
+										{ name: "save", text: "저장" },
+										{ name: "cancel", text: "취소" }
+									],				     
+									change: function(e) {
+										this.refresh();
+									}
+								});							
 						}
 												
 					},
@@ -1418,7 +1418,7 @@
 								</label>
 							</section>
 							<section data-bind="visible:quote">
-								<div class="quote" >
+								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting', 'createLink', 'unlink']" data-bind="value:page.bodyContent.bodyText" >
 								</div>
 							</section>
 							<section data-bind="visible:text">
