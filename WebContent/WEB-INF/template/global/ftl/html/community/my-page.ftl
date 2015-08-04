@@ -715,7 +715,7 @@
 			var renderTo = $("#my-page-listview");
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({	
-					columnWidth: 300,
+					columnWidth: 280,
 					gutter: 10,
 					itemSelector: '.item',
 					isResizable:true,
@@ -1111,7 +1111,7 @@
 			min-height: 150px;		
 		}
 		#my-page-listview {
-			min-height : 300px;
+			min-height : 280px;
 		}
 		#my-page-listview .ibox {
 			border-radius: 0 0 6px 6px!important;
