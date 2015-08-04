@@ -70,16 +70,13 @@
 												<div class="container">
 													<div class="row">													
 														<div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
-                                                    		<h3 class="mega-menu-heading">Pellentes que nec diam lectus</h3>
+                                                    		<h3 class="mega-menu-heading">MY CLOUD</h3>
                                                     		<#if item.description ??>
                                                     		<p>${item.description}</p>
-                                                    		</#if>
-                                                    		
-                                                    		<img src="<@spring.url '/images/common/cloud_swiss_army_knife_nobg.png'/>" class="img-responsive"/>
-                                                    		<button type="button" class="btn-u btn-u-dark">Read More</button>
-                                                    		
+                                                    		</#if>                                                    		
+                                                    		<img src="<@spring.url '/images/common/cloud_swiss_army_knife_nobg.png'/>" class="img-responsive"/>                                                    		
                                                 		</div>
-                                                		<div class="col-md-9 col-sm-12 col-xs-12 md-margin-bottom-30">
+                                                		<div class="col-md-8 col-sm-12 col-xs-12 md-margin-bottom-30">
                                                 			<div class="row">
 																<#list item.components as sub_item>
 																<div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30 no-border">
