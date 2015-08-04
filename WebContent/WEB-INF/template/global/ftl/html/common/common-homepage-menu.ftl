@@ -77,6 +77,17 @@
                                                     		<button type="button" class="btn-u btn-u-dark">Read More</button>
                                                     		</#if>
                                                 		</div>
+                                                		<div class="col-md-9 col-sm-12 col-xs-12 md-margin-bottom-30"
+                                                			<div class="row">
+                                                				<ul class="list-unstyled style-list">
+			                                                        <li><a href="#">All accessories</a></li>
+			                                                        <li><a href="#">Bags &amp; Purses</a></li>
+			                                                        <li><a href="#">Scarvs &amp; Hats</a></li>
+			                                                        <li><a href="#">Jewellery</a></li>
+			                                                        <li><a href="#">Fragrance &amp; Beauty</a></li>
+			                                                    </ul>
+                                                			</div>
+                                                		</div>
 														<#list item.components as sub_item>
 															<#if sub_item.components?has_content >
 															<div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30 no-border">
