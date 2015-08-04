@@ -69,7 +69,9 @@
 													<div class="row">													
 														<div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30">
                                                     		<h3 class="mega-menu-heading">Pellentes que nec diam lectus</h3>
-                                                    		<p>Proin pulvinar libero quis auctor pharet ra. Aenean fermentum met us orci, sedf eugiat augue pulvina r vitae. Nulla dolor nisl, molestie nec aliquam vitae, gravida sodals dolor...</p>
+                                                    		<#if item.description ??>
+                                                    		<p>${item.description}</p>
+                                                    		</#if>
                                                     		<button type="button" class="btn-u btn-u-dark">Read More</button>
                                                 		</div>
 														<#list item.components as sub_item>
