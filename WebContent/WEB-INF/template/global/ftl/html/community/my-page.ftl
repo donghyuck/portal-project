@@ -1119,7 +1119,7 @@
 			//border: 1px solid #e7eaec;
 		}
 		#my-page-listview .item {
-			width:265px;
+			//width:265px;
 		}
 		#my-page-listview .ibox .ibox-content {
 			//background-color: #fafafa!important;
@@ -1690,7 +1690,7 @@
 
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="item" style="display:none;" data-object-id="#=pageId#">
+	<div class="item col-sm-3" style="display:none;" data-object-id="#=pageId#">
 	<div class="ibox summary float-e-margins">
 		<div class="ibox-title cover">
 		# if (bodyContent.imageCount > 0){ #
