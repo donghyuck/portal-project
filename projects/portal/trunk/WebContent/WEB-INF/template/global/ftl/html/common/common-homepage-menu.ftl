@@ -59,7 +59,9 @@
 				<#list webSiteMenu.components as item >
 					<#if WebSiteUtils.isUserAccessAllowed(item) >
 						<#if  item.components?has_content >
-							<#if item.layout?? && item.layout == "mega-menu">			
+							<#if item.layout?? && item.layout == "mega-menu">		
+								<#if item.module ?? && item.module == "my-cloud">
+									
 								<li class="dropdown mega-menu-fullwidth" data-menu-item="${item.name}">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 									<ul class="dropdown-menu">
@@ -72,37 +74,24 @@
                                                     		<#if item.description ??>
                                                     		<p>${item.description}</p>
                                                     		</#if>
-                                                    		<#if item.module ?? && item.module == "my-cloud">
+                                                    		
                                                     		<img src="<@spring.url '/images/common/cloud_swiss_army_knife_nobg.png'/>" class="img-responsive"/>
                                                     		<button type="button" class="btn-u btn-u-dark">Read More</button>
-                                                    		</#if>
+                                                    		
                                                 		</div>
                                                 		<div class="col-md-9 col-sm-12 col-xs-12 md-margin-bottom-30">
                                                 			<div class="row">
-                                                				<ul class="list-unstyled style-list">
-			                                                        <li><a href="#">All accessories</a></li>
-			                                                        <li><a href="#">Bags &amp; Purses</a></li>
-			                                                        <li><a href="#">Scarvs &amp; Hats</a></li>
-			                                                        <li><a href="#">Jewellery</a></li>
-			                                                        <li><a href="#">Fragrance &amp; Beauty</a></li>
-			                                                    </ul>
+																<#list item.components as sub_item>
+																<div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30 no-border">
+																	<h3 class="mega-menu-heading">${ sub_item.title }</h3>	
+																	<#if sub_item.description ??>
+																	<p>${sub_item.description}</p>
+																	</#if>		
+																	<a href="${sub_item.page}"><#if sub_item.icon?? ><i class="${sub_item.icon}"></i></#if></a>																														
+																</div>																
+																</#list>
                                                 			</div>
                                                 		</div>
-														<#list item.components as sub_item>
-															<#if sub_item.components?has_content >
-															<div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30 no-border">
-															1
-															</div>		
-															<#else>
-															<div class="col-md-3 col-sm-4 col-xs-4 md-margin-bottom-30 no-border">
-																<h3 class="mega-menu-heading">${ sub_item.title }</h3>	
-																<#if sub_item.description ??>
-																<p>${sub_item.description}</p>
-																</#if>		
-																<a href="${sub_item.page}"><#if sub_item.icon?? ><i class="${sub_item.icon}"></i></#if></a>																														
-															</div>		
-															</#if>
-														</#list>
 													</div>
 												
 												</div>
@@ -110,6 +99,7 @@
 										</li>	
 									</ul>
 								</li>
+								</#if>
 							<#else>
 								<li class="dropdown" data-menu-item="${item.name}">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
