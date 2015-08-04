@@ -1119,7 +1119,7 @@
 			//border: 1px solid #e7eaec;
 		}
 		#my-page-listview .item {
-			width:300px;
+			width:280px;
 		}
 		#my-page-listview .ibox .ibox-content {
 			//background-color: #fafafa!important;
