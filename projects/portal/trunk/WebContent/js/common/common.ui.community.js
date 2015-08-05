@@ -640,36 +640,33 @@
 	function pollOptionsDataSource(poll){
 		return DataSource.create({		
 			transport: { 
-				read: { url:"/data/pages/properties/list.json?output=json", type:'GET' },
-				create: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + page.pageId , type:'POST' ,contentType : "application/json" },
-				update: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + page.pageId, type:'POST'  ,contentType : "application/json"},
-				destroy: { url:"/data/pages/properties/delete.json?output=json" +  "&pageId=" + page.pageId, type:'POST' ,contentType : "application/json"},
+				read: { url:"/data/polls/options/list.json?output=json", type:'GET' },
+				create: { url:"/data/polls/options/update.json?output=json" + "&pollId=" + poll.pollId , type:'POST' ,contentType : "application/json" },
+				update: { url:"/data/polls/options/update.json?output=json" + "&pollId=" + poll.pollId, type:'POST'  ,contentType : "application/json"},
+				destroy: { url:"/data/polls/options/delete.json?output=json" +  "&pollId=" + poll.pollId, type:'POST' ,contentType : "application/json"},
 		 		parameterMap: function (options, operation){			
 					if (operation !== "read" && options.models) {
 						return kendo.stringify(options.models);
 					} 
-					return { pageId: page.pageId }
+					return { pollId: poll.pollId }
 				}
 			},						
 			batch: true, 
 			schema:{
-				model:{ id: "optionId",
-					fields:{
-						optionId : { type:"number", editable: true, editable : true, defaultValue : 0},
-						optionIndex : {type:"number", editable: true, editable : true, defaultValue : 1, validation: { required: true, min: 1} },
-						optionText : { type:"string", editable: true, editable : true, nullable:false }								
-					}
-				}
-			}			
-			schema: {
-				model: common.ui.data.Property
-			},
+				model:common.ui.data.PollOption
+			},			
 			error:handleAjaxError
 		});
 	}
 	
 	common.ui.data.page = common.ui.data.page || {};
 	common.ui.data.poll = common.ui.data.poll || {};
+
+	extend(common.ui.data.poll,{		
+		options : {		
+			datasource: pollOptionsDataSource
+		}
+	});
 	
 	extend(common.ui.data.page,{		
 		properties : {		
