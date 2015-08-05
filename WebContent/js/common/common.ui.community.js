@@ -506,6 +506,28 @@
 	});
 	
 	
+	common.ui.data.PollOption = kendo.data.Model.define({
+		id : "optionId",
+		fields : {
+			pollId : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			},
+			optionIndex : {
+				type : "number",
+				editable : true,
+				defaultValue : 1, 
+				validation: { required: true, min: 1}
+			},
+			optionText: {
+				type:"string",
+				editable: true, 
+				nullable:false 
+			}
+		}	
+	});
+	
 })(jQuery);
 
 ;
@@ -569,6 +591,8 @@
 	}
 	;
 
+	
+	
 	function attachmentPorpertyDataSource(fileId){
 		return DataSource.create({		
 			transport: { 
@@ -612,13 +636,45 @@
 			error:handleAjaxError
 		});
 	}
+
+	function pollOptionsDataSource(poll){
+		return DataSource.create({		
+			transport: { 
+				read: { url:"/data/pages/properties/list.json?output=json", type:'GET' },
+				create: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + page.pageId , type:'POST' ,contentType : "application/json" },
+				update: { url:"/data/pages/properties/update.json?output=json" + "&pageId=" + page.pageId, type:'POST'  ,contentType : "application/json"},
+				destroy: { url:"/data/pages/properties/delete.json?output=json" +  "&pageId=" + page.pageId, type:'POST' ,contentType : "application/json"},
+		 		parameterMap: function (options, operation){			
+					if (operation !== "read" && options.models) {
+						return kendo.stringify(options.models);
+					} 
+					return { pageId: page.pageId }
+				}
+			},						
+			batch: true, 
+			schema:{
+				model:{ id: "optionId",
+					fields:{
+						optionId : { type:"number", editable: true, editable : true, defaultValue : 0},
+						optionIndex : {type:"number", editable: true, editable : true, defaultValue : 1, validation: { required: true, min: 1} },
+						optionText : { type:"string", editable: true, editable : true, nullable:false }								
+					}
+				}
+			}			
+			schema: {
+				model: common.ui.data.Property
+			},
+			error:handleAjaxError
+		});
+	}
 	
 	common.ui.data.page = common.ui.data.page || {};
+	common.ui.data.poll = common.ui.data.poll || {};
 	
 	extend(common.ui.data.page,{		
-			properties : {		
-				datasource: pagePorpertyDataSource
-			}
+		properties : {		
+			datasource: pagePorpertyDataSource
+		}
 	});
 
 	extend(common.ui.data.image, {
