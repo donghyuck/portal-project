@@ -201,6 +201,7 @@
 								});
 								listview.find("button[data-action=refresh]").click(function(e){
 									common.ui.grid(listview).dataSource.read();
+									return false;
 								});
 							}
 						}else{
