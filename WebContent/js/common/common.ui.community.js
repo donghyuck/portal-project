@@ -509,9 +509,12 @@
 	common.ui.data.PollOption = kendo.data.Model.define({
 		id : "optionId",
 		fields : {
+			optionId : {
+				type : "number",
+				defaultValue : 0
+			},
 			pollId : {
 				type : "number",
-				editable : true,
 				defaultValue : 0
 			},
 			optionIndex : {
