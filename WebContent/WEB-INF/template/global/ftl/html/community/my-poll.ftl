@@ -183,7 +183,7 @@
 												fields:{
 													optionId : { type:"number", editable: true, editable : true, defaultValue : 0},
 													optionIndex : {type:"number", editable: true, editable : true, defaultValue : 1},
-													optionText : {type:"string", editable: true, editable : true, nullable:false }								
+													optionText : {type:"string", editable: true, editable : true, nullable:false, validation: { required: true, min: 1} }								
 												}
 											}
 										}
