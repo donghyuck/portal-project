@@ -177,19 +177,12 @@
 							if (!common.ui.exists(listview)) {								
 								common.ui.grid(listview, {
 									dataSource : new kendo.data.DataSource({ 
-										data: observable.poll.options ,
+										data: observable.poll.options,
 										schema:{
-											model:{ id: "optionId",
-												fields:{
-													optionId : { type:"number", editable: true, editable : true, defaultValue : 0},
-													optionIndex : {type:"number", editable: true, editable : true, defaultValue : 1, validation: { required: true, min: 1} },
-													optionText : { type:"string", editable: true, editable : true, nullable:false }								
-												}
-											}
+											model: common.ui.data.PollOption
 										}
 									}),			
 									toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'), 
-									/*toolbar: [{ name: "create", text:"추가"}],*/
 									columns:[{
 										width: 100,
 										field: 'optionIndex',
@@ -205,6 +198,9 @@
 									return false;
 								});
 							}
+							
+							common.ui.grid(listview).setDataSource(common.ui.data.poll.options.datasource(this.poll));
+							
 						}else{
 							this.set('editable', false);
 							this.set('followUp', true);
