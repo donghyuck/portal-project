@@ -199,6 +199,9 @@
 									],
 									editable: "inline"
 								});
+								listview.find("button[data-action=refresh]").click(function(e){
+									common.ui.grid(listview).dataSource.read();
+								});
 							}
 						}else{
 							this.set('editable', false);
