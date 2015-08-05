@@ -195,7 +195,7 @@
 										title: "ID"},{
 										field: 'optionText',
 										title: "내용"},
-										{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }				
+										{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger rounded k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }				
 									],
 									editable: "inline"
 								});
