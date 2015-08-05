@@ -192,7 +192,7 @@
 									/*toolbar: [{ name: "create", text:"추가"}],*/
 									columns:[{
 										width: 50,
-										field: 'optionId',
+										field: 'optionIndex',
 										title: "인덱스"},{
 										field: 'optionText',
 										title: "내용"},
