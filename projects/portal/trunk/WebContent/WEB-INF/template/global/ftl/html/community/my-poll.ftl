@@ -181,8 +181,9 @@
 										schema:{
 											model:{ id: "optionId",
 												fields:{
-													optionId : {editable: true, editable : true, defaultValue : 0},
-													optionText : {editable: true, editable : true, nullable:false }								
+													optionId : { type:"number", editable: true, editable : true, defaultValue : 0},
+													optionIndex : {type:"number", editable: true, editable : true, defaultValue : 0},
+													optionText : {type:"string", editable: true, editable : true, nullable:false }								
 												}
 											}
 										}
