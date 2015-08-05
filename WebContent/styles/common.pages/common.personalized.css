@@ -2761,6 +2761,20 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     z-index: 680;
 }
 
+/* poll
+---------------------------------- */
+.my-poll-options .k-grid {
+	border-width: 0 !important;
+}
+
+.my-poll-options .k-grid .btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+
+
 /* lightbox
 ---------------------------------- */
 .mfp-bg {  
