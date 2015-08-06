@@ -33,7 +33,8 @@
 			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',		
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',		
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
-			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',	
+				
 			'<@spring.url "/js/bootstrap/3.3.5/bootstrap.min.js"/>',			
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>',	
@@ -207,7 +208,7 @@
 										field: 'optionIndex', title: "인덱스", format: "{0:n0}"},{
 										field: 'optionText',
 										title: "내용"},
-										{ command: [ { name: "edit", template:'<a href="\\#" class="btn btn-sm btn-labeled btn-danger rounded k-grid-edit"><span class="btn-label icon fa fa-trash"></span> 변경 </a>' }, { name: "destroy", template:'<a href="\\#" class="btn btn-sm btn-labeled btn-danger rounded k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' }],  title: "&nbsp;", width: 180 }				
+										{ command: ["edit", "destroy"],  title: "&nbsp;", width: 180 }				
 									],
 									editable: "inline"
 								});
