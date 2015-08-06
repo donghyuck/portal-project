@@ -167,6 +167,7 @@
 							console.log('execute update ...');									
 							btn.button('reset');
 						};
+						btn.button('loading');
 						$this.saveOrUpdate(completeFn);
 					
 					},
