@@ -44,65 +44,67 @@ $.extend(true, kendo.ui.ColumnMenu.prototype.options.messages,{
 if (kendo.ui.Editor) {
 kendo.ui.Editor.prototype.options.messages =
 $.extend(true, kendo.ui.Editor.prototype.options.messages,{
-  "bold": "太字",
-  "italic": "斜体",
-  "underline": "下線",
-  "strikethrough": "取り消し線",
-  "superscript": "上付き文字",
-  "subscript": "下付き文字",
-  "justifyCenter": "テキストを中央揃え",
-  "justifyLeft": "テキストを左揃え",
-  "justifyRight": "テキストを右揃え",
-  "justifyFull": "両端揃え",
-  "insertUnorderedList": "順序付けされていないリストを挿入",
-  "insertOrderedList": "順序付けされたリストを挿入",
-  "indent": "インデント",
-  "outdent": "インデント解除",
-  "createLink": "ハイパーリンクを挿入",
-  "unlink": "ハイパーリンクを削除",
-  "insertImage": "イメージを挿入",
-  "insertFile": "ファイルを挿入",
-  "insertHtml": "HTML を挿入",
-  "viewHtml": "HTML を表示",
-  "fontName": "フォント ファミリを選択",
-  "fontNameInherit": "(継承されたフォント)",
-  "fontSize": "フォント サイズを選択",
-  "fontSizeInherit": "(継承されたサイズ)",
-  "formatBlock": "フォーマット",
-  "formatting": "フォーマット",
-  "foreColor": "カラー",
-  "backColor": "背景色",
-  "style": "スタイル",
-  "emptyFolder": "空のフォルダ",
-  "uploadFile": "アップロード",
-  "orderBy": "次の要素による整列:",
-  "orderBySize": "サイズ",
-  "orderByName": "名",
-  "invalidFileType": "選択されたファイル {0} は無効です。サポートされているファイル タイプは {1} です。",
-  "deleteFile": "{0} を本当に削除しますか?",
-  "overwriteFile": "{0} という名前のファイルは既にカレント ディレクトリに存在します。上書きしますか?",
-  "directoryNotFound": "この名前のディレクトリが見つかりませんでした。",
-  "imageWebAddress": "Web アドレス",
-  "imageAltText": "代替テキスト",
-  "imageWidth": "幅 (px)",
-  "imageHeight": "高さ (px)",
-  "fileWebAddress": "Web アドレス",
-  "fileTitle": "タイトル",
-  "linkWebAddress": "Web アドレス",
-  "linkText": "テキスト",
-  "linkToolTip": "ツールチップ",
-  "linkOpenInNewWindow": "リンクを新規ウィンドウで開く",
-  "dialogUpdate": "更新",
-  "dialogInsert": "挿入",
-  "dialogButtonSeparator": "または",
-  "dialogCancel": "キャンセル",
-  "createTable": "テーブルの作成",
-  "addColumnLeft": "左に列を追加",
-  "addColumnRight": "右に列を追加",
-  "addRowAbove": "上に行を追加",
-  "addRowBelow": "下に行を追加",
-  "deleteRow": "行を削除",
-  "deleteColumn": "列を削除"
+	
+	"bold": "굵게",
+  	"italic": "기울임 꼴",
+	"underline": "밑줄",
+	"strikethrough": "취소 선",
+		  "superscript": "위 첨자",
+		  "subscript": "아래 첨자",
+		  "justifyCenter": "텍스트를 가운데 정렬",
+		  "justifyLeft": "텍스트를 왼쪽",
+		  "justifyRight": "텍스트를 오른쪽",
+		  "justifyFull": "맞춤",
+		  "insertUnorderedList": "정렬되지 않은 목록을 삽입",
+		  "insertOrderedList": "정렬 된 목록을 삽입",
+		  "indent": "들여 쓰기",
+		  "outdent": "내어 쓰기",
+		  "createLink": "하이퍼 링크 삽입",
+		  "unlink": "하이퍼 링크를 제거",
+		  "insertImage": "이미지 삽입",
+		  "insertFile": "파일을 삽입",
+		  "insertHtml": "HTML을 삽입",
+		  "viewHtml": "HTML보기",
+		  "fontName": "폰트 패밀리를 선택",
+		  "fontNameInherit": "(상속 된 폰트)",
+		  "fontSize": "글꼴 크기를 선택",
+		  "fontSizeInherit": "(상속 된 크기)",
+		  "formatBlock": "형식",
+		  "formatting": "형식",
+		  "foreColor": "색상",
+		  "backColor": "배경색",
+		  "style": "스타일",
+		  "emptyFolder": "빈 폴더",
+		  "uploadFile": "업로드",
+		  "orderBy": "다음 요소에 의한 정렬 :",
+		  "orderBySize": "크기",
+		  "orderByName": "이름",
+		  "invalidFileType": "선택한 파일 {0} 유효하지 않습니다. 지원되는 파일 형식은 {1}입니다.",
+		  "deleteFile": "{0}을 정말로 삭제 하시겠습니까?",
+		  "overwriteFile": "{0}라는 파일은 이미 현재 디렉토리에 존재합니다. 덮어 쓰시겠습니까?",
+		  "directoryNotFound": "이 이름의 디렉토리를 찾을 수 없습니다.",
+		  "imageWebAddress": "Web 주소",
+		  "imageAltText": "대체 텍스트",
+		  "imageWidth": "폭 (px)",
+		  "imageHeight": "높이 (px)",
+		  "fileWebAddress": "Web 주소",
+		  "fileTitle": "제목",
+		  "linkWebAddress": "Web 주소",
+		  "linkText": "텍스트",
+		  "linkToolTip": "툴팁",
+		  "linkOpenInNewWindow": "링크를 새 창에서 열기",
+		  "dialogUpdate": "업데이트",
+		  "dialogInsert": "삽입",
+		  "dialogBu​​ttonSeparator": "또는",
+		  "dialogCancel": "취소",
+		  "createTable": "테이블 만들기",
+		  "addColumnLeft": "왼쪽에 열을 추가",
+		  "addColumnRight": "오른쪽에 열을 추가",
+		  "addRowAbove": "위에 줄을 추가",
+		  "addRowBelow": "아래 줄을 추가",
+		  "deleteRow": "줄을 제거",
+		  "deleteColumn": "열을 제거"
+		
 });
 }
 
@@ -111,17 +113,17 @@ $.extend(true, kendo.ui.Editor.prototype.options.messages,{
 if (kendo.ui.FileBrowser) {
 kendo.ui.FileBrowser.prototype.options.messages =
 $.extend(true, kendo.ui.FileBrowser.prototype.options.messages,{
-  "uploadFile": "アップロード",
-  "orderBy": "次の要素による整列",
-  "orderByName": "名",
-  "orderBySize": "サイズ",
-  "directoryNotFound": "この名前のディレクトリは見つかりませんでした。",
-  "emptyFolder": "空のフォルダ",
-  "deleteFile": "{0} を本当に削除しますか?",
-  "invalidFileType": "選択されたファイル {0} は無効です。サポートされているファイル タイプは {1} です。",
-  "overwriteFile": "{0} という名前のファイルは既にカレント ディレクトリに存在します。上書きしますか?",
-  "dropFilesHere": "ここにファイルをドロップしてアップロード",
-  "search": "検索"
+	"uploadFile": "업로드",
+		   "orderBy": "다음의 요소에 의해 정렬",
+		   "orderByName": "이름",
+		   "orderBySize": "크기",
+		   "directoryNotFound": "이 이름의 디렉토리를 찾지 못했습니다.",
+		   "emptyFolder": "빈 폴더",
+		   "deleteFile": "{0}을 정말로 삭제 하시겠습니까?",
+		   "invalidFileType": "선택한 파일 {0} 유효하지 않습니다. 지원되는 파일 형식은 {1}입니다.",
+		   "overwriteFile": "{0}라는 파일은 이미 현재 디렉토리에 존재합니다. 덮어 쓰시겠습니까?",
+		   "dropFilesHere": "여기에 파일을 드롭하여 업로드",
+		   "search": "검색"
 });
 }
 
@@ -130,11 +132,11 @@ $.extend(true, kendo.ui.FileBrowser.prototype.options.messages,{
 if (kendo.ui.FilterCell) {
 kendo.ui.FilterCell.prototype.options.messages =
 $.extend(true, kendo.ui.FilterCell.prototype.options.messages,{
-  "isTrue": "真である",
-  "isFalse": "偽である",
-  "filter": "フィルタ",
-  "clear": "クリア",
-  "operator": "演算子"
+	"isTrue": "사실",
+		   "isFalse": "거짓이다",
+		   "filter": "필터",
+		   "clear": "취소",
+		   "operator": "연산자"
 });
 }
 
@@ -144,32 +146,32 @@ if (kendo.ui.FilterCell) {
 kendo.ui.FilterCell.prototype.options.operators =
 $.extend(true, kendo.ui.FilterCell.prototype.options.operators,{
   "string": {
-    "eq": "が次の値と同じ",
-    "neq": "が次の値と異なる",
-    "startswith": "が次で始まる",
-    "contains": "が次を含む",
-    "doesnotcontain": "が次を含まない",
-    "endswith": "が次で終わる"
+	  "eq": "이 다음 값과 동일",
+		       "neq": "이 다음 값과 다른",
+		       "startswith": "이 다음에 시작",
+		       "contains": "이 다음을 포함",
+		       "doesnotcontain": "이 다음을 포함하지 않는다",
+		       "endswith": "이 다음으로 끝날"
   },
   "number": {
-    "eq": "が次の値と同じ",
-    "neq": "が次の値と異なる",
-    "gte": "が次の値以上",
-    "gt": "が次の値より大きい",
-    "lte": "が次の値以下",
-    "lt": "が次の値より小さい"
+	  "eq": "이 다음 값과 동일",
+		       "neq": "이 다음 값과 다른",
+		       "gte": "이 다음 값 이상",
+		       "gt": "이보다 큼",
+		       "lte": "이 다음 값 이하",
+		       "lt": "이보다 작음"
   },
   "date": {
-    "eq": "が次の値と同じ",
-    "neq": "が次の値と異なる",
-    "gte": "次の値と同じかそれより後",
-    "gt": "次の値より後",
-    "lte": "次の値と同じかそれより前",
-    "lt": "次の値より前"
+	  "eq": "이 다음 값과 동일",
+		       "neq": "이 다음 값과 다른",
+		       "gte": "다음의 값과 같거나 이후",
+		       "gt": "다음 값보다 후",
+		       "lte": "다음의 값과 같거나 이전",
+		       "lt": "다음 값 이전"
   },
   "enums": {
-    "eq": "が次の値と同じ",
-    "neq": "が次の値と異なる"
+	  "eq": "이 다음 값과 동일",
+		       "neq": "이 다음 값과 다른"
   }
 });
 }
@@ -179,17 +181,17 @@ $.extend(true, kendo.ui.FilterCell.prototype.options.operators,{
 if (kendo.ui.FilterMenu) {
 kendo.ui.FilterMenu.prototype.options.messages =
 $.extend(true, kendo.ui.FilterMenu.prototype.options.messages,{
-  "info": "次の値がある項目を表示:",
-  "isTrue": "真である",
-  "isFalse": "偽である",
-  "filter": "フィルタ",
-  "clear": "クリア",
-  "and": "And",
-  "or": "Or",
-  "selectValue": "-値を選択-",
-  "operator": "演算子",
-  "value": "値",
-  "cancel": "キャンセル"
+	"info": "다음의 값이있는 항목을 표시 :",
+	   "isTrue": "사실",
+	   "isFalse": "거짓이다",
+	   "filter": "필터",
+	   "clear": "취소",
+	   "and": "And",
+	   "or": "Or",
+	   "selectValue": "- 값을 선택 -",
+	   "operator": "연산자",
+	   "value": "값",
+	   "cancel": "취소"
 });
 }
 
@@ -198,34 +200,36 @@ $.extend(true, kendo.ui.FilterMenu.prototype.options.messages,{
 if (kendo.ui.FilterMenu) {
 kendo.ui.FilterMenu.prototype.options.operators =
 $.extend(true, kendo.ui.FilterMenu.prototype.options.operators,{
-  "string": {
-    "eq": "が次の値と同じ",
-    "neq": "が次の値と異なる",
-    "startswith": "が次で始まる",
-    "contains": "が次を含む",
-    "doesnotcontain": "が次を含まない",
-    "endswith": "が次で終わる"
-  },
-  "number": {
-    "eq": "が次の値と同じ",
-    "neq": "が次の値と異なる",
-    "gte": "が次の値以上",
-    "gt": "が次の値より大きい",
-    "lte": "が次の値以下",
-    "lt": "が次の値より小さい"
-  },
-  "date": {
-    "eq": "が次の値と同じ",
-    "neq": "が次の値と異なる",
-    "gte": "次の値と同じかそれより後",
-    "gt": "次の値より後",
-    "lte": "次の値と同じかそれより前",
-    "lt": "次の値より前"
-  },
-  "enums": {
-    "eq": "が次の値と同じ",
-    "neq": "が次の値と異なる"
-  }
+
+	"string": {
+		     "eq": "이 다음 값과 동일",
+		     "neq": "이 다음 값과 다른",
+		     "startswith": "이 다음에 시작",
+		     "contains": "이 다음을 포함",
+		     "doesnotcontain": "이 다음을 포함하지 않는다",
+		     "endswith": "이 다음으로 끝날"
+		   },
+		   "number": {
+		     "eq": "이 다음 값과 동일",
+		     "neq": "이 다음 값과 다른",
+		     "gte": "이 다음 값 이상",
+		     "gt": "이보다 큼",
+		     "lte": "이 다음 값 이하",
+		     "lt": "이보다 작음"
+		   },
+		   "date": {
+		     "eq": "이 다음 값과 동일",
+		     "neq": "이 다음 값과 다른",
+		     "gte": "다음의 값과 같거나 이후",
+		     "gt": "다음 값보다 후",
+		     "lte": "다음의 값과 같거나 이전",
+		     "lt": "다음 값 이전"
+		   },
+		   "enums": {
+		     "eq": "이 다음 값과 동일",
+		     "neq": "이 다음 값과 다른"
+		   }	
+	
 });
 }
 
@@ -234,38 +238,38 @@ $.extend(true, kendo.ui.FilterMenu.prototype.options.operators,{
 if (kendo.ui.Gantt) {
 kendo.ui.Gantt.prototype.options.messages =
 $.extend(true, kendo.ui.Gantt.prototype.options.messages,{
-  "actions": {
-    "addChild": "子の追加",
-    "append": "タスクの追加",
-    "insertAfter": "下に追加",
-    "insertBefore": "上に追加",
-    "pdf": "PDF にエクスポート"
-  },
-  "cancel": "キャンセル",
-  "deleteDependencyWindowTitle": "依存関係を削除",
-  "deleteTaskWindowTitle": "タスクを削除",
-  "destroy": "削除",
-  "editor": {
-    "assingButton": "割り当て",
-    "editorTitle": "タスク",
-    "end": "終点",
-    "percentComplete": "完了",
-    "resources": "リソース",
-    "resourcesEditorTitle": "リソース",
-    "resourcesHeader": "リソース",
-    "start": "始点",
-    "title": "タイトル",
-    "unitsHeader": "単位"
-  },
-  "save": "保存",
-  "views": {
-    "day": "日",
-    "end": "終点",
-    "month": "月",
-    "start": "始点",
-    "week": "週",
-    "year": "年"
-  }
+	"actions": {
+		     "addChild": "자식 추가",
+		     "append": "작업 추가",
+		     "insertAfter": "아래에 추가",
+		     "insertBefore": "에 추가",
+		     "pdf": "PDF로 내보내기"
+		   },
+		   "cancel": "취소",
+		   "deleteDependencyWindowTitle": "종속성을 제거",
+		   "deleteTaskWindowTitle": "작업을 제거",
+		   "destroy": "삭제",
+		   "editor": {
+		     "assingButton": "할당",
+		     "editorTitle": "작업",
+		     "end": "끝",
+		     "percentComplete": "완료",
+		     "resources": "자원",
+		     "resourcesEditorTitle": "자원",
+		     "resourcesHeader": "자원",
+		     "start": "시작",
+		     "title": "제목",
+		     "unitsHeader": "단위"
+		   },
+		   "save": "저장",
+		   "views": {
+		     "day": "일",
+		     "end": "끝",
+		     "month": "달",
+		     "start": "시작",
+		     "week": "주",
+		     "year": "년"
+		   }
 });
 }
 
@@ -274,23 +278,23 @@ $.extend(true, kendo.ui.Gantt.prototype.options.messages,{
 if (kendo.ui.Grid) {
 kendo.ui.Grid.prototype.options.messages =
 $.extend(true, kendo.ui.Grid.prototype.options.messages,{
-  "commands": {
-    "cancel": "変更のキャンセル",
-    "canceledit": "キャンセル",
-    "create": "新規レコードを追加",
-    "destroy": "削除",
-    "edit": "編集",
-    "excel": "Export to Excel",
-    "pdf": "Export to PDF",
-    "save": "変更の保存",
-    "select": "選択",
-    "update": "更新"
-  },
-  "editable": {
-    "cancelDelete": "キャンセル",
-    "confirmation": "このレコードを本当に削除しますか?",
-    "confirmDelete": "削除"
-  }
+	"commands": {
+		     "cancel": "변경 취소",
+		     "canceledit": "취소",
+		     "create": "새 레코드를 추가",
+		     "destroy": "삭제",
+		     "edit": "편집",
+		     "excel": "Export to Excel",
+		     "pdf": "Export to PDF",
+		     "save": "변경 사항 저장",
+		     "select": "선택",
+		     "update": "업데이트"
+		   },
+		   "editable": {
+		     "cancelDelete": "취소",
+		     "confirmation": "이 레코드를 정말로 삭제 하시겠습니까?",
+		     "confirmDelete": "삭제"
+		   }
 });
 }
 
@@ -299,7 +303,7 @@ $.extend(true, kendo.ui.Grid.prototype.options.messages,{
 if (kendo.ui.Groupable) {
 kendo.ui.Groupable.prototype.options.messages =
 $.extend(true, kendo.ui.Groupable.prototype.options.messages,{
-  "empty": "列ヘッダーをここにドラッグ アンド ドロップして、その列でグループ化"
+	"empty": "열 머리글을 여기에 드래그 앤 드롭하여 그 열로 그룹화"
 });
 }
 
@@ -308,8 +312,8 @@ $.extend(true, kendo.ui.Groupable.prototype.options.messages,{
 if (kendo.ui.NumericTextBox) {
 kendo.ui.NumericTextBox.prototype.options =
 $.extend(true, kendo.ui.NumericTextBox.prototype.options,{
-  "upArrowText": "値を増やす",
-  "downArrowText": "値を減らす"
+	"upArrowText": "값을 증가",
+		   "downArrowText": "값을 감소"
 });
 }
 
@@ -318,17 +322,17 @@ $.extend(true, kendo.ui.NumericTextBox.prototype.options,{
 if (kendo.ui.Pager) {
 kendo.ui.Pager.prototype.options.messages =
 $.extend(true, kendo.ui.Pager.prototype.options.messages,{
-  "display": "{0} - {1} ({2} 項目中)",
-  "empty": "表示する項目がありません",
-  "page": "ページ",
-  "of": "/ {0}",
-  "itemsPerPage": "項目 (1 ページあたり)",
-  "first": "最初のページに移動",
-  "previous": "前のページに移動",
-  "next": "次のページに移動",
-  "last": "最後のページに移動",
-  "refresh": "更新",
-  "morePages": "その他のページ"
+	"display": "{0} - {1} ({2} 항목 중)",
+	   "empty": "표시 할 항목이 없습니다",
+	   "page": "페이지",
+	   "of": "/ {0}",
+	   "itemsPerPage": "항목 (페이지 당)",
+	   "first": "첫번째 페이지로 이동",
+	   "previous": "이전 페이지로 이동",
+	   "next": "다음 페이지로 이동",
+	   "last": "마지막 페이지로 이동",
+	   "refresh": "새로고침",
+	   "morePages": "기타 페이지"
 });
 }
 
@@ -337,9 +341,9 @@ $.extend(true, kendo.ui.Pager.prototype.options.messages,{
 if (kendo.ui.PivotGrid) {
 kendo.ui.PivotGrid.prototype.options.messages =
 $.extend(true, kendo.ui.PivotGrid.prototype.options.messages,{
-  "measureFields": "ここにデータ フィールドをドロップ",
-  "columnFields": "ここに列フィールドをドロップ",
-  "rowFields": "ここに行フィールドをドロップ"
+	"measureFields": "여기에 데이터 필드를 드롭",
+		   "columnFields": "여기에 열 필드를 드롭",
+		   "rowFields": "여기에 행 필드를 드롭"
 });
 }
 
@@ -348,22 +352,22 @@ $.extend(true, kendo.ui.PivotGrid.prototype.options.messages,{
 if (kendo.ui.PivotFieldMenu) {
 kendo.ui.PivotFieldMenu.prototype.options.messages =
 $.extend(true, kendo.ui.PivotFieldMenu.prototype.options.messages,{
-  "info": "次の値がある項目を表示:",
-  "filterFields": "フィールド フィルタ",
-  "filter": "フィルタ",
-  "include": "フィールドをインクルード...",
-  "title": "インクルードするフィールド",
-  "clear": "クリア",
-  "ok": "OK",
-  "cancel": "キャンセル",
-  "operators": {
-    "contains": "が次を含む",
-    "doesnotcontain": "が次を含まない",
-    "startswith": "が次で始まる",
-    "endswith": "が次で終わる",
-    "eq": "が次の値と同じ",
-    "neq": "が次の値と異なる"
-  }
+	"info": "다음의 값이있는 항목을 표시 :",
+	   "filterFields": "필드 필터",
+	   "filter": "필터",
+	   "include": "필드를 포함 ...",
+	   "title": "포함하는 필드",
+	   "clear": "취소",
+	   "ok": "OK",
+	   "cancel": "취소",
+	   "operators": {
+	     "contains": "이 다음을 포함",
+	     "doesnotcontain": "이 다음을 포함하지 않는다",
+	     "startswith": "이 다음에 시작",
+	     "endswith": "이 다음으로 끝날",
+	     "eq": "이 다음 값과 동일",
+	     "neq": "이 다음 값과 다른"
+	   }
 });
 }
 
@@ -372,59 +376,59 @@ $.extend(true, kendo.ui.PivotFieldMenu.prototype.options.messages,{
 if (kendo.ui.RecurrenceEditor) {
 kendo.ui.RecurrenceEditor.prototype.options.messages =
 $.extend(true, kendo.ui.RecurrenceEditor.prototype.options.messages,{
-  "frequencies": {
-    "never": "なし",
-    "hourly": "毎時",
-    "daily": "毎日",
-    "weekly": "毎週",
-    "monthly": "毎月",
-    "yearly": "毎年"
-  },
-  "hourly": {
-    "repeatEvery": "次の間隔で繰り返す: ",
-    "interval": " 時間"
-  },
-  "daily": {
-    "repeatEvery": "次の間隔で繰り返す: ",
-    "interval": " 日"
-  },
-  "weekly": {
-    "interval": " 週間",
-    "repeatEvery": "次の間隔で繰り返す: ",
-    "repeatOn": "次のときに繰り返す: "
-  },
-  "monthly": {
-    "repeatEvery": "次の間隔で繰り返す: ",
-    "repeatOn": "次のときに繰り返す: ",
-    "interval": " か月",
-    "day": "日 "
-  },
-  "yearly": {
-    "repeatEvery": "次の間隔で繰り返す: ",
-    "repeatOn": "次のときに繰り返す: ",
-    "interval": " 年",
-    "of": " の "
-  },
-  "end": {
-    "label": "終了:",
-    "mobileLabel": "終了",
-    "never": "なし",
-    "after": "後 ",
-    "occurrence": " 回",
-    "on": "オン "
-  },
-  "offsetPositions": {
-    "first": "最初",
-    "second": "2 番目",
-    "third": "3 番目",
-    "fourth": "4 番目",
-    "last": "最後"
-  },
-  "weekdays": {
-    "day": "日",
-    "weekday": "平日",
-    "weekend": "週末"
-  }
+	"frequencies": {
+		    "never": "없음",
+		    "hourly": "시간당",
+		    "daily": "매일",
+		    "weekly": "매주",
+		    "monthly": "매월",
+		    "yearly": "매년"
+		  },
+		  "hourly": {
+		    "repeatEvery": "다음 간격으로 반복한다 :",
+		    "interval": "시간"
+		  },
+		  "daily": {
+		    "repeatEvery": "다음 간격으로 반복한다 :",
+		    "interval": "일"
+		  },
+		  "weekly": {
+		    "interval": "주간",
+		    "repeatEvery": "다음 간격으로 반복한다 :",
+		    "repeatOn": "다음의 경우 반복"
+		  },
+		  "monthly": {
+		    "repeatEvery": "다음 간격으로 반복한다 :",
+		    "repeatOn": "다음의 경우 반복 :",
+		    "interval": "달",
+		    "day": "일"
+		  },
+		  "yearly": {
+		    "repeatEvery": "다음 간격으로 반복한다 :",
+		    "repeatOn": "다음의 경우 반복 :",
+		    "interval": "년",
+		    "of": "의"
+		  },
+		  "end": {
+		    "label": "종료 :",
+		    "mobileLabel": "종료",
+		    "never": "없음",
+		    "after": "후",
+		    "occurrence": "회",
+		    "on": "켜기"
+		  },
+		  "offsetPositions": {
+		    "first": "처음",
+		    "second": "두 번째",
+		    "third": "3 번째",
+		    "fourth": "4 번째",
+		    "last": "마지막"
+		  },
+		  "weekdays": {
+		    "day": "일",
+		    "weekday": "평일",
+		    "weekend": "주말"
+		  }
 });
 }
 
@@ -433,54 +437,54 @@ $.extend(true, kendo.ui.RecurrenceEditor.prototype.options.messages,{
 if (kendo.ui.Scheduler) {
 kendo.ui.Scheduler.prototype.options.messages =
 $.extend(true, kendo.ui.Scheduler.prototype.options.messages,{
-  "allDay": "すべての日",
-  "date": "日付",
-  "event": "イベント",
-  "time": "時間",
-  "showFullDay": "24 時間表示",
-  "showWorkDay": "営業時間を表示",
-  "today": "今日",
-  "save": "保存",
-  "cancel": "キャンセル",
-  "destroy": "削除",
-  "deleteWindowTitle": "イベントを削除",
-  "ariaSlotLabel": "{0:t} ～ {1:t} 時の範囲から選択",
-  "ariaEventLabel": "{0} ({1:D} 日の {2:t} 時)",
-  "confirmation": "このイベントを本当に削除しますか?",
-  "views": {
-    "day": "日",
-    "week": "週",
-    "workWeek": "稼働日",
-    "agenda": "予定",
-    "month": "月"
-  },
-  "recurrenceMessages": {
-    "deleteWindowTitle": "定期的な項目を削除",
-    "deleteWindowOccurrence": "現在の回を削除",
-    "deleteWindowSeries": "系列を削除",
-    "editWindowTitle": "定期的な項目を編集",
-    "editWindowOccurrence": "現在の回を編集",
-    "editWindowSeries": "系列を編集",
-    "deleteRecurring": "このイベントの回のみを削除しますか、それとも系列全体を削除しますか?",
-    "editRecurring": "このイベントの回のみを編集しますか、それとも系列全体を編集しますか?"
-  },
-  "editor": {
-    "title": "タイトル",
-    "start": "始点",
-    "end": "終点",
-    "allDayEvent": "終日のイベント",
-    "description": "説明",
-    "repeat": "繰り返す",
-    "timezone": " ",
-    "startTimezone": "開始タイムゾーン",
-    "endTimezone": "終了タイムゾーン",
-    "separateTimezones": "開始と終了で別のタイムゾーンを使用する",
-    "timezoneEditorTitle": "タイムゾーン",
-    "timezoneEditorButton": "タイム ゾーン",
-    "timezoneTitle": "タイム ゾーン",
-    "noTimezone": "タイムゾーンがありません",
-    "editorTitle": "イベント"
-  }
+	"allDay": "하루 종일",
+		  "date": "날짜",
+		  "event": "이벤트",
+		  "time": "시간",
+		  "showFullDay": "24 시간",
+		  "showWorkDay": "영업 시간을 표시",
+		  "today": "오늘",
+		  "save": "저장",
+		  "cancel": "취소",
+		  "destroy": "삭제",
+		  "deleteWindowTitle": "이벤트를 제거",
+		  "ariaSlotLabel": "{0 : t} ~ {1 : t} 때의 범위에서 선택",
+		  "ariaEventLabel": "{0} ({1 : D} 일 {2 : t} 때)",
+		  "confirmation": "이 이벤트를 정말 삭제 하시겠습니까?",
+		  "views": {
+		    "day": "일",
+		    "week": "주",
+		    "workWeek": "작업 일",
+		    "agenda": "약속",
+		    "month": "달"
+		  },
+		  "recurrenceMessages": {
+		    "deleteWindowTitle": "정기적 인 항목을 삭제",
+		    "deleteWindowOccurrence": "현재 시간을 제거",
+		    "deleteWindowSeries": "계열을 제거",
+		    "editWindowTitle": "정기적 인 항목을 편집",
+		    "editWindowOccurrence": "현재 시간을 편집",
+		    "editWindowSeries": "계열 편집",
+		    "deleteRecurring": "이 이벤트 시간 만 삭제 하시겠습니까, 아니면 전체 계열을 삭제 하시겠습니까?",
+		    "editRecurring": "이 이벤트 시간 만 편집? 아니면 계열 전체를 편집 하시겠습니까?"
+		  },
+		  "editor": {
+		    "title": "제목",
+		    "start": "시작",
+		    "end": "끝",
+		    "allDayEvent": "하루 종일 이벤트",
+		    "description": "설명",
+		    "repeat": "반복",
+		    "timezone": "시간대",
+		    "startTimezone": "시작 시간대",
+		    "endTimezone": "종료 시간대",
+		    "separateTimezones": "시작과 끝에서 다른 시간대를 사용하는",
+		    "timezoneEditorTitle": "시간대",
+		    "timezoneEditorButton": "시간대",
+		    "timezoneTitle": "시간대",
+		    "noTimezone": "시간대가 없습니다",
+		    "editorTitle": "이벤트"
+		  }
 });
 }
 
@@ -489,8 +493,8 @@ $.extend(true, kendo.ui.Scheduler.prototype.options.messages,{
 if (kendo.ui.Slider) {
 kendo.ui.Slider.prototype.options =
 $.extend(true, kendo.ui.Slider.prototype.options,{
-  "increaseButtonTitle": "増やす",
-  "decreaseButtonTitle": "減らす"
+  "increaseButtonTitle": "증가",
+  "decreaseButtonTitle": "감소"
 });
 }
 
@@ -499,9 +503,9 @@ $.extend(true, kendo.ui.Slider.prototype.options,{
 if (kendo.ui.TreeView) {
 kendo.ui.TreeView.prototype.options.messages =
 $.extend(true, kendo.ui.TreeView.prototype.options.messages,{
-  "loading": "ロードしています...",
-  "requestFailed": "要求を実行できませんでした。",
-  "retry": "再試行"
+	"loading": "로드 중 ...",
+		   "requestFailed": "요청을 실행할 수 없습니다.",
+		   "retry": "다시 시도"
 });
 }
 
@@ -510,18 +514,18 @@ $.extend(true, kendo.ui.TreeView.prototype.options.messages,{
 if (kendo.ui.Upload) {
 kendo.ui.Upload.prototype.options.localization=
 $.extend(true, kendo.ui.Upload.prototype.options.localization,{
-  "select": "ファイルを選択...",
-  "cancel": "キャンセル",
-  "retry": "再試行",
-  "remove": "削除",
-  "uploadSelectedFiles": "ファイルをアップロード",
-  "dropFilesHere": "ここにファイルをドロップしてアップロード",
-  "statusUploading": "アップロード中",
-  "statusUploaded": "アップロード済み",
-  "statusWarning": "警告",
-  "statusFailed": "失敗",
-  "headerStatusUploading": "アップロード中...",
-  "headerStatusUploaded": "完了"
+	"select": "파일 선택 ...",
+		   "cancel": "취소",
+		   "retry": "다시 시도",
+		   "remove": "삭제",
+		   "uploadSelectedFiles": "파일 업로드",
+		   "dropFilesHere": "여기에 파일을 드롭하여 업로드",
+		   "statusUploading": "전송 중",
+		   "statusUploaded": "업로드 된",
+		   "statusWarning": "경고",
+		   "statusFailed": "실패",
+		   "headerStatusUploading": "업로드 중 ...",
+		   "headerStatusUploaded": "완료"
 });
 }
 
@@ -530,14 +534,14 @@ $.extend(true, kendo.ui.Upload.prototype.options.localization,{
 if (kendo.ui.Validator) {
 kendo.ui.Validator.prototype.options.messages =
 $.extend(true, kendo.ui.Validator.prototype.options.messages,{
-  "required": "{0} が必要です",
-  "pattern": "{0} は無効です",
-  "min": "{0} は {1} より大きいか同じ値にしてください",
-  "max": "{0} は {1} より小さいか同じ値にしてください",
-  "step": "{0} は無効です",
-  "email": "{0} は無効な電子メールです",
-  "url": "{0} は無効な URL です",
-  "date": "{0} は無効な日付です"
+	"required": "{0}이 필요합니다",
+		   "pattern": "{0}은 무효입니다",
+		   "min": "{0} {1}보다 크거나 같은 값으로하십시오",
+		   "max": "{0} {1}보다 작거나 같은 값으로하십시오",
+		   "step": "{0}은 무효입니다",
+		   "email": "{0} 잘못된 이메일입니다",
+		   "url": "{0} 잘못된 URL입니다",
+		   "date": "{0}는 잘못된 날짜입니다"
 });
 }
 
