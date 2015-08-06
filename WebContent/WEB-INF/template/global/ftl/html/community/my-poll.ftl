@@ -207,7 +207,7 @@
 									columns:[
 										{width: 100,field: 'optionIndex', title: "인덱스", format: "{0:n0}"},
 										{field: 'optionText',title: "내용"},
-										{ command: { name: "destroy", template:'<a href="\\#" class="btn btn-sm btn-labeled btn-danger rounded k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 180 }				
+										{ command: { name: "destroy", template:'<a href="\\#" class="btn btn-sm btn-labeled btn-danger rounded k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }				
 									],
 									editable: true
 								});
