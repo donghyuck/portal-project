@@ -537,7 +537,7 @@
 					</fieldset>
 				</div>				
 				<article class="my-page-wrapper">
-					<div id="my-poll-listview" class="row"></div>
+					<div id="my-poll-listview"></div>
 					<div id="my-poll-pager"></div>
 				</article>
 			</div>
