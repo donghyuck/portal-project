@@ -198,6 +198,7 @@
 								common.ui.grid(listview, {
 									dataSource : new kendo.data.DataSource({ 
 										data: observable.poll.options,
+										batch: true,
 										schema:{
 											model: common.ui.data.PollOption
 										}
@@ -209,7 +210,7 @@
 										{field: 'optionText',title: "내용"},
 										{ command: ["edit", "destroy"],  title: "&nbsp;", width: 180 }				
 									],
-									editable: "inline"
+									editable: true
 								});
 								listview.find("button[data-action=refresh]").click(function(e){
 									common.ui.grid(listview).dataSource.read();
