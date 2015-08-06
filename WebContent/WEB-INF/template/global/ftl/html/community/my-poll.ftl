@@ -207,7 +207,7 @@
 										field: 'optionIndex', title: "인덱스", format: "{0:n0}"},{
 										field: 'optionText',
 										title: "내용"},
-										{ command: [ { name: "edit", template:'<a href="\\#" class="btn btn-sm btn-labeled btn-danger rounded k-grid-eidt"><span class="btn-label icon fa fa-trash"></span> 변경 </a>' }, { name: "destroy", template:'<a href="\\#" class="btn btn-sm btn-labeled btn-danger rounded k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' }],  title: "&nbsp;", width: 80 }				
+										{ command: [ { name: "edit", template:'<a href="\\#" class="btn btn-sm btn-labeled btn-danger rounded k-grid-edit"><span class="btn-label icon fa fa-trash"></span> 변경 </a>' }, { name: "destroy", template:'<a href="\\#" class="btn btn-sm btn-labeled btn-danger rounded k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' }],  title: "&nbsp;", width: 180 }				
 									],
 									editable: "inline"
 								});
