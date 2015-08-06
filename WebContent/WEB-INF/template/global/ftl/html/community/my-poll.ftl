@@ -1001,7 +1001,7 @@
 			<span class="label label-info">#: status #</span>
 		</div>
 		<div class="ibox-content">
-			<span class="text-navy"> #: kendo.toString( startDate, "m") #</span>
+			<span class="text-navy"> #: kendo.toString( startDate, "m") # ~ #: kendo.toString( endDate, "m") #</span>
 			#if(description!=null){#<p class="text-muted m-b-xs"><small>#: description #</small></p>#}#
 		</div>
 		<div class="ibox-footer">
