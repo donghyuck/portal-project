@@ -161,10 +161,27 @@
 					
 					},
 					update : function(){
+						var $this = this, 
+						btn = $(e.target);
+						var completeFn = function(){
+							console.log('execute update ...');									
+							btn.button('reset');
+						};
+						$this.saveOrUpdate(completeFn);
 					
 					},
 					saveOrUpdate : function(callback){
-						alert( kendo.stringify(this.poll) );					
+						common.ui.ajax( '<@spring.url "/data/polls/update.json?output=json"/>', {
+							data : kendo.stringify($this.poll) ,
+							contentType : "application/json",
+							success : function(response){
+								$this.setSource( new common.ui.data.Poll(response) );						
+							},
+							complete : function(e){
+								if( callback )
+									Çcallback();
+							}							
+						});					
 					},
 					setSource : function( source ){
 						source.copy( this.poll );	
