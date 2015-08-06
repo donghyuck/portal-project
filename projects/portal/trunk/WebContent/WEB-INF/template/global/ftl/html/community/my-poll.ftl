@@ -160,7 +160,7 @@
 					create : function(){
 					
 					},
-					update : function(){
+					update : function(e){
 						var $this = this, 
 						btn = $(e.target);
 						var completeFn = function(){
