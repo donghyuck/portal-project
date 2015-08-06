@@ -1,167 +1,547 @@
 
-kendo.ui.Locale = "Korean KOREA (ko-KR)";
+(function(f, define){
+    define([], f);
+})(function(){
 
-kendo.ui.ColumnMenu.prototype.options.messages = 
-  $.extend(kendo.ui.ColumnMenu.prototype.options.messages, {
+/* FlatColorPicker messages */
 
-/* COLUMN MENU MESSAGES 
- ****************************************************************************/   
-  sortAscending: "정렬 오름차순",
-  sortDescending: "정렬 내림차순",
-  filter: "필터",
-  columns: "컬럼"
- /***************************************************************************/   
+if (kendo.ui.FlatColorPicker) {
+kendo.ui.FlatColorPicker.prototype.options.messages =
+$.extend(true, kendo.ui.FlatColorPicker.prototype.options.messages,{
+  "apply": "적용",
+  "cancel": "취소"
 });
+}
 
+/* ColorPicker messages */
 
-kendo.ui.FilterMenu.prototype.options.messages = 
-  $.extend(kendo.ui.FilterMenu.prototype.options.messages, {
-  
-/* FILTER MENU MESSAGES 
- ***************************************************************************/   
-  info: "필터조건:", // sets the text on top of the filter menu
-  isTrue: " 참(True)",                   // sets the text for "isTrue" radio button
-  isFalse: " 거짓(False)",                 // sets the text for "isFalse" radio button
-  filter: "필터",                    // sets the text for the "Filter" button
-  clear: "지우기",                      // sets the text for the "Clear" button
-  and: "그리고",
-  or: "또는",
-  selectValue: "-선택-"
- /***************************************************************************/   
+if (kendo.ui.ColorPicker) {
+kendo.ui.ColorPicker.prototype.options.messages =
+$.extend(true, kendo.ui.ColorPicker.prototype.options.messages,{
+  "apply": "적용",
+  "cancel": "취소"
 });
-         
-kendo.ui.FilterMenu.prototype.options.operators =           
-  $.extend(kendo.ui.FilterMenu.prototype.options.operators, {
+}
 
-/* FILTER MENU OPERATORS (for each supported data type) 
- ****************************************************************************/   
-  string: {
-      eq: "같음",
-      neq: "같지 않음",
-      startswith: "시작문자",
-      contains: "포함",
-      doesnotcontain: "포함하지않음",
-      endswith: "끝문자"
+/* ColumnMenu messages */
+
+if (kendo.ui.ColumnMenu) {
+kendo.ui.ColumnMenu.prototype.options.messages =
+$.extend(true, kendo.ui.ColumnMenu.prototype.options.messages,{
+  "sortAscending": "오름차순 정렬",
+  "sortDescending": "내림차순으로 정렬",
+  "filter": "필터",
+  "columns": "열",
+  "done": "완료",
+  "settings": "열 설정",
+  "lock": "잠금",
+  "unlock": "잠금해제"
+});
+}
+
+/* Editor messages */
+
+if (kendo.ui.Editor) {
+kendo.ui.Editor.prototype.options.messages =
+$.extend(true, kendo.ui.Editor.prototype.options.messages,{
+  "bold": "太字",
+  "italic": "斜体",
+  "underline": "下線",
+  "strikethrough": "取り消し線",
+  "superscript": "上付き文字",
+  "subscript": "下付き文字",
+  "justifyCenter": "テキストを中央揃え",
+  "justifyLeft": "テキストを左揃え",
+  "justifyRight": "テキストを右揃え",
+  "justifyFull": "両端揃え",
+  "insertUnorderedList": "順序付けされていないリストを挿入",
+  "insertOrderedList": "順序付けされたリストを挿入",
+  "indent": "インデント",
+  "outdent": "インデント解除",
+  "createLink": "ハイパーリンクを挿入",
+  "unlink": "ハイパーリンクを削除",
+  "insertImage": "イメージを挿入",
+  "insertFile": "ファイルを挿入",
+  "insertHtml": "HTML を挿入",
+  "viewHtml": "HTML を表示",
+  "fontName": "フォント ファミリを選択",
+  "fontNameInherit": "(継承されたフォント)",
+  "fontSize": "フォント サイズを選択",
+  "fontSizeInherit": "(継承されたサイズ)",
+  "formatBlock": "フォーマット",
+  "formatting": "フォーマット",
+  "foreColor": "カラー",
+  "backColor": "背景色",
+  "style": "スタイル",
+  "emptyFolder": "空のフォルダ",
+  "uploadFile": "アップロード",
+  "orderBy": "次の要素による整列:",
+  "orderBySize": "サイズ",
+  "orderByName": "名",
+  "invalidFileType": "選択されたファイル {0} は無効です。サポートされているファイル タイプは {1} です。",
+  "deleteFile": "{0} を本当に削除しますか?",
+  "overwriteFile": "{0} という名前のファイルは既にカレント ディレクトリに存在します。上書きしますか?",
+  "directoryNotFound": "この名前のディレクトリが見つかりませんでした。",
+  "imageWebAddress": "Web アドレス",
+  "imageAltText": "代替テキスト",
+  "imageWidth": "幅 (px)",
+  "imageHeight": "高さ (px)",
+  "fileWebAddress": "Web アドレス",
+  "fileTitle": "タイトル",
+  "linkWebAddress": "Web アドレス",
+  "linkText": "テキスト",
+  "linkToolTip": "ツールチップ",
+  "linkOpenInNewWindow": "リンクを新規ウィンドウで開く",
+  "dialogUpdate": "更新",
+  "dialogInsert": "挿入",
+  "dialogButtonSeparator": "または",
+  "dialogCancel": "キャンセル",
+  "createTable": "テーブルの作成",
+  "addColumnLeft": "左に列を追加",
+  "addColumnRight": "右に列を追加",
+  "addRowAbove": "上に行を追加",
+  "addRowBelow": "下に行を追加",
+  "deleteRow": "行を削除",
+  "deleteColumn": "列を削除"
+});
+}
+
+/* FileBrowser messages */
+
+if (kendo.ui.FileBrowser) {
+kendo.ui.FileBrowser.prototype.options.messages =
+$.extend(true, kendo.ui.FileBrowser.prototype.options.messages,{
+  "uploadFile": "アップロード",
+  "orderBy": "次の要素による整列",
+  "orderByName": "名",
+  "orderBySize": "サイズ",
+  "directoryNotFound": "この名前のディレクトリは見つかりませんでした。",
+  "emptyFolder": "空のフォルダ",
+  "deleteFile": "{0} を本当に削除しますか?",
+  "invalidFileType": "選択されたファイル {0} は無効です。サポートされているファイル タイプは {1} です。",
+  "overwriteFile": "{0} という名前のファイルは既にカレント ディレクトリに存在します。上書きしますか?",
+  "dropFilesHere": "ここにファイルをドロップしてアップロード",
+  "search": "検索"
+});
+}
+
+/* FilterCell messages */
+
+if (kendo.ui.FilterCell) {
+kendo.ui.FilterCell.prototype.options.messages =
+$.extend(true, kendo.ui.FilterCell.prototype.options.messages,{
+  "isTrue": "真である",
+  "isFalse": "偽である",
+  "filter": "フィルタ",
+  "clear": "クリア",
+  "operator": "演算子"
+});
+}
+
+/* FilterCell operators */
+
+if (kendo.ui.FilterCell) {
+kendo.ui.FilterCell.prototype.options.operators =
+$.extend(true, kendo.ui.FilterCell.prototype.options.operators,{
+  "string": {
+    "eq": "が次の値と同じ",
+    "neq": "が次の値と異なる",
+    "startswith": "が次で始まる",
+    "contains": "が次を含む",
+    "doesnotcontain": "が次を含まない",
+    "endswith": "が次で終わる"
   },
-  number: {
-      eq: "같음",
-      neq: "같지 않음",
-      gte: "크거나 같음",
-      gt: "보다 큼",
-      lte: "작거나 같음",
-      lt: "보다 작음"
+  "number": {
+    "eq": "が次の値と同じ",
+    "neq": "が次の値と異なる",
+    "gte": "が次の値以上",
+    "gt": "が次の値より大きい",
+    "lte": "が次の値以下",
+    "lt": "が次の値より小さい"
   },
-  date: {
-      eq: "같음",
-      neq: "같지 않음",
-      gte: "이후 또는 같음",
-      gt: "이후",
-      lte: "이전 또는 같음",
-      lt: "이전"
+  "date": {
+    "eq": "が次の値と同じ",
+    "neq": "が次の値と異なる",
+    "gte": "次の値と同じかそれより後",
+    "gt": "次の値より後",
+    "lte": "次の値と同じかそれより前",
+    "lt": "次の値より前"
   },
-  enums: {
-      eq: "같음",
-      neq: "같지 않음"
+  "enums": {
+    "eq": "が次の値と同じ",
+    "neq": "が次の値と異なる"
   }
- /***************************************************************************/   
 });
+}
 
-kendo.ui.Pager.prototype.options.messages = 
-  $.extend(kendo.ui.Pager.prototype.options.messages, {
-  
-/* PAGER MESSAGES 
- ****************************************************************************/   
-  display: "{0} - {1} / {2} items",
-  empty: "데이터가 없습니다.",
-  page: "페이지",
-  of: "/ {0}",
-  itemsPerPage: "페이지당 데이터 수",
-  first: "처음 페이지로 이동",
-  previous: "이전 페이지로 이동",
-  next: "다음 페이지로 이동",
-  last: "마지막 페이지로 이동",
-  refresh: "새로고침"
- /***************************************************************************/   
+/* FilterMenu messages */
+
+if (kendo.ui.FilterMenu) {
+kendo.ui.FilterMenu.prototype.options.messages =
+$.extend(true, kendo.ui.FilterMenu.prototype.options.messages,{
+  "info": "次の値がある項目を表示:",
+  "isTrue": "真である",
+  "isFalse": "偽である",
+  "filter": "フィルタ",
+  "clear": "クリア",
+  "and": "And",
+  "or": "Or",
+  "selectValue": "-値を選択-",
+  "operator": "演算子",
+  "value": "値",
+  "cancel": "キャンセル"
 });
+}
 
-kendo.ui.Validator.prototype.options.messages = 
-  $.extend(kendo.ui.Validator.prototype.options.messages, {
+/* FilterMenu operator messages */
 
-/* VALIDATOR MESSAGES 
- ****************************************************************************/   
-  required: "{0} 은 필수입니다.",
-  pattern: "{0} is not valid",
-  min: "{0} should be greater than or equal to {1}",
-  max: "{0} should be smaller than or equal to {1}",
-  step: "{0} is not valid",
-  email: "{0} is not valid email",
-  url: "{0} is not valid URL",
-  date: "{0} is not valid date"
- /***************************************************************************/   
+if (kendo.ui.FilterMenu) {
+kendo.ui.FilterMenu.prototype.options.operators =
+$.extend(true, kendo.ui.FilterMenu.prototype.options.operators,{
+  "string": {
+    "eq": "が次の値と同じ",
+    "neq": "が次の値と異なる",
+    "startswith": "が次で始まる",
+    "contains": "が次を含む",
+    "doesnotcontain": "が次を含まない",
+    "endswith": "が次で終わる"
+  },
+  "number": {
+    "eq": "が次の値と同じ",
+    "neq": "が次の値と異なる",
+    "gte": "が次の値以上",
+    "gt": "が次の値より大きい",
+    "lte": "が次の値以下",
+    "lt": "が次の値より小さい"
+  },
+  "date": {
+    "eq": "が次の値と同じ",
+    "neq": "が次の値と異なる",
+    "gte": "次の値と同じかそれより後",
+    "gt": "次の値より後",
+    "lte": "次の値と同じかそれより前",
+    "lt": "次の値より前"
+  },
+  "enums": {
+    "eq": "が次の値と同じ",
+    "neq": "が次の値と異なる"
+  }
 });
+}
 
-kendo.ui.ImageBrowser.prototype.options.messages = 
-  $.extend(kendo.ui.ImageBrowser.prototype.options.messages, {
+/* Gantt messages */
 
-/* IMAGE BROWSER MESSAGES 
- ****************************************************************************/   
-  uploadFile: "업로드",
-  orderBy: "정렬 기준",
-  orderByName: "이름",
-  orderBySize: "크기",
-  directoryNotFound: "해당하는 이름의 디렉토리를 찾을 수 없습니다..",
-  emptyFolder: "빈 폴더",
-  deleteFile: '"{0}"를 삭제 하시겠습니까 ?',
-  invalidFileType: "The selected file \"{0}\" is not valid. Supported file types are {1}.",
-  overwriteFile: "A file with name \"{0}\" already exists in the current directory. Do you want to overwrite it?",
-  dropFilesHere: "업로드할 파일을 이곳에 놓어 주세요."
- /***************************************************************************/   
+if (kendo.ui.Gantt) {
+kendo.ui.Gantt.prototype.options.messages =
+$.extend(true, kendo.ui.Gantt.prototype.options.messages,{
+  "actions": {
+    "addChild": "子の追加",
+    "append": "タスクの追加",
+    "insertAfter": "下に追加",
+    "insertBefore": "上に追加",
+    "pdf": "PDF にエクスポート"
+  },
+  "cancel": "キャンセル",
+  "deleteDependencyWindowTitle": "依存関係を削除",
+  "deleteTaskWindowTitle": "タスクを削除",
+  "destroy": "削除",
+  "editor": {
+    "assingButton": "割り当て",
+    "editorTitle": "タスク",
+    "end": "終点",
+    "percentComplete": "完了",
+    "resources": "リソース",
+    "resourcesEditorTitle": "リソース",
+    "resourcesHeader": "リソース",
+    "start": "始点",
+    "title": "タイトル",
+    "unitsHeader": "単位"
+  },
+  "save": "保存",
+  "views": {
+    "day": "日",
+    "end": "終点",
+    "month": "月",
+    "start": "始点",
+    "week": "週",
+    "year": "年"
+  }
 });
+}
 
-kendo.ui.Editor.prototype.options.messages = 
-  $.extend(kendo.ui.Editor.prototype.options.messages, {
+/* Grid messages */
 
-/* EDITOR MESSAGES 
- ****************************************************************************/   
-  bold: "굵게",
-  italic: "기울림골",
-  underline: "믿줄",
-  strikethrough: "취소선",
-  superscript: "Superscript",
-  subscript: "Subscript",
-  justifyCenter: "가운데 맞춤",
-  justifyLeft: "왼쪽 맞춤",
-  justifyRight: "오른쪽 맞춤",
-  justifyFull: "균등분할",
-  insertUnorderedList: "Insert unordered list",
-  insertOrderedList: "Insert ordered list",
-  indent: "Indent",
-  outdent: "Outdent",
-  createLink: "하이퍼링크 삽입",
-  unlink: "하이퍼링크 삭제",
-  insertImage: "이미지 삽입",
-  insertHtml: "HTML 삽입",
-  fontName: "글꼴",
-  fontNameInherit: "(inherited font)",
-  fontSize: "글자크기",
-  fontSizeInherit: "(inherited size)",
-  formatBlock: "Format",
-  foreColor: "글꼴 색",
-  backColor: "채우기 색",
-  style: "스타일",
-  emptyFolder: "Empty Folder",
-  uploadFile: "업로드",
-  orderBy: "정렬:",
-  orderBySize: "크기",
-  orderByName: "이름",
-  invalidFileType: "The selected file \"{0}\" is not valid. Supported file types are {1}.",
-  deleteFile: 'Are you sure you want to delete "{0}"?',
-  overwriteFile: 'A file with name "{0}" already exists in the current directory. Do you want to overwrite it?',
-  directoryNotFound: "A directory with this name was not found.",
-  imageWebAddress: "웹 주소",
-  imageAltText: "Alternate text",
-  dialogInsert: "Insert",
-  dialogButtonSeparator: "or",
-  dialogCancel: "최소"
- /***************************************************************************/   
+if (kendo.ui.Grid) {
+kendo.ui.Grid.prototype.options.messages =
+$.extend(true, kendo.ui.Grid.prototype.options.messages,{
+  "commands": {
+    "cancel": "変更のキャンセル",
+    "canceledit": "キャンセル",
+    "create": "新規レコードを追加",
+    "destroy": "削除",
+    "edit": "編集",
+    "excel": "Export to Excel",
+    "pdf": "Export to PDF",
+    "save": "変更の保存",
+    "select": "選択",
+    "update": "更新"
+  },
+  "editable": {
+    "cancelDelete": "キャンセル",
+    "confirmation": "このレコードを本当に削除しますか?",
+    "confirmDelete": "削除"
+  }
 });
+}
+
+/* Groupable messages */
+
+if (kendo.ui.Groupable) {
+kendo.ui.Groupable.prototype.options.messages =
+$.extend(true, kendo.ui.Groupable.prototype.options.messages,{
+  "empty": "列ヘッダーをここにドラッグ アンド ドロップして、その列でグループ化"
+});
+}
+
+/* NumericTextBox messages */
+
+if (kendo.ui.NumericTextBox) {
+kendo.ui.NumericTextBox.prototype.options =
+$.extend(true, kendo.ui.NumericTextBox.prototype.options,{
+  "upArrowText": "値を増やす",
+  "downArrowText": "値を減らす"
+});
+}
+
+/* Pager messages */
+
+if (kendo.ui.Pager) {
+kendo.ui.Pager.prototype.options.messages =
+$.extend(true, kendo.ui.Pager.prototype.options.messages,{
+  "display": "{0} - {1} ({2} 項目中)",
+  "empty": "表示する項目がありません",
+  "page": "ページ",
+  "of": "/ {0}",
+  "itemsPerPage": "項目 (1 ページあたり)",
+  "first": "最初のページに移動",
+  "previous": "前のページに移動",
+  "next": "次のページに移動",
+  "last": "最後のページに移動",
+  "refresh": "更新",
+  "morePages": "その他のページ"
+});
+}
+
+/* PivotGrid messages */
+
+if (kendo.ui.PivotGrid) {
+kendo.ui.PivotGrid.prototype.options.messages =
+$.extend(true, kendo.ui.PivotGrid.prototype.options.messages,{
+  "measureFields": "ここにデータ フィールドをドロップ",
+  "columnFields": "ここに列フィールドをドロップ",
+  "rowFields": "ここに行フィールドをドロップ"
+});
+}
+
+/* PivotFieldMenu messages */
+
+if (kendo.ui.PivotFieldMenu) {
+kendo.ui.PivotFieldMenu.prototype.options.messages =
+$.extend(true, kendo.ui.PivotFieldMenu.prototype.options.messages,{
+  "info": "次の値がある項目を表示:",
+  "filterFields": "フィールド フィルタ",
+  "filter": "フィルタ",
+  "include": "フィールドをインクルード...",
+  "title": "インクルードするフィールド",
+  "clear": "クリア",
+  "ok": "OK",
+  "cancel": "キャンセル",
+  "operators": {
+    "contains": "が次を含む",
+    "doesnotcontain": "が次を含まない",
+    "startswith": "が次で始まる",
+    "endswith": "が次で終わる",
+    "eq": "が次の値と同じ",
+    "neq": "が次の値と異なる"
+  }
+});
+}
+
+/* RecurrenceEditor messages */
+
+if (kendo.ui.RecurrenceEditor) {
+kendo.ui.RecurrenceEditor.prototype.options.messages =
+$.extend(true, kendo.ui.RecurrenceEditor.prototype.options.messages,{
+  "frequencies": {
+    "never": "なし",
+    "hourly": "毎時",
+    "daily": "毎日",
+    "weekly": "毎週",
+    "monthly": "毎月",
+    "yearly": "毎年"
+  },
+  "hourly": {
+    "repeatEvery": "次の間隔で繰り返す: ",
+    "interval": " 時間"
+  },
+  "daily": {
+    "repeatEvery": "次の間隔で繰り返す: ",
+    "interval": " 日"
+  },
+  "weekly": {
+    "interval": " 週間",
+    "repeatEvery": "次の間隔で繰り返す: ",
+    "repeatOn": "次のときに繰り返す: "
+  },
+  "monthly": {
+    "repeatEvery": "次の間隔で繰り返す: ",
+    "repeatOn": "次のときに繰り返す: ",
+    "interval": " か月",
+    "day": "日 "
+  },
+  "yearly": {
+    "repeatEvery": "次の間隔で繰り返す: ",
+    "repeatOn": "次のときに繰り返す: ",
+    "interval": " 年",
+    "of": " の "
+  },
+  "end": {
+    "label": "終了:",
+    "mobileLabel": "終了",
+    "never": "なし",
+    "after": "後 ",
+    "occurrence": " 回",
+    "on": "オン "
+  },
+  "offsetPositions": {
+    "first": "最初",
+    "second": "2 番目",
+    "third": "3 番目",
+    "fourth": "4 番目",
+    "last": "最後"
+  },
+  "weekdays": {
+    "day": "日",
+    "weekday": "平日",
+    "weekend": "週末"
+  }
+});
+}
+
+/* Scheduler messages */
+
+if (kendo.ui.Scheduler) {
+kendo.ui.Scheduler.prototype.options.messages =
+$.extend(true, kendo.ui.Scheduler.prototype.options.messages,{
+  "allDay": "すべての日",
+  "date": "日付",
+  "event": "イベント",
+  "time": "時間",
+  "showFullDay": "24 時間表示",
+  "showWorkDay": "営業時間を表示",
+  "today": "今日",
+  "save": "保存",
+  "cancel": "キャンセル",
+  "destroy": "削除",
+  "deleteWindowTitle": "イベントを削除",
+  "ariaSlotLabel": "{0:t} ～ {1:t} 時の範囲から選択",
+  "ariaEventLabel": "{0} ({1:D} 日の {2:t} 時)",
+  "confirmation": "このイベントを本当に削除しますか?",
+  "views": {
+    "day": "日",
+    "week": "週",
+    "workWeek": "稼働日",
+    "agenda": "予定",
+    "month": "月"
+  },
+  "recurrenceMessages": {
+    "deleteWindowTitle": "定期的な項目を削除",
+    "deleteWindowOccurrence": "現在の回を削除",
+    "deleteWindowSeries": "系列を削除",
+    "editWindowTitle": "定期的な項目を編集",
+    "editWindowOccurrence": "現在の回を編集",
+    "editWindowSeries": "系列を編集",
+    "deleteRecurring": "このイベントの回のみを削除しますか、それとも系列全体を削除しますか?",
+    "editRecurring": "このイベントの回のみを編集しますか、それとも系列全体を編集しますか?"
+  },
+  "editor": {
+    "title": "タイトル",
+    "start": "始点",
+    "end": "終点",
+    "allDayEvent": "終日のイベント",
+    "description": "説明",
+    "repeat": "繰り返す",
+    "timezone": " ",
+    "startTimezone": "開始タイムゾーン",
+    "endTimezone": "終了タイムゾーン",
+    "separateTimezones": "開始と終了で別のタイムゾーンを使用する",
+    "timezoneEditorTitle": "タイムゾーン",
+    "timezoneEditorButton": "タイム ゾーン",
+    "timezoneTitle": "タイム ゾーン",
+    "noTimezone": "タイムゾーンがありません",
+    "editorTitle": "イベント"
+  }
+});
+}
+
+/* Slider messages */
+
+if (kendo.ui.Slider) {
+kendo.ui.Slider.prototype.options =
+$.extend(true, kendo.ui.Slider.prototype.options,{
+  "increaseButtonTitle": "増やす",
+  "decreaseButtonTitle": "減らす"
+});
+}
+
+/* TreeView messages */
+
+if (kendo.ui.TreeView) {
+kendo.ui.TreeView.prototype.options.messages =
+$.extend(true, kendo.ui.TreeView.prototype.options.messages,{
+  "loading": "ロードしています...",
+  "requestFailed": "要求を実行できませんでした。",
+  "retry": "再試行"
+});
+}
+
+/* Upload messages */
+
+if (kendo.ui.Upload) {
+kendo.ui.Upload.prototype.options.localization=
+$.extend(true, kendo.ui.Upload.prototype.options.localization,{
+  "select": "ファイルを選択...",
+  "cancel": "キャンセル",
+  "retry": "再試行",
+  "remove": "削除",
+  "uploadSelectedFiles": "ファイルをアップロード",
+  "dropFilesHere": "ここにファイルをドロップしてアップロード",
+  "statusUploading": "アップロード中",
+  "statusUploaded": "アップロード済み",
+  "statusWarning": "警告",
+  "statusFailed": "失敗",
+  "headerStatusUploading": "アップロード中...",
+  "headerStatusUploaded": "完了"
+});
+}
+
+/* Validator messages */
+
+if (kendo.ui.Validator) {
+kendo.ui.Validator.prototype.options.messages =
+$.extend(true, kendo.ui.Validator.prototype.options.messages,{
+  "required": "{0} が必要です",
+  "pattern": "{0} は無効です",
+  "min": "{0} は {1} より大きいか同じ値にしてください",
+  "max": "{0} は {1} より小さいか同じ値にしてください",
+  "step": "{0} は無効です",
+  "email": "{0} は無効な電子メールです",
+  "url": "{0} は無効な URL です",
+  "date": "{0} は無効な日付です"
+});
+}
+
+
+return window.kendo;
+
+}, typeof define == 'function' && define.amd ? define : function(_, f){ f(); });
