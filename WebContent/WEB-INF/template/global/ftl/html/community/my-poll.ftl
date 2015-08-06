@@ -995,6 +995,40 @@
 	<!-- START TEMPLATE -->				
 
 	<script id="my-poll-listview-template" type="text/x-kendo-template">
+	<div class="ibox float-e-margins">
+		<div class="ibox-title">
+			<h5>#: name #</h5>
+			<span class="label label-success">#: status #</span>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">Config option 1</a>
+                                </li>
+                                <li><a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+		</div>
+		<div class="ibox-content">
+			<span class="text-navy"> #: kendo.toString( creationDate, "m") #</span>
+			#if(description!=null){#<p class="text-muted m-b-xs"><small>#: description #</small></p>#}#
+		</div>
+		<div class="ibox-footer">
+			<span class="pull-right">
+				<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
+			</span>
+		</div>
+	</div>
+                
+<!--
 	<div class="timeline-item">
 		<div class="row">
 			<div class="col-xs-3 date">
@@ -1011,7 +1045,7 @@
 		</div>
 	</div>
 	
-	<!--	<div class="ibox">
+		<div class="ibox">
 			<div class="ibox-title">
 				<span class="label label-primary pull-right">NEW</span>
 				<h5><i class="fa fa-bar-chart"></i> #: name #</h5>
@@ -1040,6 +1074,7 @@
 			</div>
 		</div>-->
 	</script>	
+	
 	<script id="my-poll-option-template" type="text/x-kendo-template">
 	<div class="k-widget">
 		#:optionText#
@@ -1049,6 +1084,7 @@
         </div>
 	</div>
 	</script>	
+	
 	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
 	</script>	
 	
