@@ -157,7 +157,7 @@
 					followUp : false,
 					visible : true,
 					authorPhotoUrl : "/images/common/no-avatar.png",
-					create : function(){
+					create : function(e){
 					
 					},
 					update : function(e){
@@ -171,6 +171,7 @@
 					
 					},
 					saveOrUpdate : function(callback){
+						var $this = this;
 						common.ui.ajax( '<@spring.url "/data/polls/update.json?output=json"/>', {
 							data : kendo.stringify($this.poll) ,
 							contentType : "application/json",
