@@ -998,19 +998,10 @@
 	<div class="ibox float-e-margins">
 		<div class="ibox-title">
 			<h5>#: name #</h5>
-			<span class="label label-success">#: status #</span>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
+			<span class="label label-info">#: status #</span>
 		</div>
 		<div class="ibox-content">
-			<span class="text-navy"> #: kendo.toString( creationDate, "m") #</span>
+			<span class="text-navy"> #: kendo.toString( startDate, "m") #</span>
 			#if(description!=null){#<p class="text-muted m-b-xs"><small>#: description #</small></p>#}#
 		</div>
 		<div class="ibox-footer">
@@ -1025,7 +1016,7 @@
 		<div class="row">
 			<div class="col-xs-3 date">
 				<i class="fa fa-bar-chart"></i>
-				<span class="text-navy"> #: kendo.toString( creationDate, "m") #</span>
+				<span class="text-navy"> #: kendo.toString( startDate, "m") #</span>
 				<br>
 				<span class="label label-success">#: status #</span>
 			</div>
