@@ -1020,7 +1020,7 @@
 						<ul class="list-inline page-tools">			
 							<li><i class="fa fa-eye"> </i> <span class="view-page-count">42</span></li>
 							<li>|</li>
-							<li><a href="#" data-action="comment" data-object-id="#: pollId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">1</span></a></li>	
+							<li><a href="\\#" data-action="comment" data-object-id="#: pollId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">1</span></a></li>	
 						</ul>
 					</div>
 										
