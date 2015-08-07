@@ -995,7 +995,7 @@
 	<!-- START TEMPLATE -->				
 
 	<script id="my-poll-listview-template" type="text/x-kendo-template">
-	<div class="ibox float-e-margins">
+	<div class="ibox poll float-e-margins">
 		<div class="ibox-title">
 			<h5>#: name #</h5>
 			<span class="label label-info">#: status #</span>
