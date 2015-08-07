@@ -1004,17 +1004,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<span class="text-navy"> #: kendo.toString( startDate, "m") # ~ #: kendo.toString( endDate, "m") #</span>
-					#if(description!=null){#<p class="text-muted m-b-xs"><small>#: description #</small></p>#}#				
-					
-					<div class="page-credits">
-						<div class="credit-item">
-							<div class="credit-img user">
-								<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
-							</div>
-							<div class="credit-name">#if( user.nameVisible ){ # #: user.name # <code>#:user.username#</code> </div># } else { # #: user.username #</div> # } #
-							<div class="credit-title"></div>
-						</div>
-					</div>
+					#if(description!=null){#<p class="text-muted m-b-xs"><small>#: description #</small></p>#}#	
 					<div class="page-meta no-margin-hr">					
 						<p class="page-tags"><i class="fa fa-tags"></i> 만화</p>
 						<ul class="list-inline page-tools">			
@@ -1023,7 +1013,15 @@
 							<li><a href="\\#" data-action="comment" data-object-id="#: pollId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">1</span></a></li>	
 						</ul>
 					</div>
-										
+					<div class="page-credits">
+						<div class="credit-item">
+							<div class="credit-img user">
+								<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
+							</div>
+							<div class="credit-name">#if( user.nameVisible ){ # #: user.name # <code>#:user.username#</code> </div># } else { # #: user.username #</div> # } #
+							<div class="credit-title"></div>
+						</div>
+					</div>										
 					<span class="pull-right">
 						<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
 					</span>									
