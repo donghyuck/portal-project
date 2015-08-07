@@ -1013,6 +1013,9 @@
 							<li><a href="\\#" data-action="comment" data-object-id="#: pollId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">1</span></a></li>	
 						</ul>
 					</div>
+					<span class="pull-right">
+						<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
+					</span>						
 					<div class="page-credits">
 						<div class="credit-item">
 							<div class="credit-img user">
@@ -1022,9 +1025,7 @@
 							<div class="credit-title"></div>
 						</div>
 					</div>										
-					<span class="pull-right">
-						<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
-					</span>									
+								
 				</div>
 				<div class="col-sm-6">
 				
