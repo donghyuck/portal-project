@@ -1004,6 +1004,17 @@
 			<span class="text-navy"> #: kendo.toString( startDate, "m") # ~ #: kendo.toString( endDate, "m") #</span>
 			#if(description!=null){#<p class="text-muted m-b-xs"><small>#: description #</small></p>#}#
 		</div>
+			
+			<div class="page-credits">
+				<div class="credit-item">
+					<div class="credit-img user">
+						<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
+					</div>
+					<div class="credit-name">#if( user.nameVisible ){ # #: user.name # <code>#:user.username#</code> </div># } else { # #: user.username #</div> # } #
+					<div class="credit-title"></div>
+				</div>
+			</div>	
+					
 		<div class="ibox-footer">
 			<span class="pull-right">
 				<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
