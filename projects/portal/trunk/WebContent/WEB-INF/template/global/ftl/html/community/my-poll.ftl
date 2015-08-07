@@ -1015,7 +1015,9 @@
 							<div class="credit-title"></div>
 						</div>
 					</div>
-									
+					<span class="pull-right">
+						<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
+					</span>									
 				</div>
 				<div class="col-sm-6">
 				
@@ -1027,9 +1029,7 @@
 	
 					
 		<div class="ibox-footer">
-			<span class="pull-right">
-				<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
-			</span>
+
 		</div>
 	</div>
                 
