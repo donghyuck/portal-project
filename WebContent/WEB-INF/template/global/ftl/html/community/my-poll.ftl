@@ -1015,6 +1015,15 @@
 							<div class="credit-title"></div>
 						</div>
 					</div>
+					<div class="page-meta no-margin-hr">					
+						<p class="page-tags"><i class="fa fa-tags"></i> 만화</p>
+						<ul class="list-inline page-tools">			
+							<li><i class="fa fa-eye"> </i> <span class="view-page-count">42</span></li>
+							<li>|</li>
+							<li><a href="#" data-action="comment" data-object-id="#: pollId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">1</span></a></li>	
+						</ul>
+					</div>
+										
 					<span class="pull-right">
 						<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
 					</span>									
