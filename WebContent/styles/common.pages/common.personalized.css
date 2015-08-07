@@ -2517,7 +2517,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	color:#8e8e93;
 }
 
-.ibox.summary .page-meta .page-tags {
+.ibox.summary .page-meta .page-tags, .ibox.poll .page-meta .page-tags {
 	color:#ccc;
 	margin: 10px 0;
 	margin-top:0;
