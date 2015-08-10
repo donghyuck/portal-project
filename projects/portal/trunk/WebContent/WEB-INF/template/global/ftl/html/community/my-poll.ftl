@@ -1035,7 +1035,7 @@
 						<div class="poll-option">
 							<img class="poll-option-image" src="img/a4.jpg" alt="">
 							<div class="poll-option-text">
-                                <a href="#">#: option.optionText#</a>
+                                <a href="\\#">#: option.optionText#</a>
                             </div>
 						</div>
 					#}#
