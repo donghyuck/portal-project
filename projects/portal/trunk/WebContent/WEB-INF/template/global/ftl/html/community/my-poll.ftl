@@ -1027,19 +1027,26 @@
 					</div>										
 								
 				</div>
+				
+				
+          <li>
+             
+              
+          </li>
+          
+          
 				<div class="col-sm-6">
 					#if ( optionCount > 0  ) { #
-					<div class="poll-option-list">
+					<ul class="poll-option-list">
 					# for (var i = 0; i < optionCount ; i++) { #	
 					# var option = options[i] ; #	
-						<div class="poll-option">
+						<li class="poll-option">
 							<img class="poll-option-image" src="img/a4.jpg" alt="">
-							<div class="poll-option-text">
-                                <a href="\\#">#: option.optionText#</a>
-                            </div>
-						</div>
+							 <input type="radio" name="option" id="option-#=option.optionId#" class="k-radio" checked="checked">
+							 <label class="k-radio-label" for="option-#=option.optionId#">#: option.optionText#</label>
+						</li>
 					#}#
-					</div>
+					</ul>
 					#}#
 				</div>
 			</div>
