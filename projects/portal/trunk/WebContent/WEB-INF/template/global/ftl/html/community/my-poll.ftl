@@ -1027,12 +1027,7 @@
 					</div>										
 								
 				</div>
-				
-				
-          <li>
-             
-              
-          </li>
+
           
           
 				<div class="col-sm-6">
