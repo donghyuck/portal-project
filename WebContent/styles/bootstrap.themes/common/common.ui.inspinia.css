@@ -282,7 +282,7 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	z-index: 100;
+	z-index: 10;
 }
 
 .ibox.summary  .cover:hover  .hover-mask {
@@ -290,7 +290,7 @@
 }
 
 .ibox.summary  .ibox-content {
-	z-index: 101;
+	z-index: 11;
 	position: relative;
 }
 
