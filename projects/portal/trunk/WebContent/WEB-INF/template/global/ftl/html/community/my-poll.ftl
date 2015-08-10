@@ -614,7 +614,7 @@
 								이러한 설정은 <button type="button" class="btn btn-success btn-flat btn-sm rounded-2x" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings" aria-expanded="false"><i class="fa fa-cog"></i> 고급옵션</button> 버튼을 클릭하여 변경할 수 있습니다.
 							</section>					
 						</fieldset>		
-						<fieldset data-bind="enabled:editable">
+						<fieldset data-bind="visible:editable">
 							<div class="my-poll-options" >		
 								<label class="label">옵션</label>					
 								<div id="my-poll-options-grid"></div>
