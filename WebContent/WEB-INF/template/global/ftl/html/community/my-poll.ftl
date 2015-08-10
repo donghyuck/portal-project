@@ -1028,7 +1028,19 @@
 								
 				</div>
 				<div class="col-sm-6">
-				
+					#if ( optionCount > 0  ) { #
+					<div class="poll-option-list">
+					# for (var i = 0; i < optionCount ; i++) { #	
+					# var option = options[i] ; #	
+						<div class="poll-option">
+							<img class="poll-option-image" src="img/a4.jpg" alt="">
+							<div class="poll-option-text">
+                                <a href="#">#: option.optionText#</a>
+                            </div>
+						</div>
+					#}#
+					</div>
+					#}#
 				</div>
 			</div>
 
