@@ -573,18 +573,23 @@
 								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
 								<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
 								</section>
-								<div class="hr-line-dashed"></div>
 								<section>			
 								<label class="label">종료일</label>							
 								<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
 								<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
-								</section>			
-								<div class="hr-line-dashed"></div>
+								</section>										
 								<section>			
 								<label class="label">만료일</label>
 								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
 								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
 								</section>
+								<div class="hr-line-dashed"></div>
+								<section>
+									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.anonymousVoteAllowed"><i class="rounded-4x"></i>방문자 참여 허용</label>
+									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.userVoteAllowed"><i class="rounded-4x"></i>회원 참여 허용</label>
+									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.multipleSelectAllowed"><i class="rounded-4x"></i>보기중 하나이상 선택 가능</label>
+								</section>
+								
 								<section>
 									<label class="label">테그</label>
 									<label class="input">
@@ -960,6 +965,7 @@
 								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
 								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
 								</section>
+								
 							</fieldset>                               
 						</form>
 						<!-- /.options forms -->													
