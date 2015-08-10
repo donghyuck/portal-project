@@ -465,6 +465,21 @@
 			modifiedDate : {
 				type : "date",
 				editable : true
+			},
+			anonymousVoteAllowed : {
+				type : "boolean",
+				editable : true,
+				defaultValue : false
+			},
+			userVoteAllowed : {
+				type : "boolean",
+				editable : true,
+				defaultValue : false
+			},
+			multipleSelectAllowed :{
+				type : "boolean",
+				editable : true,
+				defaultValue : false
 			}
 		},	
 		authorPhotoUrl : function() {
@@ -492,7 +507,9 @@
 			target.set('startDate', this.get("startDate"));
 			target.set('endDate', this.get("endDate"));	
 			target.set('expireDate', this.get("expireDate"));
-			
+			target.set('anonymousVoteAllowed', this.get("anonymousVoteAllowed"));
+			target.set('userVoteAllowed', this.get("userVoteAllowed"));
+			target.set('multipleSelectAllowed', this.get("multipleSelectAllowed"));
 			if (typeof this.get("options") === 'object')
 				target.set('options', this.get("options"));
 			else
