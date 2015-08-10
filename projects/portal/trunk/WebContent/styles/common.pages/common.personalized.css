@@ -2535,8 +2535,8 @@ ul.poll-option-list {
 }
 
 .poll-option {
-	padding: 8px 10px;
-    border-bottom: 1px solid #e7eaec;
+	padding: 8px 10px 3px 8px;
+    border-bottom: 1px dashed #e7eaec;
 }
 
 .poll-option .poll-option-image {
