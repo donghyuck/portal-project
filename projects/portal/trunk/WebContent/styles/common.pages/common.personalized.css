@@ -2530,6 +2530,25 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	color:#8e8e93;
 }
 
+.poll .poll-option-list {
+	
+}
+
+.poll-option {
+	padding: 8px 10px;
+    border-bottom: 1px solid #e7eaec;
+}
+
+.poll-option .poll-option-image {
+    height: 36px;
+    float: left;
+    margin-right: 10px;	
+}
+
+.poll-option .poll-option-text {
+	padding: 10px;	
+}    
+    
 	
 /** ------------------------------------------------- */
 /** dialog switcher		                              */
