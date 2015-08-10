@@ -2785,6 +2785,10 @@ ul.poll-option-list {
     z-index: 680;
 }
 
+.modal-content .sky-form.modal-settings label.toggle {
+	font-size : 100%;
+}
+
 /* poll
 ---------------------------------- */
 .my-poll-options .k-grid {
