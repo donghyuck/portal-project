@@ -585,8 +585,8 @@
 								</section>
 								<div class="hr-line-dashed"></div>
 								<section>
-									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.anonymousVoteAllowed"><i class="rounded-4x"></i>방문자 참여 허용</label>
-									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.userVoteAllowed"><i class="rounded-4x"></i>회원 참여 허용</label>
+									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.anonymousVoteAllowed"><i class="rounded-4x"></i>방문자 설문 허용</label>
+									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.userVoteAllowed"><i class="rounded-4x"></i>회원 설문 허용</label>
 									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.multipleSelectAllowed"><i class="rounded-4x"></i>보기중 하나이상 선택 가능</label>
 								</section>
 								
