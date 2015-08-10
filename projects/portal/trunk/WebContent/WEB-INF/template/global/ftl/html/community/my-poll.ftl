@@ -1028,8 +1028,6 @@
 								
 				</div>
 
-          
-          
 				<div class="col-sm-6">
 					#if ( optionCount > 0  ) { #
 					<ul class="poll-option-list">
@@ -1037,8 +1035,10 @@
 					# var option = options[i] ; #	
 						<li class="poll-option">
 							<img class="poll-option-image" src="img/a4.jpg" alt="">
-							 <input type="radio" name="option" id="option-#=option.optionId#" class="k-radio" checked="checked">
-							 <label class="k-radio-label" for="option-#=option.optionId#">#: option.optionText#</label>
+							<div class="radio radio-danger" style="margin-left: 40px;">
+                                <input type="radio" name="options" id="option-#=option.optionId#" value="option1">
+                                <label for="option-#=option.optionId#">#: option.optionText#</label>
+                            </div>
 						</li>
 					#}#
 					</ul>
@@ -1054,52 +1054,6 @@
 
 		</div>
 	</div>
-                
-<!--
-	<div class="timeline-item">
-		<div class="row">
-			<div class="col-xs-3 date">
-				<i class="fa fa-bar-chart"></i>
-				<span class="text-navy"> #: kendo.toString( startDate, "m") #</span>
-				<br>
-				<span class="label label-success">#: status #</span>
-			</div>
-			<div class="col-xs-7 content no-top-border">
-					<p class="m-b-xs"><strong>#: name #</strong></p>
-					#if(description!=null){#<p class="text-muted m-b-xs"><small>#: description #</small></p>#}#
-					<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
-			</div>
-		</div>
-	</div>
-	
-		<div class="ibox">
-			<div class="ibox-title">
-				<span class="label label-primary pull-right">NEW</span>
-				<h5><i class="fa fa-bar-chart"></i> #: name #</h5>
-			</div>
-			<div class="ibox-content">
-				<p class="text-muted"><small>#: description #</small></p>
-				<div class="team-members">
-					<a href="\\#"><img alt="member" class="img-circle" src="img/a1.jpg"></a>
-                                <a href="\\#"><img alt="member" class="img-circle" src="img/a2.jpg"></a>
-                                <a href="\\#"><img alt="member" class="img-circle" src="img/a3.jpg"></a>
-                                <a href="\\#"><img alt="member" class="img-circle" src="img/a5.jpg"></a>
-                                <a href="\\#"><img alt="member" class="img-circle" src="img/a6.jpg"></a>
-				</div>
-				<h3 class="heading-xs">결과<span class="pull-right">88%</span></h3>
-				<div class="progress progress-u progress-xs">
-					<div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
-					</div>
-				</div>
-				
-				<ul class="list-unstyled margin-bottom-30">
-					<li><strong>시작일:</strong> #: kendo.toString( startDate , "D") #</li>
-                	<li><strong>종료일:</strong>#: kendo.toString( endDate , "D") #</li>
-                	<li><strong>만료일:</strong> #: kendo.toString( expireDate , "D") #</li>
-                </ul>
-                <button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
-			</div>
-		</div>-->
 	</script>	
 	
 	<script id="my-poll-option-template" type="text/x-kendo-template">
