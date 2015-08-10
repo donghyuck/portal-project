@@ -1034,7 +1034,7 @@
 					# for (var i = 0; i < optionCount ; i++) { #	
 					# var option = options[i] ; #	
 						<li class="poll-option">
-							<img class="poll-option-image" src="<@spring.url "/styles/images/common/no-image2.jpg"/>" alt="">
+							<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
 							<div class="radio radio-danger" style="margin-left: 40px;">
                                 <input type="radio" name="options" id="option-#=option.optionId#" value="option1">
                                 <label for="option-#=option.optionId#">#: option.optionText#</label>
