@@ -2530,8 +2530,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	color:#8e8e93;
 }
 
-.poll .poll-option-list {
-	
+ul.poll-option-list {
+	list-style: none;
 }
 
 .poll-option {
