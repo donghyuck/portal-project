@@ -2548,6 +2548,10 @@ ul.poll-option-list {
 .poll-option .poll-option-text {
 	padding: 10px;	
 }    
+
+.poll-option .radio {
+	margin-right: 40px;	
+}
     
 	
 /** ------------------------------------------------- */
