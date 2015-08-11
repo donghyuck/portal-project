@@ -231,6 +231,7 @@
 							this.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);	
 							this.poll.endDate.setMonth(this.poll.startDate.getMonth()+1); 
 							this.poll.expireDate.setMonth(this.poll.endDate.getMonth()+1); 
+							this.poll.user = common.ui.accounts().token;
 						} 		
 						
 						
