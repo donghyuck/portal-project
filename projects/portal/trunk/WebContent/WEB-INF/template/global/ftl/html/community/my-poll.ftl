@@ -144,12 +144,10 @@
 					var objectId = $this.data("object-id");	
 					var inputEl = $("ul[data-object-id="+objectId+"] input[name=option]:checked");
 					if( common.ui.defined(inputEl) ){
-						
+						var myVote = new common.ui.data.Vote({ pollId : objectId, optionId : inputEl.val() });
 						common.ui.ajax( '<@spring.url "/data/polls/vote.json?output=json"/>', {
-							type: 'POST',
-							dataType : "json",
-							data : { pollId: objectId , optionId : inputEl.val() } ,
-							//contentType : "application/json",
+							data : common.ui.stringify(myVote),
+							contentType : "application/json",
 							success : function(response){ }							
 						});
 										
