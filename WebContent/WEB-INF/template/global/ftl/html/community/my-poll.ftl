@@ -231,9 +231,7 @@
 							this.set("authorPhotoUrl", common.ui.accounts().token.photoUrl);	
 							this.poll.endDate.setMonth(this.poll.startDate.getMonth()+1); 
 							this.poll.expireDate.setMonth(this.poll.endDate.getMonth()+1); 
-							this.poll.user = common.ui.accounts().token;
-						} 		
-						
+						}						
 						
 					}
 				});								
@@ -1021,7 +1019,7 @@
 					<div class="page-meta no-margin-hr">					
 						<p class="page-tags"><i class="fa fa-tags"></i> 만화</p>
 						<ul class="list-inline page-tools">			
-							<li><i class="fa fa-eye"> </i> <span class="view-page-count">42</span></li>
+							<li><i class="fa fa-eye"> </i> <span class="view-page-count">#: voteCount #</span></li>
 							<li>|</li>
 							<li><a href="\\#" data-action="comment" data-object-id="#: pollId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">1</span></a></li>	
 						</ul>
