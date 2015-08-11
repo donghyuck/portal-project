@@ -159,7 +159,14 @@
 					visible : true,
 					authorPhotoUrl : "/images/common/no-avatar.png",
 					create : function(e){
-					
+						var $this = this, 
+						btn = $(e.target);
+						var completeFn = function(){
+							console.log('execute create ...');									
+							btn.button('reset');
+						};
+						btn.button('loading');
+						$this.saveOrUpdate(completeFn);					
 					},
 					update : function(e){
 						var $this = this, 
@@ -170,7 +177,6 @@
 						};
 						btn.button('loading');
 						$this.saveOrUpdate(completeFn);
-					
 					},
 					saveOrUpdate : function(callback){
 						var $this = this;
