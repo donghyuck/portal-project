@@ -112,7 +112,7 @@
 }
 
 .btn.btn-rounded {
-	border-radius: 9999px
+	border-radius: 9999px!important;
 }
 
 .btn-rounded.btn-flat {
