@@ -149,7 +149,7 @@
 							type: 'POST',
 							dataType : "json",
 							data : { pollId: objectId , optionId : inputEl.val() } ,
-							contentType : "application/json",
+							//contentType : "application/json",
 							success : function(response){ }							
 						});
 										
