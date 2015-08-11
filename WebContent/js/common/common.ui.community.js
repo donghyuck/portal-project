@@ -548,6 +548,31 @@
 		}	
 	});
 	
+	common.ui.data.Vote = kendo.data.Model.define({
+		id : "optionId",
+		fields : {
+			pollId : {
+				type : "number",
+				defaultValue : 0
+			},
+			userId : {
+				type : "number",
+				defaultValue : 0
+			},
+			uniqueId : {
+				type:"string",			
+			},
+			optionId : {
+				type : "number",
+				defaultValue : 1
+			},
+			IPAddress: {
+				type:"string",
+				defaultValue : "0.0.0.0", 
+			}
+		}	
+	});
+	
 })(jQuery);
 
 ;
