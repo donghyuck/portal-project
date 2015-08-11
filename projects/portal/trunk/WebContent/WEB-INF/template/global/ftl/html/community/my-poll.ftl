@@ -143,8 +143,15 @@
 					$this = $(this);		
 					var objectId = $this.data("object-id");	
 					var inputEl = $("ul[data-object-id="+objectId+"] input[name=option]:checked");
-					if( inputEl ){
-						alert("vote..." + inputEl.val() );
+					if( common.ui.defined(inputEl) ){
+						
+						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
+							data : { pollId: objectId , optionId : inputEl.val() } ,
+							contentType : "application/json",
+							success : function(response){ }							
+						});
+										
+						//alert("vote..." + inputEl.val() );
 					}
 					
 				});	
