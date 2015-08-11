@@ -145,7 +145,7 @@
 					var inputEl = $("ul[data-object-id="+objectId+"] input[name=option]:checked");
 					if( common.ui.defined(inputEl) ){
 						
-						common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
+						common.ui.ajax( '<@spring.url "/data/polls/vote.json?output=json"/>', {
 							data : { pollId: objectId , optionId : inputEl.val() } ,
 							contentType : "application/json",
 							success : function(response){ }							
