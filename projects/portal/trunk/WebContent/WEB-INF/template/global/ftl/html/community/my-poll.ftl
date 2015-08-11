@@ -1019,7 +1019,7 @@
 					<div class="page-meta no-margin-hr">					
 						<p class="page-tags"><i class="fa fa-tags"></i> 만화</p>
 						<ul class="list-inline page-tools">			
-							<li><i class="fa fa-eye"> </i> <span class="view-page-count">#: voteCount #</span></li>
+							<li><i class="fa fa-users"> </i> <span class="poll-vote-count text-danger">#: voteCount #</span></li>
 							<li>|</li>
 							<li><a href="\\#" data-action="comment" data-object-id="#: pollId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">1</span></a></li>	
 						</ul>
