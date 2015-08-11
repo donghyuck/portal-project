@@ -146,6 +146,7 @@
 					if( common.ui.defined(inputEl) ){
 						
 						common.ui.ajax( '<@spring.url "/data/polls/vote.json?output=json"/>', {
+							dataType : "json",
 							data : { pollId: objectId , optionId : inputEl.val() } ,
 							contentType : "application/json",
 							success : function(response){ }							
