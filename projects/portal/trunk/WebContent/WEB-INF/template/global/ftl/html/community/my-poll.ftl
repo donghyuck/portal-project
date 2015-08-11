@@ -138,7 +138,13 @@
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
 					createPollPostModal(item);
 				});		
-										
+				
+				$("#my-poll-listview").on( "click", "a[data-action=vote], button[data-action=vote]",  function(e){		
+					$this = $(this);		
+					var objectId = $this.data("object-id");	
+					
+				});	
+														
 				// event for new page
 				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
 					var poll = new common.ui.data.Poll();
@@ -1041,7 +1047,7 @@
 
 				<div class="col-sm-6">
 					#if ( optionCount > 0  ) { #
-					<ul class="poll-option-list">
+					<ul class="poll-option-list" data-object-id="#= pollId#">
 					# for (var i = 0; i < optionCount ; i++) { #	
 					# var option = options[i] ; #	
 						<li class="poll-option">
@@ -1059,7 +1065,7 @@
 
 		</div>	
 		<div class="ibox-footer text-right">
-			<button class="btn btn-lg btn-outline btn-flat btn-rounded">참여</button>
+			<button class="btn btn-lg btn-outline btn-flat btn-rounded" data-action="vote" data-object-id="#= pollId#"  >참여</button>
 		</div>
 	</div>
 	</script>	
