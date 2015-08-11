@@ -568,7 +568,7 @@
 			},
 			IPAddress: {
 				type:"string",
-				defaultValue : "0.0.0.0", 
+				defaultValue : "0.0.0.0"
 			}
 		}	
 	});
