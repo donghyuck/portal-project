@@ -1052,12 +1052,9 @@
 				</div>
 			</div>
 
-		</div>
-			
-	
-					
-		<div class="ibox-footer">
-
+		</div>	
+		<div class="ibox-footer text-right">
+			<button class="btn btn-lg btn-outline btn-flat btn-rounded">참여</button>
 		</div>
 	</div>
 	</script>	
