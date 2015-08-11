@@ -142,6 +142,10 @@
 				$("#my-poll-listview").on( "click", "a[data-action=vote], button[data-action=vote]",  function(e){		
 					$this = $(this);		
 					var objectId = $this.data("object-id");	
+					var inputEl = $("ul[data-object-id="+objectId+"] input[name=option]:checked");
+					if( inputEl ){
+						alert("vote..." + inputEl.val() );
+					}
 					
 				});	
 														
@@ -1053,7 +1057,7 @@
 						<li class="poll-option">
 							<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
 							<div class="radio radio-danger" style="margin-left: 40px;">
-                                <input type="radio" name="options" id="option-#=option.optionId#" value="option1">
+                                <input type="radio" name="option" id="option-#=option.optionId#" value="#= option.optionId #">
                                 <label for="option-#=option.optionId#">#: option.optionText#</label>
                             </div>
 						</li>
