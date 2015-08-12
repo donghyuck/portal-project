@@ -140,16 +140,34 @@
 				});		
 				
 				$("#my-poll-listview").on( "click", "a[data-action=vote], button[data-action=vote]",  function(e){		
-					$this = $(this);		
+					$this = $(this),
+					btn = $(e.target);
+					
 					var objectId = $this.data("object-id");	
 					var inputEl = $("ul[data-object-id="+objectId+"] input[name=option]:checked");
-					if( common.ui.defined(inputEl) ){
-						var myVote = new common.ui.data.Vote({ pollId : objectId, optionId : inputEl.val() });
-						common.ui.ajax( '<@spring.url "/data/polls/vote.json?output=json"/>', {
+					
+					if( common.ui.defined(inputEl) ){						
+						var myVote = new common.ui.data.Vote({ pollId : objectId, optionId : inputEl.val() });						
+						common.ui.ajax( '<@spring.url "/data/polls/vote_allowed.json?output=json"/>', {
 							data : common.ui.stringify(myVote),
 							contentType : "application/json",
-							success : function(response){ }							
+							success : function(response){ 
+								if( response.success ){
+									btn.button('loading');		
+									common.ui.ajax( '<@spring.url "/data/polls/vote.json?output=json"/>', {
+										data : common.ui.stringify(myVote),
+										contentType : "application/json",
+										complete : function(e){ 
+											btn.button('reset');
+										}							
+									});		
+								}else{
+									alert("이미 참여 하였거나 대상자가 아닙니다.);
+								}
+							}							
 						});
+						
+	
 										
 						//alert("vote..." + inputEl.val() );
 					}
