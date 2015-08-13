@@ -191,37 +191,7 @@
 					poll : new common.ui.data.Poll(),
 					voteCount : 0,
 					vote : function(e){
-						
-						$this = $(this),
-						btn = $(e.target);						
-						var inputEl = renderTo.find("input[name=my-poll-option]:checked"); 
-						console.log("create ---------" + inputEl);
-						
-						//$("ul[data-object-id="+objectId+"] input[name=option]:checked");						
-						/*
-						if( common.ui.defined(inputEl) ){						
-							kendo.ui.progress(renderTo, true);	
-							var myVote = new common.ui.data.Vote({ pollId : $this.poll.pollId, optionId : inputEl.val() });						
-							common.ui.ajax( '<@spring.url "/data/polls/vote_allowed.json?output=json"/>', {
-								data : common.ui.stringify(myVote),
-								contentType : "application/json",
-								success : function(response){ 
-									if( response.success ){
-										btn.button('loading');		
-										common.ui.ajax( '<@spring.url "/data/polls/vote.json?output=json"/>', {
-											data : common.ui.stringify(myVote),
-											contentType : "application/json",
-											complete : function(e){ 
-												kendo.ui.progress(renderTo, false);	
-											}							
-										});		
-									}else{
-										alert("이미 참여 하였거나 대상자가 아닙니다.");
-										kendo.ui.progress(renderTo, false);	
-									}
-								}						
-							});
-						}	*/
+
 					},
 					setSource: function(poll){
 						var that = this;
