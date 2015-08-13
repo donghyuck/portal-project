@@ -2823,6 +2823,10 @@ ul.poll-option-list {
 	border-left: dotted 1px #e5e5e5;
 }
 
+.my-poll-post-form .sky-form.modal-settings fieldset {
+	background : transparent;
+}
+
 
 /* lightbox
 ---------------------------------- */
