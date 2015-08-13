@@ -668,11 +668,13 @@
 	                    </div>
 					</article>
 					<div class="modal-body">
+						<ul class="poll-option-list" data-object-id="1">
 						<div data-role="listview"
 							class="no-border"
                			  	data-template="my-poll-option-template"
                  			data-bind="source: poll.options"
                  			style="height: 300px; overflow: auto"></div>
+                 		</ul>	
 					</div>
 				</div>
 			</div>
@@ -808,7 +810,9 @@
 							<fieldset>
 								<div class="my-poll-options" >		
 									<label class="label">옵션</label>					
-									<div id="my-poll-options-grid"></div>
+									<div id="my-poll-options-grid">
+									
+									</div>
 								</div>								
 							</fieldset>			
 							<footer>
