@@ -2539,6 +2539,15 @@ ul.poll-option-list {
     border-bottom: 1px dashed #e7eaec;
 }
 
+li.poll-option {
+    min-height:40px;
+    	
+}
+
+li.poll-option .radio {
+	float: left;	
+}
+
 .poll-option .poll-option-image {
     height: 36px;
     float: left;
