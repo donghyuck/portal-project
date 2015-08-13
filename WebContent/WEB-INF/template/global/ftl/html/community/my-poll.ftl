@@ -895,9 +895,11 @@
             <label for="option-#=optionId#">#: optionText#</label>
         </div>
         
-<div class="progress-bar progress-bar-orange" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+<div class="result progress progress-u progress-sm rounded-2x">
+                                            <div class="progress-bar progress-bar-orange" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
                                                 <span class="sr-only">50% Complete</span>
                                             </div>
+                                        </div>
                                             
                                     
 	</li>
