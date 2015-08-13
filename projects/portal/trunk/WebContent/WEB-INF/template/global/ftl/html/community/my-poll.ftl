@@ -186,6 +186,7 @@
 		function createPollViewModal(source){	
 			var renderTo = $("#my-poll-view-modal");	
 			if( !renderTo.data('bs.modal') )
+			
 			{
 				var observable =  common.ui.observable({
 					poll : new common.ui.data.Poll(),
@@ -195,6 +196,7 @@
 						btn = $(e.target);						
 						var inputEl = renderTo.find("input[name=my-poll-option]:checked"); 
 						//$("ul[data-object-id="+objectId+"] input[name=option]:checked");						
+						/*
 						if( common.ui.defined(inputEl) ){						
 							kendo.ui.progress(renderTo, true);	
 							var myVote = new common.ui.data.Vote({ pollId : $this.poll.pollId, optionId : inputEl.val() });						
@@ -217,7 +219,7 @@
 									}
 								}						
 							});
-						}	
+						}	*/
 					},
 					setSource: function(poll){
 						var that = this;
