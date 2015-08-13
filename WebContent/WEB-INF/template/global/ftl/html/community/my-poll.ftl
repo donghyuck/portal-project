@@ -644,7 +644,7 @@
 			<div class="modal-dialog modal-lg modal-flat">
 				<div class="modal-content my-poll-view-form">	
 					<div class="modal-header">
-						<h2 data-bind="{text: page.title}"></h2>
+						<h2 data-bind="{text: poll.name}"></h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<article>
