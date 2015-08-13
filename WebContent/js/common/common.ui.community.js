@@ -480,6 +480,14 @@
 				type : "boolean",
 				editable : true,
 				defaultValue : false
+			},
+			voteCount : {
+				type : "number",
+				defaultValue : 0
+			},
+			commentCount : {
+				type : "number",
+				defaultValue : 0
 			}
 		},	
 		authorPhotoUrl : function() {
@@ -510,6 +518,8 @@
 			target.set('anonymousVoteAllowed', this.get("anonymousVoteAllowed"));
 			target.set('userVoteAllowed', this.get("userVoteAllowed"));
 			target.set('multipleSelectAllowed', this.get("multipleSelectAllowed"));
+			target.set('voteCount', this.get("voteCount"));
+			target.set('commentCount', this.get("commentCount"));
 			if (typeof this.get("options") === 'object')
 				target.set('options', this.get("options"));
 			else
