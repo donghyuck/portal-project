@@ -177,8 +177,7 @@
 														
 				// event for new page
 				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
-					var poll = new common.ui.data.Poll();
-					//poll.set("objectType", getMyPageOwnerId());					
+					var poll = new common.ui.data.Poll();				
 					createPollPostModal(poll);
 				});		
 			}	
@@ -191,6 +190,36 @@
 				var observable =  common.ui.observable({
 					poll : new common.ui.data.Poll(),
 					voteCount : 0,
+					vote : function(e){
+						$this = $(this),
+						btn = $(e.target);						
+						
+						var objectId = $this.data("object-id");	
+						var inputEl = $("ul[data-object-id="+objectId+"] input[name=option]:checked");						
+						if( common.ui.defined(inputEl) ){						
+							kendo.ui.progress(renderTo, true);	
+							var myVote = new common.ui.data.Vote({ pollId : objectId, optionId : inputEl.val() });						
+							common.ui.ajax( '<@spring.url "/data/polls/vote_allowed.json?output=json"/>', {
+								data : common.ui.stringify(myVote),
+								contentType : "application/json",
+								success : function(response){ 
+									if( response.success ){
+										btn.button('loading');		
+										common.ui.ajax( '<@spring.url "/data/polls/vote.json?output=json"/>', {
+											data : common.ui.stringify(myVote),
+											contentType : "application/json",
+											complete : function(e){ 
+												kendo.ui.progress(renderTo, false);	
+											}							
+										});		
+									}else{
+										alert("이미 참여 하였거나 대상자가 아닙니다.");
+										kendo.ui.progress(renderTo, false);	
+									}
+								}						
+							});
+						}	
+					},
 					setSource: function(poll){
 						var that = this;
 						poll.copy(that.poll);													
