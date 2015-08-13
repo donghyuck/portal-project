@@ -178,9 +178,45 @@
 				});		
 			}	
 		}
-		
-		function createPollPostModal(source){
+
+		function createPageViewModal(source){	
 			var renderTo = $("#my-poll-view-modal");	
+			if( !renderTo.data('bs.modal') )
+			{
+				var observable =  common.ui.observable({
+					poll : new common.ui.data.Poll(),
+					setSource: function(poll){
+						var that = this;
+						poll.copy(that.poll);													
+					}
+				});				
+				renderTo.on('shown.bs.modal', function(e){		
+					
+				});				
+				kendo.bind(renderTo, observable );
+				renderTo.data("model", observable);	
+			}			
+			if( source.get("pollId") > 0 ){
+				console.log("now get remote data.");
+				/**
+				var targetEle = $('.poll[data-object-id=' + source.get("pollId") + ']');					
+				kendo.ui.progress(targetEle, true);	
+				common.ui.ajax( '<@spring.url "/data/pages/get.json?output=json"/>', {
+					data : { pageId : source.get("pageId") },
+					success: function(response){ 
+						renderTo.data("model").setSource(new common.ui.data.Page(response));
+						renderTo.modal('show');	
+					},
+					complete: function(e){
+						kendo.ui.progress(targetEle, false);	
+					}	
+				} );
+				*/
+			}
+		}	
+				
+		function createPollPostModal(source){
+			var renderTo = $("#my-poll-post-modal");	
 			if( !renderTo.data('bs.modal') )
 			{
 				var observable =  common.ui.observable({ 
@@ -273,86 +309,8 @@
 			renderTo.modal('show');	
 		}
 		
-		function createMyPollModal(){
-			var renderTo = $("#my-poll-modal");			
-			if( !renderTo.data("model") ){				
-				var observable =  common.ui.observable({ 
-					poll : new common.ui.data.Poll(),
-					save : function(e){
-						alert( kendo.stringify(this.poll) );					
-					},
-					setSource : function( source ){
-						source.copy( this.poll );
-						common.ui.grid($("#my-poll-options-grid")).dataSource.data( this.poll.options );						
-					}
-				});								
-				renderTo.data("model", observable);				
-				kendo.bind(renderTo, observable );
-				
-				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
-					openMyPollModal(new common.ui.data.Poll());
-				});
-				
-				var grid = common.ui.grid($("#my-poll-options-grid"), {
-					dataSource : new kendo.data.DataSource({ 
-						data: observable.poll.options ,
-						schema:{
-							model:{ id: "optionId",
-								fields:{
-									optionId : {editable: true, editable : true, defaultValue : 0},
-									optionText : {editable: true, editable : true, nullable:false }								
-								}
-							}
-						}
-					}),			
-					toolbar: [{ name: "create", text:"추가"}],
-					columns:[{
-						width: 50,
-						field: 'optionId',
-						title: "ID"},{
-						field: 'optionText',
-						title: "내용"},
-						{ command: [{ name : "edit" , text : {edit:"변경", update:"확인", cancel:"최소" }  }, {name:"destroy", text: "삭제" }], title: "&nbsp;", width: "250px" }				
-					],
-					editable: "inline"
-				});
-				grid.table.kendoSortable({
-					filter: ">tbody >tr",
-					hint: $.noop,
-					cursor: "move",
-					placeholder: function(element) {
-						return element.clone().addClass("k-state-hover").css("opacity", 0.65);
-					},
-					container: "#my-poll-options-grid tbody",
-					change: function(e) {
-						var skip = grid.dataSource.skip(),
-						oldIndex = e.oldIndex + skip,
-						newIndex = e.newIndex + skip,
-						data = grid.dataSource.data(),
-						dataItem = grid.dataSource.getByUid(e.item.data("uid"));
-						grid.dataSource.remove(dataItem);
-						grid.dataSource.insert(newIndex, dataItem);
-					}
-				});								
-			}
-			
-				
-		}
-		
-		function openMyPollModal( poll ){
-			var renderTo = $("#my-poll-modal");
-			if( renderTo.data("model") ){	
-				poll.options = [];
-				poll.options.push( { optionId: 1 , optionText : "가지고 있다"} );		
-				poll.options.push( { optionId: 2 , optionText : "없다"} );		
-						
-				renderTo.data("model").setSource( poll );			
-			}
-			renderTo.modal('show');
-		}
 		
 		
-
 		-->
 		</script>		
 		<style scoped="scoped">		
@@ -585,7 +543,7 @@
 		</div>			
 			
 		<!-- Poll Edit Modal -->
-		<div id="my-poll-view-modal" role="dialog" class="modal fade" data-backdrop="static">
+		<div id="my-poll-post-modal" role="dialog" class="modal fade" data-backdrop="static">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-post-form">	
 					<div class="modal-header">
@@ -674,189 +632,7 @@
 			</div>		
 		</div>
 		
-		<div id="my-page-post-modal" role="dialog" class="modal fade" data-backdrop="static">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content my-page-post-form">
-					<div class="modal-header">
-						<div class="author">
-							<img data-bind="attr:{src:authorPhotoUrl}" style="margin-right:10px;">
-						</div>
-						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-post-modal-settings" area-expanded="false" aria-controls="my-post-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
-						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
-					</div>
-					<form id="my-post-modal-settings" action="#" class="sky-form modal-settings collapse">
-						<header>
-							고급옵션
-							<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="false" aria-controls="my-post-modal-settings"></span>
-						</header>
-						<fieldset>                  
-							<section>
-								<div class="separator-2"></div>
-								<label class="label">파일</label>	
-								<label class="input">
-									<input type="text" name="name" placeholder="파일 이름을 입력하세요." data-bind="value: page.name">
-								</label>
-							</section>										
-							<section>
-								<label class="label">요약</label>	
-								<label class="textarea textarea-expandable">
-									<textarea rows="4" name="summary" placeholder="조금 더 자세하게 알려 주세요" data-bind="value: page.summary"></textarea>
-								</label>
-							</section>
-							<section>
-								<label class="label">테그</label>
-								<label class="input">
-									<i class="icon-append fa fa-tag text-info"></i>
-									<input type="text" name="tags" data-bind="value:page.tagsString">
-								</label>
-								<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
-							</section>
-							<section>
-								<label class="label">출처</label>
-								<label class="input">
-									<input type="text" name="source" placeholder="출처 이름을 입력하세요." data-bind="value: pageSource">
-								</label>
-								<label class="input">
-									<i class="icon-append fa fa-globe text-info"></i>
-									<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl">
-								</label>		
-								<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>	
-							</section>	
-							<section>
-                           		<label class="label">성인 콘텐츠</label>
-                           		<div class="inline-group">
-                               		<label class="checkbox text-danger"><input type="checkbox" name="page-post-checkbox-adultContent" data-bind="checked:adultContent" value="true" >
-                               			<i></i>
-                               			<span class="text-danger small">19세 미만의 청소년에게 부적절한 내용</span>
-                               		</label>   
-                            	</div>
-                            	<div class="note">체크한 경우 방문자에게 경고 메시지가 표시됩니다.</div>	
-                        	</section>							
-						</fieldset>
-						<fieldset data-bind="visible:editable">
-							<section class="text-right">
-								<button class="btn btn-flat btn-labeled btn-primary btn-sm rounded" type="button" data-toggle="collapse" data-target="#my-post-modal-settings-props" aria-expanded="false" aria-controls="my-post-modal-settings-props">
-									<span class="btn-label icon fa fa-table"></span> 속성 
-								</button>
-							</section>				  
-							<div class="collapse" id="my-post-modal-settings-props" aria-expanded="true">
-								<div class="separator-2"></div>
-							  	<div class="page-props-grid"/>
-							</div>
-						</fieldset>
-												
-					</form>
-					<form action="#" class="sky-form">
-						<fieldset>
-							<section>
-								<!--<label class="label">주제 <span data-bind="text:postType"></span></label>-->
-								<p class="text-right text-danger small" data-bind="visible:editable">마지막 업데이트 일자 : <span data-bind="{ text: page.formattedModifiedDate }"></span></p>
-								<label class="input" for="title">
-									<i class="icon-append fa fa-asterisk"></i>
-									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title, events:{keypress: keypress}">
-								</label>
-							</section>
-							<section data-bind="visible:quote">
-								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting', 'createLink', 'unlink']" data-bind="value:page.bodyContent.bodyText" >
-								</div>
-							</section>
-							<section data-bind="visible:text">
-								<!-- Nav tabs -->																	
-								<ul class="nav nav-pills" role="tablist" id="my-page-post-tabs">
-									<li role="presentation" class="m-l-sm active"><a href="#my-page-post-tabs-html" aria-controls="my-page-post-tabs-html" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
-									<li role="presentation"><a href="#my-page-post-tabs-code" aria-controls="my-page-post-tabs-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
-								</ul>	
-								<!-- Tab panes -->
-								<div class="tab-content no-padding">
-									<div role="tabpanel" class="tab-pane active" id="my-page-post-tabs-html">
-										<textarea id="my-page-post-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
-									</div>
-									<div role="tabpanel" class="tab-pane" id="my-page-post-tabs-code">
-										<div class="page-editor-options">
-											<label class="toggle">
-												<input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label>
-										</div>
-										<div id="my-page-post-editor-code-body" class="m-t-xs"></div>
-									</div>
-								</div>							
-							</section> 
-							<!-- photo -->
-							<section data-bind="visible:photo">
-								<div class="row">
-									<div class="col-sm-6">										
-										<div class="image-listview"></div>
-									</div>
-									<div class="col-sm-6 upload-by-url">	
-										<div class="separator-2"></div>
-										<p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
-										<input type="file" name="photo" />
-										<div class="m-t-lg">
-											<div class="separator-2"></div>
-											<p class="text-primary">출처와 URL을 입력하세요.</p>
-											<label class="input"><i class="icon-append fa fa-globe"></i>
-											<input type="url" name="imageSourcUrl" placeholder="출처 URL" data-bind="value:imageSourceUrl"/>
-											</label>
-											<label class="input"><i class="icon-append fa fa-globe"></i>
-											<input type="url" name="imageDataUrl" placeholder="이미지 URL" data-bind="value:imageDataUrl"/>
-											</label>
-			
-											<button class="btn btn-flat btn-labeled btn-warning btn-sm rounded" type="button" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">
-												<span class="btn-label icon fa fa-upload"></span> 업로드 
-											</button>
-								<!--
-											<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
-								-->
-										</div>
-									</div>
-								</div>
-								<div class="image-layout m-t-md">
-									<div class="row">
-										<div class="col-sm-6">
-									    	<label class="label">Effect</label>
-					                        <div class="inline-group">	
-					                            <label class="radio"><input type="radio" name="image-effect" value="masonry" data-bind="checked: imageEffect" ><i class="rounded-x"></i>Mansory</label>
-					                            <label class="radio"><input type="radio" name="image-effect" value="carousel" data-bind="checked: imageEffect"><i class="rounded-x"></i>Carousel Slide</label>
-					                        </div>									
-										</div>										
-										<div class="col-sm-6">
-										    <label class="label">정렬 </label>
-										    <div class="row">
-										    	<div class="col-xs-6">
-											    	<div class="inline-group">	
-						                                <label class="radio"><input type="radio" name="image-sorting" value="name" data-bind="checked: imageSort" ><i class="rounded-x"></i>이름</label>
-						                                <label class="radio"><input type="radio" name="image-sorting" value="creationDate" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
-						                            </div>	
-										    	</div>
-										    	<div class="col-xs-6">
-											    	<div class="btn-group btn-group-sm pull-right" data-toggle="buttons">
-						                             	<label class="btn btn-default btn-flat btn-outline rounded-left">
-						                            		<input type="radio" name="image-sorting-dir" value="asc" data-bind="checked: imageSortDir" />
-						                            		ASC
-						                            	</label>
-						                            	<label class="btn btn-default btn-flat btn-outline rounded-right">
-						                            		<input type="radio" name="image-sorting-dir" value="desc" data-bind="checked: imageSortDir"/>
-						                            		DESC
-						                            	</label>
-						                            </div>	
-										    	</div>
-										    </div>				
-										</div>
-									</div>
-								</div>	
-							</section>
-							<!-- /.photo -->
-						</fieldset>
-					</form>
-					<div class="modal-footer">
-						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left rounded" type="button">닫기</button>
-						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-action="create" data-bind="{visible:followUp, click:create}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">다음</button>
-						<button class="btn btn-flat btn-primary rounded" type="button" data-bind="enabled:editable, click:update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장 </button>
-					</div>
-				</div>								
-			</div>	
-		</div>	
-		
-		<div id="my-page-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+		<div id="my-poll-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-view-form">	
 					<div class="modal-header">
@@ -1037,7 +813,7 @@
 	<!-- START TEMPLATE -->				
 
 	<script id="my-poll-listview-template" type="text/x-kendo-template">
-	<div class="ibox poll float-e-margins">
+	<div class="ibox poll float-e-margins" data-object-id="#=pollId#">
 		<div class="ibox-title">
 			<h5>#: name #</h5>
 			<span class="label label-info">#: status #</span>
