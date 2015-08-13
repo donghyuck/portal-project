@@ -2544,9 +2544,10 @@ li.poll-option {
     width: 100%;	
 }
 
-li.poll-option radio {
+li.poll-option .radio {
 	float: left;	
 }
+
 .poll-option .poll-option-image {
     height: 36px;
     float: left;
