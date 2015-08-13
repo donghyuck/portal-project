@@ -2613,7 +2613,6 @@ ul.poll-option-list {
     border-radius: 8px 8px 0 0 !important;
 }
 
-
 .modal-dialog .modal-header .close {
 	right: 0px;
 	top: 4px;
@@ -2763,7 +2762,7 @@ ul.poll-option-list {
 	width : 339px;
 }
 .my-page-post-form .modal-settings .page-props-grid .k-grid-content {
-	  min-height: 100px;
+	min-height: 100px;
 }
 
 
@@ -2801,7 +2800,17 @@ ul.poll-option-list {
     border-color: #d43f3a;
 }
 
+.my-poll-post-form, .my-poll-view-form {
+    border-radius: 6px !important;
+}
 
+.my-poll-post-form .modal-header {
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+.my-poll-post-form .modal-header button.close {
+    z-index: 0;
+}
 
 /* lightbox
 ---------------------------------- */
