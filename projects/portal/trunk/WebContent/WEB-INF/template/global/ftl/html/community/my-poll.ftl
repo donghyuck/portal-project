@@ -549,7 +549,7 @@
 		<!-- Poll Edit Modal -->
 		<div id="my-poll-post-modal" role="dialog" class="modal fade" data-backdrop="static">
 			<div class="modal-dialog modal-lg">
-				<div class="modal-content my-page-post-form">	
+				<div class="modal-content my-poll-post-form">	
 					<div class="modal-header">
 						<div class="author">
 							<img data-bind="attr:{src:authorPhotoUrl}" style="margin-right:10px;">
