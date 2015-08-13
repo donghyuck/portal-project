@@ -191,7 +191,7 @@
 					poll : new common.ui.data.Poll(),
 					voteCount : 0,
 					vote : function(e){
-						console.log("----");
+						
 						$this = $(this),
 						btn = $(e.target);						
 						var inputEl = renderTo.find("input[name=my-poll-option]:checked"); 
