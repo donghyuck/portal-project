@@ -654,14 +654,13 @@
 								<ul class="list-inline">
 									<li><span>By</span> <span data-bind="{ text: poll.user.name, visible: poll.user.nameVisible }"></span><code data-bind="{ text: poll.user.username }"></code></li>
 									<li>|</li>
-									<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
+									<li></li>
 									<li>|</li>
-									<li><span>조회수:</span> <span data-bind="{ text: page.viewCount }"></span></li>
+									<li>총 참여자 :<span data-bind="{ text: poll.voteCount }"></span></li>
+									<li>|</li>																								
+									<li>기간 : <span data-bind="{ text: poll.startDate }" data-format="yyyy.MM.dd"></span> ~ <span data-bind="{ text: poll.endDate }" data-format="yyyy.MM.dd" ></span></li>
 									<li>|</li>
 									<li><span>댓글:</span> <span data-bind="{ text: page.commentCount }"></span></li>
-									<li>|</li>																								
-									<li>작성일: <span data-bind="{ text: poll.startDate }" data-format="yyyy.MM.dd"></span></li>
-									<li>수정일: <span data-bind="{ text: poll.endDate }" data-format="yyyy.MM.dd" ></span></li>
 								</ul>  
 							</div>
 							<div class="separator-2"></div>
