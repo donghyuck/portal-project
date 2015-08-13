@@ -2567,7 +2567,12 @@ li.poll-option .progress {
 	margin-top : 9px;
 	margin-right: 45px;	
 }
-    
+
+.modal .radio label::after
+{
+    left: 4px;
+    top: 4px;		
+}    
 	
 /** ------------------------------------------------- */
 /** dialog switcher		                              */
