@@ -69,10 +69,7 @@
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
 				//$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");		
-				//createMyPageListView();	
 				createMyPollListView();
-				//createPageSection();
-				//createPageCompose();
 				// END SCRIPT 				
 			}
 		}]);			
@@ -96,7 +93,7 @@
 							read: { url:'<@spring.url "/data/polls/list.json?output=json"/>', type: 'POST' }/*,
 							parameterMap: function (options, type){
 								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPollOwnerId() }
-							}*/
+							}*/ÇÇÇ
 						},
 						requestStart: function(e){				
 						},
@@ -115,7 +112,7 @@
 					change: function(e){						
 						//var selectedCells = this.select();
 						//var selectedCell = this.dataItem( selectedCells );	
-					}
+					}	
 				});		
 				renderTo.removeClass('k-widget');
 
