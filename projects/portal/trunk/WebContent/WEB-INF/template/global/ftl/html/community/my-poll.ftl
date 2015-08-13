@@ -669,7 +669,7 @@
 					</article>
 					<div class="modal-body">
 						<div data-role="listview"
-               			/*  data-template="template"*/
+               			  	data-template="my-poll-option-template"
                  			data-bind="source: poll.options"
                  			style="height: 300px; overflow: auto"></div>
 					</div>
@@ -883,13 +883,7 @@
 	</script>	
 	
 	<script id="my-poll-option-template" type="text/x-kendo-template">
-	<div class="k-widget">
 		#:optionText#
-		<div class="edit-buttons">
-            <a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
-            <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
-        </div>
-	</div>
 	</script>	
 	
 	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
