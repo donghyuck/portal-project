@@ -669,6 +669,7 @@
 					</article>
 					<div class="modal-body">
 						<div data-role="listview"
+							class="no-border"
                			  	data-template="my-poll-option-template"
                  			data-bind="source: poll.options"
                  			style="height: 300px; overflow: auto"></div>
@@ -883,7 +884,13 @@
 	</script>	
 	
 	<script id="my-poll-option-template" type="text/x-kendo-template">
-		#:optionText#
+	<li class="poll-option">
+		<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
+		<div class="radio radio-danger" style="margin-left: 40px;">
+        	<input type="radio" name="option" id="option-#=optionId#" value="#= optionId #">
+            <label for="option-#=optionId#">#: optionText#</label>
+        </div>
+	</li>
 	</script>	
 	
 	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
