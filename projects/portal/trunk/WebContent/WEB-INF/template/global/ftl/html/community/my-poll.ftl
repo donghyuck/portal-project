@@ -890,7 +890,7 @@
 	<script id="my-poll-option-template" type="text/x-kendo-template">
 	<li class="poll-option">
 		<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
-		<div class="radio radio-danger" style="margin-left: 40px;">
+		<div class="radio radio-danger">
         	<input type="radio" name="option" id="option-#=optionId#" value="#= optionId #">
             <label for="option-#=optionId#">#: optionText#</label>
         </div>
