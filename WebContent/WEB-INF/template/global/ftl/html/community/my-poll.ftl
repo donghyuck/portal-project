@@ -47,8 +47,8 @@
 			'<@spring.url "/js/common.pages/common.code-editor.js"/>'
 			],			
 			complete: function() {		
-				common.ui.setup({
 					features:{
+				common.ui.setup({
 						wallpaper : true,
 						lightbox : true,
 						spmenu : false,
@@ -193,12 +193,10 @@
 					vote : function(e){
 						$this = $(this),
 						btn = $(e.target);						
-						
-						var objectId = $this.data("object-id");	
-						var inputEl = $("ul[data-object-id="+objectId+"] input[name=option]:checked");						
+						var inputEl = renderTo.find("input[name=my-poll-option]:checked"); //$("ul[data-object-id="+objectId+"] input[name=option]:checked");						
 						if( common.ui.defined(inputEl) ){						
 							kendo.ui.progress(renderTo, true);	
-							var myVote = new common.ui.data.Vote({ pollId : objectId, optionId : inputEl.val() });						
+							var myVote = new common.ui.data.Vote({ pollId : $this.poll.pollId, optionId : inputEl.val() });						
 							common.ui.ajax( '<@spring.url "/data/polls/vote_allowed.json?output=json"/>', {
 								data : common.ui.stringify(myVote),
 								contentType : "application/json",
