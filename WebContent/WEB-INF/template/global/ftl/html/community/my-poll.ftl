@@ -191,10 +191,12 @@
 					poll : new common.ui.data.Poll(),
 					voteCount : 0,
 					vote : function(e){
+						console.log("----");
 						$this = $(this),
 						btn = $(e.target);						
 						var inputEl = renderTo.find("input[name=my-poll-option]:checked"); 
 						console.log("create ---------" + inputEl);
+						
 						//$("ul[data-object-id="+objectId+"] input[name=option]:checked");						
 						/*
 						if( common.ui.defined(inputEl) ){						
