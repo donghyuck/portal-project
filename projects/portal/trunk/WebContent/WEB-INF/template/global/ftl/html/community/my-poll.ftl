@@ -637,8 +637,8 @@
 		</div>
 		
 		<div id="my-poll-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content my-page-view-form">	
+			<div class="modal-dialog modal-lg modal-flat">
+				<div class="modal-content my-poll-view-form">	
 					<div class="modal-header">
 						<h2 data-bind="{text: page.title}"></h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
