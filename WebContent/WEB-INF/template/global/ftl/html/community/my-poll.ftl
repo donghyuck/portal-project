@@ -193,7 +193,8 @@
 					vote : function(e){
 						$this = $(this),
 						btn = $(e.target);						
-						var inputEl = renderTo.find("input[name=my-poll-option]:checked"); //$("ul[data-object-id="+objectId+"] input[name=option]:checked");						
+						var inputEl = renderTo.find("input[name=my-poll-option]:checked"); 
+						//$("ul[data-object-id="+objectId+"] input[name=option]:checked");						
 						if( common.ui.defined(inputEl) ){						
 							kendo.ui.progress(renderTo, true);	
 							var myVote = new common.ui.data.Vote({ pollId : $this.poll.pollId, optionId : inputEl.val() });						
