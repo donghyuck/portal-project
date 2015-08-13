@@ -2812,6 +2812,10 @@ ul.poll-option-list {
     z-index: 0;
 }
 
+.my-poll-post-form  .sky-form {
+	border : 0;		
+}
+
 /* lightbox
 ---------------------------------- */
 .mfp-bg {  
