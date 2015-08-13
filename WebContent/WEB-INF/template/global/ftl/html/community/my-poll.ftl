@@ -673,7 +673,7 @@
 							class="no-border"
                			  	data-template="my-poll-option-template"
                  			data-bind="source: poll.options"
-                 			style="height: 300px; overflow: auto"></div>
+                 			style=""></div>
                  		</ul>	
 					</div>
 				</div>
@@ -889,10 +889,8 @@
 	
 	<script id="my-poll-option-template" type="text/x-kendo-template">
 	<li class="poll-option">
-		
-		<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
 		<div class="col-xs-6">
-		
+		<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
 		<div class="radio radio-danger">
         	<input type="radio" name="option" id="option-#=optionId#" value="#= optionId #">
             <label for="option-#=optionId#">#: optionText#</label>
