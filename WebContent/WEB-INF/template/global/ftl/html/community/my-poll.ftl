@@ -185,9 +185,7 @@
 
 		function createPollViewModal(source){	
 			var renderTo = $("#my-poll-view-modal");	
-			if( !renderTo.data('bs.modal') )
-			
-			
+			if( !renderTo.data('bs.modal') )	
 			{
 				var observable =  common.ui.observable({
 					poll : new common.ui.data.Poll(),
