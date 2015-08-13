@@ -660,11 +660,11 @@
 									<li>|</li>																								
 									<li>기간 : <span data-bind="{ text: poll.startDate }" data-format="yyyy.MM.dd"></span> ~ <span data-bind="{ text: poll.endDate }" data-format="yyyy.MM.dd" ></span></li>
 									<li>|</li>
-									<li><span>댓글:</span> <span data-bind="{ text: page.commentCount }"></span></li>
+									<li><span>댓글:</span> <span data-bind="{ text: poll.commentCount }"></span></li>
 								</ul>  
 							</div>
 							<div class="separator-2"></div>
-						    <p class="text-muted" data-bind="text:poll.description"></p>
+						    <p class="text-muted m-l-xl" data-bind="text:poll.description"></p>
 	                    </div>
 					</article>
 					<div class="modal-body">
