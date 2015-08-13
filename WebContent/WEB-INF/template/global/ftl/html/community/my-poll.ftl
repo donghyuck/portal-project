@@ -677,7 +677,7 @@
                  		</ul>	
 					</div>
 					<div class="modal-footer">
-						<button class="btn btn-lg btn-outline btn-flat rounded" data-action="vote" data-object-id="#= poll.pageId#">참여</button>					
+						<button class="btn btn-lg btn-outline btn-flat rounded" data-bind="click:vote">참여</button>					
 					</div>	
 				</div>
 			</div>
