@@ -676,6 +676,9 @@
                  			style=""></div>
                  		</ul>	
 					</div>
+					<div class="modal-footer">
+						<button class="btn btn-lg btn-outline btn-flat rounded" data-action="vote" data-object-id="#= poll.pageId#">참여</button>					
+					</div>	
 				</div>
 			</div>
 		</div>	
@@ -902,13 +905,7 @@
 					<span class="sr-only">50% Complete</span>
 				</div>
 			</div>
-		</div>
-		
-		
-        
-
-                                            
-                                    
+		</div>                    
 	</li>
 	</script>	
 	
