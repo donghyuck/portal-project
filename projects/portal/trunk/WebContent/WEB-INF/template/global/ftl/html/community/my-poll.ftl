@@ -664,7 +664,7 @@
 								</ul>  
 							</div>
 							<div class="separator-2"></div>
-						    <p class="text-muted" data-bind="text:page.summary"></p>
+						    <p class="text-muted" data-bind="text:poll.description"></p>
 	                    </div>
 					</article>
 					<div class="modal-body">
