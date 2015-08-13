@@ -892,7 +892,7 @@
 		<div class="col-xs-6">
 			<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
 			<div class="radio radio-danger">
-	        	<input type="radio" name="my-poll-option" id="poll-#=pollId#option-#=optionId#" value="#= optionId #">
+	        	<input type="radio" name="my-poll-option" id="poll-#=pollId#-option-#=optionId#" value="#= optionId #">
 	            <label for="poll-#=pollId#-option-#=optionId#">#: optionText#</label>
 	        </div>
 		</div>
