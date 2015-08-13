@@ -668,7 +668,10 @@
 	                    </div>
 					</article>
 					<div class="modal-body">
-						<div data-bind="{html:page.bodyContent.bodyText}" class="atricle"></div>
+						<div data-role="listview"
+               			/*  data-template="template"*/
+                 			data-bind="source: poll.options"
+                 			style="height: 300px; overflow: auto"></div>
 					</div>
 				</div>
 			</div>
