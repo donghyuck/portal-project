@@ -78,14 +78,14 @@
 		}]);			
 
 		<!-- ============================== -->
-		<!-- Page ListView  				-->
+		<!-- Utils			 				-->
 		<!-- ============================== -->			
 		function getMyPollOwnerId(){
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
 				
 		<!-- ============================== -->
-		<!-- Pool							-->
+		<!-- Poll ListView					-->
 		<!-- ============================== -->		
 		function createMyPollListView( ){					
 			var renderTo = $("#my-poll-listview");
@@ -184,7 +184,7 @@
 			}	
 		}
 
-		function createPageViewModal(source){	
+		function createPollViewModal(source){	
 			var renderTo = $("#my-poll-view-modal");	
 			if( !renderTo.data('bs.modal') )
 			{
