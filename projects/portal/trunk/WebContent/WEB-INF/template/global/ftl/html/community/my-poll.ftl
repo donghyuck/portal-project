@@ -138,7 +138,12 @@
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
 					createPollPostModal(item);
 				});		
-				
+				$("#my-poll-listview").on( "click", "a[data-action=view], button[data-action=view]",  function(e){		
+					$this = $(this);		
+					var objectId = $this.data("object-id");	
+					var item = common.ui.listview(renderTo).dataSource.get(objectId);
+					createPollViewModal(item);
+				});					
 				$("#my-poll-listview").on( "click", "a[data-action=vote], button[data-action=vote]",  function(e){		
 					$this = $(this),
 					btn = $(e.target);
