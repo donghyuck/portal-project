@@ -650,9 +650,9 @@
 					<article>
 						<div class="p-sm bg-gray">
 							<div class="author">
-							    <img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+							    <img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:poll.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 								<ul class="list-inline">
-									<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
+									<li><span>By</span> <span data-bind="{ text: poll.user.name, visible: poll.user.nameVisible }"></span><code data-bind="{ text: poll.user.username }"></code></li>
 									<li>|</li>
 									<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
 									<li>|</li>
