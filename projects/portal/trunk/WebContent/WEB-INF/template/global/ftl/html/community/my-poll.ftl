@@ -194,7 +194,7 @@
 						$this = $(this),
 						btn = $(e.target);						
 						var inputEl = renderTo.find("input[name=my-poll-option]:checked"); 
-						console.log("---------" + inputEl);
+						console.log("create ---------" + inputEl);
 						//$("ul[data-object-id="+objectId+"] input[name=option]:checked");						
 						/*
 						if( common.ui.defined(inputEl) ){						
