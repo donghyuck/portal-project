@@ -2531,6 +2531,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 
 ul.poll-option-list {
+	overflow-y:auto;
 	list-style: none;
 }
 
@@ -2541,11 +2542,15 @@ ul.poll-option-list {
 
 li.poll-option {
     min-height:40px;
-    	
+    border : 0;
 }
 
 li.poll-option .radio {
 	float: left;	
+}
+
+li.poll-option .progress {
+	float: margin-top:9px;	
 }
 
 .poll-option .poll-option-image {
