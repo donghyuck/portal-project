@@ -202,11 +202,9 @@
 				renderTo.data("model", observable);	
 			}			
 			if( source.get("pollId") > 0 ){
-				console.log("now get remote data.");
-				
+				console.log("now get remote data.");				
 				var targetEle = $('.poll[data-object-id=' + source.get("pollId") + ']');					
-				kendo.ui.progress(targetEle, true);	
-				
+				kendo.ui.progress(targetEle, true);					
 				common.ui.ajax( '<@spring.url "/data/polls/stats/get.json?output=json"/>', {
 					data : { pollId : source.get("pollId") },
 					success: function(response){ 
@@ -217,8 +215,7 @@
 					complete: function(e){
 						kendo.ui.progress(targetEle, false);	
 					}	
-				} );
-				
+				} );				
 			}
 		}	
 				
@@ -315,8 +312,6 @@
 			renderTo.data("model").setSource(source);
 			renderTo.modal('show');	
 		}
-		
-		
 		
 		-->
 		</script>		
