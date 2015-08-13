@@ -890,18 +890,18 @@
 	<script id="my-poll-option-template" type="text/x-kendo-template">
 	<li class="poll-option">
 		<div class="col-xs-6">
-		<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
-		<div class="radio radio-danger">
-        	<input type="radio" name="option" id="option-#=optionId#" value="#= optionId #">
-            <label for="option-#=optionId#">#: optionText#</label>
-        </div>
+			<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
+			<div class="radio radio-danger">
+	        	<input type="radio" name="option" id="poll-#=pollId#option-#=optionId#" value="#= optionId #">
+	            <label for="poll-#=pollId#-option-#=optionId#">#: optionText#</label>
+	        </div>
 		</div>
 		<div class="col-xs-5">
-		<div class="progress progress-u progress-sm rounded-2x">
-                                            <div class="progress-bar progress-bar-orange" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                                                <span class="sr-only">50% Complete</span>
-                                            </div>
-                                        </div>
+			<div class="progress progress-u progress-sm rounded-2x">
+				<div class="progress-bar progress-bar-orange" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+					<span class="sr-only">50% Complete</span>
+				</div>
+			</div>
 		</div>
 		
 		
