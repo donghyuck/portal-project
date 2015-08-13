@@ -2547,6 +2547,10 @@ li.poll-option {
 li.poll-option .radio {
 	float: left;	
 }
+li.poll-option .result
+{
+	float: left;	
+}
 
 .poll-option .poll-option-image {
     height: 36px;
