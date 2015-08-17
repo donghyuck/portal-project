@@ -105,6 +105,7 @@
 							model: common.ui.data.Poll
 						},
 						selectable: false,
+						serverFiltering: true,
 						pageSize: 15					
 					},
 					template: kendo.template($("#my-poll-listview-template").html()),
