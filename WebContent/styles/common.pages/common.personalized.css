@@ -2560,9 +2560,10 @@ li.poll-option .progress {
 
 li.poll-option span.progress-label {
 	top: 0;
-    left: 50%;
+    left: 45%;
     padding-left: 5px;
     position: absolute;	
+    font-size: .85em;
 }
 
 
