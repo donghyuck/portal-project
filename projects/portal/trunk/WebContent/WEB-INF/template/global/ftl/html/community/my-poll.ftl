@@ -196,8 +196,10 @@
 					voteCount : 0,
 					pollOptionStats:[], 
 					vote : function(e){
-						var $this = $(this),
+						var $this = this,
 						btn = $(e.target);
+						
+						
 						console.log ("ul[data-object-id="+ $this.poll.pollId +"] input[name=my-poll-option]:checked");
 						var inputEl = $("ul[data-object-id="+ $this.poll.pollId +"] input[name=my-poll-option]:checked");
 						
@@ -245,9 +247,7 @@
 					success: function(response){ 
 						renderTo.data("model").setSource(new common.ui.data.Poll(response.poll));
 						renderTo.data("model").set("voteCount", response.voteCount);
-						console.log( kendo.stringify(response.pollOptionStats) );
 						renderTo.data("model").set("pollOptionStats", response.pollOptionStats );
-						
 						renderTo.modal('show');	
 					},
 					complete: function(e){
