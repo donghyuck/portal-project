@@ -194,6 +194,7 @@
 				var observable =  common.ui.observable({
 					poll : new common.ui.data.Poll(),
 					voteCount : 0,
+					pollOptionStats : {}, 
 					vote : function(e){
 
 					},
@@ -217,6 +218,7 @@
 					success: function(response){ 
 						renderTo.data("model").setSource(new common.ui.data.Poll(response.poll));
 						renderTo.data("model").set("voteCount", response.voteCount);
+						renderTo.data("model").set("pollOptionStats", response.pollOptionStats );
 						renderTo.modal('show');	
 					},
 					complete: function(e){
