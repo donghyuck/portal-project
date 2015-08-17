@@ -347,7 +347,13 @@ function updatePageState(page, callback ){
 
 
 function hasPermissions( user, permission ){
-	console.log( typeof user );
-	
+	var _hasPermissions = false;
+	if( common.ui.accounts().token.userId == user)
+	{
+		_hasPermissions = true;
+	}	
+	_hasPermissions = false;
+	console.log( _hasPermissions);
+	return _hasPermissions;
 }
 
