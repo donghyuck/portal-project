@@ -196,7 +196,34 @@
 					voteCount : 0,
 					pollOptionStats:[], 
 					vote : function(e){
-
+						var $this = $(this),
+						btn = $(e.target);
+						
+						var inputEl = $("ul[data-object-id="+ $this.poll.pollId +"] input[name=my-poll-option]:checked")
+						if( common.ui.defined(inputEl) ){						
+						var myVote = new common.ui.data.Vote({ pollId : $this.poll.pollId, optionId : inputEl.val() });		
+										
+						common.ui.ajax( '<@spring.url "/data/polls/vote_allowed.json?output=json"/>', {
+							data : common.ui.stringify(myVote),
+							contentType : "application/json",
+							success : function(response){ 
+								if( response.success ){
+									btn.button('loading');		
+									common.ui.ajax( '<@spring.url "/data/polls/vote.json?output=json"/>', {
+										data : common.ui.stringify(myVote),
+										contentType : "application/json",
+										complete : function(e){ 
+											btn.button('reset');
+										}							
+									});		
+								}else{
+									alert("이미 참여 하였거나 대상자가 아닙니다.");
+								}
+							}							
+						});
+					}						
+						
+						return false;
 					},
 					setSource: function(poll){
 						var that = this;
