@@ -909,6 +909,7 @@
 				<div class="progress-bar progress-bar-orange" role="progressbar" aria-valuenow="#: voteCount #" aria-valuemin="0" aria-valuemax="#: totalVoteCount#" style="width: #=votePercentString#%">
 					<span class="sr-only">#: votePercentString#%</span>
 				</div>
+				<span class="text-primary progress-label">#: voteCount # 명</span>
 			</div>
 		</div>                    
 	</li>
