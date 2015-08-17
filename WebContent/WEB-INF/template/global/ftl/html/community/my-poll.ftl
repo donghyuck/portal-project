@@ -900,9 +900,6 @@
 				</div>
 			</div>
 		</div>	
-		<div class="ibox-footer text-right">
-			<button class="btn btn-lg btn-outline btn-flat btn-rounded" data-action="vote" data-object-id="#= pollId#"  >참여</button>
-		</div>
 	</div>
 	</script>	
 	
