@@ -851,7 +851,7 @@
 						</ul>
 					</div>
 					<span class="pull-right">
-						<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="view" data-object-id="#= pollId#"> 상세보기</button>
+						<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="view" data-object-id="#= pollId#"> 참여하기 / 상세보기</button>
 						<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
 					</span>						
 					<div class="page-credits">
