@@ -194,7 +194,7 @@
 				var observable =  common.ui.observable({
 					poll : new common.ui.data.Poll(),
 					voteCount : 0,
-					pollOptionStats : {}, 
+					pollOptionStats:[], 
 					vote : function(e){
 
 					},
