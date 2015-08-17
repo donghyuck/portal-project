@@ -685,9 +685,7 @@
 								<ul class="list-inline">
 									<li><span>By</span> <span data-bind="{ text: poll.user.name, visible: poll.user.nameVisible }"></span><code data-bind="{ text: poll.user.username }"></code></li>
 									<li>|</li>
-									<li></li>
-									<li>|</li>
-									<li>총 참여자 :<span data-bind="{ text: poll.voteCount }"></span></li>
+									<li>총 참여자 :<span data-bind="{ text: poll.voteCount }"></span> </li>
 									<li>|</li>																								
 									<li>기간 : <span data-bind="{ text: poll.startDate }" data-format="yyyy.MM.dd"></span> ~ <span data-bind="{ text: poll.endDate }" data-format="yyyy.MM.dd" ></span></li>
 									<li>|</li>
