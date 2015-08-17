@@ -151,7 +151,8 @@
 					var objectId = $this.data("object-id");	
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
 					createPollViewModal(item);
-				});					
+				});		
+				/**			
 				$("#my-poll-listview").on( "click", "a[data-action=vote], button[data-action=vote]",  function(e){		
 					$this = $(this),
 					btn = $(e.target);
@@ -178,7 +179,8 @@
 							}							
 						});
 					}
-				});										
+				});	
+				*/									
 				// event for new page
 				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
 					var poll = new common.ui.data.Poll();				
@@ -896,25 +898,7 @@
 					</div>										
 								
 				</div>
-
-				<div class="col-sm-6">
-					#if ( optionCount > 0  ) { #
-					<ul class="poll-option-list" data-object-id="#= pollId#">
-					# for (var i = 0; i < optionCount ; i++) { #	
-					# var option = options[i] ; #	
-						<li class="poll-option">
-							<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
-							<div class="radio radio-danger" style="margin-left: 40px;">
-                                <input type="radio" name="option" id="option-#=option.optionId#" value="#= option.optionId #">
-                                <label for="option-#=option.optionId#">#: option.optionText#</label>
-                            </div>
-						</li>
-					#}#
-					</ul>
-					#}#
-				</div>
 			</div>
-
 		</div>	
 		<div class="ibox-footer text-right">
 			<button class="btn btn-lg btn-outline btn-flat btn-rounded" data-action="vote" data-object-id="#= pollId#"  >참여</button>
