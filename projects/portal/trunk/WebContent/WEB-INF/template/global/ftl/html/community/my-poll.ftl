@@ -62,7 +62,7 @@
 						}						
 					},
 					wallpaper : {
-						renderTo:$(".breadcrumbs-v3");
+						renderTo:$(".breadcrumbs-v3")
 					},	
 					jobs:jobs
 				});				
