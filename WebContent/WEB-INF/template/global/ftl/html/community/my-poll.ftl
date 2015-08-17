@@ -79,8 +79,9 @@
 		<!-- Utils			 				-->
 		<!-- ============================== -->			
 		function getMyPollOwnerId(){
-			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
+			return $("#my-poll-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
+		
 				
 		<!-- ============================== -->
 		<!-- Poll ListView					-->
@@ -145,10 +146,8 @@
 				$("#my-poll-listview").on( "click", "a[data-action=vote], button[data-action=vote]",  function(e){		
 					$this = $(this),
 					btn = $(e.target);
-					
 					var objectId = $this.data("object-id");	
 					var inputEl = $("ul[data-object-id="+objectId+"] input[name=option]:checked");
-					
 					if( common.ui.defined(inputEl) ){						
 						var myVote = new common.ui.data.Vote({ pollId : objectId, optionId : inputEl.val() });						
 						common.ui.ajax( '<@spring.url "/data/polls/vote_allowed.json?output=json"/>', {
@@ -170,9 +169,7 @@
 							}							
 						});
 					}
-					
-				});	
-														
+				});										
 				// event for new page
 				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
 					var poll = new common.ui.data.Poll();				
