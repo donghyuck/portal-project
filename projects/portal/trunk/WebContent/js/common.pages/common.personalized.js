@@ -355,7 +355,7 @@ function hasPermissions( user, permission ){
 		_hasPermissions = true;
 	}	
 	_hasPermissions = false;
-	console.log( kendo.stringify( common.ui.accounts().token ) );
+	console.log( kendo.stringify( user ) );
 	console.log( _hasPermissions);
 	return _hasPermissions;
 }
