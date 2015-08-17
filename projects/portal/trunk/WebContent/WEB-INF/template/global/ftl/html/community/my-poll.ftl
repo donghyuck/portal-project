@@ -82,7 +82,14 @@
 			return $("#my-poll-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
 		
-				
+		function getMyPollState(){
+			var pollStateVal = $("input[name='poll-list-view-filters']:checked").val();
+			if( common.ui.defined(pollStateVal))
+				return pollStateVal;	
+			else
+				return "ALL";
+					
+		}			
 		<!-- ============================== -->
 		<!-- Poll ListView					-->
 		<!-- ============================== -->		
@@ -95,7 +102,11 @@
 							read: { url:'<@spring.url "/data/polls/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
 								alert( kendo.stringify( options ) );
-								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPollOwnerId() }
+								var pageState = null ;
+								if( options.filter ){
+									pageState = filter.filters[0].value ;
+								}
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPollOwnerId(), state : getMyPollState() }
 							}
 						},
 						requestStart: function(e){				
