@@ -702,7 +702,7 @@
 	                    </div>
 					</article>
 					<div class="modal-body">
-						<ul class="poll-option-list" data-object-id="0" data-bind="attr: { 'data-object-id': poll.pollId} ">
+						<ul class="poll-option-list" data-object-id="0" data-bind="attr:{data-object-id: poll.pollId }">
 						<div data-role="listview"
 							class="no-border"
                			  	data-template="my-poll-option-template"
