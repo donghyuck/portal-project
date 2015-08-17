@@ -94,6 +94,7 @@
 						transport: { 
 							read: { url:'<@spring.url "/data/polls/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
+								alert( kendo.stringify( options ) );
 								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPollOwnerId() }
 							}
 						},
