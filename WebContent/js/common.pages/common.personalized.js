@@ -346,7 +346,7 @@ function updatePageState(page, callback ){
 }
 
 
-function hasPermissions( Object target, permission ){
+function hasPermissions( target, permission ){
 	console.log( target );
 	
 }
