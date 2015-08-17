@@ -92,10 +92,10 @@
 				common.ui.listview( renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/data/polls/list.json?output=json"/>', type: 'POST' }/*,
+							read: { url:'<@spring.url "/data/polls/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
 								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPollOwnerId() }
-							}*/
+							}
 						},
 						requestStart: function(e){				
 						},
