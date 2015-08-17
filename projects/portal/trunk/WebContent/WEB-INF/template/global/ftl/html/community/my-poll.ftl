@@ -198,8 +198,10 @@
 					vote : function(e){
 						var $this = $(this),
 						btn = $(e.target);
-						
+						console.log ("ul[data-object-id="+ $this.poll.pollId +"] input[name=my-poll-option]:checked");
 						var inputEl = $("ul[data-object-id="+ $this.poll.pollId +"] input[name=my-poll-option]:checked");
+						
+						
 						if( common.ui.defined(inputEl) ){						
 							var myVote = new common.ui.data.Vote({ pollId : $this.poll.pollId, optionId : inputEl.val() });		
 							common.ui.ajax( '<@spring.url "/data/polls/vote_allowed.json?output=json"/>', {
