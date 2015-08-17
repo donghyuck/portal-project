@@ -917,15 +917,11 @@
 				<div class="progress-bar progress-bar-orange" role="progressbar" aria-valuenow="#: voteCount #" aria-valuemin="0" aria-valuemax="#: totalVoteCount#" style="width: #=votePercentString#%">
 					<span class="sr-only">#: votePercentString#%</span>
 				</div>
-				<span class="text-primary progress-label">#: voteCount # 명</span>
+				<span class="text-muted progress-label">#: voteCount # 명</span>
 			</div>
 		</div>                    
 	</li>
 	</script>	
-	
-	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
-	</script>	
-	
 																				
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
