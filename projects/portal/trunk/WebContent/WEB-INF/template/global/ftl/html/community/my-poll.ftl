@@ -218,7 +218,9 @@
 					success: function(response){ 
 						renderTo.data("model").setSource(new common.ui.data.Poll(response.poll));
 						renderTo.data("model").set("voteCount", response.voteCount);
+						console.log( kendo.stringify(response.pollOptionStats) );
 						renderTo.data("model").set("pollOptionStats", response.pollOptionStats );
+						
 						renderTo.modal('show');	
 					},
 					complete: function(e){
