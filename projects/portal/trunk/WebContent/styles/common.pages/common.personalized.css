@@ -2855,6 +2855,7 @@ li.poll-option span.progress-label {
 	margin:0;
 	background-color: #f5f5f5;
 	border-left: dotted 1px #e5e5e5;
+	border-bottom: dotted 1px #e5e5e5;
 }
 
 .my-poll-post-form .sky-form.modal-settings fieldset {
