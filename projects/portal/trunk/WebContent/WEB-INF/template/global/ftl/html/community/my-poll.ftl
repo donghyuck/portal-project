@@ -47,8 +47,9 @@
 			'<@spring.url "/js/common.pages/common.code-editor.js"/>'
 			],			
 			complete: function() {		
-					features:{
+					
 				common.ui.setup({
+					features:{
 						wallpaper : true,
 						lightbox : true,
 						spmenu : false,
@@ -62,7 +63,7 @@
 						}						
 					},
 					wallpaper : {
-						renderTo:$(".breadcrumbs-v3")
+						renderTo:$(".breadcrumbs-v3");
 					},	
 					jobs:jobs
 				});				
