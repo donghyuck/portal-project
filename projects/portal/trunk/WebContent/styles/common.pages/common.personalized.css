@@ -2558,6 +2558,14 @@ li.poll-option .progress {
 	margin-top:15px;	
 }
 
+li.poll-option span.progress-label {
+	top: 0;
+    left: 50%;
+    padding-left: 5px;
+    position: absolute;	
+}
+
+
 .poll-option .poll-option-image {
     height: 36px;
     float: left;
