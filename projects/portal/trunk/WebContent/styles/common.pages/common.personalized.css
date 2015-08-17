@@ -2554,7 +2554,8 @@ li.poll-option .radio label {
 }
 
 li.poll-option .progress {
-	float: margin-top:9px;	
+	float: left; 
+	margin-top:9px;	
 }
 
 .poll-option .poll-option-image {
