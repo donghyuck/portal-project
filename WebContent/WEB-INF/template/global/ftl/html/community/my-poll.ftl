@@ -272,6 +272,8 @@
 							btn.button('reset');
 						};
 						btn.button('loading');
+						if( $this.poll.objectType === 0 )
+							$this.poll.objectType = getMyPollOwnerId();						
 						$this.saveOrUpdate(completeFn);					
 					},
 					update : function(e){
