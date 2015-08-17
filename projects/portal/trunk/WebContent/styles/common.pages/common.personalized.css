@@ -2549,6 +2549,10 @@ li.poll-option .radio {
 	float: left;	
 }
 
+li.poll-option .radio label {
+	line-height:15px;
+}
+
 li.poll-option .progress {
 	float: margin-top:9px;	
 }
@@ -2573,6 +2577,7 @@ li.poll-option .progress {
     left: 4px;
     top: 4px;		
 }    
+
 	
 /** ------------------------------------------------- */
 /** dialog switcher		                              */
