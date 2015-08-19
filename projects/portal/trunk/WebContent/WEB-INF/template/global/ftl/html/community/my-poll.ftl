@@ -567,7 +567,7 @@
 
 
 		<!-- START COMMENT SLIDE -->		
-		<div id="my-page-commentary" class="modal" style="background: rgba(0,0,0,0.4);">
+		<div id="my-poll-commentary" class="modal" style="background: rgba(0,0,0,0.4);">
 			<div class="commentary commentary-drawer">
 				<span class="btn-flat-icon close" data-commentary-close></span>
 				<div class="commentary-content">
