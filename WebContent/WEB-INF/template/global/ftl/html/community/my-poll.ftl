@@ -381,7 +381,6 @@
 					},
 					setSource : function(poll){
 						var $this = this;
-						
 						if( typeof page == 'number'){							
 							var title = $(".item [data-action=view][data-object-id=" + page + "]").text();
 							var summary = $(".item[data-object-id=" + page + "]  .page-meta .page-description").text();
