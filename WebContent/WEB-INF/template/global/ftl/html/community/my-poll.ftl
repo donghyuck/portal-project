@@ -152,7 +152,12 @@
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
 					createPollViewModal(item);
 				});		
-										
+				$("#my-poll-listview").on( "click", "a[data-action=comment], button[data-action=comment]",  function(e){		
+					$this = $(this);		
+					var objectId = $this.data("object-id");	
+					var item = common.ui.listview(renderTo).dataSource.get(objectId);
+					createPollCommentary(item);
+				});						
 				// event for new page
 				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
 					var poll = new common.ui.data.Poll();				
@@ -322,6 +327,13 @@
 			renderTo.modal('show');	
 		}
 		
+		<!-- ============================== -->
+		<!-- Commentary						-->
+		<!-- ============================== -->			
+		function createPollCommentary(source){
+			var renderTo = $("#my-page-commentary");	
+		
+		}
 		-->
 		</script>		
 		<style scoped="scoped">		
@@ -552,7 +564,43 @@
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>			
-			
+
+
+		<!-- START COMMENT SLIDE -->		
+		<div id="my-page-commentary" class="modal" style="background: rgba(0,0,0,0.4);">
+			<div class="commentary commentary-drawer">
+				<span class="btn-flat-icon close" data-commentary-close></span>
+				<div class="commentary-content">
+					<div class="ibox">
+						<div class="ibox-content no-border">
+							<div class="page-credits bg-white" data-bind="{html:pageCreditHtml}" ></div>
+							<div class="shadow-wrapper" style="max-width:350px;">
+								<div class="box-shadow shadow-effect-2 ">
+									<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
+								</div>	
+							</div>
+							<h2 data-bind="text:title" class="headline"></h2>
+							<p data-bind="text:summary"></p>
+						</div>
+						<div class="ibox-content no-border bg-gray">
+							<div class="separator-2"></div>
+							<div class="sky-form no-border">
+									<label class="textarea">
+										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
+									</label>
+									<div class="text-right">
+										<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
+									</div>
+							</div>									
+							<div id="my-page-commentary-listview" class="comments">
+							</div>
+						</div>
+					</div>				
+				</div>
+			</div>	
+		</div>
+		<!-- END COMMENT SLIDE -->	
+					
 		<!-- Poll Edit Modal -->
 		<div id="my-poll-post-modal" role="dialog" class="modal fade" data-backdrop="static">
 			<div class="modal-dialog modal-lg">
