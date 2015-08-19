@@ -617,6 +617,7 @@
 									<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
 								</div>	
 							</div>
+							<h6 class="text-navy">설문기간 : <span data-bind="{ text: poll.startDate }" data-format="yyyy.MM.dd"></span> ~ <span data-bind="{ text: poll.endDate }" data-format="yyyy.MM.dd" ></span></h6>
 							<h2 data-bind="text:poll.name" class="headline"></h2>
 							<p data-bind="text:poll.description"></p>
 						</div>
