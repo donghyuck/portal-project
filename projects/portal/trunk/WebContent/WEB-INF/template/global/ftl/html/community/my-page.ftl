@@ -69,8 +69,6 @@
 				var currentUser = new common.ui.data.User();			
 				//$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");		
 				createMyPageListView();	
-				createMyPollListView();
-				//createPageSection();
 				createPageCompose();
 				// END SCRIPT 				
 			}
@@ -576,130 +574,7 @@
 				renderTo.modal('show');			
 			}
 		}		
-		<!-- ============================== -->
-		<!-- Pool							-->
-		<!-- ============================== -->		
-		function createMyPollListView( ){					
-			var renderTo = $("#my-poll-listview");
-			if( !common.ui.exists( renderTo )){	
-				common.ui.listview( renderTo, {
-					dataSource: {
-						transport: { 
-							read: { url:'<@spring.url "/data/polls/list.json?output=json"/>', type: 'POST' }/*,
-							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
-							}*/
-						},
-						requestStart: function(e){				
-						},
-						schema: {
-							total: "totalCount",
-							data: "items",
-							model: common.ui.data.Poll
-						},
-						selectable: false,
-						pageSize: 15					
-					},
-					template: kendo.template($("#my-poll-listview-template").html()),
-					dataBound: function(e){		
-						var elem = 	this.element.children();	
-					},
-					change: function(e){						
-						//var selectedCells = this.select();
-						//var selectedCell = this.dataItem( selectedCells );	
-					}
-				});		
-				renderTo.removeClass('k-widget');
-
-				$("#my-poll-listview").on( "click", "a[data-action=edit], button[data-action=edit]",  function(e){		
-					$this = $(this);		
-					var objectId = $this.data("object-id");	
-					var item = common.ui.listview(renderTo).dataSource.get(objectId);
-					openMyPollModal(item);
-				});								
-				createMyPollModal();				
-			}	
-		}
-		
-		function createMyPollModal(){
-			var renderTo = $("#my-poll-modal");			
-			if( !renderTo.data("model") ){				
-				var observable =  common.ui.observable({ 
-					poll : new common.ui.data.Poll(),
-					save : function(e){
-						alert( kendo.stringify(this.poll) );					
-					},
-					setSource : function( source ){
-						source.copy( this.poll );
-						common.ui.grid($("#my-poll-options-grid")).dataSource.data( this.poll.options );						
-					}
-				});								
-				renderTo.data("model", observable);				
-				kendo.bind(renderTo, observable );
 				
-				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
-					openMyPollModal(new common.ui.data.Poll());
-				});
-				
-				var grid = common.ui.grid($("#my-poll-options-grid"), {
-					dataSource : new kendo.data.DataSource({ 
-						data: observable.poll.options ,
-						schema:{
-							model:{ id: "optionId",
-								fields:{
-									optionId : {editable: true, editable : true, defaultValue : 0},
-									optionText : {editable: true, editable : true, nullable:false }								
-								}
-							}
-						}
-					}),			
-					toolbar: [{ name: "create", text:"추가"}],
-					columns:[{
-						width: 50,
-						field: 'optionId',
-						title: "ID"},{
-						field: 'optionText',
-						title: "내용"},
-						{ command: [{ name : "edit" , text : {edit:"변경", update:"확인", cancel:"최소" }  }, {name:"destroy", text: "삭제" }], title: "&nbsp;", width: "250px" }				
-					],
-					editable: "inline"
-				});
-				grid.table.kendoSortable({
-					filter: ">tbody >tr",
-					hint: $.noop,
-					cursor: "move",
-					placeholder: function(element) {
-						return element.clone().addClass("k-state-hover").css("opacity", 0.65);
-					},
-					container: "#my-poll-options-grid tbody",
-					change: function(e) {
-						var skip = grid.dataSource.skip(),
-						oldIndex = e.oldIndex + skip,
-						newIndex = e.newIndex + skip,
-						data = grid.dataSource.data(),
-						dataItem = grid.dataSource.getByUid(e.item.data("uid"));
-						grid.dataSource.remove(dataItem);
-						grid.dataSource.insert(newIndex, dataItem);
-					}
-				});								
-			}
-			
-				
-		}
-		
-		function openMyPollModal( poll ){
-			var renderTo = $("#my-poll-modal");
-			if( renderTo.data("model") ){	
-				poll.options = [];
-				poll.options.push( { optionId: 1 , optionText : "가지고 있다"} );		
-				poll.options.push( { optionId: 2 , optionText : "없다"} );		
-						
-				renderTo.data("model").setSource( poll );			
-			}
-			renderTo.modal('show');
-		}
-		
-		
 		<!-- ============================== -->
 		<!-- Page ListView  				-->
 		<!-- ============================== -->			
@@ -964,91 +839,7 @@
 			}
 		}		
 					
-					
-					
-					
-						
-		function createMyPageViewer2(source){	
-			var renderTo = $("#my-page-viewer");			
-			if( ! common.ui.exists(renderTo) ){
-				var observable =  common.ui.observable({
-					page : new common.ui.data.Page(),
-					pageSource : "",
-					pageSourceUrl : "",
-					editable : false,
-					close:function(e){
-					    common.ui.dialog( renderTo ).close();
-						return false;
-					},
-					exportPdf: function(e){
-						var $this = this, 
-						btn = $(e.target);						
-						btn.button('loading');	
-						if( $this.page.pageId  > 0 ) {
-							kendo.drawing.drawDOM(renderTo.find("article")).then(function(group) {
-								return kendo.drawing.exportPDF(group, {
-								paperSize: "auto",
-								margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
-								});
-							}).done(function(data) {
-								kendo.saveAs({
-								dataURI: data,
-								fileName:  $this.page.name + ".pdf",
-								proxyURL: "/downlaod/export"
-								});
-								btn.button('reset');
-							});
-						}
-						return false;
-					},								
-					setPage: function(page){
-						var that = this;
-						page.copy(that.page);						
-						if( that.page.properties.source ){
-							that.set('pageSource', that.page.properties.source);
-						}else{
-							that.set('pageSource', "");
-						} 
-						if( that.page.properties.url ){
-							that.set('pageSourceUrl', that.page.properties.url);
-						}else{
-							that.set('pageSourceUrl', "");
-						}						
-					}
-				});
-				renderTo.data("model", observable);	
-				common.ui.dialog( renderTo , {
-					data : observable,
-					autoBind: true,
-					"open":function(e){		
-						$("body").css("overflow-y", "hidden");
-					},
-					"opened" : function(e){		
-						renderTo.find(".dialog__content").css("overflow-y", "auto");
-					},
-					"close":function(e){			
-						renderTo.find(".dialog__content").css("overflow-y", "hidden");			
-						$("body").css("overflow-y", "auto");		
-					}
-				});	
-			}
-			var dialogFx = common.ui.dialog( renderTo );	
-			if( !dialogFx.isOpen ){				
-				console.log("now get remote data.");
-				var targetEle = $('.item[data-object-id=' + source.get("pageId") + ']');					
-				kendo.ui.progress(targetEle, true);	
-				common.ui.ajax( '<@spring.url "/data/pages/get.json?output=json"/>', {
-					data : { pageId : source.get("pageId") },
-					success: function(response){ 
-						renderTo.data("model").setPage(new common.ui.data.Page(response));			
-						dialogFx.open();
-					},
-					complete: function(e){
-						kendo.ui.progress(targetEle, false);	
-					}	
-				} );				
-			}				
-		}
+
 		-->
 		</script>		
 		<style scoped="scoped">		
@@ -1131,81 +922,6 @@
 			//background-color: #fafafa!important;
 		}
 		
-		.my-poll-options
-		{
-			width: 100%;		
-		}
-		
-		.my-poll-options ul {
-			padding: 0;
-			margin: 0;
-		}
-
-		li.sortable {
-			list-style-type: none;
-			padding: 6px 8px;
-			margin: 0;
-			border : 1px solid #fff;
-			color: #666;
-			font-size: 1.1em;
-			cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default;
-		}
-		li.sortable:last-child {
-			//border-bottom: 0;
-			//border-radius: 0 0 4px 4px;
-		}		
-		li.sortable:hover {
-			background-color: #34aadc;
-			//border : 1px dashed #5ac8fa;
-			border-radius: 4px!important;
-			color : #fff;
-		}		
-		li.placeholder {
-			border : 1px dashed #007aff;
-			border-radius: 4px!important;
-			background-color: #34aadc;
-			color: #fff;
-			text-align: right;
-		}		
-		li.hint {
-			display: block;
-			width: 300px;
-			background-color: #007aff;
-			border : 1px solid #fff;
-			border-radius: 4px!important;			
-			color: #fff;
-		}
-		li.hint:after {
-                    content: "";
-                    display: block;
-                    width: 0;
-                    height: 0;
-                    border-top: 6px solid transparent;
-                    border-bottom: 6px solid transparent;
-                    border-left: 6px solid #007aff;
-                    position: absolute;
-                    left: 300px;
-				top: 10px;
-		}
-
-		li.hint:last-child {
-			border-radius: 4px;
-		}	
-
-		li.sortable span {
-			display: block;
-			float: right;
-			color: #666;
-		}
-		
-		li.hint span {
-			display : none!important;
-			color: #fff;
-		}
-
-		.k-grid tbody tr {
-			 cursor: move;
-		}
 		</style>   	
 		</#compress>
 	</head>
@@ -1296,38 +1012,6 @@
 				</article>
 			</div>
 			</div>
-			<div class="bg-white">
-				<div class="container content" >					
-					<div class="row">	
-						<div class="col-sm-6">
-							<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>		
-						</div>	
-						<div class="col-sm-6">
-							<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">설문을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
-							<div class="p-md">                                        
-                                        
-                                        <p>설문 상태</p>
-                                        <div class="radio radio-info radio-inline">
-                                            <input type="radio" id="my-poll-listview-state-all" value="option1" name="my-poll-listview-state" checked="">
-                                            <label for="my-poll-listview-state-all">전체</label>
-                                        </div>
-                                        <div class="radio radio-inline">
-                                            <input type="radio" id="my-poll-listview-state-active" value="option2" name="my-poll-listview-state">
-                                            <label for="my-poll-listview-state-active"> Active </label>
-                                        </div>
-                                        <div class="radio radio-inline">
-                                            <input type="radio" id="my-poll-listview-state-live" value="option2" name="my-poll-listview-state">
-                                            <label for="my-poll-listview-state-live"> Live </label>
-                                        </div>                                        
-                                    </div>
-                                    
-							<div id="my-poll-listview" class="ibox-content inspinia-timeline"></div>
-							
-						</div>								
-					</div>				
-				</div>
-			</div>		
-			
 			<!-- ./END MAIN CONTENT -->		 		
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
@@ -1628,71 +1312,6 @@
 			</div>		
 		</div>
 		
-		<div class="modal fade" id="my-poll-modal" tabindex="-1" role="dialog" aria-labelledby="my-poll-modal">
-			<div class="modal-dialog" role="document">
-				<div class="ibox float-e-margins">
-					<div class="ibox-title">
-						<span class="text-primary"><i class="fa fa-info"></i> 설문 </span>
-						<!--<span class="close" data-dialog-close="" data-dismiss="modal" aria-label="Close"></span>-->
-						<span class="hvr-pulse-shrink" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
-					</div>
-					<div class="ibox-content no-padding">
-						<!-- options forms -->
-						<form id="my-poll-modal-settings" action="#" class="sky-form modal-settings collapse" aria-expanded="false">
-							<header>
-								옵션
-								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-poll-modal-settings"></span>
-							</header>
-							<fieldset>                  
-								<section>
-								<div class="separator-2"></div>
-								<label class="label">시작일</label>
-								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
-								<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
-								</section>
-								<div class="hr-line-dashed"></div>
-								<section>			
-								<label class="label">종료일</label>							
-								<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
-								<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
-								</section>			
-								<div class="hr-line-dashed"></div>
-								<section>			
-								<label class="label">만료일</label>
-								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
-								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
-								</section>
-							</fieldset>                               
-						</form>
-						<!-- /.options forms -->													
-						<form action="#" class="sky-form no-border">
-							<fieldset>    
-								<section>
-									<label class="input">
-										<input type="text" name="name" placeholder="질문 제목" data-bind="value:poll.name">
-									</label>
-								</section>
-								<section>
-									<label class="textarea textarea-expandable">
-										<textarea rows="3" name="description" placeholder="도움말 텍스트" data-bind="value:poll.description"></textarea>
-									</label>
-								</section>
-							</fieldset>
-							<fieldset>
-								<div class="my-poll-options" >		
-									<label class="label">옵션</label>					
-									<div id="my-poll-options-grid"></div>
-								</div>								
-							</fieldset>			
-							<footer>
-								<button type="button" class="btn-u" data-bind="click:save">완료</button>
-							</footer>						
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>		
-		
 
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
@@ -1759,37 +1378,7 @@
 		</div>
 	</div>
 	</div>
-	</script>	
-	<script id="my-poll-listview-template" type="text/x-kendo-template">
-	<div class="timeline-item">
-		<div class="row">
-			<div class="col-xs-3 date">
-				<i class="fa fa-bar-chart"></i>
-				<span class="text-navy"> #: kendo.toString( creationDate, "m") #</span>
-				<br>
-				<span class="label label-success">#: status #</span>
-			</div>
-			<div class="col-xs-7 content no-top-border">
-					<p class="m-b-xs"><strong>#: name #</strong></p>
-					#if(description!=null){#<p class="text-muted m-b-xs"><small>#: description #</small></p>#}#
-					<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
-			</div>
-		</div>
-	</div>
-	</script>	
-	<script id="my-poll-option-template" type="text/x-kendo-template">
-	<div class="k-widget">
-		#:optionText#
-		<div class="edit-buttons">
-                <a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
-                <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
-            </div>
-	</div>
-	</script>	
-	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
-	</script>	
-	
-																				
+	</script>																					
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
 	<#include "/html/common/common-editor-templates.ftl" >	
