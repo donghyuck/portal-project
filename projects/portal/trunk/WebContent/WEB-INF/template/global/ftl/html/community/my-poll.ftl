@@ -643,7 +643,7 @@
 			</div>		
 		</div>
 		
-		<div id="my-poll-view-modal" role="dialog" class="modal fade bg-white" data-backdrop="static" data-effect="zoom">
+		<div id="my-poll-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg modal-flat">
 				<div class="modal-content my-poll-view-form">	
 					<div class="modal-header">
