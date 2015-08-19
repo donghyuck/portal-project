@@ -2306,6 +2306,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 /** ------------------------------------------------- */
 /** modal animation effect		                      */
 /** ------------------------------------------------- */
+
+.modal.bg-white {
+    -moz-transition: all .3s ease-in;
+    -webkit-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;	
+}
+
 .modal.fade[data-effect="zoom"] .modal-dialog {
     -webkit-transform: scale(0.1);
     -moz-transform: scale(0.1);
