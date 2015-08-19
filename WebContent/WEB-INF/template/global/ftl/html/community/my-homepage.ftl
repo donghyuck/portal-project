@@ -102,8 +102,6 @@
 			});
 		}		
 		
-		var ONE_PIXEL_IMG_SRC_DATA = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-		
 		function createMyPageCommentary(source){			
 			var renderTo = $("#my-page-commentary");			
 			
@@ -142,7 +140,7 @@
 				
 				var observable =  common.ui.observable({
 					pageId : 0,
-					coverPhotoUrl : ONE_PIXEL_IMG_SRC_DATA,
+					coverPhotoUrl : "",
 					pageCreditHtml : "",
 					commentBody : "",
 					comment : function(e){
