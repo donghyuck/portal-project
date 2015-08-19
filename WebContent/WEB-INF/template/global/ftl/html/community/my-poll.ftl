@@ -10,16 +10,13 @@
 				
 		yepnope([{
 			load: [
-			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-				
+			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',				
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
-			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
-				
+			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',				
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/common/awesome-bootstrap-checkbox.css"/>',
-			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
-			
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',			
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
 			'css!<@spring.url "/styles/codrops/codrops.dialog-sally.css"/>',					
@@ -332,6 +329,43 @@
 		<!-- ============================== -->			
 		function createPollCommentary(source){
 			var renderTo = $("#my-poll-commentary");	
+			
+			if( !common.ui.exists(renderTo) ){
+				var listview = common.ui.listview($("#my-poll-commentary-listview"), {
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/data/polls/comments/list.json?output=json"/>', type: 'POST' }
+						},
+						schema: {
+							total: "totalCount",
+							data: "comments",
+							model: common.ui.data.Comment
+						},
+						selectable: false,
+						error:common.ui.handleAjaxError,
+						batch: false,
+						pageSize: 15,
+						serverPaging: false,
+						serverFiltering: false,
+						serverSorting: false
+					},
+					template: kendo.template($("#my-poll-commentary-listview-template").html()),
+					autoBind: false,
+					dataBound: function(e){		
+						var elem = 	this.element.children();				
+					},
+					change: function(e){						
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );	
+					}
+				});	
+				
+			}
+			
+			if( !renderTo.data("model") ){				
+				
+			}				
+			
 			if(renderTo.is(":hidden")){
 				renderTo.show();
 			}			
@@ -529,7 +563,7 @@
 										<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
 									</div>
 							</div>									
-							<div id="my-page-commentary-listview" class="comments">
+							<div id="my-poll-commentary-listview" class="comments">
 							</div>
 						</div>
 					</div>				
@@ -731,7 +765,22 @@
 		</div>                    
 	</li>
 	</script>	
-																				
+	<!-- ============================== -->
+	<!-- commentary template            -->
+	<!-- ============================== -->	
+	<script id="my-poll-commentary-listview-template" type="text/x-kendo-template">
+		<div class="comment" >
+			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
+			<div class="content">
+				<span class="author">#if ( name == null ){# 손님 #}else{# #: name # #}#</span>
+				<span class="comment-date">#: formattedCreationDate() #</span>
+				<span class="linked-text">
+					#: body #
+				</span>
+			</div>		
+		</div>	
+	</script>	
+																					
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
 	<#include "/html/common/common-editor-templates.ftl" >	
