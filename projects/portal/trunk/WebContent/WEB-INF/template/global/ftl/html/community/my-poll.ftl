@@ -381,8 +381,7 @@
 					},
 					setSource : function(poll){
 						var $this = this;
-						console.log( common.ui.stringify(poll) );
-						/*
+						
 						if( typeof page == 'number'){							
 							var title = $(".item [data-action=view][data-object-id=" + page + "]").text();
 							var summary = $(".item[data-object-id=" + page + "]  .page-meta .page-description").text();
@@ -399,20 +398,14 @@
 							$this.set("summary", summary);
 							$this.set("commentBody", "");
 							listview.dataSource.read({pageId: page });
-						}else{
-							if( page.bodyContent.imageCount > 0 ){
-								$this.set("coverPhotoUrl", page.bodyContent.firstImageSrc );
-							}else{
-								$this.set( "coverPhotoUrl", ONE_PIXEL_IMG_SRC_DATA);
-							}							
-							$this.set("pageId", page.pageId );
+						}else{					
+							$this.set("pollId", poll.pageId );
 							$this.set("pageCreditHtml", "");
-							$this.set("title", page.title);
-							$this.set("summary", page.summary);
+							$this.set("title", poll.name);
+							$this.set("summary", poll.description);
 							$this.set("commentBody", "");
-							listview.dataSource.read({pageId: page.pageId });	
+							listview.dataSource.read({pollId: poll.pollId });	
 						}	
-						*/				
 					}
 				});
 				renderTo.data("model", observable);			
