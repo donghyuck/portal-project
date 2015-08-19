@@ -332,7 +332,9 @@
 		<!-- ============================== -->			
 		function createPollCommentary(source){
 			var renderTo = $("#my-poll-commentary");	
-		
+			if(renderTo.is(":hidden")){
+				renderTo.show();
+			}			
 		}
 		-->
 		</script>		
