@@ -74,7 +74,7 @@
                                                     		<#if item.description ??>
                                                     		<p>${item.description}</p>
                                                     		</#if>                                                    		
-                                                    		<img src="<@spring.url '/images/common/cloud_swiss_army_knife_nobg.png'/>" class="img-responsive"/>                                                    		
+                                                    		<img src="<@spring.url '/images/common/mycloud/mycloud-service.png'/>" class="img-responsive"/>                                                    		
                                                 		</div>
                                                 		<div class="col-md-8 col-sm-12 col-xs-12 md-margin-bottom-30">
                                                 			<div class="row">
