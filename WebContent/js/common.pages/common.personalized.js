@@ -355,7 +355,7 @@ function hasPermissions( user, permission ){
 		_hasPermissions = true;
 	}	
 	_hasPermissions = false;
-	console.log( user.userId + "====" + common.ui.accounts().token.userId );
+	console.log( typeof user.userId + "====" + typeof common.ui.accounts().token.userId );
 	console.log( _hasPermissions);
 	return _hasPermissions;
 }
