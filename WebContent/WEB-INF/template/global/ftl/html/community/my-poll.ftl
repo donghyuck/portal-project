@@ -342,31 +342,93 @@
 							model: common.ui.data.Comment
 						},
 						selectable: false,
-						error:common.ui.handleAjaxError,
 						batch: false,
-						pageSize: 15,
 						serverPaging: false,
 						serverFiltering: false,
 						serverSorting: false
 					},
 					template: kendo.template($("#my-poll-commentary-listview-template").html()),
-					autoBind: false,
-					dataBound: function(e){		
-						var elem = 	this.element.children();				
-					},
-					change: function(e){						
-						var selectedCells = this.select();
-						var selectedCell = this.dataItem( selectedCells );	
-					}
+					autoBind: false
 				});	
 				
+				var observable =  common.ui.observable({
+					pollId : 0,
+					coverPhotoUrl : "",
+					pageCreditHtml : "",
+					commentBody : "",
+					comment : function(e){
+						var $this = this;
+						btn = $(e.target);						
+						btn.button('loading');								
+						common.ui.ajax(
+							'<@spring.url "/data/polls/comment.json?output=json"/>',
+							{
+								data : {
+									objectType: 31,
+									objectId : $this.get("pollId"),
+									text : $this.get("commentBody")
+								},
+								success : function(response){
+									listview.dataSource.read({pollId: $this.pageId });
+~									$('.poll a[data-object-id=' + $this.pollId  + '] .comment-page-count').html( response.count  );
+								},
+								complete : function(e){
+									$this.set("commentBody", "");
+									btn.button('reset');
+								}							
+						});	
+						return false;						
+					},
+					setSource : function(poll){
+						var $this = this;
+						console.log( common.ui.stringify(poll) );
+						/*
+						if( typeof page == 'number'){							
+							var title = $(".item [data-action=view][data-object-id=" + page + "]").text();
+							var summary = $(".item[data-object-id=" + page + "]  .page-meta .page-description").text();
+							var coverImgEle = $(".item[data-object-id=" + page + "] .cover img");
+							var pageCreditHtml = $(".item[data-object-id="+page+"] .page-credits").html();							
+							if( coverImgEle.length == 1 ){
+								$this.set("coverPhotoUrl", coverImgEle.attr("src"));
+							}else{
+								$this.set( "coverPhotoUrl", ONE_PIXEL_IMG_SRC_DATA);
+							}							
+							$this.set("pageId", page );
+							$this.set("pageCreditHtml", pageCreditHtml);
+							$this.set("title", title);
+							$this.set("summary", summary);
+							$this.set("commentBody", "");
+							listview.dataSource.read({pageId: page });
+						}else{
+							if( page.bodyContent.imageCount > 0 ){
+								$this.set("coverPhotoUrl", page.bodyContent.firstImageSrc );
+							}else{
+								$this.set( "coverPhotoUrl", ONE_PIXEL_IMG_SRC_DATA);
+							}							
+							$this.set("pageId", page.pageId );
+							$this.set("pageCreditHtml", "");
+							$this.set("title", page.title);
+							$this.set("summary", page.summary);
+							$this.set("commentBody", "");
+							listview.dataSource.read({pageId: page.pageId });	
+						}	
+						*/				
+					}
+				});
+				renderTo.data("model", observable);			
+				common.ui.bind( renderTo, observable );				
+				$('.close[data-commentary-close]').click(function(){	
+					if(!$("body").hasClass('modal-open')){
+						$("body").css("overflow", "auto");
+					}					
+					renderTo.hide();
+				});
 			}
-			
-			if( !renderTo.data("model") ){				
-				
-			}				
-			
 			if(renderTo.is(":hidden")){
+				renderTo.data("model").setSource( source ) ;
+				if(!$("body").hasClass('modal-open')){
+					$("body").css("overflow", "hidden");
+				}			
 				renderTo.show();
 			}			
 		}
