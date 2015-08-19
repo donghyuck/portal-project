@@ -348,13 +348,10 @@ function updatePageState(page, callback ){
 
 function hasPermissions( user, permission ){
 	var _hasPermissions = false;
-	
-	
-	if( common.ui.accounts().token.userId = user.userId)
+	if( common.ui.accounts().token.userId == user.userId)
 	{
 		_hasPermissions = true;
-	}	
-	_hasPermissions = false;
+	}
 	console.log( typeof user.userId + "====" + typeof common.ui.accounts().token.userId );
 	console.log( _hasPermissions);
 	return _hasPermissions;
