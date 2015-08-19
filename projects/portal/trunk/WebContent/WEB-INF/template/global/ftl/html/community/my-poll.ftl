@@ -608,7 +608,7 @@
 									<div class="credit-img user">
 										<img data-bind="attr:{src:authorPhotoUrl}" class="img-responsive img-circle">
 									</div>
-									<div class="credit-name"> <span data-bind="visible:user.nameVisible, text:user.name">악당</span><code data-bind="text:user.username"></code> </div>
+									<div class="credit-name"> <span data-bind="visible:poll.user.nameVisible, text:poll.user.name ">악당</span><code data-bind="text:poll.user.username"></code> </div>
 									<div class="credit-title"></div>
 								</div>							
 							</div>
@@ -617,8 +617,8 @@
 									<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
 								</div>	
 							</div>
-							<h2 data-bind="text:title" class="headline"></h2>
-							<p data-bind="text:summary"></p>
+							<h2 data-bind="text:poll.name" class="headline"></h2>
+							<p data-bind="text:poll.description"></p>
 						</div>
 						<div class="ibox-content no-border bg-gray">
 							<div class="separator-2"></div>
