@@ -352,11 +352,9 @@
 				});	
 				
 				var observable =  common.ui.observable({
-					pollId : 0,
 					poll : new common.ui.data.Poll(),
 					authorPhotoUrl : "/images/common/no-avatar.png",
 					coverPhotoUrl : "",
-					pageCreditHtml : "",
 					commentBody : "",
 					comment : function(e){
 						var $this = this;
@@ -366,13 +364,13 @@
 							'<@spring.url "/data/polls/comment.json?output=json"/>',
 							{
 								data : {
-									objectType: 31,
+									objectType: 40,
 									objectId : $this.get("pollId"),
 									text : $this.get("commentBody")
 								},
 								success : function(response){
-									listview.dataSource.read({pollId: $this.pageId });
-~									$('.poll a[data-object-id=' + $this.pollId  + '] .comment-page-count').html( response.count  );
+									listview.dataSource.read({pollId: $this.poll.pollId });
+~									$('.poll a[data-object-id=' + $this.poll.pollId  + '] .comment-page-count').html( response.count  );
 								},
 								complete : function(e){
 									$this.set("commentBody", "");
