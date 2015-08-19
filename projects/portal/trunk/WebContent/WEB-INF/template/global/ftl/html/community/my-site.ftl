@@ -907,12 +907,14 @@
 												<!--<label class="btn  btn-danger rounded-left ">
 													<input type="radio" name="page-source" value="2"><i class="fa fa-user"></i> ME
 												</label>-->
-												<label class="btn btn-info  rounded-left  active">
+												<label class="btn btn-info btn-flat rounded  active">
 													<input type="radio" name="page-source" value="30" checked="checked"><i class="fa fa-globe"></i> SITE
-												</label>											
+												</label>									
+												<!--		
 												<label class="btn btn-info rounded-right">
 													<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
 												</label>
+												-->
 											</div>
 											<button type="button" class="btn btn-sm btn-flat btn-danger rounded" data-action="page-create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 											<button type="button" class="btn btn-primary btn-sm btn-flat rounded" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
