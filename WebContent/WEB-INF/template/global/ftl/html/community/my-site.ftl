@@ -898,7 +898,7 @@
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane fade" id="website-page">
-									<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>									
+									<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>									
 									<div id="my-page-list" class="p-xxs">
 										<div class="btn-toolbar p-xxs">
 											<div class="btn-group btn-group-sm" data-toggle="buttons" id="page-source-list">
@@ -1043,7 +1043,7 @@
 								</div>
 								
 								<div class="tab-pane fade" id="website-notice">
-									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
+									<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
 									<div id="my-notice-list" class="m-b-sm">
 										<div class="sky-form">
 											<fieldset class="padding-sm">
@@ -1156,11 +1156,11 @@
 									</div><!-- /.row -->									
 								</div><!-- /. my-site-notice -->	
 								<div class="tab-pane fade" id="website-poll">
-								
+									<h4><small class="text-muted">간단하게 설문을 작성하고 배포 할 수 있습니다. </small></h4>
 								</div>
 								
 								<div class="tab-pane fade" id="website-timeline">
-								
+									<h4><small class="text-muted">웹 사이트의 타임라인을 관리합니다. </small></h4>
 								</div>
 					</div>
 				</div>				
