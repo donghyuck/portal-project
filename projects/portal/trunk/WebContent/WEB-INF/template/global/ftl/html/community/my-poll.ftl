@@ -331,7 +331,7 @@
 		<!-- Commentary						-->
 		<!-- ============================== -->			
 		function createPollCommentary(source){
-			var renderTo = $("#my-page-commentary");	
+			var renderTo = $("#my-poll-commentary");	
 		
 		}
 		-->
