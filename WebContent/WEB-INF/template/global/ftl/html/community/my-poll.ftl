@@ -608,7 +608,7 @@
 									<div class="credit-img user">
 										<img data-bind="attr:{src:authorPhotoUrl}" class="img-responsive img-circle">
 									</div>
-									<div class="credit-name"> 악당 <code>andang</code> </div>
+									<div class="credit-name"> <span data-bind="visible:user.nameVisible, text:user.name">악당</span><code data-bind="text:user.username"></code> </div>
 									<div class="credit-title"></div>
 								</div>							
 							</div>
