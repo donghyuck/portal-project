@@ -510,7 +510,7 @@
 			<div class="bg-white">
 			<div class="container content">			
 				<div class="sky-form my-page-form">
-					<fieldset class="rounded-top">
+					<fieldset class="rounded-top no-border">
 						<div class="row">
 							<div class="col col-md-6">
 								<section>
