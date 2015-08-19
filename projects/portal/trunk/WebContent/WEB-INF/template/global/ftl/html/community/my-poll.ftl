@@ -400,11 +400,6 @@
 						}else{					
 							poll.copy(this.poll);
 							this.set("authorPhotoUrl", this.poll.authorPhotoUrl() );
-							
-							$this.set("pollId", poll.pageId );
-							$this.set("pageCreditHtml", "");
-							$this.set("title", poll.name);
-							$this.set("summary", poll.description);
 							$this.set("commentBody", "");
 							listview.dataSource.read({pollId: poll.pollId });	
 						}	
