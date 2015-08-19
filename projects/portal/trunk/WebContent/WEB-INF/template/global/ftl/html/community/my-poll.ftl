@@ -353,6 +353,8 @@
 				
 				var observable =  common.ui.observable({
 					pollId : 0,
+					poll : new common.ui.data.Poll(),
+					authorPhotoUrl : "/images/common/no-avatar.png",
 					coverPhotoUrl : "",
 					pageCreditHtml : "",
 					commentBody : "",
@@ -398,6 +400,9 @@
 							$this.set("commentBody", "");
 							listview.dataSource.read({pageId: page });
 						}else{					
+							poll.copy(this.poll);
+							this.set("authorPhotoUrl", this.poll.authorPhotoUrl() );
+							
 							$this.set("pollId", poll.pageId );
 							$this.set("pageCreditHtml", "");
 							$this.set("title", poll.name);
