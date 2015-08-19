@@ -152,35 +152,7 @@
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
 					createPollViewModal(item);
 				});		
-				/**			
-				$("#my-poll-listview").on( "click", "a[data-action=vote], button[data-action=vote]",  function(e){		
-					$this = $(this),
-					btn = $(e.target);
-					var objectId = $this.data("object-id");	
-					var inputEl = $("ul[data-object-id="+objectId+"] input[name=option]:checked");
-					if( common.ui.defined(inputEl) ){						
-						var myVote = new common.ui.data.Vote({ pollId : objectId, optionId : inputEl.val() });						
-						common.ui.ajax( '<@spring.url "/data/polls/vote_allowed.json?output=json"/>', {
-							data : common.ui.stringify(myVote),
-							contentType : "application/json",
-							success : function(response){ 
-								if( response.success ){
-									btn.button('loading');		
-									common.ui.ajax( '<@spring.url "/data/polls/vote.json?output=json"/>', {
-										data : common.ui.stringify(myVote),
-										contentType : "application/json",
-										complete : function(e){ 
-											btn.button('reset');
-										}							
-									});		
-								}else{
-									alert("이미 참여 하였거나 대상자가 아닙니다.");
-								}
-							}							
-						});
-					}
-				});	
-				*/									
+										
 				// event for new page
 				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
 					var poll = new common.ui.data.Poll();				
@@ -671,7 +643,7 @@
 			</div>		
 		</div>
 		
-		<div id="my-poll-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+		<div id="my-poll-view-modal" role="dialog" class="modal fade bg-white" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg modal-flat">
 				<div class="modal-content my-poll-view-form">	
 					<div class="modal-header">
