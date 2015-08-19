@@ -598,7 +598,15 @@
 				<div class="commentary-content">
 					<div class="ibox">
 						<div class="ibox-content no-border">
-							<div class="page-credits bg-white" data-bind="{html:pageCreditHtml}" ></div>
+							<div class="page-credits bg-white">
+								<div class="credit-item">
+									<div class="credit-img user">
+										<img data-bind="attr:{src:authorPhotoUrl}" class="img-responsive img-circle">
+									</div>
+									<div class="credit-name"> 악당 <code>andang</code> </div>
+									<div class="credit-title"></div>
+								</div>							
+							</div>
 							<div class="shadow-wrapper" style="max-width:350px;">
 								<div class="box-shadow shadow-effect-2 ">
 									<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
@@ -802,6 +810,7 @@
 	
 	<script id="my-poll-option-template" type="text/x-kendo-template">
 	<li class="poll-option">
+
 		<div class="col-xs-6">
 			<img class="poll-option-image" src="<@spring.url "/images/common/no-image2.jpg"/>" alt="">
 			<div class="radio radio-danger">
@@ -809,6 +818,7 @@
 	            <label for="poll-#=pollOption.pollId#-option-#=pollOption.optionId#">#: pollOption.optionText#</label>
 	        </div>
 		</div>
+
 		<div class="col-xs-5">
 			<div class="progress progress-u progress-sm rounded-2x">
 				<div class="progress-bar progress-bar-orange" role="progressbar" aria-valuenow="#: voteCount #" aria-valuemin="0" aria-valuemax="#: totalVoteCount#" style="width: #=votePercentString#%">
@@ -816,7 +826,8 @@
 				</div>
 				<span class="text-muted progress-label">#: voteCount # 명</span>
 			</div>
-		</div>                    
+		</div>
+		                    
 	</li>
 	</script>	
 	<!-- ============================== -->
