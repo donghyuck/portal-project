@@ -626,7 +626,7 @@
 										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
 									</label>
 									<div class="text-right">
-										<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
+										<button class="btn btn-flat btn-info btn-outline btn-xl rounded" data-bind="click:comment">게시하기</button>
 									</div>
 							</div>					
 				</div>
