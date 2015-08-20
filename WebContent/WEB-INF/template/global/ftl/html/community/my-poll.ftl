@@ -614,7 +614,12 @@
 							<h2 data-bind="text:poll.name" class="headline"></h2>
 							<p data-bind="text:poll.description"></p>
 						</div>
-						<div class="ibox-content no-border bg-gray">
+						<div class="ibox-content no-border bg-gray">							
+							<div id="my-poll-commentary-listview" class="comments"></div>
+						</div>
+					</div>				
+				</div>
+				<div class="commentary-footer">
 							<div class="separator-2"></div>
 							<div class="sky-form no-border">
 									<label class="textarea">
@@ -623,11 +628,7 @@
 									<div class="text-right">
 										<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
 									</div>
-							</div>									
-							<div id="my-poll-commentary-listview" class="comments">
-							</div>
-						</div>
-					</div>				
+							</div>					
 				</div>
 			</div>	
 		</div>
