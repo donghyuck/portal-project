@@ -595,8 +595,9 @@
  */
 .commentary {
 	z-index: 1000;
-	padding: 26px;
-	background: #fff;
+	/*padding: 26px;*/
+	padding:0;
+	background: #f5f5f5;
 	overflow-y: scroll;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
@@ -615,6 +616,7 @@
 	padding: 50px 30px;
 	position: relative;
 	text-align: left;
+	background: #fff;
 	-webkit-animation-duration: .4s;
 	-moz-animation-duration: .4s;
 	-ms-animation-duration: .4s;
@@ -623,6 +625,12 @@
 	-moz-animation-iteration-count: 1;
 	-ms-animation-iteration-count: 1;
 	animation-iteration-count: 1;
+}
+
+.commentary .commentary-footer{
+	position:relative;
+	    bottom: 0;
+    padding: 15px;
 }
 
 .commentary.commentary-drawer .commentary-content {
@@ -635,8 +643,10 @@
 
 .commentary .close {
 	position: absolute;
-	top: 15px;
-	left: 15px;
+	/*top: 15px;
+	left: 15px;*/
+	top:5px;
+	left:5px;
 	line-height: 50px;
 	font-size: 40px;
 	display: block;
