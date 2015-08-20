@@ -334,7 +334,7 @@
 				var listview = common.ui.listview($("#my-poll-commentary-listview"), {
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/data/polls/comments/list.json?output=json"/>', type: 'POST' }
+							read: { url:'<@spring.url "/data/comments/list.json?output=json"/>', type: 'POST' }
 						},
 						schema: {
 							total: "totalCount",
@@ -361,7 +361,7 @@
 						btn = $(e.target);						
 						btn.button('loading');								
 						common.ui.ajax(
-							'<@spring.url "/data/polls/comment.json?output=json"/>',
+							'<@spring.url "/data/comments/create.json?output=json"/>',
 							{
 								data : {
 									objectType: 40,
@@ -396,12 +396,12 @@
 							$this.set("title", title);
 							$this.set("summary", summary);
 							$this.set("commentBody", "");
-							listview.dataSource.read({pageId: page });
+							listview.dataSource.read({objectType:40, objectId: page });
 						}else{					
 							poll.copy(this.poll);
 							this.set("authorPhotoUrl", this.poll.authorPhotoUrl() );
 							$this.set("commentBody", "");
-							listview.dataSource.read({pollId: poll.pollId });	
+							listview.dataSource.read({objectType:40, objectId: poll.pollId });	
 						}	
 					}
 				});
