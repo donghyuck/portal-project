@@ -597,7 +597,7 @@
 	z-index: 1000;
 	/*padding: 26px;*/
 	padding:0;
-	
+	background: fff;
 	overflow-y: scroll;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
@@ -608,7 +608,7 @@
 	height: 100%;
 	top: 0;
 	right: 0;
-	background: fff;
+	
 }
 
 .commentary .commentary-content {
@@ -617,7 +617,7 @@
 	padding: 50px 30px;
 	position: relative;
 	text-align: left;
-	background: #fff;
+	
 	-webkit-animation-duration: .4s;
 	-moz-animation-duration: .4s;
 	-ms-animation-duration: .4s;
