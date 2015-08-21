@@ -1480,7 +1480,8 @@
 					<form action="#" class="sky-form">
 						<fieldset>
 							<section>
-								<ul class="list-unstyled small text-info">			
+								<ul class="list-unstyled small text-info">	
+										<li class="p-xxs"><span data-bind="text: image.contentType" class="label rounded label-dark-blue">image/jpeg</span></li>			
 										<li class="p-xxs"><strong>파일:</strong> <span data-bind="text:image.name"></span> bytes</li>															
 										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
 										<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
