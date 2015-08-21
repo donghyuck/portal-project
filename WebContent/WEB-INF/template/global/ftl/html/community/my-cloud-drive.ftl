@@ -1504,7 +1504,10 @@
 					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>
 					
 			</div>					
-			
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+					
 				<div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>Basic IN+ Panel <small class="m-l-sm">This is custom panel</small></h5>
@@ -1546,9 +1549,12 @@
                         This is simple footer example
                     </div>
                 </div>
-                
-				
-
+            </div>    					
+					
+					
+					</div>
+				</div>
+			
 			</div>
 		</div>
 		
