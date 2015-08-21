@@ -730,6 +730,7 @@
 				dialogFx.open();
 			}
 			*/
+			renderTo.modal('show');	
 			
 		}			
 		function showPhotoPanel2(image){		
@@ -1477,10 +1478,14 @@
 		</div>
 		<!-- Image View Modal -->
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-		
-		
-		
+			<div class="modal-dialog modal-lg modal-flat">
+				<div class="modal-content">	
+					<div class="modal-header">		
+					</div>
+				</div>
+			</div>
 		</div>
+		
 		<!-- START RIGHT SLIDE MENU -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="my-cloud-driver-controls-section">
 			<header>
