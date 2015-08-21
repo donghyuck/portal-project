@@ -544,8 +544,10 @@
 		
 		function createPhotoPostModal(image){
 			var renderTo = $("#my-image-post-modal");			
-			if( !renderTo.data('bs.modal') || image ){	
-				common.ui.bind(renderTo, image );	
+			if( !renderTo.data('bs.modal') ){	
+			
+				if(image)
+					common.ui.bind(renderTo, image );	
 			}
 			renderTo.modal('show');	
 		
