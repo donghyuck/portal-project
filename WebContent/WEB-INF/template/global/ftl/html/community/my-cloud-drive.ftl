@@ -464,7 +464,7 @@
 					var data = common.ui.listview(renderTo).dataSource.view();					
 					var item = data[index];
 					item.set("index", index );
-					showPhotoPanel(item);
+					createPhotoViewModal(item);
 				});	
 								
 			
@@ -543,12 +543,14 @@
 		
 		
 		function createPhotoPostModal(){
-			$("#my-image-post-modal").modal('show');	
+			var renderTo = $("#my-image-post-modal");	
+			
+			renderTo.modal('show');	
 		
 		
 		}
 		
-		function showPhotoPanel(image){		
+		function createPhotoViewModal(image){		
 			//var renderTo = $("#image-viewer");		
 			var renderTo = $("#my-image-view-modal");						
 			if( !renderTo.data('bs.modal') ){		
