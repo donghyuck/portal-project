@@ -545,6 +545,11 @@
 		function createPhotoPostModal(){
 			var renderTo = $("#my-image-post-modal");	
 			
+			if( !renderTo.data('bs.modal') ){	
+			
+			
+			
+			}
 			renderTo.modal('show');	
 		
 		
@@ -669,6 +674,7 @@
 					}
 				});	
 				*/			
+				common.ui.bootstrap.enableStackingModal(renderTo);
 				common.ui.bind(renderTo, observable );				
 				renderTo.data("model", observable);	
 			}			
