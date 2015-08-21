@@ -3150,7 +3150,7 @@ img[data-toggle=lightbox]:hover{
     background-size: 30px;
 }
 
-.modal-dialog .my-image-view-form {
+.modal .my-image-view-form {
 z-index:1047;
 }
 
