@@ -359,15 +359,13 @@
 					comment : function(e){
 						var $this = this;
 						btn = $(e.target);						
-						btn.button('loading');								
+						btn.button('loading');							
+						var myComment = new common.ui.data.Comment({objectType:40, objectId:$this.poll.pollId, body:$this.get("commentBody")}); 	
 						common.ui.ajax(
 							'<@spring.url "/data/comments/create.json?output=json"/>',
 							{
-								data : {
-									objectType: 40,
-									objectId : $this.get("pollId"),
-									text : $this.get("commentBody")
-								},
+								data : kendo.stringify(myComment) ,
+								contentType : "application/json",
 								success : function(response){
 									listview.dataSource.read({pollId: $this.poll.pollId });
 ~									$('.poll a[data-object-id=' + $this.poll.pollId  + '] .comment-page-count').html( response.count  );
