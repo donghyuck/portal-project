@@ -1496,7 +1496,7 @@
 									</div>								
 									<div class="col-sm-6">	
 										<div class="separator-2"></div>
-										<p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
+										<p class="text-danger">사진을 변경하시려면</p><p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
 										<input name="update-photo-file" type="file" class="pull-right" />	
 									</div>
 								</div>	
