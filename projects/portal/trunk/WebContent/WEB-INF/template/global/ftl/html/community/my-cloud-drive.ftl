@@ -868,7 +868,9 @@
 						});																			
 						common.ui.grid(grid).setDataSource( common.ui.data.image.property.datasource($this.image.imageId) );			
 						$('body').css('overflow', 'hidden');									
+						
 						renderTo.find(".white-popup-block").fadeIn();	
+						
 					},
 					close: function(){
 						var $this = this;						
@@ -1479,6 +1481,94 @@
 			</div>
 		</div>
 		<!-- Image View Modal -->
+		<div id="my-image-post-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content my-poll-post-form">	
+					<div class="modal-header">
+						<div class="author">
+							<img data-bind="attr:{src:authorPhotoUrl}" style="margin-right:10px;">
+						</div>
+						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings">
+							<i class="icon-flat icon-flat settings"></i>						
+						</span>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>
+					<form id="my-poll-modal-settings" action="#" class="sky-form modal-settings collapse">
+							<header>
+								고급옵션
+								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-poll-modal-settings"></span>
+							</header>
+							<fieldset>                  
+								<section>
+								<div class="separator-2"></div>
+								<label class="label">시작일</label>
+								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
+								<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
+								</section>
+								<section>			
+								<label class="label">종료일</label>							
+								<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
+								<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
+								</section>										
+								<section>			
+								<label class="label">만료일</label>
+								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
+								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
+								</section>
+								<div class="hr-line-dashed"></div>
+								<section>
+									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.anonymousVoteAllowed"><i class="rounded-4x"></i>방문자 설문 허용</label>
+									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.userVoteAllowed"><i class="rounded-4x"></i>회원 설문 허용</label>
+									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.multipleSelectAllowed"><i class="rounded-4x"></i>보기중 하나이상 선택 가능</label>
+								</section>
+								
+								<section>
+									<label class="label">테그</label>
+									<label class="input">
+										<i class="icon-append fa fa-tag text-info"></i>
+										<input type="text" name="tags" data-bind="value:page.tagsString">
+									</label>
+									<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
+								</section>								
+							</fieldset>        					
+					</form>
+					<form action="#" class="sky-form">
+						<fieldset>
+							<section>
+								<p class="text-right text-danger small" data-bind="visible:editable">마지막 업데이트 일자 : <span data-bind="{ text: poll.formattedModifiedDate }"></span></p>
+								<label class="input" for="title">
+									<i class="icon-append fa fa-asterisk"></i>
+									<input type="text" name="title" placeholder="무엇에 대한 설문인가요 ?" data-bind="value:poll.name, events:{keypress: keypress}">
+								</label>
+							</section>	
+							<section>
+								<label class="textarea textarea-expandable">
+									<textarea rows="3" name="description" placeholder="설문 설명" data-bind="value:poll.description"></textarea>
+								</label>
+							</section>		
+							<section>
+								설문은 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.startDate"></span>부터 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.endDate"></span>까지 진행되며 결과는 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.expireDate"></span> 까지 볼수 있습니다. 
+								이러한 설정은 <button type="button" class="btn btn-success btn-flat btn-sm rounded-2x" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings" aria-expanded="false"><i class="fa fa-cog"></i> 고급옵션</button> 버튼을 클릭하여 변경할 수 있습니다.
+							</section>					
+						</fieldset>		
+						<fieldset data-bind="visible:editable">
+							<div class="my-poll-options" >		
+								<label class="label">옵션</label>					
+								<div id="my-poll-options-grid"></div>
+							</div>								
+						</fieldset>							
+					</form>					
+					<div class="modal-body">
+						
+					</div>
+					<div class="modal-footer">
+						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left rounded" type="button">닫기</button>
+						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-action="create" data-bind="{visible:followUp, click:create}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">다음</button>
+						<button class="btn btn-flat btn-primary rounded" type="button" data-bind="visible:editable, click:update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장 </button>
+					</div>					
+				</div>c
+			</div>			
+		</div>
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="mfp-container mfp-s-ready mfp-image-holder">
 				<span class="btn-flat-icon settings" data-bind="click: edit"></span>			
@@ -1501,60 +1591,7 @@
 					
 					<div class="mfp-preloader" style="display: none;"></div>
 					<button title="Previous (Left arrow key)" type="button" class="btn-flat-icon left mfp-arrow mfp-prevent-close" data-bind="visible: hasPrevious, click: previous"></button>
-					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>
-					
-			</div>					
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-					
-				<div class="ibox float-e-margins my-image-post-form">
-                    <div class="ibox-title">
-                        <h5>Basic IN+ Panel <small class="m-l-sm">This is custom panel</small></h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#">Config option 1</a>
-                                </li>
-                                <li><a href="#">Config option 2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <h2>
-                            This is standard IN+ Panel<br>
-                        </h2>
-                        <p>
-                            <strong>Lorem ipsum dolor</strong>
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
-                        <p>
-                            <small>
-                                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
-                            </small>
-                        </p>
-                    </div>
-                    <div class="ibox-footer">
-                        <span class="pull-right">
-                          The righ side of the footer
-                    </span>
-                        This is simple footer example
-                    </div>
-                </div>
-            </div>    					
-					
-					
-					</div>
-				</div>
-			
+					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>		
 			</div>
 		</div>
 		
