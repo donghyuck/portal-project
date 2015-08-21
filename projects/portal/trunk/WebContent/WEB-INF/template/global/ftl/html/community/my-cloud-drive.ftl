@@ -924,6 +924,9 @@
 			#image-gallery-pager { 
 				margin-top: 5px; 
 			}
+			*/
+			
+			
 			
 			.panel-upload {
 				margin-top : 5px!important;
@@ -1074,7 +1077,7 @@
 			.personalized-section {
 				margin-bottom:0!important;
 			}
-			*/
+			
 		</style>   	
 		</#compress>
 	</head>
