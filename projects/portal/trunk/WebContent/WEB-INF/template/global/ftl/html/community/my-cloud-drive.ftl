@@ -721,7 +721,7 @@
 				});	
 				*/			
 				common.ui.bind(renderTo, observable );				
-			
+				renderTo.data("model", observable);	
 			}			
 			/*
 			var dialogFx = common.ui.dialog( renderTo );		
@@ -730,6 +730,7 @@
 				dialogFx.open();
 			}
 			*/
+			renderTo.data("model").setImage(image);
 			renderTo.modal('show');	
 			
 		}			
