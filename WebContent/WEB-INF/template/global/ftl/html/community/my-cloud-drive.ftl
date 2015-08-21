@@ -1508,7 +1508,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 					
-				<div class="ibox float-e-margins">
+				<div class="ibox float-e-margins my-image-post-form">
                     <div class="ibox-title">
                         <h5>Basic IN+ Panel <small class="m-l-sm">This is custom panel</small></h5>
                         <div class="ibox-tools">
