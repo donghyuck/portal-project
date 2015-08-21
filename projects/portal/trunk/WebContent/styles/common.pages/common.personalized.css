@@ -3087,3 +3087,27 @@ img[data-toggle=lightbox]:hover{
 /** ------------------------------------------------- */
 /** Image, File Modal                                 */
 /** ------------------------------------------------- */
+.modal .mfp-container .btn-flat-icon.mfp-arrow {
+	background-color:transparent!important;
+}
+			
+.modal .mfp-container .btn-flat-icon.left.mfp-arrow {
+	left:0px;
+	top:55%;
+}
+
+.modal .mfp-container .btn-flat-icon.right.mfp-arrow {
+	top:55%;
+}			
+			
+.modal .mfp-container .btn-flat-icon.left2 {
+	top:auto;
+	left:0px;	
+	bottom:0px;		
+}
+			
+.modal .mfp-container .btn-flat-icon.right2 {
+	top:auto;
+	right:0px;	
+	bottom:0px;		
+}
