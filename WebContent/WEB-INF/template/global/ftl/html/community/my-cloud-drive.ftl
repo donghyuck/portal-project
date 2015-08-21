@@ -746,6 +746,7 @@
 					},
 					page:0,
 					pageSize:0,
+					imageIndex : 0,
 					hasPreviousPage: false,
 					hasNextPage: false,
 					hasPrevious: false,
@@ -790,8 +791,7 @@
 						var pageSize = common.ui.listview($('#photo-list-view')).dataSource.view().length;	
 						var pager = common.ui.pager( $("#photo-list-pager") );
 						var page = pager.page();
-						var totalPages = pager.totalPages();					
-						
+						var totalPages = pager.totalPages();
 						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
 							$this.set("hasPrevious", true); 
 						else 
@@ -856,7 +856,6 @@
 								shared.first().click();
 							else
 								shared.last().click();
-							
 							shared.on("change", function(e){
 								var newValue = ( this.value == 1 ) ;
 								if(newValue){
@@ -883,6 +882,11 @@
 							$this.set("hasSource", true);
 						else
 							$this.set("hasSource", false);
+						
+						if( $this.image.index ){
+							$this.set("imageIndex" , $this.image.index + 1 );
+						}	
+							
 						$this.setPagination();
 						var $loading = renderTo.find(".mfp-preloader");
 						var $largeImg = renderTo.find(".mfp-content");		
