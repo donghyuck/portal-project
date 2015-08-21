@@ -1484,8 +1484,7 @@
 				<span class="btn-flat-icon settings" data-bind="click: edit"></span>			
 				<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 				<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
-				<span class="btn-flat-icon close" data-dialog-close></span>			
-					
+				<span class="btn-flat-icon close" aria-hidden="true" data-dismiss="modal" ></span>		
 					<div class="mfp-content">	
 						<div class="mfp-figure">
 							<figure>
