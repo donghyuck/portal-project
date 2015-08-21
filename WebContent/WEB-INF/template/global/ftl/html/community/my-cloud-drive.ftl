@@ -1463,30 +1463,7 @@
 								고급옵션
 								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-poll-modal-settings"></span>
 							</header>
-							<fieldset>                  
-								<section>
-								<div class="separator-2"></div>
-								<label class="label">시작일</label>
-								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
-								<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
-								</section>
-								<section>			
-								<label class="label">종료일</label>							
-								<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
-								<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
-								</section>										
-								<section>			
-								<label class="label">만료일</label>
-								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
-								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
-								</section>
-								<div class="hr-line-dashed"></div>
-								<section>
-									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.anonymousVoteAllowed"><i class="rounded-4x"></i>방문자 설문 허용</label>
-									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.userVoteAllowed"><i class="rounded-4x"></i>회원 설문 허용</label>
-									<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked:poll.multipleSelectAllowed"><i class="rounded-4x"></i>보기중 하나이상 선택 가능</label>
-								</section>
-								
+							<fieldset>								
 								<section>
 									<label class="label">테그</label>
 									<label class="input">
@@ -1514,24 +1491,10 @@
 									
 									</div>								
 									<div class="col-sm-6">	
-											<div class="separator-2"></div>
-											<p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
-											<input type="file" name="photo" />
-											<div class="m-t-lg">
-												<div class="separator-2"></div>
-												<p class="text-primary">출처와 URL을 입력하세요.</p>
-												<label class="input"><i class="icon-append fa fa-globe"></i>
-												<input type="url" name="imageSourcUrl" placeholder="출처 URL" data-bind="value:imageSourceUrl"/>
-												</label>
-												<label class="input"><i class="icon-append fa fa-globe"></i>
-												<input type="url" name="imageDataUrl" placeholder="이미지 URL" data-bind="value:imageDataUrl"/>
-												</label>
-				
-												<button class="btn btn-flat btn-labeled btn-warning btn-sm rounded" type="button" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">
-													<span class="btn-label icon fa fa-upload"></span> 업로드 
-												</button>								
+										<div class="separator-2"></div>
+										<p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
+										<input name="update-photo-file" type="file" class="pull-right" />	
 									</div>
-
 								</div>	
 							</section>
 						</fieldset>
