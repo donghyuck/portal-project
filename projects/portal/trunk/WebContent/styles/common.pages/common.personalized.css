@@ -3111,3 +3111,19 @@ img[data-toggle=lightbox]:hover{
 	right:0px;	
 	bottom:0px;		
 }
+
+.modal .mfp-container .btn-flat-icon.settings {
+	top:0;
+	left:0px;
+	background-color: transparent;				
+}			
+						
+.modal .mfp-container .mfp-preloader {
+	top: 0;
+	margin-top: 0;
+}
+
+.modal .mfp-container .mfp-figure{
+	box-shadow: none;
+	background: none;
+}
