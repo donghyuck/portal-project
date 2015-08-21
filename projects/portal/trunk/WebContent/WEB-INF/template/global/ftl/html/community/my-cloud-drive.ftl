@@ -16,6 +16,7 @@
 			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',			
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',						
@@ -1497,44 +1498,55 @@
 							</figure>
 						</div>
 					</div>	
+					
 					<div class="mfp-preloader" style="display: none;"></div>
 					<button title="Previous (Left arrow key)" type="button" class="btn-flat-icon left mfp-arrow mfp-prevent-close" data-bind="visible: hasPrevious, click: previous"></button>
 					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>
 					
 			</div>					
 			
-			<div class="modal-dialog modal-lg modal-flat my-image-view-form" style="display:none;">
-
-				<div class="modal-content">	
-					<div class="modal-header">
-						<h2 data-bind="{text: image.name}"></h2>
-						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
-					</div>
-					<article>
-						<div class="p-sm bg-gray">
-							<div class="author">
-							    <img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:poll.authorPhotoUrl}" src="/download/profile/andang?width=150&amp;height=150" style="margin-right:10px;">
-								<ul class="list-inline">
-									<li><span>By</span> <span data-bind="{ text: poll.user.name, visible: poll.user.nameVisible }">악당</span><code data-bind="{ text: poll.user.username }">andang</code></li>
-									<li>|</li>
-									<li>총 참여자 :<span data-bind="{ text: poll.voteCount }">2</span> </li>
-									<li>|</li>																								
-									<li>기간 : <span data-bind="{ text: poll.startDate }" data-format="yyyy.MM.dd">2015.06.21</span> ~ <span data-bind="{ text: poll.endDate }" data-format="yyyy.MM.dd">2015.08.30</span></li>
-									<li>|</li>
-									<li><span>댓글:</span> <span data-bind="{ text: poll.commentCount }">2</span></li>
-								</ul>  
-							</div>
-							<div class="separator-2"></div>
-						    <p class="text-muted m-l-xl" data-bind="text:poll.description">일본 웹사이트 BIGLOBE MUSIC 에서는 소녀시대의 윤아가 2위인 제시카를 2배 이상의 표 차이로 앞지르며 1위를 차지...</p>
-	                    </div>
-					</article>
-					<div class="modal-body">
-						
-					</div>
-					<div class="modal-footer">
-									
-					</div>	
-				</div>
+				<div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Basic IN+ Panel <small class="m-l-sm">This is custom panel</small></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">Config option 1</a>
+                                </li>
+                                <li><a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <h2>
+                            This is standard IN+ Panel<br>
+                        </h2>
+                        <p>
+                            <strong>Lorem ipsum dolor</strong>
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+                        <p>
+                            <small>
+                                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+                            </small>
+                        </p>
+                    </div>
+                    <div class="ibox-footer">
+                        <span class="pull-right">
+                          The righ side of the footer
+                    </span>
+                        This is simple footer example
+                    </div>
+                </div>
+                
 				
 
 			</div>
