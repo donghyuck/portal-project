@@ -326,6 +326,13 @@ var PAGE_STATES = {
 	DELETED : "DELETED"	
 }
 
+function areThereSources(object){
+	if( common.ui.defined( object.properties.source ) )
+		return true;
+	else
+		return false;	
+} 
+
 function updatePageState(page, callback ){	
 	common.ui.ajax( '/data/pages/update_state.json?output=json', {
 		data : kendo.stringify(page) ,
