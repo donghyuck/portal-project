@@ -1466,7 +1466,15 @@
 								고급옵션
 								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-poll-modal-settings"></span>
 							</header>
-							<fieldset>								
+							<fieldset>		
+								<section>
+									<label class="label">이미지 공개 여부</label>
+									<div class="inline-group">
+										<label class="radio"><input type="radio" name="photo-public-shared" value="0"><i class="rounded-x"></i>공개</label>
+										<label class="radio"><input type="radio" name="photo-public-shared" value="1" checked><i class="rounded-x"></i>비공개</label>
+									</div>
+									<div class="note"><i class="fa fa-info"></i> 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</div>
+								</section>													
 								<section>
 									<label class="label">테그</label>
 									<label class="input">
@@ -1499,6 +1507,8 @@
 											<h4>출처</h4>
 											<a href="#" class="btn-link" data-bind="attr:{href:image.properties.source }, text:image.properties.source"></a>
 										</div>
+
+										
 										<div class="separator-2"></div>										
 										<h4>사진 변경</h4>
 										<p class="text-primary"><span class="text-danger">사진을 변경하시려면 </span> 사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
