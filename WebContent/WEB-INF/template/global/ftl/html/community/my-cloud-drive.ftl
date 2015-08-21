@@ -636,7 +636,7 @@
 					},
 					edit: function(){
 						var $this = this;
-						createPhotoPostModal();
+						createPhotoPostModal($this.image);
 					},
 					close: function(){
 						var $this = this;						
