@@ -1503,7 +1503,7 @@
 					
 			</div>					
 			
-			<div class="modal-dialog modal-lg modal-flat" style="display:none;">
+			<div class="modal-dialog modal-lg modal-flat" style="display:none;z-index:1047">
 
 				<div class="modal-content">	
 					<div class="modal-header">
