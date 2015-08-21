@@ -1496,7 +1496,7 @@
 							</fieldset>        					
 					</form>
 					<form action="#" class="sky-form">
-						<fieldset data-bind="{visible:hasSource}">
+						<fieldset data-bind="{visible:hasSource()}">
 							hello							
 						</fieldset>							
 					</form>					
