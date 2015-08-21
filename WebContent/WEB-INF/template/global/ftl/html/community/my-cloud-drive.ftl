@@ -1499,12 +1499,17 @@
 					</form>
 					<form action="#" class="sky-form">
 					
-						<hr class="m-sm"/>										
-									<ul class="list-unstyled margin-bottom-30">																		
+						<fieldset>
+							<section>
+								<ul class="list-unstyled small text-info">																		
 										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
 										<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
 										<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: image.formattedModifiedDate"></span></li>
 									</ul>
+							</section>	
+						</fieldset>
+															
+									
 									
 						<fieldset data-bind="{visible:hasSource()}">
 							hello							
