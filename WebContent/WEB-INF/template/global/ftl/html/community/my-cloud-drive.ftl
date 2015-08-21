@@ -599,18 +599,15 @@
 						var pageSize = common.ui.listview($('#photo-list-view')).dataSource.view().length;	
 						var pager = common.ui.pager( $("#photo-list-pager") );
 						var page = pager.page();
-						var totalPages = pager.totalPages();					
-						
+						var totalPages = pager.totalPages();		
 						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
 							$this.set("hasPrevious", true); 
 						else 
-							$this.set("hasPrevious", false); 
-							
+							$this.set("hasPrevious", false); 							
 						if( ($this.image.index + 1 )< pageSize && (pageSize - this.image.index ) > 0 )
 							$this.set("hasNext", true); 
 						else 
-							$this.set("hasNext", false); 		
-						
+							$this.set("hasNext", false); 	
 						$this.set("hasPreviousPage", page > 1 );				
 						$this.set("hasNextPage", totalPages > page  );		
 						$this.set("page", page );			
@@ -685,15 +682,14 @@
 						$('body').css('overflow', 'auto');				
 					},
 					setImage: function(image){
-						var $this = this;						
+						console.log(kendo.stringify(image));
+						var $this = this;			
 						$this.resize();
-						image.copy($this.image);	
-						
+						image.copy($this.image);
 						if( common.ui.defined( image.properties.source ) )
 							$this.set("hasSource", true);
 						else
 							$this.set("hasSource", false);	
-						
 						$this.setPagination();
 						var $loading = renderTo.find(".mfp-preloader");
 						var $largeImg = renderTo.find(".mfp-content");		
