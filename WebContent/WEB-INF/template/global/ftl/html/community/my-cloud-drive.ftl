@@ -1478,6 +1478,32 @@
 		</div>
 		<!-- Image View Modal -->
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="mfp-container mfp-s-ready mfp-image-holder">
+			
+				<span class="btn-flat-icon settings" data-bind="click: edit"></span>			
+				<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
+				<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
+				<span class="btn-flat-icon close" data-dialog-close></span>			
+					
+					<div class="mfp-content">	
+						<div class="mfp-figure">
+							<figure>
+								<img class="mfp-img" style="display: block;" data-bind="attr:{src:image.imageUrl}, click: next">
+								<figcaption>
+									<div class="mfp-bottom-bar">
+										<div class="mfp-title" data-bind="text: image.name"></div>
+										<div class="mfp-counter"><span data-bind="text:image.index +1"></span>/<span data-bind="text:pageSize"></span></div>
+									</div>
+								</figcaption>
+							</figure>
+						</div>
+					</div>	
+					<div class="mfp-preloader" style="display: none;"></div>
+					<button title="Previous (Left arrow key)" type="button" class="btn-flat-icon left mfp-arrow mfp-prevent-close" data-bind="visible: hasPrevious, click: previous"></button>
+					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>
+					
+			</div>					
+			
 			<div class="modal-dialog modal-lg modal-flat">
 				<div class="modal-content">	
 					<div class="modal-header">		
