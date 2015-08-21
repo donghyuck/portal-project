@@ -542,7 +542,7 @@
 		function showPhotoPanel(image){		
 			//var renderTo = $("#image-viewer");		
 			var renderTo = $("#my-image-view-modal");						
-			if( ! common.ui.exists(renderTo) ){		
+			if( !renderTo.data('bs.modal') ){			
 				var observable =  common.ui.observable({ 
 					image : new common.ui.data.Image(),
 					resize : function(){
