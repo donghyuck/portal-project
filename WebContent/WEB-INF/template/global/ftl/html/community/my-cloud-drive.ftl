@@ -552,11 +552,11 @@
 						image.copy($this.image);
 					}
 				});
-				common.ui.bind(renderTo, observable );				
-				renderTo.data("model", observable);	
+				common.ui.bind(renderTo, image );				
+				//renderTo.data("model", observable);	
 			}
 			if( image ){
-				renderTo.data("model").setImage(image);
+				//renderTo.data("model").setImage(image);
 			}
 			renderTo.modal('show');	
 		}
