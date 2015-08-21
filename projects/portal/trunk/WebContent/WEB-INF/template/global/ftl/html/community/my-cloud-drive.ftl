@@ -889,7 +889,17 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-			
+		
+		
+		/** image post modal */
+		#my-image-post-modal
+		{
+			z-index:2000;
+		}
+		
+		
+		
+			/*
 			.interactive-slider-v2 {
 				max-height : 220px;
 				color : #fff;
@@ -1065,7 +1075,7 @@
 			.personalized-section {
 				margin-bottom:0!important;
 			}
-			
+			*/
 		</style>   	
 		</#compress>
 	</head>
