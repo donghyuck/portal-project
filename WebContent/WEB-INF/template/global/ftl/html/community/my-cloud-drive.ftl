@@ -542,13 +542,10 @@
 		}	
 		
 		
-		function createPhotoPostModal(){
-			var renderTo = $("#my-image-post-modal");	
-			
-			if( !renderTo.data('bs.modal') ){	
-			
-			
-			
+		function createPhotoPostModal(image){
+			var renderTo = $("#my-image-post-modal");			
+			if( !renderTo.data('bs.modal') || image ){	
+				common.ui.bind(renderTo, image );	
 			}
 			renderTo.modal('show');	
 		
