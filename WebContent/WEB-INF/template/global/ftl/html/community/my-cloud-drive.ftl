@@ -600,9 +600,9 @@
 							shared.on("change", function(e){
 								var newValue = ( this.value == 1 ) ;
 								if(newValue){
-									common.ui.data.image.unshare($this.image.imageId);	
+									common.ui.data.image.unshare(targetImage.imageId);	
 								}else{
-									common.ui.data.image.share($this.image.imageId);
+									common.ui.data.image.share(targetImage.imageId);
 								}
 							});		
 						});																			
