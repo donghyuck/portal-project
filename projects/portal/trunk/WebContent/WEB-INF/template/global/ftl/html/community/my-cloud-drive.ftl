@@ -575,9 +575,6 @@
 								change: function(e) {
 									this.refresh();
 								}
-							});	
-							renderTo.find(".sky-form").slimScroll({
-								height: "500px"
 							});							
 						}
 						
