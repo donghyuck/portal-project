@@ -781,7 +781,7 @@
 						<ul class="list-inline page-tools">			
 							<li><i class="fa fa-users"> </i> <span class="poll-vote-count text-danger">#: voteCount #</span></li>
 							<li>|</li>
-							<li><a href="\\#" data-action="comment" data-object-id="#: pollId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">1</span></a></li>	
+							<li><a href="\\#" data-action="comment" data-object-id="#: pollId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">#: commentCount #</span></a></li>	
 						</ul>
 					</div>
 					<span class="pull-right">
