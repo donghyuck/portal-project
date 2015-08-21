@@ -3119,7 +3119,7 @@ img[data-toggle=lightbox]:hover{
 }	
 
 .modal .mfp-container .btn-flat-icon.pencil {
-    background-position: -390px -121px;
+	background-position: -390px -121px;
 }
 
 .modal .mfp-container .btn-flat-icon.pencil {
@@ -3127,6 +3127,7 @@ img[data-toggle=lightbox]:hover{
 	right:0px;
 	background-color: transparent;					
 }
+						
 						
 .modal .mfp-container .mfp-preloader {
 	top: 0;
