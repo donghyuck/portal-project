@@ -542,7 +542,7 @@
 		}	
 		
 		
-		function createPhotoPostModal(){
+		function createPhotoPostModal(image){
 			var renderTo = $("#my-image-post-modal");					
 			if( !renderTo.data('bs.modal') ){	
 				var targetImage = $("#my-image-view-modal").data("model").image ;		
