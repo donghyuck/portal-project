@@ -1504,10 +1504,39 @@
 			</div>					
 			
 			<div class="modal-dialog modal-lg modal-flat" style="display:none;">
+
 				<div class="modal-content">	
-					<div class="modal-header">		
+					<div class="modal-header">
+						<h2 data-bind="{text: poll.name}">소녀시대 중 가장 마음에 드는 맴버는? </h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
+					<article>
+						<div class="p-sm bg-gray">
+							<div class="author">
+							    <img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:poll.authorPhotoUrl}" src="/download/profile/andang?width=150&amp;height=150" style="margin-right:10px;">
+								<ul class="list-inline">
+									<li><span>By</span> <span data-bind="{ text: poll.user.name, visible: poll.user.nameVisible }">악당</span><code data-bind="{ text: poll.user.username }">andang</code></li>
+									<li>|</li>
+									<li>총 참여자 :<span data-bind="{ text: poll.voteCount }">2</span> </li>
+									<li>|</li>																								
+									<li>기간 : <span data-bind="{ text: poll.startDate }" data-format="yyyy.MM.dd">2015.06.21</span> ~ <span data-bind="{ text: poll.endDate }" data-format="yyyy.MM.dd">2015.08.30</span></li>
+									<li>|</li>
+									<li><span>댓글:</span> <span data-bind="{ text: poll.commentCount }">2</span></li>
+								</ul>  
+							</div>
+							<div class="separator-2"></div>
+						    <p class="text-muted m-l-xl" data-bind="text:poll.description">일본 웹사이트 BIGLOBE MUSIC 에서는 소녀시대의 윤아가 2위인 제시카를 2배 이상의 표 차이로 앞지르며 1위를 차지...</p>
+	                    </div>
+					</article>
+					<div class="modal-body">
+						
+					</div>
+					<div class="modal-footer">
+									
+					</div>	
 				</div>
+				
+
 			</div>
 		</div>
 		
