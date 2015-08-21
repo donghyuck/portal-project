@@ -1507,7 +1507,7 @@
 
 				<div class="modal-content">	
 					<div class="modal-header">
-						<h2 data-bind="{text: poll.name}">소녀시대 중 가장 마음에 드는 맴버는? </h2>
+						<h2 data-bind="{text: image.name}"></h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<article>
