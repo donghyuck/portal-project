@@ -545,18 +545,7 @@
 		function createPhotoPostModal(image){
 			var renderTo = $("#my-image-post-modal");			
 			if( !renderTo.data('bs.modal') ){	
-				var observable =  common.ui.observable({ 
-					image : new common.ui.data.Image(),
-					setImage : function(image){
-						var $this = this;
-						image.copy($this.image);
-					}
-				});
-				common.ui.bind(renderTo, image );				
-				//renderTo.data("model", observable);	
-			}
-			if( image ){
-				//renderTo.data("model").setImage(image);
+				common.ui.bind(renderTo, image );
 			}
 			renderTo.modal('show');	
 		}
