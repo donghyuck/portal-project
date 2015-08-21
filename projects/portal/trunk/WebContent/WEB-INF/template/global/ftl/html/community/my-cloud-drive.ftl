@@ -1503,8 +1503,6 @@
 											<h4>출처</h4>
 											<a href="#" class="btn-link" data-bind="attr:{href:image.properties.source }, text:image.properties.source"></a>
 										</div>
-
-										
 										<div class="separator-2"></div>										
 										<h4>사진 변경</h4>
 										<p class="text-primary"><span class="text-danger">사진을 변경하시려면 </span> 사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
@@ -1513,12 +1511,13 @@
 								</div>	
 							</section>
 						</fieldset>
-															
-									
-									
-						<fieldset data-bind="{visible:hasSource()}">
-							hello							
-						</fieldset>							
+						<fieldset>
+							<section>
+								<h4>추가 정보</h4>
+								<div class="photo-props-grid"></div>											
+								<div class="note"><i class="fa fa-info"></i> 수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</div>
+							</section>
+						</fieldset>						
 					</form>					
 					<div class="modal-body">
 						
