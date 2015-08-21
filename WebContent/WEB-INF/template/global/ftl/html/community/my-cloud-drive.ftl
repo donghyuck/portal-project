@@ -1449,7 +1449,7 @@
 				<div class="modal-content my-poll-post-form">	
 					<div class="modal-header">
 						<div class="author">
-							<img data-bind="attr:{src:authorPhotoUrl}" style="margin-right:10px;">
+							<img data-bind="attr:{src:image.imageThumbnailUrl} style="margin-right:10px;">
 						</div>
 						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings">
 							<i class="icon-flat icon-flat settings"></i>						
