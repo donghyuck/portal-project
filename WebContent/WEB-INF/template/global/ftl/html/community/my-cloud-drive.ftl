@@ -612,7 +612,7 @@
 			renderTo.modal('show');	
 		}
 		
-		function createPhotoViewModal(){		
+		function createPhotoViewModal(image){		
 			//var renderTo = $("#image-viewer");	
 				
 			var renderTo = $("#my-image-view-modal");	
