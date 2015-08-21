@@ -367,7 +367,7 @@
 								data : kendo.stringify(myComment) ,
 								contentType : "application/json",
 								success : function(response){
-									listview.dataSource.read({pollId: $this.poll.pollId });
+									listview.dataSource.read({objectType: 40, objectId: $this.poll.pollId });
 ~									$('.poll a[data-object-id=' + $this.poll.pollId  + '] .comment-page-count').html( response.count  );
 								},
 								complete : function(e){
