@@ -543,9 +543,10 @@
 		
 		
 		function createPhotoPostModal(image){
-			var renderTo = $("#my-image-post-modal");					
+			var renderTo = $("#my-image-post-modal");				
+			var targetImage = $("#my-image-view-modal").data("model").image ;	
 			if( !renderTo.data('bs.modal') ){	
-				var targetImage = $("#my-image-view-modal").data("model").image ;		
+						
 				common.ui.bind(renderTo, { 
 					image:image, hasSource:function(){
 						return areThereSources(targetImage);
