@@ -802,7 +802,7 @@
 				bottom:0px;		
 			}
 
-			.dialog .btn-flat-icon.pencil {
+			.dialog .btn-flat-icon.pencil, .dialog .btn-flat-icon.settings {
 				top:60px;
 				right:0px;
 				background-color: transparent;				
