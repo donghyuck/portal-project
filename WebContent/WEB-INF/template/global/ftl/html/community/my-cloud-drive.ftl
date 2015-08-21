@@ -588,7 +588,7 @@
 							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 							var item = data[index];				
 							item.set("index", index );
-							showPhotoPanel(item);		
+							createPhotoViewModal(item);		
 						}
 					},
 					next : function(){
@@ -598,7 +598,7 @@
 							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 							var item = data[index];		
 							item.set("index", index );
-							showPhotoPanel(item);					
+							createPhotoViewModal(item);					
 						}
 					},
 					previousPage : function(){
