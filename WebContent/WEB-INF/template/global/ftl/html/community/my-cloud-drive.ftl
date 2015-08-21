@@ -920,11 +920,12 @@
 
 					<a href="<@spring.url "/display/0/my-page.html"/>"><span class="btn-flat pencle t-0-r-2"></span></a>
 					<a href="<@spring.url "/display/0/my-page.html"/>"><span class="btn-flat pencle t-0-r-1"></span></a>			
-					<span class="btn-flat settings" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section"></span>
+					<span class="btn-flat settings" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="my-cloud-driver-controls-section"></span>
 
 					</div><!--/end container-->
 			</div>
 			</#if>			
+			
 			<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">		
 			<div class="container content">		
 				<div class="tab-v1 m-t-md" >							
@@ -1181,7 +1182,7 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
-					<span class="btn-flat-icon pencil" data-bind="click: edit"></span>			
+					<span class="btn-flat-icon settings" data-bind="click: edit"></span>			
 					<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 					<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
 					<span class="btn-flat-icon close" data-dialog-close></span>					
@@ -1272,10 +1273,10 @@
 		</div>
 		
 		<!-- START RIGHT SLIDE MENU -->
-		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
+		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="my-cloud-driver-controls-section">
 			<header>
 				<button type="button" class="btn-close" data-dismiss='spmenu' data-target-object="button[data-target-object-id='personalized-controls-section']">Close</button>
-				<h5 class="side-section-title white">My 클라우드</h5>	
+				<h5 class="side-section-title white">My 클라우드 드라이브</h5>	
 			</header>	
 				<!-- details -->
 				<div style="
@@ -1288,9 +1289,6 @@
 				    width: 100%;
 				">									
 				</div>
-				
-				
-
 			</div>	
 		</section>	
 		<div class="cbp-spmenu-overlay"></div>			
