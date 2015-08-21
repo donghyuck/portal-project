@@ -362,7 +362,7 @@
 						btn.button('loading');							
 						var myComment = new common.ui.data.Comment({objectType:40, objectId:$this.poll.pollId, body:$this.get("commentBody")}); 	
 						common.ui.ajax(
-							'<@spring.url "/data/comments/create.json?output=json"/>',
+							'<@spring.url "/data/comments/update.json?output=json"/>',
 							{
 								data : kendo.stringify(myComment) ,
 								contentType : "application/json",
