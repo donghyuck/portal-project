@@ -615,67 +615,8 @@
 						$this.set("pageSize", pageSize );																	
 					},
 					edit: function(){
-						var $this = this;		
-						var grid = renderTo.find(".photo-props-grid");	
-						var upload = renderTo.find("input[name='update-photo-file']");
-						var shared = renderTo.find("input[name='photo-public-shared']");						
-						if(!common.ui.exists(grid)){
-							common.ui.grid(grid, {
-								columns: [
-									{ title: "속성", field: "name" },
-									{ title: "값",   field: "value" },
-									{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
-								],
-								pageable: false,
-								resizable: true,
-								editable : true,
-								scrollable: true,
-								autoBind: true,
-								toolbar: [
-									{ name: "create", text: "추가" },
-									{ name: "save", text: "저장" },
-									{ name: "cancel", text: "취소" }
-								],				     
-								change: function(e) {
-									this.refresh();
-								}
-							});	
-							renderTo.find(".sky-form").slimScroll({
-								height: "500px"
-							});							
-						}
-						
-						if(!common.ui.exists(upload)){
-							common.ui.upload( upload, {
-								async : {
-									saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
-								},
-								localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
-								upload: function (e) {				
-									e.data = { imageId: $this.image.imageId };
-								},
-								success: function (e) {									
-								}
-							});												
-						}												
-						common.ui.data.image.streams($this.image.imageId, function(data){
-							if( data.length > 0 )
-								shared.first().click();
-							else
-								shared.last().click();
-							
-							shared.on("change", function(e){
-								var newValue = ( this.value == 1 ) ;
-								if(newValue){
-									common.ui.data.image.unshare($this.image.imageId);	
-								}else{
-									common.ui.data.image.share($this.image.imageId);
-								}
-							});		
-						});																			
-						common.ui.grid(grid).setDataSource( common.ui.data.image.property.datasource($this.image.imageId) );			
-						$('body').css('overflow', 'hidden');									
-						renderTo.find(".white-popup-block").fadeIn();	
+						var $this = this;
+						$("#my-image-post-modal").modal('show');	
 					},
 					close: function(){
 						var $this = this;						
