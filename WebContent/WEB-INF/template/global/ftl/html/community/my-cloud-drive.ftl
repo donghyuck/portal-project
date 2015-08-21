@@ -1494,29 +1494,8 @@
 							</fieldset>        					
 					</form>
 					<form action="#" class="sky-form">
-						<fieldset>
-							<section>
-								<p class="text-right text-danger small" data-bind="visible:editable">마지막 업데이트 일자 : <span data-bind="{ text: poll.formattedModifiedDate }"></span></p>
-								<label class="input" for="title">
-									<i class="icon-append fa fa-asterisk"></i>
-									<input type="text" name="title" placeholder="무엇에 대한 설문인가요 ?" data-bind="value:poll.name, events:{keypress: keypress}">
-								</label>
-							</section>	
-							<section>
-								<label class="textarea textarea-expandable">
-									<textarea rows="3" name="description" placeholder="설문 설명" data-bind="value:poll.description"></textarea>
-								</label>
-							</section>		
-							<section>
-								설문은 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.startDate"></span>부터 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.endDate"></span>까지 진행되며 결과는 <span class="text-danger" data-format="yyyy.MM.dd" data-bind="text: poll.expireDate"></span> 까지 볼수 있습니다. 
-								이러한 설정은 <button type="button" class="btn btn-success btn-flat btn-sm rounded-2x" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings" aria-expanded="false"><i class="fa fa-cog"></i> 고급옵션</button> 버튼을 클릭하여 변경할 수 있습니다.
-							</section>					
-						</fieldset>		
-						<fieldset data-bind="visible:editable">
-							<div class="my-poll-options" >		
-								<label class="label">옵션</label>					
-								<div id="my-poll-options-grid"></div>
-							</div>								
+						<fieldset data-bind="{visible:aerThereSources(this)}">
+							hello							
 						</fieldset>							
 					</form>					
 					<div class="modal-body">
