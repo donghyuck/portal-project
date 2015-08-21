@@ -539,10 +539,12 @@
 					kendo.bind($("#my-photos"), model);						
 			}			
 		}	
+		
 		function showPhotoPanel(image){		
 			//var renderTo = $("#image-viewer");		
 			var renderTo = $("#my-image-view-modal");						
-			if( !renderTo.data('bs.modal') ){			
+			if( !renderTo.data('bs.modal') ){		
+				//var photoListView = 	
 				var observable =  common.ui.observable({ 
 					image : new common.ui.data.Image(),
 					resize : function(){
@@ -881,12 +883,10 @@
 						var $this = this;						
 						$this.resize();
 						image.copy($this.image);	
-						
 						if( common.ui.defined( image.properties.source ) )
 							$this.set("hasSource", true);
 						else
-							$this.set("hasSource", false);	
-						
+							$this.set("hasSource", false);
 						$this.setPagination();
 						var $loading = renderTo.find(".mfp-preloader");
 						var $largeImg = renderTo.find(".mfp-content");		
@@ -1480,7 +1480,6 @@
 		<!-- Image View Modal -->
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="mfp-container mfp-s-ready mfp-image-holder">
-			
 				<span class="btn-flat-icon settings" data-bind="click: edit"></span>			
 				<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 				<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
