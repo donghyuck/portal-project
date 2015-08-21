@@ -545,8 +545,10 @@
 		function createPhotoPostModal(image){
 			var renderTo = $("#my-image-post-modal");			
 			if( !renderTo.data('bs.modal') ){	
-				common.ui.bind(renderTo, { image:image, hasSource:function(){
-					return areThereSources(this.image);
+				common.ui.bind(renderTo, { 
+					image:image, hasSource:function(){
+						return areThereSources(this.image);
+					}
 				});
 			}
 			renderTo.modal('show');	
