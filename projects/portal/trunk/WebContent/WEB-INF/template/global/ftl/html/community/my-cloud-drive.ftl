@@ -1480,8 +1480,7 @@
 					<form action="#" class="sky-form">
 						<fieldset>
 							<section>
-								<ul class="list-unstyled small text-info">	
-									<li class="p-xxs"><span data-bind="text: image.contentType" class="label rounded label-dark-blue">image/jpeg</span></li>			
+								<ul class="list-unstyled small text-info">			
 									<li class="p-xxs"><strong>파일:</strong> <span data-bind="text:image.name"></span> bytes</li>															
 									<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
 									<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
@@ -1496,7 +1495,7 @@
 									</div>								
 									<div class="col-sm-6">	
 										<div class="separator-2"></div>
-										<p class="text-danger">사진을 변경하시려면</p><p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
+										<p class="text-primary"><span class="text-danger">사진을 변경하시려면</span>사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
 										<input name="update-photo-file" type="file" class="pull-right" />	
 									</div>
 								</div>	
