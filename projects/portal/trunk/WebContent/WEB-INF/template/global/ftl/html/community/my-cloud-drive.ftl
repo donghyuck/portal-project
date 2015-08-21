@@ -541,6 +541,13 @@
 			}			
 		}	
 		
+		
+		function createPhotoPostModal(){
+			$("#my-image-post-modal").modal('show');	
+		
+		
+		}
+		
 		function showPhotoPanel(image){		
 			//var renderTo = $("#image-viewer");		
 			var renderTo = $("#my-image-view-modal");						
@@ -616,7 +623,7 @@
 					},
 					edit: function(){
 						var $this = this;
-						$("#my-image-post-modal").modal('show');	
+						createPhotoPostModal();
 					},
 					close: function(){
 						var $this = this;						
