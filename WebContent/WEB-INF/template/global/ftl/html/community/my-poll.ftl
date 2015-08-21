@@ -612,11 +612,11 @@
 							<h2 data-bind="text:poll.name" class="headline"></h2>
 							<p data-bind="text:poll.description"></p>
 						</div>
-						<div class="ibox-content no-border bg-gray">							
-							<div id="my-poll-commentary-listview" class="comments"></div>
-						</div>
 					</div>				
 				</div>
+				<div class="ibox-content no-border bg-gray">							
+					<div id="my-poll-commentary-listview" class="comments"></div>
+				</div>				
 				<div class="commentary-footer">
 							<div class="separator-2"></div>
 							<div class="sky-form no-border">
