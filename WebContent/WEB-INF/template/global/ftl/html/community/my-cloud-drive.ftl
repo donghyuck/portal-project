@@ -1511,7 +1511,9 @@
 							<section>
 								<div class="row">
 									<div class="col-sm-6">	
-										<div class="col-sm-6">	
+									
+									</div>								
+									<div class="col-sm-6">	
 											<div class="separator-2"></div>
 											<p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
 											<input type="file" name="photo" />
@@ -1527,15 +1529,9 @@
 				
 												<button class="btn btn-flat btn-labeled btn-warning btn-sm rounded" type="button" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">
 													<span class="btn-label icon fa fa-upload"></span> 업로드 
-												</button>
-									<!--
-												<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
-									-->
-											</div>										
+												</button>								
 									</div>
-									<div class="col-sm-6">	
-									
-									</div>
+
 								</div>	
 							</section>
 						</fieldset>
