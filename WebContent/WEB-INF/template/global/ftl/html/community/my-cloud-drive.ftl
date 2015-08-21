@@ -1487,19 +1487,15 @@
 					</form>
 					<form action="#" class="sky-form">
 						<fieldset>
-							<section>
-								<ul class="list-unstyled small text-info">			
-									<li class="p-xxs"><strong>파일:</strong> <span data-bind="text:image.name"></span> bytes</li>															
-									<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
-									<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
-									<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: image.formattedModifiedDate"></span></li>
-								</ul>
-							</section>	
-							
-							<section>
+								<section>
 								<div class="row">
 									<div class="col-sm-6">	
-									
+										<ul class="list-unstyled small text-info">			
+											<li class="p-xxs"><strong>파일:</strong> <span data-bind="text:image.name"></span> bytes</li>															
+											<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
+											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
+											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: image.formattedModifiedDate"></span></li>
+										</ul>									
 									</div>								
 									<div class="col-sm-6">	
 										<div data-bind="{visible:hasSource()}" >
