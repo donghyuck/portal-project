@@ -1465,7 +1465,7 @@
 								<figcaption>
 									<div class="mfp-bottom-bar">
 										<div class="mfp-title" data-bind="text: image.name"></div>
-										<div class="mfp-counter"><span data-bind="text:image.index +1"></span>/<span data-bind="text:pageSize"></span></div>
+										<div class="mfp-counter"><span data-bind="text:imageIndex"></span>/<span data-bind="text:pageSize"></span></div>
 									</div>
 								</figcaption>
 							</figure>
