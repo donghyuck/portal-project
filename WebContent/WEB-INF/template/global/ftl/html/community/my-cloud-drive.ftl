@@ -1445,7 +1445,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- Image View Modal -->
+		<!-- Image View / Post Modal -->
 		<div id="my-image-post-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-poll-post-form">	
@@ -1498,16 +1498,46 @@
 							</fieldset>        					
 					</form>
 					<form action="#" class="sky-form">
-					
 						<fieldset>
 							<section>
 								<ul class="list-unstyled small text-info">			
-										<li class="p-xxs"><strong>파:</strong> <span data-bind="text:image.name"></span> bytes</li>															
+										<li class="p-xxs"><strong>파일:</strong> <span data-bind="text:image.name"></span> bytes</li>															
 										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
 										<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
 										<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: image.formattedModifiedDate"></span></li>
 									</ul>
 							</section>	
+							
+							<section>
+								<div class="row">
+									<div class="col-sm-6">	
+										<div class="col-sm-6">	
+											<div class="separator-2"></div>
+											<p class="text-primary">사진선택 버튼을 클릭하여 사진을 직접 선택하거나, 사진을 끌어 놓기(Drag&Dorp)를 하세요.</p>								
+											<input type="file" name="photo" />
+											<div class="m-t-lg">
+												<div class="separator-2"></div>
+												<p class="text-primary">출처와 URL을 입력하세요.</p>
+												<label class="input"><i class="icon-append fa fa-globe"></i>
+												<input type="url" name="imageSourcUrl" placeholder="출처 URL" data-bind="value:imageSourceUrl"/>
+												</label>
+												<label class="input"><i class="icon-append fa fa-globe"></i>
+												<input type="url" name="imageDataUrl" placeholder="이미지 URL" data-bind="value:imageDataUrl"/>
+												</label>
+				
+												<button class="btn btn-flat btn-labeled btn-warning btn-sm rounded" type="button" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">
+													<span class="btn-label icon fa fa-upload"></span> 업로드 
+												</button>
+									<!--
+												<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
+									-->
+											</div>										
+									</div>
+									<div class="col-sm-6">	
+									
+									</div>
+								</div>	
+							</section>
 						</fieldset>
 															
 									
