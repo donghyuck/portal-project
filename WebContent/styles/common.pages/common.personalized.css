@@ -3116,7 +3116,13 @@ img[data-toggle=lightbox]:hover{
 	top:0;
 	left:0px;
 	background-color: transparent;				
-}			
+}	
+
+.modal .mfp-container .btn-flat-icon.pencil {
+	top:60px;
+	right:0px;
+	background-color: transparent;					
+}
 						
 .modal .mfp-container .mfp-preloader {
 	top: 0;
