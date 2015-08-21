@@ -3151,7 +3151,7 @@ img[data-toggle=lightbox]:hover{
 }
 
 .modal .my-image-post-form {
-z-index:1047;
+	z-index:1047;
 }
 
 .my-image-view-form .modal-header h2 {
