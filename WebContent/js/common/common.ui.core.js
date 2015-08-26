@@ -989,7 +989,7 @@
             }            
             $(this).addClass( 'fv-modal-stack' );
             $('body').data( 'fv_open_modals', $('body').data( 'fv_open_modals' ) + 1 );
-            $(this).css('z-index', 1040 + (10 * $('body').data( 'fv_open_modals' )));
+            $(this).css('z-index', 2040 + (10 * $('body').data( 'fv_open_modals' )));
             $( '.modal-backdrop' ).not( '.fv-modal-stack' ).css( 'z-index', 1039 + (10 * $('body').data( 'fv_open_modals' )));
             $( '.modal-backdrop' ).not( 'fv-modal-stack' ).addClass( 'fv-modal-stack' ); 
 		});
