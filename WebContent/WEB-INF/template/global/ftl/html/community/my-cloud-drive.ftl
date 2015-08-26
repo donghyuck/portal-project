@@ -383,6 +383,25 @@
 			});
 			panel.show();		
 		}
+		
+		<!-- ============================== -->
+		<!-- Commentary						-->
+		<!-- ============================== -->		
+		function createFileCommentary(source){
+			var renderTo = $("#my-file-commentary");	
+			if( !common.ui.exists(renderTo) ){
+			
+			
+			
+			}	
+			if(renderTo.is(":hidden")){
+				renderTo.data("model").setSource( source ) ;
+				if(!$("body").hasClass('modal-open')){
+					$("body").css("overflow", "hidden");
+				}			
+				renderTo.show();
+			}				
+		}		
 		<!-- ============================== -->
 		<!-- create my photo grid			-->
 		<!-- ============================== -->				
@@ -685,6 +704,7 @@
 						$this.set("pageSize", pageSize );																	
 					},
 					comment: function(){
+						createFileCommentary(this.image);
 						return false;
 					},
 					edit: function(){
@@ -731,203 +751,7 @@
 			renderTo.modal('show');	
 			
 		}			
-		function showPhotoPanel2(image){		
-			//var renderTo = $("#image-viewer");		
-			var renderTo = $("#my-image-view-modal");						
-			if( ! common.ui.exists(renderTo) ){		
-				var observable =  common.ui.observable({ 
-					image : new common.ui.data.Image(),
-					resize : function(){
-						var $img = renderTo.find("img.mfp-img");
-						var $window = $(window);
-						$img.css("max-height", $window.height() - 10 );	
-						$img.css("max-width", $window.height() - 10 );					
-					},
-					page:0,
-					pageSize:0,
-					imageIndex : 0,
-					hasPreviousPage: false,
-					hasNextPage: false,
-					hasPrevious: false,
-					hasNext: false,
-					hasSource : false,
-					previous : function(){
-						var $this = this;
-						if( $this.hasPrevious ){
-							var index = $this.image.index - 1;
-							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
-							var item = data[index];				
-							item.set("index", index );
-							showPhotoPanel(item);		
-						}
-					},
-					next : function(){
-						var $this = this;						
-						if( $this.hasNext ){
-							var index = $this.image.index + 1;
-							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
-							var item = data[index];		
-							item.set("index", index );
-							showPhotoPanel(item);					
-						}
-					},
-					previousPage : function(){
-						var $this = this;
-						if( $this.hasPreviousPage ){							
-							var pager = common.ui.pager( $("#photo-list-pager") );
-							pager.page($this.page -1);
-						}
-					},
-					nextPage : function(){
-						var $this = this;						
-						if( $this.hasNextPage ){
-							var pager = common.ui.pager( $("#photo-list-pager") );
-							pager.page($this.page +1);			
-						}
-					},					
-					setPagination: function(){
-						var $this = this;
-						var pageSize = common.ui.listview($('#photo-list-view')).dataSource.view().length;	
-						var pager = common.ui.pager( $("#photo-list-pager") );
-						var page = pager.page();
-						var totalPages = pager.totalPages();
-						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
-							$this.set("hasPrevious", true); 
-						else 
-							$this.set("hasPrevious", false); 
-							
-						if( ($this.image.index + 1 )< pageSize && (pageSize - this.image.index ) > 0 )
-							$this.set("hasNext", true); 
-						else 
-							$this.set("hasNext", false); 		
-						
-						$this.set("hasPreviousPage", page > 1 );				
-						$this.set("hasNextPage", totalPages > page  );		
-						$this.set("page", page );			
-						$this.set("pageSize", pageSize );																	
-					},
-					edit: function(){
-						var $this = this;		
-						var grid = renderTo.find(".photo-props-grid");	
-						var upload = renderTo.find("input[name='update-photo-file']");
-						var shared = renderTo.find("input[name='photo-public-shared']");						
-						if(!common.ui.exists(grid)){
-							common.ui.grid(grid, {
-								columns: [
-									{ title: "속성", field: "name" },
-									{ title: "값",   field: "value" },
-									{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
-								],
-								pageable: false,
-								resizable: true,
-								editable : true,
-								scrollable: true,
-								autoBind: true,
-								toolbar: [
-									{ name: "create", text: "추가" },
-									{ name: "save", text: "저장" },
-									{ name: "cancel", text: "취소" }
-								],				     
-								change: function(e) {
-									this.refresh();
-								}
-							});	
-							renderTo.find(".sky-form").slimScroll({
-								height: "500px"
-							});							
-						}
-						
-						if(!common.ui.exists(upload)){
-							common.ui.upload( upload, {
-								async : {
-									saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
-								},
-								localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
-								upload: function (e) {				
-									e.data = { imageId: $this.image.imageId };
-								},
-								success: function (e) {									
-								}
-							});												
-						}												
-						common.ui.data.image.streams($this.image.imageId, function(data){
-							if( data.length > 0 )
-								shared.first().click();
-							else
-								shared.last().click();
-							shared.on("change", function(e){
-								var newValue = ( this.value == 1 ) ;
-								if(newValue){
-									common.ui.data.image.unshare($this.image.imageId);	
-								}else{
-									common.ui.data.image.share($this.image.imageId);
-								}
-							});		
-						});																			
-						common.ui.grid(grid).setDataSource( common.ui.data.image.property.datasource($this.image.imageId) );			
-						$('body').css('overflow', 'hidden');									
-						
-						renderTo.find(".white-popup-block").fadeIn();	
-						
-					},
-					close: function(){
-						var $this = this;						
-						renderTo.find(".white-popup-block").fadeOut();
-						$('body').css('overflow', 'auto');				
-					},
-					setImage: function(image){
-						var $this = this;						
-						$this.resize();
-						image.copy($this.image);	
-						if( common.ui.defined( image.properties.source ) )
-							$this.set("hasSource", true);
-						else
-							$this.set("hasSource", false);
-						
-						if( $this.image.index ){
-							$this.set("imageIndex" , $this.image.index + 1 );
-						}	
-							
-						$this.setPagination();
-						var $loading = renderTo.find(".mfp-preloader");
-						var $largeImg = renderTo.find(".mfp-content");		
-						$largeImg.hide();				
-						$loading.show();							
-						$("<img/>" ).load( function() {
-							var $img = $(this);							
-							if( $img.attr( 'src' ) === $this.image.imageUrl ) {		
-								$loading.hide();
-								$largeImg.fadeIn("slow");		
-							}
-						}).attr( 'src', $this.image.imageUrl );
-					}
-				});
-				observable.resize();				
-				$(window).resize(function(){
-					observable.resize();
-				});		
-				
-				/*
-				common.ui.dialog( renderTo , {
-					data : observable,
-					"open":function(e){								
-					},
-					"close":function(e){					
-					}
-				});	
-				*/			
-				common.ui.bind(renderTo, observable );				
-			
-			}			
-			/*
-			var dialogFx = common.ui.dialog( renderTo );		
-			dialogFx.data().setImage(image);			
-			if( !dialogFx.isOpen ){							
-				dialogFx.open();
-			}
-			*/
-			
-		}		
+
 		-->
 		</script>		
 		<style scoped="scoped">
@@ -1491,6 +1315,8 @@
 				</div>
 			</div>
 		</div>
+		
+		
 		<!-- Image View / Post Modal -->
 		<div id="my-image-post-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg">
@@ -1596,7 +1422,50 @@
 					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>		
 			</div>
 		</div>
-		
+		<!-- START COMMENT SLIDE -->		
+		<div id="my-file-commentary" class="modal" style="background: rgba(0,0,0,0.4);">
+			<div class="commentary commentary-drawer">
+				<span class="btn-flat-icon close" data-commentary-close></span>
+				<div class="commentary-content">
+					<div class="ibox">
+						<div class="ibox-content no-border">
+							<div class="page-credits bg-white">
+								<div class="credit-item">
+									<div class="credit-img user">
+										<img data-bind="attr:{src:authorPhotoUrl}" class="img-responsive img-circle">
+									</div>
+									<div class="credit-name"> <span data-bind="visible:poll.user.nameVisible, text:poll.user.name ">악당</span><code data-bind="text:poll.user.username"></code> </div>
+									<div class="credit-title"></div>
+								</div>							
+							</div>
+							<div class="shadow-wrapper" style="max-width:350px;">
+								<div class="box-shadow shadow-effect-2 ">
+									<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
+								</div>	
+							</div>
+							<h6 class="text-navy">설문기간 : <span data-bind="{ text: poll.startDate }" data-format="yyyy.MM.dd"></span> ~ <span data-bind="{ text: poll.endDate }" data-format="yyyy.MM.dd" ></span></h6>
+							<h2 data-bind="text:poll.name" class="headline"></h2>
+							<p data-bind="text:poll.description"></p>
+						</div>
+					</div>				
+				</div>
+				<div class="ibox-content no-border bg-gray">							
+					<div id="my-poll-commentary-listview" class="comments"></div>
+				</div>				
+				<div class="commentary-footer">
+							<div class="separator-2"></div>
+							<div class="sky-form no-border">
+									<label class="textarea">
+										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
+									</label>
+									<div class="text-right">
+										<button class="btn btn-flat btn-info btn-outline btn-xl rounded" data-bind="click:comment">게시하기</button>
+									</div>
+							</div>					
+				</div>
+			</div>	
+		</div>
+		<!-- END COMMENT SLIDE -->			
 		<!-- START RIGHT SLIDE MENU -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="my-cloud-driver-controls-section">
 			<header>
