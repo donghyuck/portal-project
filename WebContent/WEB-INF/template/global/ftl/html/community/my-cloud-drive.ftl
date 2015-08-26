@@ -427,6 +427,7 @@
 					}				
 				});
 			}	
+			
 			if(renderTo.is(":hidden")){
 				renderTo.data("model").setSource( source ) ;			
 				if(!$("body").hasClass('modal-open')){
