@@ -407,11 +407,9 @@
 									objectId : $this.get("pageId"),
 									text : $this.get("commentBody")
 								},
-								success : function(response){
-								
+								success : function(response){								
 									listview.dataSource.read({pageId: $this.pageId });
 ~									$('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').html( response.count  );
-									
 								},
 								complete : function(e){
 									$this.set("commentBody", "");
@@ -424,12 +422,13 @@
 						var $this = this;
 						if( source instanceof common.ui.data.Image ){
 							console.log("it's image.");
+							source.copy($this.image);
 						}	
 					}				
 				});
 			}	
 			if(renderTo.is(":hidden")){
-				renderTo.data("model").setSource( source ) ;
+				renderTo.data("model").setSource( source ) ;			
 				if(!$("body").hasClass('modal-open')){
 					$("body").css("overflow", "hidden");
 				}			
