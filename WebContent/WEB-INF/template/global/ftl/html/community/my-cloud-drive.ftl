@@ -1468,10 +1468,10 @@
 							<div class="page-credits bg-white">
 								<div class="credit-item">
 									<div class="credit-img user">
-										<img data-bind="attr:{src:image.imageThumbnailUrl} style="margin-right:10px;">
+										<img data-bind="attr:{src:image.imageThumbnailUrl} style="margin-right:10px;" class="img-cicle">
 									</div>
-									<div class="credit-name"> <span data-bind="visible:poll.user.nameVisible, text:poll.user.name ">악당</span><code data-bind="text:poll.user.username"></code> </div>
-									<div class="credit-title"></div>
+									<div class="credit-name"> <span data-bind="text:image.name ">악당</span>  </div>
+									<div class="credit-title"><span data-bind="text:image.formattedSize"></span> bytes </div>
 								</div>							
 							</div>
 							<div class="shadow-wrapper" style="max-width:350px;">
