@@ -426,6 +426,14 @@
 						}	
 					}				
 				});
+				renderTo.data("model", observable);			
+				common.ui.bind( renderTo, observable );				
+				$('.close[data-commentary-close]').click(function(){	
+					if(!$("body").hasClass('modal-open')){
+						$("body").css("overflow", "auto");
+					}					
+					renderTo.hide();
+				});				
 			}	
 			
 			if(renderTo.is(":hidden")){
@@ -1460,7 +1468,7 @@
 							<div class="page-credits bg-white">
 								<div class="credit-item">
 									<div class="credit-img user">
-										<img data-bind="attr:{src:authorPhotoUrl}" class="img-responsive img-circle">
+										<img data-bind="attr:{src:image.imageThumbnailUrl} style="margin-right:10px;">
 									</div>
 									<div class="credit-name"> <span data-bind="visible:poll.user.nameVisible, text:poll.user.name ">악당</span><code data-bind="text:poll.user.username"></code> </div>
 									<div class="credit-title"></div>
