@@ -390,7 +390,27 @@
 		function createPhotoCommentary(source){
 			var renderTo = $("#my-file-commentary");				
 			if( !renderTo.data("model") ){		
-				//if( !common.ui.exists(renderTo) ){				
+				//if( !common.ui.exists(renderTo) ){		
+				var listview = common.ui.listview($("#my-file-commentary-listview"), {
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/data/comments/list.json?output=json"/>', type: 'POST' }
+						},
+						schema: {
+							total: "totalCount",
+							data: "comments",
+							model: common.ui.data.Comment
+						},
+						selectable: false,
+						batch: false,
+						serverPaging: false,
+						serverFiltering: false,
+						serverSorting: false
+					},
+					template: kendo.template($("#my-file-commentary-listview-template").html()),
+					autoBind: false
+				});	
+						
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
 					coverPhotoUrl : "",
@@ -398,18 +418,16 @@
 					comment : function(e){
 						var $this = this;
 						btn = $(e.target);						
-						btn.button('loading');								
+						btn.button('loading');							
+						var myComment = new common.ui.data.Comment({objectType:40, objectId:$this.image.imageId, body:$this.get("commentBody")}); 	
 						common.ui.ajax(
-							'<@spring.url "/data/pages/comment.json?output=json"/>',
+							'<@spring.url "/data/comments/update.json?output=json"/>',
 							{
-								data : {
-									objectType: 31,
-									objectId : $this.get("pageId"),
-									text : $this.get("commentBody")
-								},
-								success : function(response){								
-									listview.dataSource.read({pageId: $this.pageId });
-~									$('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').html( response.count  );
+								data : kendo.stringify(myComment) ,
+								contentType : "application/json",
+								success : function(response){
+									listview.dataSource.read({objectType: 40, objectId: $this.image.imageId });
+									//$(".poll a[data-action=comment][data-object-id="+ $this.image.imageId +"] span.comment-page-count").html( response.count  );
 								},
 								complete : function(e){
 									$this.set("commentBody", "");
@@ -1522,8 +1540,38 @@
 			</div>	
 		</section>	
 		<div class="cbp-spmenu-overlay"></div>			
-		<!-- ./END RIGHT SLIDE MENU -->							
+		<!-- ./END RIGHT SLIDE MENU -->
+	<!-- ============================== -->
+	<!-- commentary template            -->
+	<!-- ============================== -->	
+	<script id="my-poll-commentary-listview-template" type="text/x-kendo-template">
+		<div class="comment" >
+			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
+			<div class="content">
+				<span class="author">#if ( name == null ){# 손님 #}else{# #: name # #}#</span>
+				<span class="comment-date">#: formattedCreationDate() #</span>
+				<span class="linked-text">
+					#: body #
+				</span>
+			</div>		
+		</div>	
+	</script>										
 		<!-- START TEMPLATE -->									
+	<!-- ============================== -->
+	<!-- commentary template            -->
+	<!-- ============================== -->	
+	<script id="my-poll-commentary-listview-template" type="text/x-kendo-template">
+		<div class="comment" >
+			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
+			<div class="content">
+				<span class="author">#if ( name == null ){# 손님 #}else{# #: name # #}#</span>
+				<span class="comment-date">#: formattedCreationDate() #</span>
+				<span class="linked-text">
+					#: body #
+				</span>
+			</div>		
+		</div>	
+	</script>	
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
 	<!-- ./END TEMPLATE -->
