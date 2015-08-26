@@ -642,7 +642,7 @@
 							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 							var item = data[index];				
 							item.set("index", index );
-							createPhotoViewModal();		
+							createPhotoViewModal(item);		
 						}
 					},
 					next : function(){
@@ -1420,7 +1420,7 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
-					<span class="btn-flat-icon settings" data-bind="click: edit"></span>			
+					<span class="btn-flat-icon pencle" data-bind="click: edit"></span>			
 					<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 					<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
 					<span class="btn-flat-icon close" data-dialog-close></span>					
