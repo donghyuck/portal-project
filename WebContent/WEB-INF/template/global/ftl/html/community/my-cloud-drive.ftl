@@ -508,19 +508,19 @@
 							var item = data[current_index];								
 						},
 						dataBound : function(e){
-							var renderTo = $("#image-viewer");
-							if(common.ui.exists(renderTo) && common.ui.dialog(renderTo).isOpen ){
+							//var renderTo = $("#image-viewer");
+							var renderTo = $("#my-image-view-modal");	
+							if( renderTo.data('bs.modal') && renderTo.is(":visible")){
 								var list_view_pager = common.ui.pager( $("#photo-list-pager") );
-								var dialogFx = common.ui.dialog(renderTo);
-								var data = this.dataSource.view();								
-								if( dialogFx.data().page > list_view_pager.page() ){
-									var item = data[dialogFx.data().pageSize - 1];
-									item.set("index", dialogFx.data().pageSize -1 );
-									showPhotoPanel(item);
-								} else {
+								var data = this.dataSource.view();				
+								if( renderTo.data("model").page > list_view_pager.page() ){
+									var item = data[renderTo.data("model").pageSize - 1];
+									item.set("index", renderTo.data("model").pageSize -1 );
+									createPhotoViewModal(item);
+								}else{
 									var item = data[0];
 									item.set("index", 0 );
-									showPhotoPanel(item);
+									createPhotoViewModal(item);
 								}
 							}
 						},
