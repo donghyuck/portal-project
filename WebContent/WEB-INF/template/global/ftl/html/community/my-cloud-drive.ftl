@@ -390,7 +390,6 @@
 		function createFileCommentary(source){
 			var renderTo = $("#my-file-commentary");	
 			if( !common.ui.exists(renderTo) ){
-			
 				var observable =  common.ui.observable({
 				
 				
