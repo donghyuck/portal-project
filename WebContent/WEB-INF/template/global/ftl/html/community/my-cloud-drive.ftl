@@ -1458,6 +1458,7 @@
 					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>		
 			</div>
 		</div>
+		
 		<!-- START COMMENT SLIDE -->		
 		<div id="my-file-commentary" class="modal" style="background: rgba(0,0,0,0.4);">
 			<div class="commentary commentary-drawer">
@@ -1468,26 +1469,25 @@
 							<div class="page-credits bg-white">
 								<div class="credit-item">
 									<div class="credit-img user">
-										<img data-bind="attr:{src:image.imageThumbnailUrl} style="margin-right:10px;">
+										<img data-bind="attr:{src:image.imageThumbnailUrl} style="margin-right:10px;" class="img-cicle">
 									</div>
-									<div class="credit-name"> <span data-bind="visible:poll.user.nameVisible, text:poll.user.name ">악당</span><code data-bind="text:poll.user.username"></code> </div>
-									<div class="credit-title"></div>
+									<div class="credit-name"> <span data-bind="text:image.name ">악당</span>  </div>
+									<div class="credit-title"><span data-bind="text:image.formattedSize"></span> bytes </div>
 								</div>							
-							</div>
+							</div><!--
 							<div class="shadow-wrapper" style="max-width:350px;">
 								<div class="box-shadow shadow-effect-2 ">
 									<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
 								</div>	
-							</div>
-							<h6 class="text-navy">설문기간 : <span data-bind="{ text: poll.startDate }" data-format="yyyy.MM.dd"></span> ~ <span data-bind="{ text: poll.endDate }" data-format="yyyy.MM.dd" ></span></h6>
-							<h2 data-bind="text:poll.name" class="headline"></h2>
-							<p data-bind="text:poll.description"></p>
+							</div>-->
 						</div>
 					</div>				
 				</div>
+				
 				<div class="ibox-content no-border bg-gray">							
-					<div id="my-poll-commentary-listview" class="comments"></div>
+					<div id="my-file-commentary-listview" class="comments"></div>
 				</div>				
+				
 				<div class="commentary-footer">
 							<div class="separator-2"></div>
 							<div class="sky-form no-border">
