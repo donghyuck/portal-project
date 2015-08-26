@@ -419,14 +419,14 @@
 						var $this = this;
 						btn = $(e.target);						
 						btn.button('loading');							
-						var myComment = new common.ui.data.Comment({objectType:40, objectId:$this.image.imageId, body:$this.get("commentBody")}); 	
+						var myComment = new common.ui.data.Comment({objectType:16, objectId:$this.image.imageId, body:$this.get("commentBody")}); 	
 						common.ui.ajax(
 							'<@spring.url "/data/comments/update.json?output=json"/>',
 							{
 								data : kendo.stringify(myComment) ,
 								contentType : "application/json",
 								success : function(response){
-									listview.dataSource.read({objectType: 40, objectId: $this.image.imageId });
+									listview.dataSource.read({objectType: 16, objectId: $this.image.imageId });
 									//$(".poll a[data-action=comment][data-object-id="+ $this.image.imageId +"] span.comment-page-count").html( response.count  );
 								},
 								complete : function(e){
@@ -441,6 +441,7 @@
 						if( source instanceof common.ui.data.Image ){
 							console.log("it's image.");
 							source.copy($this.image);
+							listview.dataSource.read({objectType:16, objectId: $this.image.imageId });	
 						}	
 					}				
 				});
