@@ -1496,7 +1496,7 @@
 							</div>
 							<div class="shadow-wrapper" style="max-width:350px;">
 								<div class="box-shadow shadow-effect-2 ">
-									<img data-bind="attr:{ src:image.url }" class="img-responsive"></img>
+									<img data-bind="attr:{ src:image.imageUrl }" class="img-responsive"></img>
 								</div>	
 							</div>
 						</div>
