@@ -1493,12 +1493,12 @@
 									<div class="credit-name"> <span data-bind="text:image.name ">악당</span>  </div>
 									<div class="credit-title"><span data-bind="text:image.formattedSize"></span> bytes </div>
 								</div>							
-							</div><!--
+							</div>
 							<div class="shadow-wrapper" style="max-width:350px;">
 								<div class="box-shadow shadow-effect-2 ">
-									<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
+									<img data-bind="attr:{ src:image.url }" class="img-responsive"></img>
 								</div>	
-							</div>-->
+							</div>
 						</div>
 					</div>				
 				</div>
