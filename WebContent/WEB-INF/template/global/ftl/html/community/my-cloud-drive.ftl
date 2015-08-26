@@ -1593,6 +1593,7 @@
 		</div>
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="mfp-container mfp-s-ready mfp-image-holder">
+				<span class="btn-flat-icon chat" data-bind="click: comment"></span>		
 				<span class="btn-flat-icon pencil" data-bind="click: edit"></span>			
 				<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 				<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								

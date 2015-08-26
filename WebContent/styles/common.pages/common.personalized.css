@@ -3123,7 +3123,12 @@ img[data-toggle=lightbox]:hover{
 	right:0px;
 	background-color: transparent;					
 }
-						
+
+.modal .mfp-container .btn-flat-icon.chat {
+	top:120px;
+	right:0px;
+	background-color: transparent;					
+}						
 						
 .modal .mfp-container .mfp-preloader {
 	top: 0;
