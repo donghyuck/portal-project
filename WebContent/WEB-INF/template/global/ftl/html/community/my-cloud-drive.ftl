@@ -429,7 +429,7 @@
 				});
 			}	
 			if(renderTo.is(":hidden")){
-				renderTo.data("model").setSource( source ) ;
+				renderTo.data("model").setSource( source ) ;			
 				if(!$("body").hasClass('modal-open')){
 					$("body").css("overflow", "hidden");
 				}			
