@@ -3171,6 +3171,9 @@ img[data-toggle=lightbox]:hover{
 /** ------------------------------------------------- */
 /** Flat Icon			                              */
 /** ------------------------------------------------- */
-.icon-flat.chat2 {
-	background-position: -132px -597px;
+
+.modal .btn-flat-icon.chat {
+	height: 50px;
+	background-position: -115px -585px;
 }
+

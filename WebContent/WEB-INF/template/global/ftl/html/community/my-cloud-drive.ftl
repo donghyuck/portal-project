@@ -545,18 +545,16 @@
 		function createPhotoPostModal(image){
 			var renderTo = $("#my-image-post-modal");				
 			var targetImage = $("#my-image-view-modal").data("model").image ;	
-			if( !renderTo.data('bs.modal') ){	
-						
+			if( !renderTo.data('bs.modal') ){							
 				common.ui.bind(renderTo, { 
 					image:image, hasSource:function(){
 						return areThereSources(targetImage);
 					}
-				});
-				
-						var grid = renderTo.find(".photo-props-grid");	
-						var upload = renderTo.find("input[name='update-photo-file']");
-						var shared = renderTo.find("input[name='photo-public-shared']");						
-						if(!common.ui.exists(grid)){
+				});				
+				var grid = renderTo.find(".photo-props-grid");	
+				var upload = renderTo.find("input[name='update-photo-file']");
+				var shared = renderTo.find("input[name='photo-public-shared']");						
+				if(!common.ui.exists(grid)){
 							common.ui.grid(grid, {
 								columns: [
 									{ title: "속성", field: "name" },
@@ -577,9 +575,8 @@
 									this.refresh();
 								}
 							});							
-						}
-						
-						if(!common.ui.exists(upload)){
+				}
+				if(!common.ui.exists(upload)){
 							common.ui.upload( upload, {
 								async : {
 									saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
@@ -591,8 +588,8 @@
 								success: function (e) {									
 								}
 							});												
-						}												
-						common.ui.data.image.streams(targetImage.imageId, function(data){
+				}												
+				common.ui.data.image.streams(targetImage.imageId, function(data){
 							if( data.length > 0 )
 								shared.first().click();
 							else
@@ -605,9 +602,8 @@
 									common.ui.data.image.share(targetImage.imageId);
 								}
 							});		
-						});																			
-						
-										
+				});
+				common.ui.bootstrap.enableStackingModal(renderTo);										
 			}
 			common.ui.grid(renderTo.find(".photo-props-grid")).setDataSource( common.ui.data.image.property.datasource(targetImage.imageId) );	
 			renderTo.modal('show');	
@@ -688,6 +684,9 @@
 						$this.set("page", page );			
 						$this.set("pageSize", pageSize );																	
 					},
+					comment: function(){
+						return false;
+					},
 					edit: function(){
 						var $this = this;
 						createPhotoPostModal($this.image);
@@ -723,28 +722,11 @@
 				observable.resize();				
 				$(window).resize(function(){
 					observable.resize();
-				});		
-				
-				/*
-				common.ui.dialog( renderTo , {
-					data : observable,
-					"open":function(e){								
-					},
-					"close":function(e){					
-					}
-				});	
-				*/			
+				});				
 				common.ui.bootstrap.enableStackingModal(renderTo);
 				common.ui.bind(renderTo, observable );				
 				renderTo.data("model", observable);	
 			}			
-			/*
-			var dialogFx = common.ui.dialog( renderTo );		
-			dialogFx.data().setImage(image);			
-			if( !dialogFx.isOpen ){							
-				dialogFx.open();
-			}
-			*/
 			renderTo.data("model").setImage(image);
 			renderTo.modal('show');	
 			
