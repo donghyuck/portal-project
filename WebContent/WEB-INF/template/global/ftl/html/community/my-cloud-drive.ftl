@@ -387,18 +387,49 @@
 		<!-- ============================== -->
 		<!-- Commentary						-->
 		<!-- ============================== -->		
-		function createFileCommentary(source){
-			var renderTo = $("#my-file-commentary");	
-			if( !common.ui.exists(renderTo) ){
-			
+		function createPhotoCommentary(source){
+			var renderTo = $("#my-file-commentary");				
+			if( !renderTo.data("model") ){		
+				//if( !common.ui.exists(renderTo) ){				
 				var observable =  common.ui.observable({
-				
-				
+					image : new common.ui.data.Image(),
+					coverPhotoUrl : "",
+					commentBody : "",
+					comment : function(e){
+						var $this = this;
+						btn = $(e.target);						
+						btn.button('loading');								
+						common.ui.ajax(
+							'<@spring.url "/data/pages/comment.json?output=json"/>',
+							{
+								data : {
+									objectType: 31,
+									objectId : $this.get("pageId"),
+									text : $this.get("commentBody")
+								},
+								success : function(response){
+								
+									listview.dataSource.read({pageId: $this.pageId });
+~									$('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').html( response.count  );
+									
+								},
+								complete : function(e){
+									$this.set("commentBody", "");
+									btn.button('reset');
+								}							
+						});	
+						return false;						
+					},
+					setSource : function(source){
+						var $this = this;
+						if( source instanceof common.ui.data.Image ){
+							console.log("it's image.");
+						}	
+					}				
 				});
-			
 			}	
 			if(renderTo.is(":hidden")){
-				//renderTo.data("model").setSource( source ) ;
+				renderTo.data("model").setSource( source ) ;
 				if(!$("body").hasClass('modal-open')){
 					$("body").css("overflow", "hidden");
 				}			
@@ -707,7 +738,7 @@
 						$this.set("pageSize", pageSize );																	
 					},
 					comment: function(){
-						createFileCommentary(this.image);
+						createPhotoCommentary(this.image);
 						return false;
 					},
 					edit: function(){
