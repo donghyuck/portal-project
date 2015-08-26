@@ -1560,7 +1560,8 @@
 	<!-- ============================== -->
 	<!-- commentary template            -->
 	<!-- ============================== -->	
-	<script id="my-poll-commentary-listview-template" type="text/x-kendo-template">
+	
+	<script id="my-file-commentary-listview-template" type="text/x-kendo-template">
 		<div class="comment" >
 			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
 			<div class="content">
