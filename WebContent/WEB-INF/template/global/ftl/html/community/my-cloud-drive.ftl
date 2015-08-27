@@ -688,7 +688,9 @@
 				});
 				
 				renderTo.on('show.bs.modal', function(e){		
-					
+					common.ui.data.image.streams(targetImage.imageId, function(data){	
+						console.log(kendo.stringify(data));
+					});
 					common.ui.grid(renderTo.find(".photo-props-grid")).setDataSource( common.ui.data.image.property.datasource(targetImage.imageId) );	
 					$("#my-image-view-modal").css("opacity", "0");	
 				
@@ -698,7 +700,6 @@
 				});					
 				common.ui.bootstrap.enableStackingModal(renderTo);														
 			}
-			
 			renderTo.modal('show');	
 		}
 		
