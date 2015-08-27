@@ -1423,7 +1423,7 @@
 										</ul>									
 									</div>								
 									<div class="col-sm-6">	
-										<div data-bind="{visible:hasSource()}" >
+										<div data-bind="{visible:hasSource}" >
 											<div class="separator-2"></div>
 											<h4>출처</h4>
 											<a href="#" class="btn-link" data-bind="attr:{href:image.properties.source }, text:image.properties.source"></a>
