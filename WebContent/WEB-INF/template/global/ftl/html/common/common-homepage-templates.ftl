@@ -169,11 +169,11 @@
 			</ul>		
 			<div class="">
 				<div class="btn-group btn-group-sm btn-group-justified">
-					<a href="<@spring.url '/display/dialog.html?source=/html/community/user-profile-modal-dialog'/>" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필</a>
+					<a href="<@spring.url '/display/dialog.html?source=/html/community/user-profile-modal-dialog'/>" class="btn btn-flat btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필</a>
 					#if ( isSystem ) {#
-					<a href="<@spring.url '/secure/main.do'/>" class="btn btn-primary"><i class="fa fa-desktop"></i> 시스템</a>
+					<a href="<@spring.url '/secure/main.do'/>" class="btn btn-flat btn-primary"><i class="fa fa-desktop"></i> 시스템</a>
 					# } #	
-					<a href="<@spring.url '/logout'/>" class="btn btn-danger"><i class="fa fa-power-off"></i> 로그아웃</a>
+					<a href="<@spring.url '/logout'/>" class="btn btn-flat btn-danger"><i class="fa fa-power-off"></i> 로그아웃</a>
 				</div>
 				
 			</div>
