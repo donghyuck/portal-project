@@ -1389,7 +1389,7 @@
 					<form id="my-file-modal-settings" action="#" class="sky-form modal-settings collapse" data-ready="false">
 							<header>
 								고급옵션
-								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-file-modal-settings"></span>
+								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-file-modal-settings" aria-expanded="true" aria-controls="my-file-modal-settings"></span>
 							</header>
 							<fieldset>		
 								<section>
