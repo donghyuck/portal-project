@@ -671,25 +671,23 @@
 				}						
 										
 				common.ui.data.image.streams(targetImage.imageId, function(data){					
-					if( data.length > 0 )
-						shared.first().click();
-					else
-						shared.last().click();
-						
-						
 					shared.on("change", function(e){
 						var newValue = ( this.value == 1 ) ;
+						console.log( newValue );
 						if(newValue){
-							common.ui.data.image.unshare(targetImage.imageId);	
+							//common.ui.data.image.unshare(targetImage.imageId);	
 						}else{
-							common.ui.data.image.share(targetImage.imageId);
+							//common.ui.data.image.share(targetImage.imageId);
 						}
 					});		
 				});
 				
 				renderTo.on('show.bs.modal', function(e){		
 					common.ui.data.image.streams(targetImage.imageId, function(data){	
-						console.log(kendo.stringify(data));
+						if( data.length > 0 )
+							shared.first().click();
+						else
+							shared.last().click();
 					});
 					common.ui.grid(renderTo.find(".photo-props-grid")).setDataSource( common.ui.data.image.property.datasource(targetImage.imageId) );	
 					$("#my-image-view-modal").css("opacity", "0");	
