@@ -623,7 +623,8 @@
 		
 		
 		function createPhotoPostModal( image ){
-			var renderTo = $("#my-image-post-modal");				
+			var renderTo = $("#my-image-post-modal");		
+			renderTo.data("ready", false);
 			if( !renderTo.data('bs.modal') ){		
 				if( common.ui.defined( $("#my-image-view-modal").data("model") ) ){
 					common.ui.bind(renderTo, $("#my-image-view-modal").data("model") );
@@ -670,10 +671,12 @@
 				shared.on("change", function(e){
 					var newValue = ( this.value == 1 ) ;
 					console.log( newValue );
-					if(newValue){
-						//common.ui.data.image.unshare(targetImage.imageId);	
-					}else{
-						//common.ui.data.image.share(targetImage.imageId);
+					if( renderTo.data("ready") ){
+						if(newValue){
+							common.ui.data.image.unshare(targetImage.imageId);	
+						}else{
+							common.ui.data.image.share(targetImage.imageId);
+						}	
 					}
 				});					
 				renderTo.on('show.bs.modal', function(e){		
@@ -683,6 +686,7 @@
 						}else{
 							shared.last().click();
 						}
+						renderTo.data("ready", true);
 					});
 					common.ui.grid(renderTo.find(".photo-props-grid")).setDataSource( common.ui.data.image.property.datasource(targetImage.imageId) );	
 					$("#my-image-view-modal").css("opacity", "0");	
@@ -1389,7 +1393,7 @@
 					<form id="my-file-modal-settings" action="#" class="sky-form modal-settings collapse" data-ready="false">
 							<header>
 								고급옵션
-								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-file-modal-settings"></span>
+								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-file-modal-settings" aria-expanded="true" aria-controls="my-file-modal-settings"></span>
 							</header>
 							<fieldset>		
 								<section>
