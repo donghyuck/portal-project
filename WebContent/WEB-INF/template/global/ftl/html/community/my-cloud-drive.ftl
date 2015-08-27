@@ -657,44 +657,48 @@
 							});							
 				}
 				if(!common.ui.exists(upload)){
-							common.ui.upload( upload, {
-								async : {
-									saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
-								},
-								localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
-								upload: function (e) {				
-									e.data = { imageId: targetImage.imageId };
-								},
-								success: function (e) {									
-								}
-							});												
-				}												
-				common.ui.data.image.streams(targetImage.imageId, function(data){
-							if( data.length > 0 )
-								shared.first().click();
-							else
-								shared.last().click();
-							shared.on("change", function(e){
-								var newValue = ( this.value == 1 ) ;
-								if(newValue){
-									common.ui.data.image.unshare(targetImage.imageId);	
-								}else{
-									common.ui.data.image.share(targetImage.imageId);
-								}
-							});		
+					common.ui.upload( upload, {
+						async : {
+							saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
+						},
+						localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+						upload: function (e) {				
+							e.data = { imageId: targetImage.imageId };
+						},
+						success: function (e) {									
+						}
+					});												
+				}						
+										
+				common.ui.data.image.streams(targetImage.imageId, function(data){					
+					if( data.length > 0 )
+						shared.first().click();
+					else
+						shared.last().click();
+						
+						
+					shared.on("change", function(e){
+						var newValue = ( this.value == 1 ) ;
+						if(newValue){
+							common.ui.data.image.unshare(targetImage.imageId);	
+						}else{
+							common.ui.data.image.share(targetImage.imageId);
+						}
+					});		
 				});
-
-				renderTo.on('show.bs.modal', function(e){		
-					$("#my-image-view-modal").css("opacity", "0");	
-				});			
 				
+				renderTo.on('show.bs.modal', function(e){		
+					
+					common.ui.grid(renderTo.find(".photo-props-grid")).setDataSource( common.ui.data.image.property.datasource(targetImage.imageId) );	
+					$("#my-image-view-modal").css("opacity", "0");	
+				
+				});
 				renderTo.on('hide.bs.modal', function(e){					
 					$("#my-image-view-modal").css("opacity", "");	
 				});					
-				common.ui.bootstrap.enableStackingModal(renderTo);	
-													
+				common.ui.bootstrap.enableStackingModal(renderTo);														
 			}
-			common.ui.grid(renderTo.find(".photo-props-grid")).setDataSource( common.ui.data.image.property.datasource(targetImage.imageId) );	
+			
 			renderTo.modal('show');	
 		}
 		
@@ -788,11 +792,9 @@
 						var $this = this;			
 						$this.resize();
 						image.copy($this.image);
-						if( common.ui.defined( image.properties.source ) )
-							$this.set("hasSource", true);
-						else
-							$this.set("hasSource", false);	
+						$this.set("hasSource",areThereSources($this.image) );
 						$this.setPagination();
+						
 						var $loading = renderTo.find(".mfp-preloader");
 						var $largeImg = renderTo.find(".mfp-content");		
 						$largeImg.hide();				
