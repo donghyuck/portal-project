@@ -1281,99 +1281,6 @@
 			</div>
 		</div>	
 					
-		<div id="image-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
-			<div class="dialog__overlay"></div>
-			<div class="dialog__content">							
-				<div class="mfp-container mfp-s-ready mfp-image-holder">
-					<span class="btn-flat-icon pencle" data-bind="click: edit"></span>			
-					<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
-					<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
-					<span class="btn-flat-icon close" data-dialog-close></span>					
-					<div class="white-popup-block" style="display:none">							
-						<div class="container">
-							<div class="row">
-								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded" style="position:relative">							
-									<div class="toolbar">
-										<span class="btn-flat-icon paper-plane"></span>
-										<span class="close" data-bind="click: close"></span>
-									</div>										
-								<div class="left-col">
-									<div class="shadow-wrapper" style="width:150px;height:150px;">
-										<div class="box-shadow shadow-effect-2 " >
-											<img class="img-responsive" data-bind="attr:{src:image.imageThumbnailUrl}">
-										</div>	
-									</div>
-									<hr class="m-sm"/>										
-									<ul class="list-unstyled margin-bottom-30">																		
-										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
-										<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
-										<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: image.formattedModifiedDate"></span></li>
-									</ul>
-											
-									<div class="headline headline-md"><h4>태그</h4></div>
-									<ul class="list-unstyled blog-tags margin-bottom-30">
-										<li><a href="#"><i class="fa fa-tags"></i> 성인</a></li>
-										<li><a href="#"><i class="fa fa-tags"></i> 여자</a></li>
-									</ul>			
-								</div>
-								<div class="right-col">								
-									<section class="sky-form">
-										<header data-bind="text: image.name"></header>
-										<fieldset data-bind="visible:hasSource">
-											<section>
-												<label class="label">출처</label>
-												<a href="#" class="btn btn-link" data-bind="attr:{href:image.properties.source }, text:image.properties.source"></a>
-											</section>
-										</fieldset>											
-										<fieldset>
-											<section>											
-												<label class="label">이미지 변경</label>
-												<input name="update-photo-file" type="file" class="pull-right" />	
-												<div class="note"><i class="fa fa-info"></i> 사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</div>
-											</section>
-										</fieldset>
-										<fieldset>
-											<section>
-												<label class="label">이미지 공개 여부</label>
-												<div class="inline-group">
-													<label class="radio"><input type="radio" name="photo-public-shared" value="0"><i class="rounded-x"></i>공개</label>
-													<label class="radio"><input type="radio" name="photo-public-shared" value="1" checked><i class="rounded-x"></i>비공개</label>
-												</div>
-												<div class="note"><i class="fa fa-info"></i> 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</div>
-											</section>
-										</fieldset>
-										<fieldset>
-											<section>
-											<label class="label">추가 정보</label>
-											<div class="photo-props-grid"></div>											
-											<div class="note"><i class="fa fa-info"></i> 수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</div>
-											</section>
-										</fieldset>										
-									</section>	
-								</div><!-- ./right-col	-->
-								</div>
-							</div><!-- ./row	-->
-						</div><!-- ./container		-->	
-					</div><!-- ./white-popup-block		-->
-					<div class="mfp-content">	
-						<div class="mfp-figure">
-							<figure>
-								<img class="mfp-img" style="display: block;" data-bind="attr:{src:image.imageUrl}, click: next">
-								<figcaption>
-									<div class="mfp-bottom-bar">
-										<div class="mfp-title" data-bind="text: image.name"></div>
-										<div class="mfp-counter"><span data-bind="text:imageIndex"></span>/<span data-bind="text:pageSize"></span></div>
-									</div>
-								</figcaption>
-							</figure>
-						</div>
-					</div>	
-					<div class="mfp-preloader" style="display: none;"></div>
-					<button title="Previous (Left arrow key)" type="button" class="btn-flat-icon left mfp-arrow mfp-prevent-close" data-bind="visible: hasPrevious, click: previous"></button>
-					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>					
-				</div>
-			</div>
-		</div>
 		
 		
 		<!-- Image View / Post Modal -->
@@ -1418,8 +1325,8 @@
 								<section>
 								<div class="row">
 									<div class="col-sm-6">	
-										<ul class="list-unstyled small text-info">			
-											<li class="p-xxs"><strong>파일:</strong> <span data-bind="text:image.name"></span> bytes</li>															
+										<ul class="list-unstyled text-info">			
+											<li class="p-xxs"><strong>파일:</strong> <span data-bind="text:image.name"></span></li>															
 											<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
 											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
 											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: image.formattedModifiedDate"></span></li>

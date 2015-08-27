@@ -173,7 +173,8 @@
 				<a href="<@spring.url '/secure/main.do'/>" class="btn btn-primary"><i class="fafa-sign-out"></i> 시스템 관리</a>
 				# } #			
 			</div>
-			<a href="<@spring.url '/logout'/>" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
+			
+			<a href="<@spring.url '/logout'/>" class="btn btn-outline btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
 		</div>
 		
 		<h5 class="side-section-title">MY CLOUD DRIVE</h5>
