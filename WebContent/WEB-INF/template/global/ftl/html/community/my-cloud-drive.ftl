@@ -683,17 +683,23 @@
 								}
 							});		
 				});
-				common.ui.bootstrap.enableStackingModal(renderTo);										
+
+				renderTo.on('show.bs.modal', function(e){		
+					$("#my-image-view-modal").css("opacity", "0");	
+				});			
+				
+				renderTo.on('hide.bs.modal', function(e){					
+					$("#my-image-view-modal").css("opacity", "");	
+				});					
+				common.ui.bootstrap.enableStackingModal(renderTo);	
+													
 			}
 			common.ui.grid(renderTo.find(".photo-props-grid")).setDataSource( common.ui.data.image.property.datasource(targetImage.imageId) );	
 			renderTo.modal('show');	
 		}
 		
 		function createPhotoViewModal(image){		
-			//var renderTo = $("#image-viewer");	
-				
 			var renderTo = $("#my-image-view-modal");	
-							
 			if( !renderTo.data('bs.modal') ){		
 				//var photoListView = 	
 				var observable =  common.ui.observable({ 
