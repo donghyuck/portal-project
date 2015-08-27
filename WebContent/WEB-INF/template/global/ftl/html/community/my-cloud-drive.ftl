@@ -624,37 +624,35 @@
 		
 		function createPhotoPostModal( image ){
 			var renderTo = $("#my-image-post-modal");				
-			var targetImage = $("#my-image-view-modal").data("model").image ;	
-			if( !renderTo.data('bs.modal') ){							
-				common.ui.bind(renderTo, { 
-					image:image, hasSource:function(){
-						return areThereSources(targetImage);
-					}
-				});				
+			if( !renderTo.data('bs.modal') ){		
+				if( common.ui.defined( $("#my-image-view-modal").data("model") ) ){
+					common.ui.bind(renderTo, $("#my-image-view-modal").data("model") );
+				}
+				var targetImage = $("#my-image-view-modal").data("model").image ;	
 				var grid = renderTo.find(".photo-props-grid");	
 				var upload = renderTo.find("input[name='update-photo-file']");
 				var shared = renderTo.find("input[name='photo-public-shared']");						
 				if(!common.ui.exists(grid)){
-							common.ui.grid(grid, {
-								columns: [
-									{ title: "속성", field: "name" },
-									{ title: "값",   field: "value" },
-									{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
-								],
-								pageable: false,
-								resizable: true,
-								editable : true,
-								scrollable: true,
-								autoBind: true,
-								toolbar: [
-									{ name: "create", text: "추가" },
-									{ name: "save", text: "저장" },
-									{ name: "cancel", text: "취소" }
-								],				     
-								change: function(e) {
-									this.refresh();
-								}
-							});							
+					common.ui.grid(grid, {
+						columns: [
+							{ title: "속성", field: "name" },
+							{ title: "값",   field: "value" },
+							{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+						],
+						pageable: false,
+						resizable: true,
+						editable : true,
+						scrollable: true,
+						autoBind: true,
+						toolbar: [
+							{ name: "create", text: "추가" },
+							{ name: "save", text: "저장" },
+							{ name: "cancel", text: "취소" }
+						],				     
+						change: function(e) {
+							this.refresh();
+						}
+					});							
 				}
 				if(!common.ui.exists(upload)){
 					common.ui.upload( upload, {
@@ -668,8 +666,7 @@
 						success: function (e) {									
 						}
 					});												
-				}						
-				
+				}	
 				shared.on("change", function(e){
 					var newValue = ( this.value == 1 ) ;
 					console.log( newValue );
@@ -678,18 +675,17 @@
 					}else{
 						//common.ui.data.image.share(targetImage.imageId);
 					}
-				});	
-									
+				});					
 				renderTo.on('show.bs.modal', function(e){		
 					common.ui.data.image.streams(targetImage.imageId, function(data){	
-						if( data.length > 0 )
+						if( data.length > 0 ){
 							shared.first().click();
-						else
+						}else{
 							shared.last().click();
+						}
 					});
 					common.ui.grid(renderTo.find(".photo-props-grid")).setDataSource( common.ui.data.image.property.datasource(targetImage.imageId) );	
 					$("#my-image-view-modal").css("opacity", "0");	
-				
 				});
 				renderTo.on('hide.bs.modal', function(e){					
 					$("#my-image-view-modal").css("opacity", "");	
@@ -1385,15 +1381,15 @@
 						<div class="author">
 							<img data-bind="attr:{src:image.imageThumbnailUrl} style="margin-right:10px;">
 						</div>
-						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings">
+						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-file-modal-settings" area-expanded="false" aria-controls="my-file-modal-settings">
 							<i class="icon-flat icon-flat settings"></i>						
 						</span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<form id="my-poll-modal-settings" action="#" class="sky-form modal-settings collapse">
+					<form id="my-file-modal-settings" action="#" class="sky-form modal-settings collapse" data-ready="false">
 							<header>
 								고급옵션
-								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-poll-modal-settings"></span>
+								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-file-modal-settings"></span>
 							</header>
 							<fieldset>		
 								<section>
