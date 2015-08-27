@@ -167,14 +167,18 @@
 				<li><a href="\\#"><i class="fa fa-envelope"></i>#:email #</a></li>
 				<li><a href="\\#"><i class="fa fa-building"></i>#:company.displayName #</a></li>
 			</ul>		
-			<div class="btn-group btn-group-sm">
-				<a href="<@spring.url '/display/dialog.html?source=/html/community/user-profile-modal-dialog'/>" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
-				#if ( isSystem ) {#
-				<a href="<@spring.url '/secure/main.do'/>" class="btn btn-primary"><i class="fafa-sign-out"></i> 시스템 관리</a>
-				# } #			
+			<div class="p-sm">
+				<div class="btn-group btn-group-sm">
+					<a href="<@spring.url '/display/dialog.html?source=/html/community/user-profile-modal-dialog'/>" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+					#if ( isSystem ) {#
+					<a href="<@spring.url '/secure/main.do'/>" class="btn btn-primary"><i class="fa fa-sign-out"></i> 시스템관리</a>
+					# } #			
+					
+					<a href="<@spring.url '/logout'/>" class="btn btn-outline btn-danger"><i class="fa fa-sign-out"></i> 로그아웃</a>
+				</div>
+				
 			</div>
 			
-			<a href="<@spring.url '/logout'/>" class="btn btn-outline btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
 		</div>
 		
 		<h5 class="side-section-title">MY CLOUD DRIVE</h5>
