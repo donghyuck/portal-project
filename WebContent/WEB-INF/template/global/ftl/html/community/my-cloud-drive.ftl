@@ -622,7 +622,7 @@
 		}	
 		
 		
-		function createPhotoPostModal(image){
+		function createPhotoPostModal( image ){
 			var renderTo = $("#my-image-post-modal");				
 			var targetImage = $("#my-image-view-modal").data("model").image ;	
 			if( !renderTo.data('bs.modal') ){							
@@ -669,19 +669,17 @@
 						}
 					});												
 				}						
-										
-				common.ui.data.image.streams(targetImage.imageId, function(data){					
-					shared.on("change", function(e){
-						var newValue = ( this.value == 1 ) ;
-						console.log( newValue );
-						if(newValue){
-							//common.ui.data.image.unshare(targetImage.imageId);	
-						}else{
-							//common.ui.data.image.share(targetImage.imageId);
-						}
-					});		
-				});
 				
+				shared.on("change", function(e){
+					var newValue = ( this.value == 1 ) ;
+					console.log( newValue );
+					if(newValue){
+						//common.ui.data.image.unshare(targetImage.imageId);	
+					}else{
+						//common.ui.data.image.share(targetImage.imageId);
+					}
+				});	
+									
 				renderTo.on('show.bs.modal', function(e){		
 					common.ui.data.image.streams(targetImage.imageId, function(data){	
 						if( data.length > 0 )
