@@ -173,7 +173,7 @@
 					#if ( isSystem ) {#
 					<a href="<@spring.url '/secure/main.do'/>" class="btn btn-primary"><i class="fa fa-desktop"></i> 시스템관리</a>
 					# } #	
-					<a href="<@spring.url '/logout'/>" class="btn btn-outline btn-danger"><i class="fa fa-power-off"></i> 로그아웃</a>
+					<a href="<@spring.url '/logout'/>" class="btn btn-danger"><i class="fa fa-power-off"></i> 로그아웃</a>
 				</div>
 				
 			</div>
