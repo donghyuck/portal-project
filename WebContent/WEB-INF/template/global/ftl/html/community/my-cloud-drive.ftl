@@ -414,6 +414,7 @@
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
 					coverPhotoUrl : "",
+					hasSource : false,
 					commentBody : "",
 					comment : function(e){
 						var $this = this;
@@ -441,6 +442,7 @@
 						if( source instanceof common.ui.data.Image ){
 							console.log("it's image.");
 							source.copy($this.image);
+							$this.set("hasSource",areThereSources($this.image) );
 							listview.dataSource.read({objectType:16, objectId: $this.image.imageId });	
 						}	
 					}				
@@ -470,12 +472,10 @@
 			return $("#image-source-list input[type=radio][name=image-source]:checked").val();			
 		}
 		
-		function createPhotoListView(){
-		
+		function createPhotoListView(){		
 			if( $('article.bg-white').is(":hidden")){
 				$("article.bg-white").show();
-			}
-			
+			}			
 			var renderTo = $('#photo-list-view');
 			if( !common.ui.exists(renderTo) ){
 				common.ui.listview(	renderTo, {
@@ -589,8 +589,7 @@
 								if( $('#my-photos .sky-form .input').eq(0).hasClass("state-error") ){
 									$('#my-photos .sky-form .input').eq(0).removeClass("state-error");
 								}											
-							}																		
-							
+							}					
 							if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.valid("url", this.data.imageUrl)  ){
 								$('#my-photos .sky-form .input').eq(1).addClass("state-error");
 								hasError = true;		
