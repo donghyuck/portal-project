@@ -14,6 +14,7 @@
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/skins/dark.css"/>',
+			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',				
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',

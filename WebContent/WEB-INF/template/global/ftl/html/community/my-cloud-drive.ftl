@@ -16,6 +16,7 @@
 			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',			
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
