@@ -48,4 +48,5 @@ i.icon-svg {
 
 .icon-svg-btn:after{
 	clear:both;
+	content:""!important;
 }
