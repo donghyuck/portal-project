@@ -75,11 +75,7 @@
                                                     		<p>${item.description}</p>
                                                     		</#if>                                                    		
                                                     		<img src="<@spring.url '/images/common/mycloud/mycloud-service.png'/>" class="img-responsive"/>                                                    		
-                                                			<img src="<@spring.url '/images/common/icons/basic/color/Home.svg'/>" style="
-    width: 100px;
-    height: 100px;
-    display: block;
-">
+                                                			
                                                 		</div>
                                                 		<div class="col-md-8 col-sm-12 col-xs-12 md-margin-bottom-30">
                                                 			<div class="row">
