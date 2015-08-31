@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/* Basic Color Icons 
+------------------------------------*/
+i.icon-svg {
+	display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    width:64px;
+    height:64px;
+}
+
+.icon-svg.basic-color-home {
+	background-image: url("/images/common/icons/basic/color/Home.svg");
+}
+
+.icon-svg-sm {
+    width:32px;
+    height:32px;	
+}
+
+.icon-svg-lg {
+    width:128px;
+    height:128px;	
+}
