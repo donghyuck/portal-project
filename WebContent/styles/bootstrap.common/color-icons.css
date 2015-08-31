@@ -66,6 +66,12 @@ i.icon-svg {
 .icon-svg.basic-color-page-overview {
 	background-image: url("/images/common/icons/basic/color/PageOverview.svg");
 }
+.icon-svg.basic-color-magazine {
+	background-image: url("/images/common/icons/basic/color/Magazine.svg");
+}
+.icon-svg.basic-color-paper{
+	background-image: url("/images/common/icons/basic/color/Paper.svg");
+}
 
 .icon-svg-sm {
     width:32px;
