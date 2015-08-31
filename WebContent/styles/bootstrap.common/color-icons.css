@@ -39,7 +39,13 @@ i.icon-svg {
     transition: 75ms linear all;
 }  
 
+
 .icon-svg-btn:hover {
 	background: #f4f4f4;
-    color: #000;	
+    color: #000;
+    text-decoration: none;	
+}
+
+.icon-svg-btn:after{
+	clear:both;
 }
