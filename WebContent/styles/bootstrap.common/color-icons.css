@@ -36,6 +36,21 @@ i.icon-svg {
 .icon-svg.basic-color-contacts {
 	background-image: url("/images/common/icons/basic/color/Contacts.svg");
 }
+.icon-svg.basic-color-file {
+	background-image: url("/images/common/icons/basic/color/File.svg");
+}
+.icon-svg.basic-color-document {
+	background-image: url("/images/common/icons/basic/color/Document.svg");
+}
+.icon-svg.basic-color-cloud-upload {
+	background-image: url("/images/common/icons/basic/color/Upload2.svg");
+}
+.icon-svg.basic-color-cloud-download {
+	background-image: url("/images/common/icons/basic/color/Download2.svg");
+}
+.icon-svg.basic-color-cloud-download {
+	background-image: url("/images/common/icons/basic/color/Rating.svg");
+}
 .icon-svg-sm {
     width:32px;
     height:32px;	
