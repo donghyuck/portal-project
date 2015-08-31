@@ -24,3 +24,21 @@ i.icon-svg {
     width:128px;
     height:128px;	
 }
+
+button.icon-svg-btn {	
+    margin: 0 .6rem .6rem 0;
+    color: #9b9b9b;
+    /* width: 5.5rem; */
+    /* height: 6rem; */
+    position: relative;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 6px!important;
+    -webkit-transition: 75ms linear all;
+    transition: 75ms linear all;
+}  
+
+.icon-svg-btn:hover {
+	background: #f4f4f4;
+    color: #000;	
+}
