@@ -72,6 +72,9 @@ i.icon-svg {
 .icon-svg.basic-color-paper{
 	background-image: url("/images/common/icons/basic/color/Paper.svg");
 }
+.icon-svg.basic-color-advertising{
+	background-image: url("/images/common/icons/basic/color/Advertising.svg");
+}
 
 .icon-svg-sm {
     width:32px;
