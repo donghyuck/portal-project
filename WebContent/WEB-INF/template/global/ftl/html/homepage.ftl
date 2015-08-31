@@ -10,6 +10,7 @@
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
