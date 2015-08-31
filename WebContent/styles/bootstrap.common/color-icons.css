@@ -15,6 +15,27 @@ i.icon-svg {
 	background-image: url("/images/common/icons/basic/color/Home.svg");
 }
 
+.icon-svg.basic-color-folder {
+	background-image: url("/images/common/icons/basic/color/Folder.svg");
+}
+.icon-svg.basic-color-news {
+	background-image: url("/images/common/icons/basic/color/News.svg");
+}
+.icon-svg.basic-color-picture {
+	background-image: url("/images/common/icons/basic/color/Picture.svg");
+}
+.icon-svg.basic-color-settings {
+	background-image: url("/images/common/icons/basic/color/Settings.svg");
+}
+.icon-svg.basic-color-share {
+	background-image: url("/images/common/icons/basic/color/Share.svg");
+}
+.icon-svg.basic-color-services {
+	background-image: url("/images/common/icons/basic/color/Services.svg");
+}
+.icon-svg.basic-color-contacts {
+	background-image: url("/images/common/icons/basic/color/Contacts.svg");
+}
 .icon-svg-sm {
     width:32px;
     height:32px;	
