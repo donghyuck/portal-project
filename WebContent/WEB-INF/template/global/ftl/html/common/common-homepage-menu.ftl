@@ -89,8 +89,7 @@
 																	<#if sub_item.description ??>
 																	<p>${sub_item.description}</p>
 																	</#if>		
-																	<a href="${sub_item.page}"><#if sub_item.icon?? ><i class="${sub_item.icon}"></i></#if></a>		
-																	<#if sub_item.icon?? ><i class="${sub_item.icon}"></i></#if>																												
+																	<a href="${sub_item.page}" class="icon-svg-btn"><#if sub_item.icon?? ><i class="${sub_item.icon}"></i></#if></a>																													
 																</div>																
 																</#list>
                                                 			</div>
