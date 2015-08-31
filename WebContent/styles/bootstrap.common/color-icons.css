@@ -18,6 +18,12 @@ i.icon-svg {
 .icon-svg.basic-color-folder {
 	background-image: url("/images/common/icons/basic/color/Folder.svg");
 }
+.icon-svg.basic-color-document-folder {
+	background-image: url("/images/common/icons/basic/color/DocumentFolder.svg");
+}
+.icon-svg.basic-color-internet-folder {
+	background-image: url("/images/common/icons/basic/color/InternetFolder.svg");
+}
 .icon-svg.basic-color-news {
 	background-image: url("/images/common/icons/basic/color/News.svg");
 }
@@ -51,6 +57,16 @@ i.icon-svg {
 .icon-svg.basic-color-rating {
 	background-image: url("/images/common/icons/basic/color/Rating.svg");
 }
+.icon-svg.basic-color-cloud-storage {
+	background-image: url("/images/common/icons/basic/color/CloudStorage.svg");
+}
+.icon-svg.basic-color-poll-topic {
+	background-image: url("/images/common/icons/basic/color/PollTopic.svg");
+}
+.icon-svg.basic-color-page-overview {
+	background-image: url("/images/common/icons/basic/color/PageOverview.svg");
+}
+
 .icon-svg-sm {
     width:32px;
     height:32px;	
