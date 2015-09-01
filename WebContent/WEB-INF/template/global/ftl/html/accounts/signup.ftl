@@ -233,6 +233,7 @@
 			font-size: 28px;
 		}
 		
+		
 		/*For Mobile Devices*/
 		@media (max-width: 500px) { 
 			.reg-block {
