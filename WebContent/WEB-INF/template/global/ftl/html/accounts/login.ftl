@@ -84,8 +84,7 @@
 			
 			
 			renderTo.find("form").submit(function(e) {		
-				event.preventDefault();
-				
+				event.preventDefault();				
 				var btn = renderTo.find("button[data-action='signin']");
 				
 				if( validator.validate() ){
@@ -168,8 +167,10 @@
 			margin: 60px auto;
 			background: #fff;			
 			float: right;
-		    border-bottom-left-radius: 6px!important;
-		    border-bottom-right-radius: 6px!important;			
+		    border-radius: 6px!important;
+		 	border: 1px solid rgba(0,0,0,.2);
+			-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    		box-shadow: 0 5px 10px rgba(0,0,0,.2);		    
 		}
 
 		.reg-block-header {
@@ -212,30 +213,6 @@
 			font-size: 28px;
 		}
 		
-		
-		/*Forms*/
-		/*
-		.reg-block .input-group-addon {
-			color: #bbb;
-			background: none;
-			min-width: 40px;
-		}
-		
-		.reg-block .form-control:focus {
-		   box-shadow: none;
-		   border-color: #999;
-		}
-		
-		.reg-block .checkbox { 
-			color: #555;
-			margin-bottom: 20px;
-			font-weight: normal;
-		}
-		*/
-
-		/*Reg Header*/
-
-		
 		/*For Mobile Devices*/
 		@media (max-width: 500px) { 
 			.reg-block {
@@ -244,7 +221,6 @@
 			}
 		}
 		
-
 		.popover {
 			display: block;
 			margin: 80px auto;
@@ -274,94 +250,7 @@
 			margin-top : 15px;
 			margin-bottom : 20px;
 		}
-						
-		/**
-		.reg-block {
-			width: 380px;
-			padding: 0px;
-			margin: 60px auto;
-			background:rgba(255, 255, 255, .8);
-			border-top: solid 2px #34aadc;
-		}
-		@media ( max-width : 600px) {
-			.reg-block {
-				width: 100%!important;			
-			}
-		}
-		
-		.reg-block .btn-close {
-			background-image: url(/images/common/white-angle-up.png);
-			background-repeat: no-repeat;
-			background-position: center;
-			background-color: rgba(52, 170, 220, .6)!important
-		}
-
-		.reg-block .btn-close.up {
-			  background-image: url(/images/common/white-angle-down.png);
-		}
-				
-		.nav>li>a{
-			color: #fff;
-			font-weight: 700;
-		}
-		.nav>li>a:hover, .nav>li>a:focus {
-			text-decoration: none;
-			background-color: #3498db;
-			color: #fff;
-		}
-		
-		.popover {
-			display: block;
-			margin: 80px auto;
-			right: 0;
-			border: 0px solid #a94442;
-			background: rgba(55, 58, 71, 0.5);
-			color : #fff;
-			max-width: 350px;
-		}
-		
-		.popover > .popover-content {
-			padding : 15px;
-		}
-		
-		.popover-content > img {
-		  border-radius: 80px!important;
-		  display: inline-block;
-		  height: 80px;
-		  margin: -2px 0 0 0;
-		  width: 80px;
-		}
-		
-		.popover  p {
-			color : #fff;
-			font-size:1.1em;
-			margin-top : 15px;
-			margin-bottom : 10px;
-		}
-		
-		.wrapper {
-			background:transparent;
-		}
-		
-		.sky-form .note.note-error {
-			color: #ff3b30;
-		}
-		.sky-form .radio, .sky-form .checkbox {
-			font-size: 14px;
-		}
-		
-		.sky-form header  {
-			background: rgba(255, 255, 255, .5);
-		}
-		
-		.sky-form fieldset {
-			background: rgba(255, 255, 255, 1);
-		}
-		
-		.sky-form footer { 
-			background: rgba(255, 255, 255, 1);
-		}
-		*/		
+					
 		</style>
 </#compress>		
 	</head>
