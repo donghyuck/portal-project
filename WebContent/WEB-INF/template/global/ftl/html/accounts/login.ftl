@@ -167,9 +167,6 @@
 			padding: 0px;
 			margin: 60px auto;
 			background: #fff;			
-			/*border-top: solid 0px #34aadc;*/
-		    border-bottom-left-radius: 6px!important;
-		    border-bottom-right-radius: 6px!important;
 			float: right;
 		}
 
@@ -196,16 +193,15 @@
 			border:0;
 		}
 		
-		.reg-block h2,
-		.reg-block p,
-		.reg-block p a {
+		.reg-block .sky-form footer {
+		    border-top: 0;
+		    border-bottom-left-radius: 6px!important;
+		    border-bottom-right-radius: 6px!important;		
+		}
+		.reg-block h2, .reg-block p, .reg-block p a {
 			color: #777;
 		}
-				
-		.reg-block > .sky-form fieldset {
-			padding: 10px 0px 5px;
-		}
-		
+						
 		.reg-block p {
 			font-size : 1.2em;
 		}
@@ -216,6 +212,7 @@
 		
 		
 		/*Forms*/
+		/*
 		.reg-block .input-group-addon {
 			color: #bbb;
 			background: none;
@@ -232,6 +229,7 @@
 			margin-bottom: 20px;
 			font-weight: normal;
 		}
+		*/
 
 		/*Reg Header*/
 
