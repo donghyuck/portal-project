@@ -179,8 +179,9 @@
 			margin-top : 15px;
 			margin-bottom : 20px;
 		}
+		
 		.reg-block {
-			width: 500px;
+			width: 480px;
 			padding: 0px;
 			margin: 60px auto;
 			background: #fff;			
@@ -234,7 +235,7 @@
 		/*For Mobile Devices*/
 		@media (max-width: 500px) { 
 			.reg-block {
-				width: 480px;
+				width: 100%;
 				margin: 60px auto;
 			}
 		}
