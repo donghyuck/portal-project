@@ -146,16 +146,16 @@ i.icon-svg {
 /* SocialNetwork Color Icons 
 ------------------------------------*/
 .icon-svg.social-color-facebook{
-	background-image: url("/images/common/icons/basic/color/Cancle.svg");
+	background-image: url("/images/common/icons/social/color/Facebook.svg");
 }
 .icon-svg.social-color-google{
-	background-image: url("/images/common/icons/basic/color/Cancle.svg");
+	background-image: url("/images/common/icons/social/color/GooglePlus.svg");
 }
 .icon-svg.social-color-tumblr{
-	background-image: url("/images/common/icons/basic/color/Cancle.svg");
+	background-image: url("/images/common/icons/social/color/Tumblr.svg");
 }
 .icon-svg.social-color-twitter{
-	background-image: url("/images/common/icons/basic/color/Cancle.svg");
+	background-image: url("/images/common/icons/social/color/Twitter.svg");
 }
 
 
