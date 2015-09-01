@@ -253,6 +253,7 @@
 			background: rgba(55, 58, 71, 0.5);
 			color : #fff;
 			max-width: 350px;
+		    border-radius: 6px!important;	
 		}
 		
 		.popover > .popover-content {
@@ -271,7 +272,7 @@
 			color : #fff;
 			font-size:1.1em;
 			margin-top : 15px;
-			margin-bottom : 10px;
+			margin-bottom : 20px;
 		}
 						
 		/**
