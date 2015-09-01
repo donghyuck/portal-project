@@ -280,7 +280,7 @@
 				</div>
 			</nav>		
 			<div class="container" style="min-height:570px;">
-					<div id="singup" class="reg-block animated" style="display:none;">	
+					<div id="signup" class="reg-block animated fadeIn" style="display:none;">	
 						<div class="reg-block-header">
 
 						</div>
