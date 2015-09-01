@@ -397,7 +397,7 @@
 				<ul class="nav navbar-nav navbar-left">
 					 <li><a href="#">약관</a></li>
 					 <li><a href="#">개인정보보호</a></li>
-					 <li><a href="${request.contextPath}/accounts/login.do">로그인</a></li>
+					 <li><a href="<@spring.url '/accounts/login.do'/>">로그인</a></li>
 					 <li><a href="#" onClick="toggleWindow(); return false;">회원가입</a></li>
 				</ul>
 				<!--
@@ -484,7 +484,7 @@
 				<!--<div class="modal-footer">					
 					<div class="btn-group ">
 						<button type="button" class="btn btn-info" >아이디/비밀번호찾기</button>
-						<a id="signup"  href="${request.contextPath}/accounts/login.do"  class="btn btn-info">로그인</a>
+						<a id="signup"  href="<@spring.url '/accounts/login.do'/>"  class="btn btn-info">로그인</a>
 					</div>
 					
 				</div>-->
@@ -502,8 +502,8 @@
 					</div>
 					<div class="modal-body">
 						<p>
-						회원가입을 위해서  <a href="${request.contextPath}/content.do?contentId=1" target="_blank" class="btn btn-info">서비스 이용약관</a> 과  
-						<a href="${request.contextPath}/content.do?contentId=2"  target="_blank" class="btn btn-info"> 개인정보 취급방침</a>을 읽고 동의해 주세요.
+						회원가입을 위해서  <a href="<@spring.url '/content.do?contentId=1'/>" target="_blank" class="btn btn-info">서비스 이용약관</a> 과  
+						<a href="<@spring.url '/content.do?contentId=2'/>"  target="_blank" class="btn btn-info"> 개인정보 취급방침</a>을 읽고 동의해 주세요.
 						</p>					
 						 <div class="panel panel-default panel-border-thick">
 							<div class="panel-body">
