@@ -122,7 +122,7 @@
 		
 		footer {
 			position: fixed;
-			botttm: 0;
+			bottom: 0;
 			width : 100%;
 		}
 		footer a {

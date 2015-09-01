@@ -141,6 +141,28 @@
 		.wrapper {
 			background:transparent;
 		}
+		.navbar-brand>img {
+			max-width: 150px;
+			height:auto;
+		}	
+		.copyright-text{
+			color:#fff;
+		}
+		
+		footer {
+			position: fixed;
+			bottom: 0;
+			width : 100%;
+		}
+		footer a {
+			color:#fff;
+		}
+		
+		footer a:hover{
+			color:#fff;
+		}				
+				
+				
 					
 		.reg-block {
 			width: 320px;
@@ -210,6 +232,7 @@
 		.reg-block-header p.text-right {
 			text-align: right;
 		} 
+		
 		/*For Mobile Devices*/
 		@media (max-width: 500px) { 
 			.reg-block {
@@ -217,21 +240,7 @@
 				margin: 60px auto;
 			}
 		}
-		.navbar-brand>img {
-			max-width: 150px;
-			height:auto;
-		}		
-		.copyright-text{
-			color:#fff;
-		}
 		
-		footer a {
-			color:#fff;
-		}
-		
-		footer a:hover{
-			color:#fff;
-		}
 
 		.popover {
 			display: block;
