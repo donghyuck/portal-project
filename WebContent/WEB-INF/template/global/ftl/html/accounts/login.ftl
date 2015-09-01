@@ -161,18 +161,37 @@
 		footer a:hover{
 			color:#fff;
 		}				
-				
-				
 					
 		.reg-block {
 			width: 320px;
-			padding: 20px;
+			padding: 0px;
 			margin: 60px auto;
 			background: #fff;			
-			border-top: solid 0px #34aadc;
+			/*border-top: solid 0px #34aadc;*/
+		    border-bottom-left-radius: 6px!important;
+		    border-bottom-right-radius: 6px!important;
 			float: right;
 		}
 
+		.reg-block-header {
+			padding:20px 20px 10px 20px;
+			margin-bottom: 10px;
+			border-bottom: solid 1px #eee;
+		}
+		
+		.reg-block-header h2 {
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		
+		.reg-block-header p {
+			text-align: center;
+		}
+		.reg-block-header p.text-right {
+			text-align: right;
+		} 
+		
+		
 		.reg-block .sky-form {
 			border:0;
 		}
@@ -215,23 +234,7 @@
 		}
 
 		/*Reg Header*/
-		.reg-block-header {
-			padding-bottom: 5px;
-			margin-bottom: 10px;
-			border-bottom: solid 1px #eee;
-		}
-		
-		.reg-block-header h2 {
-			text-align: center;
-			margin-bottom: 15px;
-		}
-		
-		.reg-block-header p {
-			text-align: center;
-		}
-		.reg-block-header p.text-right {
-			text-align: right;
-		} 
+
 		
 		/*For Mobile Devices*/
 		@media (max-width: 500px) { 
