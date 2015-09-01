@@ -270,12 +270,14 @@
 					<div id="signin" class="reg-block animated" style="display:none;">	
 						<div class="reg-block-header">
 							<h2></h2>
+							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 							<ul class="social-icons text-center">
 								<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
 								<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
 								<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 								<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
 							</ul>
+							</#if>
 							<p class="m-t-md">${action.webSite.displayName} 회원이 아니신가요? <br >지금 <span class="text-primary">가입</span>하세요.</p>        
 							<p class="text-right" ><a class="btn btn-info btn-flat btn-outline" href="<@spring.url "/accounts/signup"/>">가입하기</a></p>    
 						</div>
