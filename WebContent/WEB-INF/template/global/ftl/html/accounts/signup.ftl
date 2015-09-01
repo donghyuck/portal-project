@@ -2,7 +2,7 @@
 <html decorator="unify">
 <head>
 <#compress>
-		<title>회원가입</title>
+		<title><#if action.webSite ?? >${action.webSite.displayName } 회원가입<#else>회원가입</#if></title>
 		<script type="text/javascript"><!--		
 		yepnope([{
 			load: [
@@ -24,6 +24,7 @@
 			'<@spring.url "/js/common/common.ui.bootstrap.js"/>',
 			'<@spring.url "/js/common/common.ui.data.min.js"/>',
 			'<@spring.url "/js/common/common.ui.connect.min.js"/>'
+			],	
 			complete: function() {
 				
 				common.ui.setup({
