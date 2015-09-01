@@ -179,7 +179,68 @@
 			margin-top : 15px;
 			margin-bottom : 20px;
 		}
-								
+
+
+		.reg-block {
+			width: 520px;
+			padding: 0px;
+			margin: 60px auto;
+			background: #fff;			
+			float: right;
+		    border-radius: 6px!important;
+		 	border: 1px solid rgba(0,0,0,.2);
+			-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    		box-shadow: 0 5px 10px rgba(0,0,0,.2);		    
+		}
+
+		.reg-block-header {
+			padding:20px 20px 10px 20px;
+			margin-bottom: 10px;
+			border-bottom: solid 1px #eee;
+		}
+		
+		.reg-block-header h2 {
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		
+		.reg-block-header p {
+			text-align: center;
+		}
+		.reg-block-header p.text-right {
+			text-align: right;
+		} 
+		
+		
+		.reg-block .sky-form {
+			border:0;
+		}
+		
+		.reg-block .sky-form footer {
+		    border-top: 0;
+		    border-bottom-left-radius: 6px!important;
+		    border-bottom-right-radius: 6px!important;		
+		}
+		.reg-block h2, .reg-block p, .reg-block p a {
+			color: #777;
+		}
+						
+		.reg-block p {
+			font-size : 1.2em;
+		}
+		
+		.reg-block-header h2 {
+			font-size: 28px;
+		}
+		
+		/*For Mobile Devices*/
+		@media (max-width: 500px) { 
+			.reg-block {
+				width: 300px;
+				margin: 60px auto;
+			}
+		}
+										
 		
 		.k-widget.k-tooltip-validation {
 			background-color: transparent ;
