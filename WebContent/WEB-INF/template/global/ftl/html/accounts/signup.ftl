@@ -87,7 +87,7 @@
 								}else{
 									$.ajax({
 										type : 'POST',
-										url : "${request.contextPath}/accounts/check-username-available.do?output=json",
+										url : '<@spring.url "/accounts/check-username-available.do?output=json"/>',
 										dataType: 'json',
 										data: { username: input.val() },
 										success : function(response){			
