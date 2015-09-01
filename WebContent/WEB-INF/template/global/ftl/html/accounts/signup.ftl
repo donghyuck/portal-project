@@ -309,11 +309,11 @@
 											<label for="signupInputPassword2">비밀번호 확인</label>
 											<input type="password" class="form-control" id="signupInputPassword2" name="signupInputPassword2"  placeholder="비밀번호 확인" data-bind="value: password2" required data-required-msg="비밀번호를 다시한번 입력하여 주십시오.">
 										</div>									
-										<div class="checkbox">
-											<label>
+										<section>
+											<label class="checkbox">
 												<input type="checkbox"  id="signupInputAgree" name="signupInputAgree" required validationMessage="회원가입을 위하여 동의가 필요합니다."> 서비스 약관과 개인정보취급방침 및 개인정보 수집항목•이용목적•보유기간에 동의합니다.
 											</label>
-										</div>
+										</section>
 									</fieldset>	
 									<footer>
 										<button type="reset" value="Reset" class="btn btn-info" data-dismiss="modal">취소</button>
