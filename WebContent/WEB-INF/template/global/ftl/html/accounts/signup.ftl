@@ -231,6 +231,12 @@
 		.reg-block-header h2 {
 			font-size: 28px;
 		}
+
+		.reg-block .sky-form footer {
+		    border-top: 0;
+		    border-bottom-left-radius: 6px!important;
+		    border-bottom-right-radius: 6px!important;		
+		}		
 		
 		/*For Mobile Devices*/
 		@media (max-width: 500px) { 
