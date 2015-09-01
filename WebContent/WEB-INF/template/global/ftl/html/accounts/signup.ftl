@@ -48,10 +48,15 @@
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(user));				
 					}else{
-						
+						createSignUpBlock(user)	
 					}													
 				}				
 			} );
+		}
+		
+		function createSignUpBlock(user){
+			var renderTo = $("#singup");
+			renderTo.show();
 		}
 		
 		function validateRequired ( input ) {
@@ -216,6 +221,11 @@
 				</div>
 			</nav>		
 			<div class="container" style="min-height:570px;">
+					<div id="singup" class="reg-block animated" style="display:none;">	
+						<div class="reg-block-header">
+
+						</div>
+					</div>			
 			</div><!-- /.container -->
 
 			<footer>
