@@ -120,6 +120,11 @@
 			color:#fff;
 		}
 		
+		footer {
+			position: fixed;
+			botttm: 0;
+			width : 100%;
+		}
 		footer a {
 			color:#fff;
 		}
