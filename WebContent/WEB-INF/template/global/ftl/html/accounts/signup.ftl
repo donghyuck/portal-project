@@ -137,7 +137,7 @@
 			color:#fff;
 		}
 		
-		footer {
+		.wrapper > footer {
 			position: fixed;
 			bottom: 0;
 			width : 100%;
@@ -215,11 +215,6 @@
 			border:0;
 		}
 		
-		.reg-block .sky-form footer {
-		    border-top: 0;
-		    border-bottom-left-radius: 6px!important;
-		    border-bottom-right-radius: 6px!important;		
-		}
 		.reg-block h2, .reg-block p, .reg-block p a {
 			color: #777;
 		}
