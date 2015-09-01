@@ -174,6 +174,8 @@
 					$('.custom-signin').focus();
 				}				
 			});
+			
+			
 						
 			$("#login-window .custom-external-login-groups button").each(function( index ) {
 				var external_login_button = $(this);
