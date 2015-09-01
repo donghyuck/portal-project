@@ -116,7 +116,18 @@
 			max-width: 150px;
 			height:auto;
 		}	
-				
+		.copyright-text{
+			color:#fff;
+		}
+		
+		footer a {
+			color:#fff;
+		}
+		
+		footer a:hover{
+			color:#fff;
+		}
+						
 		
 		.k-widget.k-tooltip-validation {
 			background-color: transparent ;
