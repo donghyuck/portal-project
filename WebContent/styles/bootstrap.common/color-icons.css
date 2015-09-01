@@ -76,6 +76,29 @@ i.icon-svg {
 	background-image: url("/images/common/icons/basic/color/Advertising.svg");
 }
 
+.icon-svg.basic-color-add-user{
+	background-image: url("/images/common/icons/basic/color/AddUser.svg");
+}
+.icon-svg.basic-color-remove-user{
+	background-image: url("/images/common/icons/basic/color/RemoveUser.svg");
+}
+.icon-svg.basic-color-find-user{
+	background-image: url("/images/common/icons/basic/color/FindUser.svg");
+}
+
+.icon-svg.basic-color-box-filled{
+	background-image: url("/images/common/icons/basic/color/BoxFilled.svg");
+}
+.icon-svg.basic-color-help{
+	background-image: url("/images/common/icons/basic/color/Help.svg");
+}
+.icon-svg.basic-color-reading{
+	background-image: url("/images/common/icons/basic/color/Reading.svg");
+}
+.icon-svg.basic-color-survey{
+	background-image: url("/images/common/icons/basic/color/Survey.svg");
+}
+
 .icon-svg-sm {
     width:32px;
     height:32px;	
