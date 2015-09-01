@@ -168,6 +168,8 @@
 			margin: 60px auto;
 			background: #fff;			
 			float: right;
+		    border-bottom-left-radius: 6px!important;
+		    border-bottom-right-radius: 6px!important;			
 		}
 
 		.reg-block-header {
