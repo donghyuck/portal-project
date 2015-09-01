@@ -446,10 +446,6 @@
 					 <li><a href="<@spring.url '/accounts/login.do'/>">로그인</a></li>
 					 <li><a href="#" onClick="toggleWindow(); return false;">회원가입</a></li>
 				</ul>
-				<!--
-				<ul class="nav navbar-nav navbar-right">
-					 <li><a href="#">Link</a></li>
-				</ul>-->
 			</div>
 		</nav>-->
 	<!-- Modal -->
