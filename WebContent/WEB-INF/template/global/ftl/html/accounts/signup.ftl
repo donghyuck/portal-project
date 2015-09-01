@@ -112,6 +112,11 @@
 		.wrapper {
 			background:transparent;
 		}
+		.navbar-brand>img {
+			max-width: 150px;
+			height:auto;
+		}	
+				
 		
 		.k-widget.k-tooltip-validation {
 			background-color: transparent ;
