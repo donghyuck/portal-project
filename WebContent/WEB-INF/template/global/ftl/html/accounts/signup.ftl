@@ -10,7 +10,6 @@
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>', 
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
-			
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',				
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',				
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
