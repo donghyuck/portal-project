@@ -317,9 +317,9 @@
 											</label>
 										</section>
 									</fieldset>	
-									<footer>
-										<button type="reset" value="Reset" class="btn btn-info" data-dismiss="modal">취소</button>
-										<button type="button" class="btn btn-info signup">확인</button>
+									<footer class="text-right">
+										<button type="reset" value="Reset" class="btn btn-info btn-flat btn-outline">취소</button>
+										<button type="button" class="btn btn-info btn-flat btn-outline signup">확인</button>
 									</footer>	
 								</form>
 														
