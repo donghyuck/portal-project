@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-/* Basic Color Icons 
-------------------------------------*/
 i.icon-svg {
 	display: inline-block;
     -webkit-font-smoothing: antialiased;
@@ -10,6 +8,45 @@ i.icon-svg {
     width:64px;
     height:64px;
 }
+
+.icon-svg-sm {
+    width:32px;
+    height:32px;	
+}
+
+.icon-svg-lg {
+    width:128px;
+    height:128px;	
+}
+
+.icon-svg-btn {	
+    margin: 0 .6rem .6rem 0;
+    color: #9b9b9b;
+    display: inline-block;
+    /* width: 5.5rem; */
+    /* height: 6rem; */
+    position: relative;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 6px!important;
+    -webkit-transition: 75ms linear all;
+    transition: 75ms linear all;
+}  
+
+
+.icon-svg-btn:hover {
+	background: #f4f4f4;
+    color: #000;
+    text-decoration: none;	
+}
+
+.icon-svg-btn:after{
+	clear:both;
+	content:""!important;
+}
+
+/* Basic Color Icons 
+------------------------------------*/
 
 .icon-svg.basic-color-home {
 	background-image: url("/images/common/icons/basic/color/Home.svg");
@@ -105,38 +142,23 @@ i.icon-svg {
 	background-image: url("/images/common/icons/basic/color/Cancle.svg");
 }
 
-.icon-svg-sm {
-    width:32px;
-    height:32px;	
+
+/* SocialNetwork Color Icons 
+------------------------------------*/
+.icon-svg.social-color-facebook{
+	background-image: url("/images/common/icons/basic/color/Cancle.svg");
+}
+.icon-svg.social-color-google{
+	background-image: url("/images/common/icons/basic/color/Cancle.svg");
+}
+.icon-svg.social-color-tumblr{
+	background-image: url("/images/common/icons/basic/color/Cancle.svg");
+}
+.icon-svg.social-color-twitter{
+	background-image: url("/images/common/icons/basic/color/Cancle.svg");
 }
 
-.icon-svg-lg {
-    width:128px;
-    height:128px;	
-}
-
-.icon-svg-btn {	
-    margin: 0 .6rem .6rem 0;
-    color: #9b9b9b;
-    display: inline-block;
-    /* width: 5.5rem; */
-    /* height: 6rem; */
-    position: relative;
-    text-align: center;
-    border: 2px solid transparent;
-    border-radius: 6px!important;
-    -webkit-transition: 75ms linear all;
-    transition: 75ms linear all;
-}  
 
 
-.icon-svg-btn:hover {
-	background: #f4f4f4;
-    color: #000;
-    text-decoration: none;	
-}
 
-.icon-svg-btn:after{
-	clear:both;
-	content:""!important;
-}
+
