@@ -36,11 +36,23 @@
 				
 								
 				// START SCRIPT	
-				
+				prepareSignUp();
 				// END SCRIPT            
 			}
 		}]);	
 
+		function prepareSignUp () {	
+			common.ui.data.user( {
+				success : function ( user ) {				
+					if( !user.anonymous ){
+						var template = kendo.template($("#alert-template").html());	
+						$(".container:first").prepend(template(user));				
+					}else{
+						
+					}													
+				}				
+			} );
+		}
 		
 		function validateRequired ( input ) {
 			var signupPlaceHolder = getSignupPlaceHolder();
@@ -356,11 +368,16 @@
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+	
 	<script type="text/x-kendo-template" id="alert-template">
-	<div class="alert alert-danger">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		#=message#
+	<div class="popover pull-right animated bounceInDown">
+		<!--<h3 class="popover-title">로그인 상태입니다.</h3>-->
+			<div class="popover-content text-center">		
+			<img class="img-rounded" src="/download/profile/#=username#?width=100&amp;height=150">	
+			<p>#:name # 님은 로그인 상태입니다. 본인이 아니라면 로그아웃을 클릭하십시오.</p>
+			<a href="/" class="btn btn-info btn-flat btn-lg">메인으로 이동</a><a href="/logout" class="m-l-sm btn btn-danger btn-flat btn-lg">로그아웃</a>
+		</div>
 	</div>
-    </script>				
+    </script>			
 	</body>    
 </html>
