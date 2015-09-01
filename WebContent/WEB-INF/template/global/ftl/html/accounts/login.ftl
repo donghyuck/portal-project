@@ -390,9 +390,8 @@
 							<p class="text-right" ><a class="btn btn-info btn-flat btn-outline" href="<@spring.url "/accounts/signup"/>">가입하기</a></p>    
 						</div>
 						<section id="signin-status" class="text-danger"></section>			
-						<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
-						<input type="hidden" name="output" value="json" />									
-						<div class="sky-form">		
+						<form name="signin-fm" role="form" method="POST" accept-charset="utf-8" class="sky-form">
+							<input type="hidden" name="output" value="json" />									
 							<fieldset>											
 								<section>
 									<label class="input">
@@ -410,12 +409,9 @@
 									<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 								</section>
 							</fieldset>		
-						</div>		
-						<div class="row">
-							<div class="col-md-10 col-md-offset-1">
+							<footer>
 								<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-action="signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
-							</div>
-						</div>	
+							</footer>
 						</form><!-- /form -->		
 					</div>
 		</div><!-- /.container -->
