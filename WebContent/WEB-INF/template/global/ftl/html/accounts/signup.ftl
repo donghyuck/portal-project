@@ -109,7 +109,10 @@
 		</script>
 		
 		<style>
-
+		.wrapper {
+			background:transparent;
+		}
+		
 		.k-widget.k-tooltip-validation {
 			background-color: transparent ;
 			color: #a94442;
