@@ -391,8 +391,53 @@
 		</#compress>		
 	</head>
 	<body class="color3">
-		<div class="main" id="slideshow"></div>
-		<nav class="navbar navbar-fixed-bottom" role="navigation" class="color:#000000;">
+		<div class="page-loader"></div>
+		<div class="wrapper">
+			<nav class="navbar navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/">
+							<img alt="Brand" src="/download/logo/company/${action.webSite.company.name}">
+						</a>
+					</div>					
+				</div>
+			</nav>		
+			<div class="container" style="min-height:570px;">
+			</div><!-- /.container -->
+		</div>			
+		<footer>
+			<nav class="navbar navbar-static-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="copyright-text">
+						<#if action.webSite ?? >${.now?string("yyyy")} &copy; ${action.webSite.company.displayName }. 모든 권리 보유.<#else></#if>
+							<#if action.hasWebSiteMenu("RULES_MENU") >
+								<#assign website_rules_menu = action.getWebSiteMenu("RULES_MENU") />
+								<#list website_rules_menu.components as item >					
+								<a href="${item.page}">${item.title}</a> <#if item != website_rules_menu.components?last >|</#if>		
+								</#list>
+						</#if>
+						</div>
+					</div>
+					<div class="col-sm-6">
+					<div class="copyright-text  text-right">
+					<#if action.hasWebSiteMenu("FOOTER_MENU") >
+						<#assign website_footer_menu = action.getWebSiteMenu("FOOTER_MENU") />
+						<#if  website_footer_menu.components?has_content >
+							<#list website_footer_menu.components as item >					
+								<a href="${item.page}">${item.title}</a> <#if item != website_footer_menu.components?last >|</#if>	
+							</#list>
+						</#if>
+					</#if>
+					</div>
+					</div>					
+				</div><!--/row--> 
+			</div>
+			</nav>
+		</footer>	
+				
+		<!--<nav class="navbar navbar-fixed-bottom" role="navigation" class="color:#000000;">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-left">
 					 <li><a href="#">약관</a></li>
@@ -405,7 +450,7 @@
 					 <li><a href="#">Link</a></li>
 				</ul>-->
 			</div>
-		</nav>
+		</nav>-->
 	<!-- Modal -->
 	<div class="modal fade" id="signup-window" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
