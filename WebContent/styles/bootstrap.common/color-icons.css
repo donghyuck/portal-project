@@ -98,6 +98,12 @@ i.icon-svg {
 .icon-svg.basic-color-survey{
 	background-image: url("/images/common/icons/basic/color/Survey.svg");
 }
+.icon-svg.basic-color-plus{
+	background-image: url("/images/common/icons/basic/color/Plus.svg");
+}
+.icon-svg.basic-color-cancle{
+	background-image: url("/images/common/icons/basic/color/Cancle.svg");
+}
 
 .icon-svg-sm {
     width:32px;
