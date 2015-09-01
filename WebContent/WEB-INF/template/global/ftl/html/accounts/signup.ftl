@@ -226,7 +226,12 @@
 		.reg-block-header h2 {
 			font-size: 28px;
 		}
-
+		
+		.reg-block .sky-form .checkbox {
+			font-size : 1.0em;
+			color:#999;
+		}
+		
 		.reg-block .sky-form footer {
 		    border-top: 0;
 		    border-bottom-left-radius: 6px!important;
