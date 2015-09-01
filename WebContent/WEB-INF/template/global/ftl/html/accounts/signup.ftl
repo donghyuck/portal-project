@@ -36,7 +36,6 @@
 				
 								
 				// START SCRIPT	
-				var slideshow = $('#slideshow').extFullscreenSlideshow();
 				
 				$("#signup-form").data("signupPlaceHolder", new  SignupForm({}) );		
 				$("#signup-form").data("validatorPlaceHolder", new kendo.data.ObservableObject({}) );			
