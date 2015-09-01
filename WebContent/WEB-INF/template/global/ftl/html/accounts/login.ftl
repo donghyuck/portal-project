@@ -32,11 +32,9 @@
 						wallpaper : true,
 						loading:true
 					}
-				});			
-				
+				});		
 				prepareSocialSignOn();
-				prepareSignOn();
-				
+				prepareSignOn();				
 			}
 		}]);			
 		
