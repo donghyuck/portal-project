@@ -1,33 +1,39 @@
 <#ftl encoding="UTF-8"/>
-<#assign contextPath = request.contextPath >
-<html decorator="homepage">
+<html decorator="unify">
 <head>
 <#compress>
 		<title>회원가입</title>
 		<script type="text/javascript"><!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
-			'css!${request.contextPath}/styles/bootstrap/3.1.0/non-responsive.css',	
-			'css!${request.contextPath}/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css',	
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.with-mousewheel.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
-			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
-			'${request.contextPath}/js/jquery.imagesloaded/imagesloaded.min.js',
-			'${request.contextPath}/js/common/common.modernizr.custom.js',
-			'${request.contextPath}/js/common/common.models.js',
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js'],
+			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>', 
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',				
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',				
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
+			'<@spring.url "/js/jquery.plugins/jquery.ui.shake.min.js"/>',
+			'<@spring.url "/js/jquery.jgrowl/jquery.jgrowl.min.js"/>',			
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',						
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
+			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 				
+			'<@spring.url "/js/common/common.ui.core.js"/>',
+			'<@spring.url "/js/common/common.ui.bootstrap.js"/>',
+			'<@spring.url "/js/common/common.ui.data.min.js"/>',
+			'<@spring.url "/js/common/common.ui.connect.min.js"/>'
 			complete: function() {
 				
-							
-				// 1.  한글 지원을 위한 로케일 설정
-				kendo.culture("ko-KR");
+				common.ui.setup({
+					features:{
+						wallpaper : true,
+						loading:true
+					}
+				});	
 				
+								
 				// START SCRIPT	
 				var slideshow = $('#slideshow').extFullscreenSlideshow();
 				
