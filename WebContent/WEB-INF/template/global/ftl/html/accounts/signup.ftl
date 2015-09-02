@@ -247,14 +247,14 @@
 			}
 		}
 
-		.heading h4 {
+		.heading h6 {
 			padding: 0 12px;
 			position: relative;
 			display: inline-block;
 			line-height: 34px !important; /*For Tagline Boxes*/
 		}
 		
-		.heading h4:before,.heading h4:after {
+		.heading h6:before,.heading h6:after {
 			content: ' ';
 			width: 70%;
 			position: absolute;
@@ -262,20 +262,20 @@
 			border-color: #bbb;
 		}
 		
-		.heading h4:before {
+		.heading h6:before {
 			right: 100%;
 		}
 		
-		.heading h4:after {
+		.heading h6:after {
 			left: 100%;
 		}
 		
 		@media ( max-width : 768px) {
-			.heading h4:before,.heading h4:after {
+			.heading h6:before,.heading h6:after {
 				width: 20%;
 			}
 		}				
-		.heading-v4 h4:before,.heading-v4 h4:after {
+		.heading-v4 h6:before,.heading-v4 h6:after {
 			top: 17px;
 			border-bottom-style: solid;
 		}				
@@ -339,7 +339,7 @@
 						
 								<form role="form" id="signup-form" name="fm1" method="POST" accept-charset="utf-8" class="sky-form">
 									<div class="heading heading-v4">
-                        				<h2>혹은</h2>
+                        				<h6>혹은</h6>
                     				</div>
 									<fieldset <#if !action.user.anonymous >disabled</#if>>
 										<div class="form-group">
