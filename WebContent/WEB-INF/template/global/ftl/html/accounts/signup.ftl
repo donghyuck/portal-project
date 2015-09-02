@@ -108,7 +108,7 @@
 				success : function(data){
 					console.log( common.ui.stringify( data.user ));
 					if( common.ui.defined( data.user ) ){
-						if( !user.anonymous ){
+						if( !data.user.anonymous ){
 							var template = kendo.template($("#alert2-template").html());	
 							$(".container:first").prepend(template(data.user));		
 						}
