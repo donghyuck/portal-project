@@ -89,9 +89,10 @@
 						var btn = $(e.target);
 						kendo.ui.progress(renderTo, true);	
 						console.log( btn.data('target') );
-						window.open( common.ui.connect.authorizeUrl(btn.data('target')),
-								btn.data('target') + " Window", 
-								"height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes");	
+						window.open( 
+							common.ui.connect.authorizeUrl(btn.data('target')),
+							btn.data('target') + " Window", 
+							"height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes");	
 						return false;	
 					},
 					signup : new SignupForm()
@@ -99,9 +100,19 @@
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );				
 			}
-			//renderTo.show();
 		}
 		
+		function handleCallbackResult( success ){
+			var renderTo = $("#signup");
+			common.ui.connect.signin({
+				success : function(data){
+					console.log( common.ui.stringify( data ));
+				},
+				complete : function(){
+					kendo.ui.progress(renderTo, false);	
+				}
+			});	
+		}		
 		function validateRequired ( input ) {
 			var signupPlaceHolder = getSignupPlaceHolder();
 			if( signupPlaceHolder.isExternal() ){				
@@ -114,11 +125,7 @@
 			}
 			return true;			
 		}
-		
-		function handleCallbackResult( success ){
-			var renderTo = $("#signup");
-			kendo.ui.progress(renderTo, false);	
-		}
+
 		
 		function signupCallbackResult( media, code , exists  ){
 			
