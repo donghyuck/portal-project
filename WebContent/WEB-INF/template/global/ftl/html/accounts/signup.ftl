@@ -55,15 +55,7 @@
 			} );
 		}
 		
-		function createSignUpBlock(user){
-			var renderTo = $("#signup");
-			if( !common.ui.defined(renderTo.data("model")) ){
-				var observable =  common.ui.observable({
-					visible : true,
-					connectWith : function(e){
-						console.log( e.target );
-					}
-					signup : kendo.data.Model.define({
+		var SignupForm = kendo.data.Model.define({
 						id : "id",
 						fields: {
 							"media": { type: "string", defaultValue : "internal" },
@@ -85,7 +77,17 @@
 					        "emailVisible" : { type:"boolean", defaultVlaue: false },
 					        "agree":  { type:"boolean", defaultVlaue: false }
 						}
-					})
+					});
+		
+		function createSignUpBlock(user){
+			var renderTo = $("#signup");
+			if( !common.ui.defined(renderTo.data("model")) ){
+				var observable =  common.ui.observable({
+					visible : true,
+					connectWith : function(e){
+						console.log( e.target );
+					},
+					signup : new SignupForm()
 				
 				});
 				kendo.bind(renderTo, observable);
