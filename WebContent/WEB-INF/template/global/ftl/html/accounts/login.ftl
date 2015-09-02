@@ -46,8 +46,7 @@
 						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , response.media );
 						renderTo.html( html );							
 						$("a[data-action='connect']").click(function(e){
-							var $this = $(this);				
-							
+							var $this = $(this);	
 							//$("form[name='signin-fm'] fieldset").attr("disabled", true);									
 							window.open( 
 								"<@spring.url "/connect/"/>" + $this.data("provider-id") + "/authorize",
@@ -82,8 +81,6 @@
 				errorTemplate: "<div class='note note-error'>#=message#</div>"
 			}).data("kendoValidator");
 			
-			
-			
 			renderTo.find("form").submit(function(e) {		
 				event.preventDefault();				
 				var btn = renderTo.find("button[data-action='signin']");
@@ -100,7 +97,7 @@
 									$("input[type='password']").val("").focus();											
 								} else {        	   
 									$("#signin-status").html("");                         
-									location.href="<@spring.url "/"/>";
+									location.href="<@spring.url "/display/0/my-home.html"/>";
 								} 	
 							},
 							complete: function(jqXHR, textStatus ){					
@@ -121,7 +118,7 @@
 				common.ui.connect.signin({
 					success : function(data){
 						if(data.userId > 0){
-							location.href="/main.do";
+							location.href='<@spring.url "/display/0/my-home.html"/>';
 						}else{
 							$("form[name='signin-fm'] fieldset").attr("disabled", false);	
 						} 
