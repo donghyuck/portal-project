@@ -107,7 +107,7 @@
 			common.ui.connect.connectedProfile({
 				success : function(data){
 					console.log( common.ui.stringify( data ));
-					if( common.ui.defiend( data.user ) ){
+					if( common.ui.defined( data.user ) ){
 						if( !user.anonymous ){
 							var template = kendo.template($("#alert2-template").html());	
 							$(".container:first").prepend(template(data.user));		
