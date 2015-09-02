@@ -328,10 +328,10 @@
 					<p>쇼셜계정을 사용하여 손쉽게 회원 가입 하실수 있습니다.</p>
 					<div class="row">
 						<div class="col-sm-6">
-							<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg custom-social-groups"  data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
+							<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg" data-action="connect" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
 						</div>
 						<div class="col-sm-6">
-							<button class="btn btn-block btn-flat btn-outline rounded btn-info btn-lg custom-social-groups" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
+							<button class="btn btn-block btn-flat btn-outline rounded btn-info btn-lg" data-action="connect" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
 						</div>
 					</div>		
 				</#if>	
