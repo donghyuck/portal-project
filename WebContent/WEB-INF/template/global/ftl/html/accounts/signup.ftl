@@ -18,7 +18,7 @@
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',						
-			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
+			'<@spring.url "/js/bootstrap/3.3.5/bootstrap.min.js"/>',			
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 				
 			'<@spring.url "/js/common/common.ui.core.js"/>',
@@ -55,7 +55,12 @@
 			} );
 		}
 		
-		var SignupForm = kendo.data.Model.define({
+
+		
+		function createSignUpBlock(user){
+			var renderTo = $("#signup");
+			if( !common.ui.defined(renderTo.data("model")) ){
+				var SignupForm = kendo.data.Model.define({
 						id : "id",
 						fields: {
 							"media": { type: "string", defaultValue : "internal" },
@@ -77,11 +82,7 @@
 					        "emailVisible" : { type:"boolean", defaultVlaue: false },
 					        "agree":  { type:"boolean", defaultVlaue: false }
 						}
-					});
-		
-		function createSignUpBlock(user){
-			var renderTo = $("#signup");
-			if( !common.ui.defined(renderTo.data("model")) ){
+					});			
 				var observable =  common.ui.observable({
 					visible : true,
 					connectWith : function(e){
