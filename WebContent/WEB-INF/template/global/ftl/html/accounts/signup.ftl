@@ -167,7 +167,7 @@
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );				
 			}
-			renderTo.show();
+			//renderTo.show();
 		}
 		
 		function validateRequired ( input ) {
@@ -433,7 +433,7 @@
 				</div>
 			</nav>		
 			<div class="container" style="min-height:570px;">
-					<div id="signup" class="reg-block animated fadeIn" style="display:none;">	
+					<div id="signup" class="reg-block animated fadeIn" style="display:none;" data-bind={visible:visible}>	
 						<div class="reg-block-header no-border">
 							<h2>회원가입</h2>
 				<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
