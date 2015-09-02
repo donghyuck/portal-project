@@ -292,12 +292,17 @@
 		return common.ui.datasource('/connect/list.json', options);		
 	}	
 	
+	function getAuthorizeUrl(provider){
+		return "/connect/" + provider + "/authorize"
+	}
+	
 	$.extend(ui.connect , {
 		row : common.ui.connect.row || row,
 		columns : common.ui.connect.columns || columns,		
 		listview : common.ui.connect.listview || listview,
 		signin : common.ui.connect.signin || signin,
 		status : common.ui.connect.status || status,
+		authorizeUrl : common.ui.connect.authorizeUrl || getAuthorizeUrl,
 		user : {
 			lookup : common.ui.connect.userProfile || userProfile,
 			profile : common.ui.connect.profile || profile,
