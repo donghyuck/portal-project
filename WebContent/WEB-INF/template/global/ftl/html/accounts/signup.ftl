@@ -110,7 +110,7 @@
 					if( common.ui.defined( data.user ) ){
 						if( !data.user.anonymous ){
 							var template = kendo.template($("#alert2-template").html());	
-							$(".container:first").prepend(template(data.user));		
+							$(".container:first").prepend(template(data));		
 						}
 					}
 				},
