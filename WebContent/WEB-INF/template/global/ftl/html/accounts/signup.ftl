@@ -115,6 +115,11 @@
 			return true;			
 		}
 		
+		function handleCallbackResult( success ){
+			var renderTo = $("#signup");
+			kendo.ui.progress(renderTo, false);	
+		}
+		
 		function signupCallbackResult( media, code , exists  ){
 			
 			if(exists){
