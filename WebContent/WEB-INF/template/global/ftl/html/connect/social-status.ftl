@@ -44,7 +44,7 @@
 					window.close();
 				});
 				
-				<#if profile ?? >				
+				<#if user.anonymous && profile ?? >				
 				if(window.opener){
 					if(typeof window.opener.handleCallbackResult == "function"){	
 						window.opener.handleCallbackResult( <#if error ?? >false<#else>true</#if> );
