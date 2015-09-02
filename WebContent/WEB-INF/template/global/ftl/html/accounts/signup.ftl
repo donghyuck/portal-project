@@ -247,6 +247,12 @@
 			}
 		}
 				
+		.heading-v4 h4:before,.heading-v4 h4:after {
+			top: 17px;
+			border-bottom-style: solid;
+		}				
+				
+				
 		.k-widget.k-tooltip-validation {
 			background-color: transparent ;
 			color: #a94442;
