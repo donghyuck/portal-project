@@ -628,7 +628,7 @@
 			<div class="popover-content text-center">		
 			<img class="img-rounded" src="/download/profile/#=username#?width=100&amp;height=150">	
 			<p>#:name # 님은 로그인 상태입니다. 본인이 아니라면 로그아웃을 클릭하십시오.</p>
-			<a href="/" class="btn btn-info btn-flat btn-lg">메인으로 이동</a><a href="/logout" class="m-l-sm btn btn-danger btn-flat btn-lg">로그아웃</a>
+			<a href="/" class="btn btn-info rounded btn-flat btn-lg">메인으로 이동</a><a href="/logout" class="m-l-sm btn btn-danger rounded btn-flat btn-lg">로그아웃</a>
 		</div>
 	</div>
     </script>		
@@ -638,7 +638,7 @@
 			<div class="popover-content text-center">		
 			<img class="img-rounded" src="#=imageUrl#">	
 			<p> #:profile.name # 님은 이미 회원입니다.</p>
-			<a href="/" class="btn btn-info btn-flat btn-lg">메인으로 이동</a><a href="/accounts/login" class="m-l-sm btn btn-danger btn-flat btn-lg">로그인</a>
+			<a href="/" class="btn btn-info btn-flat rounded btn-lg">메인으로 이동</a><a href="/accounts/login" class="m-l-sm btn btn-danger rounded btn-flat btn-lg">로그인</a>
 		</div>
 	</div>
     </script>			
