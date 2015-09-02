@@ -636,8 +636,8 @@
 	<div class="popover pull-right animated bounceInDown">
 		<!--<h3 class="popover-title">로그인 상태입니다.</h3>-->
 			<div class="popover-content text-center">		
-			<img class="img-rounded" src="/download/profile/#=username#?width=100&amp;height=150">	
-			<p> #:name # 님은 이미 회원입니다.</p>
+			<img class="img-rounded" src="#=imageUrl#">	
+			<p> #:profile.name # 님은 이미 회원입니다.</p>
 			<a href="/" class="btn btn-info btn-flat btn-lg">메인으로 이동</a><a href="/accounts/login" class="m-l-sm btn btn-danger btn-flat btn-lg">로그인</a>
 		</div>
 	</div>
