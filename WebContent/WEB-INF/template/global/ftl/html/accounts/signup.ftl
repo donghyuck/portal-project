@@ -86,7 +86,9 @@
 				var observable =  common.ui.observable({
 					visible : true,
 					connectWith : function(e){
-						console.log( e.target );
+						var btn = $(e.target);
+						
+						console.log( btn.data('target') );
 					},
 					signup : new SignupForm()
 				
