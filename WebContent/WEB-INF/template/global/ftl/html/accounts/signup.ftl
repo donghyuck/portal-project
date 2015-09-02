@@ -288,27 +288,25 @@
 			</nav>		
 			<div class="container" style="min-height:570px;">
 					<div id="signup" class="reg-block animated fadeIn" style="display:none;">	
-						<div class="reg-block-header">
+						<div class="reg-block-header no-border">
 							<h2>회원가입</h2>
-							<div style="display:inline-block">
-							
 				<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
-				<div class="modal-body color4">
-					<fieldset <#if !action.user.anonymous >disabled</#if>>
+					<p>쇼셜계정을 사용하여 손쉽게 회원 가입 하실수 있습니다.</p>
+					<div class="row">
 						<div class="col-sm-6">
-							<button class="btn btn-block btn-primary btn-lg custom-social-groups"  data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
+							<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg custom-social-groups"  data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
 						</div>
 						<div class="col-sm-6">
-							<button class="btn btn-block btn-info btn-lg custom-social-groups" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
+							<button class="btn btn-block btn-flat btn-outline rounded btn-info btn-lg custom-social-groups" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
 						</div>
-					</fieldset>		
-				</div>
-				</#if>							
-							
-							</div>
+					</div>		
+				</#if>	
 						</div>
 						
 								<form role="form" id="signup-form" name="fm1" method="POST" accept-charset="utf-8" class="sky-form">
+									<div class="heading heading-v4">
+                        				<h2>혹은</h2>
+                    				</div>
 									<fieldset <#if !action.user.anonymous >disabled</#if>>
 										<div class="form-group">
 											<label for="signupInputName">이름</label>
