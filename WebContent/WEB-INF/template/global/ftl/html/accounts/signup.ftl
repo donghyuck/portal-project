@@ -290,6 +290,22 @@
 					<div id="signup" class="reg-block animated fadeIn" style="display:none;">	
 						<div class="reg-block-header">
 							<h2>회원가입</h2>
+							<div style="display:inline-block">
+							
+				<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
+				<div class="modal-body color4">
+					<fieldset <#if !action.user.anonymous >disabled</#if>>
+						<div class="col-sm-6">
+							<button class="btn btn-block btn-primary btn-lg custom-social-groups"  data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
+						</div>
+						<div class="col-sm-6">
+							<button class="btn btn-block btn-info btn-lg custom-social-groups" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
+						</div>
+					</fieldset>		
+				</div>
+				</#if>							
+							
+							</div>
 						</div>
 						
 								<form role="form" id="signup-form" name="fm1" method="POST" accept-charset="utf-8" class="sky-form">
