@@ -339,9 +339,9 @@
 						
 								<form role="form" id="signup-form" name="fm1" method="POST" accept-charset="utf-8" class="sky-form">
 									<div class="heading heading-v4">
-                        				<h6>혹은</h6>
+                        				<h6>혹은 직접 입력하여 주세요.</h6>
                     				</div>
-									<fieldset <#if !action.user.anonymous >disabled</#if>>
+									<fieldset <#if !action.user.anonymous >disabled</#if> style="padding-top:0;" >
 										<div class="form-group">
 											<label for="signupInputName">이름</label>
 											<input type="text" class="form-control" id="signupInputName" name="signupInputName" placeholder="이름" data-bind="value: name" required data-required-msg="이름을 입력하여 주십시오." >
