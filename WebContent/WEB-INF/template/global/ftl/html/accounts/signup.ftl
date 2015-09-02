@@ -57,6 +57,116 @@
 		
 		function createSignUpBlock(user){
 			var renderTo = $("#signup");
+			if( !common.ui.defined(renderTo.data("model")) ){
+				var observable =  common.ui.observable({
+					visible : true,
+					signup : kendo.data.Model.define({
+						id : "id",
+						fields: {
+							"media": {
+					            type: "string",
+					            defaultValue : "internal"
+					        },
+							"id": {
+					            type: "string"
+					        },
+							"username": {
+					            type: "string"
+					        },
+					        "firstName": {
+					            type: "string"
+					        },
+					        "lastName": {
+					            type: "string"
+					        },        
+					        "name": {
+					            type: "string"
+					        },
+					        "email": {
+					            type: "string"
+					        },
+					        "locale": {
+					            type: "string"
+					        },
+					        "location": {
+					            type: "string"
+					        },
+					        "languages": {
+					            type: "string"
+					        },
+					        "timezone": {
+					            type: "string"
+					        },
+					        "gender" : {
+					            type: "string"
+					        },
+					        "password1": {
+					            type: "string"
+					        },
+					        "password2": {
+					            type: "string"
+					        },
+					        "onetime": {
+					            type: "string"
+					        },
+					        "nameVisible" : {
+					        	 type:"boolean", defaultVlaue: false 
+					        },
+					        "emailVisible" : {
+					        	 type:"boolean", defaultVlaue: false 
+					        },
+					        "agree":  { type:"boolean", defaultVlaue: false },
+					        
+					        "customClass" : {type:"string" , defaultValue : "" }
+						}, 
+						isExternal : function (  ) {
+							return this.get("media") !== "internal" ;		
+						},
+					    reset: function (){
+					    	this.set("media", "internal" );
+					    	this.set("id", null );
+					    	this.set("firstName", null );
+					    	this.set("lastName", null );
+					    	this.set("name", null );
+					    	this.set("username", null );
+					    	this.set("email", null );
+					    	this.set("locale", null );
+					    	this.set("location", null );
+					    	this.set("languages", null );
+					    	this.set("timezone", null );
+					    	this.set("gender", null );
+					    	this.set("password1", null );
+					    	this.set("password2", null );
+					    	this.set("onetime", null );
+					    	this.set("agree", false );
+					    	this.set("customClass", "" );
+					    },
+					    inject: function( media, profile ){
+					    	this.set("media",  media  );
+					    	if( media == "facebook" ){
+					        	this.set("id", profile.primaryKeyString );
+					        	this.set("firstName", profile.firstName );
+					        	this.set("lastName", profile.lastName );
+					        	this.set("name", profile.name );
+					        	this.set("username", profile.username );
+					        	this.set("email", profile.email );
+					        	this.set("locale", profile.locale );
+					        	this.set("location", profile.location.name );
+					        	this.set("languages", profile.languages );
+					        	this.set("timezone", profile.timezone  );
+					        	this.set("gender", profile.gender );
+					        	this.set("password1", null );
+					        	this.set("password2", null );
+					        	this.set("onetime", null );
+					        	this.set("agree", false );
+					    	}
+					    }
+					})
+				
+				});
+				kendo.bind(renderTo, observable);
+				renderTo.data("model", observable );				
+			}
 			renderTo.show();
 		}
 		
@@ -123,6 +233,8 @@
 		function homepage(){
 			window.location.replace("/main.do");
 		}		
+		
+		
 		-->
 		</script>
 		
