@@ -246,7 +246,35 @@
 				margin: 60px auto;
 			}
 		}
-				
+
+		.heading h4 {
+			padding: 0 12px;
+			position: relative;
+			display: inline-block;
+			line-height: 34px !important; /*For Tagline Boxes*/
+		}
+		
+		.heading h4:before,.heading h4:after {
+			content: ' ';
+			width: 70%;
+			position: absolute;
+			border-width: 1px;
+			border-color: #bbb;
+		}
+		
+		.heading h4:before {
+			right: 100%;
+		}
+		
+		.heading h4:after {
+			left: 100%;
+		}
+		
+		@media ( max-width : 768px) {
+			.heading h4:before,.heading h4:after {
+				width: 20%;
+			}
+		}				
 		.heading-v4 h4:before,.heading-v4 h4:after {
 			top: 17px;
 			border-bottom-style: solid;
