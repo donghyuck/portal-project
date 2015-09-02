@@ -296,12 +296,34 @@
 		return "/connect/" + provider + "/authorize"
 	}
 	
+	function getConnectedProfile(options){
+		options = options || {};		
+		if(!defined(options.success)){
+			options.success = function(response){
+				if( typeof response.error === UNDEFINED ){ 		
+					if( isFunction( options.success ) ){						
+						options.success(response) ;
+					}
+				} else {									
+					if( isFunction( options.fail ) ){
+						options.fail(response) ;
+					}
+				}
+			}
+		}
+		ajax(
+			options.url || "/connect/lookup.json",	
+			options
+		);	
+	}
+	
 	$.extend(ui.connect , {
 		row : common.ui.connect.row || row,
 		columns : common.ui.connect.columns || columns,		
 		listview : common.ui.connect.listview || listview,
 		signin : common.ui.connect.signin || signin,
 		status : common.ui.connect.status || status,
+		connectedProfile : getConnectedProfile,
 		authorizeUrl : common.ui.connect.authorizeUrl || getAuthorizeUrl,
 		user : {
 			lookup : common.ui.connect.userProfile || userProfile,

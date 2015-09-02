@@ -104,7 +104,7 @@
 		
 		function handleCallbackResult( success ){
 			var renderTo = $("#signup");
-			common.ui.connect.signin({
+			common.ui.connect.connectedProfile({
 				success : function(data){
 					console.log( common.ui.stringify( data ));
 				},
