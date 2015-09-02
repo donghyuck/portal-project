@@ -99,7 +99,7 @@
 					</div>
 					</#if>					
 					<#if social_provider_error?exists >
-					<div class="error-v1 rounded">
+					<div class="error-v1 rounded provider">
 						<p>${social_provider_error?html}</p>
 						<#if !profile?? >
 						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
