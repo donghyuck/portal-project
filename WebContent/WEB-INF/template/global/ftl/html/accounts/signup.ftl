@@ -60,107 +60,31 @@
 			if( !common.ui.defined(renderTo.data("model")) ){
 				var observable =  common.ui.observable({
 					visible : true,
+					connectWith : function(e){
+						console.log( e.target );
+					}
 					signup : kendo.data.Model.define({
 						id : "id",
 						fields: {
-							"media": {
-					            type: "string",
-					            defaultValue : "internal"
-					        },
-							"id": {
-					            type: "string"
-					        },
-							"username": {
-					            type: "string"
-					        },
-					        "firstName": {
-					            type: "string"
-					        },
-					        "lastName": {
-					            type: "string"
-					        },        
-					        "name": {
-					            type: "string"
-					        },
-					        "email": {
-					            type: "string"
-					        },
-					        "locale": {
-					            type: "string"
-					        },
-					        "location": {
-					            type: "string"
-					        },
-					        "languages": {
-					            type: "string"
-					        },
-					        "timezone": {
-					            type: "string"
-					        },
-					        "gender" : {
-					            type: "string"
-					        },
-					        "password1": {
-					            type: "string"
-					        },
-					        "password2": {
-					            type: "string"
-					        },
-					        "onetime": {
-					            type: "string"
-					        },
-					        "nameVisible" : {
-					        	 type:"boolean", defaultVlaue: false 
-					        },
-					        "emailVisible" : {
-					        	 type:"boolean", defaultVlaue: false 
-					        },
-					        "agree":  { type:"boolean", defaultVlaue: false },
-					        
-					        "customClass" : {type:"string" , defaultValue : "" }
-						}, 
-						isExternal : function (  ) {
-							return this.get("media") !== "internal" ;		
-						},
-					    reset: function (){
-					    	this.set("media", "internal" );
-					    	this.set("id", null );
-					    	this.set("firstName", null );
-					    	this.set("lastName", null );
-					    	this.set("name", null );
-					    	this.set("username", null );
-					    	this.set("email", null );
-					    	this.set("locale", null );
-					    	this.set("location", null );
-					    	this.set("languages", null );
-					    	this.set("timezone", null );
-					    	this.set("gender", null );
-					    	this.set("password1", null );
-					    	this.set("password2", null );
-					    	this.set("onetime", null );
-					    	this.set("agree", false );
-					    	this.set("customClass", "" );
-					    },
-					    inject: function( media, profile ){
-					    	this.set("media",  media  );
-					    	if( media == "facebook" ){
-					        	this.set("id", profile.primaryKeyString );
-					        	this.set("firstName", profile.firstName );
-					        	this.set("lastName", profile.lastName );
-					        	this.set("name", profile.name );
-					        	this.set("username", profile.username );
-					        	this.set("email", profile.email );
-					        	this.set("locale", profile.locale );
-					        	this.set("location", profile.location.name );
-					        	this.set("languages", profile.languages );
-					        	this.set("timezone", profile.timezone  );
-					        	this.set("gender", profile.gender );
-					        	this.set("password1", null );
-					        	this.set("password2", null );
-					        	this.set("onetime", null );
-					        	this.set("agree", false );
-					    	}
-					    }
+							"media": { type: "string", defaultValue : "internal" },
+							"id": { type: "string" },
+							"username": { type: "string" },
+					        "firstName": { type: "string" },
+					        "lastName": { type: "string" },        
+					        "name": { type: "string" },
+					        "email": { type: "string" },
+					        "locale": { type: "string" },
+					        "location": { type: "string" },
+					        "languages": { type: "string" },
+					        "timezone": { type: "string" },
+					        "gender" : { type: "string" },
+					        "password1": { type: "string" },
+					        "password2": { type: "string" },
+					        "onetime": { type: "string" },
+					        "nameVisible" : { type:"boolean", defaultVlaue: false },
+					        "emailVisible" : { type:"boolean", defaultVlaue: false },
+					        "agree":  { type:"boolean", defaultVlaue: false }
+						}
 					})
 				
 				});
@@ -440,10 +364,10 @@
 					<p>쇼셜계정을 사용하여 손쉽게 회원 가입 하실수 있습니다.</p>
 					<div class="row">
 						<div class="col-sm-6">
-							<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg" data-action="connect" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
+							<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg" data-bind="{click:connectWith}" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
 						</div>
 						<div class="col-sm-6">
-							<button class="btn btn-block btn-flat btn-outline rounded btn-info btn-lg" data-action="connect" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
+							<button class="btn btn-block btn-flat btn-outline rounded btn-info btn-lg" data-bind="{click:connectWith}" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
 						</div>
 					</div>		
 				</#if>	
