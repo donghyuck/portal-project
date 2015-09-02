@@ -106,7 +106,7 @@
 			var renderTo = $("#signup");
 			common.ui.connect.connectedProfile({
 				success : function(data){
-					console.log( common.ui.stringify( data ));
+					console.log( common.ui.stringify( data.user ));
 					if( common.ui.defined( data.user ) ){
 						if( !user.anonymous ){
 							var template = kendo.template($("#alert2-template").html());	
