@@ -265,7 +265,8 @@
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 							<ul class="social-icons text-center">
 								<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
-								<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li><!--
+								<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
+								<!--
 								<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 								<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>-->
 							</ul>
