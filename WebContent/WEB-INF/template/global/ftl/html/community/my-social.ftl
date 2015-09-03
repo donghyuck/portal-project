@@ -76,6 +76,8 @@
 					var $this = this;
 					var template = kendo.template($('#my-social-navbar-template').html());
 					renderTo.html(template($this.data()));
+					
+					console.log( kendo.stringify( $this.data() ) );
 					kendo.ui.progress(renderTo, false);						
 				}
 			}).read();
