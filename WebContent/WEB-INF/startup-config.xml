@@ -61,7 +61,7 @@ PC9saWNlbnNlPg==</file>
 				<twitter>
 					<clientId>4XebpD1MW3CQ8Koh7naQpg</clientId>
 					<clientSecret>aFlMLXe7fsyE3EnZtTp1LdAHRqEMROqOFW8ldQNYc</clientSecret>
-					<!-- callbackUrl>http://222.122.63.146/connect/twitter</callbackUrl>-->
+					<callbackUrl>http://222.122.63.146/connect/twitter</callbackUrl>
 					<allowSignin>true</allowSignin>
 					<allowSignup>false</allowSignup>
 				</twitter>
