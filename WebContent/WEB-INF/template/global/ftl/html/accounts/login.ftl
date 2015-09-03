@@ -39,14 +39,16 @@
 			}
 		}]);			
 		
-		function prepareSocialSignOn(){				
+		function prepareSocialSignOn(){	
+			var renderTo = $("#signin");				
 			common.ui.ajax("<@spring.url "/connect/list.json"/>", {
 					success: function(response){ 
 						var renderTo = $("#signin .social-icons");
 						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , response.media );
 						renderTo.html( html );							
 						$("a[data-action='connect']").click(function(e){
-							var $this = $(this);								
+							var $this = $(this);	
+							kendo.ui.progress(renderTo, true);							
 							window.open( 
 								"<@spring.url "/connect/"/>" + $this.data("provider-id") + "/authorize",
 								$this.data("provider-id") + " Window", 
@@ -108,6 +110,7 @@
 				
 
 		function handleCallbackResult( success ){
+			var renderTo = $("#signin");	
 			if( success ){
 				common.ui.connect.signin({
 					success : function(data){
@@ -116,6 +119,9 @@
 						}else{
 							$("form[name='signin-fm'] fieldset").attr("disabled", false);	
 						} 
+					},
+					complete:function(e){
+						kendo.ui.progress(renderTo, false);					
 					}
 				});
 			}else{
@@ -268,7 +274,8 @@
 								<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
 								<!--
 								<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
-								<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>-->
+								<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
+								-->
 							</ul>
 							</#if>
 							<p class="m-t-md">${action.webSite.displayName} 회원이 아니신가요? <br >지금 <span class="text-primary">가입</span>하세요.</p>        
