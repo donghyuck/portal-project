@@ -55,8 +55,18 @@
 			} );
 		}
 		
+		function disableSighUpBlock(){
+			var renderTo = $("#signup");
+			renderTo.find('button').attr('disabled', '');
+			renderTo.find('fieldset').attr('disabled', '');		
+		}
 
-		
+		function enableSighUpBlock(){
+			var renderTo = $("#signup");
+			renderTo.find('button[disabled]').attr('disabled', null);
+			renderTo.find('fieldset[disabled]').attr('disabled', null);		
+		}
+				
 		function createSignUpBlock(user){
 			var renderTo = $("#signup");
 			if( !common.ui.defined(renderTo.data("model")) ){
@@ -89,6 +99,7 @@
 						var btn = $(e.target);
 						kendo.ui.progress(renderTo, true);	
 						console.log( btn.data('target') );
+						
 						window.open( 
 							common.ui.connect.authorizeUrl(btn.data('target')),
 							btn.data('target') + " Window", 
@@ -109,6 +120,7 @@
 					console.log( common.ui.stringify( data.user ));
 					if( common.ui.defined( data.user ) ){
 						if( !data.user.anonymous ){
+							disableSighUpBlock();
 							var template = kendo.template($("#alert2-template").html());	
 							$(".container:first").prepend(template(data));		
 						}
