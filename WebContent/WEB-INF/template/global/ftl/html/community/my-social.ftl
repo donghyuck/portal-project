@@ -44,6 +44,7 @@
 								e.token.copy(currentUser);
 								if( !currentUser.anonymous ){		
 									createConnectedSocialNav();												 
+									createSocialNavs();
 								}
 							} 
 						}	
@@ -67,6 +68,19 @@
 		<!-- ============================== -->
 		<!-- create media connect nav buttons -->
 		<!-- ============================== -->				
+		function createSocialNavs(){
+			var renderTo = $('#my-social-navbar');	
+			kendo.ui.progress(renderTo, true);
+			var dataSource = common.ui.connect.list.datasource({
+				change:function(e){
+					var $this = this;
+					var template = kendo.template($('#my-social-navbar-template').html());
+					renderTo.html(template($this.data()));
+					kendo.ui.progress(renderTo, false);						
+				}
+			}).read();
+		}
+		
 		function createConnectedSocialNav(){				
 			var renderTo = $('#navbar-btn-my-streams');	
 			var myConnectBtn = renderTo.find('button[data-action="media-list"]').button('loading');	
@@ -195,23 +209,9 @@
 			</#if>	
 			<div class="container content">
 				<div class="row">
-				
-				
-				  <!-- Nav tabs -->
-				  <ul class="nav nav-pills" role="tablist">
-				    <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-				    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-				    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-				    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-				  </ul>
+					<div id="my-social-navbar"></div>
+					
 
-  				<!-- Tab panes -->
-				  <div class="tab-content">
-				    <div role="tabpanel" class="tab-pane active" id="home">...</div>
-				    <div role="tabpanel" class="tab-pane" id="profile">...</div>
-				    <div role="tabpanel" class="tab-pane" id="messages">...</div>
-				    <div role="tabpanel" class="tab-pane" id="settings">...</div>
-				  </div>
 				
 				</div>
 			
@@ -254,7 +254,27 @@
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 		<!-- END FOOTER -->
 		</div>						
-		<!-- START TEMPLATE -->	
+		<!-- START TEMPLATE -->
+		<script type="text/x-kendo-template" id="my-social-navbar-template">
+
+				  <!-- Nav tabs -->
+				  <ul class="nav nav-pills" role="tablist">
+				    <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+				    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+				    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+				    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+				  </ul>
+
+  				<!-- Tab panes -->
+				  <div class="tab-content">
+				    <div role="tabpanel" class="tab-pane" id="home">...</div>
+				    <div role="tabpanel" class="tab-pane" id="profile">...</div>
+				    <div role="tabpanel" class="tab-pane" id="messages">...</div>
+				    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+				  </div>
+				  
+				
+		</script>					
 		<script type="text/x-kendo-template" id="alert-panel-template">
 				<div  id="#: id #" data-alert class="alert alert-info" style="min-height:50px; display:none;">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
