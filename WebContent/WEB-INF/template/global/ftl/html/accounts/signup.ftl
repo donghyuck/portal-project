@@ -30,7 +30,7 @@
 				
 				common.ui.setup({
 					features:{
-						wallpaper : true,
+						wallpaper : false,
 						loading:true
 					}
 				});	

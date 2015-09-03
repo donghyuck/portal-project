@@ -29,13 +29,15 @@
 						backstretch : false
 					}
 				});	  
-				// START SCRIPT					
+				// START SCRIPT		
+				/**			
 				var currentUser = new common.ui.data.User();			
 				common.ui.data.user( {
 					success : function ( user ) {				
 						user.copy(currentUser);						
 					}				
 				} );	
+				**/
 				
 				$("button.btn-close").click(function(e){
 					if(typeof window.opener.handleCallbackResult == "function"){	
