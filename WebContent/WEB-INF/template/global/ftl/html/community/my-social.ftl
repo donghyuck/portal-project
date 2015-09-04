@@ -224,12 +224,9 @@
 			<div class="container content">
 				<div class="row">
 					<div id="my-social-navbar"></div>
-					
-
-				
 				</div>
 			
-				
+				<!--
 				<div class="row">
 					<div class="col-md-6">
 						<h4>쇼셜네트워크</h4>
@@ -255,7 +252,7 @@
 									</div>														
 								</div>						
 					</div>
-				</div>			
+				</div>	-->		
 			</div>
 			<article class="bg-sky animated fadeInUp" style="min-height:200px; display:none;">			
 				<div class="container-fluid content" >
