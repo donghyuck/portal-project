@@ -44,7 +44,7 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								if( !currentUser.anonymous ){		
-									createConnectedSocialNav();												 
+									//createConnectedSocialNav();												 
 									createSocialNavs();
 								}
 							} 
@@ -84,16 +84,31 @@
 					kendo.ui.progress(renderTo, false);						
 				}
 			}).read();
-		}
-		
-		function createSoicalTabPanel( connect , renderTo ){		
 			
+			$(document).on("click","[data-upload='photo']", function(e){						
+				var btn = $(this) ;
+				btn.parent().toggleClass('active');
+				btn.button('loading');
+				common.ui.data.image.uploadByUrl({
+					data : {sourceUrl: btn.data('source'), imageUrl: btn.data('url')} ,
+					success : function(response){
+						btn.attr("disabled", "disabled");
+						btn.addClass('hide');
+					},
+					always : function(){
+						btn.parent().toggleClass('active');
+						btn.button('reset');
+					}
+				});					
+			});				
+		}		
+		
+		function createSoicalTabPanel( connect , renderTo ){					
 			var view = renderTo.find(".ibox-content>.listview");
 			if( !common.ui.exists(view) ){
 				common.ui.connect.listview( view, connect );
-			}
-		}
-		
+			}					
+		}		
 		
 		function createConnectedSocialNav(){				
 			var renderTo = $('#navbar-btn-my-streams');	
@@ -113,27 +128,12 @@
 						}
 					});								
 				}
-			}).read();			
-			$(document).on("click","[data-upload='photo']", function(e){						
-				var btn = $(this) ;
-				btn.parent().toggleClass('active');
-				btn.button('loading');
-				common.ui.data.image.uploadByUrl({
-					data : {sourceUrl: btn.data('source'), imageUrl: btn.data('url')} ,
-					success : function(response){
-						btn.attr("disabled", "disabled");
-						btn.addClass('hide');
-					},
-					always : function(){
-						btn.parent().toggleClass('active');
-						btn.button('reset');
-					}
-				});					
-			});					
+			}).read();	
 		}	
 		<!-- ============================== -->
-		<!-- display media stream panel                        -->
+		<!-- display media stream panel     -->
 		<!-- ============================== -->		
+		
 		function showMediaPanel(connect){	
 
 			if( $("article.bg-sky").is(":hidden") ){
@@ -282,8 +282,7 @@
 		<!-- Tab panes -->
 		<div class="tab-content">
 		# for (var i = 0; i < items.length ; i++) { #
-			<div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">
-	
+			<div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">	
 				<div class="ibox poll float-e-margins">
 					<div class="ibox-title text-right">
 						<i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i>
@@ -292,7 +291,6 @@
 						<ul class="listview no-border"></ul>
 					</div>	
 				</div>
-					
 			</div>
 		# } #
 		</div>
