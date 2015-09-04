@@ -256,21 +256,19 @@
 		</div>						
 		<!-- START TEMPLATE -->
 		<script type="text/x-kendo-template" id="my-social-navbar-template">
-
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-pills" role="tablist">
 				  	# for (var i = 0; i < items.length ; i++) { #
-				    <li role="presentation"><a href="\\##= items[i].providerId #-tabpanel" aria-controls="#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab">items[i].providerId</a></li>
+				    <li role="presentation"><a href="\\##= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" aria-controls="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab"><i class="fa fa-#= items[i].providerId #"></i> #: items[i].providerId #</a></li>
 				    # } #
 				  </ul>
 
   				<!-- Tab panes -->
 				  <div class="tab-content">
 				  	# for (var i = 0; i < items.length ; i++) { #
-				    <div role="tabpanel" class="tab-pane" id="#= items[i].providerId #-tabpanel">...</div>
+				    <div role="tabpanel" class="tab-pane" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">...</div>
 				     # } #
 				  </div>
-				
 		</script>					
 		<script type="text/x-kendo-template" id="alert-panel-template">
 				<div  id="#: id #" data-alert class="alert alert-info" style="min-height:50px; display:none;">
