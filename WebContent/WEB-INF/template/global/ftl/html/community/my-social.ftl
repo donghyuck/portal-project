@@ -86,7 +86,7 @@
 		}
 		
 		function createSoicalTabPanel( connect , renderTo ){		
-			var view = renderTo.find(".ibox-content");
+			var view = renderTo.find(".ibox-content>.listview");
 			console.log( common.ui.stringify( connect ) );
 			if( !common.ui.exists(view) ){
 				common.ui.connect.listview( renderTo, connect );
@@ -288,7 +288,7 @@
 						<h5><i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i></h5>
 					</div>
 					<div class="ibox-content">
-						
+						<div class="listview"></div>
 					</div>	
 				</div>
 					
