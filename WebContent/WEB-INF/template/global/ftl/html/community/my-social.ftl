@@ -77,16 +77,22 @@
 					var template = kendo.template($('#my-social-navbar-template').html());
 					renderTo.html(template({ items : $this.data() }));
 					renderTo.find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-					  e.target; 		// newly activated tab
-					  e.relatedTarget;  // previous active tab
-					  
-					  console.log($(e.target).data("media"));
-					  console.log(e.relatedTarget);
+					  var target = $(e.target);
+					  createSoicalTabPanel( $this.get(target.data("object-id")), $(target.attr('href')) );
 					})
 					kendo.ui.progress(renderTo, false);						
 				}
 			}).read();
 		}
+		
+		function createSoicalTabPanel( connect , renderTo ){
+		
+			console.log( common.ui.stringify( connect ) );
+			
+				
+		
+		}
+		
 		
 		function createConnectedSocialNav(){				
 			var renderTo = $('#navbar-btn-my-streams');	
@@ -270,7 +276,7 @@
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-pills" role="tablist">
 				  	# for (var i = 0; i < items.length ; i++) { #
-				    <li role="presentation"><a href="\\##= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" aria-controls="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab" data-media="#= items[i].providerId #" ><i class="fa fa-#= items[i].providerId #"></i> #: items[i].providerId #</a></li>
+				    <li role="presentation"><a href="\\##= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" aria-controls="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab" data-object-id="#= items[i].socialConnectId #" ><i class="fa fa-#= items[i].providerId #"></i> #: items[i].providerId #</a></li>
 				    # } #
 				  </ul>
 
