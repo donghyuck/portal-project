@@ -270,7 +270,6 @@
 				    <div role="tabpanel" class="tab-pane" id="#= items[i].providerId #-tabpanel">...</div>
 				     # } #
 				  </div>
-				  
 				
 		</script>					
 		<script type="text/x-kendo-template" id="alert-panel-template">
