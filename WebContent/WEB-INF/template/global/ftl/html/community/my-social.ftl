@@ -207,6 +207,10 @@
 				min-height : 150px;
 			}
 			
+			.social-feed-list .media-body>ul {
+				padding-top : 5px;
+			}
+			
 		</style>   	
 	</head>
 	<body id="doc" class="bg-white">
