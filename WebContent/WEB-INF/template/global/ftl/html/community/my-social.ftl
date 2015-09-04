@@ -202,6 +202,11 @@
 				background-size: cover;
 				background-position: center center;			
 			}		
+			
+			.social-feed-list {
+				min-height : 150px;
+			}
+			
 		</style>   	
 	</head>
 	<body id="doc" class="bg-white">
