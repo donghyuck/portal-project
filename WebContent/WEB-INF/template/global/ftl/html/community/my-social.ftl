@@ -88,11 +88,8 @@
 		function createSoicalTabPanel( connect , renderTo ){		
 			
 			var view = renderTo.find(".ibox-content>.listview");
-			console.log( view.html() );
-			
-			console.log( common.ui.stringify( connect ) );
 			if( !common.ui.exists(view) ){
-				common.ui.connect.listview( renderTo, connect );
+				common.ui.connect.listview( view, connect );
 			}
 		}
 		
