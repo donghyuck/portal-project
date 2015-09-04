@@ -266,7 +266,12 @@
   				<!-- Tab panes -->
 				  <div class="tab-content">
 				  	# for (var i = 0; i < items.length ; i++) { #
-				    <div role="tabpanel" class="tab-pane" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">...</div>
+				    <div role="tabpanel" class="tab-pane" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">
+
+						#: items[i].providerId #
+					
+
+					</div>
 				     # } #
 				  </div>
 		</script>					
