@@ -314,7 +314,7 @@
 		# for (var i = 0; i < items.length ; i++) { #
 			<div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">	
 				<div class="ibox feed float-e-margins">
-					<div class="ibox-title text-right">
+					<div class="ibox-title">
 						#if( items[i].providerId == 'tumblr' ){#
 						<button class="btn btn-flat btn-outline btn-primary rounded" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>
 						#}#
