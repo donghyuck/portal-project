@@ -276,7 +276,7 @@
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-pills" role="tablist">
 				  	# for (var i = 0; i < items.length ; i++) { #
-				    <li role="presentation"><a href="\\##= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" aria-controls="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab" data-object-id="#= items[i].socialConnectId #" ><i class="fa fa-#= items[i].providerId #"></i> #: items[i].providerId #</a></li>
+				    <li role="presentation"><a href="\\##= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" aria-controls="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab" data-object-id="#= items[i].socialConnectId #" ><i class="fa fa-lg fa-#= items[i].providerId #"></i> #: items[i].providerId #</a></li>
 				    # } #
 				  </ul>
 
