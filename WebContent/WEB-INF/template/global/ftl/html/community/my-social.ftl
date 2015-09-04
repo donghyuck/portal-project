@@ -273,7 +273,7 @@
 				    <div role="tabpanel" class="tab-pane" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">
 
 						#: items[i].providerId #
-					
+						<i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i>
 
 					</div>
 				     # } #
