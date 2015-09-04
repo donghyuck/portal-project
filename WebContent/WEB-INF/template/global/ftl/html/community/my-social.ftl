@@ -85,12 +85,12 @@
 			}).read();
 		}
 		
-		function createSoicalTabPanel( connect , renderTo ){
-		
+		function createSoicalTabPanel( connect , renderTo ){		
+			var view = renderTo.find(".ibox-content");
 			console.log( common.ui.stringify( connect ) );
-			
-				
-		
+			if( !common.ui.exists(view) ){
+				common.ui.connect.listview( renderTo, connect );
+			}
 		}
 		
 		
@@ -282,7 +282,16 @@
 		<div class="tab-content">
 		# for (var i = 0; i < items.length ; i++) { #
 			<div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">
-				<i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i>
+	
+				<div class="ibox poll float-e-margins">
+					<div class="ibox-title">
+						<h5><i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i></h5>
+					</div>
+					<div class="ibox-content">
+						
+					</div>	
+				</div>
+					
 			</div>
 		# } #
 		</div>
