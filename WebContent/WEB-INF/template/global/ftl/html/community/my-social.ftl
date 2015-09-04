@@ -105,8 +105,21 @@
 		
 		function createSoicalTabPanel( connect , renderTo ){					
 			var view = renderTo.find(".ibox-content>.social-feed-list");
-			if( !common.ui.exists(view) ){
-				common.ui.connect.listview( view, connect );
+			if( !common.ui.exists(view) ){				
+				var listview = common.ui.connect.listview( view, connect );
+				var observable =  common.ui.observable({
+					pageIndex : 0,
+					pageSize : 20,
+					next: function(){
+						var _offset = this.get('pageIndex') + this.get('pageSize');
+						this.set('pageIndex', _offset);
+						listview.dataSource.read({offset: _offset });							
+					}
+				});
+				renderTo.find("[data-action='more']").click(function(e){							
+					observable.next();	
+				});
+				//renderTo.data("model", observable );
 			}					
 		}		
 		
@@ -291,6 +304,9 @@
 			<div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">	
 				<div class="ibox poll float-e-margins">
 					<div class="ibox-title text-right">
+						#if( items[i].providerId == 'tumblr' ){#
+						<button class="btn btn-flat btn-outline btn-primary btn-sm rounded m-r-xs" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>
+						#}#
 						<i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i>
 					</div>
 					<div class="ibox-content">
