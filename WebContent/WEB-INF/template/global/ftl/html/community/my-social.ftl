@@ -76,6 +76,11 @@
 					var $this = this;
 					var template = kendo.template($('#my-social-navbar-template').html());
 					renderTo.html(template({ items : $this.data() }));
+					renderTo.find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+					  e.target; 		// newly activated tab
+					  e.relatedTarget;  // previous active tab
+					  console.log(e.target);
+					})
 					kendo.ui.progress(renderTo, false);						
 				}
 			}).read();
@@ -270,7 +275,7 @@
   				<!-- Tab panes -->
 				  <div class="tab-content">
 				  	# for (var i = 0; i < items.length ; i++) { #
-				    <div role="tabpanel" class="tab-pane" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">
+				    <div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">
 
 						#: items[i].providerId #
 						<i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i>
