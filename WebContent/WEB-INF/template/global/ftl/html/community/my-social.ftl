@@ -272,25 +272,20 @@
 		#if(items.length == 0 ){#
 		<div class="alert alert-info" role="alert">연결된 쇼셜 계정이 없습니다.</div>
 		#}#
-		
-				  <!-- Nav tabs -->
-				  <ul class="nav nav-pills" role="tablist">
-				  	# for (var i = 0; i < items.length ; i++) { #
-				    <li role="presentation"><a href="\\##= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" aria-controls="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab" data-object-id="#= items[i].socialConnectId #" ><i class="fa fa-lg fa-#= items[i].providerId #"></i> #: items[i].providerId #</a></li>
-				    # } #
-				  </ul>
-
-  				<!-- Tab panes -->
-				  <div class="tab-content">
-				  	# for (var i = 0; i < items.length ; i++) { #
-				    <div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">
-
-						#: items[i].providerId #
-						<i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i>
-
-					</div>
-				     # } #
-				  </div>
+	  	<!-- Nav tabs -->
+		<ul class="nav nav-pills" role="tablist">
+		# for (var i = 0; i < items.length ; i++) { #
+			<li role="presentation"><a href="\\##= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" aria-controls="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab" data-object-id="#= items[i].socialConnectId #" ><i class="fa fa-lg fa-#= items[i].providerId #"></i> #: items[i].providerId #</a></li>
+	  	# } #
+		</ul>
+		<!-- Tab panes -->
+		<div class="tab-content">
+		# for (var i = 0; i < items.length ; i++) { #
+			<div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">
+				<i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i>
+			</div>
+		# } #
+		</div>
 		</script>					
 		<script type="text/x-kendo-template" id="alert-panel-template">
 				<div  id="#: id #" data-alert class="alert alert-info" style="min-height:50px; display:none;">
