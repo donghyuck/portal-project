@@ -285,10 +285,10 @@
 	
 				<div class="ibox poll float-e-margins">
 					<div class="ibox-title">
-						<h5><i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i></h5>
+						<h5></h5>
 					</div>
 					<div class="ibox-content">
-						<div class="listview"></div>
+						<ul class="listview"><i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i></ul>
 					</div>	
 				</div>
 					
