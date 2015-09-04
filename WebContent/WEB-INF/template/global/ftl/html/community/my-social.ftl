@@ -75,9 +75,7 @@
 				change:function(e){
 					var $this = this;
 					var template = kendo.template($('#my-social-navbar-template').html());
-					renderTo.html(template($this.data()));
-					
-					console.log( kendo.stringify( $this.data() ) );
+					renderTo.html(template({ items : $this.data() }));
 					kendo.ui.progress(renderTo, false);						
 				}
 			}).read();
@@ -261,18 +259,16 @@
 
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-pills" role="tablist">
-				    <li role="presentation"><a href="\\#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-				    <li role="presentation"><a href="\\#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-				    <li role="presentation"><a href="\\#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-				    <li role="presentation"><a href="\\#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+				  	# for (var i = 0; i < items.length ; i++) { #
+				    <li role="presentation"><a href="\\##= items[i].providerId #-tabpanel" aria-controls="#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab">items[i].providerId</a></li>
+				    # } #
 				  </ul>
 
   				<!-- Tab panes -->
 				  <div class="tab-content">
-				    <div role="tabpanel" class="tab-pane" id="home">...</div>
-				    <div role="tabpanel" class="tab-pane" id="profile">...</div>
-				    <div role="tabpanel" class="tab-pane" id="messages">...</div>
-				    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+				  	# for (var i = 0; i < items.length ; i++) { #
+				    <div role="tabpanel" class="tab-pane" id="#= items[i].providerId #-tabpanel">...</div>
+				     # } #
 				  </div>
 				  
 				
