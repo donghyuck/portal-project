@@ -79,7 +79,9 @@
 					renderTo.find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 					  e.target; 		// newly activated tab
 					  e.relatedTarget;  // previous active tab
-					  console.log(e.target);
+					  
+					  console.log($(e.target).data("media"));
+					  console.log(e.relatedTarget);
 					})
 					kendo.ui.progress(renderTo, false);						
 				}
@@ -268,7 +270,7 @@
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-pills" role="tablist">
 				  	# for (var i = 0; i < items.length ; i++) { #
-				    <li role="presentation"><a href="\\##= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" aria-controls="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab"><i class="fa fa-#= items[i].providerId #"></i> #: items[i].providerId #</a></li>
+				    <li role="presentation"><a href="\\##= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" aria-controls="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel" role="tab" data-toggle="tab" data-media="#= items[i].providerId #" ><i class="fa fa-#= items[i].providerId #"></i> #: items[i].providerId #</a></li>
 				    # } #
 				  </ul>
 
