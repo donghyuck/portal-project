@@ -284,7 +284,7 @@
 			<div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">
 	
 				<div class="ibox poll float-e-margins">
-					<div class="ibox-title">
+					<div class="ibox-title text-right">
 						<i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i>
 					</div>
 					<div class="ibox-content">
@@ -388,7 +388,7 @@
 					#}#
 				</h5> 	
 				# if ( story != null ) { #
-				<span class="label label-blue rounded"><i class="fa fa-quote-left"></i> #: story # <i class="fa fa-quote-right"></i></span>
+				<p><span class="label label-blue rounded"><i class="fa fa-quote-left"></i> #: story # <i class="fa fa-quote-right"></i></span></p>
 				# } #		
 									
 				# if ( type === 'STATUS' ) { #
