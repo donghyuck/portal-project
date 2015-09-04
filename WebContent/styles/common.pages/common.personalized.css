@@ -742,9 +742,9 @@
 }
 
 /**
- * Panel Hover Effect
+ * Panel, iBox Hover Effect
  */
-.panel-body  figure {
+.panel-body  figure , .ibox-content figure {
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
@@ -755,7 +755,7 @@
 	max-width: 100%;
 }
 
-.panel-body  figure img {
+.panel-body  figure img , .ibox-content figure img{
 	position: relative;
 	display: block;
 	/*min-height: 100%;*/
@@ -764,7 +764,7 @@
 	opacity: 0.8;
 }
 
-.panel-body figure figcaption {
+.panel-body figure figcaption, .ibox-content figure figcaption {
 	padding: 2em;
 	color: #fff;
 	text-transform: uppercase;
@@ -773,12 +773,11 @@
 	backface-visibility: hidden;
 }
 
-.panel-body figure figcaption::before,.panel-body  figure figcaption::after
-	{
+.panel-body figure figcaption::before, .panel-body  figure figcaption::after , .ibox-content figure figcaption::before, .ibox-content  figure figcaption::after {
 	pointer-events: none;
 }
 
-.panel-body figure figcaption,.panel-body figure a {
+.panel-body figure figcaption,.panel-body figure a , .ibox-content figure figcaption,.ibox-content figure a  {
 	position: absolute;
 	top: 0;
 	left: 0;
