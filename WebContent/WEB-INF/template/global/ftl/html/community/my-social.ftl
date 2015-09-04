@@ -224,6 +224,17 @@
 				padding-top : 5px;
 			}
 			
+			.ibox.feed
+			{
+				position : relative;
+			}
+			
+			.ibox.feed .ibox-title button[data-action=more]{			
+				top: 21px;
+	    		right: 15px;
+	    		position: absolute;
+			}
+			
 		</style>   	
 	</head>
 	<body id="doc" class="bg-white">
@@ -302,10 +313,10 @@
 		<div class="tab-content">
 		# for (var i = 0; i < items.length ; i++) { #
 			<div role="tabpanel" class="tab-pane fade" id="#= items[i].socialConnectId #-#= items[i].providerId #-tabpanel">	
-				<div class="ibox poll float-e-margins">
+				<div class="ibox feed float-e-margins">
 					<div class="ibox-title text-right">
 						#if( items[i].providerId == 'tumblr' ){#
-						<button class="btn btn-flat btn-outline btn-primary btn-sm rounded m-r-xs" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>
+						<button class="btn btn-flat btn-outline btn-primary rounded" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>
 						#}#
 						<i class="icon-flat icon-svg social-color-#=items[i].providerId#"></i>
 					</div>
