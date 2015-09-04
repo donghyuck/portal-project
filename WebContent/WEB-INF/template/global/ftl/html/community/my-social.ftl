@@ -256,6 +256,10 @@
 		</div>						
 		<!-- START TEMPLATE -->
 		<script type="text/x-kendo-template" id="my-social-navbar-template">
+		#if(items.length == 0 ){#
+		<div class="alert alert-info" role="alert">연결된 쇼셜 계정이 없습니다.</div>
+		#}#
+		
 				  <!-- Nav tabs -->
 				  <ul class="nav nav-pills" role="tablist">
 				  	# for (var i = 0; i < items.length ; i++) { #
