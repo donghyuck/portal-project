@@ -142,6 +142,10 @@ i.icon-svg {
 	background-image: url("/images/common/icons/basic/color/Cancle.svg");
 }
 
+.icon-svg.basic-color-comment{
+	background-image: url("/images/common/icons/basic/color/Comment.svg");
+}
+
 
 /* SocialNetwork Color Icons 
 ------------------------------------*/
