@@ -330,7 +330,7 @@
 			profile : common.ui.connect.profile || profile,
 		},
 		list : {
-			datasource : newConnectListDataSource			
+			datasource : newConnectListDataSource
 		}
 	});
 	
