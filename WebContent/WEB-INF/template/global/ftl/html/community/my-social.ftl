@@ -116,7 +116,36 @@
 			
 				var renderTo = $("#my-social-setting-modal");
 				if( !renderTo.data('bs.modal')){	
-				
+					if( !$("#my-social-grid" ).data('kendoGrid') ){
+							$("#my-social-grid" ).kendoGrid({
+								dataSource : common.ui.connect.list.datasource(),
+								selectable: "single",
+								//rowTemplate: kendo.template($("#my-profile-social-connection-grid-row-template").html()),	
+								change: function(e) { 				
+								/**	var selectedCells = this.select();
+									if( selectedCells.length == 1){
+										var selectedCell = this.dataItem( selectedCells );	 						
+										common.ui.ajax(
+											"<@spring.url "/connect/"/>" + selectedCell.providerId + "/user/lookup.json",
+											{
+												success : function(response){
+													var temp = kendo.template($('#my-social-account-details-template').html());	
+													$.extend( response , { providerId : selectedCell.providerId } ); 
+													$("#my-profile-social-details").html( temp( response ) );	
+												},
+												beforeSend : function(){
+													kendo.ui.progress($("#my-profile-social-details"), true);			
+												},
+												complete : function(){
+													kendo.ui.progress($("#my-profile-social-details"), false);			
+												}
+											}
+										);										
+									}
+								}
+								**/
+							});
+						}								
 				}
 				renderTo.modal('show');	
 			}
@@ -335,7 +364,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-						
+						<div id="my-social-grid"></div>	
 					</div>
 				</div>
 			</div>
