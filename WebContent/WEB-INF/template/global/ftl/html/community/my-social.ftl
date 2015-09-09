@@ -250,10 +250,15 @@
 				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>
-					<span class="btn-flat settings"></span>
-					</div><!--/end container-->
+				</div><!--/end container-->
 			</div>
 			</#if>	
+			<div class="footer-buttons-wrapper">
+				<div class="footer-buttons">
+					<button class="btn-link hvr-pulse-shrink" type="button" data-action="settings"><i class="icon-flat icon-flat settings"></i></button>
+					<button class="btn-link hvr-pulse-shrink disabled"><i class="icon-flat icon-flat help"></i></button>
+				</div>
+			</div>	
 			<div class="container content">
 				<div class="row">
 					<div id="my-social-navbar"></div>
