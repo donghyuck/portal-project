@@ -331,7 +331,7 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-view-form">	
 					<div class="modal-header">
-						<h2 data-bind="{text: page.title}"></h2>
+						<h2>쇼셜 계정 관리</h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
