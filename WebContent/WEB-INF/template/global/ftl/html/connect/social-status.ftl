@@ -39,6 +39,15 @@
 				} );	
 				**/
 				
+				window.onunload = function(){
+					if(window.opener){
+						var win = window.opener ;
+						if(!win.closed){
+							window.opener.handleCallbackResult( false );
+						}
+					}
+				};
+				
 				$("button.btn-close").click(function(e){
 					if(typeof window.opener.handleCallbackResult == "function"){	
 						window.opener.handleCallbackResult( false );
