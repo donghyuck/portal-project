@@ -126,6 +126,7 @@
 											console.log("loading from remote");
 										}
 						});
+						listview.removeClass("k-widget");
 															
 					
 					}					
