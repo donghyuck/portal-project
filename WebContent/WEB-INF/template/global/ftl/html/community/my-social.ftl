@@ -69,7 +69,8 @@
 		}]);	
 		<!-- ============================== -->
 		<!-- create media connect nav buttons -->
-		<!-- ============================== -->				
+		<!-- ============================== -->			
+					
 		function createSocialNavs(){
 			var renderTo = $('#my-social-navbar');	
 			kendo.ui.progress(renderTo, true);
@@ -101,8 +102,25 @@
 						btn.button('reset');
 					}
 				});					
-			});				
+			});			
+			
+			$("button[data-action=settings], a[data-action=settings]").click(function(e){
+				createSocialSettingModal();
+				return false;
+			});	
+				
 		}		
+		
+		function createSocialSettingModal(){
+			if( !getCurrentUser().anonymous ){
+			
+				var renderTo = $("#my-social-setting-modal");
+				if( !renderTo.data('bs.modal')){	
+				
+				}
+				renderTo.modal('show');	
+			}
+		}
 		
 		function createSoicalTabPanel( connect , renderTo ){					
 			var view = renderTo.find(".ibox-content>.social-feed-list");
@@ -298,12 +316,33 @@
 					<div id="personalized-area" class="row"></div>
 				</div>
 			</article>		
+
+	
 			
 			<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 		<!-- END FOOTER -->
 		</div>						
+
+
+
+		<div id="my-social-setting-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content my-page-view-form">	
+					<div class="modal-header">
+						<h2 data-bind="{text: page.title}"></h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>
+					<div class="modal-body">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
 		<!-- START TEMPLATE -->
 		<script type="text/x-kendo-template" id="my-social-navbar-template">
 		#if(items.length == 0 ){#
