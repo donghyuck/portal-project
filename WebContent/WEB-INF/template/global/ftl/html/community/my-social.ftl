@@ -116,37 +116,19 @@
 			
 				var renderTo = $("#my-social-setting-modal");
 				if( !renderTo.data('bs.modal')){	
-					if( !$("#my-social-grid" ).data('kendoGrid') ){
-							$("#my-social-grid" ).kendoGrid({
-								dataSource : common.ui.connect.list.datasource(),
-								selectable: "single",
-								//rowTemplate: kendo.template($("#my-profile-social-connection-grid-row-template").html()),	
-								change: function(e) { 				
-								/**	var selectedCells = this.select();
-									if( selectedCells.length == 1){
-										var selectedCell = this.dataItem( selectedCells );	 						
-										common.ui.ajax(
-											"<@spring.url "/connect/"/>" + selectedCell.providerId + "/user/lookup.json",
-											{
-												success : function(response){
-													var temp = kendo.template($('#my-social-account-details-template').html());	
-													$.extend( response , { providerId : selectedCell.providerId } ); 
-													$("#my-profile-social-details").html( temp( response ) );	
-												},
-												beforeSend : function(){
-													kendo.ui.progress($("#my-profile-social-details"), true);			
-												},
-												complete : function(){
-													kendo.ui.progress($("#my-profile-social-details"), false);			
-												}
-											}
-										);								
-									}
-									*/
-								}
-								
-							});
-						}								
+					var listview = $("#my-social-listview");
+					if( !common.ui.exists( listview ) ){
+
+						common.ui.listview( listview, {
+										dataSource : common.ui.connect.list.datasource(),
+										template : kendo.template($("#my-social-listview-template").html()),
+										dataBound : function(e) {
+											console.log("loading from remote");
+										}
+						});
+															
+					
+					}					
 				}
 				renderTo.modal('show');	
 			}
@@ -366,6 +348,7 @@
 					</div>
 					<div class="modal-body">
 						<div id="my-social-grid"></div>	
+						<div id="my-social-listview" class="forum-container"></div>	
 					</div>
 				</div>
 			</div>
@@ -374,6 +357,45 @@
 		
 		
 		<!-- START TEMPLATE -->
+		<script type="text/x-kendo-template" id="my-social-listview-template">
+<div class="forum-item">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="forum-icon">
+                                            <i class="fa fa-bookmark"></i>
+                                        </div>
+                                        <a href="forum_post.html" class="forum-item-title">The standard chunk of Lorem Ipsum</a>
+                                        <div class="forum-sub-title">Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</div>
+                                    </div>
+                                    <div class="col-md-1 forum-info">
+                                        <span class="views-number">
+                                            765
+                                        </span>
+                                        <div>
+                                            <small>Views</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 forum-info">
+                                        <span class="views-number">
+                                            90
+                                        </span>
+                                        <div>
+                                            <small>Topics</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 forum-info">
+                                        <span class="views-number">
+                                            11
+                                        </span>
+                                        <div>
+                                            <small>Posts</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>		
+		
+		</script>
+
 		<script type="text/x-kendo-template" id="my-social-navbar-template">
 		#if(items.length == 0 ){#
 		<div class="alert alert-info" role="alert">연결된 쇼셜 계정이 없습니다.</div>
