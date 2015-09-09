@@ -49,7 +49,7 @@
 						$("a[data-action='connect']").click(function(e){
 							var $this = $(this);	
 							kendo.ui.progress(renderTo, true);							
-							window.open( 
+							var popup = window.open( 
 								"<@spring.url "/connect/"/>" + $this.data("provider-id") + "/authorize",
 								$this.data("provider-id") + " Window", 
 								"height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes");	
