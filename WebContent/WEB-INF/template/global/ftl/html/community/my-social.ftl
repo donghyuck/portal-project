@@ -140,10 +140,11 @@
 													kendo.ui.progress($("#my-profile-social-details"), false);			
 												}
 											}
-										);										
+										);								
 									}
+									*/
 								}
-								**/
+								
 							});
 						}								
 				}
