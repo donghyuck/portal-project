@@ -363,7 +363,7 @@
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="forum-icon">
-                                            <i class="icon-flat icon-svg social-color-#=providerId#"></i>
+                                            <i class="icon-flat icon-svg social-color-#=name#"></i>
                                         </div>
                                         <a href="forum_post.html" class="forum-item-title">The standard chunk of Lorem Ipsum</a>
                                         <div class="forum-sub-title">Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</div>
