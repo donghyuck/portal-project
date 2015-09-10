@@ -365,7 +365,11 @@
                                         <div class="forum-icon">
                                             <i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i>
                                         </div>
-                                        <a href="forum_post.html" class="forum-item-title">The standard chunk of Lorem Ipsum</a>
+                                        #if(connected){#  
+                                         <a href="forum_post.html" class="forum-item-title">#: connect.displayName #</a>
+                                         <img src="#: connect.imageUrl #" class="image-circle" />
+                                        #}#
+                                       
                                         <div class="forum-sub-title">Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</div>
                                     </div>
                                     <div class="col-md-1 forum-info">
