@@ -277,6 +277,9 @@
 			.switchery>small {
 				border-radius : 100%!important;
 			}
+			.switchery{
+				order-radius: 20px!important;
+			} 
 			
 		</style>   	
 	</head>
