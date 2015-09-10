@@ -278,7 +278,7 @@
 				border-radius : 100%!important;
 			}
 			.switchery{
-				order-radius: 20px!important;
+				border-radius: 20px!important;
 			} 
 			
 		</style>   	
@@ -380,24 +380,9 @@
                                             <i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i>
                                         </div>
                                         #if(connected){#  
-                                        
                                         <input type="checkbox" class="js-switch" checked />
-                                        
-                                        
-	                                   <a class="forum-avatar" href="\\#">
-	                                   #if( connect.imageUrl != null ){ # 
-	                                   <img src="#: connect.imageUrl #" class="img-circle" alt="image">
-	                                   #} #
-	                                    <div class="author-info">
-	                                        <span>
-	                                        # if ( connect.displayName != null ) { #
-	                                        #: connect.displayName #
-	                                        # } else { #
-	                                        
-	                                        # } #
-	                                        </span>
-	                                    </div>
-	                                	</a>
+                                        #}else{#
+                                        <input type="checkbox" class="js-switch" />
                                         #}#
                                     </div>
                                     <div class="col-md-1 forum-info">
