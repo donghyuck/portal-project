@@ -368,13 +368,19 @@
                                         #if(connected){#  
                                         
 	                                   <a class="forum-avatar" href="\\#">
-	                                    <img src="#: connect.imageUrl #" class="img-circle" alt="image">
+	                                   #if( connect.imageUrl != null ){ # 
+	                                   <img src="#: connect.imageUrl #" class="img-circle" alt="image">
+	                                   #} #
 	                                    <div class="author-info">
-	                                        <span>#: connect.displayName#</span>
+	                                        <span>
+	                                        # if ( connect.displayName != null ) { #
+	                                        #: connect.displayName #
+	                                        # } else { #
+	                                        
+	                                        # } #
+	                                        </span>
 	                                    </div>
-	                                	</a>     
-                                         <a  href="#: connect.profileUrl#" class="forum-item-title">#: connect.displayName #</a>
-                                         <div class="forum-sub-title"><img src="#: connect.imageUrl #" class="img-circle" /></div>
+	                                	</a>
                                         #}#
                                     </div>
                                     <div class="col-md-1 forum-info">
