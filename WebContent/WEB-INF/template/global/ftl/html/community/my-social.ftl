@@ -366,7 +366,7 @@
                                             <i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i>
                                         </div>
                                         #if(connected){#  
-                                         <h2 class="forum-item-title">#: connect.displayName #</h2>
+                                         <a  href="#: profileUrl#" class="forum-item-title">#: connect.displayName #</a>
                                          <div class="forum-sub-title"><img src="#: connect.imageUrl #" class="img-circle" /></div>
                                         #}#
                                     </div>
