@@ -274,6 +274,10 @@
 	    		position: absolute;
 			}
 			
+			.switchery>small {
+				border-radius : 100%!important;
+			}
+			
 		</style>   	
 	</head>
 	<body id="doc" class="bg-white">
