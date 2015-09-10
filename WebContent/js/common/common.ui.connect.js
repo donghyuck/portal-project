@@ -292,7 +292,7 @@
 		return common.ui.datasource('/connect/list.json', options);		
 	}	
 
-	function newConnectListDataSource (options){		
+	function newConnectListDataSource2 (options){		
 		options = options || {};
 		return common.ui.datasource('/connect/all.json', options);		
 	}	
