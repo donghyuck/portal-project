@@ -291,6 +291,11 @@
 		};
 		return common.ui.datasource('/connect/list.json', options);		
 	}	
+
+	function newConnectListDataSource (options){		
+		options = options || {};
+		return common.ui.datasource('/connect/all.json', options);		
+	}	
 	
 	function getAuthorizeUrl(provider){
 		return "/connect/" + provider + "/authorize"
@@ -331,6 +336,9 @@
 		},
 		list : {
 			datasource : newConnectListDataSource
+		},
+		all : {
+			datasource : newConnectListDataSource2
 		}
 	});
 	
