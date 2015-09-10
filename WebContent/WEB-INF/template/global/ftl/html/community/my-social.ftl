@@ -125,6 +125,12 @@
 										template : kendo.template($("#my-social-listview-template").html()),
 										dataBound : function(e) {
 											console.log("loading from remote");
+											
+											var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+											elems.forEach(function(html) {
+											  var switchery = new Switchery(html);
+											});
+
 										}
 						});
 						listview.removeClass("k-widget");
