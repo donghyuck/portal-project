@@ -120,7 +120,7 @@
 					if( !common.ui.exists( listview ) ){
 
 						common.ui.listview( listview, {
-										dataSource : common.ui.connect.list.datasource(),
+										dataSource : common.ui.connect.all.datasource(),
 										template : kendo.template($("#my-social-listview-template").html()),
 										dataBound : function(e) {
 											console.log("loading from remote");
