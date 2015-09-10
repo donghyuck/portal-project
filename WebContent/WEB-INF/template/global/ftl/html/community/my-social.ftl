@@ -368,6 +368,9 @@
                                         </div>
                                         #if(connected){#  
                                         
+                                        <input type="checkbox" class="js-switch" checked />
+                                        
+                                        
 	                                   <a class="forum-avatar" href="\\#">
 	                                   #if( connect.imageUrl != null ){ # 
 	                                   <img src="#: connect.imageUrl #" class="img-circle" alt="image">
