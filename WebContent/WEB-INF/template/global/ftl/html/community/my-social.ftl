@@ -366,11 +366,9 @@
                                             <i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i>
                                         </div>
                                         #if(connected){#  
-                                         <a href="forum_post.html" class="forum-item-title">#: connect.displayName #</a>
-                                         <img src="#: connect.imageUrl #" class="image-circle" />
+                                         <h2 class="forum-item-title">#: connect.displayName #</h2>
+                                         <div class="forum-sub-title"><img src="#: connect.imageUrl #" class="img-circle" /></div>
                                         #}#
-                                       
-                                        <div class="forum-sub-title">Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</div>
                                     </div>
                                     <div class="col-md-1 forum-info">
                                         <span class="views-number">
