@@ -367,7 +367,7 @@
                                         </div>
                                         #if(connected){#  
                                         
-	                                   <a class="forum-avatar" href="#">
+	                                   <a class="forum-avatar" href="\\#">
 	                                    <img src="#: connect.imageUrl #" class="img-circle" alt="image">
 	                                    <div class="author-info">
 	                                        <span>#: connect.displayName#</span>
