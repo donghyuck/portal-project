@@ -1192,19 +1192,12 @@
 						<h2><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body">
-
-					</div>
-
-							<form class="sky-form">
-								<header>
-									<i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 
-									<span class="close-sm" data-bind="events: { click: toggle }"></span>										
-								</header>
+					<div class="modal-body p-xs">
+							<form class="sky-form no-border">
 								<fieldset>
 									<div class="row">
 										<div class="col-sm-6">
-											<h4><i class="fa fa-upload"></i> 사진 업로드 </h4> 
+											<h4><i class="fa fa-upload"></i> 업로드 </h4> 
 											<p>아래의 사진 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</p>
 											<div id="my-photo-upload">	
 												<input name="uploadPhotos" id="photo-files" type="file" />					
@@ -1227,8 +1220,7 @@
 									</div>
 								</fieldset>	
 							</form>
-							
-					
+					</div>
 				</div>
 			</div>
 		</div>
