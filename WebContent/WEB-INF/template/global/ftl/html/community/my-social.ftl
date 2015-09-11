@@ -379,12 +379,12 @@
                                         <div class="forum-icon">
                                             <i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i>
                                         </div>                                        
-                                        <a href="\\#" class="forum-item-title">#: name #</a>                                        
+                                        <h4 class="forum-item-title">#: name #</h4>                                        
                                     </div>
                                     <div class="col-md-2 forum-info">
                                     	#if(connected){#  
                                         <img class="img-circle" src="#: connect.imageUrl #" width="30" height="30" />
-                                        <div class="author-info">#: connect.displayName # </div>
+                                        <div class="author-info">#if(connect.displayName != null ){##: connect.displayName ##}else{# #}# </div>
                                         #}#
                                     </div>
                                     <!--
