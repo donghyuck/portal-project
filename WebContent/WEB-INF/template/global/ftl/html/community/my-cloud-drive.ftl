@@ -61,25 +61,30 @@
 				});				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
-
-				// menu active setting	
-																																			
+																															
 				// SpMenu Tabs								
-				$('#myTab').on( 'show.bs.tab', function (e) {
-				//	e.preventDefault();		
-					var show_bs_tab = $(e.target);
-					if( show_bs_tab.attr('href') == '#my-files' ){					
-						createAttachmentListView();
-					} else if(show_bs_tab.attr('href') == '#my-photos' ){					
-						createPhotoListView();
-					}					
-				});		
-						
-				$('#myTab a:first').tab('show') ;
-				
+				createMyDriverTabs();				
 				// END SCRIPT 				
 			}
 		}]);	
+
+		<!-- ============================== -->
+		<!-- create my tabs					-->
+		<!-- ============================== -->	
+		function createMyDriverTabs(){
+			var renderTo = $('#myTab');
+			renderTo.on( 'show.bs.tab', function (e) {
+				//	e.preventDefault();		
+				var show_bs_tab = $(e.target);
+				if( show_bs_tab.attr('href') == '#my-files' ){					
+					createAttachmentListView();
+				} else if(show_bs_tab.attr('href') == '#my-photos' ){					
+					createPhotoListView();
+				}					
+			});	
+			$('#myTab a:first').tab('show') ;
+		}
+		
 		<!-- ============================== -->
 		<!-- create my attachment grid							-->
 		<!-- ============================== -->		
@@ -474,6 +479,11 @@
 			return $("#image-source-list input[type=radio][name=image-source]:checked").val();			
 		}
 		
+		function createPhotoUploadModal(){
+		
+		
+		}
+		
 		function createPhotoListView(){		
 			if( $('article.bg-white').is(":hidden")){
 				$("article.bg-white").show();
@@ -548,8 +558,11 @@
 					item.set("index", index );
 					createPhotoViewModal(item);
 				});	
-								
-			
+							
+				createPhotoUploadModal();
+				
+							
+								/**
 					var model = common.ui.observable({
 						data : {
 							objectType : 2,
@@ -618,7 +631,9 @@
 							}				
 						}										
 					});			
-					kendo.bind($("#my-photos"), model);						
+					kendo.bind($("#my-photos"), model);			
+					
+					*/			
 			}			
 		}	
 		
@@ -1150,7 +1165,7 @@
 											<p class="text-muted m-t-sm"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
 										</div>
 										<div class="col-sm-4">
-											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="post" ><i class="icon-flat icon-svg basic-color-cloud-upload icon-svg-lg"></i></button>
+											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-toggle="modal" data-target="#my-photo-upload-modal"><i class="icon-flat icon-svg basic-color-add-image icon-svg-lg"></i></button>
 											<button type="button" class="btn btn-info btn-lg btn-flat btn-block m-t-sm btn-outline bg-white rounded" data-toggle="button" data-bind="events: { click: toggle }"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
 										</div>
 									</div>														
@@ -1200,6 +1215,20 @@
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>			
+
+		<div id="my-photo-upload-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content my-page-view-form">	
+					<div class="modal-header">
+						<h2>사진 업로드</h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>
+					<div class="modal-body">
+
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div id="attachment-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
