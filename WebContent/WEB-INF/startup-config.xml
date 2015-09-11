@@ -84,7 +84,7 @@ PC9saWNlbnNlPg==</file>
 					<clientId>0000000044130A53</clientId>
 					<clientSecret>fS4XsbunpwCUfiHPpQHe57voSqZiis-F</clientSecret>				
 					<callbackUrl>http://222.122.63.146/connect/live</callbackUrl>
-					<allowSignin>true</allowSignin>
+					<allowSignin>false</allowSignin>
 					<allowSignup>false</allowSignup>					
 				</live>				
 				<google>
@@ -92,7 +92,7 @@ PC9saWNlbnNlPg==</file>
 					<clientSecret>efQAMphZZaHPcKrzN4j0DA_y</clientSecret>				
 					<callbackUrl>http://222.122.63.146/connect/google</callbackUrl>
 					<scope>https://www.googleapis.com/auth/plus.login, https://www.googleapis.com/auth/calendar</scope>
-					<allowSignin>true</allowSignin>
+					<allowSignin>false</allowSignin>
 					<allowSignup>false</allowSignup>					
 				</google>					
 			</providers>
