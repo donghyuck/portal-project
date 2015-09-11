@@ -381,6 +381,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-1 forum-info">
+                                    	<img class="img-cicle" src="#: connect.imageUrl #"/>
                                         <span class="views-number">
                                             765
                                         </span>
