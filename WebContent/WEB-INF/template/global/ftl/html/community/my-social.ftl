@@ -281,6 +281,9 @@
 				border-radius: 20px!important;
 			} 
 			
+			.panel-body figure, .ibox-content figure {
+				background:transparent;
+			}
 		</style>   	
 	</head>
 	<body id="doc" class="bg-white">
