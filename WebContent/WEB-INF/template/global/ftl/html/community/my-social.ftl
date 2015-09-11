@@ -379,7 +379,7 @@
                                         <div class="forum-icon">
                                             <i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i>
                                         </div>                                        
-                                        <a href="\\#" class="forum-item-title">#:providerId #</a>                                        
+                                        <a href="\\#" class="forum-item-title">#: providerId #</a>                                        
                                     </div>
                                     <div class="col-md-2 forum-info">
                                     	#if(connected){#  
