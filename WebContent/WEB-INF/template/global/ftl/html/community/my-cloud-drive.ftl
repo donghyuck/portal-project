@@ -1045,7 +1045,8 @@
 					<!-- tab-content -->		
 					<div class="tab-content">
 						<!-- start tab-pane -->
-						<div class="tab-pane" id="my-files">							
+						<div class="tab-pane" id="my-files">
+						<!--							
 							<section class="sky-form panel-upload" style="position:relative; display:none;">
 								<header>
 									<i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드 
@@ -1060,10 +1061,9 @@
 									</#if>	
 								</fieldset>			
 							</section>					
+						-->
 							<#if !action.user.anonymous >	
-							<div class="panel panel-default m-t-sm margin-bottom-40">
-								<div class="panel-body border-b">								
-									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
+							<section class="p-sm">	
 									<div class="row">
 										<div class="col-md-4">
 											<h4><i class="fa fa-user"></i> 소유자</h4>
@@ -1094,17 +1094,29 @@
 											</div>								
 										</div>
 										<div class="col-md-4">
-											<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg m-t-sm rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-lg"></i> 파일업로드</button>	
+											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-toggle="modal" data-target="#my-file-upload-modal"><i class="icon-flat icon-svg basic-color-cloud-upload icon-svg-lg"></i></button
+											
+											<!--<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg m-t-sm rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-lg"></i> 파일업로드</button>	-->
 										</div>
 									</div>									
+								<hr class="no-margin-t"/>
+								<div id="attachment-list-view" class="file-listview" style="min-height:450px;></div>	
+								<div id="pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
+							</section>
+							<!--
+							<div class="panel panel-default m-t-sm margin-bottom-40">
+								<div class="panel-body border-b">								
+									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
+																
 								</div>		
 								<div class="panel-body no-padding" style="min-height:450px;">								
-									<div id="attachment-list-view" class="file-listview"></div>		
+										
 								</div>								
 								<div class="panel-footer no-padding">
-									<div id="pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
+									
 								</div>							
-							</div>		
+							</div>
+							-->		
 							</#if>																								
 						</div><!-- end tab-pane -->		
 						<!-- start tab-pane -->

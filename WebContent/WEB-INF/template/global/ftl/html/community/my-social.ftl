@@ -114,12 +114,10 @@
 		
 		function createSocialSettingModal(){
 			if( !getCurrentUser().anonymous ){
-			
 				var renderTo = $("#my-social-setting-modal");
 				if( !renderTo.data('bs.modal')){	
 					var listview = $("#my-social-listview");
 					if( !common.ui.exists( listview ) ){
-
 						common.ui.listview( listview, {
 										dataSource : common.ui.connect.all.datasource(),
 										template : kendo.template($("#my-social-listview-template").html()),
@@ -134,8 +132,6 @@
 										}
 						});
 						listview.removeClass("k-widget");
-															
-					
 					}					
 				}
 				renderTo.modal('show');	
