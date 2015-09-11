@@ -202,7 +202,8 @@
 					var item = data[index];		
 					item.set("index", index);	
 					showAttachmentPanel(item);
-				});										
+				});	
+				createFileUploadModal();									
 			}		
 		}				
 
@@ -1030,22 +1031,6 @@
 					<div class="tab-content">
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-files">
-						<!--							
-							<section class="sky-form panel-upload" style="position:relative; display:none;">
-								<header>
-									<i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드 
-									<span class="close-sm" data-action="upload-close"></span>										
-								</header>
-								<fieldset>
-									<#if !action.user.anonymous >			
-									<div class="page-header text-primary">
-										<h5>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</h5>
-									</div>								
-									<input name="uploadAttachment" id="attachment-files" type="file" />												
-									</#if>	
-								</fieldset>			
-							</section>					
-						-->
 							<#if !action.user.anonymous >	
 							<section class="p-sm">	
 									<div class="row">
@@ -1084,23 +1069,9 @@
 									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
 																	
 								<hr class="no-margin-t"/>
-								<div id="attachment-list-view" class="file-listview" style="min-height:450px;></div>	
+								<div id="attachment-list-view" class="file-listview" style="min-height:450px;"></div>	
 								<div id="attachment-list-pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
 							</section>
-							<!--
-							<div class="panel panel-default m-t-sm margin-bottom-40">
-								<div class="panel-body border-b">								
-									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
-																
-								</div>		
-								<div class="panel-body no-padding" style="min-height:450px;">								
-										
-								</div>								
-								<div class="panel-footer no-padding">
-									
-								</div>							
-							</div>
-							-->		
 							</#if>																								
 						</div><!-- end tab-pane -->		
 						<!-- start tab-pane -->
