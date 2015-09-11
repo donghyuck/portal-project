@@ -381,6 +381,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-1 forum-info">
+                                    	#if(connected){#  
                                     	<img class="img-cicle" src="#: connect.imageUrl #"/>
                                         <span class="views-number">
                                             765
@@ -388,6 +389,7 @@
                                         <div>
                                             <small>Views</small>
                                         </div>
+                                        #}#
                                     </div>
                                     <div class="col-md-1 forum-info">
                                         <span class="views-number">
