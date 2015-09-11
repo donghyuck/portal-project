@@ -1098,7 +1098,9 @@
 											
 											<!--<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg m-t-sm rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-lg"></i> 파일업로드</button>	-->
 										</div>
-									</div>									
+									</div>	
+									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
+																	
 								<hr class="no-margin-t"/>
 								<div id="attachment-list-view" class="file-listview" style="min-height:450px;></div>	
 								<div id="pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
