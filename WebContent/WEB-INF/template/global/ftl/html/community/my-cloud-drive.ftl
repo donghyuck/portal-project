@@ -1196,7 +1196,7 @@
 
 					</div>
 
-							<section class="sky-form panel-upload">
+							<form class="sky-form">
 								<header>
 									<i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 
 									<span class="close-sm" data-bind="events: { click: toggle }"></span>										
@@ -1226,7 +1226,7 @@
 										</div>
 									</div>
 								</fieldset>	
-							</section>
+							</form>
 							
 					
 				</div>
