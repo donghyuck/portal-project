@@ -379,11 +379,6 @@
                                         <div class="forum-icon">
                                             <i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i>
                                         </div>
-                                        #if(connected){#  
-                                        <input type="checkbox" class="js-switch" checked />
-                                        #}else{#
-                                        <input type="checkbox" class="js-switch" />
-                                        #}#
                                     </div>
                                     <div class="col-md-1 forum-info">
                                         <span class="views-number">
@@ -402,12 +397,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-1 forum-info">
-                                        <span class="views-number">
-                                            11
-                                        </span>
-                                        <div>
-                                            <small>Posts</small>
-                                        </div>
+                                        #if(connected){#  
+                                        <input type="checkbox" class="js-switch" checked />
+                                        #}else{#
+                                        <input type="checkbox" class="js-switch" />
+                                        #}#
                                     </div>
                                 </div>
                             </div>		
