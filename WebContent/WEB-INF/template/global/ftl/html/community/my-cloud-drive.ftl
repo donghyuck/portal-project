@@ -1116,37 +1116,6 @@
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-photos">			
 							<#if !action.user.anonymous >			
-							<section class="sky-form panel-upload" style="position:relative; display:none;">
-								<header>
-									<i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 
-									<span class="close-sm" data-bind="events: { click: toggle }"></span>										
-								</header>
-								<fieldset>
-									<div class="row">
-										<div class="col-sm-6">
-											<h4><i class="fa fa-upload"></i> 사진 업로드 </h4> 
-											<p>아래의 사진 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</p>
-											<div id="my-photo-upload">	
-												<input name="uploadPhotos" id="photo-files" type="file" />					
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<h4><i class="fa fa-upload"></i> URL 업로드 </h4> 
-											<p>사진이 존재하는 URL 을 직접 입력하여 주세요.</p>
-											<label class="label">출처</label>
-											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url" placeholder="출처 URL"  data-bind="value: data.sourceUrl"></label>
-											<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
-											
-											<label class="label">사진</label>
-											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url2" placeholder="사진 URL"  data-bind="value: data.imageUrl"></label>
-											<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
-											<section class="text-right">
-											<button type="submit" class="btn btn-primary" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
-											</section>
-										</div>
-									</div>
-								</fieldset>	
-							</section>	
 							<section class="p-sm">									
 									<div class="row" >
 										<div class="col-sm-8">
@@ -1220,12 +1189,46 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-view-form">	
 					<div class="modal-header">
-						<h2>사진 업로드</h2>
+						<h2><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
 
 					</div>
+
+							<section class="sky-form panel-upload">
+								<header>
+									<i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 
+									<span class="close-sm" data-bind="events: { click: toggle }"></span>										
+								</header>
+								<fieldset>
+									<div class="row">
+										<div class="col-sm-6">
+											<h4><i class="fa fa-upload"></i> 사진 업로드 </h4> 
+											<p>아래의 사진 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</p>
+											<div id="my-photo-upload">	
+												<input name="uploadPhotos" id="photo-files" type="file" />					
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<h4><i class="fa fa-upload"></i> URL 업로드 </h4> 
+											<p>사진이 존재하는 URL 을 직접 입력하여 주세요.</p>
+											<label class="label">출처</label>
+											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url" placeholder="출처 URL"  data-bind="value: data.sourceUrl"></label>
+											<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
+											
+											<label class="label">사진</label>
+											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url2" placeholder="사진 URL"  data-bind="value: data.imageUrl"></label>
+											<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
+											<section class="text-right">
+											<button type="submit" class="btn btn-primary" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
+											</section>
+										</div>
+									</div>
+								</fieldset>	
+							</section>
+							
+					
 				</div>
 			</div>
 		</div>
