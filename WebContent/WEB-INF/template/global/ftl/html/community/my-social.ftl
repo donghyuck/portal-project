@@ -364,7 +364,31 @@
 					<div class="modal-body">
 						<div id="my-social-grid"></div>	
 						<div id="my-social-listview" class="forum-container"></div>	
+						
+						
 					</div>
+					
+				<table class="table">
+<!--                    <thead>
+                        <tr>
+                            <th>*</th>
+                            <th>First Name</th>
+                            <th class="hidden-sm">Last Name</th>
+                            <th>Username</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>-->
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Mark</td>
+                            <td class="hidden-sm">Otto</td>
+                            <td>@mdo</td>
+                            <td><span class="label label-warning">Expiring</span></td>                          
+                        </tr>
+                    </tbody>
+                </table>
+                					
 				</div>
 			</div>
 		</div>
