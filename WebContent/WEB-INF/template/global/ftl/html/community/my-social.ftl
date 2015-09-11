@@ -383,7 +383,11 @@
                                     </div>
                                     <div class="col-md-2 forum-info">
                                     	#if(connected){#  
-                                        <img class="img-circle" src="#: connect.imageUrl #" width="30" height="30" />
+                                    	#if(connect.imageUrl!=null){#
+                                    	<img class="img-circle" src="#: connect.imageUrl #" width="30" height="30" />
+                                    	#}else{#
+                                    	<img class="img-circle" src="<@spring.url "/images/common/anonymous.png"/>" width="30" height="30" />
+                                    	#}#                                        
                                         <div class="author-info">#if(connect.displayName != null ){##: connect.displayName ##}else{# #}# </div>
                                         #}#
                                     </div>
