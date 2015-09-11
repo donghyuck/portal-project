@@ -1021,12 +1021,7 @@
 				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if>	${ navigator.title }</h1>					
-
-					<a href="<@spring.url "/display/0/my-page.html"/>"><span class="btn-flat pencle t-0-r-2"></span></a>
-					<a href="<@spring.url "/display/0/my-page.html"/>"><span class="btn-flat pencle t-0-r-1"></span></a>			
-					<span class="btn-flat settings" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="my-cloud-driver-controls-section"></span>
-
-					</div><!--/end container-->
+				</div><!--/end container-->
 			</div>
 			</#if>			
 			
@@ -1061,7 +1056,7 @@
 									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
 									<div class="row">
 										<div class="col-md-4">
-											<h4><i class="fa fa-angle-right"></i> 소유자</h4>
+											<h4><i class="fa fa-user"></i> 소유자</h4>
 											<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-source-list">
 												<label class="btn btn-danger rounded-left active">
 													<input type="radio" name="attachment-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
@@ -1075,7 +1070,7 @@
 											</div>												
 										</div>
 										<div class="col-md-4">
-											<h4><i class="fa fa-angle-right"></i> 필터</h4>
+											<h4><i class="fa fa-filter"></i> 필터</h4>
 											<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-info  rounded-left active">
 													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
@@ -1139,8 +1134,8 @@
 							<section class="p-sm">									
 									<div class="row" >
 										<div class="col-sm-8">
-											<h4><i class="fa fa-lock"></i> 소유자</h4>
-											<div class="btn-group" data-toggle="buttons" id="image-source-list">
+											<h4><i class="fa fa-user"></i> 소유자</h4>
+											<div class="btn-group btn-group-sm" data-toggle="buttons" id="image-source-list">
 												<label class="btn btn-danger rounded-left active">
 													<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
 												</label>
