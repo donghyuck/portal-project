@@ -10,13 +10,13 @@ i.icon-svg {
 }
 
 .icon-svg-sm {
-    width:32px;
-    height:32px;	
+    width:32px!important;
+    height:32px!important;	
 }
 
 .icon-svg-lg {
-    width:128px;
-    height:128px;	
+    width:128px!important;
+    height:128px!important;	
 }
 
 .icon-svg-btn {	
@@ -144,6 +144,13 @@ i.icon-svg {
 
 .icon-svg.basic-color-comment{
 	background-image: url("/images/common/icons/basic/color/Comment.svg");
+}
+
+.icon-svg.basic-color-filter{
+	background-image: url("/images/common/icons/basic/color/EmptyFilter.svg");
+}
+.icon-svg.basic-color-filled-filter{
+	background-image: url("/images/common/icons/basic/color/FilledFilter.svg");
 }
 
 
