@@ -12,6 +12,7 @@
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
+			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',			
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
 			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',			
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',		
@@ -1149,6 +1150,7 @@
 											<p class="text-muted m-t-sm"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
 										</div>
 										<div class="col-sm-4">
+											<button class="btn-link hvr-pulse-shrink" type="button" data-action="post" ><i class="icon-flat icon-svg basic-color-cloud-upload icon-svg-lg"></i></button>
 											<button type="button" class="btn btn-info btn-lg btn-flat btn-block m-t-sm btn-outline bg-white rounded" data-toggle="button" data-bind="events: { click: toggle }"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
 										</div>
 									</div>														
