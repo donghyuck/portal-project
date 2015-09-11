@@ -373,7 +373,7 @@
 		
 		<!-- START TEMPLATE -->
 		<script type="text/x-kendo-template" id="my-social-listview-template">
-<div class="forum-item">
+		<div class="forum-item #if(!allowSignin){# hidden #}#">
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="forum-icon">
@@ -404,8 +404,7 @@
                                         #}#
                                     </div>
                                 </div>
-                            </div>		
-		
+		</div>		
 		</script>
 
 		<script type="text/x-kendo-template" id="my-social-navbar-template">
