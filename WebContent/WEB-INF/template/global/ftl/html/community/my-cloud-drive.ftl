@@ -91,25 +91,41 @@
 		function getMyDriverAttachmentSource(){
 			return $("#attachment-source-list input[type=radio][name=attachment-source]:checked").val();			
 		}
+		function createFileUploadModal(){
+			var renderTo = $("#my-file-upload-modal");
+			var renderTo2 = $('#attachment-list-view');
+			if( !renderTo.data('bs.modal')){	
+				if( !common.ui.exists($('#attachment-files')) ){
+									common.ui.upload(
+										$("#attachment-files"),
+										{
+											multiple : false,
+											async : {
+												saveUrl:  '<@spring.url "/data/files/upload.json?output=json" />',
+											},
+											upload: function(e){
+												e.data = {objectType: getMyDriverAttachmentSource()};
+											},
+											success : function(e) {								    
+												common.ui.listview(renderTo2).dataSource.read();						
+											}
+										}
+									);
+				}			
+			}
+		}		
 				
-		function createAttachmentListView(){					
-			if( !common.ui.exists($('#attachment-list-view')) ){
-				var attachementTotalModle = common.ui.observable({ 
-					totalAttachCount : "0",
-					totalImageCount : "0",
-					totalFileCount : "0"							
-				});					
-			}		
-			if( !common.ui.exists($('#attachment-list-view')) ){						
+		function createAttachmentListView(){	
+			var renderTo = $('#attachment-list-view');				
+			if( !common.ui.exists(renderTo) ){						
 				var attachementTotalModle = common.ui.observable({ 
 					totalAttachCount : "0",
 					totalImageCount : "0",
 					totalFileCount : "0"							
 				});
 				common.ui.bind($("#attachment-list-filter"), attachementTotalModle);
-				common.ui.listview(
-					$("#attachment-list-view"),
-					{				
+				
+				common.ui.listview(renderTo,{				
 						dataSource : common.ui.datasource(
 							'<@spring.url "/data/files/list.json?output=json" />', 
 							{
@@ -137,7 +153,7 @@
 						change: function(e) {									
 							var data = this.dataSource.view() ;
 							var item = data[this.select().index()];		
-							$("#attachment-list-view").data( "attachPlaceHolder", item );												
+							renderTo.data( "attachPlaceHolder", item );												
 						},		
 						navigatable: false,
 						template: kendo.template($("#attachment-list-view-template").html()),			
@@ -162,11 +178,11 @@
 				});	
 				
 				$("#attachment-source-list input[type=radio][name=attachment-source]").on("change", function () {
-					common.ui.listview($('#attachment-list-view')).dataSource.read();	
+					common.ui.listview(renderTo).dataSource.read();	
 				});	
 								
 				$("input[name='attachment-list-view-filters']").on("change", function () {
-					var attachment_list_view = common.ui.listview($("#attachment-list-view"));
+					var attachment_list_view = common.ui.listview(renderTo);
 					switch(this.value){
 							case "all" :
 								attachment_list_view.dataSource.filter(  { field: "contentType", operator: "neq", value: "" } ) ; 
@@ -179,46 +195,14 @@
 								break;
 					}
 				});		
-						
-				common.ui.pager($("#pager"),{ buttonCount : 5, dataSource : common.ui.listview($("#attachment-list-view")).dataSource });			
-				
-				$("#attachment-list-view").on("click", ".file-wrapper button", function(e){
+				common.ui.pager($("#attachment-list-pager"),{ buttonCount : 5, dataSource : common.ui.listview(renderTo).dataSource });							
+				renderTo.on("click", ".file-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
-					var data = common.ui.listview($('#attachment-list-view')).dataSource.view();					
+					var data = common.ui.listview(renderTo).dataSource.view();					
 					var item = data[index];		
 					item.set("index", index);	
 					showAttachmentPanel(item);
-				});								
-				common.ui.buttons(
-					$("#my-files [data-action]"),
-					{
-						handlers : {
-							upload : function(e){
-								if( !common.ui.exists($('#attachment-files')) ){
-									common.ui.upload(
-										$("#attachment-files"),
-										{
-											multiple : false,
-											async : {
-												saveUrl:  '<@spring.url "/data/files/upload.json?output=json" />',
-											},
-											upload: function(e){
-												e.data = {objectType: getMyDriverAttachmentSource()};
-											},
-											success : function(e) {								    
-												common.ui.listview($("#attachment-list-view")).dataSource.read();						
-											}
-										}
-									);
-								}								
-								$("#my-files .panel-upload").slideToggle(200);			
-							},
-							'upload-close' : function(e){
-								$("#my-files .panel-upload").slideToggle(200);			
-							}	
-						}
-					}
-				);				
+				});										
 			}		
 		}				
 
@@ -1160,15 +1144,15 @@
 		</div>			
 		<!-- Image / File Uplaod Modal -->
 		<div id="my-file-upload-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-			<div class="modal-dialog modal-lg">
+			<div class="modal-dialog modal-sm">
 				<div class="modal-content my-page-view-form">	
 					<div class="modal-header">
-						<h2><i class="fa fa-cloud-upload  fa-sm"></i> 파일 업로드 </h2>
+						<h2><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드 </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body p-xs">
 							<form class="sky-form no-border">
-								<fieldset>
+								<fieldset>	
 									<div class="page-header text-primary">
 										<h5>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</h5>
 									</div>								
