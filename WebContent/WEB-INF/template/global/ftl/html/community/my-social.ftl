@@ -373,12 +373,13 @@
 		
 		<!-- START TEMPLATE -->
 		<script type="text/x-kendo-template" id="my-social-listview-template">
-		<div class="forum-item #if(!allowSignin){# hidden #}#">
+		<div class="forum-item #if(!allowSignin){# hidden #}# #if(connected){# active #}# ">
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="forum-icon">
                                             <i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i>
-                                        </div>
+                                        </div>                                        
+                                        <a href="\\#" class="forum-item-title">#:providerId #</a>                                        
                                     </div>
                                     <div class="col-md-2 forum-info">
                                     	#if(connected){#  
