@@ -1095,15 +1095,13 @@
 										</div>
 										<div class="col-md-4">
 											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-toggle="modal" data-target="#my-file-upload-modal"><i class="icon-flat icon-svg basic-color-cloud-upload icon-svg-lg"></i></button
-											
-											<!--<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg m-t-sm rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-lg"></i> 파일업로드</button>	-->
 										</div>
 									</div>	
 									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
 																	
 								<hr class="no-margin-t"/>
 								<div id="attachment-list-view" class="file-listview" style="min-height:450px;></div>	
-								<div id="pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
+								<div id="attachment-list-pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
 							</section>
 							<!--
 							<div class="panel panel-default m-t-sm margin-bottom-40">
@@ -1161,6 +1159,26 @@
 			<!-- ./END FOOTER -->					
 		</div>			
 		<!-- Image / File Uplaod Modal -->
+		<div id="my-file-upload-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content my-page-view-form">	
+					<div class="modal-header">
+						<h2><i class="fa fa-cloud-upload  fa-sm"></i> 파일 업로드 </h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>
+					<div class="modal-body p-xs">
+							<form class="sky-form no-border">
+								<fieldset>
+									<div class="page-header text-primary">
+										<h5>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</h5>
+									</div>								
+									<input name="uploadAttachment" id="attachment-files" type="file" />												
+								</fieldset>	
+							</form>
+					</div>
+				</div>
+			</div>
+		</div>		
 		<div id="my-photo-upload-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-view-form">	
