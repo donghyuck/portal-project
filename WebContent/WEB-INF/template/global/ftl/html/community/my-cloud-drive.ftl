@@ -480,8 +480,77 @@
 		}
 		
 		function createPhotoUploadModal(){
-		
-		
+			var renderTo = $("#my-photo-upload-modal");
+			var renderTo2 = $('#photo-list-view');
+			if( !renderTo.data('bs.modal')){	
+			
+				var model = common.ui.observable({
+						data : {
+							objectType : 2,
+							objectId : 0,
+							sourceUrl : '', 
+							imageUrl : ''
+						},
+						reset: function(e){
+							this.data.sourceUrl = '';
+							this.data.imageUrl = '';							
+							renderTo.find(".sky-form input").val('');							
+						},	
+						upload: function(e) {
+							$this = this;
+							e.preventDefault();	
+							var hasError = false;											
+							renderTo.find('.sky-form .input.state-error').removeClass("state-error");								
+							if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.valid("url", this.data.sourceUrl) ){
+								renderTo.find('.sky-form .input').eq(0).addClass("state-error");			
+								hasError = true;					
+							}else{
+								if( renderTo.find('.sky-form .input').eq(0).hasClass("state-error") ){
+									renderTo.find('.sky-form .input').eq(0).removeClass("state-error");
+								}											
+							}					
+							if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.valid("url", this.data.imageUrl)  ){
+								renderTo.find('.sky-form .input').eq(1).addClass("state-error");
+								hasError = true;		
+							}else{
+								if( renderTo.find('.sky-form .input').eq(1).hasClass("state-error") ){
+									renderTo.find('.sky-form .input').eq(1).removeClass("state-error");
+								}											
+							}				
+							if( !hasError ){
+								var btn = $(e.target);
+								btn.button('loading');			
+								this.data.objectType = getMyDriverPhotoSource();
+								common.ui.data.image.uploadByUrl( {
+									data : this.data ,
+									success : function(response){
+										var photo_list_view = common.ui.listview(renderTo2);
+										photo_list_view.dataSource.read();		
+									},
+									always : function(){
+										btn.button('reset');										
+										$this.reset();
+									}
+								});		
+							}				
+						}										
+					});		
+					kendo.bind(renderTo, model);	
+					if( !common.ui.exists($("#photo-files")) ){
+						common.ui.upload($("#photo-files"),{
+							async: {
+								saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
+							},
+							upload: function(e){
+								e.data = {objectType:getMyDriverPhotoSource()};
+							},
+							success : function(e) {	
+								var photo_list_view = common.ui.listview(renderTo2);
+								photo_list_view.dataSource.read();								
+							}		
+						});		
+					}
+			}
 		}
 		
 		function createPhotoListView(){		
@@ -558,82 +627,7 @@
 					item.set("index", index );
 					createPhotoViewModal(item);
 				});	
-							
 				createPhotoUploadModal();
-				
-							
-								/**
-					var model = common.ui.observable({
-						data : {
-							objectType : 2,
-							objectId : 0,
-							sourceUrl : '', 
-							imageUrl : ''
-						},
-						toggle: function(e){
-							if( !common.ui.exists($("#photo-files")) ){
-								common.ui.upload($("#photo-files"),{
-									async: {
-										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
-									},
-									upload: function(e){
-										e.data = {objectType:getMyDriverPhotoSource()};
-									},
-									success : function(e) {	
-										var photo_list_view = common.ui.listview(renderTo);
-										photo_list_view.dataSource.read();								
-									}		
-								});		
-							}	
-							$("#my-photos .panel-upload").slideToggle(200);
-						},
-						reset: function(e){
-							this.data.sourceUrl = '';
-							this.data.imageUrl = '';							
-							$('#my-photos .sky-form input').val('');							
-						},	
-						upload: function(e) {
-							$this = this;
-							e.preventDefault();	
-							var hasError = false;											
-							$('#my-photos .sky-form .input.state-error').removeClass("state-error");								
-							if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.valid("url", this.data.sourceUrl) ){
-								$('#my-photos .sky-form .input').eq(0).addClass("state-error");			
-								hasError = true;					
-							}else{
-								if( $('#my-photos .sky-form .input').eq(0).hasClass("state-error") ){
-									$('#my-photos .sky-form .input').eq(0).removeClass("state-error");
-								}											
-							}					
-							if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.valid("url", this.data.imageUrl)  ){
-								$('#my-photos .sky-form .input').eq(1).addClass("state-error");
-								hasError = true;		
-							}else{
-								if( $('#my-photos .sky-form .input').eq(1).hasClass("state-error") ){
-									$('#my-photos .sky-form .input').eq(1).removeClass("state-error");
-								}											
-							}				
-							if( !hasError ){
-								var btn = $(e.target);
-								btn.button('loading');			
-								this.data.objectType = getMyDriverPhotoSource();
-								common.ui.data.image.uploadByUrl( {
-									data : this.data ,
-									success : function(response){
-										var photo_list_view = common.ui.listview(renderTo);
-										photo_list_view.dataSource.read();		
-									},
-									always : function(){
-										btn.button('reset');										
-										$this.reset();
-									}
-								});		
-							}				
-						}										
-					});			
-					kendo.bind($("#my-photos"), model);			
-					
-					*/			
 			}			
 		}	
 		
@@ -1214,7 +1208,7 @@
 											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url2" placeholder="사진 URL"  data-bind="value: data.imageUrl"></label>
 											<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
 											<section class="text-right">
-											<button type="submit" class="btn btn-primary" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
+											<button type="submit" class="btn btn-info btn-flat btn-outline rounded" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
 											</section>
 										</div>
 									</div>
