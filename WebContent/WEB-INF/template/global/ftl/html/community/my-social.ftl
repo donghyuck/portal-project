@@ -380,12 +380,13 @@
                                             <i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i>
                                         </div>
                                     </div>
-                                    <div class="col-md-1 forum-info">
+                                    <div class="col-md-2 forum-info">
                                     	#if(connected){#  
                                         <img class="img-circle" src="#: connect.imageUrl #" width="30" height="30" />
                                         <div class="author-info">#: connect.displayName # </div>
                                         #}#
                                     </div>
+                                    <!--
                                     <div class="col-md-1 forum-info">
                                         <span class="views-number">
                                             90
@@ -393,7 +394,7 @@
                                         <div>
                                             <small>Topics</small>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="col-md-1 forum-info">
                                         #if(connected){#  
                                         <input type="checkbox" class="js-switch" checked />
