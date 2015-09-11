@@ -157,7 +157,9 @@ i.icon-svg {
 .icon-svg.basic-color-filled-filter{
 	background-image: url("/images/common/icons/basic/color/FilledFilter.svg");
 }
-
+.icon-svg.basic-color-add-image{
+	background-image: url("/images/common/icons/basic/color/AddImage.svg");
+}
 
 /* SocialNetwork Color Icons 
 ------------------------------------*/
