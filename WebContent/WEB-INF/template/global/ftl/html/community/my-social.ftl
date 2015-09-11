@@ -363,26 +363,8 @@
 					</div>
 					<div class="modal-body">
 						<div id="my-social-grid"></div>	
-						<div  class="forum-container"></div>	
-						
-						
+						<div id="my-social-listview" class="forum-container"></div>	
 					</div>
-					
-				<table class="table">
-<!--                    <thead>
-                        <tr>
-                            <th>*</th>
-                            <th>First Name</th>
-                            <th class="hidden-sm">Last Name</th>
-                            <th>Username</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>-->
-                    <tbody id="my-social-listview">
-
-                    </tbody>
-                </table>
-                					
 				</div>
 			</div>
 		</div>
@@ -391,23 +373,6 @@
 		
 		<!-- START TEMPLATE -->
 		<script type="text/x-kendo-template" id="my-social-listview-template">
-		
-		<tr>
-			<td>1</td>
-			<td><i class="icon-flat icon-svg social-color-#=name# #if(!connected){# grayscale #}#"></i></td>
-			<td class="hidden-sm">Otto</td>
-			<td>@mdo</td>
-			<td>
-
-                                        #if(connected){#  
-                                        <input type="checkbox" class="js-switch" checked />
-                                        #}else{#
-                                        <input type="checkbox" class="js-switch" />
-                                        #}#
-                                        
-			</td>                          
-		</tr>		
-		<!--
 <div class="forum-item">
                                 <div class="row">
                                     <div class="col-md-9">
@@ -446,7 +411,7 @@
                                     </div>
                                 </div>
                             </div>		
-		-->
+		
 		</script>
 
 		<script type="text/x-kendo-template" id="my-social-navbar-template">
