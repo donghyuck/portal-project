@@ -497,7 +497,7 @@
 						<div class="row no-margin">
 						# for (var i = 0; i < photos.length ; i++) { #	
 							# var photo = photos[i] ; #							
-						<div class="col-xs-#=common.ui.connect.columns(i, totalPhoto)# no-padding">
+						<div class="col-xs-3 no-padding">
 							<figure>
 							<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive lightbox" style="padding:0px 1px 1px 0px;" data-toggle="lightbox" #if(totalPhoto>1){# data-selector="[data-uid='#=uid#'] figure > img.lightbox" #}#>
 								<figcaption class="no-padding-hr" style="height:10px;">									
