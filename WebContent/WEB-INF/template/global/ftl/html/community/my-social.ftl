@@ -382,9 +382,8 @@
                                     </div>
                                     <div class="col-md-1 forum-info">
                                     	#if(connected){#  
-                                        <div class="forum-avatar">
-                                            <img class="img-circle" src="#: connect.imageUrl #"/>
-                                        </div>
+                                        <img class="img-circle" src="#: connect.imageUrl #" width="30" height="30" />
+                                        <div class="author-info">#: connect.displayName # </div>
                                         #}#
                                     </div>
                                     <div class="col-md-1 forum-info">
