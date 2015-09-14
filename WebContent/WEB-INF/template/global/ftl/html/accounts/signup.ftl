@@ -119,7 +119,7 @@
 					e.preventDefault();				
 					if( validator.validate() ){
 						common.ui.ajax(
-						"<@spring.url "/accounts/register.json"/>", 
+						"<@spring.url "/data/accounts/register.json"/>", 
 						{
 							data: common.ui.stringify( observable.form ),
 							success : function( response ) {   
