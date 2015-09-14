@@ -520,7 +520,7 @@
 										</div>
 										<div class="form-group">
 											<label for="signupInputPassword1">비밀번호</label>
-											<input type="password" class="form-control" id="signupInputPassword1" name="signupInputPassword1"  placeholder="비밀번호" data-bind="value: form.password1" required data-required-msg="비밀번호를 입력하여 주십시오." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" validationMessage="비밀번호는 대문자/소문자, 숫자를 포합하는 6자이상이여야 합니다. Password must contain at least 6 characters, including UPPER/lowercase and numbers">
+											<input type="password" class="form-control" id="signupInputPassword1" name="signupInputPassword1"  placeholder="비밀번호" data-bind="value: form.password1" required data-required-msg="비밀번호를 입력하여 주십시오." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}" validationMessage="비밀번호는 대문자/소문자, 숫자, 특수문자를 포합하는 8자이상 문자이여야 합니다.">
 										</div>
 										<div class="form-group">
 											<label for="signupInputPassword2">비밀번호 확인</label>
