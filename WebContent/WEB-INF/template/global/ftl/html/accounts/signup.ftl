@@ -113,6 +113,17 @@
 				});
 				
 				var validator = renderTo.find("form").kendoValidator({
+					rules : {
+						matchesValidator: function (input) {
+				            var matchesPropertyName = input.data("matches");
+				            if (!matchesPropertyName) return true;
+				            var propertyName = input.prop("kendoBindingTarget").toDestroy[0].bindings.value.path;
+				            var model = input.prop("kendoBindingTarget").source;
+				            var value = model[propertyName];
+				            var matchesValue = model[matchesPropertyName];
+				            return (value === matchesValue);
+				        }
+					},
 					errorTemplate: "<div class='note note-error'>#=message#</div>"
 				}).data("kendoValidator");
 				renderTo.find("form").submit(function(e) {		
@@ -507,11 +518,11 @@
 										</div>
 										<div class="form-group">
 											<label for="signupInputPassword1">비밀번호</label>
-											<input type="password" class="form-control" id="signupInputPassword1" name="signupInputPassword1"  placeholder="비밀번호" data-bind="value: form.assword1" required data-required-msg="비밀번호를 입력하여 주십시오.">
+											<input type="password" class="form-control" id="signupInputPassword1" name="signupInputPassword1"  placeholder="비밀번호" data-bind="value: form.password1" required data-required-msg="비밀번호를 입력하여 주십시오.">
 										</div>
 										<div class="form-group">
 											<label for="signupInputPassword2">비밀번호 확인</label>
-											<input type="password" class="form-control" id="signupInputPassword2" name="signupInputPassword2"  placeholder="비밀번호 확인" data-bind="value: form.password2" required data-required-msg="비밀번호를 다시한번 입력하여 주십시오.">
+											<input type="password" class="form-control" id="signupInputPassword2" name="signupInputPassword2"  placeholder="비밀번호 확인" data-matches="form.password1" data-bind="value: form.password2" required data-required-msg="비밀번호를 다시한번 입력하여 주십시오.">
 										</div>									
 										<section>
 											<label class="checkbox">
