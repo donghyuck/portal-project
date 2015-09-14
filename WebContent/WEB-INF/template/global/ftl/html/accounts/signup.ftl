@@ -122,6 +122,7 @@
 						"<@spring.url "/data/accounts/register.json"/>", 
 						{
 							data: common.ui.stringify( observable.form ),
+							contentType : "application/json",
 							success : function( response ) {   
 								if( response.error ){ 
 																		
