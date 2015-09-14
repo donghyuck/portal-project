@@ -522,7 +522,7 @@
 										</div>
 										<div class="form-group">
 											<label for="signupInputPassword2">비밀번호 확인</label>
-											<input type="password" class="form-control" id="signupInputPassword2" name="signupInputPassword2"  placeholder="비밀번호 확인" data-matches="form.password1" data-bind="value: form.password2" required data-required-msg="비밀번호를 다시한번 입력하여 주십시오.">
+											<input type="password" class="form-control" id="signupInputPassword2" name="signupInputPassword2"  placeholder="비밀번호 확인" data-matches="form.password1" data-bind="value: form.password2" required data-matches-msg="비밀번호를 정확하게 다시 입력하여 주세요." data-required-msg="비밀번호를 다시한번 입력하여 주십시오.">
 										</div>									
 										<section>
 											<label class="checkbox">
