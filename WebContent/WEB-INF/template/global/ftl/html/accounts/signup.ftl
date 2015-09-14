@@ -33,9 +33,7 @@
 						wallpaper : true,
 						loading:true
 					}
-				});	
-				
-								
+				});									
 				// START SCRIPT	
 				prepareSignUp();
 				// END SCRIPT            
@@ -92,7 +90,8 @@
 					        "emailVisible" : { type:"boolean", defaultVlaue: false },
 					        "agree":  { type:"boolean", defaultVlaue: false }
 						}
-					});			
+					});		
+						
 				var observable =  common.ui.observable({
 					visible : true,
 					connectWith : function(e){
@@ -114,6 +113,7 @@
 		}
 		
 		function handleCallbackResult( success ){
+			
 			var renderTo = $("#signup");
 			common.ui.connect.connectedProfile({
 				success : function(data){
@@ -487,19 +487,6 @@
 			</footer>	
 					
 		</div>			
-
-				
-		<!--<nav class="navbar navbar-fixed-bottom" role="navigation" class="color:#000000;">
-			<div class="container-fluid">
-				<ul class="nav navbar-nav navbar-left">
-					 <li><a href="#">약관</a></li>
-					 <li><a href="#">개인정보보호</a></li>
-					 <li><a href="<@spring.url '/accounts/login.do'/>">로그인</a></li>
-					 <li><a href="#" onClick="toggleWindow(); return false;">회원가입</a></li>
-				</ul>
-			</div>
-		</nav>-->
-	<!-- Modal -->
 	<div class="modal fade" id="signup-window" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -646,7 +633,6 @@
     </script>		
 	<script type="text/x-kendo-template" id="alert2-template">
 	<div class="popover pull-right animated bounceInDown">
-		<!--<h3 class="popover-title">로그인 상태입니다.</h3>-->
 			<div class="popover-content text-center">		
 			<img class="img-rounded" src="#=imageUrl#">	
 			<p> #:profile.name # 님은 이미 회원입니다.</p>
