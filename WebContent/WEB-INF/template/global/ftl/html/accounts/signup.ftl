@@ -479,30 +479,30 @@
 									<fieldset <#if !action.user.anonymous >disabled</#if> style="padding-top:0;" >
 										<div class="form-group">
 											<label for="signupInputName">이름</label>
-											<input type="text" class="form-control" id="signupInputName" name="signupInputName" placeholder="이름" data-bind="value: name" required data-required-msg="이름을 입력하여 주십시오." >
+											<input type="text" class="form-control" id="signupInputName" name="signupInputName" placeholder="이름" data-bind="value: form.name" required data-required-msg="이름을 입력하여 주십시오." >
 										</div>
 										<div class="form-group">
 											<label for="signupInputUsername">아이디</label>
-											<input type="text" class="form-control" id="signupInputUsername" name="signupInputUsername" placeholder="아이디" data-bind="value: username" data-available  required data-required-msg="아이디를 입력하여 주십시오." >
+											<input type="text" class="form-control" id="signupInputUsername" name="signupInputUsername" placeholder="아이디" data-bind="value: form.username" data-available  required data-required-msg="아이디를 입력하여 주십시오." >
 											 <span data-for="RetireDate"></span>
 										</div>									
 										<div class="form-group">
 											<label for="signupInputEmail">이메일 주소</label>
-											<input type="email" class="form-control" id="signupInputEmail" name="signupInputEmail"  placeholder="이메일 주소" data-bind="value: email" required  data-required-msg="메일주소를 입력하여 주십시오." data-email-msg="메일주소 형식이 바르지 않습니다." >
+											<input type="email" class="form-control" id="signupInputEmail" name="signupInputEmail"  placeholder="이메일 주소" data-bind="value: form.email" required  data-required-msg="메일주소를 입력하여 주십시오." data-email-msg="메일주소 형식이 바르지 않습니다." >
 										</div>
 										<div class="form-group">
 											<label for="signupInputPassword1">비밀번호</label>
-											<input type="password" class="form-control" id="signupInputPassword1" name="signupInputPassword1"  placeholder="비밀번호" data-bind="value: password1" required data-required-msg="비밀번호를 입력하여 주십시오.">
+											<input type="password" class="form-control" id="signupInputPassword1" name="signupInputPassword1"  placeholder="비밀번호" data-bind="value: form.assword1" required data-required-msg="비밀번호를 입력하여 주십시오.">
 										</div>
 										<div class="form-group">
 											<label for="signupInputPassword2">비밀번호 확인</label>
-											<input type="password" class="form-control" id="signupInputPassword2" name="signupInputPassword2"  placeholder="비밀번호 확인" data-bind="value: password2" required data-required-msg="비밀번호를 다시한번 입력하여 주십시오.">
+											<input type="password" class="form-control" id="signupInputPassword2" name="signupInputPassword2"  placeholder="비밀번호 확인" data-bind="value: form.password2" required data-required-msg="비밀번호를 다시한번 입력하여 주십시오.">
 										</div>									
 										<section>
 											<label class="checkbox">
 												<input type="checkbox"  id="signupInputAgree" name="signupInputAgree" required validationMessage="회원가입을 위하여 동의가 필요합니다.">
 												<i></i>
-												<div class="note note-error k-invalid-msg" data-for="signupInputAgree" role="alert" style="display: none;">회원가입을 위하여 동의가 필요합니다.</div>												
+												<div class="note note-error k-invalid-msg" data-for="signupInputAgree" data-bind="value:form.agree" role="alert" style="display: none;">회원가입을 위하여 동의가 필요합니다.</div>												
 												서비스 약관과 개인정보취급방침 및 개인정보 수집항목•이용목적•보유기간에 동의합니다.
 											</label>
 										</section>
