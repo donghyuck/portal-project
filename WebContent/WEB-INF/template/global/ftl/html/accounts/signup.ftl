@@ -117,16 +117,14 @@
 						matchesValidator: function (input) {
 				            var matchesPropertyName = input.data("matches");
 				            if (!matchesPropertyName) return true;
-				            
-				            console.log(matchesPropertyName + "=" +observable.get(matchesPropertyName));
-				            
 				            var propertyName = input.prop("kendoBindingTarget").toDestroy[0].bindings.value.path;
-				            
-				            console.log(matchesPropertyName + "=" +observable.get(matchesPropertyName));
-				            console.log(propertyName + "=" +observable.get(propertyName));
-				            
 				            return (observable.get(matchesPropertyName) === observable.get(propertyName));
 				        }
+					},
+					messages : {
+						matches: function (input) {
+		                    return input.data("matchesMsg") || "Does not match";
+		                }
 					},
 					errorTemplate: "<div class='note note-error'>#=message#</div>"
 				}).data("kendoValidator");
