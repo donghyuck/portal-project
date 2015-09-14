@@ -118,11 +118,13 @@
 				            var matchesPropertyName = input.data("matches");
 				            if (!matchesPropertyName) return true;
 				            
-				            console.log(matchesPropertyName + observable.get(matchesPropertyName));
+				            console.log(matchesPropertyName + "=" +observable.get(matchesPropertyName));
 				            
 				            var propertyName = input.prop("kendoBindingTarget").toDestroy[0].bindings.value.path;
 				            var model = input.prop("kendoBindingTarget").source;
 				            var value = model[propertyName];
+				            
+				            console.log( value ) ;
 				            
 				            var matchesValue = model[matchesPropertyName];
 				            return (value === matchesValue);
