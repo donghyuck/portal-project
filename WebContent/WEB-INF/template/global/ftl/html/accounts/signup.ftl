@@ -124,7 +124,7 @@
 				            var model = input.prop("kendoBindingTarget").source;
 				            var value = model[propertyName];
 				            
-				            console.log( value ) ;
+				            console.log( propertyName + "=" +  value ) ;
 				            
 				            var matchesValue = model[matchesPropertyName];
 				            return (value === matchesValue);
