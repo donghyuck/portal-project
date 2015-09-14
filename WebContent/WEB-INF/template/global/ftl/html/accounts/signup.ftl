@@ -111,7 +111,7 @@
 						
 					} 
 				});
-
+				
 				var validator = renderTo.find("form").kendoValidator({
 					errorTemplate: "<div class='note note-error'>#=message#</div>"
 				}).data("kendoValidator");
@@ -124,11 +124,9 @@
 							data: common.ui.stringify( observable.form ),
 							success : function( response ) {   
 								if( response.error ){ 
-									//$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
-									//$("input[type='password']").val("").focus();											
+																		
 								} else {        	   
-									//$("#signin-status").html("");                         
-									//location.href="<@spring.url "/display/0/my-home.html"/>";
+								
 								} 	
 							},
 							complete: function(jqXHR, textStatus ){					
