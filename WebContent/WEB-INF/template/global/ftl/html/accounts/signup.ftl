@@ -277,6 +277,11 @@
 			color:#fff;
 		}
 
+		.sky-form .note-error k-invalid-msg 
+		{
+			color:#EC1414!important;
+		}
+		
 		.popover {
 			display: block;
 			margin: 80px auto;
