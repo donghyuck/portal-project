@@ -47,7 +47,7 @@
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(user));				
 					}else{
-						createSignUpBlock(user)	
+						createSignUpBlock(user);	
 					}													
 				}				
 			} );
@@ -90,30 +90,71 @@
 					        "emailVisible" : { type:"boolean", defaultVlaue: false },
 					        "agree":  { type:"boolean", defaultVlaue: false }
 						}
-					});		
-						
+					});
 				var observable =  common.ui.observable({
 					visible : true,
 					connectWith : function(e){
 						var btn = $(e.target);
 						kendo.ui.progress(renderTo, true);	
-						console.log( btn.data('target') );
-						
+						console.log( btn.data('target') );						
 						window.open( 
 							common.ui.connect.authorizeUrl(btn.data('target')),
 							btn.data('target') + " Window", 
 							"height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes");	
 						return false;	
 					},
-					signup : new SignupForm()
+					form: new SignupForm(),
+					register: function(e){
+						var btn = $(e.target);
+						
+						console.log( btn.html() );
+						
+					} 
 				});
+/**
+				var validator = renderTo.find("form").kendoValidator({
+					errorTemplate: "<div class='note note-error'>#=message#</div>"
+				}).data("kendoValidator");
+
+				renderTo.find("form").submit(function(e) {		
+					e.preventDefault();				
+					var btn = renderTo.find("button[data-action='signin']");
+					if( validator.validate() ){
+						btn.button('loading');
+						common.ui.ajax(
+							"<@spring.url "/login_auth"/>", 
+							{
+								data: renderTo.find("form").serialize(),
+								success : function( response ) {   
+									if( response.error ){ 
+										$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
+										$("input[type='password']").val("").focus();											
+									} else {        	   
+										$("#signin-status").html("");                         
+										location.href="<@spring.url "/display/0/my-home.html"/>";
+									} 	
+								},
+								complete: function(jqXHR, textStatus ){					
+									btn.button('reset');
+								}	
+							}
+						);	
+					}else{        			      
+						btn.button('reset');
+					}			
+					return false ;
+				});			
+*/						
+			
 				kendo.bind(renderTo, observable);
-				renderTo.data("model", observable );				
+				renderTo.data("model", observable );
+
+
+
 			}
 		}
 		
 		function handleCallbackResult( success ){
-			
 			var renderTo = $("#signup");
 			common.ui.connect.connectedProfile({
 				success : function(data){
@@ -123,6 +164,8 @@
 							disableSighUpBlock();
 							var template = kendo.template($("#alert2-template").html());	
 							$(".container:first").prepend(template(data));		
+						}else{
+						
 						}
 					}
 				},
@@ -146,7 +189,6 @@
 
 		
 		function signupCallbackResult( media, code , exists  ){
-			
 			if(exists){
 				if( code != null && code != ''  ){					
 					common.api.user.signin({
@@ -398,17 +440,17 @@
 					<div id="signup" class="reg-block animated fadeIn" style="display:none;" data-bind={visible:visible}>	
 						<div class="reg-block-header no-border">
 							<h2>회원가입</h2>
-				<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
-					<p>쇼셜계정을 사용하여 손쉽게 회원 가입 하실수 있습니다.</p>
-					<div class="row">
-						<div class="col-sm-6">
-							<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg" data-bind="{click:connectWith}" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
-						</div>
-						<div class="col-sm-6">
-							<button class="btn btn-block btn-flat btn-outline rounded btn-info btn-lg" data-bind="{click:connectWith}" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
-						</div>
-					</div>		
-				</#if>	
+							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
+								<p>쇼셜계정을 사용하여 손쉽게 회원 가입 하실수 있습니다.</p>
+								<div class="row">
+									<div class="col-sm-6">
+										<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg" data-bind="{click:connectWith}" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
+									</div>
+									<div class="col-sm-6">
+										<button class="btn btn-block btn-flat btn-outline rounded btn-info btn-lg" data-bind="{click:connectWith}" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
+									</div>
+								</div>		
+							</#if>	
 						</div>
 						
 								<form role="form" id="signup-form" name="fm1" method="POST" accept-charset="utf-8" class="sky-form">
@@ -447,7 +489,7 @@
 									</fieldset>	
 									<footer class="text-right">
 										<button type="reset" value="Reset" class="btn btn-info btn-flat btn-outline">취소</button>
-										<button type="button" class="btn btn-info btn-flat btn-outline signup">확인</button>
+										<button type="submit" class="btn btn-info btn-flat btn-outline signup" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>확인</button>
 									</footer>	
 								</form>
 														
@@ -555,7 +597,7 @@
 									</fieldset>	
 									<div class="pull-right">	
 										<button type="reset" value="Reset" class="btn btn-info" data-dismiss="modal">취소</button>
-										<button type="button" class="btn btn-info signup">확인</button>
+										<button type="button" class="btn btn-info signup" data-action="signup">확인</button>
 									</div>	
 								</form>
 							</div>
