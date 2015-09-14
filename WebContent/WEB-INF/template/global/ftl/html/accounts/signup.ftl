@@ -148,6 +148,7 @@
 							"<@spring.url "/login_auth"/>", 
 							{
 								data: renderTo.find("form").serialize(),
+								contentType : "application/json",
 								success : function( response ) {   
 									if( response.error ){ 
 										$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
