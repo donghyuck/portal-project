@@ -118,8 +118,23 @@
 				renderTo.find("form").submit(function(e) {		
 					e.preventDefault();				
 					if( validator.validate() ){
-						
-					
+						common.ui.ajax(
+						"<@spring.url "/accounts/register.json"/>", 
+						{
+							data: common.ui.stringify( observable.form ),
+							success : function( response ) {   
+								if( response.error ){ 
+									//$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
+									//$("input[type='password']").val("").focus();											
+								} else {        	   
+									//$("#signin-status").html("");                         
+									//location.href="<@spring.url "/display/0/my-home.html"/>";
+								} 	
+							},
+							complete: function(jqXHR, textStatus ){					
+								btn.button('reset');
+							}	
+						});	
 					}
 					console.log( common.ui.stringify( observable.form ) ) ;
 				});	
@@ -502,7 +517,7 @@
 											<label class="checkbox">
 												<input type="checkbox"  id="signupInputAgree" name="signupInputAgree" required validationMessage="회원가입을 위하여 동의가 필요합니다.">
 												<i></i>
-												<div class="note note-error k-invalid-msg" data-for="signupInputAgree" data-bind="value:form.agree" role="alert" style="display: none;">회원가입을 위하여 동의가 필요합니다.</div>												
+												<div class="note note-error k-invalid-msg" data-for="signupInputAgree" data-bind="checked:form.agree" role="alert" style="display: none;">회원가입을 위하여 동의가 필요합니다.</div>												
 												서비스 약관과 개인정보취급방침 및 개인정보 수집항목•이용목적•보유기간에 동의합니다.
 											</label>
 										</section>
