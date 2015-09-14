@@ -123,7 +123,7 @@
 					},
 					messages : {
 						matches: function (input) {
-		                    return input.data("matchesMsg") || "Does not match";
+		                    return input.data("matches-msg") || "Does not match";
 		                }
 					},
 					errorTemplate: "<div class='note note-error'>#=message#</div>"
