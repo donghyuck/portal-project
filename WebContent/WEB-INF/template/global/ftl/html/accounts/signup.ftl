@@ -121,13 +121,11 @@
 				            console.log(matchesPropertyName + "=" +observable.get(matchesPropertyName));
 				            
 				            var propertyName = input.prop("kendoBindingTarget").toDestroy[0].bindings.value.path;
-				            var model = input.prop("kendoBindingTarget").source;
-				            var value = model[propertyName];
 				            
-				            console.log( propertyName + "=" +  value ) ;
+				            console.log(matchesPropertyName + "=" +observable.get(matchesPropertyName));
+				            console.log(propertyName + "=" +observable.get(propertyName));
 				            
-				            var matchesValue = model[matchesPropertyName];
-				            return (value === matchesValue);
+				            return (observable.get(matchesPropertyName) === observable.get(propertyName));
 				        }
 					},
 					errorTemplate: "<div class='note note-error'>#=message#</div>"
