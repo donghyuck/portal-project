@@ -111,10 +111,20 @@
 						
 					} 
 				});
-/**
+
 				var validator = renderTo.find("form").kendoValidator({
 					errorTemplate: "<div class='note note-error'>#=message#</div>"
 				}).data("kendoValidator");
+				renderTo.find("form").submit(function(e) {		
+					e.preventDefault();				
+					if( validator.validate() ){
+						
+					
+					}
+					console.log( common.ui.stringify( observable.form ) ) ;
+				});	
+/**
+
 
 				renderTo.find("form").submit(function(e) {		
 					e.preventDefault();				
