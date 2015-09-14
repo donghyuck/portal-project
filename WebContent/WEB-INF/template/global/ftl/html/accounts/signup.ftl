@@ -277,7 +277,7 @@
 			color:#fff;
 		}
 
-		.sky-form .note-error k-invalid-msg 
+		.sky-form .note-error.k-invalid-msg 
 		{
 			color:#EC1414!important;
 		}
