@@ -282,7 +282,7 @@
 			color:#EC1414!important;
 		}
 
-		.sky-form .checkbox input:checked~i:after {
+		.sky-form .checkbox input:checked++i:after {
 		    opacity: 1;
 		}
 		
