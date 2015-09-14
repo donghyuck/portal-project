@@ -114,7 +114,7 @@
 				
 				var validator = renderTo.find("form").kendoValidator({
 					rules : {
-						matchesValidator: function (input) {
+						matches: function (input) {
 				            var matchesPropertyName = input.data("matches");
 				            if (!matchesPropertyName) return true;
 				            var propertyName = input.prop("kendoBindingTarget").toDestroy[0].bindings.value.path;
