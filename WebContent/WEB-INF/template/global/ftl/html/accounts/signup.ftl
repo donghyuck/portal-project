@@ -131,6 +131,7 @@
 				renderTo.find("form").submit(function(e) {		
 					e.preventDefault();				
 					if( validator.validate() ){
+						kendo.ui.progress(renderTo, true);	
 						common.ui.ajax(
 						"<@spring.url "/data/accounts/register.json"/>", 
 						{
@@ -140,11 +141,11 @@
 								if( response.error ){ 
 																		
 								} else {        	   
-								
+									location.href="<@spring.url "/accounts/login?ver=1"/>";
 								} 	
 							},
 							complete: function(jqXHR, textStatus ){					
-								btn.button('reset');
+								kendo.ui.progress(renderTo, false);	
 							}	
 						});	
 					}
