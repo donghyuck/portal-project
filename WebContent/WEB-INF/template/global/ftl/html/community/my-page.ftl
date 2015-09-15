@@ -177,10 +177,8 @@
 						var $this = this, 
 						btn = $(e.target);
 						$this._setProperties();	
-						if( $this.validate() ){			
-							
-							console.log('imageLayoutChanged:' + $this.get('imageLayoutChanged') );		
-							
+						if( $this.validate() ){									
+							console.log('imageLayoutChanged:' + $this.get('imageLayoutChanged') );								
 							var completeFn = function(){
 									console.log('execute complate ...');									
 									btn.button('reset');
