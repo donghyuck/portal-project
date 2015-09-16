@@ -1039,7 +1039,7 @@
 						<div class="tab-pane" id="my-files">
 							<#if !action.user.anonymous >	
 							<section class="p-sm">	
-									<div class="row">
+								<div class="row">
 										<div class="col-md-4">
 											<h4><i class="fa fa-user"></i> 소유자</h4>
 											<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-source-list">
@@ -1073,8 +1073,8 @@
 										<div class="col-md-4">
 											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="upload" data-toggle="modal" data-target="#my-file-upload-modal"><i class="icon-flat icon-svg basic-color-cloud-upload icon-svg-lg"></i></button
 										</div>
-									</div>	
-									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>																	
+								</div>	
+								<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>																	
 								<hr class="no-margin-t"/>
 								<div id="attachment-list-view" class="file-listview" style="min-height:450px;"></div>	
 								<div id="attachment-list-pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
