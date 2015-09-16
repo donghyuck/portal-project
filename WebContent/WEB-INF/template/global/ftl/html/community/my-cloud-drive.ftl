@@ -180,7 +180,7 @@
 					var u_btn = $('#my-files button[data-action=upload]');
 					if(getMyDriverAttachmentSource() == 30){
 						if(getCurrentUser().hasRole('ROLE_SITE_ADMIN')){
-							if(!u_btn.is(":visible"))
+							if(u_btn.is(":hidden"))
 								u_btn.show();
 						}else{
 							if(u_btn.is(":visible"))
@@ -608,7 +608,23 @@
 					}
 				);		
 							
-				$("#image-source-list input[type=radio][name=image-source]").on("change", function () {
+				$("#image-source-list input[type=radio][name=image-source]").on("change", function () {				
+					var u_btn = $('#my-photos button[data-action=upload]');
+					if(getMyDriverPhotoSource() == 30){
+						if(getCurrentUser().hasRole('ROLE_SITE_ADMIN')){
+							if(u_btn.is(":hidden"))
+								u_btn.show();
+						}else{
+							if(u_btn.is(":visible"))
+								u_btn.hide();
+						}
+					}else{
+						if(u_btn.is(":hidden"))
+						{
+							u_btn.show();
+						}
+					}
+									
 					common.ui.listview($('#photo-list-view')).dataSource.read();	
 				});				
 				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
