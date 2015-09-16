@@ -1040,7 +1040,7 @@
 												<label class="btn btn-danger rounded-left active">
 													<input type="radio" name="attachment-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
 												</label>
-												${action.user.companyId}											
+												<#if action.user.companyId > 0 >hello</#if>									
 												<label class="btn btn-danger">
 													<input type="radio" name="attachment-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
 												</label>
