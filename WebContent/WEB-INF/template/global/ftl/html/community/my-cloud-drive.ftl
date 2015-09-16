@@ -76,7 +76,11 @@
 			renderTo.on( 'show.bs.tab', function (e) {
 				//	e.preventDefault();		
 				var show_bs_tab = $(e.target);
-				if( show_bs_tab.attr('href') == '#my-files' ){					
+				if( show_bs_tab.attr('href') ){
+					var btn = $(show_bs_tab.attr('href')).find("button[data-action=upload]");
+					btn.hide();	
+				}
+				if( show_bs_tab.attr('href') == '#my-files' ){		
 					createAttachmentListView();
 				} else if(show_bs_tab.attr('href') == '#my-photos' ){					
 					createPhotoListView();
@@ -96,35 +100,35 @@
 			var renderTo2 = $('#attachment-list-view');
 			if( !renderTo.data('bs.modal')){	
 				if( !common.ui.exists($('#attachment-files')) ){
-									common.ui.upload(
-										$("#attachment-files"),
-										{
-											multiple : false,
-											async : {
-												saveUrl:  '<@spring.url "/data/files/upload.json?output=json" />',
-											},
-											upload: function(e){
-												e.data = {objectType: getMyDriverAttachmentSource()};
-											},
-											success : function(e) {								    
-												common.ui.listview(renderTo2).dataSource.read();						
-											}
-										}
-									);
+					common.ui.upload(
+						$("#attachment-files"),
+						{
+							multiple : false,
+							async : {
+								saveUrl:  '<@spring.url "/data/files/upload.json?output=json" />',
+							},
+							upload: function(e){
+								e.data = {objectType: getMyDriverAttachmentSource()};
+							},
+							success : function(e) {								    
+								common.ui.listview(renderTo2).dataSource.read();						
+							}
+						}
+					);
 				}			
 			}
 		}		
 				
 		function createAttachmentListView(){	
-			var renderTo = $('#attachment-list-view');				
+			var renderTo = $('#attachment-list-view');	
+						
 			if( !common.ui.exists(renderTo) ){						
-				var attachementTotalModle = common.ui.observable({ 
+				var observable = common.ui.observable({ 
 					totalAttachCount : "0",
 					totalImageCount : "0",
 					totalFileCount : "0"							
 				});
-				common.ui.bind($("#attachment-list-filter"), attachementTotalModle);
-				
+				common.ui.bind($("#attachment-list-filter"), observable);				
 				common.ui.listview(renderTo,{				
 						dataSource : common.ui.datasource(
 							'<@spring.url "/data/files/list.json?output=json" />', 
@@ -162,11 +166,11 @@
 							var totalCount = this.dataSource.total();
 							if( filter == "image" ) 
 							{
-								attachementTotalModle.set("totalImageCount", totalCount);
+								observable.set("totalImageCount", totalCount);
 							} else if ( filter == "application" ) {
-								attachementTotalModle.set("totalFileCount", totalCount);
+								observable.set("totalFileCount", totalCount);
 							} else {
-								attachementTotalModle.set("totalAttachCount", totalCount);
+								observable.set("totalAttachCount", totalCount);
 							}
 						}											
 				});	
@@ -184,15 +188,15 @@
 				$("input[name='attachment-list-view-filters']").on("change", function () {
 					var attachment_list_view = common.ui.listview(renderTo);
 					switch(this.value){
-							case "all" :
-								attachment_list_view.dataSource.filter(  { field: "contentType", operator: "neq", value: "" } ) ; 
-								break;
-							case "image" :
-								attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "image" }) ; 
-								break;
-							case "file" :
-								attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "application" }) ; 
-								break;
+						case "all" :
+							attachment_list_view.dataSource.filter(  { field: "contentType", operator: "neq", value: "" } ) ; 
+							break;
+						case "image" :
+							attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "image" }) ; 
+							break;
+						case "file" :
+							attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "application" }) ; 
+							break;
 					}
 				});		
 				common.ui.pager($("#attachment-list-pager"),{ buttonCount : 5, dataSource : common.ui.listview(renderTo).dataSource });							
@@ -467,8 +471,7 @@
 		function createPhotoUploadModal(){
 			var renderTo = $("#my-photo-upload-modal");
 			var renderTo2 = $('#photo-list-view');
-			if( !renderTo.data('bs.modal')){	
-			
+			if( !renderTo.data('bs.modal')){
 				var model = common.ui.observable({
 						data : {
 							objectType : 2,
@@ -1065,11 +1068,10 @@
 											</div>								
 										</div>
 										<div class="col-md-4">
-											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-toggle="modal" data-target="#my-file-upload-modal"><i class="icon-flat icon-svg basic-color-cloud-upload icon-svg-lg"></i></button
+											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="upload" data-toggle="modal" data-target="#my-file-upload-modal"><i class="icon-flat icon-svg basic-color-cloud-upload icon-svg-lg"></i></button
 										</div>
 									</div>	
-									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
-																	
+									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>																	
 								<hr class="no-margin-t"/>
 								<div id="attachment-list-view" class="file-listview" style="min-height:450px;"></div>	
 								<div id="attachment-list-pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
@@ -1099,7 +1101,7 @@
 											<p class="text-muted m-t-sm"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
 										</div>
 										<div class="col-sm-4">
-											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-toggle="modal" data-target="#my-photo-upload-modal"><i class="icon-flat icon-svg basic-color-add-image icon-svg-lg"></i></button>
+											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="upload" data-toggle="modal" data-target="#my-photo-upload-modal"><i class="icon-flat icon-svg basic-color-add-image icon-svg-lg"></i></button>
 										</div>
 									</div>														
 							</section>
