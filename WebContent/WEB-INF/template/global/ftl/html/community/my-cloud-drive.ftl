@@ -76,10 +76,6 @@
 			renderTo.on( 'show.bs.tab', function (e) {
 				//	e.preventDefault();		
 				var show_bs_tab = $(e.target);
-				if( show_bs_tab.attr('href') ){
-					var btn = $(show_bs_tab.attr('href')).find("button[data-action=upload]");
-					btn.hide();	
-				}
 				if( show_bs_tab.attr('href') == '#my-files' ){		
 					createAttachmentListView();
 				} else if(show_bs_tab.attr('href') == '#my-photos' ){					
@@ -182,6 +178,13 @@
 				});	
 				
 				$("#attachment-source-list input[type=radio][name=attachment-source]").on("change", function () {
+					if(getMyDriverAttachmentSource() == 30){
+						if(getCurrentUser().hasRole('ROLE_SITE_ADMIN')){
+						$('#my-files button[data-action=upload]').show();
+						}else{
+						$('#my-files button[data-action=upload]').hide();
+						}
+					}
 					common.ui.listview(renderTo).dataSource.read();	
 				});	
 								
