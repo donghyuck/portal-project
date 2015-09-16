@@ -1087,12 +1087,14 @@
 												<label class="btn btn-danger rounded-left active">
 													<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
 												</label>
+												<#if (action.user.companyId > 0 ) >										
 												<label class="btn btn-danger">
-													<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
-												</label>											
-												<label class="btn btn-danger rounded-right">
 													<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
 												</label>
+												</#if>
+												<label class="btn btn-danger rounded-right">
+													<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
+												</label>	
 											</div>		
 											<p class="text-muted m-t-sm"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
 										</div>
