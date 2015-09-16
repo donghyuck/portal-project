@@ -117,7 +117,6 @@
 				
 		function createAttachmentListView(){	
 			var renderTo = $('#attachment-list-view');	
-						
 			if( !common.ui.exists(renderTo) ){						
 				var observable = common.ui.observable({ 
 					totalAttachCount : "0",
@@ -178,11 +177,19 @@
 				});	
 				
 				$("#attachment-source-list input[type=radio][name=attachment-source]").on("change", function () {
+					var u_btn = $('#my-files button[data-action=upload]');
 					if(getMyDriverAttachmentSource() == 30){
 						if(getCurrentUser().hasRole('ROLE_SITE_ADMIN')){
-						$('#my-files button[data-action=upload]').show();
+							if(!u_btn.is(":visible"))
+								u_btn.show();
 						}else{
-						$('#my-files button[data-action=upload]').hide();
+							if(u_btn.is(":visible"))
+								u_btn.hide();
+						}
+					}else{
+						if(u_btn.is(":hidden"))
+						{
+							u_btn.show();
 						}
 					}
 					common.ui.listview(renderTo).dataSource.read();	
@@ -1074,7 +1081,7 @@
 											<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="upload" data-toggle="modal" data-target="#my-file-upload-modal"><i class="icon-flat icon-svg basic-color-cloud-upload icon-svg-lg"></i></button>
 										</div>
 								</div>	
-								<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>																	
+								<p class="text-muted m-t-sm"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>																	
 								<hr class="no-margin-t"/>
 								<div id="attachment-list-view" class="file-listview" style="min-height:450px;"></div>	
 								<div id="attachment-list-pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
