@@ -19,7 +19,7 @@
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js" />',
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js" />',
 			'<@spring.url "/js/jquery.jgrowl/jquery.jgrowl.min.js" />',			
-			'<@spring.url "/js/bootstrap/3.3.1/bootstrap.min.js" />',			
+			'<@spring.url "/js/bootstrap/3.3.5/bootstrap.min.js" />',			
 			'<@spring.url "/js/common.plugins/fastclick.js" />', 
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js" />', 
 			'<@spring.url "/js/common.admin/pixel.admin.min.js" />',
@@ -83,7 +83,7 @@
 						{ command: [{ 
 							name: "edit",
 								className: "btn btn-xs btn-info",
-								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit  btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
+								template : '<a href="\\#" class="btn btn-md btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
 								text: { edit: "변경", update: "저장", cancel: "취소"}
 							}
 							], 
@@ -91,7 +91,7 @@
 							width: 180  
 						}
 					],
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-plus"></span> 롤 추가 </button></div>'),
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-md btn-danger" data-action="create" data-object-id="0" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-plus"></span> 롤 추가 </button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : 'inline',
