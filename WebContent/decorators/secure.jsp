@@ -73,7 +73,7 @@
 			width: auto !important;
 			float: none;
 		}			
-
+/**
 		.k-grid .k-selectable tr.k-state-selected{
 			background-color: #5ac8fa;
 			border-color: #34aadc;		
@@ -83,7 +83,7 @@
 			background-color: #34aadc;
 			border-color: #34aadc;;			
 		}
-			
+	*/		
 			
 		.k-grid tr[aria-selected="false"] > td > a.k-button {
 			display : none; 
