@@ -66,7 +66,7 @@
 					},
 					columns: [
 						{ title: "사이트", field: "displayName"},
-						{ title: "", width:80, template: '<button type="button" class="btn btn-md btn-labeled btn-info btn-selectable" data-action="update" data-object-id="#= webSiteId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
+						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-info btn-selectable" data-action="update" data-object-id="#= webSiteId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-md btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 사이트 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" >새로고침</button></div>'),
 					/*pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },*/		
