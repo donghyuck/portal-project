@@ -160,6 +160,13 @@ i.icon-svg {
 .icon-svg.basic-color-add-image{
 	background-image: url("/images/common/icons/basic/color/AddImage.svg");
 }
+.icon-svg.basic-color-up{
+	background-image: url("/images/common/icons/basic/color/Up.svg");
+}
+.icon-svg.basic-color-collapse-arrow{
+	background-image: url("/images/common/icons/basic/color/CollapseArrow.svg");
+}
+
 
 /* SocialNetwork Color Icons 
 ------------------------------------*/
