@@ -47,7 +47,7 @@
 				
 				common.ui.setup({
 					features:{
-						wallpaper : true,
+						wallpaper : false,
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
