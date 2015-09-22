@@ -546,7 +546,7 @@
 		ajax(
 				options.url || '/secure/data/me/permissions/has.json?output=json', 
 				{
-					data: common.ui.stringify(options.data),
+					data: options.data,
 				/*	contentType : "application/json",*/
 					success : function(response){
 						if( response.error ){ 												
