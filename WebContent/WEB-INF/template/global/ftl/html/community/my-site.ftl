@@ -58,7 +58,7 @@
 								
 								common.ui.data.permissions({
 									data : {
-										objectType : ,
+										objectType : 30,
 										objectId: ${ action.webSite.webSiteId },
 										permission : 'WEBSITE_ADMIN'
 									},
@@ -66,8 +66,6 @@
 										console.log( commmon.ui.stringify( data ) );
 									}
 								});
-								
-								
 							} 
 						}						
 					},
