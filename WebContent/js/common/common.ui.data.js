@@ -547,7 +547,7 @@
 				options.url || '/secure/data/me/permissions/has.json?output=json', 
 				{
 					data: common.ui.stringify(options.data),
-					contentType : "application/json",
+				/*	contentType : "application/json",*/
 					success : function(response){
 						if( response.error ){ 												
 							if( kendo.isFunction (options.fail) )
