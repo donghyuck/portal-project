@@ -55,6 +55,19 @@
 								if( !currentUser.anonymous ){		
 									$("#announce-selector label.btn").last().removeClass("disabled");									 
 								}
+								
+								common.ui.data.permissions({
+									data : {
+										objectType : ,
+										objectId: ${ action.webSite.webSiteId },
+										permission : 'WEBSITE_ADMIN'
+									},
+									success : function(data){
+										console.log( commmon.ui.stringify( data ) );
+									}
+								});
+								
+								
 							} 
 						}						
 					},
