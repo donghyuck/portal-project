@@ -51,6 +51,7 @@
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
+								alert( currentUser.hasRole('ROLE_ADMIN') || currentUser.hasRole('ROLE_SYSTEM') );
 								if( !currentUser.anonymous ){		
 									$("#announce-selector label.btn").last().removeClass("disabled");									 
 								}
