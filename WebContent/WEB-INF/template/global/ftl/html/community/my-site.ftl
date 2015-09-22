@@ -63,7 +63,7 @@
 										permission : 'WEBSITE_ADMIN'
 									},
 									success : function(data){
-										console.log( commmon.ui.stringify( data ) );
+										console.log( common.ui.stringify( data ) );
 									}
 								});
 							} 
