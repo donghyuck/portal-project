@@ -544,7 +544,7 @@
 		
 	function hasPermissions(options){
 		ajax(
-				options.url || '/me/secure/data/permissions/has.json?output=json', 
+				options.url || '/secure/data/me/permissions/has.json?output=json', 
 				{
 					data: kendo.stringify(options.data),
 					contentType : "application/json",
