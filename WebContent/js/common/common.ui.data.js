@@ -542,8 +542,31 @@
 		return DataSource.create(settings);		
 	}
 		
+	function hasPermissions(options){
+		ajax(
+				options.url || '/secure/data/permissions/has.json?output=json', 
+				{
+					data: kendo.stringify(options.data),
+					contentType : "application/json",
+					success : function(response){
+						if( response.error ){ 												
+							if( kendo.isFunction (options.fail) )
+								options.fail(response) ;
+						} else {					
+							if( kendo.isFunction(options.success) )
+								options.success(response) ;					
+						}
+					},
+				}
+			).always( function () {
+				if( kendo.isFunction( options.always ))
+					options.always( ) ;					
+			});			
+	}
+	
 	extend( common.ui.data, {
 		user : user ,
+		permissions : hasPermissions,
 		image : {
 			uploadByUrl : uploadMyImageByUrl ,
 			property : { datasource: imagePorpertyDataSource }
