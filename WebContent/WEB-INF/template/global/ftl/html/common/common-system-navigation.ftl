@@ -18,7 +18,7 @@
 					<div>
 						<ul class="nav navbar-nav">
 							<li>
-								<a href="<@spring.url "/main.do"/>">사용자 홈</a>
+								<a href="<@spring.url "/"/>">사용자 홈</a>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
@@ -121,7 +121,8 @@
 				</div>		
 				<ul class="navigation">		
 				<#list menu.components as item >
-					<#if  item.components?has_content >
+					<#if WebSiteUtils.isUserAccessAllowed(item) >
+					<#if  item.components?has_content>
 					<li class="mm-dropdown mm-dropdown-root">
 						<a href="javascript:void(0);" data-menu-item="${item.name}"> <#if item.isSetIcon()><i class="menu-icon fa ${item.icon}"></i><#else><i class="menu-icon fa fa-folder-o"></i></#if><span class="mm-text">${item.title}</span></a>
 						<ul class="mmc-dropdown-delay animated fadeInLeft">
@@ -145,6 +146,7 @@
 					<li>
 						<a href="${item.page}" data-menu-item="${item.name}"><#if item.isSetIcon()><i class="menu-icon fa ${item.icon}"></i> </#if><span class="mm-text">${item.title}</span></a>
 					</li>
+					</#if>
 					</#if>
 				</#list>						
 				</ul> <!-- / .navigation -->
