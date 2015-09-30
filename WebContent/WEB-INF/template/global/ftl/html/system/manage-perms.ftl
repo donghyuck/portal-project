@@ -201,7 +201,7 @@
 							<div class="tab-content">
 								<div class="tab-pane" id="bs-tabdrop-tab1">
 									<div class="stat-panel no-margin-b">
-										<div class="stat-cell col-sm-3 hidden-xs text-center">
+										<div class="stat-cell col-sm-3 hidden-xs text-right">
 										
 										
 
