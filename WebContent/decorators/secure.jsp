@@ -109,6 +109,10 @@
 			-webkit-box-shadow: none;
 			box-shadow: none;
 		}
+		
+		.modal .modal-dialog {
+			z-index:1060;
+		}
 						
 </style>
 </head>
