@@ -205,20 +205,14 @@
 										
 										
 
-								<div class="row">
-									<div class="col-sm-6">
 										<div class="form-group no-margin-hr">
 											<label class="control-label" for="perms-company-list">회사</label>
 											&nbsp;&nbsp;<input id="perms-company-list" />
 										</div>
-									</div>
-									<div class="col-sm-6">
 										<div class="form-group no-margin-hr">
 											<label class="control-label" for="perms-site-list">사이트</label>
 											&nbsp;&nbsp;<input id="perms-site-list" />		
 										</div>
-									</div>					
-								</div>			
 								
 										
 											<!-- Stat panel bg icon -->
