@@ -51,6 +51,7 @@
 				if( target.data("action") ){
 					switch( target.data("action") ){
 						case "role" :
+						createSelectBox();
 						createRoleGrid();
 						break;
 					}	
@@ -59,6 +60,54 @@
 			$('#myTab a:first').tab('show');							
 		}
 		
+		function createSelectBox(){
+		
+			if( !$("#perms-company-list").data("kendoDropDownList") ){
+						var companies = $("#perms-company-list").kendoDropDownList({
+							optionLabel: "회사를 선택하세요...",
+							dataTextField: "displayName",
+							dataValueField: "companyId",
+							dataSource : {
+								transport : {
+									read: { 
+										type : "post", 
+										dataType:"json", 
+										url : '<@spring.url "/secure/data/mgmt/company/list.json?output=json"/>'
+									}	
+								},
+								schema: {
+									total: "totalCount",
+									data: "companies",
+									model : common.ui.data.Company
+								}
+							}
+						});	
+			}
+			if( !$("#perms-site-list").data("kendoDropDownList") ){									
+						var websites = $("#perms-site-list").kendoDropDownList({
+							autoBind: false,
+							cascadeFrom: "perms-company-list",
+							optionLabel: "웹 사이트를 선택하세요.",
+							dataTextField: "displayName",
+							dataValueField: "webSiteId",							
+							dataSource : {
+								serverFiltering: true,
+								transport : {
+									read: { type : "post", dataType:"json", url : '<@spring.url "/secure/data/mgmt/website/list.json?output=json"/>' },	
+									parameterMap: function (options, operation){
+										return { "company" :  options.filter.filters[0].value }; 
+									}									
+								},
+								schema: {
+									total: "totalCount",
+									data: "items",
+									model : common.ui.data.WebSite
+								}
+							}						
+						}).data("kendoDropDownList");										
+			}				
+		
+		}
 		
 		function createRoleGrid(){
 			var renderTo = $("#security-role-grid");
@@ -153,6 +202,25 @@
 								<div class="tab-pane" id="bs-tabdrop-tab1">
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-sm-3 hidden-xs text-center">
+										
+										
+
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group no-margin-hr">
+											<label class="control-label" for="perms-company-list">회사</label>
+											&nbsp;&nbsp;<input id="perms-company-list" />
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group no-margin-hr">
+											<label class="control-label" for="perms-site-list">사이트</label>
+											&nbsp;&nbsp;<input id="perms-site-list" />		
+										</div>
+									</div>					
+								</div>			
+								
+										
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-lock bg-icon bg-icon-left"></i>								
 										</div> <!-- /.stat-cell -->
