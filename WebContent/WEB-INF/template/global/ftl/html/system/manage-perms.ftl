@@ -77,7 +77,7 @@
 								},
 								schema: {
 									total: "totalCount",
-									data: "companies",
+									data: "items",
 									model : common.ui.data.Company
 								}
 							}
