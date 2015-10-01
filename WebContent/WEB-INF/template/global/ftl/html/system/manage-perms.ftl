@@ -261,6 +261,11 @@
 					<th>MODERATOR</th>
 					<th width="1%">REMOVE</th>
 				</tr>
+				<tr>
+					<td colspan="3"></td>
+					<td>&nbsp;</td>
+				</tr>
+				
 			</table>
 		</script>					
 		<#include "/html/common/common-system-templates.ftl" >			
