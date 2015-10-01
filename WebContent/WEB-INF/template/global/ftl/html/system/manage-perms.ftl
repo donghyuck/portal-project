@@ -231,7 +231,7 @@
 										
 										</div>
 									</div>		
-									<div id="perms-30-listview" class="p-sm"></div>																					
+									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
 								</div>								
 							</div><!-- tab contents end -->
 						</div><!-- /.panel -->
