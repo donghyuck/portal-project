@@ -314,6 +314,24 @@
 						</div>						
 					</td>				
 				</tr>								
+				<tr>
+					<td colspan="2">&nbsp;</td>
+					# for(  var i = 0 ; i < member.length ; i++) {#
+					<td class="text-center">
+						<input name="member-#=i#" type="checkbox" class="k-radio" #if( member[i].additive ){ #checked="checked" # } # id="member-#=i#-additive">
+         				<label class="k-checkbox-label" for="member-#=i#-additive">&nbsp;</label>
+         				<!--
+						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].negative ){ #checked="checked" # } # id="member-#=i#-negative">
+         				<label class="k-radio-label" for="member-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         
+         				-->				
+					</td>
+					# } #
+					<td>
+						<div class="btn-group">
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
+						</div>						
+					</td>				
+				</tr>
 				</tbody>
 			</table>
 		</script>					
