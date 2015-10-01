@@ -283,6 +283,18 @@
 					# } #
 					<td>&nbsp;</td>				
 				</tr>
+				<tr>
+					<td colspan="2">Member</td>
+					# for(  var i = 0 ; i < member.length ; i++) {#
+					<td>
+						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].additive ){ #checked="checked" # } # id="member-#=i#-additive">
+         				<label class="k-radio-label" for="anonymous-#=i#-additive"><span class="k-icon k-i-tick"></span></label>
+						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].negative ){ #checked="checked" # } # id="member-#=i#-negative">
+         				<label class="k-radio-label" for="member-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         				
+					</td>
+					# } #
+					<td>&nbsp;</td>				
+				</tr>				
 				</tbody>
 			</table>
 		</script>					
