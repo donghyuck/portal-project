@@ -267,7 +267,12 @@
          				<label class="k-radio-label" for="anonymous-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         				
 					</td>
 					# } #
-					<td>&nbsp;</td>				
+					<td>
+						<div class="btn-group">
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle">취소</a>
+						</div>						
+					</td>				
 				</tr>
 				<tr>
 					<td colspan="2">Member</td>
