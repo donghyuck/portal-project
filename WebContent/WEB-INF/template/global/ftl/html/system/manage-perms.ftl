@@ -260,9 +260,9 @@
 				<tr>
 					<td colspan="2">Anonymous</td>
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
-					<td>
+					<td class="text-center">
 						<input name="anonymous-#=i#" type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="anonymous-#=i#-additive">
-         				<label class="k-checkbox-label" for="anonymous-#=i#-additive"><span class="k-icon k-i-tick"></span></label>
+         				<label class="k-checkbox-label" for="anonymous-#=i#-additive">&nbsp;</label>
          				<!-- 
 						<input name="anonymous-#=i#" type="radio" class="k-radio" #if( anonymous[i].negative ){ #checked="checked" # } # id="anonymous-#=i#-negative">
          				<label class="k-radio-label" for="anonymous-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         		
