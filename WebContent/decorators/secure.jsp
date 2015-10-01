@@ -114,7 +114,7 @@
 			z-index:1060;
 		}
 		
-		k-radio-label:before, k-radio-label:after , k-checkbox-label:before, k-checkbox-label:after {
+		.k-radio-label:before, .k-radio-label:after , .k-checkbox-label:before, .k-checkbox-label:after {
 			-webkit-box-sizing: content-box;
     		-moz-box-sizing: content-box;
     		box-sizing: content-box;
