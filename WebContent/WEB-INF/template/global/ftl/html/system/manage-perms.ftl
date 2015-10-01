@@ -60,6 +60,8 @@
 			$('#myTab a:first').tab('show');							
 		}
 		
+		var PERMS_NAMES_LEVEN1 = ["WEBSITE_ADMIN", "MODERATOR"];
+		
 		function createSelectBox(){
 		
 			if( !$("#perms-company-list").data("kendoDropDownList") ){
@@ -109,7 +111,7 @@
 									common.ui.admin.permissions.list({
 										objectType : 30 ,
 										objectId : this.value(),
-										perms:["WEBSITE_ADMIN", "MODERATOR"],
+										perms:PERMS_NAMES_LEVEN1,
 										success:function(data){
 											common.ui.stringify(data);
 											var renderTo = $('#perms-30-listview');
@@ -257,13 +259,14 @@
 			<table class="table" width="100%">
 				<thead>
 				<tr>
-					<th colspan="2" width="24">&nbsp;</th>
-					<th class="text-center">WEB_ADMIN</th>
-					<th class="text-center">MODERATOR</th>
+					<th colspan="2" width="24%">&nbsp;</th>
+					# for (var i = 0 ; i < PERMS_NAMES_LEVEN1.length; i++ ) { #
+						<th class="text-center" width="#= 75/PERMS_NAMES_LEVEN1.lenght #%">#PERMS_NAMES_LEVEN1[i]#</th>
+					# } #
 					<th width="1%">REMOVE</th>
 				</tr>
 				<tr>
-					<td colspan="4">User Types</td>
+					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">User Types</td>
 					<td>&nbsp;</td>
 				</tr>				
 				</thead>
