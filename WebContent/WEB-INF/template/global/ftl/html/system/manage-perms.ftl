@@ -254,7 +254,7 @@
 			</div>
 		</div> <!-- / #main-wrapper -->							
 		<script id="perms-30-listview-template" type="text/x-kendo-template">
-			<table cellpadding="0" cellspacing="1" border="1" width="100%">
+			<table class="table" width="100%">
 				<tr>
 					<th colspan="2" width="24">&nbsp;</th>
 					<th>WEB_ADMIN</th>
