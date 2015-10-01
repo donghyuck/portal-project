@@ -244,9 +244,9 @@
 				<tr>
 					<th colspan="2" width="24%">&nbsp;</th>
 					# for (var i = 0 ; i < PERMS_NAMES_LEVEN1.length; i++ ) { #
-						<th class="text-center small" width="#= 75/PERMS_NAMES_LEVEN1.length #%">#: PERMS_NAMES_LEVEN1[i]#</th>
+						<th class="text-center small" width="#= 75/PERMS_NAMES_LEVEN1.length #%"><span class="label">#: PERMS_NAMES_LEVEN1[i]#</span></th>
 					# } #
-					<th width="1%">REMOVE</th>
+					<th width="1%">&nbsp;</th>
 				</tr>
 				<tr>
 					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">User Types</td>
