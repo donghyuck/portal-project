@@ -60,8 +60,6 @@
 			$('#myTab a:first').tab('show');							
 		}
 		
-		var PERMS_NAMES_LEVEN1 = ["WEBSITE_ADMIN", "MODERATOR"];
-		
 		function createSelectBox(){
 		
 			if( !$("#perms-company-list").data("kendoDropDownList") ){
@@ -173,6 +171,8 @@
 				});	
 			}					
 		}
+		
+		var PERMS_NAMES_LEVEN1 = ["WEBSITE_ADMIN", "MODERATOR"];
 		
 		-->
 		</script> 		 
