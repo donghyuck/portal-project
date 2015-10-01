@@ -257,8 +257,8 @@
 			<table class="table" width="100%">
 				<tr>
 					<th colspan="2" width="24">&nbsp;</th>
-					<th>WEB_ADMIN</th>
-					<th>MODERATOR</th>
+					<th class="text-center">WEB_ADMIN</th>
+					<th class="text-center">MODERATOR</th>
 					<th width="1%">REMOVE</th>
 				</tr>
 				<tr>
