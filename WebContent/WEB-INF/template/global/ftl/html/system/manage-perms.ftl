@@ -261,10 +261,12 @@
 					<td colspan="2">Anonymous</td>
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
 					<td>
-						<input name="anonymous-#=i#" type="radio" class="k-radio" #if( anonymous[i].additive ){ #checked="checked" # } # id="anonymous-#=i#-additive">
-         				<label class="k-radio-label" for="anonymous-#=i#-additive"><span class="k-icon k-i-tick"></span></label>
+						<input name="anonymous-#=i#" type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="anonymous-#=i#-additive">
+         				<label class="k-checkbox-label" for="anonymous-#=i#-additive"><span class="k-icon k-i-tick"></span></label>
+         				<!-- 
 						<input name="anonymous-#=i#" type="radio" class="k-radio" #if( anonymous[i].negative ){ #checked="checked" # } # id="anonymous-#=i#-negative">
-         				<label class="k-radio-label" for="anonymous-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         				
+         				<label class="k-radio-label" for="anonymous-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         		
+         				-->		
 					</td>
 					# } #
 					<td>
@@ -290,7 +292,24 @@
 							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle">취소</a>
 						</div>						
 					</td>				
-				</tr>				
+				</tr>			
+				<tr>
+					<td colspan="2">User</td>
+					# for(  var i = 0 ; i < member.length ; i++) {#
+					<td>
+						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].additive ){ #checked="checked" # } # id="member-#=i#-additive">
+         				<label class="k-radio-label" for="member-#=i#-additive"><span class="k-icon k-i-tick"></span></label>
+						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].negative ){ #checked="checked" # } # id="member-#=i#-negative">
+         				<label class="k-radio-label" for="member-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         				
+					</td>
+					# } #
+					<td>
+						<div class="btn-group">
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle">취소</a>
+						</div>						
+					</td>				
+				</tr>								
 				</tbody>
 			</table>
 		</script>					
