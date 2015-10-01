@@ -113,7 +113,12 @@
 		.modal .modal-dialog {
 			z-index:1060;
 		}
-						
+		
+		k-radio-label:before, k-radio-label:after , k-checkbox-label:before, k-checkbox-label:after {
+			-webkit-box-sizing: content-box;
+    		-moz-box-sizing: content-box;
+    		box-sizing: content-box;
+		}						
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />"  data-color="<decorator:getProperty property="body.data-color" />" class="<decorator:getProperty property="body.class" default="" />">
