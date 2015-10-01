@@ -103,6 +103,9 @@
 									data: "items",
 									model : common.ui.data.WebSite
 								}
+							},
+							change:function(){
+								alert(this.val());
 							}						
 						}).data("kendoDropDownList");										
 			}				
