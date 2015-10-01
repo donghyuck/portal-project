@@ -202,24 +202,29 @@
 								<div class="tab-pane" id="bs-tabdrop-tab1">
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-sm-3 hidden-xs text-right">
-										
-										
-
 										<div class="form-group no-margin-hr">
-											<label class="control-label" for="perms-company-list">회사</label>
+											<label class="control-label" for="perms-company-list">회 사</label>
 											&nbsp;&nbsp;<input id="perms-company-list" />
 										</div>
 										<div class="form-group no-margin-hr">
 											<label class="control-label" for="perms-site-list">사이트</label>
 											&nbsp;&nbsp;<input id="perms-site-list" />		
 										</div>
-								
 										
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-lock bg-icon bg-icon-left"></i>								
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-sm-9 no-padding valign-bottom">		
+											
+											
+											<button class="btn btn-flat btn-outline btn-md" data-action="load" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...'">
+												새로고침
+											</button>
+											
+											
 											<div id="security-role-grid"></div>
+											
+											
 										</div>
 									</div>													
 								</div>								
