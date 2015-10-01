@@ -257,7 +257,7 @@
 				</tr>				
 				</thead>
 				<tbody>
-				<tr>
+				<tr class="active">
 					<td colspan="2">Anonymous</td>
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
 					<td>
