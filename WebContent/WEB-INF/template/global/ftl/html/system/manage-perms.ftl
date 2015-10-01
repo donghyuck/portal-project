@@ -105,7 +105,7 @@
 								}
 							},
 							change:function(){
-								alert(this.val());
+								alert(this.value());
 							}						
 						}).data("kendoDropDownList");										
 			}				
