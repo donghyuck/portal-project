@@ -211,7 +211,7 @@
 								<span class="panel-title"><i class="fa fa-info"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="myTab">
 									<li>
-										<a href="#bs-tabdrop-tab1" data-toggle="tab" data-action="role">롤</a>
+										<a href="#bs-tabdrop-tab1" data-toggle="tab" data-action="role">웹 사이트 권한</a>
 									</li>			
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->					
@@ -269,8 +269,8 @@
 					# } #
 					<td>
 						<div class="btn-group">
-							<a href="#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
-							<a href="#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle">취소</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle">취소</a>
 						</div>						
 					</td>				
 				</tr>
@@ -284,7 +284,12 @@
          				<label class="k-radio-label" for="member-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         				
 					</td>
 					# } #
-					<td>&nbsp;</td>				
+					<td>
+						<div class="btn-group">
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle">취소</a>
+						</div>						
+					</td>				
 				</tr>				
 				</tbody>
 			</table>
