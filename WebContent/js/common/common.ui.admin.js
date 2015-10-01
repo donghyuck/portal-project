@@ -134,10 +134,7 @@
 			common.ui.setup(cfg);					
 			that.authenticate();
 			//that.companySelector();
-			culture();
-			
-			
-			
+			culture();			
 			$('.menu-content-profile .close').click(function () {
 				var $p = $(this).parents('.menu-content');
 				$p.addClass('fadeOut');
@@ -230,6 +227,32 @@
 			return bytes + ' B';
 		}
 	}	
+	
+	function permissions ( options ){
+		var data = {
+			objectType : options.objectType || 0,
+			objectId : options.objectId || 0,
+			perms : options.perms || []	
+		};
+		ajax(options.url || '/secure/data/mgmt/permissions/list.json?output=json', 
+			{
+				data: stringify(data),
+				contentType : "application/json",
+				success : function(response){
+					if( response.error ){ 												
+						if( kendo.isFunction (options.fail) )
+							options.fail(response) ;
+					} else {					
+						if( kendo.isFunction(options.success) )
+							options.success(response) ;					
+					}
+				},
+			}).always( function () {
+				if( kendo.isFunction( options.always ))
+					options.always( ) ;					
+		});
+	}
+	
 	
 	extend(common.ui.admin, {
 		setup : setup,
