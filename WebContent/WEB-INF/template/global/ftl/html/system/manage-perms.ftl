@@ -231,7 +231,7 @@
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-sm-9 no-padding valign-bottom">		
 											
-											<div id="perms-30-listview"></div>
+											<div id="perms-30-listview" class="p-sm"></div>
 											
 											
 											<button class="btn btn-flat btn-outline btn-md" data-action="load" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...'">
@@ -254,7 +254,7 @@
 			</div>
 		</div> <!-- / #main-wrapper -->							
 		<script id="perms-30-listview-template" type="text/x-kendo-template">
-			<table cellpadding="0" cellspacing="1" border="0" width="100%">
+			<table cellpadding="0" cellspacing="1" border="1" width="100%">
 				<tr>
 					<th colspan="2" width="24">&nbsp;</th>
 					<th>WEB_ADMIN</th>
@@ -262,10 +262,16 @@
 					<th width="1%">REMOVE</th>
 				</tr>
 				<tr>
-					<td colspan="3"></td>
+					<td colspan="4">User Types</td>
 					<td>&nbsp;</td>
 				</tr>
-				
+				<tr>
+					<td colspan="2">Anonymous</td>
+					<# for(  i = 0 ; i++ ; i < anonymous.length ) {#>
+					<td>&nbsp;</td>
+					<# } #>
+					<td>&nbsp;</td>				
+				</tr>
 			</table>
 		</script>					
 		<#include "/html/common/common-system-templates.ftl" >			
