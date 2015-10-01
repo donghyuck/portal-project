@@ -261,7 +261,7 @@
 				<tr>
 					<th colspan="2" width="24%">&nbsp;</th>
 					# for (var i = 0 ; i < PERMS_NAMES_LEVEN1.length; i++ ) { #
-						<th class="text-center" width="#= 75/PERMS_NAMES_LEVEN1.length #%">#PERMS_NAMES_LEVEN1[i]#</th>
+						<th class="text-center" width="#= 75/PERMS_NAMES_LEVEN1.length #%">#: PERMS_NAMES_LEVEN1[i]#</th>
 					# } #
 					<th width="1%">REMOVE</th>
 				</tr>
