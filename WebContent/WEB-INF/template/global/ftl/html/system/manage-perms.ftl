@@ -216,7 +216,8 @@
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
-								<div class="tab-pane" id="bs-tabdrop-tab1">
+								<div class="tab-pane p-sm" id="bs-tabdrop-tab1">
+								
 									<div class="row">
 										<div class="col-sm-4">
 											<label class="control-label" for="perms-company-list">회 사</label>
@@ -229,8 +230,8 @@
 										<div class="col-sm-4">
 										
 										</div>
-										<div id="perms-30-listview" class="p-sm"></div>
-									</div>													
+									</div>		
+									<div id="perms-30-listview" class="p-sm"></div>																					
 								</div>								
 							</div><!-- tab contents end -->
 						</div><!-- /.panel -->
