@@ -799,6 +799,7 @@
 						createPhotoCommentary(this.image);
 						return false;
 					},
+					editable : false,
 					edit: function(){
 						var $this = this;
 						createPhotoPostModal($this.image);
