@@ -266,7 +266,7 @@
 					<td colspan="4">User Types</td>
 					<td>&nbsp;</td>
 				</tr>				
-				<thead>
+				</thead>
 				<tbody>
 				<tr>
 					<td colspan="2">Anonymous</td>
