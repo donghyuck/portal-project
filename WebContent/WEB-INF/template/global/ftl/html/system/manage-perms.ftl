@@ -228,7 +228,6 @@
 											&nbsp;&nbsp;<input id="perms-site-list" />	
 										</div>
 										<div class="col-sm-4">
-										
 										</div>
 									</div>		
 									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
