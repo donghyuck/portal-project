@@ -267,9 +267,9 @@
 				</tr>
 				<tr>
 					<td colspan="2">Anonymous</td>
-					<# for(  i = 0 ; i++ ; i < anonymous.length ) {#>
+					# for(  var i = 0 ; i < anonymous.length ; i++) {#
 					<td>&nbsp;</td>
-					<# } #>
+					# } #
 					<td>&nbsp;</td>				
 				</tr>
 			</table>
