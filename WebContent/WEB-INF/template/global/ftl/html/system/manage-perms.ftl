@@ -251,13 +251,13 @@
 					# } #
 					<th width="1%">&nbsp;</th>
 				</tr>
-				<tr>
+				<tr class="active">
 					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">User Types</td>
 					<td>&nbsp;</td>
 				</tr>				
 				</thead>
 				<tbody>
-				<tr class="active">
+				<tr>
 					<td colspan="2">Anonymous</td>
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
 					<td>
