@@ -112,6 +112,9 @@
 										perms:["WEBSITE_ADMIN", "MODERATOR"],
 										success:function(data){
 											common.ui.stringify(data);
+											var renderTo = $('#perms-30-listview');
+											var template = kendo.template( $("#perms-30-listview-template").html() );
+											renderTo.html( template(data) );
 										}
 									});
 								}
@@ -228,6 +231,8 @@
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-sm-9 no-padding valign-bottom">		
 											
+											<div id="perms-30-listview"></div>
+											
 											
 											<button class="btn btn-flat btn-outline btn-md" data-action="load" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...'">
 												새로고침
@@ -247,7 +252,17 @@
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
-		</div> <!-- / #main-wrapper -->												
+		</div> <!-- / #main-wrapper -->							
+		<script id="perms-30-listview-template" type="text/x-kendo-template">
+			<table cellpadding="0" cellspacing="1" border="0" width="100%">
+				<tr>
+					<th colspan="2" width="24">&nbsp;</th>
+					<th>WEB_ADMIN</th>
+					<th>MODERATOR</th>
+					<th width="1%">REMOVE</th>
+				</tr>
+			</table>
+		</script>					
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
