@@ -273,9 +273,9 @@
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
 					<td>
 						<input name="anonymous-#=i#" type="radio" class="k-radio" #if( anonymous[i].additive ){ #checked="checked" # } # id="anonymous-#=i#-additive">
-         				<label class="k-radio-label" for="anonymous-#=i#-additive">ADDITIVE</label>
+         				<label class="k-radio-label" for="anonymous-#=i#-additive"><span class="k-icon k-i-tick"></span></label>
 						<input name="anonymous-#=i#" type="radio" class="k-radio" #if( anonymous[i].negative ){ #checked="checked" # } # id="anonymous-#=i#-negative">
-         				<label class="k-radio-label" for="anonymous-#=i#-negative">POSITIVE</label>         				
+         				<label class="k-radio-label" for="anonymous-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         				
 					</td>
 					# } #
 					<td>&nbsp;</td>				
