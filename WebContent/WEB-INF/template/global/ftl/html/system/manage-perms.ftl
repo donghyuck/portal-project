@@ -217,7 +217,7 @@
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
 								<div class="tab-pane" id="bs-tabdrop-tab1">
-
+									<div class="row">
 										<div class="form-group no-margin-hr">
 											<label class="control-label" for="perms-company-list">회 사</label>
 											&nbsp;&nbsp;<input id="perms-company-list" />
@@ -228,7 +228,7 @@
 										</div>
 																		
 									<div id="perms-30-listview" class="p-sm"></div>
-																						
+									</div>													
 								</div>								
 							</div><!-- tab contents end -->
 						</div><!-- /.panel -->
