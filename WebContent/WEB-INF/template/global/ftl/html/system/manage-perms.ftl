@@ -105,7 +105,16 @@
 								}
 							},
 							change:function(){
-								alert(this.value());
+								if( this.value() > 0 ){
+									common.ui.admin.permissions.list({
+										objectType : 30 ,
+										objectId : this.value(),
+										perms:["WEBSITE_ADMIN", "MODERATOR"],
+										success:function(data){
+											common.ui.stringify(data);
+										}
+									});
+								}
 							}						
 						}).data("kendoDropDownList");										
 			}				
