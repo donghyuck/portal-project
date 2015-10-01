@@ -269,8 +269,10 @@
 					<td colspan="2">Anonymous</td>
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
 					<td>
-						<input type="checkbox" class="k-checkbox" checked="checked" id="anonymous-#=i#-positive">
-         				<label class="k-checkbox-label" for="anonymous-#=i#-positive">POSITIVE</label>
+						<input type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="anonymous-#=i#-additive">
+         				<label class="k-checkbox-label" for="anonymous-#=i#-additive">ADDITIVE</label>
+						<input type="checkbox" class="k-checkbox" #if( anonymous[i].negative ){ #checked="checked" # } # id="anonymous-#=i#-negative">
+         				<label class="k-checkbox-label" for="anonymous-#=i#-negative">POSITIVE</label>         				
 					</td>
 					# } #
 					<td>&nbsp;</td>				
