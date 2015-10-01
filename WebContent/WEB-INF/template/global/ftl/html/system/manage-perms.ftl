@@ -255,6 +255,7 @@
 		</div> <!-- / #main-wrapper -->							
 		<script id="perms-30-listview-template" type="text/x-kendo-template">
 			<table class="table" width="100%">
+				<thead>
 				<tr>
 					<th colspan="2" width="24">&nbsp;</th>
 					<th class="text-center">WEB_ADMIN</th>
@@ -264,7 +265,9 @@
 				<tr>
 					<td colspan="4">User Types</td>
 					<td>&nbsp;</td>
-				</tr>
+				</tr>				
+				<thead>
+				<tbody>
 				<tr>
 					<td colspan="2">Anonymous</td>
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
@@ -277,6 +280,7 @@
 					# } #
 					<td>&nbsp;</td>				
 				</tr>
+				</tbody>
 			</table>
 		</script>					
 		<#include "/html/common/common-system-templates.ftl" >			
