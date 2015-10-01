@@ -227,7 +227,7 @@
 			return bytes + ' B';
 		}
 	}	
-	
+
 	function permissions ( options ){
 		var data = {
 			objectType : options.objectType || 0,
@@ -253,10 +253,12 @@
 		});
 	}
 	
-	
 	extend(common.ui.admin, {
 		setup : setup,
-		bytesToSize : bytesToSize
+		bytesToSize : bytesToSize,
+		permissions : {
+			list : permissions
+		}
 	} );
 	/*
 	 * common.ui.admin.Setup = kendo.Class.extend({ init : function (options){
