@@ -277,8 +277,8 @@
 					# } #
 					<td>
 						<div class="btn-group">
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle">취소</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update" data-target="[data-target-type=anonymous]">저장</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle" data-target="[data-target-type=anonymous]">취소</a>
 						</div>						
 					</td>				
 				</tr>
@@ -309,11 +309,7 @@
 					<td colspan="2">&nbsp;</td>
 					<td class="text-center">
 						<input name="perms-user-#=i#" type="checkbox" class="k-radio" id="perms-user-#=i#-additive">
-         				<label class="k-checkbox-label" for="perms-user-#=i#-additive">&nbsp;</label>
-         				<!--
-						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].negative ){ #checked="checked" # } # id="member-#=i#-negative">
-         				<label class="k-radio-label" for="member-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         
-         				-->				
+         				<label class="k-checkbox-label" for="perms-user-#=i#-additive">&nbsp;</label>	
 					</td>
 					<td>
 						<div class="btn-group">
