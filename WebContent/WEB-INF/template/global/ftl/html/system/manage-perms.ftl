@@ -244,10 +244,10 @@
 									  
 									  <div class="btn-group" data-toggle="buttons">
 										  <label class="btn btn-primary active">
-										    <input type="radio" name="perms-options" autocomplete="off" checked> ADDITIVE (preselected)
+										    <input type="radio" name="perms-options" autocomplete="off" checked value="1"> ADDITIVE (preselected)
 										  </label>
 										  <label class="btn btn-primary">
-										    <input type="radio" name="perms-options" autocomplete="off"> NEGATIVE
+										    <input type="radio" name="perms-options" autocomplete="off" value="2"> NEGATIVE
 										  </label>
 										</div>
 
