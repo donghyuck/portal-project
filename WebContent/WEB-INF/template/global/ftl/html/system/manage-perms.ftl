@@ -244,18 +244,34 @@
 								<div class="radio">
 									<label>
 										<input type="radio" name="perms-group" value="WEB_ADMIN" class="px" checked="">
-										<span class="lbl">Option one is this and that—be sure to include why it's great</span>
+										<span class="lbl">관리자 권한</span>
 									</label>
 								</div> <!-- / .radio -->
 								<div class="radio">
 									<label>
 										<input type="radio" name="perms-group" value="WEB_CONTENT" class="px">
-										<span class="lbl">Option two can be something else and selecting it will deselect option one</span>
+										<span class="lbl">콘텐츠 권한</span>
 									</label>
 								</div> <!-- / .radio -->
 							</div> <!-- / .col-sm-10 -->
 						</div>
-						
+						<div class="form-group">
+							<label class="col-sm-2 control-label">권한 유형</label>
+							<div class="col-sm-10">
+								<div class="radio">
+									<label>
+										<input type="radio" name="perms-options" value="1" class="px" checked="">
+										<span class="lbl">ADDITIVE</span>
+									</label>
+								</div> <!-- / .radio -->
+								<div class="radio">
+									<label>
+										<input type="radio" name="perms-options" value="2" class="px">
+										<span class="lbl">NEGATIVE</span>
+									</label>
+								</div> <!-- / .radio -->
+							</div> <!-- / .col-sm-10 -->
+						</div>						
 								
 									<form class="form-inline">
 									  <div class="form-group">
@@ -267,7 +283,7 @@
 									    <label class="control-label" for="perms-site-list">사이트</label>
 											&nbsp;&nbsp;<input id="perms-site-list" />	
 									  </div>
-									  
+									  <!--
 									  <div class="btn-group" data-toggle="buttons">
 										  <label class="btn btn-primary active">
 										    <input type="radio" name="perms-options" autocomplete="off" checked value="1"> ADDITIVE
@@ -275,7 +291,7 @@
 										  <label class="btn btn-primary">
 										    <input type="radio" name="perms-options" autocomplete="off" value="2"> NEGATIVE
 										  </label>
-										</div>
+										</div>-->
 
 									  <button type="submit" class="btn btn-default">Send invitation</button>
 									</form>																								
