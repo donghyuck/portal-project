@@ -187,7 +187,7 @@
 			}					
 		}
 		
-		function getPermissionGroup(){			
+		function getSelectedPermissionGroup(){			
 			var name = $('input[name=perms-group]:checked').val();
 			return common.ui.admin.permissions.group(name);
 		}
