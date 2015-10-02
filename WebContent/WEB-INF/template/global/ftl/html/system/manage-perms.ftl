@@ -260,7 +260,7 @@
 				<tr>
 					<th colspan="2" width="15%">&nbsp;</th>
 					# for (var i = 0 ; i < PERM_GROUP_DEF.length; i++ ) { #
-						<th class="text-center small" width="#= 70/PERMS_NAMES_LEVEN1.length #%"><span class="label">#: PERM_GROUP_DEF[i]#</span></th>
+						<th class="text-center small" width="#= 70/PERM_GROUP_DEF.length #%"><span class="label">#: PERM_GROUP_DEF[i]#</span></th>
 					# } #
 					<th width="15%">&nbsp;</th>
 				</tr>
@@ -273,8 +273,10 @@
 				
 				<tr>
 					<td colspan="2">Anonymous</td>
-					# for(  var i = 0 ; i < anonymous.length ; i++) {#
-					<td class="text-center">
+					# for(  var i = 0 ; i < anonymous.length ; i++) {
+						var u_id = common.guid(); 
+					#
+					<td class="text-center"> #= u_id #
 						<input name="perms-anonymous-#=i#" type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="perms-anonymous-#=i#-additive"
 							data-name="#=  anonymous[i].name #" data-type="ADDITIVE" data-object-type="anonymous" >
          				<label class="k-checkbox-label" for="perms-anonymous-#=i#-additive">&nbsp;</label>	
