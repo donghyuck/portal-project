@@ -272,11 +272,7 @@
 					<td class="text-center">
 						<input name="perms-anonymous-#=i#" type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="perms-anonymous-#=i#-additive"
 							data-name="#=  anonymous[i].name #" data-type="ADDITIVE" data-target-type="anonymous" >
-         				<label class="k-checkbox-label" for="perms-anonymous-#=i#-additive">&nbsp;</label>
-         				<!-- 
-						<input name="anonymous-#=i#" type="radio" class="k-radio" #if( anonymous[i].negative ){ #checked="checked" # } # id="anonymous-#=i#-negative">
-         				<label class="k-radio-label" for="anonymous-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         		
-         				-->		
+         				<label class="k-checkbox-label" for="perms-anonymous-#=i#-additive">&nbsp;</label>	
 					</td>
 					# } #
 					<td>
@@ -292,11 +288,7 @@
 					<td class="text-center">
 						<input name="perms-member-#=i#" type="checkbox" class="k-checkbox" #if( member[i].additive ){ #checked="checked" # } # id="perms-member-#=i#-additive"
 							data-name="#= member[i].name #" data-type="ADDITIVE" data-target-type="member">
-         				<label class="k-checkbox-label" for="perms-member-#=i#-additive">&nbsp;</label>
-         				<!--
-						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].negative ){ #checked="checked" # } # id="member-#=i#-negative">
-         				<label class="k-radio-label" for="member-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>    
-	         				-->     				
+         				<label class="k-checkbox-label" for="perms-member-#=i#-additive">&nbsp;</label>				
 					</td>
 					# } #
 					<td>
