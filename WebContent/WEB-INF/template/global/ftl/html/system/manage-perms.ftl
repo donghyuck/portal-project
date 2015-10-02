@@ -185,7 +185,13 @@
 			}					
 		}
 		
-		var PERMS_NAMES_LEVEN1 = ["READ_DOCUMENT", "CREATE_DOCUMENT", "CREATE_COMMENT", "CREATE_IMAGE", "CREATE_FILE", "CREATE_POLL", "VOTE_IN_POLL", "CREATE_ANNOUNCEMENT" ];
+		
+		function isAdditivePermissionMode(){
+			if($("input[name=perms-options]:checked").val() == 1 )
+				return true;
+			else 
+				return false;	
+		} 
 		
 		-->
 		</script> 		 
@@ -230,6 +236,26 @@
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
 								<div class="tab-pane p-sm" id="bs-tabdrop-tab1">	
+
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label">권한 그룹</label>
+							<div class="col-sm-10">
+								<div class="radio">
+									<label>
+										<input type="radio" name="perms-group" value="WEB_ADMIN" class="px" checked="">
+										<span class="lbl">Option one is this and that—be sure to include why it's great</span>
+									</label>
+								</div> <!-- / .radio -->
+								<div class="radio">
+									<label>
+										<input type="radio" name="perms-group" value="WEB_CONTENT" class="px">
+										<span class="lbl">Option two can be something else and selecting it will deselect option one</span>
+									</label>
+								</div> <!-- / .radio -->
+							</div> <!-- / .col-sm-10 -->
+						</div>
+						
 								
 									<form class="form-inline">
 									  <div class="form-group">
@@ -244,7 +270,7 @@
 									  
 									  <div class="btn-group" data-toggle="buttons">
 										  <label class="btn btn-primary active">
-										    <input type="radio" name="perms-options" autocomplete="off" checked value="1"> ADDITIVE (preselected)
+										    <input type="radio" name="perms-options" autocomplete="off" checked value="1"> ADDITIVE
 										  </label>
 										  <label class="btn btn-primary">
 										    <input type="radio" name="perms-options" autocomplete="off" value="2"> NEGATIVE
