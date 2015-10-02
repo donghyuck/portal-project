@@ -124,8 +124,9 @@
 		
 				$('#perms-30-listview').on("click","[data-action='update'], [data-action='cancle'], [data-action='create']", function(e){
 					var $this = $(this);	
+					var action = $this.data('action');
 					var target = $($this.data("target"));
-					console.log( target.length ) ;
+					console.log( "action" + target.length ) ;
 					target.each(function(index){
 						var $that = $(this);
 						console.log( index + " " + $that.data('name') + " " + $that.is(":checked") );						
@@ -273,14 +274,14 @@
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
 					<td class="text-center">
 						<input name="perms-anonymous-#=i#" type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="perms-anonymous-#=i#-additive"
-							data-name="#=  anonymous[i].name #" data-type="ADDITIVE" data-target-type="anonymous" >
+							data-name="#=  anonymous[i].name #" data-type="ADDITIVE" data-object-type="anonymous" >
          				<label class="k-checkbox-label" for="perms-anonymous-#=i#-additive">&nbsp;</label>	
 					</td>
 					# } #
 					<td>
 						<div class="btn-group">
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update" data-target="[data-target-type=anonymous]">저장</a>
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle" data-target="[data-target-type=anonymous]">취소</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update" data-target="[data-object-type=anonymous]">저장</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle" data-target="[data-object-type=anonymous]">취소</a>
 						</div>						
 					</td>				
 				</tr>
@@ -289,14 +290,14 @@
 					# for(  var i = 0 ; i < member.length ; i++) {#
 					<td class="text-center">
 						<input name="perms-member-#=i#" type="checkbox" class="k-checkbox" #if( member[i].additive ){ #checked="checked" # } # id="perms-member-#=i#-additive"
-							data-name="#= member[i].name #" data-type="ADDITIVE" data-target-type="member">
+							data-name="#= member[i].name #" data-type="ADDITIVE" data-object-type="member">
          				<label class="k-checkbox-label" for="perms-member-#=i#-additive">&nbsp;</label>				
 					</td>
 					# } #
 					<td>
 						<div class="btn-group">
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update" data-target="[data-target-type=anonymous]">저장</a>
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle" data-target="[data-target-type=anonymous]">취소</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update" data-target="[data-object-type=member]">저장</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle" data-target="[data-object-type=member]">취소</a>
 						</div>						
 					</td>				
 				</tr>		
