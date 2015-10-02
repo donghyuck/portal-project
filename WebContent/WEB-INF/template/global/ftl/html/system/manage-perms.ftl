@@ -236,10 +236,21 @@
 									    <label class="control-label" for="perms-company-list">회 사</label>
 											&nbsp;&nbsp;<input id="perms-company-list" />
 									  </div>
+									  &nbsp;&nbsp;
 									  <div class="form-group">
 									    <label class="control-label" for="perms-site-list">사이트</label>
 											&nbsp;&nbsp;<input id="perms-site-list" />	
 									  </div>
+									  
+									  <div class="btn-group" data-toggle="buttons">
+										  <label class="btn btn-primary active">
+										    <input type="radio" name="perms-options" autocomplete="off" checked> ADDITIVE (preselected)
+										  </label>
+										  <label class="btn btn-primary">
+										    <input type="radio" name="perms-options" autocomplete="off"> NEGATIVE
+										  </label>
+										</div>
+
 									  <button type="submit" class="btn btn-default">Send invitation</button>
 									</form>																								
 									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
