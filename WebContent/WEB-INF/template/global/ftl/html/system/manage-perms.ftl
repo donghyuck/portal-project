@@ -125,8 +125,10 @@
 				$('#perms-30-listview').on("click","[data-action='update'], [data-action='cancle'], [data-action='create']", function(e){
 					var $this = $(this);	
 					if($this.data('target')){
-						var target = $($this.data('target'));
-						alert( $this.data('target') );
+						$($this.data('target')).each(function(index){
+							var $that = $(this);
+							console.log( $that.html() );						
+						});
 					}	
 				});										
 			}				
