@@ -301,13 +301,13 @@
 						</div>						
 					</td>				
 				</tr>		
-				<tr>
+				<tr class="active">
 					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">User</td>
 					<td>&nbsp;</td>
 				</tr>
 				#if(users.length == 0){#
 				<tr>
-					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">정의된 사용자 권한 없음.</td>
+					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #" class="text-center text-info">정의된 사용자 권한 없음.</td>
 				</tr>					
 				#}#
 				# for(  var i = 0 ; i < users.length ; i++) {#				
@@ -324,6 +324,31 @@
 					</td>				
 				</tr>
 				#}#
+				
+				<tr class="active">
+					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">Group</td>
+					<td>&nbsp;</td>
+				</tr>
+				#if(groups.length == 0){#
+				<tr>
+					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #" class="text-center text-info">정의된 그룹 권한 없음.</td>
+				</tr>					
+				#}#
+				# for(  var i = 0 ; i < groups.length ; i++) {#				
+				<tr>
+					<td colspan="2">&nbsp;</td>
+					<td class="text-center">
+						<input name="perms-user-#=i#" type="checkbox" class="k-radio" id="perms-group-#=i#-additive">
+         				<label class="k-checkbox-label" for="perms-user-#=i#-additive">&nbsp;</label>	
+					</td>
+					<td>
+						<div class="btn-group">
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
+						</div>						
+					</td>				
+				</tr>
+				#}#
+								
 				</tbody>
 			</table>
 		</script>					
