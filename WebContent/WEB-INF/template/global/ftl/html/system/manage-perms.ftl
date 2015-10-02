@@ -83,8 +83,7 @@
 							}
 						});	
 			}
-			if( !$("#perms-site-list").data("kendoDropDownList") ){			
-									
+			if( !$("#perms-site-list").data("kendoDropDownList") ){
 						var websites = $("#perms-site-list").kendoDropDownList({
 							autoBind: false,
 							cascadeFrom: "perms-company-list",
@@ -110,11 +109,13 @@
 									common.ui.admin.permissions.list({
 										objectType : 30 ,
 										objectId : this.value(),
-										perms:PERMS_NAMES_LEVEN1,
+										perms: common.ui.admin.permissions.group('WEB_CONTENT'),
 										success:function(data){
-											common.ui.stringify(data);
 											var renderTo = $('#perms-30-listview');
 											var template = kendo.template( $("#perms-30-listview-template").html() );
+											var data = $.extend( data , {
+												PERM_GROUP_DEF:common.ui.admin.permissions.group('WEB_CONTENT')  
+											} );
 											renderTo.html( template(data) );
 										}
 									});
@@ -258,17 +259,18 @@
 				<thead>
 				<tr>
 					<th colspan="2" width="15%">&nbsp;</th>
-					# for (var i = 0 ; i < PERMS_NAMES_LEVEN1.length; i++ ) { #
-						<th class="text-center small" width="#= 70/PERMS_NAMES_LEVEN1.length #%"><span class="label">#: PERMS_NAMES_LEVEN1[i]#</span></th>
+					# for (var i = 0 ; i < PERM_GROUP_DEF.length; i++ ) { #
+						<th class="text-center small" width="#= 70/PERMS_NAMES_LEVEN1.length #%"><span class="label">#: PERM_GROUP_DEF[i]#</span></th>
 					# } #
 					<th width="15%">&nbsp;</th>
 				</tr>
 				<tr class="active">
-					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">User Types</td>
+					<td colspan="#= PERM_GROUP_DEF.length + 2 #">User Types</td>
 					<td>&nbsp;</td>
 				</tr>				
 				</thead>
 				<tbody>
+				
 				<tr>
 					<td colspan="2">Anonymous</td>
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
@@ -285,6 +287,7 @@
 						</div>						
 					</td>				
 				</tr>
+				
 				<tr>
 					<td colspan="2">Member</td>
 					# for(  var i = 0 ; i < member.length ; i++) {#
@@ -302,12 +305,12 @@
 					</td>				
 				</tr>		
 				<tr class="active">
-					<td colspan="#= PERMS_NAMES_LEVEN1.length + 3 #">User</td>
+					<td colspan="#= PERM_GROUP_DEF.length + 3 #">User</td>
 					<td>&nbsp;</td>
 				</tr>
 				#if(users.length == 0){#
 				<tr>
-					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #" class="text-center text-info">정의된 사용자 권한 없음.</td>
+					<td colspan="#= PERM_GROUP_DEF.length + 2 #" class="text-center text-info">정의된 사용자 권한 없음.</td>
 				</tr>					
 				#}#
 				# for(  var i = 0 ; i < users.length ; i++) {#				
@@ -326,12 +329,12 @@
 				#}#
 				
 				<tr class="active">
-					<td colspan="#= PERMS_NAMES_LEVEN1.length + 3 #">Group</td>
+					<td colspan="#= PERM_GROUP_DEF.length + 3 #">Group</td>
 					<td>&nbsp;</td>
 				</tr>
 				#if(groups.length == 0){#
 				<tr>
-					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #" class="text-center text-info">정의된 그룹 권한 없음.</td>
+					<td colspan="#= PERM_GROUP_DEF.length + 2 #" class="text-center text-info">정의된 그룹 권한 없음.</td>
 				</tr>					
 				#}#
 				# for(  var i = 0 ; i < groups.length ; i++) {#				

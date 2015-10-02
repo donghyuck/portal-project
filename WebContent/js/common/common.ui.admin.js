@@ -253,85 +253,24 @@
 		});
 	}
 	
+	var PERMISSION_GROUP_SET = {
+		WEB_ADMIN:["WEBSITE_ADMIN", "MODERATOR"],
+		WEB_CONTENT:["READ_DOCUMENT", "CREATE_DOCUMENT", "CREATE_COMMENT", "CREATE_IMAGE", "CREATE_FILE", "CREATE_POLL", "VOTE_IN_POLL", "CREATE_ANNOUNCEMENT" ]
+	}
+	
+	function getPermissionGroup(name){
+		return PERMISSION_GROUP_SET[name];
+	}
+	
 	extend(common.ui.admin, {
 		setup : setup,
 		bytesToSize : bytesToSize,
 		permissions : {
 			list : permissions
+			group : getPermissionGroup
 		}
 	} );
-	/*
-	 * common.ui.admin.Setup = kendo.Class.extend({ init : function (options){
-	 * var that = this; options = options || {}; options = that.options =
-	 * extend(true, {}, that.options, options); that._pixelAdmin =
-	 * window.PixelAdmin; that.refresh(); }, options : { features : { culture :
-	 * true, landing : true, backstretch : false, lightbox: false, spmenu:
-	 * false, morphing: false }, worklist: [] }, _doAuthenticate : function(){
-	 * var that = this; var renderTo = ACCOUNT_RENDER_ID; if ($("#" +renderTo
-	 * ).length == 0) { $('body').append( '<div id="' + renderTo + '"
-	 * style="display:none;"></div>'); } $("#" +renderTo ).kendoAccounts({
-	 * visible : false, authenticate : function( e ){ if( isFunction(
-	 * that.options.authenticate ) ) that.options.authenticate(e); } });
-	 * common.ui.accounts($("#" +renderTo ), { authenticate : function( e ){ if(
-	 * isFunction( that.options.authenticate ) ) that.options.authenticate(e); }
-	 * }); }, _createCompanySelector : function(){ var that = this; var renderTo =
-	 * COMPANY_SELECTOR_RENDER_ID; that.companySelector = $('#' +
-	 * renderTo).kendoDropDownList({ dataTextField: 'displayName',
-	 * dataValueField: 'companyId', dataSource: { serverFiltering: false,
-	 * transport: { read: { dataType: JSON, url:
-	 * '/secure/list-company.do?output=json', type: POST } }, schema: { data:
-	 * "companies", model : Company } }, change : function (e){ if( isFunction(
-	 * that.options.companyChanged ) ) that.options.companyChanged(
-	 * this.dataSource.get(this.value()) ); }, dataBound : function(e){ if(
-	 * isFunction( that.options.companyChanged ) ) that.options.companyChanged(
-	 * this.dataSource.get(this.value()) ); } }).data('kendoDropDownList'); },
-	 * _createSwitcher : function (){ var that = this; $.each(
-	 * $('input[role="switcher"]'), function( index, element ){
-	 * $(element).switcher(); $(element).change(function(){ if( isFunction(
-	 * that.options.switcherChanged ) ){ that.options.switcherChanged(
-	 * $(this).attr("name"), $(this).is(":checked") ); } }); } ); },
-	 * _initWorklist: function(){ var that = this; var worklist =
-	 * that.options.worklist; if (worklist == null) { worklist = []; } var
-	 * initilizer, _i, _len, _ref; _ref = worklist; for (_i = 0, _len =
-	 * worklist.length; _i < _len; _i++) { initilizer = _ref[_i];
-	 * $.proxy(initilizer, that)(); } }, _initFeatures: function(){ var that =
-	 * this; var features = that.options.features; var worklist =
-	 * that.options.worklist;
-	 * 
-	 * if( features.culture ){ common.api.culture(); }
-	 * 
-	 * if(features.backstretch){ common.ui.backstretch(); }
-	 * 
-	 * if( features.morphing ){ $.each( $(".morph-button"), function( index,
-	 * item){ var $this = $(item); var btn = new
-	 * codrops.ui.MorphingButton($this); }); }
-	 * 
-	 * if(features.landing){ common.ui.landing(); }
-	 * 
-	 * if(features.spmenu){ $(document).on("click","[data-toggle='spmenu']",
-	 * function(e){ var $this = $(this); var target ; if(
-	 * $this.prop("tagName").toLowerCase() == "a" ){ target =
-	 * $this.attr("href"); }else{ if($this.data("target")){ target =
-	 * $this.data("target") } } $("body").toggleClass("modal-open");
-	 * $(target).toggleClass("cbp-spmenu-open"); });
-	 * $(document).on("click","[data-dismiss='spmenu']", function(e){ var $this =
-	 * $(this); var target = $this.parent();
-	 * $("body").toggleClass("modal-open");
-	 * target.toggleClass("cbp-spmenu-open"); }); }
-	 * 
-	 * if(features.lightbox){ common.ui.lightbox(); } }, refresh: function(){
-	 * var that = this; $('.menu-content-profile .close').click(function () {
-	 * var $p = $(this).parents('.menu-content'); $p.addClass('fadeOut');
-	 * setTimeout(function () { $p.css({ height: $p.outerHeight(), overflow:
-	 * 'hidden' }).animate({'padding-top': 0, height:
-	 * $('#main-navbar').outerHeight()}, 500, function () { $p.remove(); }); },
-	 * 300); return false; }); that._initFeatures();
-	 * 
-	 * that._createCompanySelector(); that._createSwitcher();
-	 * that._doAuthenticate(); that._pixelAdmin.start([]); that._initWorklist();
-	 *  } });
-	 */
-	
+		
 })(jQuery);
 
 common.ui.admin.switcherEnabled = function(name) {
