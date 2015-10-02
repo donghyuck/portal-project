@@ -276,10 +276,10 @@
 					# for(  var i = 0 ; i < anonymous.length ; i++) {
 						var u_id = common.guid(); 
 					#
-					<td class="text-center"> #= u_id #
-						<input name="perms-anonymous-#=i#" type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="perms-anonymous-#=i#-additive"
-							data-name="#=  anonymous[i].name #" data-type="ADDITIVE" data-object-type="anonymous" >
-         				<label class="k-checkbox-label" for="perms-anonymous-#=i#-additive">&nbsp;</label>	
+					<td class="text-center">
+						<input type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="#=u_id#"
+							data-name="#= anonymous[i].name #" data-type="ADDITIVE" data-object-type="anonymous" >
+         				<label class="k-checkbox-label" for="#=u_id#">&nbsp;</label>	
 					</td>
 					# } #
 					<td>
@@ -292,11 +292,13 @@
 				
 				<tr>
 					<td colspan="2">Member</td>
-					# for(  var i = 0 ; i < member.length ; i++) {#
+					# for(  var i = 0 ; i < member.length ; i++) {
+						var u_id = common.guid(); 
+					#
 					<td class="text-center">
-						<input name="perms-member-#=i#" type="checkbox" class="k-checkbox" #if( member[i].additive ){ #checked="checked" # } # id="perms-member-#=i#-additive"
+						<input type="checkbox" class="k-checkbox" #if( member[i].additive ){ #checked="checked" # } # id="#= u_id #"
 							data-name="#= member[i].name #" data-type="ADDITIVE" data-object-type="member">
-         				<label class="k-checkbox-label" for="perms-member-#=i#-additive">&nbsp;</label>				
+         				<label class="k-checkbox-label" for="#= u_id #">&nbsp;</label>				
 					</td>
 					# } #
 					<td>
