@@ -126,7 +126,7 @@
 					var $this = $(this);	
 					if($this.data('target')){
 						var target = $($this.data('target'));
-						alert( target.html() );
+						alert( $this.data('target') );
 					}	
 				});										
 			}				
