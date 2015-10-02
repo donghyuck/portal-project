@@ -106,15 +106,17 @@
 							},
 							change:function(){
 								if( this.value() > 0 ){
+									common.ui.admin.permissions.group
 									common.ui.admin.permissions.list({
 										objectType : 30 ,
 										objectId : this.value(),
-										perms: common.ui.admin.permissions.group('WEB_CONTENT'),
+										perms: getSelectedPermissionGroup(),
 										success:function(data){
 											var renderTo = $('#perms-30-listview');
 											var template = kendo.template( $("#perms-30-listview-template").html() );
 											var data = $.extend( data , {
-												PERM_GROUP_DEF:common.ui.admin.permissions.group('WEB_CONTENT')  
+												ADDITIVE_MODE : isAdditivePermissionMode(), 
+												PERM_GROUP_DEF:getSelectedPermissionGroup()  
 											} );
 											renderTo.html( template(data) );
 										}
@@ -185,7 +187,10 @@
 			}					
 		}
 		
-		
+		function getPermissionGroup(){			
+			var name = $('input[name=perms-group]:checked').val();
+			return common.ui.admin.permissions.group(name);
+		}
 		function isAdditivePermissionMode(){
 			if($("input[name=perms-options]:checked").val() == 1 )
 				return true;
