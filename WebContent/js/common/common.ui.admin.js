@@ -266,7 +266,7 @@
 		setup : setup,
 		bytesToSize : bytesToSize,
 		permissions : {
-			list : permissions
+			list : permissions,
 			group : getPermissionGroup
 		}
 	} );
