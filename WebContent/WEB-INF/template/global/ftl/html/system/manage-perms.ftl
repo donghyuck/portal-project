@@ -124,12 +124,12 @@
 		
 				$('#perms-30-listview').on("click","[data-action='update'], [data-action='cancle'], [data-action='create']", function(e){
 					var $this = $(this);	
-					if($this.data('target')){
-						$($this.data('target')).each(function(index){
-							var $that = $(this);
-							console.log( $that.html() );						
-						});
-					}	
+					var target = $($this.data("target"));
+					console.log( target.length ) ;
+					target.each(function(index){
+						var $that = $(this);
+						console.log( index + " " +  $that.html() );						
+					});						
 				});										
 			}				
 		
