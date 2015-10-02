@@ -306,8 +306,11 @@
 					<td>&nbsp;</td>
 				</tr>
 				#if(users.length == 0){#
-					
+				<tr>
+					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">정의된 사용자 권한 없음.</td>
+				</tr>					
 				#}#
+				# for(  var i = 0 ; i < users.length ; i++) {#				
 				<tr>
 					<td colspan="2">&nbsp;</td>
 					<td class="text-center">
@@ -320,6 +323,7 @@
 						</div>						
 					</td>				
 				</tr>
+				#}#
 				</tbody>
 			</table>
 		</script>					
