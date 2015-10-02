@@ -302,7 +302,7 @@
 					</td>				
 				</tr>		
 				<tr class="active">
-					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">User</td>
+					<td colspan="#= PERMS_NAMES_LEVEN1.length + 3 #">User</td>
 					<td>&nbsp;</td>
 				</tr>
 				#if(users.length == 0){#
@@ -326,7 +326,7 @@
 				#}#
 				
 				<tr class="active">
-					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">Group</td>
+					<td colspan="#= PERMS_NAMES_LEVEN1.length + 3 #">Group</td>
 					<td>&nbsp;</td>
 				</tr>
 				#if(groups.length == 0){#
