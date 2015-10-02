@@ -128,7 +128,7 @@
 					console.log( target.length ) ;
 					target.each(function(index){
 						var $that = $(this);
-						console.log( index + " " +  $that.html() );						
+						console.log( index + " " + $that.data('name') + " " + $that.is(":checked") );						
 					});						
 				});										
 			}				
