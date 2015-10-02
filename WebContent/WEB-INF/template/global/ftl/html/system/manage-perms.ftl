@@ -126,7 +126,7 @@
 					var $this = $(this);	
 					var action = $this.data('action');
 					var target = $($this.data("target"));
-					console.log( "action" + target.length ) ;
+					console.log( action + " " + target.length ) ;
 					target.each(function(index){
 						var $that = $(this);
 						console.log( index + " " + $that.data('name') + " " + $that.is(":checked") );						
