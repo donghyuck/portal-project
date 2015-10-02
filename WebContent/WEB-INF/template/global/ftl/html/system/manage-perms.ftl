@@ -238,7 +238,7 @@
 								<div class="tab-pane p-sm" id="bs-tabdrop-tab1">	
 
 						<div class="form-group">
-							<label class="col-sm-2 control-label">회사</label>
+							<label class="col-sm-2 control-label">회  사</label>
 							<div class="col-sm-10">
 								<input id="perms-company-list" />
 							</div> <!-- / .col-sm-10 -->
@@ -283,7 +283,11 @@
 								</div> <!-- / .radio -->
 							</div> <!-- / .col-sm-10 -->
 						</div>						
-								
+						<div class="form-group" style="margin-bottom: 0;">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="button" class="btn btn-primary btn-flat btn-outline">조회</button>
+							</div>
+						</div>								
 																																
 									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
 								</div>								
