@@ -237,7 +237,18 @@
 							<div class="tab-content">
 								<div class="tab-pane p-sm" id="bs-tabdrop-tab1">	
 
-
+						<div class="form-group">
+							<label class="col-sm-2 control-label">회사</label>
+							<div class="col-sm-10">
+								<input id="perms-company-list" />
+							</div> <!-- / .col-sm-10 -->
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">사이트</label>
+							<div class="col-sm-10">
+								<input id="perms-site-list" />	
+							</div> <!-- / .col-sm-10 -->
+						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label">권한 그룹</label>
 							<div class="col-sm-10">
@@ -273,28 +284,7 @@
 							</div> <!-- / .col-sm-10 -->
 						</div>						
 								
-									<form class="form-inline">
-									  <div class="form-group">
-									    <label class="control-label" for="perms-company-list">회 사</label>
-											&nbsp;&nbsp;<input id="perms-company-list" />
-									  </div>
-									  &nbsp;&nbsp;
-									  <div class="form-group">
-									    <label class="control-label" for="perms-site-list">사이트</label>
-											&nbsp;&nbsp;<input id="perms-site-list" />	
-									  </div>
-									  <!--
-									  <div class="btn-group" data-toggle="buttons">
-										  <label class="btn btn-primary active">
-										    <input type="radio" name="perms-options" autocomplete="off" checked value="1"> ADDITIVE
-										  </label>
-										  <label class="btn btn-primary">
-										    <input type="radio" name="perms-options" autocomplete="off" value="2"> NEGATIVE
-										  </label>
-										</div>-->
-
-									  <button type="submit" class="btn btn-default">Send invitation</button>
-									</form>																								
+																																
 									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
 								</div>								
 							</div><!-- tab contents end -->
