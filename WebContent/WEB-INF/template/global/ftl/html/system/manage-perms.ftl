@@ -229,21 +229,23 @@
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
-								<div class="tab-pane p-sm" id="bs-tabdrop-tab1">
-								
+								<div class="tab-pane p-sm" id="bs-tabdrop-tab1">								
 									<div class="row">
-										<div class="col-sm-4">
+										<div class="col-sm-6">
 											<label class="control-label" for="perms-company-list">회 사</label>
 											&nbsp;&nbsp;<input id="perms-company-list" />
 										</div>
-										<div class="col-sm-4">
+										<div class="col-sm-6">											
+										</div>
+									</div>		
+									<div class="row">
+										<div class="col-sm-6">
 											<label class="control-label" for="perms-site-list">사이트</label>
 											&nbsp;&nbsp;<input id="perms-site-list" />	
 										</div>
-										<div class="col-sm-4">
-										
+										<div class="col-sm-6">
 										</div>
-									</div>		
+									</div>										
 									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
 								</div>								
 							</div><!-- tab contents end -->
