@@ -83,7 +83,8 @@
 							}
 						});	
 			}
-			if( !$("#perms-site-list").data("kendoDropDownList") ){									
+			if( !$("#perms-site-list").data("kendoDropDownList") ){			
+									
 						var websites = $("#perms-site-list").kendoDropDownList({
 							autoBind: false,
 							cascadeFrom: "perms-company-list",
@@ -119,7 +120,15 @@
 									});
 								}
 							}						
-						}).data("kendoDropDownList");										
+						}).data("kendoDropDownList");		
+		
+				$('#perms-30-listview').on("click","[data-action='update'], [data-action='cancle'], [data-action='create']", function(e){
+					var $this = $(this);	
+					if($this.data('target')){
+						var target = $($this.data('target'));
+						alert( target.html() );
+					}	
+				});										
 			}				
 		
 		}
@@ -261,8 +270,9 @@
 					<td colspan="2">Anonymous</td>
 					# for(  var i = 0 ; i < anonymous.length ; i++) {#
 					<td class="text-center">
-						<input name="anonymous-#=i#" type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="anonymous-#=i#-additive">
-         				<label class="k-checkbox-label" for="anonymous-#=i#-additive">&nbsp;</label>
+						<input name="perms-anonymous-#=i#" type="checkbox" class="k-checkbox" #if( anonymous[i].additive ){ #checked="checked" # } # id="perms-anonymous-#=i#-additive"
+							data-name="#=  anonymous[i].name #" data-type="ADDITIVE" data-target-type="anonymous" >
+         				<label class="k-checkbox-label" for="perms-anonymous-#=i#-additive">&nbsp;</label>
          				<!-- 
 						<input name="anonymous-#=i#" type="radio" class="k-radio" #if( anonymous[i].negative ){ #checked="checked" # } # id="anonymous-#=i#-negative">
          				<label class="k-radio-label" for="anonymous-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         		
@@ -280,52 +290,39 @@
 					<td colspan="2">Member</td>
 					# for(  var i = 0 ; i < member.length ; i++) {#
 					<td class="text-center">
-						<input name="member-#=i#" type="checkbox" class="k-checkbox" #if( member[i].additive ){ #checked="checked" # } # id="member-#=i#-additive">
-         				<label class="k-checkbox-label" for="member-#=i#-additive">&nbsp;</label>
+						<input name="perms-member-#=i#" type="checkbox" class="k-checkbox" #if( member[i].additive ){ #checked="checked" # } # id="perms-member-#=i#-additive"
+							data-name="#= member[i].name #" data-type="ADDITIVE" data-target-type="member">
+         				<label class="k-checkbox-label" for="perms-member-#=i#-additive">&nbsp;</label>
          				<!--
 						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].negative ){ #checked="checked" # } # id="member-#=i#-negative">
          				<label class="k-radio-label" for="member-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>    
-         				-->     				
+	         				-->     				
 					</td>
 					# } #
 					<td>
 						<div class="btn-group">
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle">취소</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update" data-target="[data-target-type=anonymous]">저장</a>
+							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle" data-target="[data-target-type=anonymous]">취소</a>
 						</div>						
 					</td>				
-				</tr>			
+				</tr>		
 				<tr>
-					<td colspan="2">User</td>
-					# for(  var i = 0 ; i < member.length ; i++) {#
-					<td class="text-center">
-						<input name="member-#=i#" type="checkbox" class="k-radio" #if( member[i].additive ){ #checked="checked" # } # id="member-#=i#-additive">
-         				<label class="k-checkbox-label" for="member-#=i#-additive">&nbsp;</label>
-         				<!--
-						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].negative ){ #checked="checked" # } # id="member-#=i#-negative">
-         				<label class="k-radio-label" for="member-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         
-         				-->				
-					</td>
-					# } #
-					<td>
-						<div class="btn-group">
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
-							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="cancle">취소</a>
-						</div>						
-					</td>				
-				</tr>								
+					<td colspan="#= PERMS_NAMES_LEVEN1.length + 2 #">User</td>
+					<td>&nbsp;</td>
+				</tr>
+				#if(users.length == 0){#
+					
+				#}#
 				<tr>
 					<td colspan="2">&nbsp;</td>
-					# for(  var i = 0 ; i < member.length ; i++) {#
 					<td class="text-center">
-						<input name="member-#=i#" type="checkbox" class="k-radio" #if( member[i].additive ){ #checked="checked" # } # id="member-#=i#-additive">
-         				<label class="k-checkbox-label" for="member-#=i#-additive">&nbsp;</label>
+						<input name="perms-user-#=i#" type="checkbox" class="k-radio" id="perms-user-#=i#-additive">
+         				<label class="k-checkbox-label" for="perms-user-#=i#-additive">&nbsp;</label>
          				<!--
 						<input name="member-#=i#" type="radio" class="k-radio" #if( member[i].negative ){ #checked="checked" # } # id="member-#=i#-negative">
          				<label class="k-radio-label" for="member-#=i#-negative"><span class="k-icon k-i-cancel"></span></label>         
          				-->				
 					</td>
-					# } #
 					<td>
 						<div class="btn-group">
 							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
