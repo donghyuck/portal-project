@@ -232,7 +232,7 @@
 								<div class="tab-pane p-sm" id="bs-tabdrop-tab1">								
 									<div class="row">
 										<div class="col-sm-6">
-											<h6>회 사</h6>
+											<label class="control-label" for="perms-company-list">회 사</label>
 											&nbsp;&nbsp;<input id="perms-company-list" />
 										</div>
 										<div class="col-sm-6">											
