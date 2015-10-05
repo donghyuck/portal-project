@@ -2349,7 +2349,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 
 .modal[data-effect="slide"]{
-
+	-webkit-animation-name: slideOutRight;
+    animation-name: slideOutRight;	
 }
 
 
@@ -2359,8 +2360,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    
+    animation-fill-mode: both;    
 }
 
 /** ------------------------------------------------- */
