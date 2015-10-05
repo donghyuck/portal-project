@@ -2349,17 +2349,15 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 
 .modal.fade[data-effect="slide"] .modal-dialog {
-	top: 300px;
-	opacity: 1;
+	top: 100px;
 	-webkit-transform: translate3d(0, -25%, 0);
     transform: translate3d(0, -25%, 0);
 }
 
 
-.modal.fade.[data-effect="slide"]:not(.in) .modal-dialog{
+.modal.fade[data-effect="slide"]:not(.in) .modal-dialog{
 	-webkit-transform: translate3d(-25%, 0, 0);
     transform: translate3d(-25%, 0, 0);
-     opacity: 0;
 }
 
 /** ------------------------------------------------- */
