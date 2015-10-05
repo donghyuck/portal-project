@@ -456,7 +456,7 @@
 			<!-- ./END FOOTER -->					
 		</div>	
 		
-		<div id="my-page-view-modal" role="dialog" class="modal fade bg-white" data-backdrop="static" data-effect="zoom">
+		<div id="my-page-view-modal" role="dialog" class="modal fade bg-white" data-backdrop="static" data-effect="slide">
 			<div class="modal-dialog modal-lg modal-flat ">
 				<div class="modal-content">	
 					<div class="modal-header">
