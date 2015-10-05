@@ -2316,13 +2316,13 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 /** ------------------------------------------------- */
 /** modal animation effect		                      */
 /** ------------------------------------------------- */
-
+/*
 .modal.bg-white {
     -moz-transition: all .3s ease-in;
     -webkit-transition: all .3s ease-in;
     -o-transition: all .3s ease-in;
     transition: all .3s ease-in;	
-}
+}*/
 
 .modal.fade[data-effect="zoom"] .modal-dialog {
     -webkit-transform: scale(0.1);
@@ -2354,19 +2354,15 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     position: fixed;
     right: -100%;
     top: 0;
-    background: #222222;
-    border-left: 1px solid #333;
-    display: block;
     -webkit-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
     -moz-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
     -o-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
-    transition: all 300ms cubic-bezier(.25, .46, .45, .94);
+    transition: all 300ms cubic-bezier(.25, .46, .45, .94);    
     -webkit-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
     -moz-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
     -o-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
     transition-timing-function: cubic-bezier(.25, .46, .45, .94);
 }
-
 
 .modal.in[data-effect="slide"]{
 	right:0;
