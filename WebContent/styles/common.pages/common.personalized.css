@@ -2349,28 +2349,18 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 
 .modal[data-effect="slide"]{
-    -webkit-transform: scale(0.1);
-    -moz-transform: scale(0.1);
-    -ms-transform: scale(0.1);
-    transform: scale(0.1);
-    top: 300px;
-    opacity: 0;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
+
 }
 
 
 .modal.in[data-effect="slide"]{
-	position: absolute;
-    left: -100%;
-    width: 100p%;
-    background: blue;
-    -webkit-animation: slide 0.5s forwards;
-    -webkit-animation-delay: 2s;
-    animation: slide 0.5s forwards;
-    animation-delay: 2s;
-    left: 0; 
+	-webkit-animation-name: slideInRight;
+    animation-name: slideInRight;	
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    
 }
 
 /** ------------------------------------------------- */
