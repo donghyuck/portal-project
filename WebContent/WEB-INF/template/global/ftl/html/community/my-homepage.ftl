@@ -304,6 +304,20 @@
 					page : new common.ui.data.Page(),
 					hasNext : false,
 					hasPrevious : false,
+					next:function(){
+						var that = this;
+						var objectId = $('.item[data-object-id='+ that.page.pageId +']').next().data("object-id");
+						setTargetPageSource(objectId, 1, function(response){
+								renderTo.data("model").setPage( new common.ui.data.Page(response) );														
+						});						
+					},
+					previous:function(){
+						var that = this;
+						var objectId = $('.item[data-object-id='+ that.page.pageId +']').prev().data("object-id");
+						setTargetPageSource(objectId, 1, function(response){
+								renderTo.data("model").setPage( new common.ui.data.Page(response) );														
+						});						
+					},
 					pageSource : "",
 					pageSourceUrl : "",
 					commentary : function(){
