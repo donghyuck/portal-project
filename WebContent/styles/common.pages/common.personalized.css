@@ -2347,10 +2347,24 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     opacity: 1;
 }
 
-.modal.fade[data-effect="slide"]:not(.in) .modal-dialog, .modal[data-effect="slide"]:not(.in) .modal-dialog{
+.modal.fade[data-effect="slide"]:not(.in) .modal-dialog{
 	-webkit-transform: translate3d(25%, 0, 0);
     transform: translate3d(25%, 0, 0);
 }
+
+.modal.[data-effect="zoom"]{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;	
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;	
+} 
+
+.modal.[data-effect="zoom"]:not(.in){
+    -webkit-animation-name: slideOutRight;
+    animation-name: slideOutRight;	
+} 
 
 /** ------------------------------------------------- */
 /** masorny                                           */
