@@ -2349,6 +2349,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 
 .modal.fade[data-effect="slide"] .modal-dialog {
+	top: 300px;
+	opacity: 1;
 	-webkit-transform: translate3d(0, -25%, 0);
     transform: translate3d(0, -25%, 0);
 }
@@ -2357,6 +2359,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .modal.fade.[data-effect="slide"]:not(.in) .modal-dialog{
 	-webkit-transform: translate3d(-25%, 0, 0);
     transform: translate3d(-25%, 0, 0);
+     opacity: 0;
 }
 
 /** ------------------------------------------------- */
@@ -3178,6 +3181,7 @@ img[data-toggle=lightbox]:hover{
     margin-bottom: 0;
     margin-top: 2px;
 }
+
 /** ------------------------------------------------- */
 /** Flat Icon			                              */
 /** ------------------------------------------------- */
@@ -3186,4 +3190,3 @@ img[data-toggle=lightbox]:hover{
 	height: 50px;
 	background-position: -115px -585px;
 }
-
