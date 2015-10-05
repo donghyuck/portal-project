@@ -2349,18 +2349,27 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 
 .modal[data-effect="slide"]{
-	-webkit-animation-name: slideOutRight;
-    animation-name: slideOutRight;	
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    background: #222222;
+    border-left: 1px solid #333;
+    display: block;
+    -webkit-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
+    -moz-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
+    -o-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
+    transition: all 300ms cubic-bezier(.25, .46, .45, .94);
+    -webkit-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
+    -moz-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
+    -o-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
+    transition-timing-function: cubic-bezier(.25, .46, .45, .94);
 }
 
 
 .modal.in[data-effect="slide"]{
-	-webkit-animation-name: slideInRight;
-    animation-name: slideInRight;	
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;    
+	right:0;
 }
 
 /** ------------------------------------------------- */
