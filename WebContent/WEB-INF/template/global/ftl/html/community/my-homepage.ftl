@@ -474,8 +474,8 @@
 		
 		<div id="my-page-view-modal" role="dialog" class="modal fade bg-white" data-backdrop="static" data-effect="slide">
 
-			<button title="Previous (Left arrow key)" type="button" class="previous"></button>
-			<button title="Next (Right arrow key)" type="button" class="next"></button>
+			<button title="Previous (Left arrow key)" type="button" class="previous" data-bind="{visible: hasPrevious, click:previous}"></button>
+			<button title="Next (Right arrow key)" type="button" class="next" data-bind="{visible: hasNext, click:next></button>
 			<div class="modal-dialog modal-lg modal-flat ">
 				<div class="modal-content">	
 					<div class="modal-header">
