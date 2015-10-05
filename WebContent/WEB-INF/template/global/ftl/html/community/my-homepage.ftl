@@ -307,15 +307,19 @@
 					next:function(){
 						var that = this;
 						var objectId = $('.item[data-object-id='+ that.page.pageId +']').next().data("object-id");
+						kendo.ui.progress(renderTo, true);	
 						setTargetPageSource(objectId, 1, function(response){
-								renderTo.data("model").setPage( new common.ui.data.Page(response) );														
+							kendo.ui.progress(renderTo, false);	
+							renderTo.data("model").setPage( new common.ui.data.Page(response) );														
 						});						
 					},
 					previous:function(){
 						var that = this;
 						var objectId = $('.item[data-object-id='+ that.page.pageId +']').prev().data("object-id");
+						kendo.ui.progress(renderTo, true);	
 						setTargetPageSource(objectId, 1, function(response){
-								renderTo.data("model").setPage( new common.ui.data.Page(response) );														
+							kendo.ui.progress(renderTo, false);	
+							renderTo.data("model").setPage( new common.ui.data.Page(response) );														
 						});						
 					},
 					pageSource : "",
