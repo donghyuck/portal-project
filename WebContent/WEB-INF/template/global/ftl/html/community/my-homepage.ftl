@@ -320,12 +320,8 @@
 							that.set('pageSourceUrl', that.page.properties.url);
 						}else{
 							that.set('pageSourceUrl', "");
-						}								
-					}
-				});
-				
-				
-				renderTo.on('shown.bs.modal', function(e){		
+						}
+						
 					if(	isMasonryLayout(observable.page) ){
 						console.log('masonry layout.');
 						var masonryEl = renderTo.find("[data-image-layout=masonry]");
@@ -338,6 +334,12 @@
 						  	masonryEl.css('visibility', 'visible');
 						});
 					}
+																			
+					}
+				});
+				
+				renderTo.on('shown.bs.modal', function(e){		
+
 				});
 								
 				kendo.bind(renderTo, observable );
@@ -459,7 +461,7 @@
 		<div id="my-page-view-modal" role="dialog" class="modal fade bg-white" data-backdrop="static" data-effect="slide">
 
 			<button title="Previous (Left arrow key)" type="button" class="previous"></button>
-			
+			<button title="Next (Right arrow key)" type="button" class="next"></button>
 			<div class="modal-dialog modal-lg modal-flat ">
 				<div class="modal-content">	
 					<div class="modal-header">
