@@ -302,6 +302,8 @@
 			if( !renderTo.data('bs.modal') ){
 				var observable =  common.ui.observable({
 					page : new common.ui.data.Page(),
+					hasNext : false,
+					hasPrevious : false,
 					pageSource : "",
 					pageSourceUrl : "",
 					commentary : function(){
@@ -320,21 +322,25 @@
 							that.set('pageSourceUrl', that.page.properties.url);
 						}else{
 							that.set('pageSourceUrl', "");
-						}
-						
-					if(	isMasonryLayout(observable.page) ){
-						console.log('masonry layout.');
-						var masonryEl = renderTo.find("[data-image-layout=masonry]");
-						kendo.ui.progress(renderTo, true);
-						masonryEl.imagesLoaded( function(){
-						  	masonryEl.masonry({
-						    	itemSelector : '.item'
-						  	});
-						  	kendo.ui.progress(renderTo, false);
-						  	masonryEl.css('visibility', 'visible');
-						});
-					}
-																			
+						}						
+						// 						
+						var prevEl = $('.item[data-object-id='+ that.page.pageId +']').prev();
+						var nextEl = $('.item[data-object-id='+ that.page.pageId +']').next();
+						that.set('hasPrevious', (prevEl.length == 1) );
+						that.set('hasNext', (nextEl.length == 1) );			
+									
+						if(	isMasonryLayout(observable.page) ){
+							console.log('masonry layout.');
+							var masonryEl = renderTo.find("[data-image-layout=masonry]");
+							kendo.ui.progress(renderTo, true);
+							masonryEl.imagesLoaded( function(){
+							  	masonryEl.masonry({
+							    	itemSelector : '.item'
+							  	});
+							  	kendo.ui.progress(renderTo, false);
+							  	masonryEl.css('visibility', 'visible');
+							});
+						}												
 					}
 				});
 				
@@ -347,21 +353,29 @@
 			}
 			
 			if( typeof source == 'number' ){					
-				var targetEle = $('.item[data-object-id=' + source + ']');					
+				var targetEle = $('.item[data-object-id=' + source + ']');		
+				var prevEl = targetEle.prev();
+				var nextEl = targetEle.next();			
 				kendo.ui.progress(targetEle, true);	
-				common.ui.ajax( 
-					'<@spring.url "/data/pages/get.json?output=json"/>', {
-						data : { pageId : source , count: 1 },
-						success: function(response){ 
-							renderTo.data("model").setPage( new common.ui.data.Page(response) );
-							kendo.ui.progress(targetEle, false);	
-							renderTo.modal('show');	
-						}	
-				} );
+				setTargetPageSource(source, 1, function(response){
+						renderTo.data("model").setPage( new common.ui.data.Page(response) );
+						kendo.ui.progress(targetEle, false);	
+						if(!renderTo.is(':visible'))
+							renderTo.modal('show');							
+					}
+				);
 			}else if ( typeof source == 'object' ){
 				renderTo.data("model").setPage(source);
 				renderTo.modal('show');	
 			}
+		}
+		
+		function setTargetPageSource( objectId, count, callback ){			
+			common.ui.ajax( 
+					'<@spring.url "/data/pages/get.json?output=json"/>', {
+						data : { pageId : objectId , count: count },
+						success: callback
+			} );
 		}
 				
 		-->
