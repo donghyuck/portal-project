@@ -167,6 +167,14 @@ i.icon-svg {
 	background-image: url("/images/common/icons/basic/color/CollapseArrow.svg");
 }
 
+.icon-svg.basic-color-previous-arrow{
+	background-image: url("/images/common/icons/basic/color/PreviousArrow.svg");
+}
+
+.icon-svg.basic-color-next-arrow{
+	background-image: url("/images/common/icons/basic/color/NextArrow.svg");
+}
+
 
 /* SocialNetwork Color Icons 
 ------------------------------------*/
