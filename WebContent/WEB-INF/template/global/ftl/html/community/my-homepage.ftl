@@ -457,6 +457,9 @@
 		</div>	
 		
 		<div id="my-page-view-modal" role="dialog" class="modal fade bg-white" data-backdrop="static" data-effect="slide">
+
+			<button title="Previous (Left arrow key)" type="button" class="previous"></button>
+			
 			<div class="modal-dialog modal-lg modal-flat ">
 				<div class="modal-content">	
 					<div class="modal-header">
