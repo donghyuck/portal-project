@@ -2352,7 +2352,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     transform: translate3d(25%, 0, 0);
 }
 
-.modal.[data-effect="zoom"]{
+.modal[data-effect="zoom"]{
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -2361,7 +2361,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     animation-name: slideInRight;	
 } 
 
-.modal.[data-effect="zoom"]:not(.in){
+.modal[data-effect="zoom"]:not(.in){
     -webkit-animation-name: slideOutRight;
     animation-name: slideOutRight;	
 } 
