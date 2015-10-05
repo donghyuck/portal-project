@@ -2354,8 +2354,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 
 .modal.fade[data-effect="slide"]:not(.in) .modal-dialog{
-	-webkit-transform: translate3d(-25%, 0, 0);
-    transform: translate3d(-25%, 0, 0);
+	-webkit-transform: translate3d(25%, 0, 0);
+    transform: translate3d(25%, 0, 0);
 }
 
 /** ------------------------------------------------- */
