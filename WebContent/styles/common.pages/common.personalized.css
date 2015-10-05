@@ -3091,6 +3091,24 @@ img[data-toggle=lightbox]:hover{
 	animation-name: fadeInUp;
 }
 
+/* modal pagenate button
+---------------------------------- */
+.modal button.previous {
+    display: block;
+    opacity: .3;
+    width: 60px;
+    height: 60px;
+	top: 50%;
+    left: 0;
+    position: fixed;
+    border: 0;
+    z-index: 1049;   
+    background: url(/images/common/white-angle-left.png) no-repeat center rgba(0, 0, 0, 0.8);
+    background-size: 30px;         	
+}
+.modal button.previous:hover{
+	opacity: 1;
+}
 
 /** ------------------------------------------------- */
 /** Magnific Popup                                    */
