@@ -124,9 +124,10 @@
 				});		
 				
 				$('button[data-action=search]').click(function(e){
-					console.log("company:" + ( $("#perms-company-list").data("kendoDropDownList").value() > 0 ) );
-					console.log("site:" + ( websites.value() > 0));
-					
+					var companyList = $("#perms-company-list").data("kendoDropDownList");
+					if( websites.value() > 0) {
+						createPermissionListView(30, websites.value(), getSelectedPermissionGroup);
+					}
 				});								
 			}				
 		
