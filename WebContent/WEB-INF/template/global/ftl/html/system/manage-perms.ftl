@@ -63,7 +63,7 @@
 		function createSelectBox(){
 		
 			if( !$("#perms-company-list").data("kendoDropDownList") ){
-						var companies = $("#perms-company-list").kendoDropDownList({
+				var companies = $("#perms-company-list").kendoDropDownList({
 							optionLabel: "회사를 선택하세요...",
 							dataTextField: "displayName",
 							dataValueField: "companyId",
@@ -81,10 +81,11 @@
 									model : common.ui.data.Company
 								}
 							}
-						});	
+				});	
 			}
 			if( !$("#perms-site-list").data("kendoDropDownList") ){
-						var websites = $("#perms-site-list").kendoDropDownList({
+			
+				var websites = $("#perms-site-list").kendoDropDownList({
 							autoBind: false,
 							cascadeFrom: "perms-company-list",
 							optionLabel: "웹 사이트를 선택하세요.",
@@ -106,24 +107,10 @@
 							},
 							change:function(){
 								if( this.value() > 0 ){
-									common.ui.admin.permissions.group
-									common.ui.admin.permissions.list({
-										objectType : 30 ,
-										objectId : this.value(),
-										perms: getSelectedPermissionGroup(),
-										success:function(data){
-											var renderTo = $('#perms-30-listview');
-											var template = kendo.template( $("#perms-30-listview-template").html() );
-											var data = $.extend( data , {
-												ADDITIVE_MODE : isAdditivePermissionMode(), 
-												PERM_GROUP_DEF:getSelectedPermissionGroup()  
-											} );
-											renderTo.html( template(data) );
-										}
-									});
+									//createPermissionListView(30, this.value(), getSelectedPermissionGroup);
 								}
 							}						
-						}).data("kendoDropDownList");		
+				}).data("kendoDropDownList");		
 		
 				$('#perms-30-listview').on("click","[data-action='update'], [data-action='cancle'], [data-action='create']", function(e){
 					var $this = $(this);	
@@ -134,11 +121,46 @@
 						var $that = $(this);
 						console.log( index + " " + $that.data('name') + " " + $that.is(":checked") );						
 					});						
-				});										
+				});		
+				
+				$('button[data-action=search]').click(function(e){
+					console.log($("#perms-site-list").data("kendoDropDownList").value() );
+					console.log(websites.value());
+					
+				});								
 			}				
 		
 		}
 		
+		function createPermissionListView(objectType, objectId, permissionGroup){
+			common.ui.admin.permissions.list({
+				objectType : objectType ,
+				objectId : objectId,
+				perms: permissionGroup,
+				success:function(data){
+					var renderTo = $('#perms-30-listview');
+					var template = kendo.template( $("#perms-30-listview-template").html() );
+					var data = $.extend( data , {
+						ADDITIVE_MODE : isAdditivePermissionMode(), 
+						PERM_GROUP_DEF: permissionGroup  
+					} );
+					renderTo.html( template(data) );
+				}
+			});			
+		}
+		
+		function getSelectedPermissionGroup(){			
+			var name = $('input[name=perms-group]:checked').val();
+			return common.ui.admin.permissions.group(name);
+		}
+		
+		function isAdditivePermissionMode(){
+			if($("input[name=perms-options]:checked").val() == 1 )
+				return true;
+			else 
+				return false;	
+		} 
+				
 		function createRoleGrid(){
 			var renderTo = $("#security-role-grid");
 			if(! common.ui.exists(renderTo) ){
@@ -186,17 +208,6 @@
 				});	
 			}					
 		}
-		
-		function getSelectedPermissionGroup(){			
-			var name = $('input[name=perms-group]:checked').val();
-			return common.ui.admin.permissions.group(name);
-		}
-		function isAdditivePermissionMode(){
-			if($("input[name=perms-options]:checked").val() == 1 )
-				return true;
-			else 
-				return false;	
-		} 
 		
 		-->
 		</script> 		 
