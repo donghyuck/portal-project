@@ -124,8 +124,8 @@
 				});		
 				
 				$('button[data-action=search]').click(function(e){
-					console.log($("#perms-site-list").data("kendoDropDownList").value() );
-					console.log(websites.value());
+					console.log("company:" + $("#perms-site-list").data("kendoDropDownList").value() );
+					console.log("site:" + websites.value());
 					
 				});								
 			}				
