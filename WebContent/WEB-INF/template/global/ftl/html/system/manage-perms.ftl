@@ -126,7 +126,7 @@
 				$('button[data-action=search]').click(function(e){
 					var companyList = $("#perms-company-list").data("kendoDropDownList");
 					if( websites.value() > 0) {
-						createPermissionListView(30, websites.value(), getSelectedPermissionGroup);
+						createPermissionListView(30, websites.value(), getSelectedPermissionGroup());
 					}
 				});								
 			}				
