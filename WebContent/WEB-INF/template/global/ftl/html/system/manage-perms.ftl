@@ -301,7 +301,7 @@
 						</div>						
 						<div class="form-group" style="margin-bottom: 0;">
 							<div class="col-sm-offset-2 col-sm-10">
-								<button type="button" class="btn btn-primary btn-flat btn-outline">조회</button>
+								<button type="button" class="btn btn-primary btn-flat btn-outline" data-action="search">조회</button>
 							</div>
 						</div>								
 																																
