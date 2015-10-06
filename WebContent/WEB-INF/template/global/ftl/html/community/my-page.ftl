@@ -1088,7 +1088,28 @@
 								</label>
 							</section>
 							<section data-bind="visible:quote">
-								<div class="quote" data-role="editor" data-tools="['bold', 'italic', 'underline', 'formatting', 'cleanFormatting', 'createLink', 'unlink']" data-bind="value:page.bodyContent.bodyText" >
+								<div class="quote" data-role="editor" 
+								data-tools='["bold",
+		                            "italic",
+		                            "underline",
+		                            "strikethrough",
+		                            "justifyLeft",
+		                            "justifyCenter",
+		                            "justifyRight",
+		                            "justifyFull",
+		                            "createLink",
+		                            "unlink",
+		                            "insertImage",
+		                            "createTable",
+		                            "addColumnLeft",
+		                            "addColumnRight",
+		                            "addRowAbove",
+		                            "addRowBelow",
+		                            "deleteRow",
+		                            "deleteColumn",
+		                            "foreColor",
+		                            "backColor"]' 
+								data-bind="value:page.bodyContent.bodyText" >
 								</div>
 							</section>
 							<section data-bind="visible:text">
