@@ -385,21 +385,27 @@
 					<td colspan="#= PERM_GROUP_DEF.length + 2 #" class="text-center text-info">정의된 사용자 권한 없음.</td>
 				</tr>					
 				#}#
-				# for(  var i = 0 ; i < users.length ; i++) {#				
+				# for(  var i = 0 ; i < users.length ; i++) { #				
 				<tr>
 					<td colspan="2">
 					<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= users[i].user #?width=150&amp;height=150" style="margin-right:10px;"> #: users[i].user.username #
 					</td>
-					# for(  var j = 0 ; j < PERM_GROUP_DEF.length ; j++) {#	
+					# for(  var j = 0 ; j < PERM_GROUP_DEF.length ; j++) {
+						var u_id = common.guid(); 
+					#	
 					# if(users[i].perms[PERM_GROUP_DEF[j]]) { #
-					1
-					# } else { #
-					2
-					# } #
 					<td class="text-center">
-						<input name="perms-user-#=i#" type="checkbox" class="k-radio" id="perms-user-#=i#-additive">
-         				<label class="k-checkbox-label" for="perms-user-#=i#-additive">&nbsp;</label>	
+						<input type="checkbox" class="k-checkbox" #if( users[i].perms[PERM_GROUP_DEF[j]].additive ){ #checked="checked" # } # id="#= u_id #"
+							data-name="#= PERM_GROUP_DEF[j] #" data-type="ADDITIVE" data-object-type="users" data-object-id="#= users[i].user.userId #" >
+         				<label class="k-checkbox-label" for="#= u_id #">&nbsp;</label>				
 					</td>
+					# } else { #
+					<td class="text-center">
+						<input type="checkbox" class="k-checkbox" id="#= u_id #"
+							data-name="#= PERM_GROUP_DEF[j] #" data-type="ADDITIVE" data-object-type="users" data-object-id="#= users[i].user.userId #" >
+         				<label class="k-checkbox-label" for="#= u_id #">&nbsp;</label>	
+					</td>
+					# } #
 					#}#
 					<td>
 						<div class="btn-group">
