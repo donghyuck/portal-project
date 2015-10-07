@@ -130,6 +130,9 @@
 					}
 					else if(companyList.value() > 0 && !(websites.value() > 0)) {
 						console.log("company perms.");
+						createPermissionListView(1, companyList.value(), getSelectedPermissionGroup());
+					}else if (!(companyList.value() > 0) && !(websites.value() > 0)){
+						createPermissionListView(14, -1, getSelectedPermissionGroup());
 					}
 				});								
 			}				
