@@ -388,14 +388,14 @@
 				# for(  var i = 0 ; i < users.length ; i++) {#				
 				<tr>
 					<td colspan="2">
-					
-					<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= users[i].user #?width=150&amp;height=150" style="margin-right:10px;"> #: users[i].user.username #'
-					
+					<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= users[i].user #?width=150&amp;height=150" style="margin-right:10px;"> #: users[i].user.username #
 					</td>
+					# for(  var j = 0 ; j < PERM_GROUP_DEF.length ; j++) {#	
 					<td class="text-center">
 						<input name="perms-user-#=i#" type="checkbox" class="k-radio" id="perms-user-#=i#-additive">
          				<label class="k-checkbox-label" for="perms-user-#=i#-additive">&nbsp;</label>	
 					</td>
+					#}#
 					<td>
 						<div class="btn-group">
 							<a href="\\#" class="btn btn-info btn-xs btn-flat btn-outline" data-action="update">저장</a>
