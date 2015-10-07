@@ -287,6 +287,12 @@
 										<span class="lbl">콘텐츠 권한</span>
 									</label>
 								</div> <!-- / .radio -->
+								<div class="radio">
+									<label>
+										<input type="radio" name="perms-group" value="SYSTEM" class="px">
+										<span class="lbl">시스템 권한</span>
+									</label>
+								</div> <!-- / .radio -->								
 							</div> <!-- / .col-sm-10 -->
 						</div>
 						<div class="form-group">
