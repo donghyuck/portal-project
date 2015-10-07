@@ -387,7 +387,11 @@
 				#}#
 				# for(  var i = 0 ; i < users.length ; i++) {#				
 				<tr>
-					<td colspan="2">&nbsp;</td>
+					<td colspan="2">
+					
+					<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= users[i].user #?width=150&amp;height=150" style="margin-right:10px;"> #: users[i].user.username #'
+					
+					</td>
 					<td class="text-center">
 						<input name="perms-user-#=i#" type="checkbox" class="k-radio" id="perms-user-#=i#-additive">
          				<label class="k-checkbox-label" for="perms-user-#=i#-additive">&nbsp;</label>	
