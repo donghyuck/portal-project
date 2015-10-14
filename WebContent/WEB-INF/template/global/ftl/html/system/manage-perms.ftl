@@ -99,6 +99,7 @@
 		}
 		
 		function createSelectBox(){		
+		
 			if( !$("#perms-company-list").data("kendoDropDownList") ){
 				var companies = $("#perms-company-list").kendoDropDownList({
 							optionLabel: "회사를 선택하세요...",
@@ -120,6 +121,7 @@
 							}
 				});	
 			}
+			
 			if( !$("#perms-site-list").data("kendoDropDownList") ){			
 				var websites = $("#perms-site-list").kendoDropDownList({
 							autoBind: false,
@@ -394,10 +396,16 @@
 							</div>
 						</div>								
 											 
-			 <input id="selected-user" style="width: 100%;" />
-			 
-			 <input id="selected-group" style="width: 100%;" />																								
+			 																								
 									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
+			
+								<div class="panel">
+									<div class="panel-body">
+									<input id="selected-user" style="width: 100%;" />			 
+			 						<input id="selected-group" style="width: 100%;" />
+			 						</div>
+			 					</div>
+			
 								</div>								
 							</div><!-- tab contents end -->
 						</div><!-- /.panel -->
