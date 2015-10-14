@@ -66,8 +66,7 @@
                 filter: "contains",
                 minLength: 3,
                 headerTemplate: '<div class="dropdown-header k-widget k-header">' +
-                                '<span>Photo</span>' +
-                                '<span>Contact info</span>' +
+                                '<span>사용자</span>' +
                             '</div>',
                 template: '<div class="user-profile">' +
                 		  '<span class="k-state-default" style="background-image: url(\'/download/profile/#= username #?width=150&amp;height=150\')"></span>' +
@@ -278,7 +277,7 @@
                 box-sizing: border-box;
                 display: inline-block;
                 vertical-align: top;
-                margin: 3px 0px 0px 5px;
+                margin: 4px 0px 0px 5px;
 			}
 
 			.user-profile > span:first-child {
