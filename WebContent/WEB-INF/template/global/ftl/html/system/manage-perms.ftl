@@ -61,7 +61,7 @@
 			
 			
 			$("#selected-user").kendoAutoComplete({
-				placeholder:"ID 또는 메일주소를 입력하세요."
+				placeholder:"ID 또는 메일주소를 입력하세요.",
                 dataTextField: "username",
                 filter: "contains",
                 minLength: 3,
