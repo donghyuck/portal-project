@@ -285,9 +285,9 @@
                 -moz-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
                 -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
                 box-shadow: inset 0 0 30px rgba(0,0,0,.3);
-                margin: 10px;
-                width: 50px;
-                height: 50px;
+                margin: 2px;
+                width: 30px;
+                height: 30px;
                 border-radius: 50%;
                 background-size: "cover";
                 background-repeat: no-repeat;
