@@ -71,7 +71,7 @@
                             '</div>',
                 template: '<div class="user-profile">' +
                 		  '<span class="k-state-default" style="background-image: url(\'/download/profile/#= username #?width=150&amp;height=150\')"></span>' +
-                          '<span class="k-state-default"><h3>#: username #</h3><p>#: email #</p></span>' +
+                          '<span class="k-state-default"><h5>#: username #</h5><p>#: email #</p></span>' +
                           '</div>',
                 dataSource: {
                     serverFiltering: true,
@@ -285,16 +285,16 @@
                 -moz-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
                 -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
                 box-shadow: inset 0 0 30px rgba(0,0,0,.3);
-                margin: 2px;
+                margin: 5px;
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
-                background-size: "cover";
+                background-size: cover;
                 background-repeat: no-repeat;
             }
 
-            .user-profile h3 {
-                font-size: 1.2em;
+            .user-profile h5 {
+                font-size: 1.0em;
                 font-weight: normal;
                 margin: 0 0 1px 0;
                 padding: 0;
