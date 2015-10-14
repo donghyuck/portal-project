@@ -267,7 +267,45 @@
 				min-height: 300px;
 			} 
 			
+			.user-profile {
+				padding-left: 5px;
+                border-left: 0;
+			}
 			
+			.user-profile > span {
+				-webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                display: inline-block;
+                vertical-align: top;
+                margin: 20px 10px 10px 5px;
+			}
+
+			.user-profile > span:first-child {
+                -moz-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+                -webkit-box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+                box-shadow: inset 0 0 30px rgba(0,0,0,.3);
+                margin: 10px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-size: 100%;
+                background-repeat: no-repeat;
+            }
+
+            .user-profile h3 {
+                font-size: 1.2em;
+                font-weight: normal;
+                margin: 0 0 1px 0;
+                padding: 0;
+            }
+
+            .user-profile p {
+                margin: 0;
+                padding: 0;
+                font-size: .8em;
+            }
+                
                 			
 		</style>
 	</head>
