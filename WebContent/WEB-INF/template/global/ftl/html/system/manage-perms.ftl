@@ -57,10 +57,36 @@
 					}	
 				}			
 			});
-			$('#myTab a:first').tab('show');							
+			$('#myTab a:first').tab('show');			
+			
+			
+			$("#selected-user").kendoAutoComplete({
+                dataTextField: "username",
+                filter: "contains",
+                minLength: 3,
+                dataSource: {
+                    serverFiltering: true,
+                    transport: {
+                    	read:{
+                        	type : "post", 
+                            dataType:"json", 
+                            url : '<@spring.url "/secure/mgmt/company/users/find.json?output=json"/>'
+                        }
+                    },
+                    schema: {
+						total: "totalCount",
+						data: "items",
+						model : common.ui.data.Company
+					}
+                }
+             });
+                    				
 		}
 		
 		function createSelectBox(){
+		
+		
+		
 		
 			if( !$("#perms-company-list").data("kendoDropDownList") ){
 				var companies = $("#perms-company-list").kendoDropDownList({
@@ -83,8 +109,7 @@
 							}
 				});	
 			}
-			if( !$("#perms-site-list").data("kendoDropDownList") ){
-			
+			if( !$("#perms-site-list").data("kendoDropDownList") ){			
 				var websites = $("#perms-site-list").kendoDropDownList({
 							autoBind: false,
 							cascadeFrom: "perms-company-list",
@@ -135,8 +160,7 @@
 						createPermissionListView(14, -1, getSelectedPermissionGroup());
 					}
 				});								
-			}				
-		
+			}	
 		}
 		
 		function createPermissionListView(objectType, objectId, permissionGroup){
@@ -447,6 +471,11 @@
 								
 				</tbody>
 			</table>
+			 
+			 <input id="selected-user" style="width: 100%;" />
+			 
+			 <input id="selected-group" style="width: 100%;" />
+			 
 		</script>					
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
