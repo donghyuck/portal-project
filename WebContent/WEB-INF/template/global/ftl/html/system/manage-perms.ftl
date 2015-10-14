@@ -70,7 +70,7 @@
                     	read:{
                         	type : "post", 
                             dataType:"json", 
-                            url : '<@spring.url "/secure/mgmt/company/users/find.json?output=json"/>'
+                            url : '<@spring.url "/secure/data/mgmt/company/users/find.json?output=json"/>'
                         }
                     },
                     schema: {
