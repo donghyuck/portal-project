@@ -61,9 +61,12 @@
 			
 			
 			$("#selected-user").kendoAutoComplete({
+				placeholder:"ID 또는 메일주소를 입력하세요."
                 dataTextField: "username",
                 filter: "contains",
                 minLength: 3,
+                template: '<span class="k-state-default" style="background-image: url(\'/download/profile/#= username #?width=150&amp;height=150\')"></span>' +
+                          '<span class="k-state-default"><h3>#: username #</h3><p>#: email #</p></span>',
                 dataSource: {
                     serverFiltering: true,
                     transport: {
