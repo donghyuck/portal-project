@@ -278,7 +278,7 @@
                 box-sizing: border-box;
                 display: inline-block;
                 vertical-align: top;
-                margin: 20px 10px 10px 5px;
+                margin: 10px 0px 0px 5px;
 			}
 
 			.user-profile > span:first-child {
