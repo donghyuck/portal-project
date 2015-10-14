@@ -65,6 +65,10 @@
                 dataTextField: "username",
                 filter: "contains",
                 minLength: 3,
+                headerTemplate: '<div class="dropdown-header k-widget k-header">' +
+                                '<span>Photo</span>' +
+                                '<span>Contact info</span>' +
+                            '</div>',
                 template: '<span class="k-state-default" style="background-image: url(\'/download/profile/#= username #?width=150&amp;height=150\')"></span>' +
                           '<span class="k-state-default"><h3>#: username #</h3><p>#: email #</p></span>',
                 dataSource: {
