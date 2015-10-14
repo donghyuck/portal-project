@@ -71,7 +71,15 @@
                         	type : "post", 
                             dataType:"json", 
                             url : '<@spring.url "/secure/data/mgmt/company/users/find.json?output=json"/>'
-                        }
+                        },
+                        parameterMap: function (options, operation){
+							if (options) {
+								console.log(kendo.stringify(options));
+								return { companyId: $("#perms-company-list").val(), roleId : options.objectId  };
+							}else{
+								return { companyId: $("#perms-company-list").val() };
+							}
+						}
                     },
                     schema: {
 						total: "totalCount",
