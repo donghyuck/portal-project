@@ -255,8 +255,8 @@
 	<body class="theme-default main-menu-animated">
 		<div id="main-wrapper">
 			<#include "/html/common/common-system-navigation.ftl" >	
-			<div id="content-wrapper">
 				<ul class="breadcrumb breadcrumb-page">
+			<div id="content-wrapper">
 					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_5_1") />
 					<li><a href="#">Home</a></li>
 					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
@@ -337,7 +337,11 @@
 								<button type="button" class="btn btn-primary btn-flat btn-outline" data-action="search">조회</button>
 							</div>
 						</div>								
-																																
+								
+									 
+			 <input id="selected-user" style="width: 100%;" />
+			 
+			 <input id="selected-group" style="width: 100%;" />																										
 									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
 								</div>								
 							</div><!-- tab contents end -->
@@ -467,11 +471,6 @@
 								
 				</tbody>
 			</table>
-			 
-			 <input id="selected-user" style="width: 100%;" />
-			 
-			 <input id="selected-group" style="width: 100%;" />
-			 
 		</script>					
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
