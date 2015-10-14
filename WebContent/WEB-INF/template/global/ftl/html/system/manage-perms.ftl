@@ -289,7 +289,7 @@
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
-                background-size: 100%;
+                background-size: "cover";
                 background-repeat: no-repeat;
             }
 
