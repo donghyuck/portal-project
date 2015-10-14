@@ -73,9 +73,8 @@
                             url : '<@spring.url "/secure/data/mgmt/company/users/find.json?output=json"/>'
                         },
                         parameterMap: function (options, operation){
-							if (options) {
-								console.log(kendo.stringify(options));
-								return { companyId: $("#perms-company-list").val(), roleId : options.objectId  };
+                        	if (common.ui.defined(options.filter)) {
+								return { companyId: $("#perms-company-list").val(), nameOrEmail: options.filter.filters[0].value };
 							}else{
 								return { companyId: $("#perms-company-list").val() };
 							}
