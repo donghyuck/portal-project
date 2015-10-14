@@ -83,11 +83,7 @@
                     				
 		}
 		
-		function createSelectBox(){
-		
-		
-		
-		
+		function createSelectBox(){		
 			if( !$("#perms-company-list").data("kendoDropDownList") ){
 				var companies = $("#perms-company-list").kendoDropDownList({
 							optionLabel: "회사를 선택하세요...",
