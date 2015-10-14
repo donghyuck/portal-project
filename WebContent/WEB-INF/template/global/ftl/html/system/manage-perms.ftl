@@ -278,7 +278,7 @@
                 box-sizing: border-box;
                 display: inline-block;
                 vertical-align: top;
-                margin: 10px 0px 0px 5px;
+                margin: 3px 0px 0px 5px;
 			}
 
 			.user-profile > span:first-child {
@@ -303,7 +303,7 @@
             .user-profile p {
                 margin: 0;
                 padding: 0;
-                font-size: .8em;
+                font-size: .7em;
             }
                 
                 			
