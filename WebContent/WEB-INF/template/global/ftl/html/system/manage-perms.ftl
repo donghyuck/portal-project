@@ -338,6 +338,9 @@
 							<div class="tab-content">
 								<div class="tab-pane p-sm" id="bs-tabdrop-tab1">	
 
+<div class="row">
+<div class="col-sm-6">
+
 						<div class="form-group">
 							<label class="col-sm-2 control-label">회  사</label>
 							<div class="col-sm-10">
@@ -395,16 +398,16 @@
 								<button type="button" class="btn btn-primary btn-flat btn-outline" data-action="search">조회</button>
 							</div>
 						</div>								
-											 
-			 																								
-									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
-			
-								<div class="panel">
-									<div class="panel-body">
+</div>
+<div class="col-sm-6">
+
 									<input id="selected-user" style="width: 100%;" />			 
 			 						<input id="selected-group" style="width: 100%;" />
-			 						</div>
-			 					</div>
+
+</div>
+</div>											 
+			 																								
+									<div id="perms-30-listview" class="p-sm table-responsive"></div>																					
 			
 								</div>								
 							</div><!-- tab contents end -->
