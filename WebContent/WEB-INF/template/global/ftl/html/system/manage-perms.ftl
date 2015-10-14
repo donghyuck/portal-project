@@ -342,20 +342,20 @@
 <div class="col-sm-6">
 
 						<div class="form-group">
-							<label class="col-sm-2 control-label">회  사</label>
-							<div class="col-sm-10">
+							<label class="col-sm-3 control-label">회  사</label>
+							<div class="col-sm-9">
 								<input id="perms-company-list" />
-							</div> <!-- / .col-sm-10 -->
+							</div> <!-- / .col-sm-9 -->
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label">사이트</label>
-							<div class="col-sm-10">
+							<label class="col-sm-3 control-label">사이트</label>
+							<div class="col-sm-9">
 								<input id="perms-site-list" />	
-							</div> <!-- / .col-sm-10 -->
+							</div> <!-- / .col-sm-9 -->
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label">권한 그룹</label>
-							<div class="col-sm-10">
+							<label class="col-sm-3 control-label">권한 그룹</label>
+							<div class="col-sm-9">
 								<div class="radio">
 									<label>
 										<input type="radio" name="perms-group" value="WEB_ADMIN" class="px" checked="">
@@ -374,11 +374,11 @@
 										<span class="lbl">시스템 권한</span>
 									</label>
 								</div> <!-- / .radio -->								
-							</div> <!-- / .col-sm-10 -->
+							</div> <!-- / .col-sm-9 -->
 						</div>
 						<div class="form-group">
-							<label class="col-sm-2 control-label">권한 유형</label>
-							<div class="col-sm-10">
+							<label class="col-sm-3 control-label">권한 유형</label>
+							<div class="col-sm-9">
 								<div class="radio">
 									<label>
 										<input type="radio" name="perms-options" value="1" class="px" checked="">
@@ -391,18 +391,28 @@
 										<span class="lbl">NEGATIVE</span>
 									</label>
 								</div> <!-- / .radio -->
-							</div> <!-- / .col-sm-10 -->
+							</div> <!-- / .col-sm-9 -->
 						</div>						
 						<div class="form-group" style="margin-bottom: 0;">
-							<div class="col-sm-offset-2 col-sm-10">
+							<div class="col-sm-offset-3 col-sm-9">
 								<button type="button" class="btn btn-primary btn-flat btn-outline" data-action="search">조회</button>
 							</div>
 						</div>								
 </div>
 <div class="col-sm-6">
-
-									<input id="selected-user" style="width: 100%;" />			 
-			 						<input id="selected-group" style="width: 100%;" />
+						<div class="form-group">
+							<label class="col-sm-3 control-label">사용자</label>
+							<div class="col-sm-9">
+								<input id="selected-user" style="width: 100%;" />
+							</div> <!-- / .col-sm-9 -->
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">그 룹</label>
+							<div class="col-sm-9">
+								<input id="selected-group" style="width: 100%;" />
+							</div> <!-- / .col-sm-9 -->
+						</div>												 
+			 						
 
 </div>
 </div>											 
