@@ -570,7 +570,7 @@
 			return;
 		}	
 		options = options || {},
-		var template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
+		var template = options.template || kendo.template("/download/streams/photo/#= externalId#");
 		
 		if(!defined($.backstretch)) {
 			dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
