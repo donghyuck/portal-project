@@ -567,11 +567,11 @@
 	} 
 	
 	function wallpaper (options){		
-		if(!defined($.backstretch)) {
 			return;
 		}	
 		options = options || {},
 		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
+		if(!defined($.backstretch)) {
 		dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
 			pageSize: 15,
 			schema: {
@@ -962,6 +962,17 @@
 		handleAjaxError(e.xhr);
 	}
 
+	function enableBootstrapModalStack() {
+		
+		$(document).on('show.bs.modal', '.modal', function () {
+		    var zIndex = 1040 + (10 * $('.modal:visible').length);
+		    $(this).css('z-index', zIndex);
+		    setTimeout(function() {
+		        $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+		    }, 0);
+		});
+		
+	}
 	
 	function enableStackingBootstrapModal(renderTo, handlers){		
 		renderTo.on('hidden.bs.modal', function( event ) {
@@ -1029,7 +1040,8 @@
 		data : common.ui.data || {},
 		notification : common.ui.notification || notification,
 		bootstrap : {
-			enableStackingModal: enableStackingBootstrapModal
+			enableStackingModal: enableStackingBootstrapModal,
+			enableModalStack:enableBootstrapModalStack
 		},
 		connect : common.ui.connect || {}
 	});
