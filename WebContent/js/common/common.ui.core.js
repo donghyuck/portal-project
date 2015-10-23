@@ -570,30 +570,32 @@
 			return;
 		}	
 		options = options || {},
-		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
+		var template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
+		
 		if(!defined($.backstretch)) {
-		dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
-			pageSize: 15,
-			schema: {
-				total: "totalCount",
-				data: "photos"
-			},
-			change : function(e){
-				var view = this.view(),
-				urls = [];				
-				if ( options.slideshow ){
-					each(view, function(idx, photo){
-						urls.push(template(photo));
-					});	
-				}else{
-					urls.push(template(view[random(0, view.length)]));
+			dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
+				pageSize: 15,
+				schema: {
+					total: "totalCount",
+					data: "photos"
+				},
+				change : function(e){
+					var view = this.view(),
+					urls = [];				
+					if ( options.slideshow ){
+						each(view, function(idx, photo){
+							urls.push(template(photo));
+						});	
+					}else{
+						urls.push(template(view[random(0, view.length)]));
+					}
+					$.backstretch(
+						urls,	
+						{duration: 6000, fade: 750}	
+					);
 				}
-				$.backstretch(
-					urls,	
-					{duration: 6000, fade: 750}	
-				);
-			}
-		}).read();			
+			}).read();
+		}
 	}	
 	
 	var DEFAULT_LIGHTBOX_OPTIONS = {
