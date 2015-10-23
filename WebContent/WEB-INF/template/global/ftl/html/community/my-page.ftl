@@ -68,6 +68,7 @@
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
 				//$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");		
+				common.ui.bootstrap.enableModalStack();
 				createMyPageListView();	
 				createPageCompose();
 				// END SCRIPT 				
@@ -532,14 +533,17 @@
 						common.ui.data.page.properties.datasource(observable.page)
 					);
 				});
-				
+	
+	
+
+				/**
 				common.ui.bootstrap.enableStackingModal(renderTo, {'shown.bs.modal': function(e){			
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher && switcher.isOpen){
 						switcher.close();
 					}
 				} } );		
-				
+				*/
 				createEditor( "my-page" , editorTo, { 
 					modal : false , 
 					appendTo: $("#my-page-post-editor-code-body"), 
