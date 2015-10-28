@@ -315,27 +315,26 @@
 				</div><!-- / .page-header -->		
 				</section>
 				<section class="left">
-						<div class="panel no-border">
-							<div class="panel-heading">
-								<span class="panel-title">템플릿</span>
-								<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
-									<li>
-										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
-									</li>
-									<li>
-										<a href="#custom-template-tree-view" role="tab" data-toggle="tab">커스텀</a>
-									</li>
-								</ul>			
-							</div> <!-- / .panel-heading -->
-							<div class="panel-body padding-sm bg-gray ">
+					<div class="panel no-border">
+						<div class="panel-heading">
+							<span class="panel-title">템플릿</span>
+							<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
+								<li>
+									<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
+								</li>
+								<li>
+									<a href="#custom-template-tree-view" role="tab" data-toggle="tab">커스텀</a>
+								</li>
+							</ul>			
+						</div> <!-- / .panel-heading -->
+					<div class="panel-body padding-sm bg-gray ">
 						<div class="tab-content">
 							<div class="tab-pane fade" id="template-tree-view"></div>
 							<div class="tab-pane fade" id="custom-template-tree-view"></div>
 						</div>	
-							</div>
-						</div>				
-					</section>
-					<section class="right">					
+					</div>		
+				</section>
+				<section class="right">					
 						<div id="template-details" class="panel no-border" style="display:none;">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
@@ -353,11 +352,9 @@
 							<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>					
-					</section>
+				</section>
 				
 			</div> <!-- / #content-wrapper -->
-			<div id="main-menu-bg">
-			</div>
 		</div> <!-- / #main-wrapper -->
 		
 		<script type="text/x-kendo-template" id="file-copy-modal-template">
