@@ -295,7 +295,7 @@
 			</div>
 				<div style="height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;">
 
-						<div class="panel no-padding">
+						<div class="panel no-border">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-code"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
