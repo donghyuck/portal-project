@@ -364,7 +364,7 @@
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
 						</div>	
-						<div id="sql-details" class="panel colourable" style="display:none;">
+						<div id="sql-details" class="panel no-border" style="display:none;">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 									<div class="panel-heading-controls">
