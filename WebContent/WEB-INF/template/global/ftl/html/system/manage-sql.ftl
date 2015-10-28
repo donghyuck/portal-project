@@ -30,6 +30,7 @@
 			'<@spring.url "/js/ace/ace.js" />'			
 			],
 			complete: function() {
+			
 				var currentUser = new common.ui.data.User();
 				var targetCompany = new common.ui.data.Company();	
 				common.ui.admin.setup({					 
@@ -41,12 +42,11 @@
 					}
 				});	
 				
-				
+				/*
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
 						case "#database-table-tree-view" :
-							//createDatabaseTablePanel($(show_bs_tab.attr('href')));
 							break;
 						case  '#sql-tree-view' :
 							createSqlFileTreePanel($(show_bs_tab.attr('href')));
@@ -54,7 +54,8 @@
 					}	
 				});
 				
-				$('#database-details-tabs a:first').tab('show');		
+				$('#database-details-tabs a:first').tab('show');
+				*/		
 				// END SCRIPT
 			}
 		}]);		
