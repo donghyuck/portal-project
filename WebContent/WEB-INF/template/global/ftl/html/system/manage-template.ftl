@@ -281,37 +281,18 @@
 			min-height:600px;
 		}
 		
-		.list-and-detail{
-			margin: -18px -18px 18px -18px;
-		
-		}
-		.list-and-detail .list-and-detail-nav {
-			border-color: #e2e2e2;
-			background: #f6f6f6;
-			border: 0 solid;
+		#content-wrapper section.header {
+			padding:64px 18px 0 18px;
 		}
 		
-		@media (min-width: 992px) {
-			.list-and-detail .list-and-detail-nav {
-				width: 400px;
-				border-bottom: 0;
-				/*position: absolute;*/
-				height: auto;
-				min-height: 100%;
-				border-right-width: 1px;		
-				border-color: #e2e2e2;
-				float: left;
-			}
-
-			.list-and-detail .list-and-detail-contanier {
-				margin-left: 400px;
-				min-height: 400px;
-			}
+		#content-wrapper section.left {
+			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;
 		}
 		
-		
-
-		
+		#content-wrapper section.right {
+			margin-left:400px; min-height:400px;
+		}
+				
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
