@@ -298,7 +298,8 @@
 	<body class="theme-default main-menu-animated">
 		<div id="main-wrapper">
 			<#include "/html/common/common-system-navigation.ftl" >	
-			<div id="content-wrapper">
+			<div id="content-wrapper" class="no-padding">
+				<section class="header">
 				<ul class="breadcrumb breadcrumb-page">
 					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_3_2") />
 					<li><a href="#">Home</a></li>
@@ -307,7 +308,8 @@
 				</ul>			
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
-				</div><!-- / .page-header -->		
+				</div><!-- / .page-header -->	
+				</section>	
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav p-xs">
 						<div class="panel colourable">
