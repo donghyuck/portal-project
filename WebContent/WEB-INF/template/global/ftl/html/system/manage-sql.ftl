@@ -251,6 +251,18 @@
 			min-height:600px;
 		}
 		
+		#content-wrapper section.header {
+			padding:64px 18px 0 18px;
+		}
+		
+		#content-wrapper .content-left {
+		
+		}
+		
+		#content-wrapper .content-right {
+		
+		}
+		
 		.list-and-detail{
 			margin: -18px -18px 18px -18px;
 		
@@ -260,29 +272,13 @@
 			background: #f6f6f6;
 			border: 0 solid;
 		}
-		
-		@media (min-width: 992px) {
-			.list-and-detail .list-and-detail-nav {
-				width: 400px;
-				border-bottom: 0;
-				/*position: absolute;*/
-				height: auto;
-				border-right-width: 1px;		
-				border-color: #e2e2e2;
-				float: left;
-			}
-
-			.list-and-detail .list-and-detail-contanier {
-				margin-left: 400px;
-			}
-		}		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
 		<div id="main-wrapper">
 			<#include "/html/common/common-system-navigation.ftl" >
 			<div id="content-wrapper" class="no-padding">
-			<div style="padding:64px 18px 0 18px;">
+			<section class="header">
 				<ul class="breadcrumb breadcrumb-page">
 					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_3_1") />
 					<li><a href="#">Home</a></li>
@@ -292,7 +288,7 @@
 				<div class="page-header bg-dark-gray no-margin-b" style="no-margin-bo">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-			</div>
+			</section>
 				<div style="height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;">
 
 						<div class="panel no-border">
@@ -348,6 +344,7 @@
 				</div>
 									
 				<div style="margin-left:400px; min-height:400px;">
+				
 						<div id="database-table-details" class="panel panel-default no-border" data-bind="visible:visible" style="display:none;">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
