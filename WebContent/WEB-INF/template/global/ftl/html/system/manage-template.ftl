@@ -279,31 +279,45 @@
 		
 		.k-treeview {
 			min-height:600px;
-		}		
-		
-		#content-wrapper section.header {
-			padding:64px 18px 0 18px;
 		}
 		
-		#content-wrapper section.left {
-			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;
-		}
+		.list-and-detail{
+			margin: -18px -18px 18px -18px;
 		
-		#content-wrapper section.right {
-			margin-left:400px; min-height:400px;
+		}
+		.list-and-detail .list-and-detail-nav {
+			border-color: #e2e2e2;
+			background: #f6f6f6;
+			border: 0 solid;
 		}
 		
 		@media (min-width: 992px) {
+			.list-and-detail .list-and-detail-nav {
+				width: 400px;
+				border-bottom: 0;
+				/*position: absolute;*/
+				height: auto;
+				min-height: 100%;
+				border-right-width: 1px;		
+				border-color: #e2e2e2;
+				float: left;
+			}
 
+			.list-and-detail .list-and-detail-contanier {
+				margin-left: 400px;
+				min-height: 400px;
+			}
 		}
-				
+		
+		
+
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
 		<div id="main-wrapper">
 			<#include "/html/common/common-system-navigation.ftl" >	
 			<div id="content-wrapper">
-				<section class="header">
 				<ul class="breadcrumb breadcrumb-page">
 					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_3_2") />
 					<li><a href="#">Home</a></li>
@@ -313,29 +327,30 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->		
-				</section>
-				<section class="left">
-					<div class="panel no-border">
-						<div class="panel-heading">
-							<span class="panel-title">템플릿</span>
-							<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
-								<li>
-									<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
-								</li>
-								<li>
-									<a href="#custom-template-tree-view" role="tab" data-toggle="tab">커스텀</a>
-								</li>
-							</ul>			
-						</div> <!-- / .panel-heading -->
-					<div class="panel-body padding-sm bg-gray ">
+				<div class="list-and-detail">
+					<div class="list-and-detail-nav p-xs">
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title">템플릿</span>
+								<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
+									<li>
+										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
+									</li>
+									<li>
+										<a href="#custom-template-tree-view" role="tab" data-toggle="tab">커스텀</a>
+									</li>
+								</ul>			
+							</div> <!-- / .panel-heading -->
+							<div class="panel-body padding-sm bg-gray ">
 						<div class="tab-content">
 							<div class="tab-pane fade" id="template-tree-view"></div>
 							<div class="tab-pane fade" id="custom-template-tree-view"></div>
 						</div>	
-					</div>		
-				</section>
-				<section class="right">					
-						<div id="template-details" class="panel no-border" style="display:none;">
+							</div>
+						</div>				
+					</div>
+					<div class="list-and-detail-contanier p-xs">					
+						<div id="template-details" class="panel colourable" style="display:none;">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
@@ -352,9 +367,11 @@
 							<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>					
-				</section>
-				
+					</div>
+				</div>						
 			</div> <!-- / #content-wrapper -->
+			<div id="main-menu-bg">
+			</div>
 		</div> <!-- / #main-wrapper -->
 		
 		<script type="text/x-kendo-template" id="file-copy-modal-template">
