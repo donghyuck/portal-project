@@ -293,6 +293,17 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
+				<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+					
+					</div>
+					<div class="col-sm-8">
+					
+					
+					</div>
+				</div>
+				</div>
 
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
