@@ -171,7 +171,7 @@
 						},
 						error: common.ui.handleAjaxError					
 					},
-					filter :{ field:"name", operator:"startswith", value:"."},
+					filter :{ field:"name", operator:"neq", value:".svn"},
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
 					change: function(e) {
