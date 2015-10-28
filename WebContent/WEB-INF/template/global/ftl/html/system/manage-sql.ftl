@@ -255,12 +255,12 @@
 			padding:64px 18px 0 18px;
 		}
 		
-		#content-wrapper .content-left {
-		
+		#content-wrapper section.left {
+			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;
 		}
 		
-		#content-wrapper .content-right {
-		
+		#content-wrapper section.right {
+			margin-left:400px; min-height:400px;
 		}
 		
 		.list-and-detail{
@@ -289,7 +289,7 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 			</section>
-				<div style="height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;">
+				<section class="left">
 
 						<div class="panel no-border">
 							<div class="panel-heading">
@@ -341,9 +341,9 @@
 							<div class="panel-footer no-padding-vr"></div>	
 						</div>	
 
-				</div>
+				</section>
 									
-				<div style="margin-left:400px; min-height:400px;">
+				<section class="right">
 				
 						<div id="database-table-details" class="panel panel-default no-border" data-bind="visible:visible" style="display:none;">
 							<div class="panel-heading">
@@ -377,7 +377,7 @@
 							<div id="xmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>	
-				</div>
+				</section>
 
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
