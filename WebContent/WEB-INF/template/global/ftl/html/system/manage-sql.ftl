@@ -295,10 +295,10 @@
 				
 				<div class="container">
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-sm-4" style="height:100%; border: solid 1px #e2e2e2;">
 					
 					</div>
-					<div class="col-sm-8">
+					<div class="col-sm-8" style="height:100%;">
 					
 					
 					</div>
