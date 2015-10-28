@@ -348,7 +348,7 @@
 				</div>
 									
 				<div style="margin-left:400px; min-height:400px;">
-						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible" style="display:none;">
+						<div id="database-table-details" class="panel panel-default no-border" data-bind="visible:visible" style="display:none;">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
 								<div class="panel-heading-controls">
