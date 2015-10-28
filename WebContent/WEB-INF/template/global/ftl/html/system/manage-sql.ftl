@@ -171,7 +171,7 @@
 						},
 						error: common.ui.handleAjaxError					
 					},
-					filter :{ field:"name", operator:"neq", value:".svn"},
+					filter :{ field:"name", operator:"eq", value:".svn"},
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
 					change: function(e) {
@@ -338,8 +338,7 @@
 								</div><!-- ./tab-pane -->
 								<div class="tab-pane fade panel-body padding-sm" id="sql-tree-view">
 								</div><!-- ./tab-pane -->
-							</div><!-- /.tab-content -->						
-							<div class="panel-footer no-padding-vr"></div>	
+							</div><!-- /.tab-content -->
 						</div>	
 
 				</section>
