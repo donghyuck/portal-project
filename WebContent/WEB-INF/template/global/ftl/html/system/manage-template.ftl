@@ -310,9 +310,8 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				</section>	
-				<div class="list-and-detail">
-					<div class="list-and-detail-nav p-xs">
-						<div class="panel colourable">
+				<section class="left">
+						<div class="panel no-border">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
 								<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
@@ -325,15 +324,15 @@
 								</ul>			
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body padding-sm bg-gray ">
-						<div class="tab-content">
-							<div class="tab-pane fade" id="template-tree-view"></div>
-							<div class="tab-pane fade" id="custom-template-tree-view"></div>
-						</div>	
+								<div class="tab-content">
+									<div class="tab-pane fade" id="template-tree-view"></div>
+									<div class="tab-pane fade" id="custom-template-tree-view"></div>
+								</div>	
 							</div>
 						</div>				
-					</div>
-					<div class="list-and-detail-contanier p-xs">					
-						<div id="template-details" class="panel colourable" style="display:none;">
+				</section>	
+				<section class="right">				
+						<div id="template-details" class="panel no-border" style="display:none;">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
@@ -348,10 +347,8 @@
 								</div>									
 							</div>
 							<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
-							<div class="panel-footer no-padding-vr"></div>
-						</div>					
-					</div>
-				</div>						
+						</div>	
+				</section>						
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
