@@ -292,17 +292,13 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-				
-				<div class="container">
-				<div class="row">
-					<div class="col-sm-4" style="height:100%; border: solid 1px #e2e2e2;">
-					
-					</div>
-					<div class="col-sm-8" style="height:100%;">
-					
-					
-					</div>
+
+				<div style="height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;">
+					fdsaf
 				</div>
+									
+				<div style="margin-left:400px; min-height:400px;">
+				fdsafsad
 				</div>
 
 			</div> <!-- / #content-wrapper -->
