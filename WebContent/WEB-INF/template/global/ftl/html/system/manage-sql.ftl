@@ -282,7 +282,7 @@
 		<div id="main-wrapper">
 			<#include "/html/common/common-system-navigation.ftl" >
 			<div id="content-wrapper" class="no-padding">
-			<div style="padding:64px 18px 18px;">
+			<div style="padding:64px 18px 0 18px;">
 				<ul class="breadcrumb breadcrumb-page">
 					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_3_1") />
 					<li><a href="#">Home</a></li>
@@ -295,7 +295,7 @@
 			</div>
 				<div style="height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;">
 
-						<div class="panel colourable">
+						<div class="panel no-padding">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-code"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
