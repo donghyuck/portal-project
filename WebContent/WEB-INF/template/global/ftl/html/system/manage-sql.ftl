@@ -259,7 +259,7 @@
 		
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
-		    background-color: #ccc;
+		    background-color: #f6f6f6;
 		    min-height: 100%;
 		    height: auto;
 		    position: relative;
