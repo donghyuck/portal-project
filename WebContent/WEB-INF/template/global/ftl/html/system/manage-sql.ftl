@@ -290,10 +290,10 @@
 					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
 					<li class="active"><a href="#">${selectedMenu.title}</a></li>
 				</ul>			
-				<div class="page-header bg-dark-gray no-margin-b">					
+				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-				<div class="layout">
+				<section class="layout">
 				<section class="left">
 						<div class="panel">
 							<div class="panel-heading">
@@ -381,7 +381,7 @@
 							<div class="panel-footer no-padding-vr"></div>
 						</div>	
 				</section>
-				</div>
+				</section>
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
