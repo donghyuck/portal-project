@@ -392,14 +392,7 @@
 						</div>						
 					</section>	
 					<section class="right">
-					
-					</section>	
-				</section>	
-				<div class="list-and-detail">
-					<div class="list-and-detail-nav p-xs">						
-				
-					</div>
-					<div class="list-and-detail-contanier p-xs">					
+
 						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible" style="display:none;">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
@@ -416,6 +409,7 @@
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
 						</div>	
+						
 						<div id="sql-details" class="panel panel-transparent" style="display:none;">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
@@ -431,7 +425,16 @@
 							</div>
 							<div id="xmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 							<div class="panel-footer no-padding-vr"></div>
-						</div>						
+						</div>
+					
+					</section>	
+				</section>	
+				<div class="list-and-detail">
+					<div class="list-and-detail-nav p-xs">						
+				
+					</div>
+					<div class="list-and-detail-contanier p-xs">					
+						
 					
 					</div>
 				</div>	
