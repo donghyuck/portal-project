@@ -316,31 +316,33 @@
 			min-height:500px;
 		}	
 		
-		.list-and-detail{
-			margin: -18px -18px 18px -18px;
-		
+		#content-wrapper section.layout {
+		    border: 1px solid #e2e2e2;
+		    background-color: #f6f6f6;		 
+		    min-height: 662px;
+		    height:100%;
+		    width:100%;
+		    position: relative;
+		    border-radius: 4px;
 		}
-		.list-and-detail .list-and-detail-nav {
-			border-color: #e2e2e2;
-			background: #f6f6f6;
-			border: 0 solid;
-		}
 		
-		@media (min-width: 992px) {
-			.list-and-detail .list-and-detail-nav {
-				width: 400px;
-				border-bottom: 0;
-				/*position: absolute;*/
-				height: auto;
-				border-right-width: 1px;		
-				border-color: #e2e2e2;
-				float: left;
-			}
-
-			.list-and-detail .list-and-detail-contanier {
-				margin-left: 400px;
-			}
-		}		
+		#content-wrapper section.left {
+			height:100%;
+			float: left;
+			border-right: solid 1px #e2e2e2;
+			position: relative;
+			width:400px;
+		}
+		#content-wrapper section.right {
+			/*margin-left:400px; */
+			height:100%;
+			overflow:hidden;
+			position:relative;
+		}
+		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
+			border-width:0;
+			margin-bottom:0px;
+    	}		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -355,10 +357,11 @@
 				</ul>			
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
-				</div><!-- / .page-header -->	
-				<div class="list-and-detail">
-					<div class="list-and-detail-nav p-xs">						
-						<div class="panel colourable">
+				</div><!-- / .page-header -->
+					
+				<section class="layout">
+					<section class="left">
+						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
@@ -387,9 +390,16 @@
 									대상 소스 : User<br>									
 									
 								</div><!-- ./tab-pane -->								
-							</div><!-- /.tab-content -->						
-							<div class="panel-footer no-padding-vr"></div>	
-						</div>					
+							</div><!-- /.tab-content -->
+						</div>						
+					</section>	
+					<section class="right">
+					
+					</section>	
+				</section>	
+				<div class="list-and-detail">
+					<div class="list-and-detail-nav p-xs">						
+				
 					</div>
 					<div class="list-and-detail-contanier p-xs">					
 						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible" style="display:none;">
