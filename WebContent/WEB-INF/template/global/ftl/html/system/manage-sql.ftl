@@ -159,6 +159,7 @@
 		function createSqlFileTreePanel(renderTo){
 			if( !renderTo.data('kendoTreeView') ){		
 				renderTo.kendoTreeView({
+					height:"100%",
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/sql/list.json?output=json" />', type: 'POST' }
