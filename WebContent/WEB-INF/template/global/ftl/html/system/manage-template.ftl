@@ -284,8 +284,8 @@
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f6f6f6;
-		    min-height: 100%;
-		    height: auto;
+		    min-height: 400px;
+		    height: 100%;
 		    position: relative;
 		    border-radius: 4px;
 		}
