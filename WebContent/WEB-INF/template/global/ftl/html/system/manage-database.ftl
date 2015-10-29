@@ -65,7 +65,7 @@
 					dataSource: {
 						transport: { 
 							read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
-										},						
+						},						
 										batch: false, 
 										schema: {
 											data: "databaseInfos",
@@ -117,7 +117,7 @@
 					resizable: true,
 					editable : false,
 					scrollable: true,
-					height: 600,
+					height: "100%",
 					change: function(e) {
 					}
 				});
@@ -378,17 +378,15 @@
 							</div> <!-- / .panel-heading -->												
 							<div class="tab-content">								
 								<div class="tab-pane fade in" id="database-schema-view">
-									<div id="database-schema-table-grid" class="no-border-hr"></div>
+									<div id="database-schema-table-grid" class="no-border"></div>
 								</div>
 								<div class="tab-pane fade" id="database-datasource-view">
 									<div id="database-datasource-grid" class="no-border"></div>
 								</div><!-- ./tab-pane -->
 								<div class="tab-pane fade" id="imp_and_exp-view">
-									
 									데이터 익스포트  <br>
 									파일 형식 : Excel, Xml<br>
-									대상 소스 : User<br>									
-									
+									대상 소스 : User<br>	
 								</div><!-- ./tab-pane -->								
 							</div><!-- /.tab-content -->
 						</div>						
