@@ -306,7 +306,7 @@
 											<i class="fa fa-certificate bg-icon bg-icon-left"></i>								
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-sm-9 no-padding valign-bottom">		
-											<p class="text-success m-sm"><i class="fa fa-info"></i>  설치된 라이센스 정보입니다.</p>	
+											<p class="text-danger m-sm"><i class="fa fa-info"></i>  설치된 라이센스 정보입니다.</p>	
 													<table class="table table-hover license-details">
 														<tbody>
 															<tr>
@@ -349,7 +349,7 @@
 											<i class="fa fa-server bg-icon bg-icon-left"></i>								
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-9 no-padding valign-bottom">		
-											<p class="text-success m-sm"><i class="fa fa-info"></i>  시스템 환경 정보는 자바 가상머신에서 제공하는 정보를 의미합니다. </p>
+											<p class="text-danger m-sm"><i class="fa fa-info"></i>  시스템 환경 정보는 자바 가상머신에서 제공하는 정보를 의미합니다. </p>
 											<table class="table table-hover system-details">
 													<tbody>
 														<tr>
@@ -422,10 +422,10 @@
 									</div>
 								</div>
 								<div class="tab-pane" id="library-info">
-									<div id="library-info-grid" class="no-border-hr no-border-b"></div>
+									<div id="library-info-grid" class="no-border no-border-b"></div>
 								</div>	
 								<div class="tab-pane" id="database-info">
-									<div id="database-info-grid" class="no-border-hr no-border-b"></div>
+									<div id="database-info-grid" class="no-border no-border-b"></div>
 								</div>		
 							</div><!-- tab contents end -->
 							<div class="panel-footer no-padding-vr"></div>
