@@ -286,7 +286,7 @@
 		}
 		
 		#content-wrapper section.left {
-			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;
+			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:absolute;width:400px;
 		}
 		
 		#content-wrapper section.right {

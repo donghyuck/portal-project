@@ -257,7 +257,7 @@
 		}
 		
 		#content-wrapper section.left {
-			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:fixed;width:400px;
+			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:absolute;width:400px;
 		}
 		
 		#content-wrapper section.right {
@@ -277,7 +277,7 @@
 					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
 					<li class="active"><a href="#">${selectedMenu.title}</a></li>
 				</ul>			
-				<div class="page-header bg-dark-gray no-margin-b" style="no-margin-bo">					
+				<div class="page-header bg-dark-gray no-margin-b">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 			</section>
