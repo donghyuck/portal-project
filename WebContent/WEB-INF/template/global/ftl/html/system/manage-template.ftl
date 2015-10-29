@@ -291,12 +291,13 @@
 		
 		#content-wrapper section.left {
 			height:100%;
+			float: left;
 			border-right: solid 1px #e2e2e2;
-			position:absolute;
+			/*position:absolute;*/
 			width:400px;
 		}
 		#content-wrapper section.right {
-			margin-left:400px; 
+			/*margin-left:400px; */
 			height:100%;
 		}
 		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
