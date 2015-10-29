@@ -407,7 +407,7 @@
 							<div data-role="grid" 
 								data-sortable="true" 
 								data-bind="source: columns" 
-								data-height="600"
+								data-height="580"
 								data-columns="[ {'field':'primaryKey', 'title':'Primary Key'}, {'field':'name', 'title':'Column'}, {'field':'typeName' ,'title':'Type'}, {'field':'size' ,'title':'Size'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
 							<div class="panel-footer">
 								컬럼 : <span data-bind="text: columnCount">0</span> 
