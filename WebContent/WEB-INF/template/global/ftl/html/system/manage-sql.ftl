@@ -250,7 +250,7 @@
 		}	
 		
 		.k-treeview {
-			min-height:400px;
+			min-height:338px;
 		}
 		
 		#content-wrapper section.header {
@@ -279,6 +279,7 @@
 		}
 		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
 			border-width:0;
+			margin-bottom:0px;
 			/*border-bottom-width: 1px!important;*/
     	}
 
