@@ -129,6 +129,7 @@
 		}
 
 		function createTableDetailsPanel(){
+		
 				var renderTo =  $("#database-table-details");				
 				var observable = kendo.observable({
 					name : "",
@@ -136,7 +137,8 @@
 					columnCount : 0,
 					visible : false
 				});
-				common.ui.bind( renderTo, observable );				
+				common.ui.bind( renderTo, observable );	
+							
 				var btnSlideUp = renderTo.find("button.close[data-action='slideUp']");				
 				var btnSlideDown = renderTo.find("button.close[data-action='slideDown']");				
 				btnSlideUp.click(function(e){
@@ -166,7 +168,8 @@
 							} 		
 						}
 					}); 		
-				});		
+				});
+						
 		}
 		
 		function extractDatabaseSchema( renderTo, model ){		
@@ -404,6 +407,7 @@
 							<div data-role="grid" 
 								data-sortable="true" 
 								data-bind="source: columns" 
+								data-height="620"
 								data-columns="[ {'field':'primaryKey', 'title':'Primary Key'}, {'field':'name', 'title':'Column'}, {'field':'typeName' ,'title':'Type'}, {'field':'size' ,'title':'Size'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
 							<div class="panel-footer">
 								컬럼 : <span data-bind="text: columnCount">0</span> 
