@@ -278,44 +278,52 @@
 		}
 		
 		.k-treeview {
-			min-height:600px;
+			min-height:338px;
 		}
-		
-		#content-wrapper section.header {
-			padding:64px 18px 0 18px;
+				
+		#content-wrapper section.layout {
+		    border: 1px solid #e2e2e2;
+		    background-color: #f6f6f6;
+		    min-height: 100%;
+		    height: auto;
+		    position: relative;
+		    border-radius: 4px;
 		}
 		
 		#content-wrapper section.left {
-			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:absolute;width:400px;
+			height:auto;
+			min-height:400px; 
+			/*border-right: solid 1px #e2e2e2; */
+			position:absolute;
+			width:400px;
 		}
-		
 		#content-wrapper section.right {
-			margin-left:400px; min-height:400px;
+			margin-left:401px; 
+			min-height:400px;
 		}
 		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
 			border-width:0;
-			border-bottom-width: 1px!important;
-	    	border-radius: 0;
-    	}				
+			margin-bottom:0px;
+    	}
+    				
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
 		<div id="main-wrapper">
 			<#include "/html/common/common-system-navigation.ftl" >	
-			<div id="content-wrapper" class="no-padding">
-				<section class="header">
+			<div id="content-wrapper">				
 				<ul class="breadcrumb breadcrumb-page">
 					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_3_2") />
 					<li><a href="#">Home</a></li>
 					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
 					<li class="active"><a href="#">${selectedMenu.title}</a></li>
 				</ul>			
-				<div class="page-header bg-dark-gray no-margin-b">					
+				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-				</section>	
+				<section class="layout">	
 				<section class="left">
-						<div class="panel">
+						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
 								<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
@@ -334,7 +342,8 @@
 								</div>	
 							</div>
 						</div>				
-				</section>	
+				</section>
+					
 				<section class="right">				
 						<div id="template-details" class="panel" style="display:none;">
 							<div class="panel-heading">
@@ -352,6 +361,7 @@
 							</div>
 							<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 						</div>	
+				</section>	
 				</section>						
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
