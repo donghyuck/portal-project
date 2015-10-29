@@ -87,7 +87,7 @@
 					}
 				});
 				renderTo.slimScroll({
-                height: '100%',
+                height: 600,
                 railOpacity: 0.9
             	});
 			}
