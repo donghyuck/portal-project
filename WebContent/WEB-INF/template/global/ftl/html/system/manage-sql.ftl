@@ -248,11 +248,11 @@
 		#xmleditor.panel-body{
 			min-height:577px;
 		}	
-		/*
+		
 		.k-treeview {
-			min-height:600px;
+			min-height:400px;
 		}
-		*/
+		
 		#content-wrapper section.header {
 			padding:64px 18px 0 18px;
 		}
