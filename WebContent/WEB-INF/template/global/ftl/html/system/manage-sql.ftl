@@ -252,11 +252,7 @@
 		.k-treeview {
 			min-height:338px;
 		}
-		
-		#content-wrapper section.header {
-			padding:64px 18px 0 18px;
-		}
-		
+				
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f6f6f6;
@@ -269,7 +265,7 @@
 		#content-wrapper section.left {
 			height:auto;
 			min-height:400px; 
-			border-right: solid 1px #e2e2e2; 
+			/*border-right: solid 1px #e2e2e2; */
 			position:absolute;
 			width:400px;
 		}
