@@ -61,9 +61,10 @@
 			$('#template-tabs a:first').tab('show');				
 		}
 		
-		function createPathFinder(){		
-			if( !$("#template-tree-view").data('kendoTreeView') ){					
-				$("#template-tree-view").kendoTreeView({
+		function createPathFinder(){	
+			var renderTo = $("#template-tree-view");	
+			if( !renderTo.data('kendoTreeView') ){					
+				renderTo.kendoTreeView({
 					dataSource: new kendo.data.HierarchicalDataSource({						
 						transport: {
 							read: {
@@ -85,6 +86,10 @@
 						showTemplateDetails(filePlaceHolder);
 					}
 				});
+				renderTo.slimScroll({
+                height: '100%',
+                railOpacity: 0.9
+            	});
 			}
 		}		
 
