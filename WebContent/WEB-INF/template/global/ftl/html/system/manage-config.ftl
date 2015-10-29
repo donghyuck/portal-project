@@ -130,11 +130,11 @@
 			.tab-pane.k-grid{
 				height:500px;
 			}		
-			
+			/*
 			.tab-pane.k-grid .k-selectable tr.k-state-selected{
 				background-color: #4cd964;
 				border-color: #4cd964;
-			}		
+			}*/		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -165,9 +165,9 @@
 								</ul>					
 							</div>
 							<div class="tab-content">
-								<div class="tab-pane" id="config-tab-setup">	
+								<div class="tab-pane no-border" id="config-tab-setup">	
 								</div>	
-								<div class="tab-pane" id="config-tab-application">	
+								<div class="tab-pane no-border" id="config-tab-application">	
 								</div>													
 							</div>
 							
@@ -180,23 +180,6 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
-		<script id="disk-usage-row-template" type="text/x-kendo-template">			
-			<tr>
-				<td>
-					#: absolutePath #
-				</td>
-				<td>#: common.api.bytesToSize(totalSpace - freeSpace) #
-					<small class="text-light-gray">#= kendo.toString(( totalSpace - freeSpace), '\\#\\#,\\#') #</small>
-				</td>
-				<td>#: common.api.bytesToSize(usableSpace) #
-					<small class="text-light-gray">#= kendo.toString(usableSpace, '\\#\\#,\\#') #</small>
-				</td>
-				<td>#: common.api.bytesToSize(totalSpace) #
-					<small class="text-light-gray">#= kendo.toString(totalSpace, '\\#\\#,\\#') #</small>
-				</td>
-			</tr>
-		</script>												
-		
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
