@@ -280,7 +280,7 @@
 					
 				<div class="row">			
 					<div class="col-lg-12">	
-						<div class="panel colourable">
+						<div class="panel panel-default">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="myTab">
