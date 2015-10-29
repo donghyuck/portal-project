@@ -248,17 +248,25 @@
 		#xmleditor.panel-body{
 			min-height:577px;
 		}	
-		
+		/*
 		.k-treeview {
 			min-height:600px;
 		}
-		
+		*/
 		#content-wrapper section.header {
 			padding:64px 18px 0 18px;
 		}
 		
+		#content-wrapper section.layout {
+		    border: 1px solid #ccc;
+		    min-height: 100%;
+		    height: auto;
+		    position: relative;
+		    border-radius: 4px;
+		}
+		
 		#content-wrapper section.left {
-			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:absolute;width:400px;
+			height:auto;min-height:400px; border-right: solid 1px #e2e2e2; position:absolute;width:400px;
 		}
 		#content-wrapper section.right {
 			margin-left:400px; min-height:400px;
@@ -266,7 +274,6 @@
 		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
 			border-width:0;
 			border-bottom-width: 1px!important;
-	    	border-radius: 0;
     	}
 
 		
@@ -275,8 +282,8 @@
 	<body class="theme-default main-menu-animated">
 		<div id="main-wrapper">
 			<#include "/html/common/common-system-navigation.ftl" >
-			<div id="content-wrapper" class="no-padding">
-			<section class="header">
+			<div id="content-wrapper">
+			
 				<ul class="breadcrumb breadcrumb-page">
 					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_3_1") />
 					<li><a href="#">Home</a></li>
@@ -286,9 +293,8 @@
 				<div class="page-header bg-dark-gray no-margin-b">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-			</section>
+				<div class="layout">
 				<section class="left">
-
 						<div class="panel">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-code"></i></span>
@@ -375,7 +381,7 @@
 							<div class="panel-footer no-padding-vr"></div>
 						</div>	
 				</section>
-
+				</div>
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
