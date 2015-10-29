@@ -289,8 +289,9 @@
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f6f6f6;		 
-		    /*height: calc(100% - 300px);*/
+		    min-height:700px;
 		    height:100%;
+		    width:100%;
 		    position: relative;
 		    border-radius: 4px;
 		}
