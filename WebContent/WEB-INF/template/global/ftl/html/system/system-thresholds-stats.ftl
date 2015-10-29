@@ -67,10 +67,10 @@
 					columns: [
 						{ title: "Name", field: "name", width:150,},
 						{ title: "Status", field: "status" , width:150, filterable:false,  template:'<i class="status status-#= status #"></i>'},
-						{ title: "Value", field: "value" , width:150, filterable:false},
+						{ title: "Value", field: "value" , width:150, format: "{0:##,#}", filterable:false},
 						{ title: "Status Change", field: "previousStatus" , width:150, filterable:false, template:'<i class="status status-#= previousStatus #"></i><i class="fa fa-long-arrow-right"></i><i class="status status-#= status #"></i>'},
-						{ title: "updatedDate", field: "updatedDate" , format: "{0:yyyy.MM.dd HH:mm:ss}", filterable:false },
-						{ title: "flipCount", field: "flipCount" , format: "{0:##,#}" , width:150, filterable:false},
+						{ title: "updatedDate", field: "updatedDate" , width:160, format: "{0:yyyy.MM.dd HH:mm:ss}", filterable:false },
+						{ title: "flipCount", field: "flipCount" , format: "{0:##,#}" , width:100, filterable:false},
 						{ title: "Path", field: "description", filterable:false}
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
