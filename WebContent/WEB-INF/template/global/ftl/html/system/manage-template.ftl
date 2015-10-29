@@ -292,14 +292,15 @@
 		
 		#content-wrapper section.left {
 			height:auto;
-			min-height:400px; 
+			min-height:100%; 
 			/*border-right: solid 1px #e2e2e2; */
 			position:absolute;
 			width:400px;
 		}
 		#content-wrapper section.right {
 			margin-left:401px; 
-			min-height:400px;
+			min-height:100%;
+			height:auto;
 		}
 		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
 			border-width:0;
