@@ -284,7 +284,8 @@
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f6f6f6;		 
-		    height: calc(100% - 300px);
+		    /*height: calc(100% - 300px);*/
+		    height:100%;
 		    position: relative;
 		    border-radius: 4px;
 		}
@@ -299,12 +300,14 @@
 		#content-wrapper section.right {
 			/*margin-left:400px; */
 			height:100%;
+			overflow:hidden;
+			position:relative;
 		}
 		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
 			border-width:0;
 			margin-bottom:0px;
     	}
-    				
+    		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
