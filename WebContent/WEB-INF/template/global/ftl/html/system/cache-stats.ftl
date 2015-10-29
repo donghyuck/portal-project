@@ -127,7 +127,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬</span>
 							</div>
-							<div id="cache-stats-grid" class="no-border-hr"></div>
+							<div id="cache-stats-grid" class="no-border"></div>
 						</div>					
 					</div></!-- /.col-sm-12 -->
 				</div><!-- /.row -->	
@@ -135,23 +135,6 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
-		<script id="disk-usage-row-template" type="text/x-kendo-template">			
-			<tr>
-				<td>
-					#: absolutePath #
-				</td>
-				<td>#: common.api.bytesToSize(totalSpace - freeSpace) #
-					<small class="text-light-gray">#= kendo.toString(( totalSpace - freeSpace), '\\#\\#,\\#') #</small>
-				</td>
-				<td>#: common.api.bytesToSize(usableSpace) #
-					<small class="text-light-gray">#= kendo.toString(usableSpace, '\\#\\#,\\#') #</small>
-				</td>
-				<td>#: common.api.bytesToSize(totalSpace) #
-					<small class="text-light-gray">#= kendo.toString(totalSpace, '\\#\\#,\\#') #</small>
-				</td>
-			</tr>
-		</script>												
-		
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>

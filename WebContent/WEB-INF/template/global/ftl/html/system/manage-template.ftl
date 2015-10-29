@@ -278,6 +278,7 @@
 		-->
 		</script> 		 
 		<style>
+		
 		#htmleditor.panel-body{
 			min-height:577px;
 		}
