@@ -292,7 +292,11 @@
 		#content-wrapper section.right {
 			margin-left:400px; min-height:400px;
 		}
-				
+		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
+			border-width:0;
+			border-bottom-width: 1px!important;
+	    	border-radius: 0;
+    	}				
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -311,7 +315,7 @@
 				</div><!-- / .page-header -->	
 				</section>	
 				<section class="left">
-						<div class="panel no-border">
+						<div class="panel">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
 								<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
@@ -332,7 +336,7 @@
 						</div>				
 				</section>	
 				<section class="right">				
-						<div id="template-details" class="panel no-border" style="display:none;">
+						<div id="template-details" class="panel" style="display:none;">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
