@@ -260,7 +260,11 @@
 		#content-wrapper section.left {
 			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:absolute;width:400px;
 		}
-		
+		#content-wrapper section.left > .panel{
+			border-width:0;
+			border-bottom-width: 1px!important;
+	    	border-radius: 0;
+    	}
 		#content-wrapper section.right {
 			margin-left:400px; min-height:400px;
 		}
@@ -284,7 +288,7 @@
 			</section>
 				<section class="left">
 
-						<div class="panel no-border">
+						<div class="panel">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-code"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
