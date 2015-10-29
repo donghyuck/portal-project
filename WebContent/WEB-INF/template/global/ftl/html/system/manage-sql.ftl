@@ -260,7 +260,7 @@
 		#content-wrapper section.left {
 			height:auto;min-height:100%; border-right: solid 1px #e2e2e2; position:absolute;width:400px;
 		}
-		#content-wrapper section.left > .panel{
+		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
 			border-width:0;
 			border-bottom-width: 1px!important;
 	    	border-radius: 0;
@@ -341,7 +341,7 @@
 									
 				<section class="right">
 				
-						<div id="database-table-details" class="panel panel-default no-border" data-bind="visible:visible" style="display:none;">
+						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible" style="display:none;">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
 								<div class="panel-heading-controls">
