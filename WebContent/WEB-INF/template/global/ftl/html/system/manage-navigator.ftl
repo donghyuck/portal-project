@@ -77,13 +77,13 @@
 						{ title: "Menu", field: "name"},
 						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-info  btn-selectable" data-action="update" data-object-id="#=menuId#"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 롤 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 롤 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : false,
 					selectable : "row",
 					scrollable: true,
-					height: 600,
+					height: 618,
 					change: function(e) {
 					},
 					dataBound: function(e) {
@@ -227,10 +227,6 @@
 			border-top: 2px solid #e4e4e4;
 			margin-top: 34px;
 			padding-top: 20px;
-		}
-		
-		#navigator-menu-grid.k-grid {
-			height:600px;
 		}
 		
 		.tab-pane label {
