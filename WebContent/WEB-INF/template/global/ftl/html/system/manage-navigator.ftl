@@ -272,7 +272,7 @@
 					<section class="right">									
 						<div id="navigator-menu-details" class="panel no-border" style="display:none;">						
 							<div class="panel-body">
-								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
+								<ul class="nav nav-tabs nav-tabs-simple">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
 									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
