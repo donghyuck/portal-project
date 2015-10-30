@@ -83,7 +83,7 @@
 					editable : false,
 					selectable : "row",
 					scrollable: true,
-					height: 691,
+					height: 686,
 					change: function(e) {
 					},
 					dataBound: function(e) {
