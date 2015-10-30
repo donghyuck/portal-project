@@ -220,6 +220,10 @@
     		padding:15px;
     	}
     	
+    	.panel-body .tab-content .tab-pane {
+    		min-height:602px;
+    	}
+    	
     			/*
 		
 		.panel-body ul.nav.nav-tabs {
