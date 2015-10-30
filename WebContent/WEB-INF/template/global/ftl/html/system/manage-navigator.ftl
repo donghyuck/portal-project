@@ -83,7 +83,7 @@
 					editable : false,
 					selectable : "row",
 					scrollable: true,
-					height: 618,
+					height: 692,
 					change: function(e) {
 					},
 					dataBound: function(e) {
@@ -288,7 +288,7 @@
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
-										<div class="m-b-sm m-t-md>
+										<div class="m-b-sm m-t-md">
 											<label class="control-label" for="input-menu-name">코드</label>
 											<input type="text" class="form-control input-sm" id="input-menu-name" data-bind="value:menu.name">
 											<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 이름]_[웹사이트 이름]_MENU</p>
