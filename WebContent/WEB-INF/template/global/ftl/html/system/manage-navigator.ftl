@@ -270,14 +270,14 @@
 					</section>
 					
 					<section class="right">									
-						<div id="navigator-menu-details" class="panel colourable" style="display:none;">						
+						<div id="navigator-menu-details" class="panel no-border" style="display:none;">						
 							<div class="panel-body">
 								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
 									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
 								</ul>
-								<div class="tab-content m-t-lg">
+								<div class="tab-content">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
 										<div class="m-b-sm">
 											<label class="control-label" for="input-menu-name">코드</label>
