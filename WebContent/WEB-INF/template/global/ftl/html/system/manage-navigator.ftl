@@ -253,9 +253,10 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-				<div class="list-and-detail">
-					<div class="list-and-detail-nav p-xs">
-						<div class="panel colourable">
+				
+				<section class="layout">
+					<section class="left">
+						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-bars"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="navigator-tabs" role="tablist">
@@ -270,9 +271,9 @@
 								</div><!-- ./tab-pane -->
 							</div><!-- /.tab-content -->
 						</div>		
-					</div>
+					</section>
 					
-					<div class="list-and-detail-contanier p-xs">									
+					<section class="right">									
 						<div id="navigator-menu-details" class="panel colourable" style="display:none;">						
 							<div class="panel-body">
 								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
@@ -321,19 +322,13 @@
 										<p>Howdy, I'm in Section 3.</p>
 									</div>
 								</div>
-
 							</div>
-							<!--
-							
-							-->
 							<div class="panel-footer text-right">
 								<button class="btn btn-flat btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 							</div>
-						</div>
-					
-					</div>
-					
-				</div><!-- / #list-and-detail -->	
+						</div>					
+					</section>					
+				</section><!-- / .layout -->	
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
