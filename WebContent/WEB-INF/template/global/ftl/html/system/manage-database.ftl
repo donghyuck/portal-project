@@ -81,7 +81,7 @@
 									resizable: true,
 									editable : false,
 									scrollable: true,
-									height: 618,
+									height: 621,
 									change: function(e) {
 					}
 				});
@@ -117,7 +117,7 @@
 					resizable: true,
 					editable : false,
 					scrollable: true,
-					height: 618,
+					height: 621,
 					change: function(e) {
 					}
 				});
