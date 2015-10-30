@@ -215,12 +215,12 @@
 			border-width:0;
 			margin-bottom:0px;
     	}
-    		
+    			/*
 		
 		.panel-body ul.nav.nav-tabs {
 			height: 36px;
-			/*right: 20px;
-			position: absolute;*/
+		right: 20px;
+			position: absolute;
 		}
 		
 		.panel-body .tab-content {
@@ -231,7 +231,7 @@
 		
 		.tab-pane label {
 			height:20px;
-		}
+		}*/
 		
 		</style>
 		</#compress>		
