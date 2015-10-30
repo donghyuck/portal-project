@@ -191,7 +191,7 @@
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f6f6f6;		 
-		    min-height: 662px;
+		    min-height: 754px;
 		    height:100%;
 		    width:100%;
 		    position: relative;
