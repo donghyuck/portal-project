@@ -215,6 +215,11 @@
 			border-width:0;
 			margin-bottom:0px;
     	}
+    	
+    	#content-wrapper section.right > .panel>.panel-body{
+    		padding:15px;
+    	}
+    	
     			/*
 		
 		.panel-body ul.nav.nav-tabs {
@@ -279,7 +284,7 @@
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
-										<div class="m-b-sm">
+										<div class="m-b-sm m-t-md>
 											<label class="control-label" for="input-menu-name">코드</label>
 											<input type="text" class="form-control input-sm" id="input-menu-name" data-bind="value:menu.name">
 											<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 이름]_[웹사이트 이름]_MENU</p>
