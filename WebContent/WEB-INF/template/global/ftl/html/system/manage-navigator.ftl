@@ -219,8 +219,8 @@
 		
 		.panel-body ul.nav.nav-tabs {
 			height: 36px;
-			right: 20px;
-			position: absolute;
+			/*right: 20px;
+			position: absolute;*/
 		}
 		
 		.panel-body .tab-content {
