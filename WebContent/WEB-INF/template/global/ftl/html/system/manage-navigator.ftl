@@ -83,7 +83,7 @@
 					editable : false,
 					selectable : "row",
 					scrollable: true,
-					height: 692,
+					height: 712,
 					change: function(e) {
 					},
 					dataBound: function(e) {
@@ -191,7 +191,7 @@
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f6f6f6;		 
-		    min-height: 754px;
+		    min-height: 756px;
 		    height:100%;
 		    width:100%;
 		    position: relative;
