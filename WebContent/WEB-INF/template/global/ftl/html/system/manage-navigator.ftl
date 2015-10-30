@@ -83,7 +83,7 @@
 					editable : false,
 					selectable : "row",
 					scrollable: true,
-					height: 693,
+					height: 691,
 					change: function(e) {
 					},
 					dataBound: function(e) {
@@ -221,7 +221,7 @@
     	}
     	
     	.panel-body .tab-content{
-    		min-height:602px;
+    		min-height:612px;
     	}
     	
     			/*
@@ -286,8 +286,8 @@
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
 									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
 								</ul>
-								<div class="tab-content">
-									<div class="clearfix tab-pane" id="bs-tabdrop-pill1">
+								<div class="clearfix tab-content">
+									<div class=" tab-pane" id="bs-tabdrop-pill1">
 										<div class="m-b-sm m-t-md">
 											<label class="control-label" for="input-menu-name">코드</label>
 											<input type="text" class="form-control input-sm" id="input-menu-name" data-bind="value:menu.name">
