@@ -263,7 +263,7 @@
 							</div> <!-- / .panel-heading -->												
 							<div class="tab-content">
 								<div class="tab-pane fade" id="navigator-menu-view">
-									<div id="navigator-menu-grid" class="no-border-hr"></div>
+									<div id="navigator-menu-grid" class="no-border"></div>
 								</div><!-- ./tab-pane -->
 							</div><!-- /.tab-content -->
 						</div>		
