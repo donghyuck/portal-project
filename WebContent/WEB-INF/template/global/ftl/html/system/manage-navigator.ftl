@@ -287,7 +287,7 @@
 									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
 								</ul>
 								<div class="tab-content">
-									<div class="tab-pane" id="bs-tabdrop-pill1">
+									<div class="clearfix tab-pane" id="bs-tabdrop-pill1">
 										<div class="m-b-sm m-t-md">
 											<label class="control-label" for="input-menu-name">코드</label>
 											<input type="text" class="form-control input-sm" id="input-menu-name" data-bind="value:menu.name">
