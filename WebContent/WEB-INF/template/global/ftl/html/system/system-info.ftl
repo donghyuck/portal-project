@@ -81,7 +81,7 @@
 										{ title: "Group", field: "group" },
 										{ title: "Artifact", field: "artifact" },
 										{ title: "Version", field: "version", width:90 , filterable: false},
-										{ title: "Timestamp", field: "timestamp" , filterable: false },
+										{ title: "Timestamp", field: "timestamp" , format: "{0:yyyy.MM.dd hh:mm}", filterable: false },
 										{ title: "Last Modified", field: "lastModified", format: "{0:yyyy.MM.dd hh:mm}" , filterable: false },
 									],
 									pageable: false,
