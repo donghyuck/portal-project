@@ -40,123 +40,10 @@
 						e.data.copy(targetCompany);
 					}
 				});		
-				
-				//createMemoryGauge();
-				//displayDiskUsage();
 				displaySystemDetails();					
 				// END SCRIPT
 			}
 		}]);
-		
-		function createMemoryGauge(){		
-			var observable =  common.ui.observable({ 
-				visible : false,
-				allocateHeap : 0,
-				availableHeap : 0,
-				maxHeap : 0,
-				usedHeap : 0,
-				freeAllocatedHeap : 0,
-				maxPermGen : 0,
-				availablePermGen : 0,
-				usedPermGen : 0				
-			});				
-			observable.bind("change", function(e){		
-				var sender = e.sender ;				
-				if( e.field === 'usedHeap' ){
-					if( $("#mem-gen-gauge").data("kendoRadialGauge") )
-				 		$("#mem-gen-gauge").data("kendoRadialGauge").value(sender.usedHeap);
-				}else if (e.field === 'usedPermGen'){
-					if( $("#perm-gen-gauge").data("kendoRadialGauge") )
-						$("#perm-gen-gauge").data("kendoRadialGauge").value(sender.usedPermGen);
-				}
-			});									
-			common.ui.bind($(".memory-details"), observable );								
-			setInterval(function(){
-				common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
-					success : function(response){
-						observable.set("allocateHeap", response.allocateHeap.megabytes );
-						observable.set("availableHeap", response.availableHeap.megabytes );
-						observable.set("maxHeap", response.maxHeap.megabytes );
-						observable.set("usedHeap", response.usedHeap.megabytes );
-						observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
-						observable.set("maxPermGen", response.maxPermGen.megabytes );
-						observable.set("availablePermGen", response.availablePermGen.megabytes );
-						observable.set("usedPermGen", response.usedPermGen.megabytes );
-						observable.set("visible", true );		
-						
-						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
-								$("#mem-gen-gauge").kendoRadialGauge({
-									theme: "white",
-									pointer: {
-										value: observable.usedHeap,
-										color: "#ea7001"									
-									},
-									scale: {
-										majorUnit: 100,
-										minorUnit: 10,
-										startAngle: -30,
-	                            		endAngle: 210,
-										max: observable.maxHeap,
-										ranges: [
-											{
-												from:  ( observable.maxHeap -  ( ( observable.maxHeap / 10 ) * 2 ) ) ,
-												to:  ( observable.maxHeap -  observable.maxHeap / 10 ) ,
-												color: "#ff7a00"
-											}, {
-												from: ( observable.maxHeap -  observable.maxHeap / 10 ) ,
-												to: observable.maxHeap,
-												color: "#c20000"
-											}
-										]			
-									}
-								});						
-						}							
-						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
-							$("#perm-gen-gauge").kendoRadialGauge({
-								theme: "white",
-								pointer: {
-									value: observable.usedPermGen,
-									color: "#ea7001"		
-								},
-								scale: {
-									majorUnit: 50,
-									minorUnit: 10,
-									startAngle: -30,
-									endAngle: 210,
-									max: observable.maxPermGen,
-									ranges: [
-										{
-											from:  ( observable.maxPermGen -  ( ( observable.maxPermGen / 10 ) * 2 ) ) ,
-											to:  ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
-											color: "#ff7a00"
-										}, {
-											from: ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
-											to: observable.maxPermGen,
-											color: "#c20000"
-										}
-									]								
-								}
-							});	
-						}		
-					}
-				})
-			}, 6000);						
-		}
-		
-		function displayDiskUsage () {
-			var template = kendo.template( $("#disk-usage-row-template").html() );
-			var dataSource = common.ui.datasource(	'<@spring.url "/secure/data/stage/disk/list.json?output=json"/>', {
-				 change:function(e){
-					if(this.view().length>0)			
-						$("table .disk-usage-table-row").html(kendo.render(template, this.view()))
-				}		
-			}).read();
-			
-			$(".system-details .table-header button" ).click(function(e){
-				dataSource.read();
-			});
-			
-		}		
 				
 		function displaySystemDetails (){				
 			common.ui.ajax('<@spring.url "/secure/data/stage/os/get.json?output=json"/>', {
@@ -195,7 +82,7 @@
 										{ title: "Artifact", field: "artifact" },
 										{ title: "Version", field: "version", width:90 , filterable: false},
 										{ title: "Timestamp", field: "timestamp" , filterable: false },
-										{ title: "Last Modified", field: "lastModified", format: "{0:yyyy.MM.dd HH:mm:ss}" , filterable: false },
+										{ title: "Last Modified", field: "lastModified", format: "{0:yyyy.MM.dd hh:mm}" , filterable: false },
 									],
 									pageable: false,
 									resizable: true,
