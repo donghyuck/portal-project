@@ -69,7 +69,7 @@
 													group: { type: "string", defaultValue: "-" },
 													artifact:{ type:"string", defaultValue: "-"},
 													version: {type: "string", defaultValue: "-"},
-													timestamp: {type: "string", defaultValue: "-"},
+													timestamp: {type: "date"},
 													lastModified : { type:"date"}
 												}										
 											}
