@@ -410,7 +410,7 @@
 				left: 0;
 				min-height:400px;
 			}
-
+/*
 			#company-grid.k-grid .k-selectable tr.k-state-selected{
 				background-color: #4cd964;
 				border-color: #4cd964;
@@ -420,7 +420,7 @@
 				background-color: #5ac8fa;
 				border-color: #34aadc;			
 			}
-			
+*/			
 			.panel .tab-content {
 				padding:5px!important;
 			}
