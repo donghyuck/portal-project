@@ -147,7 +147,17 @@
 			<groupId>net.anotheria</groupId>
 			<artifactId>moskito-web</artifactId>
 			<version>${project.dependency.moskito.version}</version>
-		</dependency>		
+		</dependency>
+		<dependency>
+			<groupId>architecture.community</groupId>
+			<artifactId>architecture-community</artifactId>
+			<version>${project.architecture.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.podosoftware</groupId>
+			<artifactId>competency-assessment</artifactId>
+			<version>0.0.1-BETA</version>
+		</dependency>
 	</dependencies>
 		
 	<dependencyManagement>
