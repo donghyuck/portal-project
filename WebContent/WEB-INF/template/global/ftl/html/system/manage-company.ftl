@@ -75,7 +75,7 @@
 						pageSize: 15,
 						serverPaging: true
 					},
-					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 회사 추가 </a></div>'),
+					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 회사 추가 </a></div>'),
 					columns: [
 						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
 						{ field: "name", title: "KEY", width:100,  filterable: false, sortable: false }, 
@@ -211,7 +211,7 @@
 						dataBound:function(e){
 							//getCompanyDetailsModel().set("groupCount", this.dataSource.total() );							
 						},
-						toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success m-r-xs " data-action="create" data-object-id="0"><span class="btn-label icon fa fa-gift"></span> 디폴트 그룹 자동 생성</button> <a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-plus"></span> 그룹 추가 </a><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>')
+						toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-success m-r-xs " data-action="create" data-object-id="0"><span class="btn-label icon fa fa-gift"></span> 디폴트 그룹 자동 생성</button> <a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-plus"></span> 그룹 추가 </a><button class="btn btn-info btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>')
 				});		
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
@@ -264,7 +264,7 @@
 						},
 						batch: false
 					},
-					toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>'),    
+					toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>'),    
 					filterable: true,
 					sortable: true,
 					scrollable: true,
@@ -337,7 +337,7 @@
 					dataBound:function(e){
 
 					},
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success disabled" data-action="move" data-object-id="0"><span class="btn-label icon fa fa-exchange"></span> 선택 사용자 회사 변경</button></div>')
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-success disabled" data-action="move" data-object-id="0"><span class="btn-label icon fa fa-exchange"></span> 선택 사용자 회사 변경</button></div>')
 				});												
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();
