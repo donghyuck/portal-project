@@ -91,7 +91,7 @@
 						{ command: [{ 
 							name: "edit",
 							className: "btn btn-flat",
-							text: { edit: "변경", update: "저장", cancel: "취소"}
+							text: { edit: "변경"}
 							},
 							], 
 							width: 180  
