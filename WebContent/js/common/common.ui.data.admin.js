@@ -64,13 +64,38 @@
 	    	isolationLevel: {type: "string", editable: false}
 	    }
 	});
-
+	
+	var CodeSet = kendo.data.Model.define( {
+		id: "codeSetId",
+		parentId: "parentCodeSetId",
+	    fields: {
+	    	codeSetId: { type: "number",  defaultValue: -1 },
+	    	parentCodeSetId : { type: "number",  defaultValue: -1 },
+	    	objectType : { type: "number",  defaultValue: -1 },
+	    	objectId : { type: "number",  defaultValue: -1 },
+	    	description:  { type: "string" },
+	    	name : String : { type: "string" },
+	    	enabled : {type: "boolean" }
+	    },
+	    expanded: true;
+	});
+	
 	extend( common.ui.data, {
-		EditableCompany : EditableCompany,			
+		CodeSet : CodeSet,
+		EditableCompany : EditableCompany,
 		stats : {
 			Accumulator: Accumulator,
 			Database : Database			
-		}
+		},
+		admin:{
+			model : {
+				
+			},
+			dataSource : {
+				
+			},
+			
+		}  
 	} );
 	
 })(jQuery);
