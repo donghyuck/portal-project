@@ -69,10 +69,8 @@
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/sql/list.json?output=json" />', type: 'POST' },
 							create: { url:'<@spring.url "/secure/data/mgmt/sql/list.json?output=json" />', type: 'POST', contentType : "application/json" },
-							parameterMap: function (options, operation){			
-								
+							parameterMap: function (options, operation){
 								console.log( common.ui.stringify(options) );
-								
 								if (operation !== "read") {
 									return kendo.stringify(options);
 								} 
