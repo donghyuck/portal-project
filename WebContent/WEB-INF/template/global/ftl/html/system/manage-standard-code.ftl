@@ -77,12 +77,14 @@
 						},
 						error: common.ui.handleAjaxError					
 					},
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-command="creat" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 롤 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 					columns : [
 						{field:'Path', title:"Path"}						
 					],
 					change: function(e) {
 					}
 				});			
+				
 				renderTo.slimScroll({
 	                height: 620,
 	                railOpacity: 0.9
@@ -340,7 +342,7 @@
 				<section class="left">
 				
 				<div class="panel panel-transparent">
-					<div id="codeset-treelist" />
+					<div id="codeset-treelist" class="no-border" />
 				</div>	
 				
 						<div class="panel panel-transparent">
