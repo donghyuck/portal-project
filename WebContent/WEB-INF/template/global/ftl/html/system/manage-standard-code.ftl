@@ -86,8 +86,8 @@
 				});			
 				
 				renderTo.find("button[data-action=create]").click(function(e){
-					common.ui.grid(renderTo).addRow();
-					common.ui.grid(renderTo).select("tr:eq(1)");
+					common.ui.treelist(renderTo).addRow();
+					common.ui.treelist(renderTo).select("tr:eq(1)");
 				});	
 				
 				renderTo.slimScroll({

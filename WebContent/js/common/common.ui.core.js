@@ -225,6 +225,14 @@
 		}		
 		return renderTo.data("kendoListView");
 	}
+
+	function treelist(renderTo, options){
+		options = options || {};		
+		if(!renderTo.data("kendoTreeList")){			
+			 renderTo.kendoTreeList(options);
+		}		
+		return renderTo.data("kendoTreeList");
+	}
 	
 	function pager ( renderTo, options ){		
 		if(!renderTo.data("kendoPager")){		
@@ -1019,6 +1027,7 @@
 		listview : common.ui.listview || listview,
 		grid : common.ui.grid || grid,
 		pager : common.ui.pager || pager,
+		treelist : common.ui.treelist || treelist,
 		thumbnail : common.ui.thumbnail || { expanding : thumbnailExpanding },
 		scroll : common.ui.scroll || {
 			slim : slimScroll, 
