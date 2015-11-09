@@ -63,7 +63,7 @@
 		function createCodeSetTreeList(){
 			var renderTo = $("#codeset-treelist");
 			if( !renderTo.data('kendoTreeList') ){		
-				renderTo.kendoTreeView({
+				renderTo.kendoTreeList({
 					height:"100%",
 					dataSource: {
 						transport: { 
@@ -340,7 +340,7 @@
 				<section class="left">
 				
 				<div class="panel panel-transparent">
-					<div id="#codeset-treelist"/>
+					<div id="codeset-treelist" />
 				</div>	
 				
 						<div class="panel panel-transparent">
