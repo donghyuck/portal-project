@@ -202,6 +202,7 @@
 			<init-param>
 				<param-name>contextConfigLocation</param-name>
 				<param-value>
+					architecture.ee.web.community.spring.config.WebCommunityConfig
 					com.podosoftware.competency.spring.config.WebCompetencyAccessmentConfig
 				</param-value>
 			</init-param>		
