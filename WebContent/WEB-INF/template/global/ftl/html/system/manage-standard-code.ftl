@@ -41,7 +41,7 @@
 						e.data.copy(targetCompany);
 					}
 				});	
-				
+				/*
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
@@ -54,10 +54,75 @@
 				});
 				
 				$('#database-details-tabs a:first').tab('show');
-					
+				*/
+				createCodeSetTreeList();	
 				// END SCRIPT
 			}
 		}]);		
+
+		function createCodeSetTreeList(){
+			var renderTo = $("#codeset-treelist");
+			if( !renderTo.data('kendoTreeList') ){		
+				renderTo.kendoTreeView({
+					height:"100%",
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/sql/list.json?output=json" />', type: 'POST' }
+						},
+						schema: {					
+							model: {
+								id: "path",
+								expanded: "directory"
+							}
+						},
+						error: common.ui.handleAjaxError					
+					},
+					columns : [
+						{field:'Path', title:"Path"}						
+					],
+					change: function(e) {
+					}
+				});			
+				renderTo.slimScroll({
+	                height: 620,
+	                railOpacity: 0.9
+            	});
+			}
+		}
+
+
+		function createSqlFileTreePanel(renderTo){
+			if( !renderTo.data('kendoTreeView') ){		
+				renderTo.kendoTreeView({
+					height:"100%",
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/sql/list.json?output=json" />', type: 'POST' }
+						},
+						schema: {					
+							model: {
+								id: "path",
+								hasChildren: "directory"
+							}
+						},
+						error: common.ui.handleAjaxError					
+					},
+					filter :{ field:"name", operator:"eq", value:".svn"},
+					template: kendo.template($("#treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {
+						var filePlaceHolder = getSelectedSqlFile(renderTo);
+						showSqlFileDetails(filePlaceHolder);
+					}
+				});			
+				renderTo.slimScroll({
+	                height: 620,
+	                railOpacity: 0.9
+            	});
+			}
+			$("#database-table-details").find("button.close[data-action='slideUp']").click();
+		}
+
 
 		function extractDatabaseSchema( renderTo, model ){		
 			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
@@ -156,37 +221,6 @@
 
 		}
 		
-		function createSqlFileTreePanel(renderTo){
-			if( !renderTo.data('kendoTreeView') ){		
-				renderTo.kendoTreeView({
-					height:"100%",
-					dataSource: {
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/sql/list.json?output=json" />', type: 'POST' }
-						},
-						schema: {					
-							model: {
-								id: "path",
-								hasChildren: "directory"
-							}
-						},
-						error: common.ui.handleAjaxError					
-					},
-					filter :{ field:"name", operator:"eq", value:".svn"},
-					template: kendo.template($("#treeview-template").html()),
-					dataTextField: "name",
-					change: function(e) {
-						var filePlaceHolder = getSelectedSqlFile(renderTo);
-						showSqlFileDetails(filePlaceHolder);
-					}
-				});			
-				renderTo.slimScroll({
-	                height: 620,
-	                railOpacity: 0.9
-            	});
-			}
-			$("#database-table-details").find("button.close[data-action='slideUp']").click();
-		}
 
 		function getSelectedSqlFile( renderTo ){			
 			var tree = renderTo.data('kendoTreeView');			
@@ -304,6 +338,11 @@
 				</div><!-- / .page-header -->	
 				<section class="layout">
 				<section class="left">
+				
+				<div class="panel panel-transparent">
+					<div id="#codeset-treelist"/>
+				</div>	
+				
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-code"></i></span>
