@@ -70,10 +70,7 @@
 							read: { url:'<@spring.url "/secure/data/mgmt/sql/list.json?output=json" />', type: 'POST' }
 						},
 						schema: {					
-							model: {
-								id: "path",
-								expanded: "directory"
-							}
+							model: common.ui.data.CodeSet
 						},
 						error: common.ui.handleAjaxError					
 					},
