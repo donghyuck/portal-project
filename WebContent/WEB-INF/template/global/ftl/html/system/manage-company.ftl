@@ -82,8 +82,7 @@
 						{ field: "displayName",   title: "이름",  filterable: true, sortable: true,  width: 150 }, 
 						{ field: "domainName",   title: "도메인",  filterable: true, sortable: false,  width: 100 }, 
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
-						{ command: [
-							{ 
+						{ command:[{ 
 								name: "detail",
 								template : '<a href="\\#" class="btn btn-xs btn-success m-r-xs btn-selectable" data-action="details">상세보기</a>',
 							},{ 
@@ -91,8 +90,8 @@
 								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
 								text: { edit: "변경", update: "저장", cancel: "취소"}
 							}], 
-							title: "&nbsp;", 
-							width: 180  
+							title: "&nbsp;",
+							width: 180
 						}
 					], 		
 					detailTemplate: kendo.template($("#company-details-template").html()),		
