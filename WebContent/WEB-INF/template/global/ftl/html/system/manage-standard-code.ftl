@@ -331,7 +331,7 @@
 			float: left;
 			border-right: solid 1px #e2e2e2;
 			position: relative;
-			width:400px;
+			width:500px;
 		}
 		#content-wrapper section.right {
 			/*margin-left:400px; */
