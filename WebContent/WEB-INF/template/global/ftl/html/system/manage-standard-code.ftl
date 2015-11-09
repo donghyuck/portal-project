@@ -91,7 +91,7 @@
 						{ command: [{ 
 							name: "edit",
 							className: "btn btn-flat",
-							text: "변경"
+							text: "변경",
 							command: [
 								{ name: "update", className: "btn", text: "저장" }
 							]
