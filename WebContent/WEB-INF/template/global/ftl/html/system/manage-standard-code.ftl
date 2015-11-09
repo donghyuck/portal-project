@@ -80,6 +80,7 @@
 						{field:'description', title:"설명"}						
 					],
 					change: function(e) {
+					
 					}
 				});			
 				
