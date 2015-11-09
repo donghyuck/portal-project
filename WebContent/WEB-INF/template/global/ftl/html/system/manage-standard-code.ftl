@@ -90,13 +90,15 @@
 						{field:'description', title:"설명"},
 						{ command: [{ 
 							name: "edit",
-							className: "btn",
+							className: "btn btn-flat",
 							text: "변경"
-							},
-							{ 
-							name: "update",
-							className: "btn",
-							text: "저장"
+							command: [
+								{ 
+								name: "update",
+								className: "btn",
+								text: "저장"
+								}
+							]
 							}
 							], 
 							width: 180  
