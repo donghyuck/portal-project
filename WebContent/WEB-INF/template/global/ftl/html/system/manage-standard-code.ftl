@@ -90,8 +90,10 @@
 						{field:'description', title:"설명"},
 						{ command: [{ 
 							name: "edit",
-							className: "btn"
-							}], 
+							className: "btn",
+							text: "변경"
+							}
+							], 
 							width: 180  
 						}						
 					],
