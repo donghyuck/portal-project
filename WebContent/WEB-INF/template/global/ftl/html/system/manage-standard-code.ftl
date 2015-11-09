@@ -92,6 +92,11 @@
 							name: "edit",
 							className: "btn",
 							text: "변경"
+							},
+							{ 
+							name: "update",
+							className: "btn",
+							text: "저장"
 							}
 							], 
 							width: 180  
