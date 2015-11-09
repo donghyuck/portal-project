@@ -74,7 +74,9 @@
 	    	objectType : { type: "number",  defaultValue: -1 },
 	    	objectId : { type: "number",  defaultValue: -1 },
 	    	description:  { type: "string" },
-	    	name : String : { type: "string" },
+	    	name : String : { type: "string" },	        
+	    	modifiedDate: { type: "date"},
+	        creationDate: { type: "date" },
 	    	enabled : {type: "boolean" }
 	    },
 	    expanded: true;
