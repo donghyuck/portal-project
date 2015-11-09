@@ -93,13 +93,9 @@
 							className: "btn btn-flat",
 							text: "변경"
 							command: [
-								{ 
-								name: "update",
-								className: "btn",
-								text: "저장"
-								}
+								{ name: "update", className: "btn", text: "저장" }
 							]
-							}
+							},
 							], 
 							width: 180  
 						}						
