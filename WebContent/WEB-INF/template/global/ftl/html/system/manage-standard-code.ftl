@@ -89,11 +89,12 @@
 						{field:'name', title:"코드"},
 						{field:'description', title:"설명"},
 						{ command: [{ 
-						name: "edit",
-							className: "btn btn-xs btn-info",
-							template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
-							text: { edit: "변경", update: "저장", cancel: "취소"}
-							}], 
+							name: "edit",
+								className: "btn btn-xs btn-info",
+								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
+								text: { edit: "변경", update: "저장", cancel: "취소"}
+							}
+							], 
 							title: "&nbsp;", 
 							width: 180  
 						}						
