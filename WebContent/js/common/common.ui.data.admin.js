@@ -86,7 +86,7 @@
 	        creationDate: { type: "date" },
 	    	enabled : {type: "boolean" }
 	    },
-	    expanded: true;
+	    expanded: true
 	});
 		
 	extend( common.ui.data, {
