@@ -65,6 +65,9 @@
 	    }
 	});
 	
+	/**
+	 * 
+	 */
 	var CodeSet = kendo.data.Model.define( {
 		id: "codeSetId",
 		parentId: "parentCodeSetId",
@@ -81,8 +84,7 @@
 	    },
 	    expanded: true;
 	});
-	
-	
+		
 	extend( common.ui.data, {
 		CodeSet : CodeSet,
 		EditableCompany : EditableCompany,
