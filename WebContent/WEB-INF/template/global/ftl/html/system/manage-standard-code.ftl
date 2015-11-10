@@ -99,8 +99,8 @@
 						schema: {
 							model: {						
 								id: "codeSetId",
-									parentId: "parentCodeSetId",
-								    fields: {
+								parentId: "parentCodeSetId",
+								fields: {
 								    	codeSetId: { type: "number",  defaultValue: 0 },
 								    	parentCodeSetId : { type: "number",  defaultValue: 0 },
 								    	objectType : { type: "number",  defaultValue: 0 },
@@ -110,7 +110,6 @@
 								    	modifiedDate: { type: "date"},
 								        creationDate: { type: "date" },
 								    	enabled : {type: "boolean" }
-								    }	
 								}
 							}	
 						},						
