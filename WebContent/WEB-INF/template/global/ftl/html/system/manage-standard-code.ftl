@@ -100,7 +100,6 @@
 							model:{
 								id:'codeSetId',
 								parentId: 'parentCodeSetId',
-								parentIdField: 'parentCodeSetId',
 								hasChildren: "enabled",
 							    fields: {
 							    	codeSetId: { type: "number"},
