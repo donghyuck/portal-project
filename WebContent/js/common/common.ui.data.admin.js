@@ -82,6 +82,7 @@
 	    expanded: true;
 	});
 	
+	
 	extend( common.ui.data, {
 		CodeSet : CodeSet,
 		EditableCompany : EditableCompany,
