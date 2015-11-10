@@ -5,6 +5,7 @@
 ;(function($, undefined) {
 	var extend = $.extend;
 	
+	
 	var EditableCompany = kendo.data.Model.define( {
 	    id: "companyId", // the identifier of the model
 	    fields: {
@@ -19,6 +20,7 @@
 	        memberCount: { type: "number", editable: true, defaultValue: 0  },
 	        adminCount: { type: "number", editable: true, defaultValue: 0  }*/
 	    },
+	    
 	    copy : function ( target ){
 	    	target.set("companyId", this.get("companyId"));
 	    	target.set("name", this.get("name"));
@@ -33,6 +35,8 @@
 	    		target.set("properties", this.get("properties"));
 	    }    
 	});
+	
+	
 	
 	var Accumulator = kendo.data.Model.define( {
 	    id: "id", // the identifier of the model
