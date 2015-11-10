@@ -12,10 +12,7 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	<description><![CDATA[
-	
-	
-       Application Context
-        
+       Application Context        
 	]]></description>	
 	<!-- 기본 유틸리티 컨텍스트  -->
 	<import resource="classpath:context/i18nSubsystemContext.xml"/>
@@ -23,14 +20,10 @@
 	<import resource="classpath:context/transactionSubsystemContext.xml"/>
 	<import resource="classpath:context/oracleSubsystemContext.xml"/>
 	<import resource="classpath:context/utilSubsystemContext.xml"/>	
-	<import resource="classpath:context/userSubsystemContext.xml"/>
-
-	
+	<import resource="classpath:context/userSubsystemContext.xml"/>		
 	<import resource="classpath:context/securitySubsystemContext.xml"/>
 	<import resource="classpath:context/struts2SubsystemContext.xml"/>
 	<import resource="classpath:context/webSubsystemContext.xml"/>
 	<import resource="classpath:context/communitySubsystemContext.xml"/>
-	
-	<!-- <bean class="architecture.user.spring.config.SecurityConfig"/>-->
-	
+	<import resource="classpath:context/competencySubsystemContext.xml"/>		
 </beans>
