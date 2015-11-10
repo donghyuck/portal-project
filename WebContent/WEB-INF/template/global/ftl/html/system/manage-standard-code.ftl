@@ -111,10 +111,8 @@
 								        creationDate: { type: "date" },
 								    	enabled : {type: "boolean" }
 								    }	
-								}	    							
-						/*			
-							model:common.ui.data.CodeSet
-							*/
+								}
+							}	
 						},						
 						error: common.ui.handleAjaxError					
 					},
