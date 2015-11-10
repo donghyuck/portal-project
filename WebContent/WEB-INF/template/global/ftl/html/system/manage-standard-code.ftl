@@ -98,8 +98,7 @@
 						},
 						schema: {
 							model: {
-								id : 'codeSetId'
-							
+															
 							}
 						},				
 						error: common.ui.handleAjaxError					
