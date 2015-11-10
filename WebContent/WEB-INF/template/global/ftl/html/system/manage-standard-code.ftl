@@ -98,7 +98,7 @@
 						},
 						schema: {
 							model:{
-								id:'codeSetId'
+								id:'codeSetId',
 								parentId: 'parentCodeSetId',
 								parentIdField: 'parentCodeSetId',
 								hasChildren: "enabled",
