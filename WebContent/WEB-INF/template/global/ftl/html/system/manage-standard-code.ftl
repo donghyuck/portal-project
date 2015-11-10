@@ -62,13 +62,9 @@
 		}]);		
 
 		function createCodeSetTreeList(){
-			
-			
-			
+			var renderTo = $("#codeset-treelist");			
 			if( !renderTo.data('kendoTreeList') ){		
-				
-				var companySelector = common.ui.admin.setup().companySelector($("#codeset-treelist"));
-			
+				var companySelector = common.ui.admin.setup().companySelector($("#ompany-dropdown-list"));				
 				renderTo.kendoTreeList({
 					height:"100%",
 					dataSource: {
