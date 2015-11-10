@@ -39,8 +39,9 @@
 						e.token.copy(currentUser);
 					},
 					change: function(e){
-						e.data.copy(targetCompany);
-						getCompanySelector().dataSource.read();
+						//e.data.copy(targetCompany);
+						
+						getCodeSetTreeList().dataSource.read();
 					}
 				});	
 				
