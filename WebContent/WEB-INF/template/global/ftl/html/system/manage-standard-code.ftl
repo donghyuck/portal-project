@@ -97,7 +97,24 @@
 							}
 						},
 						schema: {
-							id:'codeSetId'
+							model:{
+								id:'codeSetId'
+								parentId: 'parentCodeSetId',
+								parentIdField: 'parentCodeSetId',
+								hasChildren: "enabled",
+							    fields: {
+							    	codeSetId: { type: "number"},
+							    	parentCodeSetId : { type: "number"},
+							    	objectType : { type: "number"},
+							    	objectId : { type: "number"},
+							    	description:  { type: "string" },
+							    	name : { type: "string" },	        
+							    	modifiedDate: { type: "date"},
+							        creationDate: { type: "date" },
+							    	enabled : {type: "boolean" }
+							    }								 
+							
+							}
 						},				
 						error: common.ui.handleAjaxError					
 					},
