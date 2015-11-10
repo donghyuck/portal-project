@@ -97,7 +97,10 @@
 							}
 						},
 						schema: {
-							model: common.ui.data.CodeSet
+							model: {
+								id : 'codeSetId'
+							
+							}
 						},				
 						error: common.ui.handleAjaxError					
 					},
