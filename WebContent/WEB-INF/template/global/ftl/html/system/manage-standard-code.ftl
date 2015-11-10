@@ -86,7 +86,8 @@
 					autoBind:false,
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/codeset/list.json?output=json" />', type: 'POST' },
+							/*read: { url:'<@spring.url "/secure/data/mgmt/codeset/list.json?output=json" />', type: 'POST' },*/
+							read: { url:'<@spring.url "/secure/data/mgmt/sql/list.json?output=json" />', type: 'POST' }
 							create: { url:'<@spring.url "/secure/data/mgmt/codeset/update.json?output=json" />', type: 'POST', contentType : "application/json" },
 							parameterMap: function (options, operation){
 								console.log( operation +  " : "+ common.ui.stringify(options) );
