@@ -96,8 +96,25 @@
 								return {companyId: getCompanySelector().value() };
 							}
 						},
-						schema: {					
+						schema: {
+							model: {						
+								id: "codeSetId",
+									parentId: "parentCodeSetId",
+								    fields: {
+								    	codeSetId: { type: "number",  defaultValue: 0 },
+								    	parentCodeSetId : { type: "number",  defaultValue: 0 },
+								    	objectType : { type: "number",  defaultValue: 0 },
+								    	objectId : { type: "number",  defaultValue: 0 },
+								    	description:  { type: "string" },
+								    	name : { type: "string" },	        
+								    	modifiedDate: { type: "date"},
+								        creationDate: { type: "date" },
+								    	enabled : {type: "boolean" }
+								    }	
+								}	    							
+						/*			
 							model:common.ui.data.CodeSet
+							*/
 						},						
 						error: common.ui.handleAjaxError					
 					},
