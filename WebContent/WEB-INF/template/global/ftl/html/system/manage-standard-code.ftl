@@ -100,9 +100,7 @@
 							model: {						
 								id: "codeSetId",
 								fields: {
-								    	codeSetId: { type: "number" },
-								    	description:  { type: "string" },
-								    	name : { type: "string" }
+								   	codeSetId: { type: "number" }
 								}
 							}	
 						},				
