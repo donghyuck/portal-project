@@ -102,9 +102,7 @@
 								fields: {
 								    	codeSetId: { type: "number" },
 								    	description:  { type: "string" },
-								    	name : { type: "string" },	        
-								    	modifiedDate: { type: "date"},
-								        creationDate: { type: "date" },
+								    	name : { type: "string" }
 								}
 							}	
 						},				
