@@ -63,11 +63,11 @@
 
 		function createCodeSetTreeList(){
 			
-			var companySelector = common.ui.admin.setup().companySelector($("#codeset-treelist"));
+			
 			
 			if( !renderTo.data('kendoTreeList') ){		
 				
-				var = $("#company-dropdown-list");
+				var companySelector = common.ui.admin.setup().companySelector($("#codeset-treelist"));
 			
 				renderTo.kendoTreeList({
 					height:"100%",
