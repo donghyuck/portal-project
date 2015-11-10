@@ -40,7 +40,7 @@
 					},
 					change: function(e){
 						e.data.copy(targetCompany);
-						console.log(getCompanySelector().value());
+						getCompanySelector().dataSource.read();
 					}
 				});	
 				
@@ -71,12 +71,18 @@
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
 		
+		function getCodeSetTreeList(){
+			var renderTo = $("#codeset-treelist");
+			return renderTo.data('kendoTreeList');
+		}
+		
 		function createCodeSetTreeList(){
 			var renderTo = $("#codeset-treelist");			
 			if( !renderTo.data('kendoTreeList') ){		
 				var companySelector = getCompanySelector();		
 				renderTo.kendoTreeList({
 					height:"100%",
+					autoBind:false,
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/codeset/list.json?output=json" />', type: 'POST' },
@@ -86,13 +92,12 @@
 								if (operation !== "read") {
 									return kendo.stringify(options);
 								} 
-								return options;
+								return {companyId: getCompanySelector().value() };
 							}
 						},
 						schema: {					
 							model:common.ui.data.CodeSet
-						},
-						autoBind:false,
+						},						
 						error: common.ui.handleAjaxError					
 					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 롤 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
