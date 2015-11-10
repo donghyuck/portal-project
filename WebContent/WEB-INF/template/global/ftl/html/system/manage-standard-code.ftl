@@ -62,8 +62,13 @@
 		}]);		
 
 		function createCodeSetTreeList(){
-			var renderTo = $("#codeset-treelist");
+			
+			var companySelector = common.ui.admin.setup().companySelector($("#codeset-treelist"));
+			
 			if( !renderTo.data('kendoTreeList') ){		
+				
+				var = $("#company-dropdown-list");
+			
 				renderTo.kendoTreeList({
 					height:"100%",
 					dataSource: {
@@ -363,6 +368,7 @@
 				<section class="left">
 				
 				<div class="panel panel-transparent">
+					<div class="panel-body"><input id="company-dropdown-list"></input></div>
 					<div id="codeset-treelist" class="no-border" />
 				</div>	
 				
