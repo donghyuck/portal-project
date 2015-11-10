@@ -97,18 +97,8 @@
 							}
 						},
 						schema: {
-							model: {						
-								fields: {
-							    	codeSetId: { type: "number"},
-							    	parentCodeSetId : { type: "number"},
-							    	objectType : { type: "number"},
-							    	objectId : { type: "number"},
-							    	description:  { type: "string" },
-							    	name : { type: "string" },	        
-							    	modifiedDate: { type: "date"},
-							        creationDate: { type: "date" },
-							    	enabled : {type: "boolean" }
-							    },
+							model: {	
+							 	id : "codeSetId",
 								expanded:true
 							}	
 						},				
