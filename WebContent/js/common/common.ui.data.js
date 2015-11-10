@@ -430,8 +430,7 @@
 	
 })(jQuery);
 
-;(function($, undefined) {
-		
+;(function($, undefined) {		
 	var ajax = common.ui.ajax,	
 	DataSource = kendo.data.DataSource,
 	handleAjaxError = common.ui.handleAjaxError,
@@ -504,8 +503,6 @@
 	}
 	
 	
-	
-	
 	function imagePorpertyDataSource(imageId){
 		return DataSource.create({		
 			transport: { 
@@ -546,25 +543,21 @@
 	}
 		
 	function hasPermissions(options){
-		ajax(
-				options.url || '/secure/data/me/permissions/has.json?output=json', 
-				{
-					data: options.data,
-				/*	contentType : "application/json",*/
-					success : function(response){
-						if( response.error ){ 												
-							if( kendo.isFunction (options.fail) )
-								options.fail(response) ;
-						} else {					
-							if( kendo.isFunction(options.success) )
-								options.success(response) ;					
-						}
-					},
+		ajax(options.url || '/secure/data/me/permissions/has.json?output=json', {
+			data: options.data,
+			success : function(response){
+				if( response.error ){ 												
+					if( kendo.isFunction (options.fail) )
+						options.fail(response) ;
+				} else {					
+					if( kendo.isFunction(options.success) )
+						options.success(response) ;					
 				}
-			).always( function () {
-				if( kendo.isFunction( options.always ))
-					options.always( ) ;					
-			});			
+			},
+		}).always( function () {
+			if( kendo.isFunction( options.always ))
+				options.always( ) ;					
+		});			
 	}
 	
 	extend( common.ui.data, {
