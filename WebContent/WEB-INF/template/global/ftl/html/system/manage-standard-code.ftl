@@ -78,7 +78,7 @@
 							}
 						},
 						schema: {					
-							model: common.ui.data.CodeSet
+							model:common.ui.data.CodeSet
 						},
 						error: common.ui.handleAjaxError					
 					},
