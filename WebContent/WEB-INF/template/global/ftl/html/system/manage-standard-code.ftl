@@ -43,6 +43,9 @@
 						console.log(getCompanySelector().value());
 					}
 				});	
+				
+				
+				
 				/*
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
@@ -57,6 +60,8 @@
 				
 				$('#database-details-tabs a:first').tab('show');
 				*/
+				
+				
 				createCodeSetTreeList();	
 				// END SCRIPT
 			}
