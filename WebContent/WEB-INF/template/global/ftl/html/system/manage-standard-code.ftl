@@ -99,9 +99,7 @@
 						schema: {
 							model: {						
 								id: "codeSetId",
-								fields: {
-								   	codeSetId: { type: "number" }
-								}
+								expanded:true
 							}	
 						},				
 						error: common.ui.handleAjaxError					
