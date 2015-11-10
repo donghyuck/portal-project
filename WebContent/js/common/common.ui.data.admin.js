@@ -74,7 +74,7 @@
 	 */
 	var CodeSet = kendo.data.Model.define( {
 		id: "codeSetId",
-		parentIdField: "parentCodeSetId",
+		parentId: "parentCodeSetId",
 	    fields: {
 	    	codeSetId: { type: "number"},
 	    	parentCodeSetId : { type: "number"},
