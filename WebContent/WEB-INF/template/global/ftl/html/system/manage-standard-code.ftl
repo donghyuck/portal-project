@@ -161,6 +161,10 @@ var dataSource = new kendo.data.TreeListDataSource({
 							parameterMap: function (options, operation){
 								console.log( operation +  " : "+ common.ui.stringify(options) );
 								if (operation !== "read") {
+									if( operation == "create" ){
+										options.objectType = 1 ;
+										options.objectId = getCompanySelector().value();
+									}
 									return kendo.stringify(options);
 								} 
 								return {companyId: getCompanySelector().value() };
