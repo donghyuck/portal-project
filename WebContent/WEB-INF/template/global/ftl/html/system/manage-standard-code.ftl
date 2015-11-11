@@ -169,10 +169,11 @@ var dataSource = new kendo.data.TreeListDataSource({
 						schema: {
 							model:{
 								id:'codeSetId',
+								expanded: true,
 								parentId: 'parentCodeSetId',
 							    fields: {
 							    	codeSetId: { type: "number"},
-							    	parentCodeSetId : { type: "number"},
+							    	parentCodeSetId : { field:"parentCodeSetId", type: "number"},
 							    	objectType : { type: "number"},
 							    	objectId : { type: "number"},
 							    	description:  { type: "string" },
