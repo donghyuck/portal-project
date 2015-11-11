@@ -167,6 +167,24 @@
 			}
 		}
 
+		function createCodeSetPanel(source){
+			var renderTo = $(".layout > .right > .panel:first");
+			if( !renderTo.data('model') ){
+				var observable =  common.ui.observable({
+					codeset : new common.ui.data.CodeSet(),
+					setSource : function(source){
+						this.codeset.set('name', soruce.name );			
+						this.codeset.set('description', soruce.description );				
+					}				
+				});				
+				renderTo.data("model", observable);			
+				common.ui.bind( renderTo, observable );	
+			}
+			if(renderTo.is(":hidden")){
+				renderTo.data("model").setSource( source ) ;	
+				renderTo.show();
+			}	
+		}
 
 		function createSqlFileTreePanel(renderTo){
 			if( !renderTo.data('kendoTreeView') ){		
