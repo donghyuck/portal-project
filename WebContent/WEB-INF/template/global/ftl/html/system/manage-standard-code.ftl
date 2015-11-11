@@ -168,7 +168,7 @@ var dataSource = new kendo.data.TreeListDataSource({
 						},
 						schema: {
 							model:common.ui.data.CodeSet
-							*{
+							/*{
 								id:'codeSetId',
 								expanded: true,
 								parentId: 'parentCodeSetId',
