@@ -190,15 +190,12 @@ var dataSource = new kendo.data.TreeListDataSource({
 					columns : [
 						{field:'name', title:"코드"},
 						{field:'description', title:"설명"},
-						{ command: [{ 
-							name: "edit",
-							className: "btn btn-flat",
-							text: "변경"
-							},
-							], 
-							width: 180  
+						{ 
+							command: [{ name: "edit", className: "btn btn-flat", text: "변경" }], 
+						  	width: 180  
 						}						
 					],
+					editable:true,
 					change: function(e) {
 					
 					}
