@@ -75,9 +75,10 @@
 	var CodeSet = kendo.data.Model.define( {
 		id: "codeSetId",
 		parentId: "parentCodeSetId",
+		expanded: true,
 	    fields: {
 	    	codeSetId: { type: "number"},
-	    	parentCodeSetId : { field:"parentCodeSetId",  nullable:true },
+	    	parentCodeSetId : { field:"parentCodeSetId", nullable:true },
 	    	objectType : { type: "number"},
 	    	objectId : { type: "number"},
 	    	description:  { type: "string" },
@@ -85,8 +86,8 @@
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" },
 	    	enabled : {type: "boolean" }
-	    },
-	    expanded: true
+	    }
+	    
 	});
 
 	extend( common.ui.data, {
