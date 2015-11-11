@@ -77,7 +77,7 @@
 		parentId: "parentCodeSetId",
 	    fields: {
 	    	codeSetId: { type: "number"},
-	    	parentCodeSetId : { type: "number", nullable:true },
+	    	parentCodeSetId : { nullable:true },
 	    	objectType : { type: "number"},
 	    	objectId : { type: "number"},
 	    	description:  { type: "string" },
