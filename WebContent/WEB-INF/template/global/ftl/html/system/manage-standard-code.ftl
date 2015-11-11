@@ -144,7 +144,7 @@ var dataSource = new kendo.data.TreeListDataSource({
 		
 		function getCodeSetTreeList(){
 			var renderTo = $("#codeset-treelist");
-			return renderTo.data('kendoTreeList');
+			return common.ui.treelist(renderTo);
 		}
 		
 		function createCodeSetTreeList(){
@@ -202,6 +202,7 @@ var dataSource = new kendo.data.TreeListDataSource({
 						  	width: 200  
 						}						
 					],
+					selectable: true,
 					messages:{
 						commands:{
 							edit : "변경",
@@ -218,10 +219,13 @@ var dataSource = new kendo.data.TreeListDataSource({
 				});			
 				
 				renderTo.find("button[data-action=create]").click(function(e){
-					common.ui.treelist(renderTo).addRow();
+					getCodeSetTreeList.addRow();
 					common.ui.treelist(renderTo).select("tr:eq(1)");
 				});	
-				
+				renderTo.find("button[data-action=refresh]").click(function(e){
+					common.ui.treelist(renderTo).dataSoruce.read();
+				});	
+								
 				renderTo.slimScroll({
 	                height: 620,
 	                railOpacity: 0.9
