@@ -223,7 +223,7 @@ var dataSource = new kendo.data.TreeListDataSource({
 					common.ui.treelist(renderTo).select("tr:eq(1)");
 				});	
 				renderTo.find("button[data-action=refresh]").click(function(e){
-					common.ui.treelist(renderTo).dataSoruce.read();
+					common.ui.treelist(renderTo).dataSource.read();
 				});	
 								
 				renderTo.slimScroll({
