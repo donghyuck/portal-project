@@ -199,7 +199,7 @@ var dataSource = new kendo.data.TreeListDataSource({
 								{ name: "edit", className: "btn btn-flat", imageClass:false },
 								{ name: "createchild", className: "btn btn-flat", imageClass:false }
 							], 
-						  	width: 180  
+						  	width: 200  
 						}						
 					],
 					messages:{
