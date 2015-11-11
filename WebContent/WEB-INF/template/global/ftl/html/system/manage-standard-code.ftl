@@ -173,8 +173,8 @@
 				var observable =  common.ui.observable({
 					codeset : new common.ui.data.CodeSet(),
 					setSource : function(source){
-						this.codeset.set('name', soruce.name );			
-						this.codeset.set('description', soruce.description );				
+						this.codeset.set('name', source.name );			
+						this.codeset.set('description', source.description );				
 					}				
 				});				
 				renderTo.data("model", observable);			
