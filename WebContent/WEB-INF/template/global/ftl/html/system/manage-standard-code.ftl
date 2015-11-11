@@ -492,6 +492,7 @@
 					<div class="panel panel-default" data-bind="visible:visible" style="display:none;">
 						<div class="panel-heading">
 							<span data-bind="text:codeset.name"></span>
+							<small data-bind="text:codeset.description" class="text-muted"></small>
 						</div>	
 						
 					</div>
@@ -499,7 +500,7 @@
 					
 						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible" style="display:none;">
 							<div class="panel-heading">
-								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
+								<i class="fa fa-table"></i> <span data-bind="text:name"></span> 
 								<div class="panel-heading-controls">
 									<button class="close" data-action="slideUp"><i class="fa fa-chevron-up"></i></button>
 									<button class="close" data-action="slideDown"  style="display:none;"><i class="fa fa-chevron-down"></i></button>								
