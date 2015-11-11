@@ -173,7 +173,7 @@ var dataSource = new kendo.data.TreeListDataSource({
 								parentId: 'parentCodeSetId',
 							    fields: {
 							    	codeSetId: { type: "number"},
-							    	parentCodeSetId : { field:"parentCodeSetId" },
+							    	parentCodeSetId : { field:"parentCodeSetId", nullable:true },
 							    	objectType : { type: "number"},
 							    	objectId : { type: "number"},
 							    	description:  { type: "string" },
