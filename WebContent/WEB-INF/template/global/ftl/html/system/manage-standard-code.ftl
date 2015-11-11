@@ -167,8 +167,7 @@ var dataSource = new kendo.data.TreeListDataSource({
 							}
 						},
 						schema: {
-							model:common.ui.data.CodeSet
-							/*{
+							model:{
 								id:'codeSetId',
 								expanded: true,
 								parentId: 'parentCodeSetId',
@@ -182,9 +181,8 @@ var dataSource = new kendo.data.TreeListDataSource({
 							    	modifiedDate: { type: "date"},
 							        creationDate: { type: "date" },
 							    	enabled : {type: "boolean" }
-							    }								 
-							
-							}*/
+							    }	
+							}
 						},				
 						error: common.ui.handleAjaxError					
 					},
