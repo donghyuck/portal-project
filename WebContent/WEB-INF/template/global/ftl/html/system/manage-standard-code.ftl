@@ -63,7 +63,7 @@
 			if( !renderTo.data('kendoTreeList') ){		
 				var companySelector = getCompanySelector();		
 				renderTo.kendoTreeList({
-					height:"100%",
+					height:"591",
 					autoBind:false,
 					dataSource: {
 						transport: { 
