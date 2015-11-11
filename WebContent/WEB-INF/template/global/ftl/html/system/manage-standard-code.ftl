@@ -192,8 +192,11 @@ var dataSource = new kendo.data.TreeListDataSource({
 						{field:'description', title:"설명"},
 						{ 
 							command: [
-								{ name: "edit", className: "btn btn-flat", imageClass:false },
-								{ name: "canceledit", className: "btn btn-flat", imageClass:false }
+								{ name: "edit", className: "btn btn-flat", imageClass:false ,
+									command:[
+										{ name: "canceledit", className: "btn btn-flat", imageClass:false }									
+									]
+								}
 							], 
 						  	width: 180  
 						}						
