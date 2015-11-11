@@ -159,9 +159,11 @@
 				});				
 				renderTo.data("model", observable);			
 				common.ui.bind( renderTo, observable );	
-			}
-			if(renderTo.is(":hidden")){
+			}			
+			if( source ){
 				renderTo.data("model").setSource( source ) ;	
+			}
+			if(renderTo.is(":hidden")){				
 				renderTo.show();
 			}	
 		}
