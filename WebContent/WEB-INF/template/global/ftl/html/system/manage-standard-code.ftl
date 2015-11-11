@@ -116,7 +116,7 @@ var dataSource = new kendo.data.TreeListDataSource({
 
                         schema: {
                             model: {
-                                id: "id",
+                                id: "Name",
                                 expanded: true
                             }
                         }
