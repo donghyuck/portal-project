@@ -148,7 +148,7 @@
 						
 						var selectedRows = this.select();
 						var dataItem = this.dataItem(selectedRows[0]);
-						
+						createCodeSetPanel( dataItem );
 					}
 				});			
 				
