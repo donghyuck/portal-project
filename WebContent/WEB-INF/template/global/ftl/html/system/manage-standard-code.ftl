@@ -191,10 +191,19 @@ var dataSource = new kendo.data.TreeListDataSource({
 						{field:'name', title:"코드"},
 						{field:'description', title:"설명"},
 						{ 
-							command: [{ name: "edit", className: "btn btn-flat", text: "변경" }], 
+							command: [{ name: "edit", className: "btn btn-flat" }], 
 						  	width: 180  
 						}						
 					],
+					messages:{
+						commands:{
+							edit : "변경",
+							update : "저장",
+							createchild : "추가",
+							destory: "삭제",
+							canceledit: "취소"						
+						}
+					},
 					editable:true,
 					change: function(e) {
 					
