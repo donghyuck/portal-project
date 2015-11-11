@@ -139,11 +139,6 @@
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					common.ui.treelist(renderTo).dataSource.read();
 				});	
-								
-				renderTo.slimScroll({
-	                height: 620,
-	                railOpacity: 0.9
-            	});
 			}
 		}
 
