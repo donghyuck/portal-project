@@ -326,7 +326,7 @@
 					</div>
 				</section>									
 				<section class="right">		
-					<div id="id="competency-details" class="panel panel-default">
+					<div id="competency-details" class="panel panel-default">
 						<div class="panel-heading"><span class="panel-title">
 							<input type="text" class="form-control input-sm"  data-bind="value: site.name">
 						</span></div>
