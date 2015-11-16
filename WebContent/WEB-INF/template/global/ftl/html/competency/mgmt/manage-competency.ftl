@@ -113,6 +113,11 @@
 			}
 		}  
 		
+		function openCompetencyEditor(source){
+		
+		
+		}
+		
 		function getCodeSetTreeList(){
 			var renderTo = $("#codeset-treelist");
 			return common.ui.treelist(renderTo);
@@ -285,50 +290,28 @@
 						<div id="competency-grid" class="no-border"></div>
 					</div>
 				</section>									
-				<section class="right">
-					<div class="panel panel-default" data-bind="visible:visible" style="display:none;">
+				<section class="right">		
+																
+					<div id="competency-details" class="panel">
 						<div class="panel-heading">
-							<span data-bind="text:codeset.name"></span>
-							<small data-bind="text:codeset.description" class="text-muted"></small>
-						</div>	
-						
-					</div>
-					
-					
-						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible" style="display:none;">
-							<div class="panel-heading">
-								<i class="fa fa-table"></i> <span data-bind="text:name"></span> 
-								<div class="panel-heading-controls">
-									<button class="close" data-action="slideUp"><i class="fa fa-chevron-up"></i></button>
-									<button class="close" data-action="slideDown"  style="display:none;"><i class="fa fa-chevron-down"></i></button>								
+							<span class="panel-title">&nbsp</span>
+							<ul class="nav nav-tabs nav-tabs-xs">
+								<li class="active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">기본정보</a></li>
+								<li><a href="#competency-details-tabs-1" data-toggle="tab" data-action="properties">속성</a></li>
+							</ul>	
+						</div>
+						<div class="panel-body">
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane fade active" id="competency-details-tabs-0">
 								</div>
-							</div>			
-							<div data-role="grid" 
-								data-sortable="true" 
-								data-bind="source: columns" 
-								data-columns="[ {'field':'primaryKey', 'title':'기본키'}, {'field':'name', 'title':'컬럼'}, {'field':'typeName' ,'title':'타입'}, {'field':'size' ,'title':'크기'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
-							<div class="panel-footer">
-								컬럼 : <span data-bind="text: columnCount">0</span> 
+								<div role="tabpanel" class="tab-pane fade" id="competency-details-tabs-2">
+								</div>								
 							</div>
-						</div>	
-						<div id="sql-details" class="panel no-border" style="display:none;">
-							<div class="panel-heading">
-								<span data-bind="text:file.name">&nbsp;</span>
-									<div class="panel-heading-controls">
-										<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>					
-									</div>
-								</div>			
-								<div class="panel-body padding-sm" style="height: 43px;">
-									<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
-									<div class="pull-right text-muted">
-										<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-									</div>
-							</div>
-							<div id="xmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
-							<div class="panel-footer no-padding-vr"></div>
-						</div>	
-				</section>
-				</section>
+						</div>
+					</div>	
+	
+				</section><!-- / .right -->
+				</section><!-- / .layout -->
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
