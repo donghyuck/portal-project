@@ -132,9 +132,8 @@
 					setSource : function(source){
 						var $this = this;
 						console.log( common.ui.stringify(source) );
-						
-						source.copy($this.site);	
-						if($this.competency.competencyId == 0)
+						source.copy($this.competency);	
+						if($this.competency.get("competencyId") == 0)
 						{
 							$this.set("editable", true);
 						}else{
