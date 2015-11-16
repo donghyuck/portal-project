@@ -95,7 +95,7 @@
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	  
-	                    	console.log(common.ui.stringify(selectedCell));
+	                    	
 	                    	openCompetencyEditor(selectedCell);
 	                    }   
 					},
@@ -131,6 +131,8 @@
 					competency : new common.ui.data.competency.Competency(),
 					setSource : function(source){
 						var $this = this;
+						console.log( common.ui.stringify(source) );
+						
 						source.copy($this.site);	
 						if($this.competency.competencyId == 0)
 						{
@@ -248,6 +250,9 @@
 				var observable =  common.ui.observable({
 					codeset : new common.ui.data.CodeSet(),
 					setSource : function(source){
+						
+						
+						
 						this.codeset.set('name', source.name );			
 						this.codeset.set('description', source.description );				
 					}				
