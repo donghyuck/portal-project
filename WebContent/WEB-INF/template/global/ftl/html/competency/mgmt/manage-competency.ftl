@@ -87,7 +87,7 @@
 					],
 					editable: {
 						template: kendo.template("<span>111</span>")
-					}
+					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
