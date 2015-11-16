@@ -26,6 +26,7 @@
 			'<@spring.url "/js/common/common.ui.core.js" />',							
 			'<@spring.url "/js/common/common.ui.data.js" />',
 			'<@spring.url "/js/common/common.ui.data.admin.js" />',
+			'<@spring.url "/js/common/common.ui.data.competency.js" />',
 			'<@spring.url "/js/common/common.ui.community.js" />',
 			'<@spring.url "/js/common/common.ui.admin.js" />',	
 			'<@spring.url "/js/ace/ace.js" />'			
@@ -52,6 +53,41 @@
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
+		
+		function createCompetencyGrid(){
+			var renderTo = $("#competency-grid");
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/mgmt/competency/list.json?output=json', type:'post' }
+						},						
+						batch: false, 
+						pageSize: 15,
+						schema: {
+							data: "items",
+							total: "totalCount",
+							model: common.ui.data.competency.Competency
+						}
+					},
+					columns: [
+						{ title: "Name", field: "name"}
+					],
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
+					resizable: true,
+					editable : false,
+					selectable : "row",
+					scrollable: true,
+					height: 692,
+					change: function(e) {
+					},
+					dataBound: function(e) {
+
+					}
+				});		
+			}
+		}  
 		
 		function getCodeSetTreeList(){
 			var renderTo = $("#codeset-treelist");
@@ -222,7 +258,7 @@
 				<section class="left">				
 					<div class="panel panel-transparent">
 						<div class="panel-body"><input id="company-dropdown-list" /></div>
-						<div id="codeset-treelist" class="no-border" />
+						<div id="competency-grid" class="no-border"></div>
 					</div>
 				</section>									
 				<section class="right">
