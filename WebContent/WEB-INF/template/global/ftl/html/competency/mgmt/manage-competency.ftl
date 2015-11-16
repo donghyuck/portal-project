@@ -82,12 +82,8 @@
 						}
 					},
 					columns: [
-						{ title: "역량", field: "name"},
-						{ command: [ { name: "edit", className: "btn btn-flat", imageClass:false } ]}
+						{ title: "역량", field: "name"}
 					],
-					editable: {
-						template: kendo.template("<span>111</span>")
-					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
@@ -100,6 +96,7 @@
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	  
 	                    	console.log(common.ui.stringify(selectedCell));
+	                    	openCompetencyEditor(selectedCell);
 	                    }   
 					},
 					dataBound: function(e) {
@@ -119,16 +116,41 @@
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
 				});	
-				renderTo.find("button[data-action=create]").click(function(e){
-					common.ui.grid(renderTo).addRow();					
+				renderTo.find("button[data-action=create]").click(function(e){					
+					openCompetencyEditor(new common.ui.data.competency.Competency());				
 				});		
 							
 			}
 		}  
 		
 		function openCompetencyEditor(source){
-		
-		
+			var renderTo = $("#competency-details");
+			if( !renderTo.data("model")){									
+				var  observable = kendo.observable({
+					editable : false,
+					competency : new common.ui.data.competency.Competency(),
+					setSource : function(source){
+						var $this = this;
+						source.copy($this.site);	
+						if($this.competency.competencyId == 0)
+						{
+							$this.set("editable", true);
+						}else{
+							$this.set("editable", false);
+						}
+					}		
+				});
+				renderTo.data("model", observable );
+				kendo.bind(renderTo, observable );	
+				
+				renderTo.find("ul.nav.nav-tabs a:first").tab('show');	
+			}
+			
+			if( source ){
+				renderTo.data("model").setSource( source );	
+				if (!renderTo.is(":visible")) 
+					renderTo.show();		
+			}			
 		}
 		
 		function getCodeSetTreeList(){
