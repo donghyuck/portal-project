@@ -58,6 +58,9 @@
 		function createCompetencyGrid(){
 			var renderTo = $("#competency-grid");
 			if(! common.ui.exists(renderTo) ){
+				
+				var companySelector = getCompanySelector();		
+				
 				common.ui.grid(renderTo, {
 					autoBind:false,
 					dataSource: {
@@ -67,7 +70,7 @@
 								if (operation !== "read") {
 									return kendo.stringify(options);
 								} 
-								return {companyId: getCompanySelector().value() };
+								return {companyId: companySelector.value() };
 							}
 						},						
 						batch: false, 
