@@ -59,6 +59,7 @@
 			var renderTo = $("#competency-grid");
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
+					autoBind:false,
 					dataSource: {
 						transport: { 
 							read: { url:'/secure/data/mgmt/competency/list.json?output=json', type:'post' },
@@ -86,7 +87,7 @@
 					editable : false,
 					selectable : "row",
 					scrollable: true,
-					height: 692,
+					height: 591,
 					change: function(e) {
 					},
 					dataBound: function(e) {
