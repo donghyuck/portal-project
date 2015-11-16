@@ -39,10 +39,8 @@
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					change: function(e){
-						//e.data.copy(targetCompany);
-						
-						getCodeSetTreeList().dataSource.read();
+					change: function(e){						
+						getCompetencyGrid().dataSource.read();
 					}
 				});	
 				createCodeSetTreeList();									
@@ -53,14 +51,23 @@
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
-		
+		function getCompetencyGrid(){
+			var renderTo = $("#competency-grid");
+			return common.ui.grid(renderTo);
+		}		
 		function createCompetencyGrid(){
 			var renderTo = $("#competency-grid");
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/mgmt/competency/list.json?output=json', type:'post' }
+							read: { url:'/secure/data/mgmt/competency/list.json?output=json', type:'post' },
+							parameterMap: function (options, operation){
+								if (operation !== "read") {
+									return kendo.stringify(options);
+								} 
+								return {companyId: getCompanySelector().value() };
+							}
 						},						
 						batch: false, 
 						pageSize: 15,
