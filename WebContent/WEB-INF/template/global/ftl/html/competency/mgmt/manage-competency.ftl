@@ -94,6 +94,16 @@
 
 					}
 				});		
+
+				renderTo.find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});	
+				
+				$(document).on("click","[data-action=create]", function(e){		
+					var $this = $(this);		
+					ommon.ui.exists(renderTo).addRow();
+				});	
+								
 			}
 		}  
 		
