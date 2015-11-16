@@ -43,7 +43,7 @@
 						getCompetencyGrid().dataSource.read();
 					}
 				});	
-				createCodeSetTreeList();									
+				createCompetencyGrid();									
 				// END SCRIPT
 			}
 		}]);		
