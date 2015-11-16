@@ -291,8 +291,15 @@
 					</div>
 				</section>									
 				<section class="right">		
-																
-					<div id="competency-details" class="panel panel-transparent">
+					<div id="id="competency-details">
+					<div class="panel panel-default">
+						<div class="panel-heading"><span class="panel-title">fdsafas</span></div>
+						<div class="panel-body">
+						
+						
+						</div>					
+					</div>											
+					<div class="panel panel-transparent">
 						<div class="panel-heading">
 							<span class="panel-title">&nbsp</span>
 							<ul class="nav nav-tabs nav-tabs-xs">
@@ -309,7 +316,7 @@
 							</div>
 						</div>
 					</div>	
-	
+					</div>
 				</section><!-- / .right -->
 				</section><!-- / .layout -->
 			</div> <!-- / #content-wrapper -->
