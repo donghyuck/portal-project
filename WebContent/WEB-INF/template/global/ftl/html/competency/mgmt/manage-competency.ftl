@@ -296,7 +296,7 @@
 							<input type="text" class="form-control input-sm"  data-bind="value: site.name">
 						</span></div>
 						<div class="panel-body">	
-							<input type="text" class="form-control imput-sm" data-bind="value: site.description">
+							<textarea class="form-control" rows="4" data-bind="value: site.description"></textarea>
 						</div>
 						<div class="panel-body">						
 							<ul class="nav nav-tabs nav-tabs-xs">
