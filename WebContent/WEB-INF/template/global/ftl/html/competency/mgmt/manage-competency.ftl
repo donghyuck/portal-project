@@ -82,8 +82,12 @@
 						}
 					},
 					columns: [
-						{ title: "역량", field: "name"}
+						{ title: "역량", field: "name"},
+						{ command: [ { name: "edit", className: "btn btn-flat", imageClass:false } ]}
 					],
+					editable: {
+						template: kendo.template("<span>111</span>");
+					}
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
@@ -101,6 +105,15 @@
 					dataBound: function(e) {
 
 					}
+					/*,messages:{
+						commands:{
+							edit : "변경",
+							update : "저장",
+							createchild : "추가",
+							destory: "삭제",
+							canceledit: "취소"						
+						}
+					}*/			
 				});		
 
 				renderTo.find("button[data-action=refresh]").click(function(e){
@@ -300,7 +313,7 @@
 						</div>
 						<div class="panel-body">						
 							<ul class="nav nav-tabs nav-tabs-xs">
-								<li class="active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">기본정보</a></li>
+								<li class="m-l-sm active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">기본정보</a></li>
 								<li><a href="#competency-details-tabs-1" data-toggle="tab" data-action="properties">속성</a></li>
 							</ul>							
 							<div class="tab-content">
