@@ -292,7 +292,7 @@
 				</section>									
 				<section class="right">		
 																
-					<div id="competency-details" class="panel">
+					<div id="competency-details" class="panel panel-transparent">
 						<div class="panel-heading">
 							<span class="panel-title">&nbsp</span>
 							<ul class="nav nav-tabs nav-tabs-xs">
