@@ -92,6 +92,11 @@
 					scrollable: true,
 					height: 591,
 					change: function(e) {
+					 	var selectedCells = this.select();	
+					 	if( selectedCells.length == 1){
+	                    	var selectedCell = this.dataItem( selectedCells );	  
+	                    	console.log(common.ui.stringify(selectedCell));
+	                    }   
 					},
 					dataBound: function(e) {
 
