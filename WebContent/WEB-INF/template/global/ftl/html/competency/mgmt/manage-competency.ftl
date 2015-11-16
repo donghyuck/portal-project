@@ -291,37 +291,26 @@
 					</div>
 				</section>									
 				<section class="right">		
-					<div id="id="competency-details">
-					<div class="panel panel-default">
-						<div class="panel-heading"><span class="panel-title">fdsafas</span></div>
-						<div class="panel-body">
-						
-						
-						
-						
-						
-												
-						
-						</div>					
-					</div>											
-					<div class="panel panel-transparent">
-						<div class="panel-heading">
-							<span class="panel-title">&nbsp</span>
+					<div id="id="competency-details" class="panel panel-default">
+						<div class="panel-heading"><span class="panel-title">
+							<input type="text" class="form-control input-sm"  data-bind="value: site.name">
+						</span></div>
+						<div class="panel-body">	
+							<input type="text" class="form-control imput-sm" data-bind="value: site.description">
+						</div>
+						<div class="panel-body">						
 							<ul class="nav nav-tabs nav-tabs-xs">
 								<li class="active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">기본정보</a></li>
 								<li><a href="#competency-details-tabs-1" data-toggle="tab" data-action="properties">속성</a></li>
-							</ul>	
-						</div>
-						<div class="panel-body">
+							</ul>							
 							<div class="tab-content">
 								<div role="tabpanel" class="tab-pane fade active" id="competency-details-tabs-0">
 								</div>
 								<div role="tabpanel" class="tab-pane fade" id="competency-details-tabs-2">
 								</div>								
-							</div>
-						</div>
-					</div>	
-					</div>
+							</div>						
+						</div>					
+					</div>											
 				</section><!-- / .right -->
 				</section><!-- / .layout -->
 			</div> <!-- / #content-wrapper -->
