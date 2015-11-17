@@ -307,7 +307,7 @@
 			border-right: solid 1px #e2e2e2;
 		}
 		
-		left.fixed {
+		.left.fixed {
 			position: fixed;
 		}
 		
