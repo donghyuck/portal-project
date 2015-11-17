@@ -148,14 +148,8 @@
 							{
 								data : kendo.stringify( $this.competency ),
 								contentType : "application/json",
-								success : function(response){
-									
-									$this.set("visible", true);
-									$this.set("editable", false);
-									$this.set("updatable", false);
-									$this.set("deletable", true);
-									
-									console.log( common.ui.stringify(response) );
+								success : function(response){																											
+									$this.setSource(new common.ui.data.competency.Competency(response));								
 									getCompetencyGrid().dataSource.read();
 								},
 								complete : function(e){
