@@ -332,10 +332,10 @@
 				<section class="right">		
 					<div id="competency-details" class="panel panel-default">
 						<div class="panel-heading"><span class="panel-title">
-							<input type="text" class="form-control input-sm"  data-bind="value: competency.name">
+							<input type="text" class="form-control input-sm"  data-bind="value: competency.name" placeholder="역량 이름">
 						</span></div>
 						<div class="panel-body">	
-							<textarea class="form-control" rows="4" data-bind="value: competency.description"></textarea>
+							<textarea class="form-control" rows="4" data-bind="value: competency.description" placeholder="역량 정의"></textarea>
 						</div>
 						<div class="panel-body">						
 							<ul class="nav nav-tabs nav-tabs-xs">
