@@ -330,13 +330,16 @@
 					</div>
 				</section>									
 				<section class="right">		
+					
 					<div id="competency-details" class="panel panel-default">
+						<form>
 						<div class="panel-heading"><span class="panel-title">
 							<input type="text" class="form-control input-sm" name="competency-name" data-bind="value: competency.name" placeholder="역량 이름">
 						</span></div>
 						<div class="panel-body">	
 							<textarea class="form-control" rows="4" name="competency-description" data-bind="value: competency.description" placeholder="역량 정의"></textarea>
 						</div>
+						</form>
 						<div class="panel-body">						
 							<ul class="nav nav-tabs nav-tabs-xs">
 								<li class="m-l-sm active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">기본정보</a></li>
