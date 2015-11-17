@@ -379,8 +379,8 @@
 						<div class="panel-body">	
 							<textarea class="form-control" rows="4" name="competency-description" data-bind="value: competency.description" placeholder="역량 정의"></textarea>
 							<div class="p-sm text-right">
-								<button class="btn btn-default btn-flat" data-bind="invisible:editable">변경</button>
-								<button class="btn btn-primary btn-flat btn-outline" data-bind="visible:editable">저장</button>
+								<button class="btn btn-default btn-flat" data-bind="visible:editable">변경</button>
+								<button class="btn btn-primary btn-flat btn-outline" data-bind="invisible:editable">저장</button>
 								<button class="btn btn-danger btn-flat btn-outline" data-bind="visible:deletable">삭제</button>
 							</div>
 						</div>
