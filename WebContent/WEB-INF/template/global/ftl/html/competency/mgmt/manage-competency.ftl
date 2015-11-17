@@ -173,6 +173,7 @@
 							$this.set("editable", true);
 							$this.set("updatable", true);
 							$this.set("deletable", false);
+							$this.competency.properties.competencyUnitCode = "";
 							renderTo.find("input[name=competency-name]").focus();
 							
 						}else{
@@ -180,12 +181,7 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
-						}
-						
-						if(!$this.competency.properties.competencyUnitCode ){
-							$this.competency.properties.competencyUnitCode = "";
-						}
-						
+						}						
 					}		
 				});
 				renderTo.data("model", observable );
