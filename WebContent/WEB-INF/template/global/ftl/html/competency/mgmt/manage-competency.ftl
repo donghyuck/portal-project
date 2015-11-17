@@ -312,12 +312,19 @@
 			overflow:hidden;
 			position:relative;
 		}
+		
 		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
 			border-width:0;
 			margin-bottom:0px;
     	}
-
-		
+    	
+		#content-wrapper section.bottom{
+			padding: 10px 15px;
+			background-color: #f5f5f5;
+			border-top: 1px solid #ddd;
+			border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px
+		}
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -366,6 +373,7 @@
 						</div>					
 					</div>											
 				</section><!-- / .right -->
+				<section class="bottom"></div><!-- / .bottom -->				
 				</section><!-- / .layout -->
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
