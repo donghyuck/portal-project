@@ -120,10 +120,12 @@
 					updatable : false,
 					competency : new common.ui.data.competency.Competency(),
 					edit : function(e){
-					
+						$this.set("editable", true);
+						$this.set("updatable", true);
+						return false;
 					},
 					delete : function(e){
-					
+						return false;
 					},
 					saveOrUpdate : function(e){
 						var $this = this;
@@ -138,6 +140,7 @@
 									$this.set("editable", false);
 									$this.set("updatable", false);
 									$this.set("deletable", true);
+									console.log( common.ui.stringify(response) );
 									getCompetencyGrid().dataSource.read();
 								},
 								complete : function(e){
