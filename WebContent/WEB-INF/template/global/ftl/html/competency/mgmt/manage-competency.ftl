@@ -120,7 +120,6 @@
 					deletable: false,
 					updatable : false,					
 					competency : new common.ui.data.competency.Competency(),
-					competencyUnitCode : "",
 					view : function(e){
 						var $this = this;		
 						$this.set("visible", true);
@@ -143,8 +142,6 @@
 					saveOrUpdate : function(e){
 						var $this = this;
 						var btn = $(e.target);	
-						
-						$this.competency.properties.competencyUnitCode = $this.get("competencyUnitCode");
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/update.json?output=json" />' , 
@@ -167,6 +164,10 @@
 						console.log( common.ui.stringify(source) );
 						source.copy($this.competency);	
 						
+						if(!$this.competency.properties.competencyUnitCode ){
+							$this.competency.properties.competencyUnitCode = "";
+						}
+						
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.competency.set("objectType", 1);
@@ -183,8 +184,6 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
-							if($this.competency.properties.competencyUnitCode )
-								$this.set("competencyUnitCode", $this.competency.properties.competencyUnitCode);
 						}
 					}		
 				});
@@ -416,8 +415,8 @@
 							<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
 							
 							<p class="help-block m-t-md text-danger">능력단위분류 코드(NCS 관련 코드)</p>
-							<p class="p-sm" data-bind="{text: competencyUnitCode, visible:visible}"></p>
-							<input type="text" class="form-control input-sm" name="competency-unit-code" data-bind="{value: competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
+							<p class="p-sm" data-bind="{text: competency.properties.competencyUnitCode, visible:visible}"></p>
+							<input type="text" class="form-control input-sm" name="competency-unit-code" data-bind="{value: competency.properties.competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
 							<div class="p-sm text-right">
 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
