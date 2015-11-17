@@ -104,7 +104,8 @@
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
 				});	
-				renderTo.find("button[data-action=create]").click(function(e){					
+				renderTo.find("button[data-action=create]").click(function(e){		
+					getCompetencyGrid().clearSelection();			
 					openCompetencyEditor(new common.ui.data.competency.Competency());				
 				});		
 							
@@ -164,10 +165,6 @@
 						console.log( common.ui.stringify(source) );
 						source.copy($this.competency);	
 						
-						if(!$this.competency.properties.competencyUnitCode ){
-							$this.competency.properties.competencyUnitCode = "";
-						}
-						
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.competency.set("objectType", 1);
@@ -176,7 +173,7 @@
 							$this.set("editable", true);
 							$this.set("updatable", true);
 							$this.set("deletable", false);
-							$this.set("competencyUnitCode", "");
+							$this.competency.properties = {};
 							renderTo.find("input[name=competency-name]").focus();
 							
 						}else{
@@ -184,6 +181,9 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
+						}
+						if(!$this.competency.properties.competencyUnitCode ){
+							$this.competency.properties.competencyUnitCode = "";
 						}
 					}		
 				});
