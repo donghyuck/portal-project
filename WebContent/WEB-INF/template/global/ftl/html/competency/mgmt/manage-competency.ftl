@@ -136,9 +136,9 @@
 						var btn = $(e.target);	
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/navigator/update.json?output=json" />' , 
+							'<@spring.url "/secure/data/mgmt/competency/update.json?output=json" />' , 
 							{
-								data : kendo.stringify( $this.menu ),
+								data : kendo.stringify( $this.competency ),
 								contentType : "application/json",
 								success : function(response){},
 								fail: function(){								
@@ -157,8 +157,6 @@
 								}
 							}
 						);	
-												
-					
 					},
 					setSource : function(source){
 						var $this = this;
