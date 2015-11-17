@@ -131,6 +131,35 @@
 					deletable: false,
 					updatable : false,
 					competency : new common.ui.data.competency.Competency(),
+					saveOrUpdate : function(e){
+						var $this = this;
+						var btn = $(e.target);	
+						common.ui.progress(renderTo, true);
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/navigator/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.menu ),
+								contentType : "application/json",
+								success : function(response){},
+								fail: function(){								
+									common.ui.notification().show({	title:"역량 등록 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									common.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									common.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									//btn.button('reset');
+								}
+							}
+						);	
+												
+					
+					},
 					setSource : function(source){
 						var $this = this;
 						console.log( common.ui.stringify(source) );
@@ -372,7 +401,7 @@
 				<section class="right">		
 					
 					<div id="competency-details" class="panel panel-default" style="display:none;">
-						
+						<form>
 						<div class="panel-heading"><span class="panel-title">
 							<input type="text" class="form-control input-sm" name="competency-name" data-bind="value: competency.name" placeholder="역량 이름">
 						</span></div>
@@ -384,7 +413,7 @@
 								<button class="btn btn-danger btn-flat btn-outline" data-bind="visible:deletable" style="display:none;">삭제</button>
 							</div>
 						</div>
-						
+						</form>
 						<div class="panel-body">						
 							<ul class="nav nav-tabs nav-tabs-xs">
 								<li class="m-l-sm active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">기본정보</a></li>
