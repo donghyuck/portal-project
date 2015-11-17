@@ -121,12 +121,11 @@
 					updatable : false,					
 					competency : new common.ui.data.competency.Competency(),
 					edit : function(e){
-						var $this = this;
-					
+						var $this = this;					
 						$this.set("visible", false);
 						$this.set("editable", true);
 						$this.set("updatable", false);
-						
+						renderTo.find("input[name=competency-name]").focus();
 						return false;
 					},
 					delete : function(e){
