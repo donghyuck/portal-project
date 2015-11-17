@@ -57,10 +57,8 @@
 		}		
 		function createCompetencyGrid(){
 			var renderTo = $("#competency-grid");
-			if(! common.ui.exists(renderTo) ){
-				
-				var companySelector = getCompanySelector();		
-				
+			if(! common.ui.exists(renderTo) ){				
+				var companySelector = getCompanySelector();						
 				common.ui.grid(renderTo, {
 					autoBind:false,
 					dataSource: {
@@ -95,22 +93,12 @@
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	  
-	                    	
 	                    	openCompetencyEditor(selectedCell);
 	                    }   
 					},
 					dataBound: function(e) {
 
-					}
-					/*,messages:{
-						commands:{
-							edit : "변경",
-							update : "저장",
-							createchild : "추가",
-							destory: "삭제",
-							canceledit: "취소"						
-						}
-					}*/			
+					}		
 				});		
 
 				renderTo.find("button[data-action=refresh]").click(function(e){
@@ -141,7 +129,9 @@
 								data : kendo.stringify( $this.competency ),
 								contentType : "application/json",
 								success : function(response){
-								
+									$this.set("editable", false);
+									$this.set("updatable", false);
+									$this.set("deletable", true);
 								},
 								complete : function(e){
 									common.ui.progress(renderTo, false);
@@ -156,10 +146,13 @@
 						source.copy($this.competency);	
 						if($this.competency.get("competencyId") == 0)
 						{
+							$this.competency.set("objectType", 1);
+							$this.competency.set("objectId", getCompanySelector().value() );
 							$this.set("editable", true);
 							$this.set("updatable", true);
 							$this.set("deletable", false);
 							renderTo.find("input[name=competency-name]").focus();
+							
 						}else{
 							$this.set("editable", false);
 							$this.set("updatable", false);
