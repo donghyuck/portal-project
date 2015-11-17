@@ -87,7 +87,7 @@
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
-					editable : false,
+					editable : false,					
 					selectable : "row",
 					scrollable: true,
 					height: 591,
@@ -128,6 +128,8 @@
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					editable : false,
+					deletable: false,
+					updatable : false,
 					competency : new common.ui.data.competency.Competency(),
 					setSource : function(source){
 						var $this = this;
@@ -136,9 +138,13 @@
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.set("editable", true);
+							$this.set("updatable", true);
+							$this.set("deletable", false);
 							renderTo.find("input[name=competency-name]").focus();
 						}else{
 							$this.set("editable", false);
+							$this.set("updatable", false);
+							$this.set("deletable", true);
 						}
 					}		
 				});
@@ -372,7 +378,11 @@
 						</span></div>
 						<div class="panel-body">	
 							<textarea class="form-control" rows="4" name="competency-description" data-bind="value: competency.description" placeholder="역량 정의"></textarea>
-							<button class="btn btn-success btn-flat btn-outline">저장</button>
+							<div class="p-sm text-right">
+								<button class="btn btn-default btn-flat" data-bind="invisible:editable">변경</button>
+								<button class="btn btn-primary btn-flat btn-outline" data-bind="visible:editable">저장</button>
+								<button class="btn btn-danger btn-flat btn-outline" data-bind="visible:deletable">삭제</button>
+							</div>
 						</div>
 						</form>
 						<div class="panel-body">						
