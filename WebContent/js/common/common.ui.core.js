@@ -1041,6 +1041,7 @@
 		animate_v2 : common.ui.animate_v2 || animate_v2,
 		fx : kendo.fx,
 		bind : kendo.bind,
+		progress : kendo.ui.progress,
 		stringify : kendo.stringify,
 		template : kendo.template,
 		upload : common.ui.upload || upload,
