@@ -125,6 +125,7 @@
 						$this.set("visible", true);
 						$this.set("editable", false);
 						$this.set("updatable", false);
+						return false;
 					},
 					edit : function(e){
 						var $this = this;					
