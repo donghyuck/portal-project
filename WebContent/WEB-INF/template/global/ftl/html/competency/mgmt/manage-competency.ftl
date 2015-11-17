@@ -372,6 +372,7 @@
 						</span></div>
 						<div class="panel-body">	
 							<textarea class="form-control" rows="4" name="competency-description" data-bind="value: competency.description" placeholder="역량 정의"></textarea>
+							<button class="btn btn-success btn-flat btn-outline">저장</button>
 						</div>
 						</form>
 						<div class="panel-body">						
