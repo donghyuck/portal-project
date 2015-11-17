@@ -278,15 +278,26 @@
 			min-height:338px;
 		}
 				
+				
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f6f6f6;		 
 		    min-height: 663px;
 		    height:100%;
 		    width:100%;
-		    position: relative;
+		    position: static;
+		    left:0px;
+		    
 		    border-radius: 4px;
 		}
+		
+		#content-wrapper section.layout:after, #content-wrapper section.layout:before{
+			clear:both;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+			display:table;
+		} 
 		
 		#content-wrapper section.left {
 			height:100%;
