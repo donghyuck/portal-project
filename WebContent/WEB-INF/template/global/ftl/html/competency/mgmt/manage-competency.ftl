@@ -124,7 +124,7 @@
 						var $this = this;					
 						$this.set("visible", false);
 						$this.set("editable", true);
-						$this.set("updatable", false);
+						$this.set("updatable", true);
 						renderTo.find("input[name=competency-name]").focus();
 						return false;
 					},
