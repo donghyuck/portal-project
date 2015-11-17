@@ -132,6 +132,7 @@
 									$this.set("editable", false);
 									$this.set("updatable", false);
 									$this.set("deletable", true);
+									getCompetencyGrid().dataSource.read();
 								},
 								complete : function(e){
 									common.ui.progress(renderTo, false);
