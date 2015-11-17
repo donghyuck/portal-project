@@ -280,7 +280,7 @@
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f6f6f6;		 
-		    min-height: 662px;
+		    min-height: 663px;
 		    height:100%;
 		    width:100%;
 		    position: relative;
@@ -332,10 +332,10 @@
 				<section class="right">		
 					<div id="competency-details" class="panel panel-default">
 						<div class="panel-heading"><span class="panel-title">
-							<input type="text" class="form-control input-sm"  data-bind="value: site.name">
+							<input type="text" class="form-control input-sm"  data-bind="value: competency.name">
 						</span></div>
 						<div class="panel-body">	
-							<textarea class="form-control" rows="4" data-bind="value: site.description"></textarea>
+							<textarea class="form-control" rows="4" data-bind="value: competency.description"></textarea>
 						</div>
 						<div class="panel-body">						
 							<ul class="nav nav-tabs nav-tabs-xs">

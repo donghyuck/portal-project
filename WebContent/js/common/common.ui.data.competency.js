@@ -12,11 +12,7 @@
 	        description: { type: "string", editable: true },
 	    },	    
 	    copy : function ( target ){
-	    	//target.set("competencyId", this.get("competencyId"));
-	    	
-	    	target.competencyId = this.get("competencyId");
-	    	
-	    	
+	    	target.set("competencyId", this.get("competencyId"));
 	    	target.set("objectType", this.get("objectType"));
 	    	target.set("objectId", this.get("objectId"));
 	    	target.set("name", this.get("name"));
