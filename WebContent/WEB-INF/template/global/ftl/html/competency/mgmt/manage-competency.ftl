@@ -136,6 +136,7 @@
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.set("editable", true);
+							renderTo.find("input[name=competency-name]").focus();
 						}else{
 							$this.set("editable", false);
 						}
