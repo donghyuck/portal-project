@@ -371,8 +371,8 @@
 				</section>									
 				<section class="right">		
 					
-					<div id="competency-details" class="panel panel-default">
-						<form>
+					<div id="competency-details" class="panel panel-default" style="display:none;">
+						
 						<div class="panel-heading"><span class="panel-title">
 							<input type="text" class="form-control input-sm" name="competency-name" data-bind="value: competency.name" placeholder="역량 이름">
 						</span></div>
@@ -384,7 +384,7 @@
 								<button class="btn btn-danger btn-flat btn-outline" data-bind="visible:deletable" style="display:none;">삭제</button>
 							</div>
 						</div>
-						</form>
+						
 						<div class="panel-body">						
 							<ul class="nav nav-tabs nav-tabs-xs">
 								<li class="m-l-sm active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">기본정보</a></li>
