@@ -120,6 +120,12 @@
 					deletable: false,
 					updatable : false,					
 					competency : new common.ui.data.competency.Competency(),
+					view : function(e){
+						var $this = this;		
+						$this.set("visible", true);
+						$this.set("editable", false);
+						$this.set("updatable", false);
+					},
 					edit : function(e){
 						var $this = this;					
 						$this.set("visible", false);
