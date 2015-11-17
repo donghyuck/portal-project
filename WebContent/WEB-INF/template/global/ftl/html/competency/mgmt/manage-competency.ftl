@@ -140,7 +140,9 @@
 							{
 								data : kendo.stringify( $this.competency ),
 								contentType : "application/json",
-								success : function(response){},
+								success : function(response){
+								
+								},
 								fail: function(){								
 									common.ui.notification().show({	title:"역량 등록 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
 										"error"
@@ -150,10 +152,11 @@
 									common.ui.progress(renderTo, true);
 								},
 								requestEnd : function(){
-									common.ui.progress(renderTo, false);
+									//common.ui.progress(renderTo, false);
 								},
 								complete : function(e){
 									//btn.button('reset');
+									common.ui.progress(renderTo, false);
 								}
 							}
 						);	
