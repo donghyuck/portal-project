@@ -299,6 +299,16 @@
 			display:table;
 		} 
 		
+		section.left, section.right, section.bottom {
+			display:block;
+		}
+		
+		section.left:after, section.right:after, section.left:before, section.right:before,  {
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;		
+		}
+		
 		#content-wrapper section.left {
 			width:500px;
 			position: absolute;
@@ -315,8 +325,7 @@
 		
 		#content-wrapper section.right {
 			margin-left:500px;
-			height:100%;
-			display:block;
+			height:100%;			
 		}
 		
 		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
