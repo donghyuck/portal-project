@@ -418,7 +418,7 @@
 						</form>
 						<div class="panel-body" data-bind="{visible:deletable}">						
 							<ul class="nav nav-tabs nav-tabs-xs">
-								<li class="m-l-sm active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">기본정보</a></li>
+								<li class="m-l-sm active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">하위요소/능력단위요소</a></li>
 								<li><a href="#competency-details-tabs-1" data-toggle="tab" data-action="properties">속성</a></li>
 							</ul>							
 							<div class="tab-content">
