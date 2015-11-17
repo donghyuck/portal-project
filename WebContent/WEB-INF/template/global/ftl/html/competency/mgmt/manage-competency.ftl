@@ -171,11 +171,9 @@
 					}		
 				});
 				renderTo.data("model", observable );
-				kendo.bind(renderTo, observable );	
-				
+				kendo.bind(renderTo, observable );					
 				renderTo.find("ul.nav.nav-tabs a:first").tab('show');	
-			}
-			
+			}			
 			if( source ){
 				renderTo.data("model").setSource( source );	
 				if (!renderTo.is(":visible")) 
@@ -277,10 +275,7 @@
 			if( !renderTo.data('model') ){
 				var observable =  common.ui.observable({
 					codeset : new common.ui.data.CodeSet(),
-					setSource : function(source){
-						
-						
-						
+					setSource : function(source){						
 						this.codeset.set('name', source.name );			
 						this.codeset.set('description', source.description );				
 					}				
@@ -396,10 +391,10 @@
 					<div id="competency-details" class="panel panel-default" style="display:none;">
 						<form>
 						<div class="panel-heading"><span class="panel-title">
-							<input type="text" class="form-control input-sm" name="competency-name" data-bind="value: competency.name" placeholder="역량 이름">
+							<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, invisible:editable }" placeholder="역량 이름">
 						</span></div>
 						<div class="panel-body">	
-							<textarea class="form-control" rows="4" name="competency-description" data-bind="value: competency.description" placeholder="역량 정의"></textarea>
+							<textarea class="form-control" rows="4" name="competency-description" data-bind="{value: competency.description, invisible:editable}" placeholder="역량 정의"></textarea>
 							<div class="p-sm text-right">
 								<button class="btn btn-default btn-flat" data-bind="{invisible:editable, click:edit }" style="display:none;">변경</button>
 								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>
