@@ -300,12 +300,17 @@
 		} 
 		
 		#content-wrapper section.left {
-			height:100%;
-			float: left;
-			border-right: solid 1px #e2e2e2;
-			position: relative;
 			width:500px;
+			position: absolute;
+			height:auto;
+			min-height: 100%;			
+			border-right: solid 1px #e2e2e2;
 		}
+		
+		left.fixed {
+			position: fixed;
+		}
+		
 		#content-wrapper section.right {
 			/*margin-left:400px; */
 			height:100%;
