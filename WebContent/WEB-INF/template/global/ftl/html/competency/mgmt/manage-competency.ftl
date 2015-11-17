@@ -157,6 +157,7 @@
 								}
 							}
 						);	
+						return false;
 					},
 					setSource : function(source){
 						var $this = this;
