@@ -308,7 +308,9 @@
 		}
 		
 		.left.fixed {
-			position: fixed;
+			position: fixed!important;
+			right : 0 ;
+			top : 0;
 		}
 		
 		#content-wrapper section.right {
