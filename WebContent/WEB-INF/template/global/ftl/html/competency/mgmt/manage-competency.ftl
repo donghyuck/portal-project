@@ -390,7 +390,7 @@
 					
 					<div id="competency-details" class="panel panel-default" style="display:none;">
 						<form>
-						<div class="panel-heading"><span class="panel-title" data-bind="{text: visible:editable}"></span>
+						<div class="panel-heading"><span class="panel-title" data-bind="{text: competency.name, visible:editable}"></span>
 							<input type="text" class="form-control input-sm" name="competency-name" 
 								data-bind="{value: competency.name, invisible:editable }" 
 								style="display:none;" 
