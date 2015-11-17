@@ -115,13 +115,15 @@
 			var renderTo = $("#competency-details");
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
+					visible : false,
 					editable : false,
 					deletable: false,
-					updatable : false,
+					updatable : false,					
 					competency : new common.ui.data.competency.Competency(),
 					edit : function(e){
+						$this.set("visible", false);
 						$this.set("editable", true);
-						$this.set("updatable", true);
+						$this.set("updatable", false);
 						return false;
 					},
 					delete : function(e){
@@ -137,9 +139,12 @@
 								data : kendo.stringify( $this.competency ),
 								contentType : "application/json",
 								success : function(response){
+									
+									$this.set("visible", true);
 									$this.set("editable", false);
 									$this.set("updatable", false);
 									$this.set("deletable", true);
+									
 									console.log( common.ui.stringify(response) );
 									getCompetencyGrid().dataSource.read();
 								},
@@ -158,12 +163,14 @@
 						{
 							$this.competency.set("objectType", 1);
 							$this.competency.set("objectId", getCompanySelector().value() );
+							$this.set("visible", false);
 							$this.set("editable", true);
 							$this.set("updatable", true);
 							$this.set("deletable", false);
 							renderTo.find("input[name=competency-name]").focus();
 							
 						}else{
+							$this.set("visible", true);
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
@@ -390,20 +397,13 @@
 					
 					<div id="competency-details" class="panel panel-default" style="display:none;">
 						<form>
-						<div class="panel-heading"><span class="panel-title" data-bind="{text: competency.name, visible:editable}"></span>
-							<input type="text" class="form-control input-sm" name="competency-name" 
-								data-bind="{value: competency.name, invisible:editable }" 
-								style="display:none;" 
-								placeholder="역량 이름" />
+						<div class="panel-heading"><span class="panel-title" data-bind="{text: competency.name, visible:visible}"></span>
+							<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량 이름" />
 						</div>
 						<div class="panel-body">	
-							<textarea class="form-control" rows="4" 
-								name="competency-description" 
-								data-bind="{value: competency.description, invisible:editable}" 
-								style="display:none;" 
-								placeholder="역량 정의"></textarea>
+							<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량 정의"></textarea>
 							<div class="p-sm text-right">
-								<button class="btn btn-default btn-flat" data-bind="{invisible:editable, click:edit }" style="display:none;">변경</button>
+								<button class="btn btn-default btn-flat" data-bind="{visible:editable, click:edit }">변경</button>
 								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>
 								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
 							</div>
