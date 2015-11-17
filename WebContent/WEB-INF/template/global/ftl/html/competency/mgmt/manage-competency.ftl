@@ -312,10 +312,9 @@
 		}
 		
 		#content-wrapper section.right {
-			/*margin-left:400px; */
+			margin-left:500px;
 			height:100%;
-			overflow:hidden;
-			position:relative;
+			display:block;
 		}
 		
 		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
