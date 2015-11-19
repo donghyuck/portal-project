@@ -465,13 +465,13 @@
 						</form>
 						<div class="panel-body" data-bind="{visible:deletable}">						
 							<ul class="nav nav-tabs nav-tabs-xs">
-								<li class="m-l-sm active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="elements">하위요소/능력단위요소</a></li>
+								<li class="m-l-sm"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="elements">하위요소/능력단위요소</a></li>
 								<li><a href="#competency-details-tabs-2" data-toggle="tab" data-action="variable-range">적용범위 및 작업상황</a></li>
 								<li><a href="#competency-details-tabs-3" data-toggle="tab" data-action="assessment-guide">평가지침</a></li>
 								<li><a href="#competency-details-tabs-4" data-toggle="tab" data-action="key-competency">직업기초능력</a></li>
 							</ul>							
 							<div class="tab-content">
-								<div role="tabpanel" class="tab-pane fade active" id="competency-details-tabs-0">
+								<div role="tabpanel" class="tab-pane fade" id="competency-details-tabs-0">
 									<div class="essential-element" ></div>
 								</div>
 								<div role="tabpanel" class="tab-pane fade" id="competency-details-tabs-2">
