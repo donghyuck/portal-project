@@ -179,7 +179,7 @@
 							$this.set("visible", true);
 							$this.set("editable", false);
 							$this.set("updatable", false);
-							$this.set("deletable", true);
+							$this.set("deletable", true);							
 							renderTo.find("ul.nav.nav-tabs a:first").tab('show');	
 						}
 					}		
@@ -209,7 +209,12 @@
 			});			
 		}
 		
+		function getEssentialElementGrid(renderTo){
+			return common.ui.grid( renderTo.find(".essential-element") );
+		}
+		
 		function createEssentialElementGrid( renderTo, source ){		
+		
 			if( ! renderTo.data("kendoGrid") ){
 				common.ui.grid( renderTo, {
 					autoBind:false,
@@ -238,7 +243,9 @@
 					common.ui.grid( renderTo ).addRow();		
 				});	
 				
-			}			
+			}	
+			
+			console.log("======" + source.competencyId);		
 			common.ui.grid( renderTo ).dataSource.read({competencyId: source.competencyId});			
 		}
 				
@@ -462,7 +469,7 @@
 						<div class="panel-heading"><span class="panel-title" data-bind="{text: competency.name, visible:visible}"></span>
 							<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량/능력단위" />
 						</div>
-						<div class="panel-body">	
+						<div class="panel-body no-padding-b">	
 							<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>
 							<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
 							
@@ -477,7 +484,7 @@
 							</div>
 						</div>
 						</form>
-						<div class="panel-body" data-bind="{visible:deletable}">						
+						<div class="panel-body no-padding-t" data-bind="{visible:deletable}">						
 							<ul class="nav nav-tabs nav-tabs-xs">
 								<li class="m-l-sm"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="elements">하위요소/능력단위요소</a></li>
 								<li><a href="#competency-details-tabs-2" data-toggle="tab" data-action="variable-range">적용범위 및 작업상황</a></li>
