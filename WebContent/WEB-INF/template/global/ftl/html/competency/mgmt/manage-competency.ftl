@@ -179,14 +179,15 @@
 							$this.set("visible", true);
 							$this.set("editable", false);
 							$this.set("updatable", false);
-							$this.set("deletable", true);							
-							console.log( renderTo.find("ul.nav.nav-tabs a:first").tab('show') );							
+							$this.set("deletable", true);				
+							common.ui.grid( renderTo.find(".essential-element") ).dataSource.read({competencyId:$this.competency.competencyId});			
+							renderTo.find("ul.nav.nav-tabs a:first").tab('show')						
 						}
 					}		
 				});
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );		
-				createCompetencyDetailsTabs(renderTo);
+				createEssentialElementGrid(renderTo.find(".essential-element"));
 			}			
 			if( source ){
 				renderTo.data("model").setSource( source );	
@@ -209,11 +210,7 @@
 			});			
 		}
 		
-		function getEssentialElementGrid(renderTo){
-			return common.ui.grid( renderTo.find(".essential-element") );
-		}
-		
-		function createEssentialElementGrid( renderTo, source ){	
+		function createEssentialElementGrid( renderTo ){	
 			if( ! renderTo.data("kendoGrid") ){
 				common.ui.grid( renderTo, {
 					autoBind:false,
@@ -241,9 +238,7 @@
 					common.ui.grid( renderTo ).clearSelection();			
 					common.ui.grid( renderTo ).addRow();		
 				});	
-			}	
-			console.log("======" + source.competencyId);		
-			common.ui.grid( renderTo ).dataSource.read({competencyId: source.competencyId});			
+			}
 		}
 				
 		
