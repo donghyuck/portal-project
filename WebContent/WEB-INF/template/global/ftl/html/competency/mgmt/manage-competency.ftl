@@ -184,7 +184,9 @@
 					}		
 				});
 				renderTo.data("model", observable );
-				kendo.bind(renderTo, observable );					
+				kendo.bind(renderTo, observable );		
+				createCompetencyDetailsTabs(renderTo, observable);
+							
 				renderTo.find("ul.nav.nav-tabs a:first").tab('show');	
 			}			
 			if( source ){
@@ -193,6 +195,47 @@
 					renderTo.show();		
 			}			
 		}
+		
+		function createCompetencyDetailsTabs(renderTo, data){
+			renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
+				var show_bs_tab = $(e.target);
+				switch( show_bs_tab.data("action") ){
+					case "properties" :
+					createCompetencyPropertiesGrid(renderTo.find(".properties"), data.competency );
+					break;
+					case "elements" :
+					createEssentialElementGrid(renderTo.find(".essential-element"), data.competency );
+					break;	
+				}	
+			});
+		}
+		
+		function createEssentialElementGrid( renderTo, source ){
+			if( ! renderTo.data("kendoGrid") ){
+				common.ui.grid( renderTo, {
+					autoBind:false,
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/competency/element/list.json?output=json" />', type:'post' }
+						},
+						schema: {
+							model: common.ui.data.competency.Competency
+						}
+					},
+					columns: [
+						{ title: "속성", field: "name" },
+						{ title: "레벨", field: "level", width: 100 }
+					],
+					resizable: true,
+					editable : false,	
+					height: 400,
+					change: function(e) {
+					}
+				});	
+			}
+			common.ui.grid( renderTo ).dataSource.read({competencyId: source.competencyId});			
+		}
+				
 		
 		function getCodeSetTreeList(){
 			var renderTo = $("#codeset-treelist");
@@ -423,13 +466,14 @@
 						</form>
 						<div class="panel-body" data-bind="{visible:deletable}">						
 							<ul class="nav nav-tabs nav-tabs-xs">
-								<li class="m-l-sm active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="none">하위요소/능력단위요소</a></li>
-								<li><a href="#competency-details-tabs-2" data-toggle="tab" data-action="properties">적용범위 및 작업상황</a></li>
-								<li><a href="#competency-details-tabs-3" data-toggle="tab" data-action="properties">평가지침</a></li>
-								<li><a href="#competency-details-tabs-4" data-toggle="tab" data-action="properties">직업기초능력</a></li>
+								<li class="m-l-sm active"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="elements">하위요소/능력단위요소</a></li>
+								<li><a href="#competency-details-tabs-2" data-toggle="tab" data-action="variable-range">적용범위 및 작업상황</a></li>
+								<li><a href="#competency-details-tabs-3" data-toggle="tab" data-action="assessment-guide">평가지침</a></li>
+								<li><a href="#competency-details-tabs-4" data-toggle="tab" data-action="key-competency">직업기초능력</a></li>
 							</ul>							
 							<div class="tab-content">
 								<div role="tabpanel" class="tab-pane fade active" id="competency-details-tabs-0">
+									<div class="essential-element" ></div>
 								</div>
 								<div role="tabpanel" class="tab-pane fade" id="competency-details-tabs-2">
 								</div>
