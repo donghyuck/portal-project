@@ -51,10 +51,12 @@
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
+		
 		function getCompetencyGrid(){
 			var renderTo = $("#competency-grid");
 			return common.ui.grid(renderTo);
-		}		
+		}	
+			
 		function createCompetencyGrid(){
 			var renderTo = $("#competency-grid");
 			if(! common.ui.exists(renderTo) ){				
@@ -162,9 +164,8 @@
 					},
 					setSource : function(source){
 						var $this = this;
-						console.log( common.ui.stringify(source) );
+						renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
-						
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.competency.set("objectType", 1);
@@ -172,16 +173,14 @@
 							$this.set("visible", false);
 							$this.set("editable", true);
 							$this.set("updatable", true);
-							$this.set("deletable", false);
-							$this.competency.properties.competencyUnitCode = "";
+							$this.set("deletable", false);	
 							renderTo.find("input[name=competency-name]").focus();
-							
 						}else{
 							$this.set("visible", true);
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
-						}						
+						}
 					}		
 				});
 				renderTo.data("model", observable );
