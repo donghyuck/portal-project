@@ -221,6 +221,7 @@
 							model: common.ui.data.competency.Competency
 						}
 					},
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량/능력단위 추가 </button>'),
 					columns: [
 						{ title: "속성", field: "name" },
 						{ title: "레벨", field: "level", width: 100 }
@@ -231,6 +232,12 @@
 					change: function(e) {
 					}
 				});	
+				
+				renderTo.find("button[data-action=create]").click(function(e){		
+					common.ui.grid( renderTo ).clearSelection();			
+					common.ui.grid( renderTo ).addRow();		
+				});	
+				
 			}			
 			common.ui.grid( renderTo ).dataSource.read({competencyId: source.competencyId});			
 		}
