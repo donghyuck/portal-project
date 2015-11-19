@@ -430,7 +430,11 @@
 			border-top-left-radius:0;
 			border-top-right-radius:0;
 		}
-		
+		.no-shadow{
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -451,7 +455,7 @@
 				<section class="left">				
 					<div class="panel panel-transparent">
 						<div class="panel-body"><input id="company-dropdown-list" /></div>
-						<div id="competency-grid" class="no-border"></div>
+						<div id="competency-grid" class="no-border no-shadow"></div>
 					</div>
 				</section>									
 				<section class="right">		
