@@ -84,7 +84,7 @@
 					columns: [
 						{ title: "역량/능력단위", field: "name"}
 					],
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량/능력단위 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량/(능력단위) 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : false,					
@@ -221,7 +221,7 @@
 							model: common.ui.data.competency.Competency
 						}
 					},
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량/능력단위 추가 </button>'),
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 하위요소(능력단위 요소) 추가 </button>'),
 					columns: [
 						{ title: "속성", field: "name" },
 						{ title: "레벨", field: "level", width: 100 }
@@ -425,6 +425,13 @@
 			border-bottom-right-radius: 3px;
 			border-bottom-left-radius: 3px
 		}
+		
+		.essential-element {
+			border-top : 0;
+			border-top-left-radius:0;
+			border-top-right-radius:0;
+		}
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
