@@ -195,7 +195,7 @@
 			}			
 		}
 		
-		function createCompetencyDetailsTabs(renderTo, data){		
+		function createCompetencyDetailsTabs(renderTo, data){	
 			renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
 				var show_bs_tab = $(e.target);
 				switch( show_bs_tab.data("action") ){
@@ -206,10 +206,10 @@
 					createEssentialElementGrid(renderTo.find(".essential-element"), renderTo.data("model").competency );
 					break;	
 				}	
-			});
+			});			
 		}
 		
-		function createEssentialElementGrid( renderTo, source ){
+		function createEssentialElementGrid( renderTo, source ){		
 			if( ! renderTo.data("kendoGrid") ){
 				common.ui.grid( renderTo, {
 					autoBind:false,
@@ -231,8 +231,8 @@
 					change: function(e) {
 					}
 				});	
-			}
-			common.ui.grid( renderTo ).dataSource.read({competencyId: source.competencyId});
+			}			
+			common.ui.grid( renderTo ).dataSource.read({competencyId: source.competencyId});			
 		}
 				
 		
