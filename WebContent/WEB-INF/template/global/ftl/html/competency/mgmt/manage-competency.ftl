@@ -219,7 +219,7 @@
 							read: { url:'<@spring.url "/secure/data/mgmt/competency/element/list.json?output=json" />', type:'post' }
 						},
 						schema: {
-							model: common.ui.data.competency.Competency
+							model: common.ui.data.competency.EssentialElement
 						}
 					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 하위요소(능력단위 요소) 추가 </button>'),
@@ -242,8 +242,7 @@
 				});	
 				
 				renderTo.find("button[data-action=create]").click(function(e){		
-					common.ui.grid( renderTo ).clearSelection();			
-					common.ui.grid( renderTo ).addRow();		
+					createEssentialElementModal(new common.ui.data.competency.EssentialElement());		
 				});	
 			}
 		}
@@ -253,7 +252,8 @@
 			var renderTo = $("#essential-element-edit-modal");
 			if( !renderTo.data('bs.modal') ){
 				var observable =  common.ui.observable({
-					competency : parentRenderTo.data("model").competency				
+					competency : parentRenderTo.data("model").competency,
+					essentialElement : new common.ui.data.competency.EssentialElement()
 				});				
 				kendo.bind(renderTo, observable );
 				renderTo.data("model", observable);	
