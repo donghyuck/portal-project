@@ -246,6 +246,8 @@
 				});	
 			}
 		}
+		
+		
 				
 		function createEssentialElementModal(source){
 			var parentRenderTo = $("#competency-details");
