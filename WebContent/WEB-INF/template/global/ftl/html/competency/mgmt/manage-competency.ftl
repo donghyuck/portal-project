@@ -663,6 +663,9 @@
 							</div>
 						</form>
 					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal"></button>			
+					</div>
 				</div>
 			</div>
 		</div>			
