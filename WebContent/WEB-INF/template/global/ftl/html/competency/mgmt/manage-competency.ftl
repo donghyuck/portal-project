@@ -564,21 +564,32 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-						<div class="form-group">
-							<label class="control-label" for="input-essential-element-name">하위요소(능력단위요소)</label>
-							<input type="text" class="form-control" id="input-essential-element-name" data-bind="value:essentialElement.name">
-							<p class="help-block"역량(능력단위)를 구성하는 중요한 핵심 하위요소(하위능력).</p>
+						<div class="row">
+							<div class="col-sm-6">							
+								<div class="form-group">
+									<label class="control-label" for="input-essential-element-name">하위요소(능력단위요소)</label>
+									<input type="text" class="form-control" id="input-essential-element-name" data-bind="value:essentialElement.name">
+									<p class="help-block"역량(능력단위)를 구성하는 중요한 핵심 하위요소(하위능력).</p>
+								</div>	
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label class="control-label" for="input-essential-element-levle">수준</label>
+									<select id="input-essential-element-level" class="form-control" data-bind="value:essentialElement.level">
+										<option value="1">1수준</option>
+										<option value="2">2수준</option>
+										<option value="3">3수준</option>
+										<option value="4">4수준</option>
+										<option value="5">5수준</option>
+										<option value="6">6수준</option>
+										<option value="7">7수준</option>
+										<option value="8">8수준</option>
+									</select>
+								</div>	
+							</div>
 						</div>
-						<div class="form-group">
-							<label class="control-label" for="input-essential-element-levle">수준</label>
-							<select id="input-essential-element-level" class="form-control" data-bind="value:essentialElement.level">
-								<option value="1">1수준</option>
-								<option value="2">2수준</option>
-								<option value="3">3수준</option>
-								<option value="4">4수준</option>
-								<option value="5">5수준</option>
-							</select>
-						</div>			
+
+		
 					</div>
 				</div>
 			</div>
