@@ -606,6 +606,7 @@
 							<div class="col-sm-6">							
 								<div class="form-group">
 									<label class="control-label" for="input-essential-element-name">하위요소(능력단위요소)</label>
+									<p data-bind="{text:essentialElement.name, visible:visible}"></p>
 									<input type="text" class="form-control" id="input-essential-element-name" data-bind="{value:essentialElement.name, visible:editable}}">
 									<p class="help-block"역량(능력단위)를 구성하는 중요한 핵심 하위요소(하위능력).</p>
 								</div>	
@@ -613,6 +614,7 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label class="control-label" for="input-essential-element-levle">직무 수준</label>
+									<p class="p-sm" data-bind="visible:visible"><span data-bind="text:essentialElement.level"></span>수준</p>
 									<select id="input-essential-element-level" class="form-control" data-bind="{value:essentialElement.level, visible:editable}">
 										<option value="1">1수준</option>
 										<option value="2">2수준</option>
