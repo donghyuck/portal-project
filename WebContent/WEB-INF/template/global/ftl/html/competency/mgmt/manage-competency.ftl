@@ -286,7 +286,7 @@
 					saveOrUpdate : function(e){
 						var $this = this;
 						
-						console.log("keepCreating:" + keepCreating);
+						console.log("keepCreating:" + $this.get("keepCreating") );
 						var btn = $(e.target);	
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
@@ -303,6 +303,7 @@
 								}
 							}
 						);	
+						
 						return false;
 					},									
 					competency : parentRenderTo.data("model").competency,
