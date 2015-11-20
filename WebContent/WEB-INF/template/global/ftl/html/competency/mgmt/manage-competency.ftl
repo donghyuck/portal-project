@@ -616,6 +616,7 @@
 									<label class="control-label" for="input-essential-element-levle">직무 수준</label>
 									<p class="m-l-sm" data-bind="visible:visible"><span data-bind="text:essentialElement.level"></span>수준</p>
 									<select id="input-essential-element-level" class="form-control" data-bind="{value:essentialElement.level, visible:editable}" placeholder="직무 수준">
+										<option value="0" disabled selected>직무 수준 선택</option>
 										<option value="1">1수준</option>
 										<option value="2">2수준</option>
 										<option value="3">3수준</option>
