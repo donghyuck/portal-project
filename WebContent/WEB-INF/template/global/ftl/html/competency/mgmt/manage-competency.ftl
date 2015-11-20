@@ -266,8 +266,11 @@
 				renderTo.data("model", observable);	
 			}
 			
-			renderTo.modal('show');	
-			
+				
+			if( source ){
+				renderTo.data("model").setSource( source );		
+			}	
+			renderTo.modal('show');		
 		}		
 		
 		function getCodeSetTreeList(){
