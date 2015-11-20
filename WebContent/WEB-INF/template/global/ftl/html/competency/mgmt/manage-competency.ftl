@@ -231,6 +231,11 @@
 					editable : false,	
 					height: 400,
 					change: function(e) {
+					 	var selectedCells = this.select();	
+					 	if( selectedCells.length == 1){
+	                    	var selectedCell = this.dataItem( selectedCells );	  
+	                    	createEssentialElementModal(selectedCell);
+	                    } 					
 					}
 				});	
 				
@@ -241,6 +246,21 @@
 			}
 		}
 				
+		function createEssentialElementModal(source){
+			var renderTo = $("#essential-element-edit-modal");
+			if( !renderTo.data('bs.modal') ){
+				var observable =  common.ui.observable({
+				
+				
+				});
+				
+				kendo.bind(renderTo, observable );
+				renderTo.data("model", observable);	
+			}
+			
+			renderTo.modal('show');	
+			
+		}		
 		
 		function getCodeSetTreeList(){
 			var renderTo = $("#codeset-treelist");
@@ -507,6 +527,21 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
+		
+		<div id="essential-element-edit-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content my-page-view-form">	
+					<div class="modal-header">
+						<h2></h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>
+					<div class="modal-body">
+
+					</div>
+				</div>
+			</div>
+		</div>			
+		
 		<script id="treeview-template" type="text/kendo-ui-template">
 			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
             #: item.name # 
