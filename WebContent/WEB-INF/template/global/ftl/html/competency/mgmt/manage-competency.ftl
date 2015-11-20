@@ -249,13 +249,12 @@
 		}
 				
 		function createEssentialElementModal(source){
+			var parentRenderTo = $("#competency-details");
 			var renderTo = $("#essential-element-edit-modal");
 			if( !renderTo.data('bs.modal') ){
 				var observable =  common.ui.observable({
-				
-				
-				});
-				
+					competency : parentRenderTo.data("model").competency				
+				});				
 				kendo.bind(renderTo, observable );
 				renderTo.data("model", observable);	
 			}
@@ -335,14 +334,12 @@
 						}
 					},
 					editable:true,
-					change: function(e) {
-						
+					change: function(e) {						
 						var selectedRows = this.select();
 						var dataItem = this.dataItem(selectedRows[0]);
 						createCodeSetPanel( dataItem );
 					}
-				});			
-				
+				});							
 				renderTo.find("button[data-action=create]").click(function(e){
 					getCodeSetTreeList.addRow();
 					common.ui.treelist(renderTo).select("tr:eq(1)");
@@ -534,7 +531,7 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-view-form">	
 					<div class="modal-header">
-						<h2></h2>
+						<h2><span data-bind="text:competency.name"></span></h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
