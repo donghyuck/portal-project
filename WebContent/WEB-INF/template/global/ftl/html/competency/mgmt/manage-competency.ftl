@@ -530,12 +530,19 @@
 			border-top-left-radius:0;
 			border-top-right-radius:0;
 		}
+		
 		.no-shadow{
 			-webkit-box-shadow: none;
 			-moz-box-shadow: none;
 			box-shadow: none;
 		}
 		
+		.no-shadow .k-pager-wrap {
+			border-bottom-width : 0;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
 		.modal-dialog .close  {
 			position: absolute;
 			top: 0;
