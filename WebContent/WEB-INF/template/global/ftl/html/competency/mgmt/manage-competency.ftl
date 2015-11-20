@@ -551,7 +551,7 @@
 		}
 		
 		label.k-checkbox-label {
-			display: null;
+			display: inline;
 			font-weight: normal;
 		}
 		
