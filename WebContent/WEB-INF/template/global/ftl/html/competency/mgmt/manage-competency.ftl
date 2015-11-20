@@ -458,7 +458,7 @@
 		.modal-dialog .close  {
 			position: absolute;
 			top: 0;
-			right: 15px;
+			right: 10px;
 			line-height: 50px;
 			font-size: 40px;
 			display: block;
@@ -550,7 +550,7 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">	
 					<div class="modal-header">
-						<h2 class="modal-title"><span data-bind="text:competency.name"></span></h2>
+						<h3 class="modal-title"><span data-bind="text:competency.name"></span></h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
