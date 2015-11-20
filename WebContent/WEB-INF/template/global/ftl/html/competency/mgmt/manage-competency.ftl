@@ -601,6 +601,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
+						<form>
 						<div class="row">
 							<div class="col-sm-6">							
 								<div class="form-group">
@@ -632,7 +633,7 @@
 								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
 								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
 							</div>
-						
+						</form>
 					</div>
 				</div>
 			</div>
