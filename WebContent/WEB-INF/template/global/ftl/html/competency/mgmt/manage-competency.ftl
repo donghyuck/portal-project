@@ -229,6 +229,8 @@
 					],
 					resizable: true,
 					editable : false,	
+					selectable : "row",
+					scrollable: true,					
 					height: 400,
 					change: function(e) {
 					 	var selectedCells = this.select();	
