@@ -254,12 +254,49 @@
 			var renderTo = $("#essential-element-edit-modal");
 			if( !renderTo.data('bs.modal') ){
 				var observable =  common.ui.observable({
+					visible : false,
+					editable : false,
+					deletable: false,
+					updatable : false,	
+					view : function(e){
+						var $this = this;		
+						$this.set("visible", true);
+						$this.set("editable", false);
+						$this.set("updatable", false);
+						return false;
+					},
+					edit : function(e){
+						var $this = this;					
+						$this.set("visible", false);
+						$this.set("editable", true);
+						$this.set("updatable", true);
+						$("#input-essential-element-name").focus();
+						return false;
+					},
+					delete : function(e){
+						var $this = this;
+						return false;
+					},					
 					competency : parentRenderTo.data("model").competency,
 					essentialElement : new common.ui.data.competency.EssentialElement(),
 					setSource: function(source){
 						var $this = this;
 						source.copy($this.essentialElement);	
-						//renderTo.find("form")[0].reset();
+						//renderTo.find("form")[0].reset();						
+						if($this.essentialElement.get("essentialElementId") == 0)
+						{
+							$this.essentialElement.set("competencyId", $this.competency.competencyId);
+							$this.set("visible", false);
+							$this.set("editable", true);
+							$this.set("updatable", true);
+							$this.set("deletable", false);	
+							$("#input-essential-element-name").focus();
+						}else{
+							$this.set("visible", true);
+							$this.set("editable", false);
+							$this.set("updatable", false);
+							$this.set("deletable", true);							
+						}
 					}
 				});				
 				kendo.bind(renderTo, observable );
@@ -568,14 +605,14 @@
 							<div class="col-sm-6">							
 								<div class="form-group">
 									<label class="control-label" for="input-essential-element-name">하위요소(능력단위요소)</label>
-									<input type="text" class="form-control" id="input-essential-element-name" data-bind="value:essentialElement.name">
+									<input type="text" class="form-control" id="input-essential-element-name" data-bind="{value:essentialElement.name, visible:editable}}">
 									<p class="help-block"역량(능력단위)를 구성하는 중요한 핵심 하위요소(하위능력).</p>
 								</div>	
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label class="control-label" for="input-essential-element-levle">수준</label>
-									<select id="input-essential-element-level" class="form-control" data-bind="value:essentialElement.level">
+									<label class="control-label" for="input-essential-element-levle">직무 수준</label>
+									<select id="input-essential-element-level" class="form-control" data-bind="{value:essentialElement.level, visible:editable}">
 										<option value="1">1수준</option>
 										<option value="2">2수준</option>
 										<option value="3">3수준</option>
@@ -588,8 +625,14 @@
 								</div>	
 							</div>
 						</div>
-
-		
+						
+							<div class="p-sm text-right">
+								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
+							</div>
+						
 					</div>
 				</div>
 			</div>
