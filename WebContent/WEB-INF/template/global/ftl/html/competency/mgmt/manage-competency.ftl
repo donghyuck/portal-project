@@ -210,6 +210,11 @@
 			});			
 		}
 		
+		function getEssentialElementGrid(){
+			var renderTo = $("#competency-details .essential-element");
+			return common.ui.grid(renderTo);
+		}
+		
 		function createEssentialElementGrid( renderTo ){	
 			if( ! renderTo.data("kendoGrid") ){
 				common.ui.grid( renderTo, {
@@ -276,7 +281,27 @@
 					delete : function(e){
 						var $this = this;
 						return false;
-					},					
+					},	
+					saveOrUpdate : function(e){
+						var $this = this;
+						var btn = $(e.target);	
+						common.ui.progress(renderTo, true);
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/competency/element/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.essentialElement ),
+								contentType : "application/json",
+								success : function(response){																											
+									$this.setSource(new common.ui.data.competency.EssentialElement(response));								
+									getEssentialElementGrid().dataSource.read({competencyId:$this.competency.competencyId});
+								},
+								complete : function(e){
+									common.ui.progress(renderTo, false);
+								}
+							}
+						);	
+						return false;
+					},									
 					competency : parentRenderTo.data("model").competency,
 					essentialElement : new common.ui.data.competency.EssentialElement(),
 					setSource: function(source){
