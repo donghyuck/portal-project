@@ -529,7 +529,7 @@
 		
 		<div id="essential-element-edit-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg">
-				<div class="modal-content my-page-view-form">	
+				<div class="modal-content">	
 					<div class="modal-header">
 						<h2 class="modal-title"><span data-bind="text:competency.name"></span></h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
