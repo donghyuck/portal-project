@@ -258,7 +258,7 @@
 					essentialElement : new common.ui.data.competency.EssentialElement(),
 					setSource: function(source){
 						var $this = this;
-						renderTo.find("form")[0].reset();
+						//renderTo.find("form")[0].reset();
 						source.copy($this.essentialElement);	
 					}
 				});				
