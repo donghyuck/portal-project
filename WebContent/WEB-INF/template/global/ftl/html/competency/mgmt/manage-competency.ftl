@@ -596,12 +596,11 @@
 							<div class="panel-body no-padding-b">	
 								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>
 								<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
-								<div class="row">
-									<div class="col-md-6">								
-										<table class="table table-striped">
+								<div class="p-sm">
+									<table class="table table-striped">
 											<thead>
-												<tr width>
-													<th>직무 수준</th>
+												<tr>
+													<th width="50%">직무 수준</th>
 													<th>능력단위분류 코드(NCS코드)</th>
 												</tr>
 											</thead>
@@ -627,8 +626,7 @@
 													</td>
 												</tr>
 											</tbody>
-										</table>								
-									</div>
+									</table>		
 								</div>
 								<div class="p-sm text-right">
 									<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
