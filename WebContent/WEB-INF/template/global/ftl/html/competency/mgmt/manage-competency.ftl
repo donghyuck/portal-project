@@ -258,8 +258,8 @@
 					essentialElement : new common.ui.data.competency.EssentialElement(),
 					setSource: function(source){
 						var $this = this;
-						//renderTo.find("form")[0].reset();
 						source.copy($this.essentialElement);	
+						//renderTo.find("form")[0].reset();
 					}
 				});				
 				kendo.bind(renderTo, observable );
@@ -572,11 +572,11 @@
 						<div class="form-group">
 							<label class="control-label" for="input-essential-element-levle">수준</label>
 							<select id="input-essential-element-level" class="form-control" data-bind="value:essentialElement.level">
-								<option>1수준</option>
-								<option>2수준</option>
-								<option>3수준</option>
-								<option>4수준</option>
-								<option>5수준</option>
+								<option value="1">1수준</option>
+								<option value="2">2수준</option>
+								<option value="3">3수준</option>
+								<option value="4">4수준</option>
+								<option value="5">5수준</option>
 							</select>
 						</div>			
 					</div>
