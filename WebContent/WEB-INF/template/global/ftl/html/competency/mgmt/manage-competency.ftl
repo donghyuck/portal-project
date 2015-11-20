@@ -263,6 +263,7 @@
 					editable : false,
 					deletable: false,
 					updatable : false,	
+					keepCreating : false,
 					view : function(e){
 						var $this = this;		
 						$this.set("visible", true);
@@ -284,6 +285,8 @@
 					},	
 					saveOrUpdate : function(e){
 						var $this = this;
+						
+						console.log("keepCreating:" + keepCreating);
 						var btn = $(e.target);	
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
@@ -306,8 +309,9 @@
 					essentialElement : new common.ui.data.competency.EssentialElement(),
 					setSource: function(source){
 						var $this = this;
-						source.copy($this.essentialElement);	
-						//renderTo.find("form")[0].reset();						
+						
+						renderTo.find("form")[0].reset();		
+						source.copy($this.essentialElement);					
 						if($this.essentialElement.get("essentialElementId") == 0)
 						{
 							$this.essentialElement.set("competencyId", $this.competency.competencyId);
@@ -654,7 +658,11 @@
 								</div>	
 							</div>
 						</div>
-						
+						<div class="row">
+							<div class="col-sm-12">
+								<label class="toggle"><input type="checkbox"  data-bind="checked: keepCreating" /> 이어서 하위요소(능력단위요소) 추가하기</label>
+							</div>
+						</div>
 							<div class="p-sm text-right">
 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
