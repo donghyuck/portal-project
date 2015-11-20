@@ -661,7 +661,8 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								<label class="toggle"><input type="checkbox"  data-bind="checked: keepCreating" /> 이어서 하위요소(능력단위요소) 추가하기</label>
+								<input type="checkbox" id="input-essential-element-opt" class="k-checkbox" data-bind="checked: keepCreating" >
+         						<label class="k-checkbox-label" for="input-essential-element-opt">이어서 하위요소(능력단위요소) 추가하기</label>
 							</div>
 						</div>
 							<div class="p-sm text-right">
