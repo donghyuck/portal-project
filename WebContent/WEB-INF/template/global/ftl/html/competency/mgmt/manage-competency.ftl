@@ -294,8 +294,12 @@
 							{
 								data : kendo.stringify( $this.essentialElement ),
 								contentType : "application/json",
-								success : function(response){																											
-									$this.setSource(new common.ui.data.competency.EssentialElement(response));								
+								success : function(response){																	
+									if($this.get("keepCreating")){
+										$this.setSource(new common.ui.data.competency.EssentialElement());	
+									}else{
+										$this.setSource(new common.ui.data.competency.EssentialElement(response));								
+									}
 									getEssentialElementGrid().dataSource.read({competencyId:$this.competency.competencyId});
 								},
 								complete : function(e){
@@ -309,8 +313,7 @@
 					competency : parentRenderTo.data("model").competency,
 					essentialElement : new common.ui.data.competency.EssentialElement(),
 					setSource: function(source){
-						var $this = this;
-						
+						var $this = this;						
 						renderTo.find("form")[0].reset();		
 						source.copy($this.essentialElement);					
 						if($this.essentialElement.get("essentialElementId") == 0)
