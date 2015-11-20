@@ -668,7 +668,7 @@
 								</div>	
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" data-bind="invisible:deletable">
 							<div class="col-sm-offset-6 col-sm-6">
 								<input type="checkbox" id="input-essential-element-opt" class="k-checkbox" data-bind="checked: keepCreating" >
          						<label class="k-checkbox-label" for="input-essential-element-opt">이어서 하위요소(능력단위요소) 추가하기</label>
