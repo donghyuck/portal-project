@@ -454,6 +454,25 @@
 			-moz-box-shadow: none;
 			box-shadow: none;
 		}
+		
+		.modal-dialog .close  {
+			position: absolute;
+			top: 0;
+			right: 15px;
+			line-height: 50px;
+			font-size: 40px;
+			display: block;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			background: url(/images/common/grey-cross.png) no-repeat center;
+			background-size: 25px;
+			content: "";
+			display: block;
+			opacity: .5;
+			z-index: 1047;
+		}
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
