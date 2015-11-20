@@ -623,7 +623,7 @@
 													</td>
 													<td>
 													<span data-bind="{text: competency.properties.competencyUnitCode, visible:visible}"></span>
-													<input type="text" class="form-control input-sm" name="competency-unit-code" data-bind="{value: competency.properties.competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
+													<input type="text" class="form-control input-md" name="competency-unit-code" data-bind="{value: competency.properties.competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
 													</td>
 												</tr>
 											</tbody>
@@ -676,31 +676,38 @@
 					<div class="modal-body">
 						<form>
 						<div class="row">
-							<div class="col-sm-6">							
-								<div class="form-group">
-									<label class="control-label" for="input-essential-element-name">하위요소(능력단위요소)</label>
-									<p class="m-l-sm" data-bind="{text:essentialElement.name, visible:visible}"></p>
-									<input type="text" class="form-control" id="input-essential-element-name" data-bind="{value:essentialElement.name, visible:editable}}" placeholder="하위요소(능력단위요소)">
-									<p class="help-block"역량(능력단위)를 구성하는 중요한 핵심 하위요소(하위능력).</p>
-								</div>	
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label class="control-label" for="input-essential-element-levle">직무 수준</label>
-									<p class="m-l-sm" data-bind="visible:visible"><span data-bind="text:essentialElement.level"></span>수준</p>
-									<select id="input-essential-element-level" class="form-control" data-bind="{value:essentialElement.level, visible:editable}" placeholder="직무 수준">
-										<option value="0" disabled selected>직무 수준 선택</option>
-										<option value="1">1수준</option>
-										<option value="2">2수준</option>
-										<option value="3">3수준</option>
-										<option value="4">4수준</option>
-										<option value="5">5수준</option>
-										<option value="6">6수준</option>
-										<option value="7">7수준</option>
-										<option value="8">8수준</option>
-									</select>
-								</div>	
-							</div>
+							<div class="col-sm-12">									
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th width="50%">하위요소(능력단위요소)</th>
+											<th width="50%">직무 수준</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<span data-bind="{text:essentialElement.name, visible:visible}"></span>
+												<input type="text" class="form-control" id="input-essential-element-name" data-bind="{value:essentialElement.name, visible:editable}}" placeholder="하위요소(능력단위요소)">											
+											</td>
+											<td>
+												<span data-bind="visible:visible"><span data-bind="text:essentialElement.level"></span>수준</span>
+												<select id="input-essential-element-level" class="form-control" data-bind="{value:essentialElement.level, visible:editable}" placeholder="직무 수준">
+													<option value="0" disabled selected>직무 수준 선택</option>
+													<option value="1">1수준</option>
+													<option value="2">2수준</option>
+													<option value="3">3수준</option>
+													<option value="4">4수준</option>
+													<option value="5">5수준</option>
+													<option value="6">6수준</option>
+													<option value="7">7수준</option>
+													<option value="8">8수준</option>
+												</select>
+											</td>
+										</tr>	
+									</tbody>				
+								</table>
+							</div>				
 						</div>
 						<div class="row" data-bind="invisible:deletable">
 							<div class="col-sm-offset-6 col-sm-6">
