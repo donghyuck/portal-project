@@ -253,7 +253,12 @@
 			if( !renderTo.data('bs.modal') ){
 				var observable =  common.ui.observable({
 					competency : parentRenderTo.data("model").competency,
-					essentialElement : new common.ui.data.competency.EssentialElement()
+					essentialElement : new common.ui.data.competency.EssentialElement(),
+					setSource: function(source){
+						var $this = this;
+						renderTo.find("form")[0].reset();
+						source.copy($this.essentialElement);	
+					}
 				});				
 				kendo.bind(renderTo, observable );
 				renderTo.data("model", observable);	
