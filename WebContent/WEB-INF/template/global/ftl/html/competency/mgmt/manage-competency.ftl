@@ -287,6 +287,7 @@
 						var $this = this;
 						
 						console.log("keepCreating:" + $this.get("keepCreating") );
+						
 						var btn = $(e.target);	
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
@@ -295,7 +296,7 @@
 								data : kendo.stringify( $this.essentialElement ),
 								contentType : "application/json",
 								success : function(response){																	
-									if($this.get("keepCreating")){
+									if( $this.keepCreating ){
 										$this.setSource(new common.ui.data.competency.EssentialElement());	
 									}else{
 										$this.setSource(new common.ui.data.competency.EssentialElement(response));								
