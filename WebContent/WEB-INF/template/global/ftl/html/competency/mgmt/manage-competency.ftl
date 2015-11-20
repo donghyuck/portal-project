@@ -556,12 +556,12 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label class="control-label" for="input-essential-element-name">하위요소(능력단위요소)</label>
-							<input type="text" class="form-control" id="input-essential-element-name">
+							<input type="text" class="form-control" id="input-essential-element-name" data-bind="value:essentialElement.name">
 							<p class="help-block"역량(능력단위)를 구성하는 중요한 핵심 하위요소(하위능력).</p>
 						</div>
 						<div class="form-group">
 							<label class="control-label" for="input-essential-element-levle">수준</label>
-							<select id="input-essential-element-level" class="form-control">
+							<select id="input-essential-element-level" class="form-control" data-bind="value:essentialElement.level">
 								<option>1수준</option>
 								<option>2수준</option>
 								<option>3수준</option>
