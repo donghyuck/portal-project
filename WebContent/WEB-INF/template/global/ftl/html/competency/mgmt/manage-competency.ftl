@@ -602,8 +602,8 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th>직무 수준</th>
-									<th>능력단위분류 코드(NCS코드)</th>
+									<th width="50%">직무 수준</th>
+									<th width="50%">능력단위분류 코드(NCS코드)</th>
 								</tr>
 							</thead>
 							<tbody>
