@@ -682,7 +682,7 @@
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal"></button>			
+						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
 					</div>
 				</div>
 			</div>
