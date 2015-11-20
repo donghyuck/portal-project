@@ -125,6 +125,9 @@
 					competency : new common.ui.data.competency.Competency(),
 					view : function(e){
 						var $this = this;		
+						if($this.competency.competencyId < 1){
+							renderTo.hide();	
+						}
 						$this.set("visible", true);
 						$this.set("editable", false);
 						$this.set("updatable", false);
@@ -284,10 +287,7 @@
 						return false;
 					},	
 					saveOrUpdate : function(e){
-						var $this = this;
-						
-						console.log("keepCreating:" + $this.get("keepCreating") );
-						
+						var $this = this;						
 						var btn = $(e.target);	
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
@@ -307,8 +307,7 @@
 									common.ui.progress(renderTo, false);
 								}
 							}
-						);	
-						
+						);							
 						return false;
 					},									
 					competency : parentRenderTo.data("model").competency,
@@ -335,9 +334,7 @@
 				});				
 				kendo.bind(renderTo, observable );
 				renderTo.data("model", observable);	
-			}
-			
-				
+			}				
 			if( source ){
 				renderTo.data("model").setSource( source );		
 			}	
