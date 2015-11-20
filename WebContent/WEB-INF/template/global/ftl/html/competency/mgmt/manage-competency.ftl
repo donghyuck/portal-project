@@ -638,6 +638,7 @@
 								</div>
 							</div>
 						</form>
+						<hr/>
 						<div class="panel-body no-padding-t" data-bind="{visible:deletable}">						
 							<ul class="nav nav-tabs nav-tabs-xs">
 								<li class="m-l-sm"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="elements">하위요소/능력단위요소</a></li>
