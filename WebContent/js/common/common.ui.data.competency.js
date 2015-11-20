@@ -9,6 +9,7 @@
 	    	objectType: { type: "number", editable: true, defaultValue: 0  },   
 	    	objectId: { type: "number", editable: true, defaultValue: 0  },   
 	        name: { type: "string", editable: true },
+	        level: { type: "number", editable: true, defaultValue: 0  },   
 	        description: { type: "string", editable: true },
 	    },	    
 	    copy : function ( target ){
@@ -17,6 +18,7 @@
 	    	target.set("objectId", this.get("objectId"));
 	    	target.set("name", this.get("name"));
 	    	target.set("description", this.get("description"));
+	    	target.set("level", this.get("level"));
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
