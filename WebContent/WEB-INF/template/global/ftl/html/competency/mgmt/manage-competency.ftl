@@ -254,8 +254,6 @@
 				});	
 			}
 		}
-		
-		
 				
 		function createEssentialElementModal(source){
 			var parentRenderTo = $("#competency-details");
@@ -269,6 +267,9 @@
 					keepCreating : false,
 					view : function(e){
 						var $this = this;		
+						if($this.essentialElement.essentialElementId < 1){
+							renderTo.modal('hide');						
+						}						
 						$this.set("visible", true);
 						$this.set("editable", false);
 						$this.set("updatable", false);
