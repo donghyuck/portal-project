@@ -550,6 +550,11 @@
 			z-index: 1047;
 		}
 		
+		label.k-checkbox-label {
+			display: null;
+			font-weight: normal;
+		}
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
