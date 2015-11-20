@@ -587,57 +587,56 @@
 						<div id="competency-grid" class="no-border no-shadow"></div>
 					</div>
 				</section>									
-				<section class="right">		
-					
+				<section class="right">							
 					<div id="competency-details" class="panel panel-default" style="display:none;">
 						<form>
-						<div class="panel-heading"><span class="panel-title" data-bind="{text: competency.name, visible:visible}"></span>
-							<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량/능력단위" />
-						</div>
-						<div class="panel-body no-padding-b">	
-							<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>
-							<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
-
-
-						<table class="table table-striped">
-							<thead>
-								<tr width>
-									<th>직무 수준</th>
-									<th>능력단위분류 코드(NCS코드)</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-									<p class="p-sm" data-bind="visible:visible"><span data-bind="text: competency.level"></span>수준</p>
-									<select id="input-competency-level" class="form-control" data-bind="{value:competency.level, visible:editable}" placeholder="직무 수준">
-										<option value="0" disabled selected>직무 수준 선택</option>
-										<option value="1">1수준</option>
-										<option value="2">2수준</option>
-										<option value="3">3수준</option>
-										<option value="4">4수준</option>
-										<option value="5">5수준</option>
-										<option value="6">6수준</option>
-										<option value="7">7수준</option>
-										<option value="8">8수준</option>
-									</select>
-									</td>
-									<td>
-									<p class="p-sm" data-bind="{text: competency.properties.competencyUnitCode, visible:visible}"></p>
-									<input type="text" class="form-control input-sm" name="competency-unit-code" data-bind="{value: competency.properties.competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						
-							
-							<div class="p-sm text-right">
-								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
-								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
-								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
-								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
+							<div class="panel-heading"><span class="panel-title" data-bind="{text: competency.name, visible:visible}"></span>
+								<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량/능력단위" />
 							</div>
-						</div>
+							<div class="panel-body no-padding-b">	
+								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>
+								<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
+								<div class="row">
+									<div class="col-md-6">								
+										<table class="table table-striped">
+											<thead>
+												<tr width>
+													<th>직무 수준</th>
+													<th>능력단위분류 코드(NCS코드)</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+													<span data-bind="visible:visible"><span data-bind="text: competency.level"></span>수준</span>
+													<select id="input-competency-level" class="form-control" data-bind="{value:competency.level, visible:editable}" placeholder="직무 수준">
+														<option value="0" disabled selected>직무 수준 선택</option>
+														<option value="1">1수준</option>
+														<option value="2">2수준</option>
+														<option value="3">3수준</option>
+														<option value="4">4수준</option>
+														<option value="5">5수준</option>
+														<option value="6">6수준</option>
+														<option value="7">7수준</option>
+														<option value="8">8수준</option>
+													</select>
+													</td>
+													<td>
+													<span data-bind="{text: competency.properties.competencyUnitCode, visible:visible}"></span>
+													<input type="text" class="form-control input-sm" name="competency-unit-code" data-bind="{value: competency.properties.competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
+													</td>
+												</tr>
+											</tbody>
+										</table>								
+									</div>
+								</div>
+								<div class="p-sm text-right">
+									<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+									<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+									<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
+								</div>
+							</div>
 						</form>
 						<div class="panel-body no-padding-t" data-bind="{visible:deletable}">						
 							<ul class="nav nav-tabs nav-tabs-xs">
