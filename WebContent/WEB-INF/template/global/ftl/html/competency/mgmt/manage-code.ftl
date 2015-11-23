@@ -146,7 +146,7 @@
 		}
 
 		function createCodeSetPanel(source){
-			var renderTo = $(".layout > .right > .panel:first");
+			var renderTo = $("#codeset-details");
 			if( !renderTo.data('model') ){
 				var observable =  common.ui.observable({
 					visible : false,
@@ -276,7 +276,7 @@
 					</section>									
 					<section class="right">
 						<form>
-						<div class="panel panel-default" style="display:none;">
+						<div id="codeset-details" class="panel panel-default" style="display:none;">
 							<div class="panel-heading"><span class="panel-title" data-bind="{text: text:codeset.name, visible:visible}"></span>
 								<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value: text:codeset.name, visible:editable }" placeholder="이름" />
 							</div>
