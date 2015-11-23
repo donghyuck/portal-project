@@ -135,8 +135,13 @@
 				});			
 				
 				renderTo.find("button[data-action=create]").click(function(e){
-					getCodeSetTreeList().clearSelection();
-					createCodeSetPanel(new common.ui.data.competency.CodeSet());
+					var codeset = new common.ui.data.competency.CodeSet();
+					var selectedRows = getCodeSetTreeList().select();
+					if( selectedRows.length > 0 ){
+						var dataItem = getCodeSetTreeList().dataItem(selectedRows[0]);
+						codeset.set("parentCodeSetId", dataItem.parentCodeSetId);
+					} 
+					createCodeSetPanel(codeset);
 				});	
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					getCodeSetTreeList().dataSource.read();
