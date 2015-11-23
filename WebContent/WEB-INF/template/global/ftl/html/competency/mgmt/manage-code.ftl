@@ -146,8 +146,35 @@
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					getCodeSetTreeList().dataSource.read();
 				});	
+				
+				createImportFileUpload();
 			}
 		}
+		
+		
+		function createImportFileUpload(){
+			var renderTo = $("#import-excel-file");
+			if( !common.ui.exists(renderTo){
+				renderTo.kendoUpload({
+					multiple : false,
+					width: 300,
+				 	showFileList : false,
+					localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
+					async: {
+						saveUrl:  '<@spring.url "/secure/data/mgmt/logo/upload.json?output=json"/>',							   
+						autoUpload: true
+					},
+					upload: function (e) {								         
+						e.data = {
+							objectType : 30,
+							objectId: data.webSiteId
+						};														    								    	 		    	 
+					},
+					success : function(e) {								    
+					}
+				});								
+			}			
+		}	
 
 		function createCodeSetPanel(source){
 			var renderTo = $("#codeset-details");
@@ -325,7 +352,13 @@
 								</div>									
 							</div>
 						</div>
-						</form>						
+						</form>
+						
+						<div class="panel panel-primay">
+							<div class="panel-body">
+								<input name="import-excel-file" type="file">
+							</div>
+						</div>						
 					</section>
 				</section>
 			</div> <!-- / #content-wrapper -->
