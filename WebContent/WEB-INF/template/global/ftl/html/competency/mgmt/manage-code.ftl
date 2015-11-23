@@ -294,12 +294,14 @@
 								<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />
 							</div>
 							<div class="panel-body no-padding-b">	
-								<p class="p-sm">
+								<div class="m-b-sm">
 									<span  data-bind="{text: codeset.code, visible:visible}"></span>
 									<input type="text" class="form-control input-sm" name="codeset-code" data-bind="{value:codeset.code, visible:editable }" placeholder="코드 값" />
-								</p>								
-								<p class="p-sm" data-bind="{text: codeset.description, visible:visible}"></p>
-								<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
+								</div>				
+								<div class="m-b-sm">				
+									<span data-bind="{text: codeset.description, visible:visible}"></span>
+									<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
+								</div>
 								<div class="p-sm text-right">
 									<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 									<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
