@@ -182,7 +182,8 @@
 					},	
 					setSource : function(source){
 						var $this = this;
-						source.copy($this.codeset);				    	
+						source.copy($this.codeset);				  
+						/**  	
 				    	if($this.codeset.get("codeSetId") == 0)
 				    	{
 				    		$this.codeset.set("objectType", 1);
@@ -198,6 +199,7 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);				
 						}
+						*/
 					}				
 				});				
 				renderTo.data("model", observable);			
