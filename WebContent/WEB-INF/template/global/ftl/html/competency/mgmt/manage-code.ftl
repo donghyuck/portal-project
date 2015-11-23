@@ -211,10 +211,13 @@
 			
 			
 			if( source ){
-				console.log( source instanceof common.ui.data.competency.CodeSet );
-				var newSource = new common.ui.data.competency.CodeSet(source) ;
-				console.log( typeof newSource );
-				renderTo.data("model").setSource( source ) ;	
+				
+				if( source instanceof common.ui.data.competency.CodeSet ){
+					renderTo.data("model").setSource( source ) ;	
+				}else{
+					var newSource = new common.ui.data.competency.CodeSet(source) ;
+					renderTo.data("model").setSource( newSource ) ;	
+				}				
 			}
 			if(renderTo.is(":hidden")){				
 				renderTo.show();
