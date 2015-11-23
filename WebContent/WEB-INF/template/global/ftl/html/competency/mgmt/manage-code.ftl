@@ -289,10 +289,15 @@
 					<section class="right">
 						<form>
 						<div id="codeset-details" class="panel panel-default" style="display:none;">
-							<div class="panel-heading"><span class="panel-title" data-bind="{text:codeset.name, visible:visible}"></span>
+							<div class="panel-heading">
+								<span class="panel-title" data-bind="{text:codeset.name, visible:visible}"></span>
 								<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />
 							</div>
 							<div class="panel-body no-padding-b">	
+								<p class="p-sm">
+									<span  data-bind="{text: codeset.code, visible:visible}"/>
+									<input type="text" class="form-control input-sm" name="codeset-code" data-bind="{value:codeset.code, visible:editable }" placeholder="코드 값" />
+								</p>								
 								<p class="p-sm" data-bind="{text: codeset.description, visible:visible}"></p>
 								<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
 								<div class="p-sm text-right">
