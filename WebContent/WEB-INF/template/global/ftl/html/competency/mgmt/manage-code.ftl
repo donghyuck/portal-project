@@ -149,7 +149,38 @@
 			var renderTo = $(".layout > .right > .panel:first");
 			if( !renderTo.data('model') ){
 				var observable =  common.ui.observable({
+					visible : false,
+					editable : false,
+					deletable: false,
+					updatable : false,						
 					codeset : new common.ui.data.CodeSet(),
+					view : function(e){
+						var $this = this;		
+						if($this.codeset.codeSetId < 1){
+							renderTo.hide();	
+						}
+						$this.set("visible", true);
+						$this.set("editable", false);
+						$this.set("updatable", false);
+						return false;
+					},
+					edit : function(e){
+						var $this = this;					
+						$this.set("visible", false);
+						$this.set("editable", true);
+						$this.set("updatable", true);
+						renderTo.find("input[name=codeset-name]").focus();
+						return false;
+					},
+					delete : function(e){
+						var $this = this;
+						return false;
+					},
+					saveOrUpdate : function(e){
+						var $this = this;
+						var btn = $(e.target);	
+						
+					},	
 					setSource : function(source){
 						var $this = this;
 				    	$this.codeset.set("codeSetId", source.get("codeSetId"));
@@ -161,7 +192,18 @@
 				    	$this.codeset.set("code", source.get("code"));
 				    	$this.codeset.set("modifiedDate", source.get("modifiedDate"));
 				    	$this.codeset.set("creationDate", source.get("creationDate"));
-				    	$this.codeset.set("enabled", source.get("enabled"));
+				    	$this.codeset.set("enabled", source.get("enabled"));				    	
+				    	if($this.competency.get("codeSetId") == 0)
+				    	{
+				    		$this.competency.set("objectType", 1);
+							$this.competency.set("objectId", getCompanySelector().value() );
+				    		renderTo.find("input[name=codeset-name]").focus();
+				    	}else{
+							$this.set("visible", true);
+							$this.set("editable", false);
+							$this.set("updatable", false);
+							$this.set("deletable", true);				
+						}
 					}				
 				});				
 				renderTo.data("model", observable);			
@@ -238,14 +280,24 @@
 					</div>
 				</section>									
 				<section class="right">
+					<form>
 					<div class="panel panel-default" data-bind="visible:visible" style="display:none;">
-						<div class="panel-heading">
-							<span data-bind="text:codeset.name"></span>
-							<small data-bind="text:codeset.description" class="text-muted"></small>
-						</div>	
-						
+						<div class="panel-heading"><span class="panel-title" data-bind="{text: text:codeset.name, visible:visible}"></span>
+							<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value: text:codeset.name, visible:editable }" placeholder="이름" />
+						</div>
+						<div class="panel-body no-padding-b">	
+							<p class="p-sm" data-bind="{text: codeset.description, visible:visible}"></p>
+							<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
+							
+							<div class="p-sm text-right">
+								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
+							</div>									
+						</div>
 					</div>
-					
+					</form>
 					
 						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible" style="display:none;">
 							<div class="panel-heading">
