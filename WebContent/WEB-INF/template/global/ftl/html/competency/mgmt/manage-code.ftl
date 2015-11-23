@@ -203,6 +203,8 @@
 				renderTo.data("model", observable);			
 				common.ui.bind( renderTo, observable );	
 			}			
+			
+			
 			if( source ){
 				console.log( source instanceof common.ui.data.competency.CodeSet );
 				var newSource = new common.ui.data.competency.CodeSet(source) ;
