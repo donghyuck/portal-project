@@ -80,7 +80,7 @@
 							}
 						},
 						schema: {
-							model: model: common.ui.data.competency.CodeSet
+							model: common.ui.data.competency.CodeSet
 							
 							/**
 							model:{
