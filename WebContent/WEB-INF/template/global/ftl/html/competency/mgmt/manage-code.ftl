@@ -355,7 +355,7 @@
 						
 						<div class="panel panel-primay">
 							<div class="panel-body">
-								<input id="import-excel-file" type="file">
+								<input id="import-excel-file" name="import-excel-file" type="file">
 							</div>
 						</div>						
 					</section>
