@@ -283,7 +283,6 @@
 						<div class="panel-body no-padding-b">	
 							<p class="p-sm" data-bind="{text: codeset.description, visible:visible}"></p>
 							<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
-							
 							<div class="p-sm text-right">
 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
@@ -292,40 +291,7 @@
 							</div>									
 						</div>
 					</div>
-					</form>
-					
-						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible" style="display:none;">
-							<div class="panel-heading">
-								<i class="fa fa-table"></i> <span data-bind="text:name"></span> 
-								<div class="panel-heading-controls">
-									<button class="close" data-action="slideUp"><i class="fa fa-chevron-up"></i></button>
-									<button class="close" data-action="slideDown"  style="display:none;"><i class="fa fa-chevron-down"></i></button>								
-								</div>
-							</div>			
-							<div data-role="grid" 
-								data-sortable="true" 
-								data-bind="source: columns" 
-								data-columns="[ {'field':'primaryKey', 'title':'기본키'}, {'field':'name', 'title':'컬럼'}, {'field':'typeName' ,'title':'타입'}, {'field':'size' ,'title':'크기'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
-							<div class="panel-footer">
-								컬럼 : <span data-bind="text: columnCount">0</span> 
-							</div>
-						</div>	
-						<div id="sql-details" class="panel no-border" style="display:none;">
-							<div class="panel-heading">
-								<span data-bind="text:file.name">&nbsp;</span>
-									<div class="panel-heading-controls">
-										<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>					
-									</div>
-								</div>			
-								<div class="panel-body padding-sm" style="height: 43px;">
-									<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
-									<div class="pull-right text-muted">
-										<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-									</div>
-							</div>
-							<div id="xmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
-							<div class="panel-footer no-padding-vr"></div>
-						</div>	
+					</form>						
 				</section>
 				</section>
 			</div> <!-- / #content-wrapper -->
