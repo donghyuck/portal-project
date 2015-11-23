@@ -135,8 +135,8 @@
 				});			
 				
 				renderTo.find("button[data-action=create]").click(function(e){
-					getCodeSetTreeList().addRow();
-					common.ui.treelist(renderTo).select("tr:eq(1)");
+					getCodeSetTreeList().clearSelection();
+					createCodeSetPanel(new common.ui.data.competency.CodeSet());
 				});	
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					getCodeSetTreeList().dataSource.read();
