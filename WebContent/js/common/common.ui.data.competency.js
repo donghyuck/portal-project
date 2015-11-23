@@ -46,8 +46,39 @@
 	    }    
 	});	
 	
+	var CodeSet = kendo.data.Model.define( {
+	    id: "codeSetId", // the identifier of the model
+	    parentId : "parentCodeSetId",
+	    fields: {
+	    	codeSetId: { type: "number"},
+	    	parentCodeSetId : { field:"parentCodeSetId", nullable:true },
+	    	objectType : { type: "number"},
+	    	objectId : { type: "number"},
+	    	description:  { type: "string" },
+	    	name : { type: "string" },	        
+	    	code : { type: "string" },	        
+	    	modifiedDate: { type: "date"},
+	        creationDate: { type: "date" },
+	    	enabled : {type: "boolean" }
+	    },    
+	    copy : function ( target ){
+	    	target.set("codeSetId", this.get("codeSetId"));
+	    	target.set("parentCodeSetId", this.get("parentCodeSetId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	target.set("code", this.get("code"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
+	    	target.set("creationDate", this.get("creationDate"));
+	    	target.set("enabled", this.get("enabled"));
+	    	
+	    }    
+	});
+	
 	extend( common.ui.data, {
 		competency:{
+			CodeSet : CodeSet,
 			Competency : Competency,
 			EssentialElement : EssentialElement
 		}  
