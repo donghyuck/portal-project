@@ -154,7 +154,7 @@
 		
 		function createImportFileUpload(){
 			var renderTo = $("#import-excel-file");
-			if( !common.ui.exists(renderTo){
+			if( !common.ui.exists(renderTo)){
 				renderTo.kendoUpload({
 					multiple : false,
 					width: 300,
