@@ -160,7 +160,7 @@
 				 	showFileList : false,
 					localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
 					async: {
-						saveUrl:  '<@spring.url "/secure/data/mgmt/logo/upload.json?output=json"/>',							   
+						saveUrl:  '<@spring.url "/secure/data/mgmt/competency/codeset/import.json?output=json"/>',							   
 						autoUpload: true
 					},
 					upload: function (e) {								         
