@@ -204,9 +204,9 @@
 				common.ui.bind( renderTo, observable );	
 			}			
 			if( source ){
-				console.log( source typeof common.ui.data.competency.CodeSet );
+				console.log( typeof source );
 				var newSource = new common.ui.data.competency.CodeSet(source) ;
-				console.log( newSource typeof common.ui.data.competency.CodeSet );
+				console.log( typeof newSource );
 				renderTo.data("model").setSource( source ) ;	
 			}
 			if(renderTo.is(":hidden")){				
