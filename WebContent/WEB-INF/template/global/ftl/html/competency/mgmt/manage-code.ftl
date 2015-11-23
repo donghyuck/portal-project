@@ -183,7 +183,22 @@
 					saveOrUpdate : function(e){
 						var $this = this;
 						var btn = $(e.target);	
-						
+						common.ui.progress(renderTo, true);
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/codeset/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.codeset ),
+								contentType : "application/json",
+								success : function(response){																	
+									$this.setSource(new common.ui.data.competency.CodeSet(response));				
+									getCodeSetTreeList().dataSource.read();
+								},
+								complete : function(e){
+									common.ui.progress(renderTo, false);
+								}
+							}
+						);						
+						return false;
 					},	
 					setSource : function(source){
 						var $this = this;
