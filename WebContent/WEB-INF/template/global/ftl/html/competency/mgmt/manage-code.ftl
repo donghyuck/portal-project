@@ -268,31 +268,31 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				<section class="layout">
-				<section class="left">				
-					<div class="panel panel-transparent">
-						<div class="panel-body"><input id="company-dropdown-list" /></div>
-						<div id="codeset-treelist" class="no-border" />
-					</div>
-				</section>									
-				<section class="right">
-					<form>
-					<div class="panel panel-default" style="display:none;">
-						<div class="panel-heading"><span class="panel-title" data-bind="{text: text:codeset.name, visible:visible}"></span>
-							<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value: text:codeset.name, visible:editable }" placeholder="이름" />
+					<section class="left">				
+						<div class="panel panel-transparent">
+							<div class="panel-body"><input id="company-dropdown-list" /></div>
+							<div id="codeset-treelist" class="no-border" />
 						</div>
-						<div class="panel-body no-padding-b">	
-							<p class="p-sm" data-bind="{text: codeset.description, visible:visible}"></p>
-							<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
-							<div class="p-sm text-right">
-								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
-								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
-								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
-								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
-							</div>									
+					</section>									
+					<section class="right">
+						<form>
+						<div class="panel panel-default" style="display:none;">
+							<div class="panel-heading"><span class="panel-title" data-bind="{text: text:codeset.name, visible:visible}"></span>
+								<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value: text:codeset.name, visible:editable }" placeholder="이름" />
+							</div>
+							<div class="panel-body no-padding-b">	
+								<p class="p-sm" data-bind="{text: codeset.description, visible:visible}"></p>
+								<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
+								<div class="p-sm text-right">
+									<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+									<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+									<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
+								</div>									
+							</div>
 						</div>
-					</div>
-					</form>						
-				</section>
+						</form>						
+					</section>
 				</section>
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
