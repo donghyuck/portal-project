@@ -204,10 +204,10 @@
 				common.ui.bind( renderTo, observable );	
 			}			
 			if( source ){
-				console.log( common.ui.stringify(source) );
+				console.log( source typeof common.ui.data.competency.CodeSet );
 				var newSource = new common.ui.data.competency.CodeSet(source) ;
-				
-				renderTo.data("model").setSource( newSource ) ;	
+				console.log( newSource typeof common.ui.data.competency.CodeSet );
+				renderTo.data("model").setSource( source ) ;	
 			}
 			if(renderTo.is(":hidden")){				
 				renderTo.show();
