@@ -204,7 +204,7 @@
 				common.ui.bind( renderTo, observable );	
 			}			
 			if( source ){
-				console.log( typeof source );
+				console.log( source instanceof common.ui.data.competency.CodeSet );
 				var newSource = new common.ui.data.competency.CodeSet(source) ;
 				console.log( typeof newSource );
 				renderTo.data("model").setSource( source ) ;	
