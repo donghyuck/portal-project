@@ -276,7 +276,7 @@
 				</section>									
 				<section class="right">
 					<form>
-					<div class="panel panel-default" data-bind="visible:visible" style="display:none;">
+					<div class="panel panel-default" style="display:none;">
 						<div class="panel-heading"><span class="panel-title" data-bind="{text: text:codeset.name, visible:visible}"></span>
 							<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value: text:codeset.name, visible:editable }" placeholder="이름" />
 						</div>
