@@ -165,8 +165,8 @@
 					},
 					upload: function (e) {								         
 						e.data = {
-							objectType : 30,
-							objectId: data.webSiteId
+							codeSetId : 1,
+							skipRowCount: 1
 						};														    								    	 		    	 
 					},
 					success : function(e) {								    
