@@ -295,7 +295,7 @@
 							</div>
 							<div class="panel-body no-padding-b">	
 								<p class="p-sm">
-									<span  data-bind="{text: codeset.code, visible:visible}"/>
+									<span  data-bind="{text: codeset.code, visible:visible}"></span>
 									<input type="text" class="form-control input-sm" name="codeset-code" data-bind="{value:codeset.code, visible:editable }" placeholder="코드 값" />
 								</p>								
 								<p class="p-sm" data-bind="{text: codeset.description, visible:visible}"></p>
