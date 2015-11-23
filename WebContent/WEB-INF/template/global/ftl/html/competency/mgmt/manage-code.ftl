@@ -45,7 +45,8 @@
 						getCodeSetTreeList().dataSource.read();
 					}
 				});	
-				createCodeSetTreeList();									
+				createCodeSetTreeList();	
+				createImportFileUpload();								
 				// END SCRIPT
 			}
 		}]);		
@@ -145,9 +146,7 @@
 				});	
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					getCodeSetTreeList().dataSource.read();
-				});	
-				
-				createImportFileUpload();
+				});					
 			}
 		}
 		
