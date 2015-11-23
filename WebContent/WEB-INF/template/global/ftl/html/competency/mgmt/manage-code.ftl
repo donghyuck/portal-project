@@ -127,8 +127,7 @@
 					editable:true,
 					
 					*/
-					change: function(e) {
-						
+					change: function(e) {						
 						var selectedRows = this.select();
 						var dataItem = this.dataItem(selectedRows[0]);
 						createCodeSetPanel( dataItem );
@@ -205,7 +204,10 @@
 				common.ui.bind( renderTo, observable );	
 			}			
 			if( source ){
-				renderTo.data("model").setSource( new common.ui.data.competency.CodeSet(source) ) ;	
+				console.log( common.ui.stringify(source) );
+				var newSource = new common.ui.data.competency.CodeSet(source) ;
+				
+				renderTo.data("model").setSource( newSource ) ;	
 			}
 			if(renderTo.is(":hidden")){				
 				renderTo.show();
