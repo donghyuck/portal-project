@@ -151,8 +151,17 @@
 				var observable =  common.ui.observable({
 					codeset : new common.ui.data.CodeSet(),
 					setSource : function(source){
-						this.codeset.set('name', source.name );			
-						this.codeset.set('description', source.description );				
+						var $this = this;
+				    	$this.codeset.set("codeSetId", source.get("codeSetId"));
+				    	$this.codeset.set("parentCodeSetId", source.get("parentCodeSetId"));
+				    	$this.codeset.set("objectType", source.get("objectType"));
+				    	$this.codeset.set("objectId", source.get("objectId"));
+				    	$this.codeset.set("name", source.get("name"));
+				    	$this.codeset.set("description", source.get("description"));
+				    	$this.codeset.set("code", source.get("code"));
+				    	$this.codeset.set("modifiedDate", source.get("modifiedDate"));
+				    	$this.codeset.set("creationDate", source.get("creationDate"));
+				    	$this.codeset.set("enabled", source.get("enabled"));
 					}				
 				});				
 				renderTo.data("model", observable);			
