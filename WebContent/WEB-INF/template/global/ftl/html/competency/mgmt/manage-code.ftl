@@ -68,7 +68,7 @@
 					autoBind:false,
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/codeset/list.json?output=json" />', type: 'POST'},
+							read: { url:'<@spring.url "/secure/data/mgmt/competency/codeset/list.json?output=json" />', type: 'POST'},
 							parameterMap: function (options, operation){
 								if (operation !== "read") {
 									if( operation == "create" ){
@@ -185,7 +185,7 @@
 						var btn = $(e.target);	
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/codeset/update.json?output=json" />' , 
+							'<@spring.url "/secure/data/mgmt/competency/codeset/update.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.codeset ),
 								contentType : "application/json",
