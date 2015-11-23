@@ -81,9 +81,6 @@
 							}
 						},
 						schema: {
-							model: common.ui.data.competency.CodeSet
-							
-							/**
 							model:{
 								id:'codeSetId',
 								expanded: true,
@@ -99,7 +96,7 @@
 							        creationDate: { type: "date" },
 							    	enabled : {type: "boolean" }
 							    }	
-							}*/
+							}
 						},				
 						error: common.ui.handleAjaxError					
 					},
