@@ -68,9 +68,7 @@
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/codeset/list.json?output=json" />', type: 'POST'},
-							create: { url:'<@spring.url "/secure/data/mgmt/codeset/update.json?output=json" />', type: 'POST', contentType : "application/json" },
 							parameterMap: function (options, operation){
-								console.log( operation +  " : "+ common.ui.stringify(options) );
 								if (operation !== "read") {
 									if( operation == "create" ){
 										options.objectType = 1 ;
@@ -82,6 +80,9 @@
 							}
 						},
 						schema: {
+							model: model: common.ui.data.competency.CodeSet
+							
+							/**
 							model:{
 								id:'codeSetId',
 								expanded: true,
@@ -97,23 +98,25 @@
 							        creationDate: { type: "date" },
 							    	enabled : {type: "boolean" }
 							    }	
-							}
+							}*/
 						},				
 						error: common.ui.handleAjaxError					
 					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 코드그룹 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'">새로고침</button></div>'),
 					columns : [
-						{field:'name', title:"코드"},
-						{field:'description', title:"설명"},
+						{field:'name', title:"이름"}
+						/**,
 						{ 
 							command: [
 								{ name: "edit", className: "btn btn-flat", imageClass:false },
 								{ name: "createchild", className: "btn btn-flat", imageClass:false }
 							], 
 						  	width: 200  
-						}						
+						}		
+						**/				
 					],
 					selectable: true,
+					/**
 					messages:{
 						commands:{
 							edit : "변경",
@@ -124,6 +127,8 @@
 						}
 					},
 					editable:true,
+					
+					*/
 					change: function(e) {
 						
 						var selectedRows = this.select();
