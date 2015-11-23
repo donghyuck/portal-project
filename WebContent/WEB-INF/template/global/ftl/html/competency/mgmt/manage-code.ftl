@@ -153,7 +153,7 @@
 					editable : false,
 					deletable: false,
 					updatable : false,						
-					codeset : new common.ui.data.CodeSet(),
+					codeset : new common.ui.data.competency.CodeSet(),
 					view : function(e){
 						var $this = this;		
 						if($this.codeset.codeSetId < 1){
@@ -205,7 +205,7 @@
 				common.ui.bind( renderTo, observable );	
 			}			
 			if( source ){
-				renderTo.data("model").setSource( new common.ui.data.CodeSet(source) ) ;	
+				renderTo.data("model").setSource( new common.ui.data.competency.CodeSet(source) ) ;	
 			}
 			if(renderTo.is(":hidden")){				
 				renderTo.show();
