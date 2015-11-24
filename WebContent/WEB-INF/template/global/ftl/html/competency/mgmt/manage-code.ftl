@@ -337,14 +337,14 @@
 								<table class="table table-striped">
 									<thead>
 										<tr>
-											<th width="50%">CODESET ID</th>
-											<th width="50%">SHEET INDEX</th>
-											<th>ROW 건너뛰기</th>
+											<th width="30%">CODESET ID</th>
+											<th width="35%">SHEET INDEX</th>
+											<th >ROW 건너뛰기</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td><input id="import-top-codeset-id" type="number" min="0" class="form-control input-sm" placeholder="최상위 CODESET ID" value="1" /></td>
+											<td><input id="import-top-codeset-id" type="number" min="1" class="form-control input-sm" placeholder="최상위 CODESET ID" value="1" /></td>
 											<td><input id="import-top-sheet-index" type="number" min="0" class="form-control input-sm" placeholder="SHEET INDEX" value="0" /></td>
 											<td><input id="import-skip-row-count" type="number" min="0" class="form-control input-sm" placeholder="ROW 건너뛰기" value="0" /></td>
 										</tr>
