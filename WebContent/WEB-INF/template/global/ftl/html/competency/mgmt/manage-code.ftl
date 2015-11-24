@@ -333,15 +333,8 @@
 							<div class="panel-heading">
 								<h5 class="panel-title">엑셀 업로드</h5>
 							</div>
-							<div class="panel-body">					
-							
-							<form class="form-inline">
-							  <div class="form-group">
-							   ROW <input type="text" class="form-control input-sm" data-bind="{value:codeset.name}" />	건너뛰기
-							  </div>
-							</form>
-				
-								<input type="text" class="form-control input-sm" data-bind="{value:codeset.name}" placeholder="ROW 건너뛰기" />							
+							<div class="panel-body">	
+								<input type="text" class="form-control input-sm m-b-sm" data-bind="{value:codeset.name}" placeholder="ROW 건너뛰기" />															
 								<input id="import-excel-file" name="import-excel-file" type="file">
 							</div>
 						</div>						
