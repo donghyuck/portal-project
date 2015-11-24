@@ -350,20 +350,15 @@
 										<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
 									</div>									
 								</div>
-								<hr/>
-								<div class="panel-body">
-								
-									<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />							
-									<input id="import-excel-file" name="import-excel-file" type="file">
-								</div>
 							</div>
 						</form>
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
-								
+								<h5 class="panel-title">엑셀 업로드</h5>
 							</div>
-							<div class="panel-body">	
-
+							<div class="panel-body">									
+								<input type="text" class="form-control input-sm" data-bind="{value:codeset.name}" placeholder="ROW 건너뛰기" />							
+								<input id="import-excel-file" name="import-excel-file" type="file">
 							</div>
 						</div>						
 					</section>
