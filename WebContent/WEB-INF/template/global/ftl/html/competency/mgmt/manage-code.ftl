@@ -334,6 +334,7 @@
 								<h5 class="panel-title">엑셀 업로드</h5>
 							</div>
 							<div class="panel-body">	
+								<input id="import-top-codeset-id" type="number" min="0" class="form-control input-sm m-b-sm" placeholder="최상위 CODESET ID" value="1" />		
 								<input id="import-skip-row-count" type="number" min="0" class="form-control input-sm m-b-sm" placeholder="ROW 건너뛰기" value="0" />															
 								<input id="import-excel-file" name="import-excel-file" type="file">
 							</div>
