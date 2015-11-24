@@ -337,8 +337,7 @@
 							
 							<form class="form-inline">
 							  <div class="form-group">
-							    <label class="sr-only">Email</label>
-							    <p class="form-control-static">email@example.com</p>
+							   ROW <input type="text" class="form-control input-sm" data-bind="{value:codeset.name}" />	건너뛰기
 							  </div>
 							</form>
 				
