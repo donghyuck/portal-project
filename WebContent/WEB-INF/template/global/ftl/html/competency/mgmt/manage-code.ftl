@@ -142,8 +142,8 @@
 					},
 					upload: function (e) {								         
 						e.data = {
-							codeSetId : 1,
-							skipRowCount: 1
+							codeSetId :  $("#import-top-codeset-id").val(),
+							skipRowCount: $("#import-skip-row-count").val()
 						};														    								    	 		    	 
 					},
 					success : function(e) {								    
@@ -334,7 +334,7 @@
 								<h5 class="panel-title">엑셀 업로드</h5>
 							</div>
 							<div class="panel-body">	
-								<input id="import-skip-row-count" type="number" min="0" class="form-control input-sm m-b-sm" placeholder="ROW 건너뛰기" />															
+								<input id="import-skip-row-count" type="number" min="0" class="form-control input-sm m-b-sm" placeholder="ROW 건너뛰기" value="0" />															
 								<input id="import-excel-file" name="import-excel-file" type="file">
 							</div>
 						</div>						
