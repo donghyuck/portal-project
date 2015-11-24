@@ -329,33 +329,41 @@
 					</section>									
 					<section class="right">
 						<form>
-						<div id="codeset-details" class="panel panel-default" style="display:none;">
-							<div class="panel-heading">
-								<span class="panel-title" data-bind="{text:codeset.name, visible:visible}"></span>
-								<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />
-							</div>
-							<div class="panel-body no-padding-b">	
-								<div class="m-b-sm">
-									<span  data-bind="{text: codeset.code, visible:visible}"></span>
-									<input type="text" class="form-control input-sm" name="codeset-code" data-bind="{value:codeset.code, visible:editable }" placeholder="코드 값" />
-								</div>				
-								<div class="m-b-sm">				
-									<span data-bind="{text: codeset.description, visible:visible}"></span>
-									<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
+							<div id="codeset-details" class="panel panel-default no-border" style="display:none;">
+								<div class="panel-heading">
+									<span class="panel-title" data-bind="{text:codeset.name, visible:visible}"></span>
+									<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />
 								</div>
-								<div class="p-sm text-right">
-									<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
-									<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
-									<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
-									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
-								</div>									
+								<div class="panel-body no-padding-b">	
+									<div class="m-b-sm">
+										<span  data-bind="{text: codeset.code, visible:visible}"></span>
+										<input type="text" class="form-control input-sm" name="codeset-code" data-bind="{value:codeset.code, visible:editable }" placeholder="코드 값" />
+									</div>				
+									<div class="m-b-sm">				
+										<span data-bind="{text: codeset.description, visible:visible}"></span>
+										<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
+									</div>
+									<div class="p-sm text-right">
+										<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+										<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+										<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+										<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
+									</div>									
+								</div>
+								<hr/>
+								<div class="panel-body">
+								
+									<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />							
+									<input id="import-excel-file" name="import-excel-file" type="file">
+								</div>
 							</div>
-						</div>
 						</form>
-						
-						<div class="panel panel-primay">
-							<div class="panel-body">
-								<input id="import-excel-file" name="import-excel-file" type="file">
+						<div class="panel panel-transparent">
+							<div class="panel-heading">
+								
+							</div>
+							<div class="panel-body">	
+
 							</div>
 						</div>						
 					</section>
