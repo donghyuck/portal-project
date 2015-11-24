@@ -103,38 +103,15 @@
 					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 코드그룹 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'">새로고침</button></div>'),
 					columns : [
-						{field:'name', title:"이름"}
-						/**,
-						{ 
-							command: [
-								{ name: "edit", className: "btn btn-flat", imageClass:false },
-								{ name: "createchild", className: "btn btn-flat", imageClass:false }
-							], 
-						  	width: 200  
-						}		
-						**/				
+						{field:'name', title:"이름"}	
 					],
 					selectable: true,
-					/**
-					messages:{
-						commands:{
-							edit : "변경",
-							update : "저장",
-							createchild : "추가",
-							destory: "삭제",
-							canceledit: "취소"						
-						}
-					},
-					editable:true,
-					
-					*/
 					change: function(e) {						
 						var selectedRows = this.select();
 						var dataItem = this.dataItem(selectedRows[0]);
 						createCodeSetPanel( dataItem );
 					}
-				});			
-				
+				});							
 				renderTo.find("button[data-action=create]").click(function(e){
 					var codeset = new common.ui.data.competency.CodeSet();
 					var selectedRows = getCodeSetTreeList().select();
@@ -356,7 +333,15 @@
 							<div class="panel-heading">
 								<h5 class="panel-title">엑셀 업로드</h5>
 							</div>
-							<div class="panel-body">									
+							<div class="panel-body">					
+							
+							<form class="form-inline">
+							  <div class="form-group">
+							    <label class="sr-only">Email</label>
+							    <p class="form-control-static">email@example.com</p>
+							  </div>
+							</form>
+				
 								<input type="text" class="form-control input-sm" data-bind="{value:codeset.name}" placeholder="ROW 건너뛰기" />							
 								<input id="import-excel-file" name="import-excel-file" type="file">
 							</div>
