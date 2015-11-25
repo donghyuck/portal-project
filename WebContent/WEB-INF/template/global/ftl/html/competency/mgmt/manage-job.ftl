@@ -39,8 +39,10 @@
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					change: function(e){						
+					change: function(e){			
+						console.log( kendo.stringify( e ) );			
 						getJobGrid().dataSource.read();
+						getClassifiedMajoritySelector().read(codeSetId:1);
 					}
 				});	
 				createJobGrid();									
@@ -48,6 +50,31 @@
 			}
 		}]);		
 
+		function getClassifiedMajoritySelector(){
+			var renderTo = $("#classified-majority-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					autoBind:false,
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: JSON,
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: POST
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+		
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
@@ -590,7 +617,13 @@
 				<section class="layout">
 				<section class="left">				
 					<div class="panel panel-transparent">
-						<div class="panel-body"><input id="company-dropdown-list" /></div>
+						<div class="panel-body">
+						
+						<input id="company-dropdown-list"></div>
+						
+						 <h4>대분류</h4>
+						<input id="classified-majority-dorpdown-list"></div>
+						
 						<div id="job-grid" class="no-border no-shadow"></div>
 					</div>
 				</section>									
