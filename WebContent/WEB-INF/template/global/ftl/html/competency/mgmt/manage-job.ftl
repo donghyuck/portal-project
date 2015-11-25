@@ -61,9 +61,9 @@
 						serverFiltering: false,
 						transport: {
 							read: {
-								dataType: JSON,
+								dataType: 'json',
 								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
-								type: POST
+								type: 'POST'
 							}
 						},
 						schema: { 
