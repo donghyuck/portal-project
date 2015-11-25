@@ -43,7 +43,7 @@
 						getCompetencyGrid().dataSource.read();
 					}
 				});	
-				createCompetencyGrid();									
+				createJobGrid();									
 				// END SCRIPT
 			}
 		}]);		
@@ -57,7 +57,7 @@
 			return common.ui.grid(renderTo);
 		}	
 			
-		function createCompetencyGrid(){
+		function createJobGrid(){
 			var renderTo = $("#competency-grid");
 			if(! common.ui.exists(renderTo) ){				
 				var companySelector = getCompanySelector();						
@@ -77,7 +77,7 @@
 						},						
 						batch: false, 
 						pageSize: 15,
-						serverPaging: true
+						serverPaging: true,
 						schema: {
 							data: "items",
 							total: "totalCount",
