@@ -81,7 +81,7 @@
 						schema: {
 							data: "items",
 							total: "totalCount",
-							model: common.ui.data.competency.Competency
+							model: common.ui.data.competency.Job
 						}
 					},
 					columns: [
@@ -98,7 +98,7 @@
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	  
-	                    	openCompetencyEditor(selectedCell);
+	                    	//openCompetencyEditor(selectedCell);
 	                    }   
 					},
 					dataBound: function(e) {
@@ -111,7 +111,7 @@
 				});	
 				renderTo.find("button[data-action=create]").click(function(e){		
 					getJobGrid().clearSelection();			
-					openCompetencyEditor(new common.ui.data.competency.Competency());				
+					openCompetencyEditor(new common.ui.data.competency.Job());				
 				});		
 							
 			}
