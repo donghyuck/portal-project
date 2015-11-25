@@ -572,7 +572,7 @@
 			<div id="content-wrapper">
 			
 				<ul class="breadcrumb breadcrumb-page">
-					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_3_2") />
+					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_3_3") />
 					<li><a href="#">Home</a></li>
 					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
 					<li class="active"><a href="#">${selectedMenu.title}</a></li>
@@ -595,6 +595,7 @@
 							</div>
 							<div class="panel-body no-padding-b">	
 								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>
+								
 								<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
 								<div class="p-sm">
 									<table class="table table-striped">
