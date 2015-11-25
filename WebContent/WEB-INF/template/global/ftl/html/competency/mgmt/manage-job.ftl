@@ -72,7 +72,7 @@
 								} 
 								
 								console.log( kendo.stringify(options) );
-								return {companyId: companySelector.value() };
+								return {companyId: companySelector.value(), startIndex:options.skip , pageSize: options.pageSize };
 							}
 						},						
 						batch: false, 
