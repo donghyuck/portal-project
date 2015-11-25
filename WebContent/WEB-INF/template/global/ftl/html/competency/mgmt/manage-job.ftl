@@ -40,7 +40,7 @@
 						e.token.copy(currentUser);
 					},
 					change: function(e){						
-						getCompetencyGrid().dataSource.read();
+						getJobGrid().dataSource.read();
 					}
 				});	
 				createJobGrid();									
@@ -52,13 +52,13 @@
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
 		
-		function getCompetencyGrid(){
-			var renderTo = $("#competency-grid");
+		function getJobGrid(){
+			var renderTo = $("#job-grid");
 			return common.ui.grid(renderTo);
 		}	
 			
 		function createJobGrid(){
-			var renderTo = $("#competency-grid");
+			var renderTo = $("#job-grid");
 			if(! common.ui.exists(renderTo) ){				
 				var companySelector = getCompanySelector();						
 				common.ui.grid(renderTo, {
@@ -110,7 +110,7 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});	
 				renderTo.find("button[data-action=create]").click(function(e){		
-					getCompetencyGrid().clearSelection();			
+					getJobGrid().clearSelection();			
 					openCompetencyEditor(new common.ui.data.competency.Competency());				
 				});		
 							
@@ -159,7 +159,7 @@
 								contentType : "application/json",
 								success : function(response){																											
 									$this.setSource(new common.ui.data.competency.Competency(response));								
-									getCompetencyGrid().dataSource.read();
+									getJobGrid().dataSource.read();
 								},
 								complete : function(e){
 									common.ui.progress(renderTo, false);
@@ -587,7 +587,7 @@
 				<section class="left">				
 					<div class="panel panel-transparent">
 						<div class="panel-body"><input id="company-dropdown-list" /></div>
-						<div id="competency-grid" class="no-border no-shadow"></div>
+						<div id="job-grid" class="no-border no-shadow"></div>
 					</div>
 				</section>									
 				<section class="right">							
