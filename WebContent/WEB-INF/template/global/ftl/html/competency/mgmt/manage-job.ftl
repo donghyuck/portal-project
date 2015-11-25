@@ -42,7 +42,7 @@
 					change: function(e){			
 						console.log( kendo.stringify( e ) );			
 						getJobGrid().dataSource.read();
-						getClassifiedMajoritySelector().read({codeSetId:1});
+						getClassifiedMajoritySelector().dataSource.read({codeSetId:1});
 					}
 				});	
 				createJobGrid();									
