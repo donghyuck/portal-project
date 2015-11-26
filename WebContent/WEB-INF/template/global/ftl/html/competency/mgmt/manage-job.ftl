@@ -697,7 +697,7 @@
 								<input id="classified-majority-dorpdown-list" />
 								<input id="classified-middle-dorpdown-list" />
 								<input id="classified-minority-dorpdown-list" />							
-								<div id="job-grid" class="no-border no-shadow"></div>
+								<div id="job-grid"></div>
 							</div>
 						</div>				
 					</div>
