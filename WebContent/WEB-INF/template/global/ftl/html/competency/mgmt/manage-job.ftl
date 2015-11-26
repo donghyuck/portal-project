@@ -224,7 +224,7 @@
 					editable : false,
 					deletable: false,
 					updatable : false,					
-					job : new common.ui.data.competency.Job(),
+					job: new common.ui.data.competency.Job(),
 					view : function(e){
 						var $this = this;		
 						if($this.competency.competencyId < 1){
@@ -251,7 +251,7 @@
 					},
 					setSource : function(source){
 						var $this = this;
-						source.copy($this.competency);	
+						source.copy($this.job);	
 						if($this.job.get("jobId") == 0)
 						{
 							$this.job.set("objectType", 1);
