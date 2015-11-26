@@ -817,6 +817,7 @@
 				                   	data-value-field="codeSetId"
 				                   	data-bind=" value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource }" />		
 								<input data-role="dropdownlist"
+									data-auto-bind="false"
 				                   	cascadeFrom: "job-details-classified-majority-dorpdown-list"
 				                   	data-text-field="name"
 				                   	data-value-field="codeSetId"
