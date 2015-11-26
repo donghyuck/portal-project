@@ -682,20 +682,27 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
+				
+				<div class="row">
+					<div class="col-sm-4">					
+						<div class="panel panel-transparent">
+							<div class="panel-body">							
+							    <input id="company-dropdown-list" />							
+							 	<h4>대분류</h4>
+								<input id="classified-majority-dorpdown-list" />
+								<input id="classified-middle-dorpdown-list" />
+								<input id="classified-minority-dorpdown-list" />							
+								<div id="job-grid" class="no-border no-shadow"></div>
+							</div>
+						</div>				
+					</div>
+					<div class="col-sm-8"></div>
+				</div>
+				
+				
 				<section class="layout">
 				<section class="left">				
-					<div class="panel panel-transparent">
-						<div class="panel-body">
-						
-						<input id="company-dropdown-list" />
-						
-						 <h4>대분류</h4>
-						<input id="classified-majority-dorpdown-list" />
-						<input id="classified-middle-dorpdown-list" />
-						<input id="classified-minority-dorpdown-list" />
-						
-						<div id="job-grid" class="no-border no-shadow"></div>
-					</div>
+					
 				</section>									
 				<section class="right">							
 					<div id="competency-details" class="panel panel-default" style="display:none;">
