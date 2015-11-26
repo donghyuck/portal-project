@@ -42,8 +42,7 @@
 					change: function(e){			
 						console.log( kendo.stringify( e ) );			
 						getJobGrid().dataSource.read();
-						getClassifiedMajoritySelector().dataSource.read({codeSetId:1});
-						getClassifiedMiddleSelector();
+						getClassifiedMajoritySelector().dataSource.read({codeSetId:1});						
 					}
 				});	
 				createJobGrid();									
@@ -71,7 +70,8 @@
 							model : common.ui.data.competency.CodeSet
 						}
 					}				
-				});
+				});				
+				getClassifiedMiddleSelector();
 			}
 			return renderTo.data('kendoDropDownList');
 		}
@@ -83,10 +83,11 @@
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-majority-dorpdown-list",
 					cascadeFromField: "codeSetId",
+					optionLabel: "중분류",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					dataSource: {
-						serverFiltering: false,
+						serverFiltering:true,
 						transport: {
 							read: {
 								dataType: 'json',
