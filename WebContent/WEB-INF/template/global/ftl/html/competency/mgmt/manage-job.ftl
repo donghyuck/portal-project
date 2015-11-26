@@ -280,6 +280,11 @@
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );	
 			}
+			if( source ){
+				renderTo.data("model").setSource( source );	
+				if (!renderTo.is(":visible")) 
+					renderTo.show();		
+			}	
 		}
 		
 		function openCompetencyEditor(source){
