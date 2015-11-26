@@ -691,8 +691,10 @@
 				<div class="row">
 					<div class="col-sm-4">					
 						<div class="panel panel-transparent">
-							<div class="panel-body">							
-							    <input id="company-dropdown-list" />							
+							<div class="panel-heading">
+								<input id="company-dropdown-list" />	
+							</div>
+							<div class="panel-body">
 							 	<h5>직무분류</h5>
 								<input id="classified-majority-dorpdown-list" />
 								<input id="classified-middle-dorpdown-list" />
