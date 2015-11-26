@@ -180,10 +180,10 @@
 						}
 					},
 					columns: [
-						
+						/*
 						{ title: "대분류", field: "classification.classifiedMajorityName"},
 						{ title: "중분류", field: "classification.classifiedMiddleName"},
-						{ title: "소분류", field: "classification.classifiedMinorityName"},
+						{ title: "소분류", field: "classification.classifiedMinorityName"},*/
 						{ title: "직무", field: "name"}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 직무 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
@@ -688,7 +688,7 @@
 						<div class="panel panel-transparent">
 							<div class="panel-body">							
 							    <input id="company-dropdown-list" />							
-							 	<h4>대분류</h4>
+							 	<h5>직무분류</h5>
 								<input id="classified-majority-dorpdown-list" />
 								<input id="classified-middle-dorpdown-list" />
 								<input id="classified-minority-dorpdown-list" />							
