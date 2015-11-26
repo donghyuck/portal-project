@@ -202,10 +202,10 @@
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	  
-	                    	//openCompetencyEditor(selectedCell);
 	                    }   
 					},
 					dataBound: function(e) {
+	                    	createJobDetails(selectedCell);
 
 					}		
 				});		
@@ -220,6 +220,67 @@
 							
 			}
 		}  
+		
+		function createJobDetails( source ) {
+			var renderTo = $("#job-details");
+			if( !renderTo.data("model")){		
+				var  observable = kendo.observable({
+					visible : false,
+					editable : false,
+					deletable: false,
+					updatable : false,					
+					job : new common.ui.data.competency.Job(),
+					view : function(e){
+						var $this = this;		
+						if($this.competency.competencyId < 1){
+							renderTo.hide();	
+						}
+						$this.set("visible", true);
+						$this.set("editable", false);
+						$this.set("updatable", false);
+						return false;
+					},
+					edit : function(e){
+						var $this = this;					
+						$this.set("visible", false);
+						$this.set("editable", true);
+						$this.set("updatable", true);
+						renderTo.find("input[name=competency-name]").focus();
+						return false;
+					},
+					delete : function(e){
+						var $this = this;
+						return false;
+					},
+					saveOrUpdate : function(e){
+					
+					
+					
+					},
+					setSource : function(source){
+						var $this = this;
+						source.copy($this.competency);	
+						if($this.job.get("jobId") == 0)
+						{
+							$this.job.set("objectType", 1);
+							$this.job.set("objectId", getCompanySelector().value() );
+							$this.set("visible", false);
+							$this.set("editable", true);
+							$this.set("updatable", true);
+							$this.set("deletable", false);	
+							renderTo.find("input[name=job-name]").focus();
+						}else{
+							$this.set("visible", true);
+							$this.set("editable", false);
+							$this.set("updatable", false);
+							$this.set("deletable", true);														
+						}
+					}						
+				});
+				renderTo.data("model", observable );
+				kendo.bind(renderTo, observable );	
+			}
+		}
 		
 		function openCompetencyEditor(source){
 			var renderTo = $("#competency-details");
@@ -709,7 +770,17 @@
 							</div>
 						</div>				
 					</div>
-					<div class="col-sm-7"></div>
+					<div class="col-sm-7">
+						<div id="competency-details" class="panel panel-default" style="display:none;">
+							<div class="panel-heading"><span class="panel-title" data-bind="{text: job.name, visible:visible}"></span>
+								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
+							</div>					
+							<div class="panel-body no-padding-b">
+							
+							
+							</div>
+						</div>
+					</div>
 				</div>
 				
 				
