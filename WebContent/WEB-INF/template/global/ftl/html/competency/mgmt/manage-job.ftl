@@ -792,10 +792,9 @@
 							<div class="panel-heading"><span class="panel-title" data-bind="{text: job.name, visible:visible}"></span>
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
 							</div>					
-							<div class="panel-body no-padding-b">
-																
+							<div class="panel-body no-padding-b">																
 								<input data-role="dropdownlist"
-				                   data-auto-bind="false"
+				                   data-auto-bind="true"
 				                   data-text-field="name"
 				                   data-value-field="codeSetId"
 				                   data-bind=" value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource }" />							
