@@ -825,7 +825,8 @@
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
 							</div>					
 							<div class="panel-body no-padding-b">	
-								<h5>직무분류</h5>															
+								<h5>직무분류</h5>		
+								<div class="m-b-sm">													
 								<input id="job-details-classified-majority-dorpdown-list"
 									data-role="dropdownlist"
 				                  	data-auto-bind="true"
@@ -846,7 +847,8 @@
 				                   	data-text-field="name"
 				                   	data-value-field="codeSetId"
 				                   	data-bind=" value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource }" />		
-
+								</div>
+								
 								<p class="p-sm" data-bind="{text: job.description, visible:visible}"></p>								
 								<textarea class="form-control" rows="4"  name="job-description"  data-bind="{value: job.description, visible:editable}" placeholder="직무 정의"></textarea>
 								
