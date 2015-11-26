@@ -798,8 +798,8 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
-				<div class="row">
-					<div class="col-sm-5">					
+				<section class="layout">
+					<section class="left">							
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />	
@@ -815,11 +815,11 @@
 							 		<div class="m-b-xs">
 							 			<input id="classified-minority-dorpdown-list" />
 							 		</div>													
-								<div id="job-grid"></div>
+								<div id="job-grid" class="no-border no-shadow"></div>
 							</div>
 						</div>				
-					</div>
-					<div class="col-sm-7">
+					</section>
+					<section class="right">	
 						<div id="job-details" class="panel panel-default" style="display:none;">
 							<div class="panel-heading"><span class="panel-title" data-bind="{text: job.name, visible:visible}"></span>
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
@@ -861,8 +861,8 @@
 																				                   				                   						                   					
 							</div>
 						</div>
-					</div>
-				</div>
+					</section>
+				</section>
 				
 				
 				<section class="layout">
