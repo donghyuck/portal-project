@@ -225,6 +225,19 @@
 					deletable: false,
 					updatable : false,					
 					job: new common.ui.data.competency.Job(),
+					classifiedMajorityDataSource: new kendo.data.DataSource({
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}),		
 					view : function(e){
 						var $this = this;		
 						if($this.competency.competencyId < 1){
@@ -777,8 +790,13 @@
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
 							</div>					
 							<div class="panel-body no-padding-b">
-							
-							
+																
+								<input data-role="dropdownlist"
+				                   data-auto-bind="false"
+				                   data-text-field="name"
+				                   data-value-field="codeSetId"
+				                   data-bind=" value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource }"
+                   					style="width: 100%;"/>							
 							</div>
 						</div>
 					</div>
