@@ -824,7 +824,8 @@
 							<div class="panel-heading"><span class="panel-title" data-bind="{text: job.name, visible:visible}"></span>
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
 							</div>					
-							<div class="panel-body no-padding-b">																
+							<div class="panel-body no-padding-b">	
+								<h5>직무분류</h5>															
 								<input id="job-details-classified-majority-dorpdown-list"
 									data-role="dropdownlist"
 				                  	data-auto-bind="true"
@@ -844,7 +845,12 @@
 				                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
 				                   	data-text-field="name"
 				                   	data-value-field="codeSetId"
-				                   	data-bind=" value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource }" />					                   						                   					
+				                   	data-bind=" value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource }" />		
+
+								<p class="p-sm" data-bind="{text: job.description, visible:visible}"></p>								
+								<textarea class="form-control" rows="4"  name="job-description"  data-bind="{value: job.description, visible:editable}" placeholder="직무 정의"></textarea>
+								
+												                   				                   						                   					
 							</div>
 						</div>
 					</div>
