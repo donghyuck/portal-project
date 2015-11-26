@@ -256,7 +256,23 @@
 						schema: { 
 							model : common.ui.data.competency.CodeSet
 						}
-					}),							
+					}),		
+					classifiedMinorityDataSource: new kendo.data.DataSource({
+						serverFiltering: true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}),										
 					view : function(e){
 						var $this = this;		
 						if($this.competency.competencyId < 1){
@@ -809,19 +825,25 @@
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
 							</div>					
 							<div class="panel-body no-padding-b">																
-								<input 
-									id="job-details-classified-majority-dorpdown-list"
+								<input id="job-details-classified-majority-dorpdown-list"
 									data-role="dropdownlist"
 				                  	data-auto-bind="true"
 				                   	data-text-field="name"
 				                   	data-value-field="codeSetId"
 				                   	data-bind=" value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource }" />		
-								<input data-role="dropdownlist"
+								<input id="job-details-classified-middle-dorpdown-list" 
+									data-role="dropdownlist"
 									data-auto-bind="false"
 				                   	data-cascade-from="job-details-classified-majority-dorpdown-list"
 				                   	data-text-field="name"
 				                   	data-value-field="codeSetId"
-				                   	data-bind=" value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource }" />						                   					
+				                   	data-bind=" value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource }" />	
+								<input data-role="dropdownlist"
+									data-auto-bind="false"
+				                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
+				                   	data-text-field="name"
+				                   	data-value-field="codeSetId"
+				                   	data-bind=" value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource }" />					                   						                   					
 							</div>
 						</div>
 					</div>
