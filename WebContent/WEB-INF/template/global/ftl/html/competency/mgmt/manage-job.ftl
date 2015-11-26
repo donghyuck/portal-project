@@ -838,7 +838,8 @@
 				                   	data-text-field="name"
 				                   	data-value-field="codeSetId"
 				                   	data-bind=" value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource }" />	
-								<input data-role="dropdownlist"
+								<input 
+									data-role="dropdownlist"
 									data-auto-bind="false"
 				                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
 				                   	data-text-field="name"
