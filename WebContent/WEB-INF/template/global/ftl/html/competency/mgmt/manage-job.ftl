@@ -232,6 +232,9 @@
 								dataType: 'json',
 								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
 								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  1 }; 
 							}
 						},
 						schema: { 
