@@ -193,7 +193,7 @@
 					editable : false,					
 					selectable : "row",
 					scrollable: true,
-					height: 600,
+					height: 500,
 					change: function(e) {
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
@@ -275,7 +275,7 @@
 					}),										
 					view : function(e){
 						var $this = this;		
-						if($this.competency.competencyId < 1){
+						if($this.job.jobId < 1){
 							renderTo.hide();	
 						}
 						$this.set("visible", true);
