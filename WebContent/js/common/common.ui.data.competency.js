@@ -48,9 +48,9 @@
 	    		target.set("classification", this.get("classification"));
 	    	}else{
 	    		target.set("classification", {
-	    			classifiedMajorityId:0,
-	    			classifiedMiddleId:0,
-	    			classifiedMinorityId:0
+	    			classifiedMajorityId:null,
+	    			classifiedMiddleId:null,
+	    			classifiedMinorityId:null
 	    		} );
 	    	}
 	    	
