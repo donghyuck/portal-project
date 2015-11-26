@@ -685,8 +685,7 @@
 		    height:100%;
 		    width:100%;
 		    position: static;
-		    left:0px;
-		    
+		    left:0px;		    
 		    border-radius: 4px;
 		}
 		
@@ -709,7 +708,7 @@
 		}
 		
 		#content-wrapper section.left {
-			width:600px;
+			width:400px;
 			position: absolute;
 			height:auto;
 			min-height: 100%;			
@@ -723,7 +722,7 @@
 		}
 		
 		#content-wrapper section.right {
-			margin-left:600px;
+			margin-left:400px;
 			height:100%;			
 		}
 		
