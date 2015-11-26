@@ -193,16 +193,15 @@
 					editable : false,					
 					selectable : "row",
 					scrollable: true,
-					height: 591,
+					height: 600,
 					change: function(e) {
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	  
+	                    	createJobDetails(selectedCell);
 	                    }   
 					},
 					dataBound: function(e) {
-	                    	createJobDetails(selectedCell);
-
 					}		
 				});		
 
