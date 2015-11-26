@@ -689,24 +689,29 @@
 				</div><!-- / .page-header -->	
 				
 				<div class="row">
-					<div class="col-sm-4">					
+					<div class="col-sm-5">					
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />	
 							</div>
 							<div class="panel-body">
 							 	<h5>직무분류</h5>
-							 	<span class="m-b-xs"><input id="classified-majority-dorpdown-list" /></span>
-							 	<span class="m-b-xs"><input id="classified-middle-dorpdown-list" /></span>
-							 	<span class="m-b-xs"><input id="classified-minority-dorpdown-list" /></span>
-								
-								
-														
+							 	<div class="row">
+							 		<div class="col-sm-6">
+							 			<input id="classified-majority-dorpdown-list" />
+							 		</div>
+							 		<div class="col-sm-6">
+							 			<input id="classified-middle-dorpdown-list" />
+							 		</div>
+							 		<div class="col-sm-6">
+							 			<input id="classified-minority-dorpdown-list" />
+							 		</div>							 									 	
+							 	</div>														
 								<div id="job-grid"></div>
 							</div>
 						</div>				
 					</div>
-					<div class="col-sm-8"></div>
+					<div class="col-sm-7"></div>
 				</div>
 				
 				
