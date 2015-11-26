@@ -798,8 +798,7 @@
 				                   data-auto-bind="false"
 				                   data-text-field="name"
 				                   data-value-field="codeSetId"
-				                   data-bind=" value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource }"
-                   					style="width: 100%;"/>							
+				                   data-bind=" value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource }" />							
 							</div>
 						</div>
 					</div>
