@@ -647,11 +647,11 @@
 					<div class="panel panel-transparent">
 						<div class="panel-body">
 						
-						<input id="company-dropdown-list"></div>
+						<input id="company-dropdown-list" />
 						
 						 <h4>대분류</h4>
-						<input id="classified-majority-dorpdown-list"></div>
-						<input id="classified-middle-dorpdown-list"></div>
+						<input id="classified-majority-dorpdown-list" />
+						<input id="classified-middle-dorpdown-list" />
 						
 						<div id="job-grid" class="no-border no-shadow"></div>
 					</div>
