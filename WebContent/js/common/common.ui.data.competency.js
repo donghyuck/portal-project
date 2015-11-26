@@ -44,9 +44,15 @@
 	    	target.set("name", this.get("name"));
 	    	target.set("description", this.get("description"));
 	    	
-	    	if( typeof this.get("classification") === 'object' )
+	    	if( typeof this.get("classification") === 'object' ){
 	    		target.set("classification", this.get("classification"));
-	    	
+	    	}else{
+	    		target.set("classification", {
+	    			classifiedMajorityId:0,
+	    			classifiedMiddleId:0,
+	    			classifiedMinorityId:0
+	    		} );
+	    	}
 	    	
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
