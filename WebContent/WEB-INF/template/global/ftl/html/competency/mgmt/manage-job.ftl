@@ -73,6 +73,7 @@
 					}				
 				});				
 				getClassifiedMiddleSelector();
+				getClassifiedMinoritySelector();
 			}
 			return renderTo.data('kendoDropDownList');
 		}
@@ -106,7 +107,36 @@
 			}
 			return renderTo.data('kendoDropDownList');
 		}
-		
+
+		function getClassifiedMinoritySelector(){
+			var renderTo = $("#classified-minority-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					cascadeFrom: "classified-middle-dorpdown-list",
+					optionLabel: "소분류",
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering:true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+				
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
@@ -656,6 +686,7 @@
 						 <h4>대분류</h4>
 						<input id="classified-majority-dorpdown-list" />
 						<input id="classified-middle-dorpdown-list" />
+						<input id="classified-minority-dorpdown-list" />
 						
 						<div id="job-grid" class="no-border no-shadow"></div>
 					</div>
