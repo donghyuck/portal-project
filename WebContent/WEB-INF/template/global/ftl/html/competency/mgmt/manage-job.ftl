@@ -159,9 +159,15 @@
 								if (operation !== "read") {
 									return kendo.stringify(options);
 								} 
-								
 								console.log( kendo.stringify(options) );
-								return {companyId: companySelector.value(), startIndex:options.skip , pageSize: options.pageSize };
+								return {
+									companyId: companySelector.value(),
+									classifiedMajorityId:getClassifiedMajoritySelector().value(),
+									classifiedMiddleId:getClassifiedMiddleSelector().value(),
+									classifiedMinorityId:getClassifiedMinoritySelector().value(), 
+									startIndex:options.skip, 
+									pageSize: options.pageSize 
+								};
 							}
 						},						
 						batch: false, 
