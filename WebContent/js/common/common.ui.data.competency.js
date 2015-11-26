@@ -25,6 +25,36 @@
 	    		target.set("properties", {});
 	    }    
 	});
+
+	var Job = kendo.data.Model.define( {
+	    id: "jobId", // the identifier of the model
+	    fields: {
+	    	jobId: { type: "number", editable: true, defaultValue: 0  },    	
+	    	objectType: { type: "number", editable: true, defaultValue: 0  },   
+	    	objectId: { type: "number", editable: true, defaultValue: 0  },   
+	        name: { type: "string", editable: true },
+	        description: { type: "string", editable: true },
+	    	modifiedDate: { type: "date"},
+	        creationDate: { type: "date" }	        
+	    },	    
+	    copy : function ( target ){
+	    	target.set("jobId", this.get("jobId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	
+	    	if( typeof this.get("classification") === 'object' )
+	    		target.set("classification", this.get("classification"));
+	    	
+	    	
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    	else
+	    		target.set("properties", {});
+	    }    
+	});
+	
 	
 	var EssentialElement = kendo.data.Model.define( {
 	    id: "essentialElementId", // the identifier of the model
@@ -78,6 +108,7 @@
 	
 	extend( common.ui.data, {
 		competency:{
+			Job : Job,
 			CodeSet : CodeSet,
 			Competency : Competency,
 			EssentialElement : EssentialElement
