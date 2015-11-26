@@ -696,9 +696,12 @@
 							</div>
 							<div class="panel-body">
 							 	<h5>직무분류</h5>
-								<input id="classified-majority-dorpdown-list" />
-								<input id="classified-middle-dorpdown-list" />
-								<input id="classified-minority-dorpdown-list" />							
+							 	<span class="m-b-xs"><input id="classified-majority-dorpdown-list" /></span>
+							 	<span class="m-b-xs"><input id="classified-middle-dorpdown-list" /></span>
+							 	<span class="m-b-xs"><input id="classified-minority-dorpdown-list" /></span>
+								
+								
+														
 								<div id="job-grid"></div>
 							</div>
 						</div>				
