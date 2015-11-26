@@ -43,6 +43,7 @@
 						console.log( kendo.stringify( e ) );			
 						getJobGrid().dataSource.read();
 						getClassifiedMajoritySelector().dataSource.read({codeSetId:1});
+						getClassifiedMiddleSelector();
 					}
 				});	
 				createJobGrid();									
@@ -55,6 +56,33 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					autoBind:false,
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+
+
+		function getClassifiedMiddleSelector(){
+			var renderTo = $("#classified-middle-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					cascadeFrom: "classified-majority-dorpdown-list",
+					cascadeFromField: "codeSetId",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					dataSource: {
@@ -623,6 +651,7 @@
 						
 						 <h4>대분류</h4>
 						<input id="classified-majority-dorpdown-list"></div>
+						<input id="classified-middle-dorpdown-list"></div>
 						
 						<div id="job-grid" class="no-border no-shadow"></div>
 					</div>
