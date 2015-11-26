@@ -54,6 +54,7 @@
 			var renderTo = $("#classified-majority-dorpdown-list");
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
+					optionLabel: "대분류",
 					autoBind:false,
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
@@ -82,7 +83,6 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-majority-dorpdown-list",
-					cascadeFromField: "codeSetId",
 					optionLabel: "중분류",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
@@ -93,6 +93,9 @@
 								dataType: 'json',
 								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
 								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
 							}
 						},
 						schema: { 
