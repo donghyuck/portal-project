@@ -772,13 +772,11 @@
 						</div>				
 					</div>
 					<div class="col-sm-7">
-						<div id="competency-details" class="panel panel-default" style="display:none;">
+						<div id="job-details" class="panel panel-default" style="display:none;">
 							<div class="panel-heading"><span class="panel-title" data-bind="{text: job.name, visible:visible}"></span>
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
 							</div>					
 							<div class="panel-body no-padding-b">
-							
-							
 							</div>
 						</div>
 					</div>
