@@ -210,7 +210,7 @@
 				});	
 				renderTo.find("button[data-action=create]").click(function(e){		
 					getJobGrid().clearSelection();			
-					openCompetencyEditor(new common.ui.data.competency.Job());				
+					createJobDetails(new common.ui.data.competency.Job());				
 				});		
 							
 			}
@@ -248,6 +248,10 @@
 						return false;
 					},
 					saveOrUpdate : function(e){
+					
+					
+					
+					
 					},
 					setSource : function(source){
 						var $this = this;
