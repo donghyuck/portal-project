@@ -216,6 +216,8 @@
 			}
 		}  
 		
+		
+		
 		function createJobDetails( source ) {
 			var renderTo = $("#job-details");
 			if( !renderTo.data("model")){		
@@ -272,7 +274,19 @@
 						schema: { 
 							model : common.ui.data.competency.CodeSet
 						}
-					}),										
+					}),							
+					competencyDataSource : new kendo.data.DataSource({ 
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/job/competencies/list.json?output=json',
+								type: 'POST'
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.Competency
+						}
+					}), 			
 					view : function(e){
 						var $this = this;		
 						if($this.job.jobId < 1){
@@ -296,9 +310,6 @@
 						return false;
 					},
 					saveOrUpdate : function(e){
-					
-					
-					
 					
 					},
 					setSource : function(source){
@@ -524,7 +535,15 @@
 									<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
 									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
 								</div>
-																				                   				                   						                   					
+								<div data-role="grid"
+								                 date-scrollable="true"
+								                 data-auto-bind="false"
+								                 data-columns="[
+								                                 { 'field': 'ProductName', 'width': 270 },
+								                                 { 'field': 'UnitPrice' },
+								                              ]"
+								                 data-bind="source: competencyDataSource, visible: deletable"
+								                 style="height: 200px"></div>	                   				                   						                   					
 							</div>
 						</div>
 					</section>
