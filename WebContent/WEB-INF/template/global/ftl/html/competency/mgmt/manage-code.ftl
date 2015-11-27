@@ -306,7 +306,7 @@
 					</section>									
 					<section class="right">
 						<form>
-							<div id="codeset-details" class="panel panel-default no-border" style="display:none;">
+							<div id="codeset-details" class="panel panel-default no-border no-margin-b" style="display:none;">
 								<div class="panel-heading">
 									<span class="panel-title" data-bind="{text:codeset.name, visible:visible}"></span>
 									<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />
@@ -329,6 +329,7 @@
 								</div>
 							</div>
 						</form>
+						<hr class="no-margin"/>
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<h5 class="panel-title">엑셀 업로드</h5>
