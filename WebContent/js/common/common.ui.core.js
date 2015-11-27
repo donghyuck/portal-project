@@ -180,7 +180,7 @@
 		}
 		
 		$.jGrowl(message, {
-			sticky : false,
+			sticky : true,
 			life : 3000,
 			animateOpen : {
 				height : "show"
