@@ -622,8 +622,8 @@
 													</select>
 													</td>
 													<td>
-													<span data-bind="{text: competency.properties.competencyUnitCode, visible:visible}"></span>
-													<input type="text" class="form-control input-md" name="competency-unit-code" data-bind="{value: competency.properties.competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
+													<span data-bind="{text: competency.competencyUnitCode, visible:visible}"></span>
+													<input type="text" class="form-control input-md" name="competency-unit-code" data-bind="{value: competency.competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
 													</td>
 												</tr>
 											</tbody>
