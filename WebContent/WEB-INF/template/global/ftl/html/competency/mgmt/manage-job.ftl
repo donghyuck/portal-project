@@ -546,7 +546,7 @@
 								                    { 'field':'level' , 'title':'직무수준' },
 								                 ]"
 								                 data-bind="source: competencyDataSource, visible: deletable"
-								                 style="height: 350px"></div>	                   				                   						                   					
+								                 style="height: 500px"></div>	                   				                   						                   					
 							</div>
 						</div>
 					</section>
