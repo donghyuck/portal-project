@@ -498,7 +498,7 @@
 							<div class="panel-heading"><span class="panel-title" data-bind="{text: job.name, visible:visible}"></span>
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
 							</div>					
-							<div class="panel-body no-padding-b">	
+							<div class="panel-body">	
 								<h5>직무분류</h5>		
 								<div class="m-b-sm">													
 								<input id="job-details-classified-majority-dorpdown-list"
@@ -539,9 +539,9 @@
 								                 date-scrollable="true"
 								                 data-auto-bind="false"
 								                 data-columns="[
-								                                 { 'field': 'ProductName', 'width': 270 },
-								                                 { 'field': 'UnitPrice' },
-								                              ]"
+								                 	{ 'field':'name' , 'title':'역량(능력단위)', 'width': 270 },
+								                    { 'field':'level' , 'title':'직무수준' },
+								                 ]"
 								                 data-bind="source: competencyDataSource, visible: deletable"
 								                 style="height: 200px"></div>	                   				                   						                   					
 							</div>
