@@ -159,7 +159,7 @@
 								if (operation !== "read") {
 									return kendo.stringify(options);
 								} 
-								console.log( kendo.stringify(options) );
+								//console.log( kendo.stringify(options) );
 								return {
 									companyId: companySelector.value(),
 									classifiedMajorityId:getClassifiedMajoritySelector().value(),
