@@ -1,7 +1,5 @@
 /*Import Footers*/
 @import url(footers/footer-global.css);
-
-
 /* Menu Buttons 
 ------------------------------------*/
 /* User Navigation Bar 
@@ -1695,7 +1693,18 @@ span.back {
 	cursor: pointer;
 }
 
-
 .full-height{
 	height: 100%;	
 }
+
+
+
+/* jGrowl fixed
+------------------------------------*/
+.jGrowl .jGrowl-notification alert {
+	color: #fff;
+	border-color: #000;
+}
+
+
+

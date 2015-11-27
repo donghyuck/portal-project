@@ -241,7 +241,8 @@
 						},
 						schema: { 
 							model : common.ui.data.competency.CodeSet
-						}
+						},
+						error:common.ui.handleAjaxError
 					}),	
 					classifiedMiddleDataSource: new kendo.data.DataSource({
 						serverFiltering: true,
@@ -257,7 +258,8 @@
 						},
 						schema: { 
 							model : common.ui.data.competency.CodeSet
-						}
+						},
+						error:common.ui.handleAjaxError
 					}),		
 					classifiedMinorityDataSource: new kendo.data.DataSource({
 						serverFiltering: true,
@@ -273,7 +275,8 @@
 						},
 						schema: { 
 							model : common.ui.data.competency.CodeSet
-						}
+						},
+						error:common.ui.handleAjaxError
 					}),							
 					competencyDataSource : new kendo.data.DataSource({ 
 						transport: {
@@ -285,7 +288,8 @@
 						},
 						schema: { 
 							model : common.ui.data.competency.Competency
-						}
+						},
+						error:common.ui.handleAjaxError
 					}), 			
 					view : function(e){
 						var $this = this;		
