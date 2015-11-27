@@ -1698,13 +1698,9 @@ span.back {
 }
 
 
-
 /* jGrowl fixed
 ------------------------------------*/
-.jGrowl .jGrowl-notification alert {
+.jGrowl .jGrowl-notification.alert {
 	color: #fff;
 	border-color: #000;
 }
-
-
-
