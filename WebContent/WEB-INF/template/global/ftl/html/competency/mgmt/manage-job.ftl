@@ -328,7 +328,9 @@
 							$this.set("visible", true);
 							$this.set("editable", false);
 							$this.set("updatable", false);
-							$this.set("deletable", true);														
+							$this.set("deletable", true);		
+							
+							$this.competencyDataSource.read({ jobId: $this.job.get('jobId') });												
 						}
 					}						
 				});
