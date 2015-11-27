@@ -547,7 +547,7 @@
 								                 data-auto-bind="false"
 								                 data-columns="[
 								                 	{ 'field':'name' , 'title':'역량(능력단위)' },
-								                    { 'field':'level' , 'title':'직무수준', 'width': 50 },
+								                    { 'field':'level' , 'title':'직무수준', 'width': 150 },
 								                 ]"
 								                 data-bind="source: competencyDataSource, visible: deletable"
 								                 style="height: 500px"></div>	                   				                   						                   					
