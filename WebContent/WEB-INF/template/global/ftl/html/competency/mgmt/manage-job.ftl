@@ -330,7 +330,8 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);		
 							
-							$this.competencyDataSource.read({ jobId: $this.job.get('jobId') });												
+							$this.competencyDataSource.read({ jobId: $this.job.get('jobId') });		
+																	
 						}
 					}						
 				});
@@ -545,7 +546,7 @@
 								                    { 'field':'level' , 'title':'직무수준' },
 								                 ]"
 								                 data-bind="source: competencyDataSource, visible: deletable"
-								                 style="height: 200px"></div>	                   				                   						                   					
+								                 style="height: 350px"></div>	                   				                   						                   					
 							</div>
 						</div>
 					</section>
