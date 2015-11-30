@@ -148,7 +148,7 @@
 					fileTypes : [
                         { text: "등력단위 리스트", value: "1" },
                         { text: "등력단위 및 등력단위요소 리스트", value: "2" }
-                    ];	
+                    ]
 				});
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );	
