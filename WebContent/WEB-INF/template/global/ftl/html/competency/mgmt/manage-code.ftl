@@ -136,7 +136,7 @@
 					codeSetId : 1,
 					sheetIndex : 0,
 					skipRowCount : 1,
-					fileType : 0,			
+					fileType : 1,			
 					upload : function(e){
 						var $this =this;
 						e.data = {
