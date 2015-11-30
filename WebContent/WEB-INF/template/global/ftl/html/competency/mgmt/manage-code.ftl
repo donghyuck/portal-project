@@ -135,7 +135,8 @@
 				var observable =  common.ui.observable({
 					codeSetId : 1,
 					sheetIndex : 0,
-					skipRowCount : 1,			
+					skipRowCount : 1,
+					fileType : 0,			
 					upload : function(e){
 						var $this =this;
 						e.data = {
@@ -143,7 +144,11 @@
 							sheetIndex : $this.get('sheetIndex'),
 							skipRowCount: $this.get('skipRowCount')
 						};
-					}	
+					},
+					fileTypes : [
+                        { text: "등력단위 리스트", value: "1" },
+                        { text: "등력단위 및 등력단위요소 리스트", value: "2" }
+                    ];	
 				});
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );	
@@ -389,7 +394,14 @@
 								<h5 class="panel-title">엑셀 업로드</h5>
 							</div>
 							<div class="panel-body">	
-								
+								<input data-role="dropdownlist"
+					                   data-value-primitive="true"
+					                   data-text-field="text"
+					                   data-value-field="value"
+					                   data-bind="value: fileType,
+					                              source: fileTypes"
+					                   style="width: 100%;"
+					            />
 							
 								<table class="table table-striped">
 									<thead>
@@ -406,7 +418,8 @@
 											<td><input id="import-skip-row-count" type="number" min="0" class="form-control input-sm" placeholder="ROW 건너뛰기" value="0" /></td>
 										</tr>
 									</tbody>
-								</table>																						
+								</table>					
+																									
 								<input name="import-excel-file" type="file"
 									data-role="upload"
 									data-async="{saveUrl:  '<@spring.url "/secure/data/mgmt/competency/codeset/import.json?output=json"/>', autoUpload: true}"							
