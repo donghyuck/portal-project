@@ -142,7 +142,8 @@
 						e.data = {
 							codeSetId :  $this.get('codeSetId'),
 							sheetIndex : $this.get('sheetIndex'),
-							skipRowCount: $this.get('skipRowCount')
+							skipRowCount: $this.get('skipRowCount'),
+							type : $this.get('fileType')
 						};
 					},
 					fileTypes : [
