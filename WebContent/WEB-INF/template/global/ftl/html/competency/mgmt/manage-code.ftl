@@ -46,7 +46,8 @@
 					}
 				});	
 				createCodeSetTreeList();	
-				createImportFileUpload();								
+				//createImportFileUpload();		
+				createImportPanel();						
 				// END SCRIPT
 			}
 		}]);		
@@ -127,9 +128,59 @@
 			}
 		}
 		
+		function createImportPanel(){
+			var renderTo = $("#import-panel");
+			if( !renderTo.data('model') ){ 
+				
+				var observable =  common.ui.observable({
+					codeSetId : 1,
+					sheetIndex : 0,
+					skipRowCount : 1,			
+					upload : function(e){
+						var $this =this;
+						e.data = {
+							codeSetId :  $this.get('codeSetId'),
+							sheetIndex : $this.get('sheetIndex'),
+							skipRowCount: $this.get('skipRowCount');
+						};
+					}	
+				});
+				renderTo.data("model", observable );
+				kendo.bind(renderTo, observable );	
+				
+				
+			//	var uploadRenderTo = $("#import-excel-file");
+			/*
+				if( !common.ui.exists(renderTo)){
+					uploadRenderTo.kendoUpload({
+						multiple : false,
+						width: 300,
+					 	showFileList : false,
+						localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
+						async: {
+							saveUrl:  '<@spring.url "/secure/data/mgmt/competency/codeset/import.json?output=json"/>',							   
+							autoUpload: true
+						},
+						upload: function (e) {								         
+							e.data = {
+								codeSetId :  $("#import-top-codeset-id").val(),
+								skipRowCount: $("#import-skip-row-count").val()
+							};														    								    	 		    	 
+						},
+						success : function(e) {								    
+						}
+					});								
+				}					
+			*/
+			
+			}
+			
+		}		
 		
 		function createImportFileUpload(){
 			var renderTo = $("#import-excel-file");
+			
+			
 			if( !common.ui.exists(renderTo)){
 				renderTo.kendoUpload({
 					multiple : false,
@@ -333,11 +384,13 @@
 							</div>
 						</form>
 						<hr class="no-margin"/>
-						<div class="panel panel-transparent">
+						<div id="import-panel" class="panel panel-transparent">
 							<div class="panel-heading">
 								<h5 class="panel-title">엑셀 업로드</h5>
 							</div>
 							<div class="panel-body">	
+								
+							
 								<table class="table table-striped">
 									<thead>
 										<tr>
@@ -354,7 +407,15 @@
 										</tr>
 									</tbody>
 								</table>																						
-								<input id="import-excel-file" name="import-excel-file" type="file">
+								<input name="import-excel-file" type="file"
+									data-role="upload"
+									data-async="{saveUrl:  '<@spring.url "/secure/data/mgmt/competency/codeset/import.json?output=json"/>', autoUpload: true}"							
+									data-bind="events:{upload:upload}"
+									data-multiple="false"
+									data-width="300"
+					 				data-showFileList="false"
+									data-localization:="{select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' }"
+								>
 							</div>
 						</div>						
 					</section>
