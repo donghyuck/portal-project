@@ -41,6 +41,7 @@
 					},
 					change: function(e){						
 						getCompetencyGrid().dataSource.read();
+						getClassifiedMajoritySelector().dataSource.read({codeSetId:1});
 					}
 				});	
 				createCompetencyGrid();									
@@ -48,6 +49,93 @@
 			}
 		}]);		
 
+		function getClassifiedMajoritySelector(){
+			var renderTo = $("#classified-majority-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					optionLabel: "대분류",
+					autoBind:false,
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});				
+				getClassifiedMiddleSelector();
+				getClassifiedMinoritySelector();
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+
+
+		function getClassifiedMiddleSelector(){
+			var renderTo = $("#classified-middle-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					cascadeFrom: "classified-majority-dorpdown-list",
+					optionLabel: "중분류",
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering:true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+
+		function getClassifiedMinoritySelector(){
+			var renderTo = $("#classified-minority-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					cascadeFrom: "classified-middle-dorpdown-list",
+					optionLabel: "소분류",
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering:true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+		
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
@@ -71,7 +159,10 @@
 									return kendo.stringify(options);
 								} 
 								return {
-									companyId: companySelector.value(), 	
+									companyId: companySelector.value(), 
+									classifiedMajorityId:getClassifiedMajoritySelector().value(),
+									classifiedMiddleId:getClassifiedMiddleSelector().value(),
+									classifiedMinorityId:getClassifiedMinoritySelector().value(), 										
 									startIndex:options.skip, 
 									pageSize: options.pageSize 
 								};
@@ -588,7 +679,20 @@
 				<section class="layout">
 				<section class="left">				
 					<div class="panel panel-transparent">
-						<div class="panel-body"><input id="company-dropdown-list" /></div>
+						<div class="panel-body">
+							<input id="company-dropdown-list" />
+							<hr/>
+						 	<h5>직무분류</h5>
+							<div class="m-b-xs">
+								<input id="classified-majority-dorpdown-list" />
+							</div>
+							<div class="m-b-xs">
+								<input id="classified-middle-dorpdown-list" />
+							</div>
+							<div class="m-b-xs">
+								<input id="classified-minority-dorpdown-list" />
+							</div>							
+						</div>
 						<div id="competency-grid" class="no-border no-shadow"></div>
 					</div>
 				</section>									
