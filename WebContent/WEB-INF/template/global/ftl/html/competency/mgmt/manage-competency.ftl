@@ -143,7 +143,7 @@
 					cascadeFrom: "classified-minority-dorpdown-list",
 					optionLabel: "소분류",
 					dataTextField: 'name',	
-					dataValueField: 'codeSetId',
+					dataValueField: 'jobId',
 					dataSource: {
 						serverFiltering:true,
 						transport: {
@@ -198,7 +198,8 @@
 									companyId: companySelector.value(), 
 									classifiedMajorityId:getClassifiedMajoritySelector().value(),
 									classifiedMiddleId:getClassifiedMiddleSelector().value(),
-									classifiedMinorityId:getClassifiedMinoritySelector().value(), 										
+									classifiedMinorityId:getClassifiedMinoritySelector().value(), 			
+									jobId: getJobSelector().value(), 							
 									startIndex:options.skip, 
 									pageSize: options.pageSize 
 								};
