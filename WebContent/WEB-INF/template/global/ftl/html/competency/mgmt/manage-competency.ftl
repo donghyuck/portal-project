@@ -560,7 +560,7 @@
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f6f6f6;		 
-		    min-height: 663px;
+		    min-height: 800px;
 		    height:100%;
 		    width:100%;
 		    position: static;
