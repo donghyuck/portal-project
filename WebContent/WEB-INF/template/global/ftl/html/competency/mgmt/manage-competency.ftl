@@ -154,7 +154,7 @@
 							},
 							parameterMap: function (options, operation){
 								return { 							
-									companyId: companySelector.value(),
+									companyId: getCompanySelector().value(),
 									classifiedMajorityId:getClassifiedMajoritySelector().value(),
 									classifiedMiddleId:getClassifiedMiddleSelector().value(),
 									classifiedMinorityId:getClassifiedMinoritySelector().value(), 	
