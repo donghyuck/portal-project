@@ -141,7 +141,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-minority-dorpdown-list",
-					optionLabel: "소분류",
+					optionLabel: "직업",
 					dataTextField: 'name',	
 					dataValueField: 'jobId',
 					dataSource: {
