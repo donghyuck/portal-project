@@ -140,7 +140,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-minority-dorpdown-list",
-					optionLabel: "직업",
+					optionLabel: "직무",
 					dataTextField: 'name',	
 					dataValueField: 'jobId',
 					dataSource: {
@@ -731,7 +731,7 @@
 							</div>							 	
 						 	</div>
 						 	<div class="col-xs-6">
-						 	<h5>직업</h5>
+						 	<h5>직무</h5>
 						 	<div class="m-b-xs">
 								<input id="job-dorpdown-list" />
 							</div>	
