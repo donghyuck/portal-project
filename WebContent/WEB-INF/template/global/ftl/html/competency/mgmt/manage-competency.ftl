@@ -77,7 +77,6 @@
 			return renderTo.data('kendoDropDownList');
 		}
 
-
 		function getClassifiedMiddleSelector(){
 			var renderTo = $("#classified-middle-dorpdown-list");
 			if( !renderTo.data('kendoDropDownList') ){
@@ -718,8 +717,9 @@
 						<div class="panel-body">
 							<input id="company-dropdown-list" />
 							<hr/>
-						 	<h5>직무분류</h5>
+						 	
 						 	<div class="col-xs-6">
+						 	<h5>직무분류</h5>
 							<div class="m-b-xs">
 								<input id="classified-majority-dorpdown-list" />
 							</div>
@@ -731,6 +731,7 @@
 							</div>							 	
 						 	</div>
 						 	<div class="col-xs-6">
+						 	<h5>직업</h5>
 						 	<div class="m-b-xs">
 								<input id="job-dorpdown-list" />
 							</div>	
