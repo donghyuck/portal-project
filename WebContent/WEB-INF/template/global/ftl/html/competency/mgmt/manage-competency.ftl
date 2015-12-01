@@ -136,6 +136,42 @@
 			return renderTo.data('kendoDropDownList');
 		}
 		
+		function getJobSelector(){
+			var renderTo = $("#job-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					cascadeFrom: "classified-minority-dorpdown-list",
+					optionLabel: "소분류",
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering:true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/job/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { 							
+									companyId: companySelector.value(),
+									classifiedMajorityId:getClassifiedMajoritySelector().value(),
+									classifiedMiddleId:getClassifiedMiddleSelector().value(),
+									classifiedMinorityId:getClassifiedMinoritySelector().value(), 	
+								}; 
+							}
+						},
+						schema: { 
+							data: "items",							
+							model : common.ui.data.competency.Job
+						}
+					}				
+				});
+			}
+			return renderTo.data('kendoDropDownList');
+		}		
+		
+		
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
@@ -565,7 +601,6 @@
 		    width:100%;
 		    position: static;
 		    left:0px;
-		    
 		    border-radius: 4px;
 		}
 		
@@ -683,6 +718,7 @@
 							<input id="company-dropdown-list" />
 							<hr/>
 						 	<h5>직무분류</h5>
+						 	<div class="col-xs-6">
 							<div class="m-b-xs">
 								<input id="classified-majority-dorpdown-list" />
 							</div>
@@ -691,7 +727,14 @@
 							</div>
 							<div class="m-b-xs">
 								<input id="classified-minority-dorpdown-list" />
-							</div>							
+							</div>							 	
+						 	</div>
+						 	<div class="col-xs-6">
+						 	<div class="m-b-xs">
+								<input id="job-dorpdown-list" />
+							</div>	
+						 	</div>
+						
 						</div>
 						<div id="competency-grid" class="no-border no-shadow"></div>
 					</div>
