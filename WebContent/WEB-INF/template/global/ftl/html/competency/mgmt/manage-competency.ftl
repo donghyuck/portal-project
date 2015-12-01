@@ -813,8 +813,6 @@
 						</div>					
 					</div>											
 				</section><!-- / .right -->
-				<section class="bottom"></div><!-- / .bottom -->				
-				</section><!-- / .layout -->
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
