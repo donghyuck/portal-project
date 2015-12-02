@@ -152,41 +152,13 @@
                     ]
 				});
 				renderTo.data("model", observable );
-				kendo.bind(renderTo, observable );	
-				
-				
-			//	var uploadRenderTo = $("#import-excel-file");
-			/*
-				if( !common.ui.exists(renderTo)){
-					uploadRenderTo.kendoUpload({
-						multiple : false,
-						width: 300,
-					 	showFileList : false,
-						localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
-						async: {
-							saveUrl:  '<@spring.url "/secure/data/mgmt/competency/codeset/import.json?output=json"/>',							   
-							autoUpload: true
-						},
-						upload: function (e) {								         
-							e.data = {
-								codeSetId :  $("#import-top-codeset-id").val(),
-								skipRowCount: $("#import-skip-row-count").val()
-							};														    								    	 		    	 
-						},
-						success : function(e) {								    
-						}
-					});								
-				}					
-			*/
-			
+				kendo.bind(renderTo, observable );			
 			}
 			
 		}		
 		
 		function createImportFileUpload(){
-			var renderTo = $("#import-excel-file");
-			
-			
+			var renderTo = $("#import-excel-file");			
 			if( !common.ui.exists(renderTo)){
 				renderTo.kendoUpload({
 					multiple : false,
