@@ -358,7 +358,7 @@
 										<span data-bind="{text: codeset.description, visible:visible}"></span>
 										<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
 									</div>
-									<div class="p-sm">
+									<div class="m-b-sm">
 										<div data-role="grid"
 								                 date-scrollable="true"
 								                 data-editable="true"
