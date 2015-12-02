@@ -314,7 +314,24 @@
 						return false;
 					},
 					saveOrUpdate : function(e){
-					
+						var $this = this;
+						var btn = $(e.target);	
+						common.ui.progress(renderTo, true);
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/competency/job/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.job ),
+								contentType : "application/json",
+								success : function(response){																											
+									$this.setSource(new common.ui.data.competency.Job(response));								
+									getJobGrid().dataSource.read();
+								},
+								complete : function(e){
+									common.ui.progress(renderTo, false);
+								}
+							}
+						);	
+						return false;						
 					},
 					setSource : function(source){
 						var $this = this;
