@@ -454,6 +454,13 @@
 			-moz-box-shadow: none;
 			box-shadow: none;
 		}
+
+		.no-top-radius {
+			border-top : 0;
+			border-top-left-radius:0;
+			border-top-right-radius:0;
+		}
+				
 		.modal-dialog .close  {
 			position: absolute;
 			top: 0;
@@ -575,7 +582,8 @@
 									                    { 'field':'level' , 'title':'직무수준', 'width': 150 },
 									                 ]"
 									                 data-bind="source: competencyDataSource, visible: deletable"
-									                 style="height: 500px"></div>	
+									                 style="height: 500px"
+									                 class="no-top-radius"></div>	
 									</div>
 									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-2">
 									</div>
