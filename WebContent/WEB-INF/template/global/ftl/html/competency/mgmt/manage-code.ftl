@@ -377,9 +377,13 @@
 										<span data-bind="{text: codeset.description, visible:visible}"></span>
 										<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
 									</div>
-									<div class="p-sm text-right">
-
-									</div>									
+									<div data-role="grid"
+								                 date-scrollable="true"
+								                 data-editable="true"
+								                 data-toolbar="['create']"
+								                 data-columns="[{ 'field': 'name', 'width': 270 }, { 'field': 'value' } ]"
+								                 data-bind="source:codeset.properties"
+								                 style="height: 200px"></div>									
 								</div>
 								 <div class="panel-footer">								 
 										<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
