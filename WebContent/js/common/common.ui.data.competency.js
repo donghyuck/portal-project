@@ -98,7 +98,8 @@
 	    	code : { type: "string" },	        
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" },
-	    	enabled : {type: "boolean" }
+	    	enabled : {type: "boolean" },
+	    	properties : {type: "object" }
 	    },    
 	    copy : function ( target ){
 	    	target.set("codeSetId", this.get("codeSetId"));
