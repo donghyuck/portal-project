@@ -111,7 +111,10 @@
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate"));
 	    	target.set("enabled", this.get("enabled"));
-	    	
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    	else
+	    		target.set("properties", {});	    	
 	    }    
 	});
 	
