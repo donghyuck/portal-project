@@ -193,7 +193,7 @@
 					updatable : false,						
 					codeset : new common.ui.data.competency.CodeSet(),
 					propertyDataSource : {
-						data : this.codeset.properties,
+						data : [],
 						schema: {
                                 model: {
                                 	id : "name",
@@ -248,7 +248,8 @@
 					},	
 					setSource : function(source){
 						var $this = this;
-						source.copy($this.codeset);				  
+						source.copy($this.codeset);	
+						$this.propertyDataSource.data = $this.codeset.properties;						  
 				    	if($this.codeset.get("codeSetId") == 0)
 				    	{
 				    		$this.codeset.set("objectType", 1);
