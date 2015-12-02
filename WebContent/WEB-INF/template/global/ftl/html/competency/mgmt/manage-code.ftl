@@ -381,10 +381,7 @@
 						                 date-scrollable="true"
 						                 data-editable="true"
 						                 data-toolbar="['create']"
-						                 data-columns="[
-						                                 { 'field': 'name', 'width': 270 },
-						                                 { 'field': 'value' },
-						                              ]"
+						                 data-columns="[{ 'field': 'name', 'width': 270 }, { 'field': 'value' } ]"
 						                 data-bind="source:codeset.properties"
 						                 style="height: 200px"></div>								
 								</div>
