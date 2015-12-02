@@ -216,8 +216,7 @@
 			}
 		}  
 		
-		
-		
+				
 		function createJobDetails( source ) {
 			var renderTo = $("#job-details");
 			if( !renderTo.data("model")){		
@@ -350,9 +349,8 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);		
-							
 							$this.competencyDataSource.read({ jobId: $this.job.get('jobId') });		
-																	
+							renderTo.find("ul.nav.nav-tabs a:first").tab('show')																		
 						}
 					}						
 				});
@@ -559,15 +557,33 @@
 									<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
 									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
 								</div>
-								<div data-role="grid"
-								                 date-scrollable="true"
-								                 data-auto-bind="false"
-								                 data-columns="[
-								                 	{ 'field':'name' , 'title':'역량(능력단위)' },
-								                    { 'field':'level' , 'title':'직무수준', 'width': 150 },
-								                 ]"
-								                 data-bind="source: competencyDataSource, visible: deletable"
-								                 style="height: 500px"></div>	                   				                   						                   					
+							</div>
+							<div class="panel-body">	
+								<ul class="nav nav-tabs nav-tabs-xs">
+									<li class="m-l-sm"><a href="#job-details-tabs-0" data-toggle="tab" data-action="elements">역량(능력단위)</a></li>
+									<li><a href="#job-details-tabs-2" data-toggle="tab" data-action="variable-range">적용범위 및 작업상황</a></li>
+									<li><a href="#job-details-tabs-3" data-toggle="tab" data-action="assessment-guide">평가지침</a></li>
+									<li><a href="#job-details-tabs-4" data-toggle="tab" data-action="key-competency">직업기초능력</a></li>
+								</ul>							
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-0">
+										<div data-role="grid"
+									                 date-scrollable="true"
+									                 data-auto-bind="false"
+									                 data-columns="[
+									                 	{ 'field':'name' , 'title':'역량(능력단위)' },
+									                    { 'field':'level' , 'title':'직무수준', 'width': 150 },
+									                 ]"
+									                 data-bind="source: competencyDataSource, visible: deletable"
+									                 style="height: 500px"></div>	
+									</div>
+									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-2">
+									</div>
+									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-3">
+									</div>	
+									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-4">
+									</div>																
+								</div>	             						                   					
 							</div>
 						</div>
 					</section>
