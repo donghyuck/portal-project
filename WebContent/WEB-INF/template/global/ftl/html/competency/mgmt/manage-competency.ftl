@@ -174,7 +174,7 @@
 			var renderTo = $("#competency-type-dorpdown-list");
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
-					optionLabel: "타입",
+					optionLabel: "역량유형",
 					dataTextField: 'text',	
 					dataValueField: 'value',
 					dataSource: [
@@ -735,7 +735,7 @@
 							<hr/>
 						 	
 						 	<div class="col-xs-6">
-						 	<h5>직무분류</h5>
+						 	<h5 class="text-primary"><strong>직무분류</strong></h5>
 							<div class="m-b-xs">
 								<input id="classified-majority-dorpdown-list" />
 							</div>
@@ -747,11 +747,11 @@
 							</div>							 	
 						 	</div>
 						 	<div class="col-xs-6">
-							 	<h5>직무</h5>
+							 	<h5 class="text-primary"><strong>직무</strong></h5>
 							 	<div class="m-b-xs">
 									<input id="job-dorpdown-list" />
 								</div>	
-							 	<h5 class="text-danger"><strong>역량구분</strong></h5>
+							 	<h5 class="text-danger"><strong>역량유형</strong></h5>
 							 	<div class="m-b-xs">
 									<input id="competency-type-dorpdown-list" />
 								</div>									
