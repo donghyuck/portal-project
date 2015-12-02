@@ -114,7 +114,7 @@
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
-	    		target.set("properties", {});	    	
+	    		target.set("properties", []);	    	
 	    }    
 	});
 	
