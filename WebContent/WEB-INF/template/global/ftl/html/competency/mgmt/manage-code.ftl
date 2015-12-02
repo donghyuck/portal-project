@@ -195,13 +195,7 @@
 					propertyDataSource :new kendo.data.DataSource({
 						data : [],
 						schema: {
-                                model: {
-                                	id : "name",
-                                    fields: {
-                                        name: { type: "string" },
-                                        value: { type: "string" }
-                                    }
-                                }
+                            model: common.ui.data.Property
                         }
 					}),
 					view : function(e){
