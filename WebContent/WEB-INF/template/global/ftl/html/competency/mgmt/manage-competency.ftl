@@ -170,6 +170,21 @@
 			return renderTo.data('kendoDropDownList');
 		}		
 		
+		function getCompetencyTypeSelector(){
+			var renderTo = $("#competency-type-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					optionLabel: "타입",
+					dataTextField: 'text',	
+					dataValueField: 'value',
+					dataSource: [
+						{ text: "NONE", value: "0" },
+                        { text: "직업기초능력", value: "5" }
+					]			
+				});
+			}
+			return renderTo.data('kendoDropDownList');
+		}		
 		
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
@@ -197,7 +212,8 @@
 									companyId: companySelector.value(), 
 									classifiedMajorityId:getClassifiedMajoritySelector().value(),
 									classifiedMiddleId:getClassifiedMiddleSelector().value(),
-									classifiedMinorityId:getClassifiedMinoritySelector().value(), 			
+									classifiedMinorityId:getClassifiedMinoritySelector().value(), 	
+									competencyType : getCompetencyTypeSelector().value()		
 									jobId: getJobSelector().value(), 							
 									startIndex:options.skip, 
 									pageSize: options.pageSize 
@@ -731,10 +747,14 @@
 							</div>							 	
 						 	</div>
 						 	<div class="col-xs-6">
-						 	<h5>직무</h5>
-						 	<div class="m-b-xs">
-								<input id="job-dorpdown-list" />
-							</div>	
+							 	<h5>직무</h5>
+							 	<div class="m-b-xs">
+									<input id="job-dorpdown-list" />
+								</div>	
+							 	<h5 class="text-danger string">직무</h5>
+							 	<div class="m-b-xs">
+									<input id="competency-type-dorpdown-list" />
+								</div>									
 						 	</div>
 						
 						</div>
