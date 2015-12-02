@@ -504,10 +504,12 @@
 				<section class="layout">
 					<section class="left">							
 						<div class="panel panel-transparent">
-							<div class="panel-heading">
-								<input id="company-dropdown-list" />	
-							</div>
+							<!--<div class="panel-heading">
+								
+							</div>-->
 							<div class="panel-body">
+								<input id="company-dropdown-list" />	
+								<hr/>
 							 	<h5>직무분류</h5>
 								<div class="m-b-xs">
 									<input id="classified-majority-dorpdown-list" />
