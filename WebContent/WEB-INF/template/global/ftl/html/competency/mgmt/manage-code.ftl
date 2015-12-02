@@ -153,32 +153,6 @@
 				});
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );	
-				
-				
-			//	var uploadRenderTo = $("#import-excel-file");
-			/*
-				if( !common.ui.exists(renderTo)){
-					uploadRenderTo.kendoUpload({
-						multiple : false,
-						width: 300,
-					 	showFileList : false,
-						localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
-						async: {
-							saveUrl:  '<@spring.url "/secure/data/mgmt/competency/codeset/import.json?output=json"/>',							   
-							autoUpload: true
-						},
-						upload: function (e) {								         
-							e.data = {
-								codeSetId :  $("#import-top-codeset-id").val(),
-								skipRowCount: $("#import-skip-row-count").val()
-							};														    								    	 		    	 
-						},
-						success : function(e) {								    
-						}
-					});								
-				}					
-			*/
-			
 			}
 			
 		}		
@@ -377,8 +351,14 @@
 										<span data-bind="{text: codeset.description, visible:visible}"></span>
 										<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
 									</div>
-									<div class="p-sm text-right">
-
+									<div class="p-sm">
+										<div data-role="grid"
+								                 date-scrollable="true"
+								                 data-editable="true"
+								                 data-toolbar="['create']"
+								                 data-columns="[{ 'field': 'name', 'width': 270 }, { 'field': 'value' } ]"
+								                 data-bind="source:codeset.properties"
+								                 style="height: 200px"></div>
 									</div>									
 								</div>
 								 <div class="panel-footer">								 
