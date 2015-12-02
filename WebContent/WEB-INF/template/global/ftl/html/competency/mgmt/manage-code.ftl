@@ -196,7 +196,7 @@
 						data : this.codeset.properties,
 						schema: {
                                 model: {
-                                	id : "name"
+                                	id : "name",
                                     fields: {
                                         name: { type: "string" },
                                         value: { type: "string" }
