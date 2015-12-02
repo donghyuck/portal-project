@@ -748,7 +748,8 @@
 								<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량/능력단위" />
 							</div>
 							<div class="panel-body no-padding-b">	
-								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>								
+								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>
+								
 								<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
 								<div class="p-sm">
 									<table class="table table-striped">
