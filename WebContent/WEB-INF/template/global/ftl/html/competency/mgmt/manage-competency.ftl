@@ -751,7 +751,7 @@
 							 	<div class="m-b-xs">
 									<input id="job-dorpdown-list" />
 								</div>	
-							 	<h5 class="text-danger string">직무</h5>
+							 	<h5 class="text-danger"><strong>역량구분</strong></h5>
 							 	<div class="m-b-xs">
 									<input id="competency-type-dorpdown-list" />
 								</div>									
