@@ -192,6 +192,18 @@
 					deletable: false,
 					updatable : false,						
 					codeset : new common.ui.data.competency.CodeSet(),
+					propertyDataSource : {
+						data : this.codeset.properties,
+						schema: {
+                                model: {
+                                	id : "name"
+                                    fields: {
+                                        name: { type: "string" },
+                                        value: { type: "string" }
+                                    }
+                                }
+                        }
+					},
 					view : function(e){
 						var $this = this;		
 						if($this.codeset.codeSetId < 1){
@@ -357,7 +369,7 @@
 								                 data-editable="true"
 								                 data-toolbar="['create']"
 								                 data-columns="[{ 'field': 'name', 'width': 270 },{ 'field': 'value' } ]"
-								                 data-bind="source:codeset.properties"
+								                 data-bind="source:propertyDataSource"
 								                 style="height: 200px"></div>
 									</div>									
 								</div>
