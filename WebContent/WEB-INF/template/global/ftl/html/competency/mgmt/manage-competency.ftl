@@ -213,7 +213,7 @@
 									classifiedMajorityId:getClassifiedMajoritySelector().value(),
 									classifiedMiddleId:getClassifiedMiddleSelector().value(),
 									classifiedMinorityId:getClassifiedMinoritySelector().value(), 	
-									competencyType : getCompetencyTypeSelector().value()		
+									competencyType : getCompetencyTypeSelector().value(),		
 									jobId: getJobSelector().value(), 							
 									startIndex:options.skip, 
 									pageSize: options.pageSize 
