@@ -192,7 +192,7 @@
 					deletable: false,
 					updatable : false,						
 					codeset : new common.ui.data.competency.CodeSet(),
-					propertyDataSource : {
+					propertyDataSource :new kendo.data.DataSource({
 						data : [],
 						schema: {
                                 model: {
@@ -203,7 +203,7 @@
                                     }
                                 }
                         }
-					},
+					}),
 					view : function(e){
 						var $this = this;		
 						if($this.codeset.codeSetId < 1){
@@ -249,7 +249,7 @@
 					setSource : function(source){
 						var $this = this;
 						source.copy($this.codeset);	
-						$this.propertyDataSource.data = $this.codeset.properties;						  
+						$this.propertyDataSource.data($this.codeset.properties);						  
 				    	if($this.codeset.get("codeSetId") == 0)
 				    	{
 				    		$this.codeset.set("objectType", 1);
