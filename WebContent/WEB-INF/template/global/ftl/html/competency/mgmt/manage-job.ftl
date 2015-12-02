@@ -568,9 +568,9 @@
 							<div class="panel-body">	
 								<ul class="nav nav-tabs nav-tabs-xs">
 									<li class="m-l-sm"><a href="#job-details-tabs-0" data-toggle="tab" data-action="elements">역량(능력단위)</a></li>
-									<li><a href="#job-details-tabs-2" data-toggle="tab" data-action="variable-range">적용범위 및 작업상황</a></li>
-									<li><a href="#job-details-tabs-3" data-toggle="tab" data-action="assessment-guide">평가지침</a></li>
-									<li><a href="#job-details-tabs-4" data-toggle="tab" data-action="key-competency">직업기초능력</a></li>
+									<li><a href="#job-details-tabs-2" data-toggle="tab" data-action="variable-range">직업</a></li>
+									<li><a href="#job-details-tabs-3" data-toggle="tab" data-action="assessment-guide">교과과정</a></li>
+									<li><a href="#job-details-tabs-4" data-toggle="tab" data-action="key-competency">자격증</a></li>
 								</ul>							
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-0">
