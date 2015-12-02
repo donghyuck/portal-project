@@ -364,7 +364,7 @@
 								                 data-editable="true"
 								                 data-toolbar="['create']"
 								                 data-columns="[{ 'field': 'name', 'width': 270 },{ 'field': 'value' } ]"
-								                 data-bind="source:propertyDataSource"
+								                 data-bind="source:propertyDataSource, visible:editable"
 								                 style="height: 200px"></div>
 									</div>									
 								</div>
