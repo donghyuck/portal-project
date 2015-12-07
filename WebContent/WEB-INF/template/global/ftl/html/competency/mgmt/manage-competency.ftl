@@ -421,7 +421,7 @@
 					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 성능기준 추가 </button>'),
 					columns: [
-						{ title: "서술", field: "description }
+						{ title: "서술", field: "description" }
 					],
 					resizable: true,
 					editable : false,	
