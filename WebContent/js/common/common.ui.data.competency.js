@@ -85,6 +85,26 @@
 	    }    
 	});	
 	
+	var PerformanceCriteria = kendo.data.Model.define( {
+	    id: "performanceCriteriaId", // the identifier of the model
+	    fields: {
+	    	performanceCriteriaId: { type: "number", editable: true, defaultValue: 0  },    	
+	    	description: { type: "number", editable: true, defaultValue: 0  },   
+	    	modifiedDate: { type: "date"},
+	        creationDate: { type: "date" }	
+	    },	    
+	    copy : function ( target ){
+	    	target.set("performanceCriteriaId", this.get("performanceCriteriaId"));
+	    	target.set("description", this.get("description"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
+	    	target.set("creationDate", this.get("creationDate"));
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    	else
+	    		target.set("properties", {});
+	    }    
+	});		
+	
 	var CodeSet = kendo.data.Model.define( {
 	    id: "codeSetId", // the identifier of the model
 	    parentId : "parentCodeSetId",
@@ -124,7 +144,8 @@
 			Job : Job,
 			CodeSet : CodeSet,
 			Competency : Competency,
-			EssentialElement : EssentialElement
+			EssentialElement : EssentialElement,
+			PerformanceCriteria : PerformanceCriteria
 		}  
 	} );
 	
