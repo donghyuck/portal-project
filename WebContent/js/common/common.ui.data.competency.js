@@ -89,12 +89,16 @@
 	    id: "performanceCriteriaId", // the identifier of the model
 	    fields: {
 	    	performanceCriteriaId: { type: "number", editable: true, defaultValue: 0  },    	
-	    	description: { type: "number", editable: true, defaultValue: 0  },   
+	    	objectType : { type: "number"},
+	    	objectId : { type: "number"},	    	
+	    	description: { type: "string", editable: true, defaultValue: 0  },   
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
 	    },	    
 	    copy : function ( target ){
 	    	target.set("performanceCriteriaId", this.get("performanceCriteriaId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));	    	
 	    	target.set("description", this.get("description"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate"));
