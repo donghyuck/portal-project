@@ -467,7 +467,15 @@
 							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
 							update: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
 							create: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' }
-							
+							parameterMap: function(options, operation) {
+								
+			                    if (operation !== "read" && options.models) {
+			                    console.log(operation + " data=" + kendo.stringify(options.models) );
+			                    
+			                    
+			                        return {models: kendo.stringify(options.models)};
+			                    }
+			                }
 						},
 						batch: true,
 						schema: {
