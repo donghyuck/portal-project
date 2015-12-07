@@ -89,9 +89,9 @@
 	    id: "performanceCriteriaId", // the identifier of the model
 	    fields: {
 	    	performanceCriteriaId: { type: "number", editable: true, defaultValue: 0  },    	
-	    	objectType : { type: "number"},
-	    	objectId : { type: "number"},	    	
-	    	description: { type: "string", editable: true, defaultValue: 0  },   
+	    	objectType : { type: "number", editable: true, defaultValue: 0},
+	    	objectId : { type: "number", editable: true, defaultValue: 0 },	    	
+	    	description: { type: "string", editable: true  },   
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
 	    },	    
