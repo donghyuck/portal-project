@@ -832,7 +832,16 @@
 							</div>
 						</form>
 					</div>
-					<div id="performance-criteria-grid"></div>
+					<<div class="modal-body no-padding">
+						<div class="row">
+							<div class="col-sm-6">
+								<div id="performance-criteria-grid"></div>
+							</div>
+							<div class="col-sm-6">
+							
+							</div>
+						</div>
+					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
 					</div>
