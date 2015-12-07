@@ -846,7 +846,8 @@
 									date-scrollable="true"
 					                data-editable="true"
 					                data-toolbar="['create', 'save']"
-									data-columns="[{ 'field': 'description', 'width': 270 }]"								
+									data-columns="[{ 'field': 'description' , title: "서술" , 'width': 270 }]"		
+									data-height="300"						
 									data-bind="source:performanceCriteriaDataSource"
 								></div>
 							</div>
