@@ -832,10 +832,10 @@
 							</div>
 						</form>
 					</div>
-					<<div class="modal-body no-padding">
+					<div class="modal-body no-padding">
 						<div class="row">
 							<div class="col-sm-6">
-								<div id="performance-criteria-grid"></div>
+								<div id="performance-criteria-grid" class="no-border no-shadow"></div>
 							</div>
 							<div class="col-sm-6">
 							
