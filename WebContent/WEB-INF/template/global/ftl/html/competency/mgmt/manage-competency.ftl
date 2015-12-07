@@ -446,9 +446,6 @@
 			var parentRenderTo = $("#competency-details");
 			var renderTo = $("#essential-element-edit-modal");			
 			if( !renderTo.data('bs.modal') ){
-			
-				createPerformanceCriteriaGrid();
-				
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
@@ -465,6 +462,15 @@
 						$this.set("updatable", false);
 						return false;
 					},
+					performanceCriteriaDataSource : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' }
+						},
+						batch: true,
+						schema: {
+							model: common.ui.data.competency.PerformanceCriteria
+						}
+					}),
 					edit : function(e){
 						var $this = this;					
 						$this.set("visible", false);
@@ -835,7 +841,14 @@
 					<div class="modal-body no-padding">
 						<div class="row">
 							<div class="col-sm-6">
-								<div id="performance-criteria-grid" class="no-border no-shadow no-rounded"></div>
+								<div id="performance-criteria-grid" class="no-border no-shadow no-rounded" 
+									data-autoBind="false"
+									date-scrollable="true"
+					                data-editable="true"
+					                data-toolbar="['create', 'save']"
+									data-columns="[{ 'field': 'description', 'width': 270 }]"								
+									data-bind="source:performanceCriteriaDataSource"
+								></div>
 							</div>
 							<div class="col-sm-6">
 							
