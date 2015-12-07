@@ -842,14 +842,15 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div id="performance-criteria-grid" class="no-border no-shadow no-rounded" 
+									data-role="grid"
 									data-autoBind="false"
 									date-scrollable="true"
 					                data-editable="true"
 					                data-toolbar="['create', 'save']"
 									data-columns="[{ 'field': 'description' , title: "서술" , 'width': 270 }]"		
-									data-height="300"						
 									data-bind="source:performanceCriteriaDataSource"
-								></div>
+									style="height:300px;">
+								</div>
 							</div>
 							<div class="col-sm-6">
 							
