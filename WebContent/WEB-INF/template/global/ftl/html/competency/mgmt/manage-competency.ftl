@@ -413,7 +413,7 @@
 					autoBind:false,
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-creteria/list.json?output=json" />', type:'post' }
+							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' }
 						},
 						schema: {
 							model: common.ui.data.competency.EssentialElement
@@ -832,7 +832,7 @@
 							</div>
 						</form>
 					</div>
-					div id="performance-criteria-grid"></div>
+					<div id="performance-criteria-grid"></div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
 					</div>
