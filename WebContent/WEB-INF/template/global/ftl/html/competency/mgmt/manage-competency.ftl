@@ -400,11 +400,55 @@
 				});	
 			}
 		}
+		
+		function getPerformanceCriteriaGrid(){
+			var renderTo = $("#performance-criteria-grid");
+			return common.ui.grid(renderTo);
+		}
+				
+		function createPerformanceCriteriaGrid(  ){
+			var renderTo = $("#performance-criteria-grid");
+			if( ! renderTo.data("kendoGrid") ){
+				common.ui.grid( renderTo, {
+					autoBind:false,
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-creteria/list.json?output=json" />', type:'post' }
+						},
+						schema: {
+							model: common.ui.data.competency.EssentialElement
+						}
+					},
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 성능기준 추가 </button>'),
+					columns: [
+						{ title: "서술", field: "description }
+					],
+					resizable: true,
+					editable : false,	
+					selectable : "row",
+					scrollable: true,					
+					height: 400,
+					change: function(e) {
+					 	var selectedCells = this.select();	
+					 	if( selectedCells.length == 1){
+	                    	var selectedCell = this.dataItem( selectedCells );
+	                    } 					
+					}
+				});	
+				
+				renderTo.find("button[data-action=create]").click(function(e){		
+					//createEssentialElementModal(new common.ui.data.competency.EssentialElement());		
+				});	
+			}		
+		}
 				
 		function createEssentialElementModal(source){
 			var parentRenderTo = $("#competency-details");
-			var renderTo = $("#essential-element-edit-modal");
+			var renderTo = $("#essential-element-edit-modal");			
 			if( !renderTo.data('bs.modal') ){
+			
+				createPerformanceCriteriaGrid();
+				
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
@@ -460,11 +504,7 @@
 					competency : parentRenderTo.data("model").competency,
 					essentialElement : new common.ui.data.competency.EssentialElement(),
 					setSource: function(source){
-						var $this = this;						
-						var doReload = false;
-						if( cource.essentialElementId == $this.essentialElement.essentialElementId){
-							doReload = true;
-						}						
+						var $this = this;				
 						source.copy($this.essentialElement);					
 						if($this.essentialElement.get("essentialElementId") == 0)
 						{
@@ -478,7 +518,8 @@
 							$this.set("visible", true);
 							$this.set("editable", false);
 							$this.set("updatable", false);
-							$this.set("deletable", true);							
+							$this.set("deletable", true);
+							getPerformanceCriteriaGrid().dataSource.read({objectType:54, objectId: $this.essentialElement.get("essentialElementId") });
 						}
 					}
 				});				
@@ -791,6 +832,7 @@
 							</div>
 						</form>
 					</div>
+					div id="performance-criteria-grid"></div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
 					</div>
