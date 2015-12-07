@@ -250,15 +250,13 @@
 
 					}		
 				});		
-
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
 				});	
 				renderTo.find("button[data-action=create]").click(function(e){		
 					getCompetencyGrid().clearSelection();			
 					openCompetencyEditor(new common.ui.data.competency.Competency());				
-				});		
-							
+				});								
 			}
 		}  
 		
@@ -463,7 +461,10 @@
 					essentialElement : new common.ui.data.competency.EssentialElement(),
 					setSource: function(source){
 						var $this = this;						
-						//renderTo.find("form")[0].reset();		
+						var doReload = false;
+						if( cource.essentialElementId == $this.essentialElement.essentialElementId){
+							doReload = true;
+						}						
 						source.copy($this.essentialElement);					
 						if($this.essentialElement.get("essentialElementId") == 0)
 						{
@@ -490,114 +491,6 @@
 			renderTo.modal('show');		
 		}		
 		
-		function getCodeSetTreeList(){
-			var renderTo = $("#codeset-treelist");
-			return common.ui.treelist(renderTo);
-		}
-		
-		function createCodeSetTreeList(){
-			var renderTo = $("#codeset-treelist");			
-			if( !renderTo.data('kendoTreeList') ){		
-				var companySelector = getCompanySelector();		
-				renderTo.kendoTreeList({
-					height:"591",
-					autoBind:false,
-					dataSource: {
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/codeset/list.json?output=json" />', type: 'POST'},
-							create: { url:'<@spring.url "/secure/data/mgmt/codeset/update.json?output=json" />', type: 'POST', contentType : "application/json" },
-							parameterMap: function (options, operation){
-								console.log( operation +  " : "+ common.ui.stringify(options) );
-								if (operation !== "read") {
-									if( operation == "create" ){
-										options.objectType = 1 ;
-										options.objectId = getCompanySelector().value();
-									}
-									return kendo.stringify(options);
-								} 
-								return {companyId: getCompanySelector().value() };
-							}
-						},
-						schema: {
-							model:{
-								id:'codeSetId',
-								expanded: true,
-								parentId: 'parentCodeSetId',
-							    fields: {
-							    	codeSetId: { type: "number"},
-							    	parentCodeSetId : { field:"parentCodeSetId", nullable:true },
-							    	objectType : { type: "number"},
-							    	objectId : { type: "number"},
-							    	description:  { type: "string" },
-							    	name : { type: "string" },	        
-							    	modifiedDate: { type: "date"},
-							        creationDate: { type: "date" },
-							    	enabled : {type: "boolean" }
-							    }	
-							}
-						},				
-						error: common.ui.handleAjaxError					
-					},
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 코드그룹 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'">새로고침</button></div>'),
-					columns : [
-						{field:'name', title:"코드"},
-						{field:'description', title:"설명"},
-						{ 
-							command: [
-								{ name: "edit", className: "btn btn-flat", imageClass:false },
-								{ name: "createchild", className: "btn btn-flat", imageClass:false }
-							], 
-						  	width: 200  
-						}						
-					],
-					selectable: true,
-					messages:{
-						commands:{
-							edit : "변경",
-							update : "저장",
-							createchild : "추가",
-							destory: "삭제",
-							canceledit: "취소"						
-						}
-					},
-					editable:true,
-					change: function(e) {						
-						var selectedRows = this.select();
-						var dataItem = this.dataItem(selectedRows[0]);
-						createCodeSetPanel( dataItem );
-					}
-				});							
-				renderTo.find("button[data-action=create]").click(function(e){
-					getCodeSetTreeList.addRow();
-					common.ui.treelist(renderTo).select("tr:eq(1)");
-				});	
-				renderTo.find("button[data-action=refresh]").click(function(e){
-					common.ui.treelist(renderTo).dataSource.read();
-				});	
-			}
-		}
-
-		function createCodeSetPanel(source){
-			var renderTo = $(".layout > .right > .panel:first");
-			if( !renderTo.data('model') ){
-				var observable =  common.ui.observable({
-					codeset : new common.ui.data.CodeSet(),
-					setSource : function(source){						
-						this.codeset.set('name', source.name );			
-						this.codeset.set('description', source.description );				
-					}				
-				});				
-				renderTo.data("model", observable);			
-				common.ui.bind( renderTo, observable );	
-			}			
-			if( source ){
-				renderTo.data("model").setSource( source ) ;	
-			}
-			if(renderTo.is(":hidden")){				
-				renderTo.show();
-			}	
-		}
-
 		</script> 		 
 		<style>
 		#xmleditor.panel-body{
@@ -607,7 +500,6 @@
 		.k-treeview {
 			min-height:338px;
 		}
-				
 				
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
@@ -771,7 +663,7 @@
 								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>
 								
 								<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
-								<div class="p-sm">
+								<div class="p-sm no-padding-hr">
 									<table class="table table-striped">
 											<thead>
 												<tr>
