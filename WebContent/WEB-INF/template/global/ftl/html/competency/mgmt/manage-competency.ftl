@@ -464,7 +464,10 @@
 					},
 					performanceCriteriaDataSource : new kendo.data.DataSource({
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' }
+							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
+							update: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
+							create: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' }
+							
 						},
 						batch: true,
 						schema: {
