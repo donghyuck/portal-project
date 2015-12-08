@@ -465,16 +465,17 @@
 					performanceCriteriaDataSource : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
-							update: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
-							create: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
-							parameterMap: function(options, operation) {
-								
-			                    if (operation !== "read" && options.models) {
-			                   		 console.log( 
+							update: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/batch/update.json?output=json" />', type:'post', contentType : "application/json" },
+							create: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post', contentType : "application/json" },
+							parameterMap: function(options, operation) {								
+			                    if (operation !== "read" && options.models) {			                    
+			                    	$.each(options.models, function(index, model){
+			                    		model.objectType = 54;
+			                    		model.objectId = renderTo.data("model").essentialElement.essentialElementId;
+			                    	});			                    
+			                   		console.log( 
 			                   		 	operation + ": data=" + kendo.stringify(options.models) 
-			                   		 );
-			                    
-			                    
+			                   		);
 			                        return {models: kendo.stringify(options.models)};
 			                    }
 			                }
