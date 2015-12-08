@@ -716,7 +716,8 @@
 				<section class="right">							
 					<div id="competency-details" class="panel panel-default" style="display:none;">
 						<form>
-							<div class="panel-heading"><span class="panel-title" data-bind="{text: competency.name, visible:visible}"></span>
+							<div class="panel-heading">
+								<strong><span class="panel-title" data-bind="{text: competency.name, visible:visible}"></span></strong>
 								<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량/능력단위" />
 							</div>
 							<div class="panel-body no-padding-b">	
