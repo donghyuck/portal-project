@@ -478,7 +478,7 @@
 			                   		);
 			                        return kendo.stringify(options.models) ;
 			                    }else{
-			                    	console.log( kendo.stringify(renderTo.data("model").essentialElement) );
+			                    	console.log( kendo.stringify(renderTo.data("model")) );
 			                    	return {objectType:54, objectId: renderTo.data("model").essentialElement.essentialElementId};
 			                    }
 			                }
