@@ -868,8 +868,7 @@
 									data-role="grid"
 									data-autoBind="false"
 									date-scrollable="true"
-					                data-editable="true"
-					              
+					                data-editable="true"					              
 					                data-toolbar="
 					                	<div class='p-xxs'>
 					                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 성능기준 추가 </button>
