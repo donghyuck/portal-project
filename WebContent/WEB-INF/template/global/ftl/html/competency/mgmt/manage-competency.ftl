@@ -232,7 +232,7 @@
 					columns: [
 						{ title: "역량/능력단위", field: "name"}
 					],
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량/(능력단위) 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-success pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 검색</button></div>'),
+					toolbar: kendo.template('<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량/(능력단위) 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-success pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 검색</button></div>'),
 					pageable: { refresh:true, pageSizes:false,  buttonCount: 5, messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : false,
@@ -376,7 +376,7 @@
 							model: common.ui.data.competency.EssentialElement
 						}
 					},
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 하위요소(능력단위 요소) 추가 </button>'),
+					toolbar: kendo.template('<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 하위요소(능력단위 요소) 추가 </button>'),
 					columns: [
 						{ title: "속성", field: "name" },
 						{ title: "레벨", field: "level", width: 100 }
@@ -419,7 +419,7 @@
 							model: common.ui.data.competency.EssentialElement
 						}
 					},
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 성능기준 추가 </button>'),
+					toolbar: kendo.template('<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 성능기준 추가 </button>'),
 					columns: [
 						{ title: "서술", field: "description" }
 					],
@@ -864,7 +864,8 @@
 									data-autoBind="false"
 									date-scrollable="true"
 					                data-editable="true"
-					                data-toolbar="['create', 'save']"
+					                /*data-toolbar="['create', 'save']"*/
+					                data-toolbar="kendo.template('<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 성능기준 추가 </button>'"
 									data-columns="[{ 'field': 'description', 'title': '서술', 'width': 270 }]"		
 									data-bind="source:performanceCriteriaDataSource"
 									style="height:300px;">
