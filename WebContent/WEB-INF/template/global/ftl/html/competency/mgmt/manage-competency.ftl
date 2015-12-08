@@ -466,7 +466,7 @@
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
 							update: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/batch/update.json?output=json" />', type:'post', contentType : "application/json" },
-							create: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post', contentType : "application/json" },
+							create: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/batch/update.json?output=json" />', type:'post', contentType : "application/json" },
 							parameterMap: function(options, operation) {								
 			                    if (operation !== "read" && options.models) {			                    
 			                    	$.each(options.models, function(index, model){
@@ -476,7 +476,9 @@
 			                   		console.log( 
 			                   		 	operation + ": data=" + kendo.stringify(options.models) 
 			                   		);
-			                        return {models: kendo.stringify(options.models)};
+			                        return kendo.stringify(options.models) ;
+			                    }else{
+			                    	return {objectType:54, objectId: renderTo.data("model").essentialElement.essentialElementId};
 			                    }
 			                }
 						},
@@ -539,7 +541,7 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
-							getPerformanceCriteriaGrid().dataSource.read({objectType:54, objectId: $this.essentialElement.get("essentialElementId") });
+							getPerformanceCriteriaGrid().dataSource.read();
 						}
 					}
 				});				
