@@ -663,6 +663,10 @@
 			font-weight: normal;
 		}
 		
+		.k-grid .k-edit-cell {
+		    padding: .3em .3em;
+		}	
+			
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
