@@ -865,7 +865,7 @@
 									date-scrollable="true"
 					                data-editable="true"
 					              
-					                data-toolbar="kendo.template('<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create"><span class="btn-label icon fa fa-plus"></span> 성능기준 추가 </button>'"
+					                data-toolbar="<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create"><span class="btn-label icon fa fa-plus"></span> 성능기준 추가 </button>"
 									data-columns="[{ 'field': 'description', 'title': '서술', 'width': 270 }]"		
 									data-bind="source:performanceCriteriaDataSource"
 									style="height:300px;">
