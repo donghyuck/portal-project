@@ -865,7 +865,12 @@
 									date-scrollable="true"
 					                data-editable="true"
 					              
-					                data-toolbar="<div class='p-xxs'><button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 성능기준 추가 </button>"
+					                data-toolbar="
+					                	<div class='p-xxs'>
+					                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 성능기준 추가 </button>
+					                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-save-changes'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
+					                	</div>	
+					                "
 									data-columns="[{ 'field': 'description', 'title': '서술', 'width': 270 }]"		
 									data-bind="source:performanceCriteriaDataSource"
 									style="height:300px;">
