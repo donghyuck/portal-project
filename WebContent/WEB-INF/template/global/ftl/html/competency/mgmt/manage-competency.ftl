@@ -876,7 +876,7 @@
 					                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-save-changes pull-right'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
 					                	</div>	
 					                "
-									data-columns="[{ 'field': 'description', 'title': '서술', 'width': 270 }]"		
+									data-columns="[{ 'field': sortOrder', 'title': '순번' },{ 'field': 'description', 'title': '서술', 'width': 270 }]"		
 									data-bind="source:performanceCriteriaDataSource"
 									style="height:300px;">
 								</div>

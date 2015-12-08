@@ -91,6 +91,7 @@
 	    	performanceCriteriaId: { type: "number", editable: true, defaultValue: 0  },    	
 	    	objectType : { type: "number", editable: true, defaultValue: 0},
 	    	objectId : { type: "number", editable: true, defaultValue: 0 },	    	
+	    	sortOrder : { type: "number", editable: true, defaultValue: 0 },	    	
 	    	description: { type: "string", editable: true  },   
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
@@ -99,6 +100,7 @@
 	    	target.set("performanceCriteriaId", this.get("performanceCriteriaId"));
 	    	target.set("objectType", this.get("objectType"));
 	    	target.set("objectId", this.get("objectId"));	    	
+	    	target.set("sortOrder", this.get("sortOrder"));	    	
 	    	target.set("description", this.get("description"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate"));
