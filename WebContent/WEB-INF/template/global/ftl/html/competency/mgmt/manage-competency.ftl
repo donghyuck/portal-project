@@ -591,7 +591,7 @@
 		}
 		
 		#content-wrapper section.left {
-			width:500px;
+			width:400px;
 			position: absolute;
 			height:auto;
 			min-height: 100%;			
@@ -605,7 +605,7 @@
 		}
 		
 		#content-wrapper section.right {
-			margin-left:500px;
+			margin-left:400px;
 			height:100%;			
 		}
 		
