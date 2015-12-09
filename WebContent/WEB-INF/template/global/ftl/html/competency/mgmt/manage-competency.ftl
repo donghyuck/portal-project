@@ -878,7 +878,7 @@
 						                "
 										data-columns="[{ 'field': 'sortOrder', 'title': '순번', 'width': 100  },
 													   { 'field': 'description', 'title': '서술'},
-													   { 'command': 'destroy', template:'<a>hello</a>', title: '&nbsp;', width: 150 }]"		
+													   { 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
 										data-bind="source:performanceCriteriaDataSource"
 										style="height:300px;">
 								</div>
