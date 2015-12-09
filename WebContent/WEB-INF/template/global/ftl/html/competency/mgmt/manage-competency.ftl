@@ -546,6 +546,19 @@
 			renderTo.modal('show');		
 		}		
 		
+		function abilityTypeDropDownEditor(container, options) {
+                    $('<input required data-text-field="CategoryName" data-value-field="abilityType" data-bind="value:' + options.field + '"/>')
+                        .appendTo(container)
+                        .kendoDropDownList({
+                            dataSource: [
+		                        { text: "NONE", value: "NONE" },
+		                        { text: "KNOWLEDGE", value: "KNOWLEDGE" },
+		                        { text: "SKILL", value: "SKILL" },
+		                        { text: "ATTITUDE", value: "ATTITUDE" }
+		                    ]
+                        });
+        }
+                			
 		</script> 		 
 		<style>
 		#xmleditor.panel-body{
@@ -895,6 +908,7 @@
 						                	</div>	
 						                "
 						                data-columns="[
+						                	{ 'field': 'abilityType', 'title': '구분', width: "100px", editor:abilityTypeDropDownEditor},
 											{ 'field': 'name', 'title': 'KSA'},
 											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
 										data-bind="source:abilityDataSource"
