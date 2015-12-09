@@ -887,7 +887,7 @@
 						                data-editable="true"					              
 						                data-toolbar="
 						                	<div class='p-xxs'>
-						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 행동지표 추가 </button>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span>능력 추가 </button>
 						                		<div class='pull-right'>
 						                		<button class='btn btn-flat btn-labeled btn-outline btn-success k-grid-save-changes'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
 						                		<button class='btn btn-flat btn-labeled btn-outline btn-default k-grid-cancel-changes'><span class='btn-label icon fa fa-undo'></span> 변경사항 취소</button>
