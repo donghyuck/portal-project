@@ -908,7 +908,7 @@
 						                	</div>	
 						                "
 						                data-columns="[
-						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor, 'template':'#=text#' },
+						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor },
 											{ 'field': 'name', 'title': 'KSA'},
 											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
 										data-bind="source:abilityDataSource"
