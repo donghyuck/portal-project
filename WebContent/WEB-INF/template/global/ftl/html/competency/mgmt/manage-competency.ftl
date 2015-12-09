@@ -856,8 +856,8 @@
 					</div>
 					<div class="modal-body no-padding">
 						<ul class="nav nav-tabs nav-tabs-sm">
-							<li class="m-l-sm"><a href="#essential-element-details-tabs-0" data-toggle="tab" data-action="elements">행동지표</a></li>
-							<li><a href="#essential-element-details-tabs-1" data-toggle="tab" data-action="variable-range">수행준거</a></li>
+							<li class="m-l-sm"><a href="#essential-element-details-tabs-0" data-toggle="tab" data-action="elements">행동지표(수행준거)</a></li>
+							<li><a href="#essential-element-details-tabs-1" data-toggle="tab" data-action="variable-range">KAS</a></li>
 						</ul>							
 						<div class="tab-content no-padding">
 							<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-0">
@@ -868,7 +868,7 @@
 						                data-editable="true"					              
 						                data-toolbar="
 						                	<div class='p-xxs'>
-						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 수행준거 추가 </button>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 행동지표 추가 </button>
 						                		<div class='pull-right'>
 						                		<button class='btn btn-flat btn-labeled btn-outline btn-success k-grid-save-changes'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
 						                		<button class='btn btn-flat btn-labeled btn-outline btn-default k-grid-cancel-changes'><span class='btn-label icon fa fa-undo'></span> 변경사항 취소</button>
@@ -876,7 +876,7 @@
 						                	</div>	
 						                "
 						                data-columns="[{ 'field': 'sortOrder', 'title': '순번', 'width': 100  },
-											{ 'field': 'description', 'title': '서술'},
+											{ 'field': 'description', 'title': '행동지표(수행준거)'},
 											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
 										data-bind="source:performanceCriteriaDataSource"
 										style="height:300px;">
