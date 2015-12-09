@@ -406,7 +406,7 @@
 		}
 
 		function getActivityGrid(){
-			var renderTo = $("#activity-grid");
+			var renderTo = $("#ability-grid");
 			return common.ui.grid(renderTo);
 		}
 		
@@ -880,7 +880,7 @@
 								</div>
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-1">
-								<div id="performance-criteria-grid" class="no-border no-shadow no-rounded" 
+								<div id="ability-grid" class="no-border no-shadow no-rounded" 
 										data-role="grid"
 										data-autoBind="false"
 										date-scrollable="true"
@@ -897,7 +897,7 @@
 						                data-columns="[
 											{ 'field': 'name', 'title': 'KSA'},
 											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
-										data-bind="source:performanceCriteriaDataSource"
+										data-bind="source:abilityDataSource"
 										style="height:300px;">
 							</div>															
 						</div>	
