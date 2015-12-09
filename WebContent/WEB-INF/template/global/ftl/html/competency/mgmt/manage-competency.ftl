@@ -552,10 +552,10 @@
                         .kendoDropDownList({
                         	optionLabel: "구분" ,
                             dataSource: [
-		                        { text: "NONE", value: "NONE" },
-		                        { text: "KNOWLEDGE", value: "KNOWLEDGE" },
-		                        { text: "SKILL", value: "SKILL" },
-		                        { text: "ATTITUDE", value: "ATTITUDE" }
+		                        { text: "기타", value: "NONE" },
+		                        { text: "지식", value: "KNOWLEDGE" },
+		                        { text: "기술", value: "SKILL" },
+		                        { text: "태도", value: "ATTITUDE" }
 		                    ]
                         });
         }
