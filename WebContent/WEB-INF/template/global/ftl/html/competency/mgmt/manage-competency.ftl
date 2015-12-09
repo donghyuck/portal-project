@@ -462,19 +462,15 @@
 							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
 							update: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/batch/update.json?output=json" />', type:'post', contentType : "application/json" },
 							create: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/batch/update.json?output=json" />', type:'post', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/batch/delete.json?output=json" />', type:'post', contentType : "application/json" },
+							delete: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/batch/delete.json?output=json" />', type:'post', contentType : "application/json" },
 							parameterMap: function(options, operation) {								
 			                    if (operation !== "read" && options.models) {			                    
 			                    	$.each(options.models, function(index, model){
 			                    		model.objectType = 54;
 			                    		model.objectId = renderTo.data("model").essentialElement.essentialElementId;
 			                    	});			                    
-			                   		console.log( 
-			                   		 	operation + ": data=" + kendo.stringify(options.models) 
-			                   		);
-			                        return kendo.stringify(options.models) ;
+			                   		return kendo.stringify(options.models) ;
 			                    }else{
-			                    	console.log( kendo.stringify(renderTo.data("model")) );
 			                    	return {objectType:54, objectId: renderTo.data("model").essentialElement.essentialElementId};
 			                    }
 			                }
