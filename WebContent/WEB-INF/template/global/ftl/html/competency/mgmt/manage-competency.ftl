@@ -547,6 +547,7 @@
 		}		
 		
 		function abilityTypeDropDownEditor(container, options) {
+		console.log(kendo.stringify( container ));
 		console.log(kendo.stringify( options ));
                     $('<input required data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '"/>')
                         .appendTo(container)
@@ -910,7 +911,7 @@
 						                	</div>	
 						                "
 						                data-columns="[
-						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor, template:'#=abilityType.text#' },
+						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor },
 											{ 'field': 'name', 'title': 'KSA'},
 											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
 										data-bind="source:abilityDataSource"
