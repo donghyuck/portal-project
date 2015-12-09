@@ -872,8 +872,10 @@
 						                data-toolbar="
 						                	<div class='p-xxs'>
 						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 수행준거 추가 </button>
-						                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-save-changes pull-right'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
-						                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-cancel-changes pull-right'><span class='btn-label icon fa undo'></span> 변경사항 취소</button>
+						                		<div class='btn-group pull-right'>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-save-changes'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-cancel-changes'><span class='btn-label icon fa fa-undo'></span> 변경사항 취소</button>
+						                		</div>
 						                	</div>	
 						                "
 										data-columns="[{ 'field': 'sortOrder', 'title': '순번', 'width': 100  },
