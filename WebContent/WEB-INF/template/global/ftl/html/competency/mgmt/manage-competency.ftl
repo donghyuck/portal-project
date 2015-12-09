@@ -458,6 +458,7 @@
 						return false;
 					},
 					performanceCriteriaDataSource : new kendo.data.DataSource({
+						autoBind: false,
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
 							update: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/batch/update.json?output=json" />', type:'post', contentType : "application/json" },
