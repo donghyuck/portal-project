@@ -862,7 +862,7 @@
 							<li class="m-l-sm"><a href="#essential-element-details-tabs-0" data-toggle="tab" data-action="elements">행동지표</a></li>
 							<li><a href="#essential-element-details-tabs-1" data-toggle="tab" data-action="variable-range">수행준거</a></li>
 						</ul>							
-						<div class="tab-content">
+						<div class="tab-content no-padding">
 							<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-0">
 								<div id="performance-criteria-grid" class="no-border no-shadow no-rounded" 
 										data-role="grid"
