@@ -777,7 +777,7 @@
 						</form>
 						<hr/>
 						<div class="panel-body no-padding-t" data-bind="{visible:deletable}">						
-							<ul class="nav nav-tabs nav-tabs-xs">
+							<ul class="nav nav-tabs nav-tabs-sm">
 								<li class="m-l-sm"><a href="#competency-details-tabs-0" data-toggle="tab" data-action="elements">하위요소/능력단위요소</a></li>
 								<li><a href="#competency-details-tabs-2" data-toggle="tab" data-action="variable-range">적용범위 및 작업상황</a></li>
 								<li><a href="#competency-details-tabs-3" data-toggle="tab" data-action="assessment-guide">평가지침</a></li>
@@ -862,6 +862,19 @@
 						</form>
 					</div>
 					<div class="modal-body no-padding">
+							<ul class="nav nav-tabs nav-tabs-sm">
+								<li class="m-l-sm"><a href="#essential-element-details-tabs-0" data-toggle="tab" data-action="elements">행동지표</a></li>
+								<li><a href="#essential-element-details-tabs-1" data-toggle="tab" data-action="variable-range">수행준거</a></li>
+							</ul>							
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-0">
+								행동지표
+								</div>
+								<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-1">
+								수행준거
+								</div>															
+							</div>	
+											
 						<div class="row">
 							<div class="col-sm-6">
 								<div id="performance-criteria-grid" class="no-border no-shadow no-rounded" 
