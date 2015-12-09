@@ -393,8 +393,7 @@
 	                    	createEssentialElementModal(selectedCell);
 	                    } 					
 					}
-				});	
-				
+				});					
 				renderTo.find("button[data-action=create]").click(function(e){		
 					createEssentialElementModal(new common.ui.data.competency.EssentialElement());		
 				});	
@@ -434,10 +433,6 @@
 	                    	var selectedCell = this.dataItem( selectedCells );
 	                    } 					
 					}
-				});	
-				
-				renderTo.find("button[data-action=create]").click(function(e){		
-					//createEssentialElementModal(new common.ui.data.competency.EssentialElement());		
 				});	
 			}		
 		}
@@ -543,6 +538,7 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);
 							getPerformanceCriteriaGrid().dataSource.read();
+							renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
 						}
 					}
 				});				
