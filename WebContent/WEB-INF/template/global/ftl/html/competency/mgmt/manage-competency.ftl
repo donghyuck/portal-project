@@ -878,7 +878,7 @@
 						                "
 										data-columns="[{ 'field': 'sortOrder', 'title': '순번', 'width': 100  },
 													   { 'field': 'description', 'title': '서술'},
-													   { 'command': 'destroy', '<a href='\\#' class='btn btn-labeled btn-xs btn-danger k-grid-delete'><span class='btn-label icon fa times'></span>삭제</a>', title: '&nbsp;', width: 150 }]"		
+													   { 'command': 'destroy', '<a href="#" class='btn btn-labeled btn-xs btn-danger k-grid-delete'><span class='btn-label icon fa times'></span>삭제</a>', title: '&nbsp;', width: 150 }]"		
 										data-bind="source:performanceCriteriaDataSource"
 										style="height:300px;">
 								</div>
