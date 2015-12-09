@@ -873,10 +873,12 @@
 						                	<div class='p-xxs'>
 						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 수행준거 추가 </button>
 						                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-save-changes pull-right'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-cancel-changes pull-right'><span class='btn-label icon fa undo'></span> 변경사항 취소</button>
 						                	</div>	
 						                "
 										data-columns="[{ 'field': 'sortOrder', 'title': '순번', 'width': 100  },
-													   { 'field': 'description', 'title': '서술'}]"		
+													   { 'field': 'description', 'title': '서술'},
+													   { command: 'destroy', '<a href="\\#" class="btn btn-labeled btn-xs btn-danger k-grid-delete"><span class="btn-label icon fa times"></span>삭제</a>', title: "&nbsp;", width: 150 }]"		
 										data-bind="source:performanceCriteriaDataSource"
 										style="height:300px;">
 								</div>
