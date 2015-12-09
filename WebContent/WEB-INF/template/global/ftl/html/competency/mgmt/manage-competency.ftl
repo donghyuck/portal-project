@@ -547,7 +547,7 @@
 		}		
 		
 		function abilityTypeDropDownEditor(container, options) {
-                    $('<input required data-text-field="text" data-value-field="abilityType" data-bind="value:' + options.field + '"/>')
+                    $('<input required data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '"/>')
                         .appendTo(container)
                         .kendoDropDownList({
                             dataSource: [
