@@ -110,6 +110,26 @@
 	    		target.set("properties", {});
 	    }    
 	});		
+
+	var Ability = kendo.data.Model.define( {
+	    id: "abilityId", // the identifier of the model
+	    fields: {
+	    	abilityId: { type: "number", editable: true, defaultValue: 0  },    	
+	    	objectType : { type: "number", editable: true, defaultValue: 0},
+	    	objectId : { type: "number", editable: true, defaultValue: 0 },	   
+	        name: { type: "string", editable: true },
+	    	description: { type: "string", editable: true }
+	    },	    
+	    copy : function ( target ){
+	    	target.set("abilityId", this.get("abilityId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	if( typeof this.get("abilityType") === 'object' )
+	    		target.set("abilityType", this.get("abilityType"));
+	    }    
+	});		
 	
 	var CodeSet = kendo.data.Model.define( {
 	    id: "codeSetId", // the identifier of the model

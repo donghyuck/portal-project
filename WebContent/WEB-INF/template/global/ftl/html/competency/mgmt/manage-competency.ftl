@@ -404,39 +404,12 @@
 			var renderTo = $("#performance-criteria-grid");
 			return common.ui.grid(renderTo);
 		}
-				
-		function createPerformanceCriteriaGrid(  ){
-			var renderTo = $("#performance-criteria-grid");
-			if( ! renderTo.data("kendoGrid") ){
-				common.ui.grid( renderTo, {
-					autoBind:false,
-					dataSource: {
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' }
-						},
-						schema: {
-							model: common.ui.data.competency.EssentialElement
-						}
-					},
-					toolbar: kendo.template('<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 성능기준 추가 </button>'),
-					columns: [
-						{ title: "서술", field: "description" }
-					],
-					resizable: true,
-					editable : false,	
-					selectable : "row",
-					scrollable: true,					
-					height: 400,
-					change: function(e) {
-					 	var selectedCells = this.select();	
-					 	if( selectedCells.length == 1){
-	                    	var selectedCell = this.dataItem( selectedCells );
-	                    } 					
-					}
-				});	
-			}		
+
+		function getActivityGrid(){
+			var renderTo = $("#activity-grid");
+			return common.ui.grid(renderTo);
 		}
-				
+		
 		function createEssentialElementModal(source){
 			var parentRenderTo = $("#competency-details");
 			var renderTo = $("#essential-element-edit-modal");			
@@ -457,6 +430,29 @@
 						$this.set("updatable", false);
 						return false;
 					},
+					abilityDataSource : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/competency/ability/list.json?output=json" />', type:'post' },
+							update: { url:'<@spring.url "/secure/data/mgmt/competency/ability/batch/update.json?output=json" />', type:'post', contentType : "application/json" },
+							create: { url:'<@spring.url "/secure/data/mgmt/competency/ability/batch/update.json?output=json" />', type:'post', contentType : "application/json" },
+							destroy: { url:'<@spring.url "/secure/data/mgmt/competency/ability/batch/remove.json?output=json" />', type:'post', contentType : "application/json" },
+							parameterMap: function(options, operation) {								
+			                    if (operation !== "read" && options.models) {			                    
+			                    	$.each(options.models, function(index, model){
+			                    		model.objectType = 54;
+			                    		model.objectId = renderTo.data("model").essentialElement.essentialElementId;
+			                    	});			                    
+			                   		return kendo.stringify(options.models) ;
+			                    }else{
+			                    	return {objectType:54, objectId: renderTo.data("model").essentialElement.essentialElementId};
+			                    }
+			                }
+						},
+						batch: true,
+						schema: {
+							model: common.ui.data.competency.Ability
+						}
+					}),
 					performanceCriteriaDataSource : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/competency/performance-criteria/list.json?output=json" />', type:'post' },
@@ -534,6 +530,7 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
+							getActivityGrid().dataSource.read();
 							getPerformanceCriteriaGrid().dataSource.read();
 							renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
 						}
@@ -883,7 +880,25 @@
 								</div>
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-1">
-							수행준거
+								<div id="performance-criteria-grid" class="no-border no-shadow no-rounded" 
+										data-role="grid"
+										data-autoBind="false"
+										date-scrollable="true"
+						                data-editable="true"					              
+						                data-toolbar="
+						                	<div class='p-xxs'>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 행동지표 추가 </button>
+						                		<div class='pull-right'>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-success k-grid-save-changes'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-default k-grid-cancel-changes'><span class='btn-label icon fa fa-undo'></span> 변경사항 취소</button>
+						                		</div>
+						                	</div>	
+						                "
+						                data-columns="[
+											{ 'field': 'name', 'title': 'KSA'},
+											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
+										data-bind="source:performanceCriteriaDataSource"
+										style="height:300px;">
 							</div>															
 						</div>	
 					</div>
