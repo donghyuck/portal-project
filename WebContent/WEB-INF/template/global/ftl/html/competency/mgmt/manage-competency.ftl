@@ -858,42 +858,33 @@
 						</form>
 					</div>
 					<div class="modal-body no-padding">
-							<ul class="nav nav-tabs nav-tabs-sm">
-								<li class="m-l-sm"><a href="#essential-element-details-tabs-0" data-toggle="tab" data-action="elements">행동지표</a></li>
-								<li><a href="#essential-element-details-tabs-1" data-toggle="tab" data-action="variable-range">수행준거</a></li>
-							</ul>							
-							<div class="tab-content">
-								<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-0">
-								행동지표
-								</div>
-								<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-1">
-								수행준거
-								</div>															
-							</div>	
-											
-						<div class="row">
-							<div class="col-sm-6">
+						<ul class="nav nav-tabs nav-tabs-sm">
+							<li class="m-l-sm"><a href="#essential-element-details-tabs-0" data-toggle="tab" data-action="elements">행동지표</a></li>
+							<li><a href="#essential-element-details-tabs-1" data-toggle="tab" data-action="variable-range">수행준거</a></li>
+						</ul>							
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-0">
 								<div id="performance-criteria-grid" class="no-border no-shadow no-rounded" 
-									data-role="grid"
-									data-autoBind="false"
-									date-scrollable="true"
-					                data-editable="true"					              
-					                data-toolbar="
-					                	<div class='p-xxs'>
-					                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 수행준거 추가 </button>
-					                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-save-changes pull-right'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
-					                	</div>	
-					                "
-									data-columns="[{ 'field': 'sortOrder', 'title': '순번', 'width': 100  },
-												   { 'field': 'description', 'title': '서술'}]"		
-									data-bind="source:performanceCriteriaDataSource"
-									style="height:300px;">
+										data-role="grid"
+										data-autoBind="false"
+										date-scrollable="true"
+						                data-editable="true"					              
+						                data-toolbar="
+						                	<div class='p-xxs'>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span> 수행준거 추가 </button>
+						                		<button class='btn btn-flat btn-labeled btn-outline btn-primary k-grid-save-changes pull-right'><span class='btn-label icon fa fa-floppy-o'></span> 변경사항 저장</button>
+						                	</div>	
+						                "
+										data-columns="[{ 'field': 'sortOrder', 'title': '순번', 'width': 100  },
+													   { 'field': 'description', 'title': '서술'}]"		
+										data-bind="source:performanceCriteriaDataSource"
+										style="height:300px;">
 								</div>
 							</div>
-							<div class="col-sm-6">
-							
-							</div>
-						</div>
+							<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-1">
+							수행준거
+							</div>															
+						</div>	
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
