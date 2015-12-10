@@ -561,8 +561,8 @@
 		}		
 		
 		function getAbilityTypeTitle(item){
-			console.log( kendo.stringify( item ) );
-			console.log( $.type( item ) ) ;
+			//console.log( kendo.stringify( item ) );
+			//console.log( $.type( item ) ) ;
 			if( item == 'KNOWLEDGE' )
 				return '지식';
 			else if (item == 'SKILL') 
