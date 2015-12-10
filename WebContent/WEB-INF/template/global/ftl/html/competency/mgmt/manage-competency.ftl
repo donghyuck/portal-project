@@ -547,24 +547,14 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);
 							renderTo.find("ul.nav.nav-tabs a:last").tab('show');							
-							//observable.abilityDataSource.read();	
-							//observable.performanceCriteriaDataSource.read();
+							
+							observable.abilityDataSource.read();	
+							observable.performanceCriteriaDataSource.read();
 						}
 					}
 				});				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
-			
-				renderTo.find('.nav.nav-tabs a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-				  	e.target // newly activated tab
-				  	e.relatedTarget // previous active tab
-				  		if( $(e.target).data('action') == 'ability' ){
-				 			observable.abilityDataSource.read();	
-					 	}else if ( $(e.target).data('action') == 'performance-criteria' ){
-					 		observable.performanceCriteriaDataSource.read();
-					 	}				  	
-				  	
-				});	
 			}				
 			if( source ){
 				renderTo.data("model").setSource( source );		
@@ -953,8 +943,8 @@
 								<div id="ability-grid" class="no-border no-shadow no-rounded" 
 										data-role="grid"
 										data-autoBind="false"
-										data-scrollable="false"
-						                data-editable="true"			              
+										data-scrollable="true"
+						                data-editable="true"		
 						                data-toolbar="
 						                	<div class='p-xxs'>
 						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span>능력 추가 </button>
@@ -969,7 +959,7 @@
 											{ 'field': 'name', 'title': 'KSA'},
 											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
 										data-bind="source:abilityDataSource"
-										style="height:300px;">
+										style="min-height:300px;">
 							</div>															
 						</div>	
 					</div>
