@@ -266,7 +266,8 @@
 					visible : false,
 					editable : false,
 					deletable: false,
-					updatable : false,					
+					updatable : false,		
+					hasJob: false,			
 					competency : new common.ui.data.competency.Competency(),
 					view : function(e){
 						var $this = this;		
@@ -331,6 +332,11 @@
 							common.ui.grid( renderTo.find(".essential-element") ).dataSource.read({competencyId:$this.competency.competencyId});			
 							renderTo.find("ul.nav.nav-tabs a:first").tab('show')						
 						}
+						
+						if( $this.competency.job.jobId > 0 )
+							$this.set("hasJob", true);
+						else
+							$this.set("hasJob", false);
 					}		
 				});
 				renderTo.data("model", observable );
@@ -745,8 +751,29 @@
 								<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량/능력단위" />
 							</div>
 							<div class="panel-body no-padding-b">	
-								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>
-								
+								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
+									<div class="p-sm no-padding-hr">
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>대분류</th>
+													<th>중분류</th>
+													<th>소분류</th>
+													<th직무</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><span data-bind="text: job.name" ></span></td>
+												</tr>
+											</tbody>
+										</table>			
+									</div>
+								</div> 
+								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>								
 								<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
 								<div class="p-sm no-padding-hr">
 									<table class="table table-striped">
