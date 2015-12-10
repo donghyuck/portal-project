@@ -549,21 +549,27 @@
 		function getAbilityTypeTitle(item){
 			console.log( kendo.stringify( item ) );
 			console.log( $.type( item ) ) ;
-			return item;
+			if( item == 'KNOWLEDGE' )
+				return '지식';
+			else if (item == 'SKILL') 
+				return '기술';			
+			else if (item == 'ATTITUDE')
+				return '태도';
+			else 
+				return '기타';
 		}
 		
 		function abilityTypeDropDownEditor(container, options) {
             $('<input required data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '"/>')
-                        .appendTo(container)
-                        .kendoDropDownList({
-                        	optionLabel: "구분" ,
-                            dataSource: [
-		                        { text: "기타", value: "NONE" },
-		                        { text: "지식", value: "KNOWLEDGE" },
-		                        { text: "기술", value: "SKILL" },
-		                        { text: "태도", value: "ATTITUDE" }
-		                    ]
-                        });
+            .appendTo(container)
+            .kendoDropDownList({
+            	optionLabel: "구분" ,
+                dataSource: [
+		            { text: "기타", value: "NONE" },
+		            { text: "지식", value: "KNOWLEDGE" },
+		            { text: "기술", value: "SKILL" },
+		            { text: "태도", value: "ATTITUDE" }
+		        ]});
         }
                 			
 		</script> 		 
