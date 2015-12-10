@@ -22,7 +22,7 @@
 	    	target.set("description", this.get("description"));
 	    	target.set("level", this.get("level"));
 	    	target.set("competencyUnitCode", this.get("competencyUnitCode"));
-	    	
+	    	target.set("job", this.get("job"));
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
