@@ -546,6 +546,14 @@
 				});				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
+				
+				renderTo.find(".nav.nav-tabs a").clickfunction (e) {
+				  	e.preventDefault()
+					console.log($(this).data('action'));  
+				  	$(this).tab('show');
+				
+				});
+								
 			}				
 			if( source ){
 				renderTo.data("model").setSource( source );		
