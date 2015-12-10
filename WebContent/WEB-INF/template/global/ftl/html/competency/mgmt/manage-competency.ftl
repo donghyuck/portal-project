@@ -766,7 +766,7 @@
 													<td><span data-bind="text: competency.job.classification.classifiedMajorityName" ></span></td>
 													<td><span data-bind="text: competency.job.classification.classifiedMiddleName" ></span></td>
 													<td><span data-bind="text: competency.job.classification.classifiedMinorityName" ></span></td>
-													<td><span data-bind="text: competency.job.name" ></span></td>
+													<td><span data-bind="text: competency.job.name" class="text-primary" ></span></td>
 												</tr>
 											</tbody>
 										</table>	
