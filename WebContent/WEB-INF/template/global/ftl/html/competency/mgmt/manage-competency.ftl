@@ -549,9 +549,8 @@
 				
 				renderTo.find(".nav.nav-tabs a").click(function (e) {
 				  	e.preventDefault()
-					console.log($(this).data('action'));  
-				  	$(this).tab('show');
-				
+					console.log($(this).data('action') + observable.essentialElement.essentialElementId + ">" + source.essentialElementId );  
+				  	$(this).tab('show');				
 				});
 								
 			}				
