@@ -369,6 +369,12 @@
 			return common.ui.grid(renderTo);
 		}
 		
+		function getSelectedEssentialElement(){
+			var row = getEssentialElementGrid().select();
+			var data = grid.dataItem(row);
+			console.log(kendo.stringify(data) );
+		}
+		
 		function createEssentialElementGrid( renderTo ){	
 			if( ! renderTo.data("kendoGrid") ){
 				common.ui.grid( renderTo, {
