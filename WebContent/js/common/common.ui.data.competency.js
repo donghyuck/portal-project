@@ -171,7 +171,8 @@
 			CodeSet : CodeSet,
 			Competency : Competency,
 			EssentialElement : EssentialElement,
-			PerformanceCriteria : PerformanceCriteria
+			PerformanceCriteria : PerformanceCriteria,
+			Ability : Ability
 		}  
 	} );
 	
