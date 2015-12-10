@@ -558,7 +558,7 @@
 				  	
 				  	console.log(getSelectedEssentialElement().essentialElementId +">"+ observable.essentialElement.essentialElementId );
 				  	console.log(
-				  		$(e.target).data('action'));
+				  		$(e.target).data('action')
 				  	);
 				  	
 				  	if( getSelectedEssentialElement().essentialElementId != observable.essentialElement.essentialElementId ) {
