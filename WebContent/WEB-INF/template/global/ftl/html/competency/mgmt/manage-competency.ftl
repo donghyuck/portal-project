@@ -547,14 +547,13 @@
 		}		
 		
 		function getAbilityTypeTitle(item){
-		
+			console.log( kendo.stringify( item ) );
+			console.log( $.type( item ) ) ;
 			return item;
 		}
 		
 		function abilityTypeDropDownEditor(container, options) {
-		console.log(kendo.stringify( container ));
-		console.log(kendo.stringify( options ));
-                    $('<input required data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '"/>')
+            $('<input required data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '"/>')
                         .appendTo(container)
                         .kendoDropDownList({
                         	optionLabel: "구분" ,
