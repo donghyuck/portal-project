@@ -555,6 +555,12 @@
 				renderTo.find('.nav.nav-tabs a[data-toggle="tab"]').on('show.bs.tab', function (e) {
 				  	e.target // newly activated tab
 				  	e.relatedTarget // previous active tab
+				  	
+				  	console.log(getSelectedEssentialElement().essentialElementId +">"+ observable.essentialElement.essentialElementId );
+				  	console.log(
+				  		$(e.target).data('action');
+				  	);
+				  	
 				  	if( getSelectedEssentialElement().essentialElementId != observable.essentialElement.essentialElementId ) {
 				  		if( $(e.target).data('action') == 'ability' ){
 				 			observable.abilityDataSource.read();	
