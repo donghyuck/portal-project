@@ -546,6 +546,11 @@
 			renderTo.modal('show');		
 		}		
 		
+		function getAbilityTypeTitle(item){
+		
+			return item;
+		}
+		
 		function abilityTypeDropDownEditor(container, options) {
 		console.log(kendo.stringify( container ));
 		console.log(kendo.stringify( options ));
@@ -911,7 +916,7 @@
 						                	</div>	
 						                "
 						                data-columns="[
-						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor, template:'#= name  #' },
+						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor, template:'#= getAbilityTypeTitle(this)  #' },
 											{ 'field': 'name', 'title': 'KSA'},
 											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
 										data-bind="source:abilityDataSource"
