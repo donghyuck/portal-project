@@ -758,14 +758,14 @@
 													<th>대분류</th>
 													<th>중분류</th>
 													<th>소분류</th>
-													<th직무</th>
+													<th>직무</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td></td>
-													<td></td>
-													<td></td>
+													<td><span data-bind="text: competency.job.classification.classifiedMajorityName" ></span></td>
+													<td><span data-bind="text: competency.job.classification.classifiedMiddleName" ></span></td>
+													<td><span data-bind="text: competency.job.classification.classifiedMinorityName" ></span></td>
 													<td><span data-bind="text: competency.job.name" ></span></td>
 												</tr>
 											</tbody>
