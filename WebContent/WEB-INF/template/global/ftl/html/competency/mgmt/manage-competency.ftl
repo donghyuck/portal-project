@@ -547,11 +547,15 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);
 							renderTo.find("ul.nav.nav-tabs a:first").tab('show');
+							
+							observable.abilityDataSource.read();	
+							observable.performanceCriteriaDataSource.read();
 						}
 					}
 				});				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
+				/**
 				renderTo.find('.nav.nav-tabs a[data-toggle="tab"]').on('show.bs.tab', function (e) {
 				  	e.target // newly activated tab
 				  	e.relatedTarget // previous active tab
@@ -569,6 +573,7 @@
 					 	}				  	
 				  	}
 				});			
+				**/
 			}				
 			if( source ){
 				renderTo.data("model").setSource( source );		
