@@ -557,9 +557,9 @@
 				  	e.relatedTarget // previous active tab
 				  	if( getSelectedEssentialElement().essentialElementId != observable.essentialElement.essentialElementId ) {
 				  		if( $(e.target).data('action') == 'ability' ){
-				 			getActivityGrid().dataSource.read();	
+				 			observable.abilityDataSource.read();	
 					 	}else if ( $(e.target).data('action') == 'performance-criteria' ){
-					 		getPerformanceCriteriaGrid().dataSource.read();
+					 		observable.performanceCriteriaDataSource.read();
 					 	}				  	
 				  	}
 				});			
