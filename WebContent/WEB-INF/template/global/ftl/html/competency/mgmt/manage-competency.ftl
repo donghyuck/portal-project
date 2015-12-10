@@ -31,8 +31,7 @@
 			'<@spring.url "/js/common/common.ui.admin.js" />',	
 			'<@spring.url "/js/ace/ace.js" />'			
 			],
-			complete: function() {
-			
+			complete: function() {			
 				var currentUser = new common.ui.data.User();
 				var targetCompany = new common.ui.data.Company();	
 				common.ui.admin.setup({					 
@@ -563,9 +562,8 @@
             $('<input required data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '"/>')
             .appendTo(container)
             .kendoDropDownList({
-            	optionLabel: "구분" ,
+            	optionLabel: "선택" ,
                 dataSource: [
-		            { text: "기타", value: "NONE" },
 		            { text: "지식", value: "KNOWLEDGE" },
 		            { text: "기술", value: "SKILL" },
 		            { text: "태도", value: "ATTITUDE" }
