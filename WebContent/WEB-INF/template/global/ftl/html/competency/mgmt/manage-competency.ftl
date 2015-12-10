@@ -552,9 +552,6 @@
                     $('<input required data-text-field="text" data-value-field="value" data-bind="value:' + options.field + '"/>')
                         .appendTo(container)
                         .kendoDropDownList({
-                        	change:function(e){
-                        		container.html(this.value());
-                        	},
                         	optionLabel: "구분" ,
                             dataSource: [
 		                        { text: "기타", value: "NONE" },
