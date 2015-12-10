@@ -766,7 +766,7 @@
 													<td></td>
 													<td></td>
 													<td></td>
-													<td><span data-bind="text: job.name" ></span></td>
+													<td><span data-bind="text: competency.job.name" ></span></td>
 												</tr>
 											</tbody>
 										</table>	
