@@ -448,6 +448,7 @@
 			                }
 						},
 						batch: true,
+						serverFiltering: false,
 						schema: {
 							model: common.ui.data.competency.Ability
 						}
