@@ -939,7 +939,7 @@
 								<div id="performance-criteria-grid" class="no-border no-shadow no-rounded" 
 										data-role="grid"
 										data-autoBind="false"
-										date-scrollable="true"
+										data-scrollable="true"
 						                data-editable="true"					              
 						                data-toolbar="
 						                	<div class='p-xxs'>
@@ -961,7 +961,7 @@
 								<div id="ability-grid" class="no-border no-shadow no-rounded" 
 										data-role="grid"
 										data-autoBind="false"
-										date-scrollable="true"
+										data-scrollable="true"
 						                data-editable="true"			              
 						                data-toolbar="
 						                	<div class='p-xxs'>
