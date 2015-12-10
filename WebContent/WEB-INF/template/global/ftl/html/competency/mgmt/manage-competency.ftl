@@ -370,9 +370,13 @@
 		}
 		
 		function getSelectedEssentialElement(){
-			var row = getEssentialElementGrid().select();
-			var data = grid.dataItem(row);
-			console.log(kendo.stringify(data) );
+			var selectedCells = getEssentialElementGrid().select();	
+			if( selectedCells.length == 1){
+	           	var selectedCell = this.dataItem( selectedCells );	 
+	           	console.log(kendo.stringify(selectedCell) ); 
+	           	return selectedCell;
+	        }  			
+	        return new common.ui.data.competency.EssentialElement();
 		}
 		
 		function createEssentialElementGrid( renderTo ){	
