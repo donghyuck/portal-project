@@ -752,8 +752,7 @@
 							</div>
 							<div class="panel-body no-padding-b">	
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
-									<div class="p-sm no-padding-hr">
-										<table class="table table-striped">
+									<table class="table table-striped">
 											<thead>
 												<tr>
 													<th>대분류</th>
@@ -770,8 +769,7 @@
 													<td><span data-bind="text: job.name" ></span></td>
 												</tr>
 											</tbody>
-										</table>			
-									</div>
+										</table>	
 								</div> 
 								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>								
 								<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
