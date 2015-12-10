@@ -536,15 +536,15 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
-							getActivityGrid().dataSource.read();
+							
 							getPerformanceCriteriaGrid().dataSource.read();
-							renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
+							renderTo.find("ul.nav.nav-tabs a:first").tab('show');	
+							getActivityGrid().dataSource.read();	
 						}
 					}
 				});				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
-				
 			}				
 			if( source ){
 				renderTo.data("model").setSource( source );		
