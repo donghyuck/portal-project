@@ -547,7 +547,7 @@
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 				
-				renderTo.find(".nav.nav-tabs a").clickfunction (e) {
+				renderTo.find(".nav.nav-tabs a").click(function (e) {
 				  	e.preventDefault()
 					console.log($(this).data('action'));  
 				  	$(this).tab('show');
