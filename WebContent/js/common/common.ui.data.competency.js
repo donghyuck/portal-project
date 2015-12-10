@@ -12,6 +12,7 @@
 	        level: { type: "number", editable: true, defaultValue: 0  },   
 	        competencyUnitCode : { type:"string", editable:true },
 	        description: { type: "string", editable: true },
+	        job: {type:"object", defaultValue:"{jobId:0, objectType:0, objectId:0, name:null, description:null, classification:{classifiedMajorityId:null,classifiedMiddleId:null,classifiedMinorityId:null, classifiedMajorityName:null,classifiedMiddleName:null,classifiedMinorityName:null }}"}
 	    },	    
 	    copy : function ( target ){
 	    	target.set("competencyId", this.get("competencyId"));
