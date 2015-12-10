@@ -961,7 +961,7 @@
 								<div id="ability-grid" class="no-border no-shadow no-rounded" 
 										data-role="grid"
 										data-autoBind="false"
-										data-scrollable="true"
+										data-scrollable="false"
 						                data-editable="true"			              
 						                data-toolbar="
 						                	<div class='p-xxs'>
