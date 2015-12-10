@@ -908,7 +908,8 @@
 										data-role="grid"
 										data-autoBind="false"
 										date-scrollable="true"
-						                data-editable="true"					              
+						                data-editable="true"	
+						                data-filterable="true"				              
 						                data-toolbar="
 						                	<div class='p-xxs'>
 						                		<button class='btn btn-flat btn-labeled btn-outline btn-danger k-grid-add'><span class='btn-label icon fa fa-plus'></span>능력 추가 </button>
@@ -919,7 +920,7 @@
 						                	</div>	
 						                "
 						                data-columns="[
-						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor, template:'#= getAbilityTypeTitle(abilityType)  #' },
+						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor, template:'#= getAbilityTypeTitle(abilityType)  #', filterable: { multi: true } },
 											{ 'field': 'name', 'title': 'KSA'},
 											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
 										data-bind="source:abilityDataSource"
