@@ -117,7 +117,7 @@
 	    	abilityId: { type: "number", editable: true, defaultValue: 0  },    	
 	    	objectType : { type: "number", editable: true, defaultValue: 0},
 	    	objectId : { type: "number", editable: true, defaultValue: 0 },	   
-	    	abilityType: { type: "object", editable: true , defaultValue:'{ text:"NONE", id="0" }'},
+	    	abilityType: { type: "object", editable: true , defaultValue:'{ text:"NONE", value="0" }'},
 	        name: { type: "string", editable: true },
 	    	description: { type: "string", editable: true }
 	    },	    
