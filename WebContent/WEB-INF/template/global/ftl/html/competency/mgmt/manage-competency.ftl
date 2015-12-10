@@ -546,32 +546,23 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
-							
-							
-							renderTo.find("ul.nav.nav-tabs a:first").tab('show');	
-							getPerformanceCriteriaGrid().dataSource.read();
-							getActivityGrid().dataSource.read();	
+							renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 						}
 					}
 				});				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
-				
-				getSelectedEssentialElement();
-				
 				renderTo.find('.nav.nav-tabs a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-				  e.target // newly activated tab
-				  e.relatedTarget // previous active tab
-				  e.preventDefault();
-				  console.log($(e.target).html());
-				})
-				/*
-				renderTo.find(".nav.nav-tabs a").click(function (e) {
-				  	e.preventDefault()
-					console.log($(this).data('action') + observable.essentialElement.essentialElementId + ">" + source.essentialElementId );  
-				  	$(this).tab('show');				
-				});*/
-								
+				  	e.target // newly activated tab
+				  	e.relatedTarget // previous active tab
+				  	if( getSelectedEssentialElement().essentialElementId != observable.essentialElement.essentialElementId ) {
+				  		if( $(e.target).data('action') == 'ability' ){
+				 			getActivityGrid().dataSource.read();	
+					 	}else if ( $(e.target).data('action') == 'performance-criteria' ){
+					 		getPerformanceCriteriaGrid().dataSource.read();
+					 	}				  	
+				  	}
+				});			
 			}				
 			if( source ){
 				renderTo.data("model").setSource( source );		
@@ -930,8 +921,8 @@
 					</div>
 					<div class="modal-body no-padding">
 						<ul class="nav nav-tabs nav-tabs-sm">
-							<li class="m-l-sm"><a href="#essential-element-details-tabs-0" data-toggle="tab" data-action="elements">행동지표(수행준거)</a></li>
-							<li><a href="#essential-element-details-tabs-1" data-toggle="tab" data-action="variable-range">KAS</a></li>
+							<li class="m-l-sm"><a href="#essential-element-details-tabs-0" data-toggle="tab" data-action="performance-criteria">행동지표(수행준거)</a></li>
+							<li><a href="#essential-element-details-tabs-1" data-toggle="tab" data-action="ability">KAS</a></li>
 						</ul>							
 						<div class="tab-content no-padding">
 							<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-0">
@@ -955,8 +946,7 @@
 										data-bind="source:performanceCriteriaDataSource"
 										style="height:300px;">
 								</div>
-							</div>
-							
+							</div>							
 							<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-1">
 								<div id="ability-grid" class="no-border no-shadow no-rounded" 
 										data-role="grid"
