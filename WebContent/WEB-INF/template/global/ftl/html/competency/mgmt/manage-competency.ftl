@@ -546,8 +546,7 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
-							renderTo.find("ul.nav.nav-tabs a:first").tab('show');
-							
+							renderTo.find("ul.nav.nav-tabs a:first").tab('show');							
 							observable.abilityDataSource.read();	
 							observable.performanceCriteriaDataSource.read();
 						}
