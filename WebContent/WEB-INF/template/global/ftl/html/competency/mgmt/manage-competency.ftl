@@ -372,7 +372,7 @@
 		function getSelectedEssentialElement(){
 			var selectedCells = getEssentialElementGrid().select();	
 			if( selectedCells.length == 1){
-	           	var selectedCell = this.dataItem( selectedCells );	 
+	           	var selectedCell = getEssentialElementGrid().dataItem( selectedCells );	 
 	           	console.log(kendo.stringify(selectedCell) ); 
 	           	return selectedCell;
 	        }  			
@@ -557,11 +557,20 @@
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 				
+				getSelectedEssentialElement();
+				
+				renderTo.find('.nav.nav-tabs a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+				  e.target // newly activated tab
+				  e.relatedTarget // previous active tab
+				  e.preventDefault();
+				  console.log($(e.target).html());
+				})
+				/*
 				renderTo.find(".nav.nav-tabs a").click(function (e) {
 				  	e.preventDefault()
 					console.log($(this).data('action') + observable.essentialElement.essentialElementId + ">" + source.essentialElementId );  
 				  	$(this).tab('show');				
-				});
+				});*/
 								
 			}				
 			if( source ){
