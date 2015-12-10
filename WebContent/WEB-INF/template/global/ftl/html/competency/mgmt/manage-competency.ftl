@@ -537,8 +537,9 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);
 							
-							getPerformanceCriteriaGrid().dataSource.read();
+							
 							renderTo.find("ul.nav.nav-tabs a:first").tab('show');	
+							getPerformanceCriteriaGrid().dataSource.read();
 							getActivityGrid().dataSource.read();	
 						}
 					}
