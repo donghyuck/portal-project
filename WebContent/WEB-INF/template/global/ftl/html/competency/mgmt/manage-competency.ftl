@@ -916,7 +916,7 @@
 						                	</div>	
 						                "
 						                data-columns="[
-						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor, template:'#= getAbilityTypeTitle(this)  #' },
+						                	{ 'field': 'abilityType', 'title': '구분', width: '100px', 'editor':abilityTypeDropDownEditor, template:'#= getAbilityTypeTitle(abilityType)  #' },
 											{ 'field': 'name', 'title': 'KSA'},
 											{ 'command': 'destroy', title: '&nbsp;', width: 100 }]"		
 										data-bind="source:abilityDataSource"
