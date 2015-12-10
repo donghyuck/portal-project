@@ -766,7 +766,7 @@
 													<td><span data-bind="text: competency.job.classification.classifiedMajorityName" ></span></td>
 													<td><span data-bind="text: competency.job.classification.classifiedMiddleName" ></span></td>
 													<td><span data-bind="text: competency.job.classification.classifiedMinorityName" ></span></td>
-													<td><span data-bind="text: competency.job.name" class="text-primary" ></span></td>
+													<td class="text-primary"><span data-bind="text: competency.job.name"></span></td>
 												</tr>
 											</tbody>
 										</table>	
@@ -933,7 +933,7 @@
 								<div id="ability-grid" class="no-border no-shadow no-rounded" 
 										data-role="grid"
 										data-autoBind="false"
-										date-scrollable="true"
+										data-scrollable="true"
 						                data-editable="true"	
 						                data-filterable="true"				              
 						                data-toolbar="
