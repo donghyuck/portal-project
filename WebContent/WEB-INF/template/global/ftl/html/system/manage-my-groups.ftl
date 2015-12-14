@@ -76,7 +76,7 @@
 								if (operation != "read" && options) {
 									if( operation == "create" )
 									{
-										options.companyId = getCompany().companyId;
+										options.companyId = companySelector.value();
 										options.company = getCompany();
 									}	
 									return kendo.stringify(options);
