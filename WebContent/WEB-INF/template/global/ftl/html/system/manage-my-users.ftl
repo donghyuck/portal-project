@@ -38,7 +38,7 @@
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						createCompanyUserGrid();						
-						$("#company-user-list .panel-heading .panel-title ").html(kendo.template('<i class="fa fa-align-justify"></i> #: displayName # <span class="label label-primary"> #: name#</span>')(getCompany()));
+						//$("#company-user-list .panel-heading .panel-title ").html(kendo.template('<i class="fa fa-align-justify"></i> #: displayName # <span class="label label-primary"> #: name#</span>')(getCompany()));
 					}
 				});		
 											
@@ -502,6 +502,8 @@
 						<!-- details -->
 						<div id="company-user-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
+								<input id="company-dropdown-list" />
+								
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
 							</div>
 							<div class="panel-body padding-sm">
