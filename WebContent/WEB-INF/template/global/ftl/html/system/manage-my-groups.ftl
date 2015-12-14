@@ -111,7 +111,7 @@
 							width: 180  
 						}
 					], 		
-					detailTemplate: kendo.template($("#group-details-template").html()),		
+					detailTemplate: kendo.template($("#company-group-details-template").html()),		
 					detailInit: detailInit,		
 					filterable: true,
 					editable: "inline",
@@ -575,7 +575,6 @@
 								</div>	
 							</div>									
 							<div id="company-group-grid" class="no-border-hr"></div>
-							<div id="company-grid" class="no-border-hr"></div>
 						</div>
 						<!-- /details -->
 					</div>	
@@ -585,7 +584,7 @@
 			</div>
 		</div> <!-- / #main-wrapper -->	
 	
-		<script type="text/x-kendo-template" id="group-details-template">		
+		<script type="text/x-kendo-template" id="company-group-details-template">		
 		<div class="panel" style="border: 2px solid \\#34aadc; ">		
 			<div class="panel-body padding-sm">
 				<button class="close" data-action="collapses" data-object-id="#= groupId#"><i class="fa fa-angle-up fa-lg"></i></button>				
