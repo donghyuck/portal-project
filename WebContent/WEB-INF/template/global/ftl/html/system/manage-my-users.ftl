@@ -505,8 +505,6 @@
 						<div id="company-user-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />
-								
-								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
 							</div>
 							<div class="panel-body padding-sm">
 								<div class="note note-info no-margin-b">
