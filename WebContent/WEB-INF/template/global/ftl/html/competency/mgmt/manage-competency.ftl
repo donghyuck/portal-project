@@ -844,10 +844,13 @@
 									<div class="essential-element" ></div>
 								</div>
 								<div role="tabpanel" class="tab-pane fade" id="competency-details-tabs-2">
+								준비중입니다.
 								</div>
 								<div role="tabpanel" class="tab-pane fade" id="competency-details-tabs-3">
+								준비중입니다.
 								</div>	
 								<div role="tabpanel" class="tab-pane fade" id="competency-details-tabs-4">
+								준비중입니다.
 								</div>																
 							</div>						
 						</div>					
