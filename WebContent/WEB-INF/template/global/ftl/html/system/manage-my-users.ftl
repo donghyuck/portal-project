@@ -51,11 +51,7 @@
 		}		
 		
 		function createCompanyUserGrid(){
-			var renderTo = $("#company-user-grid");
-			
-			
-			
-			
+			var renderTo = $("#company-user-grid");			
 			if(!common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
 					dataSource: {	
@@ -78,7 +74,7 @@
 						serverPaging: true,
 						error:common.ui.handleAjaxError
 					},					
-					toolbar : kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-sm btn-outline btn-labeled btn-primary k-grid-pdf"><span class="btn-label icon fa fa-file-pdf-o"></span>PDF</a> <a href="\\#" class="btn btn-flat btn-sm btn-outline btn-labeled btn-primary k-grid-excel"><span class="btn-label icon fa fa-file-excel-o"></span>Excel</a></div>'),
+					toolbar : kendo.template('<div class="p-xxs"><a href="\\#" class="btn btn-flat btn-outline btn-labeled btn-primary k-grid-pdf"><span class="btn-label icon fa fa-file-pdf-o"></span>PDF</a> <a href="\\#" class="btn btn-flat btn-outline btn-labeled btn-primary k-grid-excel"><span class="btn-label icon fa fa-file-excel-o"></span>Excel</a></div>'),
 					excel: {
 						fileName: "Users Export.xlsx",	
 						proxyURL: "<@spring.url "/download/export"/>",
@@ -96,15 +92,7 @@
 						{ field: "enabled", title: "사용여부", width: 100 },
 						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" },
 						{ field: "modifiedDate", title: "수정일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" },
-						{ field: "lastLoggedIn", title: "마지막 로그인", filterable: false,  width: 150, format: "{0:yyyy/MM/dd HH:mm}" }/**,
-						{ command: [
-							{ 
-								name: "detail",
-								template : '<a href="\\#" class="btn btn-xs btn-success m-r-xs btn-selectable" data-action="details">상세보기</a>',
-							}], 
-							title: "&nbsp;", 
-							width: 180  
-						}*/
+						{ field: "lastLoggedIn", title: "마지막 로그인", filterable: false,  width: 150, format: "{0:yyyy/MM/dd HH:mm}" }
 					], 		
 					detailTemplate: kendo.template($("#company-details-template").html()),		
 					detailInit: detailInit,		
