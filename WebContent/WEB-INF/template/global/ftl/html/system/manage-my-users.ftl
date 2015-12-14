@@ -519,7 +519,7 @@
 			</div>
 		</div> <!-- / #main-wrapper -->	
 	
-		<script type="text/x-kendo-template" id="company--user-details-template">		
+		<script type="text/x-kendo-template" id="company-user-details-template">		
 		<div class="panel" style="border: 2px solid \\#34aadc; ">		
 			<div class="panel-body padding-sm">
 				<button class="close" data-action="collapses" data-object-id="#= userId #"><i class="fa fa-angle-up fa-lg"></i></button>				
