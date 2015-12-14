@@ -393,7 +393,7 @@
 					},
 					toolbar: kendo.template('<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 하위요소(능력단위 요소) 추가 </button>'),
 					columns: [
-						{ title: "속성", field: "name" },
+						{ title: "하위요소(능력단위요소)", field: "name" },
 						{ title: "레벨", field: "level", width: 100 }
 					],
 					resizable: true,
@@ -435,6 +435,7 @@
 					deletable: false,
 					updatable : false,	
 					keepCreating : false,
+					hasJob: false,	
 					view : function(e){
 						var $this = this;		
 						if($this.essentialElement.essentialElementId < 1){
@@ -551,6 +552,11 @@
 							observable.abilityDataSource.read();	
 							observable.performanceCriteriaDataSource.read();
 						}
+						
+						if( $this.competency.job.jobId > 0 )
+							$this.set("hasJob", true);
+						else
+							$this.set("hasJob", false);
 					}
 				});				
 				renderTo.data("model", observable);	
@@ -860,6 +866,28 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
+					
+						<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
+									<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>대분류</th>
+													<th>중분류</th>
+													<th>소분류</th>
+													<th>직무</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><span data-bind="text: competency.job.classification.classifiedMajorityName" ></span></td>
+													<td><span data-bind="text: competency.job.classification.classifiedMiddleName" ></span></td>
+													<td><span data-bind="text: competency.job.classification.classifiedMinorityName" ></span></td>
+													<td class="text-primary"><span data-bind="text: competency.job.name"></span></td>
+												</tr>
+											</tbody>
+										</table>	
+						</div> 
+								
 						<form>
 						<div class="row">
 							<div class="col-sm-12">									
@@ -968,15 +996,7 @@
 					</div>
 				</div>
 			</div>
-		</div>			
-		
-		<script id="treeview-template" type="text/kendo-ui-template">
-			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
-            #: item.name # 
-            # if (!item.items) { #
-                <a class='delete-link' href='\#'></a> 
-            # } #
-        </script>									
+		</div>											
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
