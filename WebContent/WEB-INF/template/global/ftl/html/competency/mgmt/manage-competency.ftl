@@ -891,7 +891,7 @@
 						<form>
 						<div class="row">
 							<div class="col-sm-12">									
-								<table class="table table-striped">
+								<table class="table table-striped table-bordered">
 									<thead>
 										<tr>
 											<th width="50%">하위요소(능력단위요소)</th>
