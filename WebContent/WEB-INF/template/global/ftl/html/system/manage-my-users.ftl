@@ -57,10 +57,12 @@
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/company/users/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, operation){	          
+							
+								console.log(companySelector.value() + "__");
 								if (operation != "read" && options) {
 									return kendo.stringify(options);
 								}else{
-									return { startIndex: options.skip, pageSize: options.pageSize, companyId: companySelector.value() }
+									return { startIndex: options.skip, pageSize: options.pageSize, companyId:companySelector.value() }
 								}
 							}
 						},
