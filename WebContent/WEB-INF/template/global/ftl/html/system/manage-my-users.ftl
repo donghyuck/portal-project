@@ -40,7 +40,7 @@
 						
 					},
 					change: function(e){						
-						getCompetencyGrid().dataSource.read();
+						getCompanyUserGrid().dataSource.read();
 					}
 				});		
 				createCompanyUserGrid();							
@@ -52,6 +52,10 @@
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
 		
+		function getCompanyUserGrid(){
+			var renderTo = $("#company-user-grid");			
+			return common.ui.grid(renderTo);
+		}
 		function createCompanyUserGrid(){
 			var renderTo = $("#company-user-grid");			
 			if(!common.ui.exists(renderTo)){
