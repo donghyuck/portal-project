@@ -37,8 +37,7 @@
 
 				common.ui.admin.setup({					 
 					authenticate : function(e){
-						createCompanyUserGrid();						
-						//$("#company-user-list .panel-heading .panel-title ").html(kendo.template('<i class="fa fa-align-justify"></i> #: displayName # <span class="label label-primary"> #: name#</span>')(getCompany()));
+						createCompanyUserGrid();
 					}
 				});		
 											
@@ -46,13 +45,13 @@
 			}
 		}]);
 		
-		function getCompany(){
-			return new common.ui.data.Company( common.ui.admin.setup().token.company );
-		}		
-		
+		function getCompanySelector(){
+			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
+		}
 		function createCompanyUserGrid(){
 			var renderTo = $("#company-user-grid");			
 			if(!common.ui.exists(renderTo)){
+				var companySelector = getCompanySelector();	
 				common.ui.grid(renderTo, {
 					dataSource: {	
 						transport: { 
@@ -61,7 +60,7 @@
 								if (operation != "read" && options) {
 									return kendo.stringify(options);
 								}else{
-									return { startIndex: options.skip, pageSize: options.pageSize, companyId:getCompany().companyId  }
+									return { startIndex: options.skip, pageSize: options.pageSize, companyId: companySelector.value() }
 								}
 							}
 						},
@@ -421,15 +420,7 @@
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();		
 		}
-						
-		function getSelectedCompany(){
-			var renderTo = $("#company-grid");
-			var grid = renderTo.data('kendoGrid');
-			var selectedCells = grid.select();
-			var selectedCell = grid.dataItem( selectedCells );   
-			return selectedCell;
-		}
-	
+							
 		-->
 		</script> 		 
 		<style>
