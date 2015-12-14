@@ -37,10 +37,13 @@
 
 				common.ui.admin.setup({					 
 					authenticate : function(e){
-						createCompanyUserGrid();
+						
+					},
+					change: function(e){						
+						getCompetencyGrid().dataSource.read();
 					}
 				});		
-											
+				createCompanyUserGrid();							
 				// END SCRIPT
 			}
 		}]);
@@ -48,11 +51,13 @@
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
+		
 		function createCompanyUserGrid(){
 			var renderTo = $("#company-user-grid");			
 			if(!common.ui.exists(renderTo)){
 				var companySelector = getCompanySelector();	
 				common.ui.grid(renderTo, {
+					autoBind:false,
 					dataSource: {	
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/company/users/list.json?output=json"/>', type: 'POST' },
