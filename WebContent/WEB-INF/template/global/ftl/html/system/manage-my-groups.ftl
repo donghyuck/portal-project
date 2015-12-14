@@ -35,30 +35,37 @@
 			complete: function() {
 				var currentUser = new common.ui.data.User();
 				var targetCompany = new common.ui.data.Company();	
+				
 				common.ui.admin.setup({					 
 					authenticate : function(e){
-						e.token.copy(currentUser);
-						createCompanyGroupGrid();
-						$("#company-group-list .panel-heading .panel-title ").html(kendo.template('<i class="fa fa-align-justify"></i> #: displayName # <span class="label label-primary"> #: name#</span>')(getCompany()));
+						e.token.copy(currentUser);						
 					},
 					change: function(e){
-						e.data.copy(targetCompany);						
+						e.data.copy(targetCompany);		
+						getCompanyGroupGrid().dataSource.read();							
 					}
 				});		
 				
-				//createCompanyGrid();															
+				createCompanyGroupGrid();															
 				// END SCRIPT
 			}
 		}]);
 		
-		function getCompany(){
-			return new common.ui.data.Company( common.ui.admin.setup().token.company );
+		function getCompanySelector(){
+			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}
-				
+
+		function getCompanyGroupGrid(){
+			var renderTo = $("#company-group-grid");			
+			return common.ui.grid(renderTo);
+		}
+						
 		function createCompanyGroupGrid(){			
 			var renderTo = $("#company-group-grid");			
 			if(!common.ui.exists(renderTo)){
+				var companySelector = getCompanySelector();	
 				common.ui.grid(renderTo, {
+					autoBind:false,
 					dataSource: {	
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/company/groups/list.json?output=json"/>', type: 'POST' },
@@ -74,7 +81,7 @@
 									}	
 									return kendo.stringify(options);
 								}else{
-									return { startIndex: options.skip, pageSize: options.pageSize, companyId:getCompany().companyId }
+									return { startIndex: options.skip, pageSize: options.pageSize, companyId: companySelector.value() }
 								}
 							}
 						},
@@ -86,7 +93,7 @@
 						pageSize: 15,
 						serverPaging: true
 					},
-					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 그룹만들기 </a></div>'),
+					toolbar: kendo.template('<div class="p-xxs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 그룹만들기 </a></div>'),
 					columns: [
 						{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
 						{ field: "name", title: "키", width:150,  filterable: true, sortable: true }, 
@@ -111,7 +118,7 @@
 					selectable: 'row',
 					batch: false,              
 					scrollable: false,
-					/*height: 600,*/
+					height: '600',
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {
 						// 1-1 SELECTED EVENT  
@@ -193,7 +200,7 @@
 					autoBind: false,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: "multiple, row",
-					toolbar: kendo.template('<div class="p-xs"><div class="btn-group btn-md"><a class="btn btn-flat btn-labeled btn-outline  btn-info" data-action="add" href="\\#"><span class="btn-label icon fa fa-user-plus"></span> 멤버 추가 </a><a class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="remove" href="\\#" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> ...\'"><span class="btn-label icon fa fa-user-times"></span> 멤버 삭제 </a></div></div>'),
+					toolbar: kendo.template('<div class="p-xxs"><div class="btn-group btn-md"><a class="btn btn-flat btn-labeled btn-outline  btn-info" data-action="add" href="\\#"><span class="btn-label icon fa fa-user-plus"></span> 멤버 추가 </a><a class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="remove" href="\\#" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> ...\'"><span class="btn-label icon fa fa-user-times"></span> 멤버 삭제 </a></div></div>'),
 					columns: [
 						{ headerTemplate: '<input type="checkbox" id="group-'+data.groupId+'-select-all-members" class="k-checkbox" /> <label class="k-checkbox-label" for="group-'+data.groupId+'-select-all-members">&nbsp</label>', template: '<input type="checkbox" id="group-'+ data.groupId +'-selected-member-#= userId #" class="k-checkbox" data-object-id="#=userId#"/> <label class="k-checkbox-label membership" for="group-'+data.groupId+'-selected-member-#= userId #">&nbsp</label>', width: 50},
 						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
@@ -315,7 +322,7 @@
 								}																					
 							});
 						},
-						toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>')
+						toolbar: kendo.template('<div class="p-xxs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>')
 				});		
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
@@ -357,7 +364,7 @@
 					scrollable: true,
 					filterable: true,
 					sortable: true,
-					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
+					toolbar: kendo.template('<div class="p-xxs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
 					change: function(e) {
 					}
 				});		
@@ -479,17 +486,7 @@
 			}	
 			$(renderToString).data("model").setGroup( data );		
 			$(renderToString).modal('show');	
-		}
-							
-				
-		function getSelectedCompany(){
-			var renderTo = $("#company-grid");
-			var grid = renderTo.data('kendoGrid');
-			var selectedCells = grid.select();
-			var selectedCell = grid.dataItem( selectedCells );   
-			return selectedCell;
-		}
-	
+		} 
 		-->
 		</script> 		 
 		<style>
@@ -570,7 +567,7 @@
 						<!-- details -->
 						<div id="company-group-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
+								<input id="company-dropdown-list" />
 							</div>
 							<div class="panel-body padding-sm">
 								<div class="note note-info no-margin-b">
