@@ -510,7 +510,7 @@
 							<div class="panel-body">
 								<input id="company-dropdown-list" />	
 								<hr/>
-							 	<h5>직무분류</h5>
+							 	<h5 class="text-primary"><strong>직무분류</strong></h5>
 								<div class="m-b-xs">
 									<input id="classified-majority-dorpdown-list" />
 								</div>
@@ -531,9 +531,7 @@
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable}" placeholder="직무" />
 							</div>					
 							<div class="panel-body">	
-							
-								<h5>직무분류</h5>	
-									<table class="table table-striped">
+										<table class="table table-striped">
 											<thead>
 												<tr>
 													<th>대분류</th>
