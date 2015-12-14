@@ -66,8 +66,6 @@
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/company/users/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, operation){	          
-							
-								console.log(companySelector.value() + "__");
 								if (operation != "read" && options) {
 									return kendo.stringify(options);
 								}else{
@@ -109,8 +107,9 @@
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
-					height: '600',
 					batch: false,              
+					scrollable: false,
+					height: '600',										       
 					pageable: { refresh:true, pageSizes:true,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {
 						// 1-1 SELECTED EVENT  
@@ -453,8 +452,6 @@
 				content:none;
 			}
 			
-
-
 			.panel .tab-content {
 				padding:5px!important;
 			}
