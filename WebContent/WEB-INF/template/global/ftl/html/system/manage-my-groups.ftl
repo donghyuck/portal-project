@@ -130,10 +130,10 @@
 					edit: function(e){	
 					},
 					dataBound: function(e){   
-						var $this = this;
+						/**var $this = this;
 						renderTo.find("a[data-action=details]").click(function(e){
 							$this.expandRow($this.select());
-						});							
+						});	*/						
 					}	   
 				});		
 			}			
