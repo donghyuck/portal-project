@@ -562,8 +562,7 @@
 					</div>	
 				</div>				
 			</div> <!-- / #content-wrapper -->
-			<div id="main-menu-bg">
-			</div>
+			<div id="main-menu-bg"></div>
 		</div> <!-- / #main-wrapper -->	
 	
 		<script type="text/x-kendo-template" id="company-group-details-template">		
