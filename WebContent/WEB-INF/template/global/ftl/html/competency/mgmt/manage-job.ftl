@@ -530,7 +530,30 @@
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
 							</div>					
 							<div class="panel-body">	
+							
 								<h5>직무분류</h5>		
+
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>대분류</th>
+													<th>중분류</th>
+													<th>소분류</th>
+													<th>직무</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><span data-bind="text: job.classification.classifiedMajorityName" ></span></td>
+													<td><span data-bind="text: job.classification.classifiedMiddleName" ></span></td>
+													<td><span data-bind="text: job.classification.classifiedMinorityName" ></span></td>
+													<td class="text-primary"><span data-bind="text: job.name"></span></td>
+												</tr>
+											</tbody>
+										</table>	
+										
+								
+								
 								<div class="m-b-sm">													
 								<input id="job-details-classified-majority-dorpdown-list"
 									data-option-label="대분류"
@@ -559,7 +582,6 @@
 								
 								<p class="p-sm" data-bind="{text: job.description, visible:visible}"></p>								
 								<textarea class="form-control" rows="4"  name="job-description"  data-bind="{value: job.description, visible:editable}" placeholder="직무 정의"></textarea>
-								
 								<div class="p-sm text-right">
 									<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 									<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
