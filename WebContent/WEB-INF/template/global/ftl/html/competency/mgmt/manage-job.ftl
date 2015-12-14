@@ -528,7 +528,7 @@
 						<div id="job-details" class="panel panel-default" style="display:none;">
 							<div class="panel-heading">
 								<span class="panel-title" data-bind="{text: job.name, visible:visible}"></span>
-								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable }" placeholder="직무" />
+								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable}" placeholder="직무" />
 							</div>					
 							<div class="panel-body">	
 							
@@ -544,17 +544,17 @@
 											<tbody>
 												<tr>
 													<td>
-														<span data-bind="text: job.classification.classifiedMajorityName" ></span>
+														<span data-bind="{ text:job.classification.classifiedMajorityName, visible:visible }" ></span>
 														<input id="job-details-classified-majority-dorpdown-list"
 															data-option-label="대분류"
 															data-role="dropdownlist"
 										                  	data-auto-bind="true"
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
-										                   	data-bind=" value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" />														
+										                   	data-bind="{value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" />														
 													</td>
 													<td>
-														<span data-bind="text: job.classification.classifiedMiddleName" ></span>
+														<span data-bind="{text: job.classification.classifiedMiddleName, visible:visible}" ></span>
 														<input id="job-details-classified-middle-dorpdown-list" 
 															data-option-label="중분류"
 															data-role="dropdownlist"
@@ -562,10 +562,10 @@
 										                   	data-cascade-from="job-details-classified-majority-dorpdown-list"
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
-										                   	data-bind=" value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" />														
+										                   	data-bind="{value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" />														
 													</td>
 													<td>
-														<span data-bind="text: job.classification.classifiedMinorityName" ></span>
+														<span data-bind="{text: job.classification.classifiedMinorityName, visible:visible}" ></span>
 														<input 
 															data-role="dropdownlist"
 															data-option-label="소분류"
@@ -573,7 +573,7 @@
 										                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
-										                   	data-bind=" value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" />														
+										                   	data-bind="{value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" />														
 													</td>
 												</tr>
 											</tbody>
