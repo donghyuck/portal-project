@@ -115,8 +115,7 @@
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
-					batch: false,              
-					scrollable: false,
+					batch: false,       
 					height: '600',
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {

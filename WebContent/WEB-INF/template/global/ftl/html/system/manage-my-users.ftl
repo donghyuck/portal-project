@@ -107,9 +107,8 @@
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
-					batch: false,              
-					scrollable: false,
-					height: '600',										       
+					height: '600',
+					batch: false,   										       
 					pageable: { refresh:true, pageSizes:true,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {
 						// 1-1 SELECTED EVENT  
