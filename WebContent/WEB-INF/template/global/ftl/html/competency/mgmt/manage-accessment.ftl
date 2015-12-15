@@ -55,7 +55,7 @@
 				var observable =  common.ui.observable({
 					visible : false
 				});				
-				var grid = common.ui.grid($("#rating-scheme-gird"), {
+				var grid = common.ui.grid($("#rating-scheme-grid"), {
 					autoBind:false,
 					dataSource: {
 						transport: { 
