@@ -40,12 +40,9 @@
 						e.token.copy(currentUser);
 					},
 					change: function(e){			
-						console.log( kendo.stringify( e ) );			
-						getJobGrid().dataSource.read();
-						getClassifiedMajoritySelector().dataSource.read({codeSetId:1});						
 					}
 				});	
-				createJobGrid();
+				createRatingSchemeModal();
 			}
 		}]);		
 		
@@ -58,8 +55,7 @@
 				});
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
-			}				
-			renderTo.modal('show');				
+			}			
 		}
 
 		function getClassifiedMajoritySelector(){
@@ -518,7 +514,9 @@
 						<div class="panel panel-transparent" style="min-height:300px;">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />
-								<button class="pull-right btn btn-flat btn-info btn-outline btn-md" >척도관리</button>
+								<button type="button" class="pull-right btn btn-flat btn-info btn-outline btn-md" data-toggle="modal" data-target="#rating-scheme-modal">
+								  척도관리
+								</button>
 							</div>
 							<div class="panel-body padding-sm">
 								
