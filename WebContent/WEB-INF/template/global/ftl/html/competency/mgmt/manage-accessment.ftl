@@ -652,10 +652,11 @@
 						<h3 class="modal-title">척도</h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body">
-						
-						
-						
+					<div class="modal-body no-padding">
+						<div class="row">
+							<div class="col-xs-4">ss</div>
+							<div class="col-xs-8">sss</div>
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
