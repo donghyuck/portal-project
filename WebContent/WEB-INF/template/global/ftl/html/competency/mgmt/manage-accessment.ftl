@@ -505,7 +505,7 @@
 						<div class="panel panel-transparent" style="min-height:300px;">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />
-								<button class=""btn btn-flat btn-info btn-outline btn-md" >척도관리</button>
+								<button class="pull-right btn btn-flat btn-info btn-outline btn-md" >척도관리</button>
 							</div>
 							<div class="panel-body padding-sm">
 								
