@@ -50,14 +50,65 @@
 		
 		function createRatingSchemeModal(){
 			var renderTo = $("#rating-scheme-modal");	
-			if( !renderTo.data('bs.modal') ){
+			if( !renderTo.data('bs.modal') ){		
+				var companySelector = getCompanySelector();			
 				var observable =  common.ui.observable({
 					visible : false
-				});
+				});				
+				var grid = common.ui.grid($("#rating-scheme-gird"), {
+					autoBind:false,
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json', type:'post' },
+							parameterMap: function (options, operation){
+								if (operation !== "read") {
+									return kendo.stringify(options);
+								} 
+								return {
+									objectId: 1,
+									objectType: companySelector.value() 
+								};
+							}
+						},						
+						batch: false, 
+						pageSize: 15,
+						serverPaging: false,
+						schema: {
+						}
+					},
+					columns: [
+						{ title: "역량/능력단위", field: "name"}
+					],
+					toolbar: kendo.template('<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량/(능력단위) 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-success pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 검색</button></div>'),
+					pageable: { refresh:true, pageSizes:false,  buttonCount: 5, messages: { display: ' {1} / {2}' }  },		
+					resizable: true,
+					editable : false,
+					selectable : "row",
+					scrollable: true,
+					height: 500,
+					change: function(e) {
+					 	var selectedCells = this.select();	
+					 	if( selectedCells.length == 1){
+	                    	var selectedCell = this.dataItem( selectedCells );	  	                    
+	                    }   
+					},
+					dataBound: function(e) {
+
+					}
+				});							
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 			}			
 		}
+		
+		function createRatingSchemeGrid(){
+			var renderTo = $("#raging-scheme-grid");
+			if(! common.ui.exists(renderTo) ){				
+				var companySelector = getCompanySelector();			
+				
+			}	
+		}
+		
 		
 		function createAssessmentGrid(){
 			var companySelector = getCompanySelector();							
@@ -659,7 +710,7 @@
 					</div>
 					<div class="modal-body no-padding">
 						<div class="row">
-							<div class="col-xs-4">ss</div>
+							<div class="col-xs-4"><div id="rating-scheme-grid" class="no-border no-shadow"></div></div>
 							<div class="col-xs-8">sss</div>
 						</div>
 					</div>
