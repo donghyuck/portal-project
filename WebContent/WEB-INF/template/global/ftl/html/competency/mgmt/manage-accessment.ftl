@@ -43,6 +43,7 @@
 					}
 				});	
 				createRatingSchemeModal();
+				createAssessmentGrid();
 			}
 		}]);		
 		
@@ -56,6 +57,10 @@
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 			}			
+		}
+		
+		function createAssessmentGrid(){
+			var companySelector = getCompanySelector();							
 		}
 
 		function getClassifiedMajoritySelector(){
