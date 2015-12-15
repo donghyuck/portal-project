@@ -48,6 +48,19 @@
 				createJobGrid();
 			}
 		}]);		
+		
+		
+		function createRatingSchemeModal(){
+			var renderTo = $("#rating-scheme-modal");	
+			if( !renderTo.data('bs.modal') ){
+				var observable =  common.ui.observable({
+					visible : false
+				});
+				renderTo.data("model", observable);	
+				kendo.bind(renderTo, observable );
+			}				
+			renderTo.modal('show');				
+		}
 
 		function getClassifiedMajoritySelector(){
 			var renderTo = $("#classified-majority-dorpdown-list");
@@ -634,62 +647,17 @@
 			</div>
 		</div> <!-- / #main-wrapper -->
 		
-		<div id="essential-element-edit-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+		<div id="rating-scheme-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">	
 					<div class="modal-header">
-						<h3 class="modal-title"><span data-bind="text:competency.name"></span></h2>
+						<h3 class="modal-title">척도</h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-						<form>
-						<div class="row">
-							<div class="col-sm-12">									
-								<table class="table table-striped">
-									<thead>
-										<tr>
-											<th width="50%">하위요소(능력단위요소)</th>
-											<th width="50%">직무 수준</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<span data-bind="{text:essentialElement.name, visible:visible}"></span>
-												<input type="text" class="form-control" id="input-essential-element-name" data-bind="{value:essentialElement.name, visible:editable}}" placeholder="하위요소(능력단위요소)">											
-											</td>
-											<td>
-												<span data-bind="visible:visible"><span data-bind="text:essentialElement.level"></span>수준</span>
-												<select id="input-essential-element-level" class="form-control" data-bind="{value:essentialElement.level, visible:editable}" placeholder="직무 수준">
-													<option value="0" disabled selected>직무 수준 선택</option>
-													<option value="1">1수준</option>
-													<option value="2">2수준</option>
-													<option value="3">3수준</option>
-													<option value="4">4수준</option>
-													<option value="5">5수준</option>
-													<option value="6">6수준</option>
-													<option value="7">7수준</option>
-													<option value="8">8수준</option>
-												</select>
-											</td>
-										</tr>	
-									</tbody>				
-								</table>
-							</div>				
-						</div>
-						<div class="row" data-bind="invisible:deletable">
-							<div class="col-sm-offset-6 col-sm-6">
-								<input type="checkbox" id="input-essential-element-opt" class="k-checkbox" data-bind="checked: keepCreating" >
-         						<label class="k-checkbox-label" for="input-essential-element-opt">이어서 하위요소(능력단위요소) 추가하기</label>
-							</div>
-						</div>
-							<div class="p-sm text-right">
-								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
-								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
-								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
-								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
-							</div>
-						</form>
+						
+						
+						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
@@ -697,14 +665,6 @@
 				</div>
 			</div>
 		</div>			
-		
-		<script id="treeview-template" type="text/kendo-ui-template">
-			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
-            #: item.name # 
-            # if (!item.items) { #
-                <a class='delete-link' href='\#'></a> 
-            # } #
-        </script>									
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
