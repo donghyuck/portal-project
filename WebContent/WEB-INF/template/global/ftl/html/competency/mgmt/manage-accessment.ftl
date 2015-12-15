@@ -39,14 +39,14 @@
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					change: function(e){			
+					change: function(e){		
+							
 					}
 				});	
 				createRatingSchemeModal();
 				createAssessmentGrid();
 			}
 		}]);		
-		
 		
 		function createRatingSchemeModal(){
 			var renderTo = $("#rating-scheme-modal");	
@@ -56,7 +56,6 @@
 					visible : false
 				});				
 				var grid = common.ui.grid($("#rating-scheme-grid"), {
-					autoBind:false,
 					dataSource: {
 						transport: { 
 							read: { url:'/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json', type:'post' },
