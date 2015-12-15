@@ -101,14 +101,6 @@
 			}			
 		}
 		
-		function createRatingSchemeGrid(){
-			var renderTo = $("#raging-scheme-grid");
-			if(! common.ui.exists(renderTo) ){				
-				var companySelector = getCompanySelector();			
-				
-			}	
-		}
-		
 		
 		function createAssessmentGrid(){
 			var companySelector = getCompanySelector();							
