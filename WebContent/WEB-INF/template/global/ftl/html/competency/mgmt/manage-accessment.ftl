@@ -53,8 +53,25 @@
 			if( !renderTo.data('bs.modal') ){		
 				var companySelector = getCompanySelector();			
 				var observable =  common.ui.observable({
-					visible : false
-				});				
+					visible : false,
+					ratingSchemeDataSource : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json', type:'post' },
+							parameterMap: function (options, operation){
+								if (operation !== "read") {
+									return kendo.stringify(options);
+								} 
+								return {
+									objectId: 1,
+									objectType: companySelector.value() 
+								};
+							}
+						},
+						schema: {
+						}					
+					})
+				});
+				/*				
 				var grid = common.ui.grid($("#rating-scheme-grid"), {
 					dataSource: {
 						transport: { 
@@ -89,7 +106,8 @@
 					dataBound: function(e) {
 
 					}
-				});							
+				});
+				*/							
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 			}			
@@ -701,7 +719,14 @@
 									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
 									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 								</div>
-								<div id="rating-scheme-grid" class="no-border no-shadow"></div>
+								<div data-role="grid" class="no-border no-shadow"
+									                 date-scrollable="true"
+									                 data-auto-bind="true"
+									                 data-columns="[
+									                 	{ 'field':'name' , 'title':'이름' }
+									                 ]"
+									                 data-bind="source: ratingSchemeDataSource"
+									                 style="height: 600px"></div>
 							</div>
 							<div class="col-xs-8">sss</div>
 						</div>
