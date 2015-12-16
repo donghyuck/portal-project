@@ -72,6 +72,7 @@
 							}
 						},
 						schema: {
+							model: common.ui.data.competency.RatingScheme
 						}					
 					})
 				});

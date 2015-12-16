@@ -141,7 +141,7 @@
 			name : { type: "string" },	   
 			description:  { type: "string" },
 			scale: { type: "number", defaultValue:0 },
-			properties : {type: "object" , defaultValue:"[]"}
+			properties : {type: "object" , defaultValue:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
 		},
