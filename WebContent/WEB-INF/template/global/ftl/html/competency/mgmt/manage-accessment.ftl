@@ -99,9 +99,10 @@
 							model: common.ui.data.competency.RatingScheme
 						}					
 					}),
-					setSource:function(source){
+					setSource: function(source){
 						var $this = this;
 						source.copy($this.ratingScheme);	
+						console.log( common.ui.stringify($this.ratingScheme) );
 						if($this.ratingScheme.get("competencyId") == 0)
 						{
 							$this.ratingScheme.set("objectType", 1);
@@ -727,7 +728,7 @@
 						<div class="row">
 							<div class="col-xs-4">
 								<div class="p-xxs bg-gray">
-									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
+									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
 									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 								</div>
 								<div data-role="grid" class="no-border no-shadow"
