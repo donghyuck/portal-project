@@ -134,7 +134,7 @@
 	
 	var RatingScheme = kendo.data.Model.define( {
 		id : "ratingSchemeId",
-		ields: {
+		fields: {
 			ratingSchemeId: { type: "number", defaultValue: 0},
 			objectType : { type: "number"},
 	    	objectId : { type: "number"},
