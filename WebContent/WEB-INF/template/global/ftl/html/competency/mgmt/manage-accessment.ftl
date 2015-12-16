@@ -750,7 +750,7 @@
 									<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
 								</div>
 								
-												span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
+												<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
 												<select class="form-control" data-bind="{value: ratingScheme.scale, visible:editable}" placeholder="척도">
 													<option value="0" disabled selected>척도 선택</option>
 													<option value="2">2점 척도</option>
