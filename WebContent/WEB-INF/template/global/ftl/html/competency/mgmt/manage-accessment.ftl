@@ -103,7 +103,7 @@
 						var $this = this;
 						source.copy($this.ratingScheme);	
 						console.log( common.ui.stringify($this.ratingScheme) );
-						if($this.ratingScheme.get("competencyId") == 0)
+						if($this.ratingScheme.get("ratingSchemeId") == 0)
 						{
 							$this.ratingScheme.set("objectType", 1);
 							$this.ratingScheme.set("objectId", getCompanySelector().value() );
