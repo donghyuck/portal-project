@@ -53,7 +53,7 @@
 				var companySelector = getCompanySelector();			
 				var observable =  common.ui.observable({
 					visible : false,
-					reload : function(){						
+					refresh : function(){						
 						console.log("refresh..");
 						var $this = this;						
 						$this.ratingSchemeDataSource.read();					
@@ -66,8 +66,8 @@
 									return kendo.stringify(options);
 								} 
 								return {
-									objectType: 1/*,
-									objectId: companySelector.value()*/
+									objectType: 1,
+									objectId: companySelector.value()
 								};
 							}
 						},
@@ -75,48 +75,10 @@
 							model: common.ui.data.competency.RatingScheme
 						}					
 					})
-				});
-				/*				
-				var grid = common.ui.grid($("#rating-scheme-grid"), {
-					dataSource: {
-						transport: { 
-							read: { url:'/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json', type:'post' },
-							parameterMap: function (options, operation){
-								if (operation !== "read") {
-									return kendo.stringify(options);
-								} 
-								return {
-									objectId: 1,
-									objectType: companySelector.value() 
-								};
-							}
-						},
-						schema: {
-						}
-					},
-					columns: [
-						{ title: "이름", field: "name"}
-					],
-					resizable: true,
-					editable : false,
-					selectable : "row",
-					scrollable: true,
-					height: 500,
-					change: function(e) {
-					 	var selectedCells = this.select();	
-					 	if( selectedCells.length == 1){
-	                    	var selectedCell = this.dataItem( selectedCells );	  	                    
-	                    }   
-					},
-					dataBound: function(e) {
-
-					}
-				});
-				*/							
+				});							
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
-			}	
-				
+			}					
 			//renderTo.data("model").ratingSchemeDataSource.fetch();	
 		}
 		
@@ -724,7 +686,7 @@
 							<div class="col-xs-4">
 								<div class="p-xxs bg-gray">
 									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
-									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-bind="reload" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
+									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 								</div>
 								<div data-role="grid" class="no-border no-shadow"
 													 data-auto-bind="false"
