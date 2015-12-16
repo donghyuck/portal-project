@@ -66,8 +66,8 @@
 									return kendo.stringify(options);
 								} 
 								return {
-									objectType: 1/*,
-									objectId: companySelector.value() */
+									objectType: 1,
+									objectId: companySelector.value()
 								};
 							}
 						},
@@ -117,7 +117,7 @@
 				kendo.bind(renderTo, observable );
 			}	
 				
-			renderTo.data("model").ratingSchemeDataSource.fetch();	
+			//renderTo.data("model").ratingSchemeDataSource.fetch();	
 		}
 		
 		
@@ -727,9 +727,8 @@
 									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 								</div>
 								<div data-role="grid" class="no-border no-shadow"
-									                 date-scrollable="true"
-									                 data-auto-bind="false"
-									                 data-autoBind="false"
+													 data-auto-bind="false"
+									                 data-scrollable="true"
 									                 data-columns="[
 									                 	{ 'field':'name' , 'title':'이름' }
 									                 ]"
