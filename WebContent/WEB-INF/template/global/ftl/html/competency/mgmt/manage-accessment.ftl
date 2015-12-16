@@ -42,8 +42,7 @@
 					change: function(e){		
 						
 					}
-				});	
-				
+				});					
 				createRatingSchemeModal();
 			}
 		}]);		
@@ -54,11 +53,9 @@
 				var companySelector = getCompanySelector();			
 				var observable =  common.ui.observable({
 					visible : false,
-					refresh : function(){
-						
+					refresh : function(){						
 						console.log("refresh..");
-						var $this = this;
-						
+						var $this = this;						
 						$this.ratingSchemeDataSource.read();					
 					},
 					ratingSchemeDataSource : new kendo.data.DataSource({
@@ -69,8 +66,8 @@
 									return kendo.stringify(options);
 								} 
 								return {
-									objectType: 1,
-									objectId: companySelector.value() 
+									objectType: 1/*,
+									objectId: companySelector.value() */
 								};
 							}
 						},
