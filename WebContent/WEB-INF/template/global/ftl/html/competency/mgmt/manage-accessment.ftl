@@ -44,7 +44,7 @@
 					}
 				});	
 				
-				createAssessmentGrid();
+				createRatingSchemeModal();
 			}
 		}]);		
 		
