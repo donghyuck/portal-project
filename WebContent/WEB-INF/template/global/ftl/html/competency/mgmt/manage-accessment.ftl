@@ -70,7 +70,7 @@
 					select : function(){
 						var $this = this;
 						return false;
-					}
+					},
 					view : function(e){
 						
 						var selectedRows = this.select();
