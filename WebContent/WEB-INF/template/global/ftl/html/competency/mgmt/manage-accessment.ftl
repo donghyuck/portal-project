@@ -54,6 +54,10 @@
 				var companySelector = getCompanySelector();			
 				var observable =  common.ui.observable({
 					visible : false,
+					refresh : function(){
+						var $this = this;
+						$this.ratingSchemeDataSource.read();					
+					},
 					ratingSchemeDataSource : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json', type:'post' },
