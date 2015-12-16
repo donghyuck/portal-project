@@ -55,7 +55,10 @@
 				var observable =  common.ui.observable({
 					visible : false,
 					refresh : function(){
+						
+						console.log("refresh..");
 						var $this = this;
+						
 						$this.ratingSchemeDataSource.read();					
 					},
 					ratingSchemeDataSource : new kendo.data.DataSource({
@@ -115,7 +118,8 @@
 				*/							
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
-			}		
+			}	
+				
 			renderTo.data("model").ratingSchemeDataSource.fetch();	
 		}
 		
