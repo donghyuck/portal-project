@@ -53,10 +53,34 @@
 				var companySelector = getCompanySelector();			
 				var observable =  common.ui.observable({
 					visible : false,
+					editable : false,
+					deletable: false,
+					updatable : false,						
+					ratingScheme: new common.ui.data.competency.RatingScheme(),
 					refresh : function(){						
 						console.log("refresh..");
 						var $this = this;						
 						$this.ratingSchemeDataSource.read();					
+					},
+					create : function(){
+						var $this = this;
+						$this.setSource(new common.ui.data.competency.RatingScheme());
+						return false;
+					},
+					select : function(){
+						var $this = this;
+						return false;
+					}
+					view : function(e){
+						
+						var selectedRows = this.select();
+						
+						
+						return false;
+					},
+					edit : function(e){
+						var $this = this;
+						return false;
 					},
 					ratingSchemeDataSource : new kendo.data.DataSource({
 						transport: { 
@@ -74,12 +98,30 @@
 						schema: {
 							model: common.ui.data.competency.RatingScheme
 						}					
-					})
+					}),
+					setSource:function(source){
+						var $this = this;
+						source.copy($this.ratingScheme);	
+						if($this.ratingScheme.get("competencyId") == 0)
+						{
+							$this.ratingScheme.set("objectType", 1);
+							$this.ratingScheme.set("objectId", getCompanySelector().value() );
+							$this.set("visible", false);
+							$this.set("editable", true);
+							$this.set("updatable", true);
+							$this.set("deletable", false);
+						}else{
+							$this.set("visible", true);
+							$this.set("editable", false);
+							$this.set("updatable", false);
+							$this.set("deletable", true);						
+						}
+					}
 				});							
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 			}					
-			//renderTo.data("model").ratingSchemeDataSource.fetch();	
+			renderTo.data("model").ratingSchemeDataSource.fetch();	
 		}
 		
 		
@@ -685,17 +727,17 @@
 						<div class="row">
 							<div class="col-xs-4">
 								<div class="p-xxs bg-gray">
-									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
+									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
 									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 								</div>
 								<div data-role="grid" class="no-border no-shadow"
-													 data-auto-bind="false"
-									                 data-scrollable="true"
-									                 data-columns="[
-									                 	{ 'field':'name' , 'title':'이름' }
-									                 ]"
-									                 data-bind="source: ratingSchemeDataSource"
-									                 style="height: 600px"></div>
+									 data-auto-bind="false"
+									 data-scrollable="true"
+									 data-columns="[
+									   	{ 'field':'name' , 'title':'이름' }
+									 ]"
+									data-bind="source: ratingSchemeDataSource"
+									style="height: 600px"></div>
 							</div>
 							<div class="col-xs-8">sss</div>
 						</div>
