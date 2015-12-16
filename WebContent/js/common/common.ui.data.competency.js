@@ -132,6 +132,35 @@
 	    }    
 	});		
 	
+	var RatingScheme = kendo.data.Model.define( {
+		id : "ratingSchemeId",
+		ields: {
+			ratingSchemeId: { type: "number", defaultValue: 0},
+			objectType : { type: "number"},
+	    	objectId : { type: "number"},
+			name : { type: "string" },	   
+			description:  { type: "string" },
+			scale: { type: "number", defaultValue:0 },
+			properties : {type: "object" , defaultValue:"[]"}
+	    	modifiedDate: { type: "date"},
+	        creationDate: { type: "date" }	
+		},
+		copy : function ( target ){
+			target.set("ratingSchemeId", this.get("ratingSchemeId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	target.set("scale", this.get("scale"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
+	    	target.set("creationDate", this.get("creationDate"));	    	
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    	else
+	    		target.set("properties", []);
+		}
+	});
+	
 	var CodeSet = kendo.data.Model.define( {
 	    id: "codeSetId", // the identifier of the model
 	    parentId : "parentCodeSetId",
@@ -173,7 +202,8 @@
 			Competency : Competency,
 			EssentialElement : EssentialElement,
 			PerformanceCriteria : PerformanceCriteria,
-			Ability : Ability
+			Ability : Ability,
+			RatingScheme:RatingScheme
 		}  
 	} );
 	
