@@ -724,7 +724,7 @@
 						<h3 class="modal-title">척도</h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body no-padding">
+					<div class="modal-body no-padding bg-gray">
 						<div class="row">
 							<div class="col-xs-4 no-padding-r">
 								<div class="p-xxs bg-gray">
@@ -741,7 +741,7 @@
 									style="height: 600px"></div>
 							</div>
 							<div class="col-xs-8 no-padding-l">
-								<div class="p-xxs bg-gray">
+								<div class="p-sm">
 								<div class="m-b-sm">
 									<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
 									<input type="text" class="form-control input-sm" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
