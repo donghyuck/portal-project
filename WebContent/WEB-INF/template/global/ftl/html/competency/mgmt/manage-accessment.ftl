@@ -40,7 +40,7 @@
 						e.token.copy(currentUser);
 					},
 					change: function(e){		
-						createRatingSchemeModal();	
+						
 					}
 				});	
 				
