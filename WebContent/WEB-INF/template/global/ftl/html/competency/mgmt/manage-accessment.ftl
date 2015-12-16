@@ -66,8 +66,8 @@
 									return kendo.stringify(options);
 								} 
 								return {
-									objectId: 1,
-									objectType: companySelector.value() 
+									objectType: 1,
+									objectId: companySelector.value() 
 								};
 							}
 						},
