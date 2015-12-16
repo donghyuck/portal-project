@@ -75,7 +75,6 @@
 					columns: [
 						{ title: "이름", field: "name"}
 					],
-					toolbar: kendo.template('<div class="p-xxs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-success pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button></div>'),
 					resizable: true,
 					editable : false,
 					selectable : "row",
@@ -698,7 +697,7 @@
 					<div class="modal-body no-padding">
 						<div class="row">
 							<div class="col-xs-4">
-								<div class="p-xxs">
+								<div class="p-xxs bg-gray">
 									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
 									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 								</div>
