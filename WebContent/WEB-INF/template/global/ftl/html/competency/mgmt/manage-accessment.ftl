@@ -697,7 +697,13 @@
 					</div>
 					<div class="modal-body no-padding">
 						<div class="row">
-							<div class="col-xs-4"><div id="rating-scheme-grid" class="no-border no-shadow"></div></div>
+							<div class="col-xs-4">
+								<div class="p-xxs">
+									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
+									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
+								</div>
+								<div id="rating-scheme-grid" class="no-border no-shadow"></div>
+							</div>
 							<div class="col-xs-8">sss</div>
 						</div>
 					</div>
