@@ -115,7 +115,8 @@
 				*/							
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
-			}			
+			}		
+			renderTo.data("model").ratingSchemeDataSource.fetch();	
 		}
 		
 		
@@ -726,7 +727,8 @@
 								</div>
 								<div data-role="grid" class="no-border no-shadow"
 									                 date-scrollable="true"
-									                 data-auto-bind="true"
+									                 data-auto-bind="false"
+									                 data-autoBind="false"
 									                 data-columns="[
 									                 	{ 'field':'name' , 'title':'이름' }
 									                 ]"
