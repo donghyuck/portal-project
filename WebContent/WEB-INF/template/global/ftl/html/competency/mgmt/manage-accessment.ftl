@@ -53,7 +53,7 @@
 				var companySelector = getCompanySelector();			
 				var observable =  common.ui.observable({
 					visible : false,
-					refresh : function(){						
+					reload : function(){						
 						console.log("refresh..");
 						var $this = this;						
 						$this.ratingSchemeDataSource.read();					
@@ -724,7 +724,7 @@
 							<div class="col-xs-4">
 								<div class="p-xxs bg-gray">
 									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
-									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-bind="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
+									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-bind="reload" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 								</div>
 								<div data-role="grid" class="no-border no-shadow"
 													 data-auto-bind="false"
