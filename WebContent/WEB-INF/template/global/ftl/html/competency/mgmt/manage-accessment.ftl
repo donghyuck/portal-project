@@ -744,7 +744,7 @@
 								<div class="p-sm">
 								<div class="m-b-sm">
 									<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
-									<input type="text" class="form-control input-sm" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
+									<input type="text" class="form-control" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
 								</div>				
 								<div class="m-b-sm">				
 									<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
