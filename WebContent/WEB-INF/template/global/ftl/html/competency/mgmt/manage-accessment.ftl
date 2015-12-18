@@ -724,21 +724,26 @@
 						<h3 class="modal-title">척도</h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body bg-gray">
+					<div class="modal-body">
 						<div class="row">
-							<div class="col-sm-5 no-padding-r">
-								<div class="p-xxs bg-gray">
-									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
-									<button class="btn btn-flat btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
-								</div>
-								<div data-role="grid" class="no-shadow"
+							<div class="col-xs-12">							
+							<div data-role="grid" class="no-shadow"
 									 data-auto-bind="false"
 									 data-scrollable="true"
 									 data-columns="[
 									   	{ 'field':'name' , 'title':'이름' }
 									 ]"
 									data-bind="source: ratingSchemeDataSource"
-									style="height: 600px"></div>
+									style="height: 300px"></div>
+							</div>
+					
+						<div class="row">
+							<div class="col-sm-5 no-padding-r">
+								<div class="p-xxs bg-gray">
+									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
+									<button class="btn btn-flat btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
+								</div>
+								
 							</div>
 							<div class="col-sm-7 no-padding-l">
 								<div class="p-sm">
