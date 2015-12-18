@@ -729,7 +729,7 @@
 							<div class="col-sm-5 no-padding-r">
 								<div class="p-xxs bg-gray">
 									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
-									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
+									<button class="btn btn-flat btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 								</div>
 								<div data-role="grid" class="no-border no-shadow"
 									 data-auto-bind="false"
