@@ -82,6 +82,26 @@
 						var $this = this;
 						return false;
 					},
+					saveOrUpdate : function(e){
+						var $this = this;						
+						var btn = $(e.target);	
+						common.ui.progress(renderTo, true);
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/competency/assessment/rating-scheme/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.ratingScheme ),
+								contentType : "application/json",
+								success : function(response){																	
+									$this.setSource(new common.ui.data.competency.RatingScheme(response));	
+									$this.ratingSchemeDataSource.read();
+								},
+								complete : function(e){
+									common.ui.progress(renderTo, false);
+								}
+							}
+						);							
+						return false;
+					},					
 					ratingSchemeDataSource : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json', type:'post' },
