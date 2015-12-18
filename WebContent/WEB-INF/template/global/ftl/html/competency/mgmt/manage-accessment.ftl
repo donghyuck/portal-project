@@ -119,9 +119,17 @@
 							model: common.ui.data.competency.RatingScheme
 						}					
 					}),
+					propertyDataSource :new kendo.data.DataSource({
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
 					setSource: function(source){
 						var $this = this;
 						source.copy($this.ratingScheme);	
+						$this.propertyDataSource.data($this.ratingScheme.properties);	
+							
 						console.log( common.ui.stringify($this.ratingScheme) );
 						if($this.ratingScheme.get("ratingSchemeId") == 0)
 						{
@@ -781,7 +789,15 @@
 								</select>
 							</div>
 							<div class="col-sm-6">
-								
+								<div class="m-b-sm">
+										<div data-role="grid"
+								                 date-scrollable="true"
+								                 data-editable="true"
+								                 data-toolbar="['create']"
+								                 data-columns="[{ 'field': 'name', 'width': 270 },{ 'field': 'value' } ]"
+								                 data-bind="source:propertyDataSource, visible:editable"
+								                 style="height: 200px"></div>
+									</div>	
 							</div>
 						</div>
 						<div class="p-sm">
