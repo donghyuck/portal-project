@@ -67,8 +67,11 @@
 						$this.setSource(new common.ui.data.competency.RatingScheme());
 						return false;
 					},
-					select : function(){
+					select : function(e){
 						var $this = this;
+						console.log( common.ui.stringify(e) );
+						
+						
 						return false;
 					},
 					view : function(e){
@@ -759,11 +762,12 @@
 						</div>
 						<div data-role="grid" class="no-shadow no-border-hr"
 									 data-auto-bind="false"
+									 data-selectable="true"
 									 data-scrollable="true"
 									 data-columns="[
 									   	{ 'field':'name' , 'title':'이름' }
 									 ]"
-									data-bind="source: ratingSchemeDataSource"
+									data-bind="source: ratingSchemeDataSource, events : { change: select }"
 									style="height: 300px; border-radius:0;"></div>
 									
 						<div class="row padding-sm">
