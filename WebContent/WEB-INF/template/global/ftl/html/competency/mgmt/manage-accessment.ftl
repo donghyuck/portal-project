@@ -726,20 +726,7 @@
 					</div>
 					<div class="modal-body no-padding bg-gray">
 						<div class="row">
-							<div class="col-xs-4 no-padding-r">
-								<div class="p-xxs bg-gray">
-									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
-									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
-								</div>
-								<div data-role="grid" class="no-border no-shadow"
-									 data-auto-bind="false"
-									 data-scrollable="true"
-									 data-columns="[
-									   	{ 'field':'name' , 'title':'이름' }
-									 ]"
-									data-bind="source: ratingSchemeDataSource"
-									style="height: 600px"></div>
-							</div>
+							
 							<div class="col-xs-8 no-padding-l">
 								<div class="p-sm">
 								<div class="m-b-sm">
@@ -764,6 +751,19 @@
 								</div>		
 							</div>
 						</div>
+						
+							<div class="p-xxs bg-gray">
+									<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
+									<button class="btn btn-flat btn-sm btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
+							</div>								
+						<div data-role="grid" class="no-border no-shadow"
+									 data-auto-bind="false"
+									 data-scrollable="true"
+									 data-columns="[
+									   	{ 'field':'name' , 'title':'이름' }
+									 ]"
+									data-bind="source: ratingSchemeDataSource"
+									style="height: 300px"></div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
