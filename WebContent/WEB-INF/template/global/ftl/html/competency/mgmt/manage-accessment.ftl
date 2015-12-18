@@ -738,22 +738,16 @@
 									data-bind="source: ratingSchemeDataSource"
 									style="height: 300px; border-radius:0;"></div>
 									
-						<div class="row">
+						<div class="row padding-sm">
 							<div class="col-sm-6">
 								<div class="m-b-sm">
 									<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
 									<input type="text" class="form-control" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
 								</div>	
-							</div>
-							<div class="col-sm-6">
 								<div class="m-b-sm">				
 									<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
 									<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
 								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
 								<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
 								<select class="form-control" data-bind="{value: ratingScheme.scale, visible:editable}" placeholder="척도">
 									<option value="0" disabled selected>척도 선택</option>
@@ -766,7 +760,11 @@
 									<option value="8">8점 척도</option>
 								</select>
 							</div>
-						</div>						
+							<div class="col-sm-6">
+								
+							</div>
+						</div>
+									
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
