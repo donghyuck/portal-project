@@ -775,7 +775,8 @@
 									   	{ 'field':'name' , 'title':'이름' }
 									 ]"
 									data-bind="source: ratingSchemeDataSource, events : { change: select }"
-									style="height: 300px; border-radius:0;"></div>							
+									style="height: 300px; border-radius:0;"></div>			
+													
 						<div id="rating-scheme-details">						
 									<div class="row">
 										<div class="col-sm-12">
@@ -805,103 +806,36 @@
 									<div class="row">
 										<div class="col-sm-12">
 
-						<ul id="uidemo-tabs-default-demo" class="nav nav-tabs">
-							<li class="">
-								<a href="#uidemo-tabs-default-demo-home" data-toggle="tab">Home <span class="label label-success">12</span></a>
-							</li>
-							<li class="active">
-								<a href="#uidemo-tabs-default-demo-profile" data-toggle="tab">Profile <span class="badge badge-primary">12</span></a>
-							</li>
-						</ul>
+											<ul id="uidemo-tabs-default-demo" class="nav nav-tabs">
+												<li class="">
+													<a href="#uidemo-tabs-default-demo-home" data-toggle="tab">Home <span class="label label-success">12</span></a>
+												</li>
+												<li class="active">
+													<a href="#uidemo-tabs-default-demo-profile" data-toggle="tab">Profile <span class="badge badge-primary">12</span></a>
+												</li>
+											</ul>
 
-						<div class="tab-content tab-content-bordered">
-							<div class="tab-pane fade" id="uidemo-tabs-default-demo-home">
-								
-							</div> <!-- / .tab-pane -->
-							<div class="tab-pane fade active in" id="uidemo-tabs-default-demo-profile">
-								
-											<div data-role="grid"
-								                 date-scrollable="true"
-								                 data-editable="true"
-								                 data-toolbar="['create']"
-								                 data-columns="[{ 'field': 'name', 'width': 270 },{ 'field': 'value' } ]"
-								                 data-bind="source:propertyDataSource, visible:editable"
-								                 style="height: 200px"></div>
-								                 								
-								
-							</div> <!-- / .tab-pane -->							
-						</div> <!-- / .tab-content -->
-										</div>
-									</div>	
-																
-						
-						
-							<div class="panel colourable">
-								<div class="panel-heading">									
-															
-									<span class="panel-title">&nbsp;</span>								
-									<ul class="nav nav-tabs nav-tabs-xs">
-										<li class="">
-											<a href="#" data-toggle="tab">Home</a>
-										</li>
-										<li class="">
-											<a href="#" data-toggle="tab">Profile</a>
-										</li>
-										<li class="active">
-											<a href="#" data-toggle="tab">More</a>
-										</li>
-									</ul> <!-- / .nav -->
-								</div> <!-- / .panel-heading -->
-								<div class="panel-body">
-												
-								</div>
-							</div>						
-						</div>	
-							
-									
-						<div class="row padding-sm">
-							<div class="col-sm-6">
-								
-							</div>
-							<div class="col-sm-6">
-							
-							
-							
-							
-						<div class="panel-group" id="rating-scheme-modal-accordion">
-							<div class="panel">
-								<div class="panel-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#rating-scheme-modal-accordion" href="#collapseOne">
-										Collapsible Group Item #1
-									</a>
-								</div> <!-- / .panel-heading -->
-								<div id="collapseOne" class="panel-collapse collapse in" style="height: auto;">
-									<div class="panel-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-									</div> <!-- / .panel-body -->
-								</div> <!-- / .collapse -->
-							</div> <!-- / .panel -->
-
-							<div class="panel">
-								<div class="panel-heading">
-									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#rating-scheme-modal-accordion" href="#collapseTwo">
-										Collapsible Group Item #2
-									</a>
-								</div> <!-- / .panel-heading -->
-								<div id="collapseTwo" class="panel-collapse collapse" style="height: 0px;">
-									<div class="panel-body">
-										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-									</div> <!-- / .panel-body -->
-								</div> <!-- / .collapse -->
-							</div> <!-- / .panel -->
-						</div>
+											<div class="tab-content tab-content-bordered">
+												<div class="tab-pane fade" id="uidemo-tabs-default-demo-home">
 													
-							
-								<div class="m-b-sm">
-										
-									</div>	
-							</div>
-						</div>
+												</div> <!-- / .tab-pane -->
+												<div class="tab-pane fade active in" id="uidemo-tabs-default-demo-profile">
+													
+																<div data-role="grid"
+													                 date-scrollable="true"
+													                 data-editable="true"
+													                 data-toolbar="['create']"
+													                 data-columns="[{ 'field': 'name', 'width': 270 },{ 'field': 'value' } ]"
+													                 data-bind="source:propertyDataSource, visible:editable"
+													                 style="height: 200px"></div>								                 								
+								
+												</div> <!-- / .tab-pane -->							
+											</div> <!-- / .tab-content -->
+										</div><!-- / .col-sm-12 -->
+									</div><!-- / .row -->										
+						
+						</div> <!-- /.rating-scheme-details -->
+						
 						<div class="p-sm">
 							<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 							<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
