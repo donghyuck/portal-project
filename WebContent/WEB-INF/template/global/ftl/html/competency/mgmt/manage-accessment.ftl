@@ -70,6 +70,9 @@
 					select : function(e){
 						var $this = this;
 						console.log(e);	
+						console.log(e.data);
+						console.log(e.data());
+							
 						var grid = $(e.data);
 						var selectedRows = this.select();
 						var dataItem = this.dataItem(selectedRows[0]);
