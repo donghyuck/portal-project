@@ -842,14 +842,13 @@
 															<th>Username</th>
 														</tr>
 													</thead>
-													<tbody>
-														<div data-role="listview"
+														<tbody data-role="listview"
 											                 data-edit-template="rating-level-edit-template"
 											                 data-template="rating-level-view-template"
 											                 data-bind="source:ratingLevelDataSource"
-											                 style="height: 300px; overflow: auto"></div>													
-													</tbody>
+											                 style="height: 300px; overflow: auto"></tbody>
 												</table>					
+												
 													
 													<div data-role="grid"
 																	 class="no-border"
