@@ -854,12 +854,12 @@
 															<th>Username</th>
 														</tr>
 													</thead>
-														<tbody id="" data-role="listview"
-															 class="rating-level-listview"
-											                 data-edit-template="rating-level-edit-template"
-											                 data-template="rating-level-view-template"
-											                 data-bind="source:ratingLevelDataSource"
-											                 style="height: 300px; overflow: auto"></tbody>
+														<tbody  id="rating-level-listview"
+															data-role="listview"
+															data-edit-template="rating-level-edit-template"
+											                data-template="rating-level-view-template"
+											                data-bind="source:ratingLevelDataSource"
+											                style="height: 300px; overflow: auto"></tbody>
 												</table>					
 												
 													
