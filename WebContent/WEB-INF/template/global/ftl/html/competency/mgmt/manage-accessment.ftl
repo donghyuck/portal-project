@@ -903,7 +903,7 @@
 				</div>
 			</div>
 		</div>			
-		<script type="text/x-kendo-tmpl" id="rating-level-edit-template">
+		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
 		<tr>
 			<td>#: score #</td>
 			<td>#: title #</td>
@@ -913,7 +913,7 @@
 			</td>
 		</tr>		
 		</script>
-		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
+		<script type="text/x-kendo-tmpl" id="rating-level-edit-template">
 		<tr>
 			<td>
 				<input type="text" data-bind="value:score" data-role="numerictextbox" name="Score" required="required" data-type="number" min="0" validationMessage="required" />
