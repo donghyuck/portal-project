@@ -126,7 +126,8 @@
 						},
 						schema: {
 							model: common.ui.data.competency.RatingScheme
-						}					
+						},
+						error: common.ui.handleAjaxError					
 					}),
 					propertyDataSource :new kendo.data.DataSource({
 						data : [],
