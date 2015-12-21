@@ -68,11 +68,10 @@
 						return false;
 					},
 					select : function(e){
-						var $this = this;
-						console.log(e);								
-						var grid = common.ui.grid($(e.sender));
-						var selectedRows = this.select();
-						var dataItem = this.dataItem(selectedRows[0]);
+						var $this = this;						
+						var grid = common.ui.grid($("#rating-scheme-grid"));
+						var selectedRows = grid.select();
+						var dataItem = grid.dataItem(selectedRows[0]);
 						setSource( dataItem );						
 						return false;
 					},
@@ -762,7 +761,8 @@
 							<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
 							<button class="btn btn-flat btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 						</div>
-						<div data-role="grid" class="no-shadow no-border-hr"
+						<div id="rating-scheme-grid" 
+									data-role="grid" class="no-shadow no-border-hr"
 									 data-auto-bind="false"
 									 data-selectable="true"
 									 data-scrollable="true"
