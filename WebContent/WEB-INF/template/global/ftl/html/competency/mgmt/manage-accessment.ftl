@@ -76,14 +76,19 @@
 						return false;
 					},
 					view : function(e){
-						
-						var selectedRows = this.select();
-						
-						
-						return false;
+						var $this = this;		
+						if($this.ratingScheme.ratingSchemeId < 1){
+							//renderTo.hide();	
+						}
+						$this.set("visible", true);
+						$this.set("editable", false);
+						$this.set("updatable", false);
 					},
 					edit : function(e){
 						var $this = this;
+						$this.set("visible", false);
+						$this.set("editable", true);
+						$this.set("updatable", true);
 						return false;
 					},
 					saveOrUpdate : function(e){
