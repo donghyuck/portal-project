@@ -68,11 +68,11 @@
 						return false;
 					},
 					select : function(e){
-						var $this = this;
-						console.log( e );
-						console.log( common.ui.stringify(e) );
-						
-						
+						var $this = this;	
+						var grid = e.data;
+						var selectedRows = this.select();
+						var dataItem = this.dataItem(selectedRows[0]);
+						setSource( dataItem );						
 						return false;
 					},
 					view : function(e){
