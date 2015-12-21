@@ -69,9 +69,9 @@
 					},
 					select : function(e){
 						var $this = this;
-						console.log(e);	
-						console.log(e.data);
-						console.log(e.data());
+						console.log(e.data);	
+						console.log(e.data('kendoGrid'));
+							
 							
 						var grid = $(e.data);
 						var selectedRows = this.select();
