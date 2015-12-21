@@ -72,7 +72,7 @@
 						var grid = common.ui.grid($("#rating-scheme-grid"));
 						var selectedRows = grid.select();
 						var dataItem = grid.dataItem(selectedRows[0]);
-						setSource( dataItem );						
+						$this.setSource( dataItem );						
 						return false;
 					},
 					view : function(e){
