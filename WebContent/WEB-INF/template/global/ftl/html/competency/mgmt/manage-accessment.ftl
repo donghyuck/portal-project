@@ -837,7 +837,7 @@
 													                 date-scrollable="true"
 													                 data-editable="true"
 													                 data-toolbar="['create']"
-													                 data-columns="[{ 'field': 'score', 'width': 270 , 'title':'점수'},{ 'field': 'value', 'title':'예시' } ]"
+													                 data-columns="[{ 'field': 'score', 'width': 270 , 'title':'점수'},{ 'field': title', 'title':'예시' } ]"
 													                 data-bind="source:ratingLevelDataSource, visible:editable"
 													                 style="height: 200px"></div>	
 												</div> <!-- / .tab-pane -->
