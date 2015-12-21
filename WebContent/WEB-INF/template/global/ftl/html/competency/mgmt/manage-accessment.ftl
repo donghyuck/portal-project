@@ -69,7 +69,7 @@
 					},
 					select : function(e){
 						var $this = this;
-						console.log( $(e.currentTarget).html() );
+						console.log( $(e.target).html() );
 						console.log( common.ui.stringify(e) );
 						
 						
