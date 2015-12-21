@@ -806,7 +806,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 
-											<ul id="uidemo-tabs-default-demo" class="nav nav-tabs">
+											<ul id="uidemo-tabs-default-demo" class="nav nav-tabs nav-tabs-xs">
 												<li class="">
 													<a href="#uidemo-tabs-default-demo-home" data-toggle="tab">척도 예시</a>
 												</li>
