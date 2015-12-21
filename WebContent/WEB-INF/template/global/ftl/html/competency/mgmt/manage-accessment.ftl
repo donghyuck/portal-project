@@ -848,7 +848,7 @@
 												<table class="table">
 													<thead>
 														<tr>
-															<th width="30">점수</th>
+															<th width="60">점수</th>
 															<th>예시</th>
 															<th>&nbsp;</th>
 														</tr>
