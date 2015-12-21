@@ -135,10 +135,17 @@
                             model: common.ui.data.Property
                         }
 					}),
+					ratingLevelDataSource : new kendo.data.DataSource({
+						data : [],
+						schema: {
+							model: common.ui.data.competency.RatingLevel
+						}		
+					}),
 					setSource: function(source){
 						var $this = this;
 						source.copy($this.ratingScheme);	
 						$this.propertyDataSource.data($this.ratingScheme.properties);	
+						$this.ratingLevelDataSource.data($this.ratingScheme.ratingLevels);
 						if($this.ratingScheme.get("ratingSchemeId") == 0)
 						{
 							$this.ratingScheme.set("objectType", 1);
@@ -157,7 +164,6 @@
 				 			$("#rating-scheme-details").slideDown();	
 				 		}
 				 		renderTo.find("ul.nav.nav-tabs a:first").tab('show');
-				 	
 					}
 				});						
 					
