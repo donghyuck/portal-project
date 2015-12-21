@@ -850,7 +850,7 @@
 														<tr>
 															<th width="60">점수</th>
 															<th>예시</th>
-															<th>&nbsp;</th>
+															<th width="100" >&nbsp;</th>
 														</tr>
 													</thead>
 														<tbody id="rating-level-listview"
