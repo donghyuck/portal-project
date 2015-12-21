@@ -69,6 +69,7 @@
 					},
 					select : function(e){
 						var $this = this;
+						console.log( $(this).html() );
 						console.log( common.ui.stringify(e) );
 						
 						
