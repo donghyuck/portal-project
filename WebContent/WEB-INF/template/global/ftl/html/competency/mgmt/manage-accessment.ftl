@@ -778,55 +778,56 @@
 									style="height: 300px; border-radius:0;"></div>
 							
 						<div class="padding-sm">
-						
-						
-						<div class="panel colourable">
-					<div class="panel-heading">
-						<span class="panel-title">With tabs</span>
-						<ul class="nav nav-tabs nav-tabs-xs">
-							<li class="">
-								<a href="#" data-toggle="tab">Home</a>
-							</li>
-							<li class="">
-								<a href="#" data-toggle="tab">Profile</a>
-							</li>
-							<li class="active">
-								<a href="#" data-toggle="tab">More</a>
-							</li>
-						</ul> <!-- / .nav -->
-					</div> <!-- / .panel-heading -->
-					<div class="panel-body">
-						Panel body content
-					</div>
-				</div>
-				
-						
+							<div class="panel colourable">
+								<div class="panel-heading">									
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="m-b-sm">
+												<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
+												<input type="text" class="form-control" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
+											</div>	
+											<div class="m-b-sm">				
+												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
+												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
+											</div>
+											<div class="m-b-sm">
+												<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
+												<select class="form-control" data-bind="{value: ratingScheme.scale, visible:editable}" placeholder="척도">
+													<option value="0" disabled selected>척도 선택</option>
+													<option value="2">2점 척도</option>
+													<option value="3">3점 척도</option>
+													<option value="4">4점 척도</option>
+													<option value="5">5점 척도</option>
+													<option value="6">6점 척도</option>
+													<option value="7">7점 척도</option>
+													<option value="8">8점 척도</option>
+												</select>
+											</div>
+										</div>
+									</div>									
+									<!--<span class="panel-title">With tabs</span>-->									
+									<ul class="nav nav-tabs nav-tabs-xs">
+										<li class="">
+											<a href="#" data-toggle="tab">Home</a>
+										</li>
+										<li class="">
+											<a href="#" data-toggle="tab">Profile</a>
+										</li>
+										<li class="active">
+											<a href="#" data-toggle="tab">More</a>
+										</li>
+									</ul> <!-- / .nav -->
+								</div> <!-- / .panel-heading -->
+								<div class="panel-body">
+									Panel body content
+								</div>
+							</div>						
 						</div>	
 							
 									
 						<div class="row padding-sm">
 							<div class="col-sm-6">
-								<div class="m-b-sm">
-									<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
-									<input type="text" class="form-control" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
-								</div>	
-								<div class="m-b-sm">				
-									<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
-									<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
-								</div>
-								<div class="m-b-sm">
-									<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
-									<select class="form-control" data-bind="{value: ratingScheme.scale, visible:editable}" placeholder="척도">
-										<option value="0" disabled selected>척도 선택</option>
-										<option value="2">2점 척도</option>
-										<option value="3">3점 척도</option>
-										<option value="4">4점 척도</option>
-										<option value="5">5점 척도</option>
-										<option value="6">6점 척도</option>
-										<option value="7">7점 척도</option>
-										<option value="8">8점 척도</option>
-									</select>
-								</div>
+								
 							</div>
 							<div class="col-sm-6">
 							
