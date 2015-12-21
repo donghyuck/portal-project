@@ -95,6 +95,11 @@
 						var $this = this;						
 						var btn = $(e.target);	
 						common.ui.progress(renderTo, true);
+						
+						
+						console.log($this.ratingScheme);
+						
+						/**
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/assessment/rating-scheme/update.json?output=json" />' , 
 							{
@@ -109,6 +114,7 @@
 								}
 							}
 						);							
+						**/
 						return false;
 					},					
 					ratingSchemeDataSource : new kendo.data.DataSource({
@@ -165,8 +171,7 @@
 				 		}
 				 		renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
-				});						
-					
+				});	
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );	
 				observable.ratingSchemeDataSource.read();
