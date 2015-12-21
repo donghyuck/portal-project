@@ -832,6 +832,25 @@
 											</ul>
 											<div class="tab-content tab-content-bordered no-padding">
 												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">
+																																					
+												<table class="table">
+													<thead>
+														<tr>
+															<th>#</th>
+															<th>First Name</th>
+															<th>Last Name</th>
+															<th>Username</th>
+														</tr>
+													</thead>
+													<tbody>
+														<div data-role="listview"
+											                 data-edit-template="rating-level-edit-template"
+											                 data-template="rating-level-view-template"
+											                 data-bind="source: source:ratingLevelDataSource"
+											                 style="height: 300px; overflow: auto"></div>													
+													</tbody>
+												</table>					
+													
 													<div data-role="grid"
 																	 class="no-border"
 													                 date-scrollable="true"
@@ -840,6 +859,8 @@
 													                 data-columns="[{ 'field': 'score', 'width': 270 , 'title':'점수'},{ 'field': 'title', 'title':'예시' } ]"
 													                 data-bind="source:ratingLevelDataSource, visible:editable"
 													                 style="height: 200px"></div>	
+													                 
+													                 
 												</div> <!-- / .tab-pane -->
 												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">													
 																<div data-role="grid"
@@ -871,6 +892,22 @@
 				</div>
 			</div>
 		</div>			
+		<script type="text/x-kendo-tmpl" id="rating-level-edit-template">
+		<tr>
+			<td>1</td>
+			<td>Mark</td>
+			<td>Otto</td>
+			<td>@mdo</td>
+		</tr>		
+		</script>
+		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
+		<tr>
+			<td>1</td>
+			<td>Mark</td>
+			<td>Otto</td>
+			<td>@mdo</td>
+		</tr>		
+		</script>										
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
