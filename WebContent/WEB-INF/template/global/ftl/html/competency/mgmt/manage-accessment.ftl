@@ -808,7 +808,7 @@
 
 											<ul id="uidemo-tabs-default-demo" class="nav nav-tabs">
 												<li class="">
-													<a href="#uidemo-tabs-default-demo-home" data-toggle="tab">척도</a>
+													<a href="#uidemo-tabs-default-demo-home" data-toggle="tab">척도 예시</a>
 												</li>
 												<li class="active">
 													<a href="#uidemo-tabs-default-demo-profile" data-toggle="tab">속성</a>
