@@ -78,7 +78,7 @@
 					view : function(e){
 						var $this = this;		
 						if($this.ratingScheme.ratingSchemeId < 1){
-							//renderTo.hide();	
+							$("#rating-scheme-details").hide();	
 						}
 						$this.set("visible", true);
 						$this.set("editable", false);
@@ -159,7 +159,9 @@
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 			}					
+			
 			renderTo.data("model").ratingSchemeDataSource.fetch();	
+			
 		}
 		
 		
