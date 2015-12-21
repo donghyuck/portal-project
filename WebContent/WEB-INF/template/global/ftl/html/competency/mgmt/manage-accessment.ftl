@@ -158,8 +158,8 @@
 				});							
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
-			}		
-			renderTo.data("model").ratingSchemeDataSource.fetch();								
+				observable.ratingSchemeDataSource.read();
+			}						
 		}
 		
 		
