@@ -910,6 +910,10 @@
 			<td>
 				<a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
                 <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
+                <div class="btn-group btn-group-sm">
+                	<a class="btn btn-flat k-edit-button" href="\\#">수정</a>
+               		<a class="btn btn-flat btn-danger k-delete-button" href="\\#">삭제</a>
+                </div>
 			</td>
 		</tr>		
 		</script>
