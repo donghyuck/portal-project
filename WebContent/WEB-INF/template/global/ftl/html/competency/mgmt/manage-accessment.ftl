@@ -808,20 +808,21 @@
 
 											<ul id="uidemo-tabs-default-demo" class="nav nav-tabs">
 												<li class="">
-													<a href="#uidemo-tabs-default-demo-home" data-toggle="tab">Home <span class="label label-success">12</span></a>
+													<a href="#uidemo-tabs-default-demo-home" data-toggle="tab">척도</a>
 												</li>
 												<li class="active">
-													<a href="#uidemo-tabs-default-demo-profile" data-toggle="tab">Profile <span class="badge badge-primary">12</span></a>
+													<a href="#uidemo-tabs-default-demo-profile" data-toggle="tab">속성</a>
 												</li>
 											</ul>
 
-											<div class="tab-content tab-content-bordered">
+											<div class="tab-content tab-content-bordered no-padding">
 												<div class="tab-pane fade" id="uidemo-tabs-default-demo-home">
 													
 												</div> <!-- / .tab-pane -->
 												<div class="tab-pane fade active in" id="uidemo-tabs-default-demo-profile">
 													
 																<div data-role="grid"
+																	 class="no-border"
 													                 date-scrollable="true"
 													                 data-editable="true"
 													                 data-toolbar="['create']"
