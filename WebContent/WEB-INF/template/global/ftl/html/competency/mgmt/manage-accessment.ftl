@@ -466,7 +466,7 @@
 							$this.set("deletable", true);		
 							$this.competencyDataSource.read({ jobId: $this.job.get('jobId') });		
 							renderTo.find("ul.nav.nav-tabs a:first").tab('show')																		
-						}
+						}		
 					}						
 				});
 				renderTo.data("model", observable );
@@ -804,22 +804,19 @@
 									</div>			
 									<div class="row">
 										<div class="col-sm-12">
-
-											<ul id="uidemo-tabs-default-demo" class="nav nav-tabs nav-tabs-xs">
-												<li class="">
-													<a href="#uidemo-tabs-default-demo-home" data-toggle="tab">척도 예시</a>
+											<ul id="rating-scheme-details-tabs" class="nav nav-tabs nav-tabs-xs">
+												<li class="m-l-sm">
+													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">척도 예시</a>
 												</li>
-												<li class="active">
-													<a href="#uidemo-tabs-default-demo-profile" data-toggle="tab">속성</a>
+												<li class="">
+													<a href="#rating-scheme-details-tabs-2" data-toggle="tab">속성</a>
 												</li>
 											</ul>
-
 											<div class="tab-content tab-content-bordered no-padding">
-												<div class="tab-pane fade" id="uidemo-tabs-default-demo-home">
+												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">
 													
 												</div> <!-- / .tab-pane -->
-												<div class="tab-pane fade active in" id="uidemo-tabs-default-demo-profile">
-													
+												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">													
 																<div data-role="grid"
 																	 class="no-border"
 													                 date-scrollable="true"
