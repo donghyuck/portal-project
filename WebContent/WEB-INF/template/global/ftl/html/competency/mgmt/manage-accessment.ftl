@@ -70,7 +70,7 @@
 					select : function(e){
 						var $this = this;
 						console.log(e.data);	
-						console.log($(e));
+						console.log($(e.target));
 							
 							
 						var grid = $(e.data);
