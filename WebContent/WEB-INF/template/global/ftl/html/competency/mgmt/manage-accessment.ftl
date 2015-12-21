@@ -152,17 +152,17 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);						
-						}
-						
-						
+						}						
 						if( !$("#rating-scheme-details").is(":visible") ){
 				 			$("#rating-scheme-details").slideDown();	
 				 		}
 				 		renderTo.find("ul.nav.nav-tabs a:first").tab('show');
+				 	
 					}
-				});							
+				});						
+					
 				renderTo.data("model", observable);	
-				kendo.bind(renderTo, observable );
+				kendo.bind(renderTo, observable );	
 				observable.ratingSchemeDataSource.read();
 			}						
 		}
