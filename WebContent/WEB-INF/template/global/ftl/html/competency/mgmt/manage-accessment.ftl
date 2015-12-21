@@ -841,17 +841,15 @@
 												
 												<div class="p-xxs bg-gray">
 													<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
-														<span class="btn-label icon fa fa-plus"> 척도 추가</span> 
+														<span class="btn-label icon fa fa-plus"></span>척도 추가 
 													</button>
 												</div>
 																																					
 												<table class="table">
 													<thead>
 														<tr>
-															<th>#</th>
-															<th>First Name</th>
-															<th>Last Name</th>
-															<th>Username</th>
+															<th>점수</th>
+															<th>예시</th>
 														</tr>
 													</thead>
 														<tbody  id="rating-level-listview"
@@ -906,18 +904,20 @@
 		</div>			
 		<script type="text/x-kendo-tmpl" id="rating-level-edit-template">
 		<tr>
-			<td>1</td>
-			<td>Mark</td>
-			<td>Otto</td>
-			<td>@mdo</td>
+			<td>#: score #</td>
+			<td>#: title #</td>
 		</tr>		
 		</script>
 		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
 		<tr>
-			<td>1</td>
-			<td>Mark</td>
-			<td>Otto</td>
-			<td>@mdo</td>
+			<td>
+				<input type="text" data-bind="value:score" data-role="numerictextbox" name="Score" required="required" data-type="number" min="0" validationMessage="required" />
+                <span data-for="Score" class="k-invalid-msg"></span>
+			</td>
+			<td>
+				<input type="text" class="k-textbox" data-bind="value:title" name="Title" required="required" validationMessage="required" />
+                    <span data-for="Title" class="k-invalid-msg"></span>
+			</td>
 		</tr>		
 		</script>										
 		<#include "/html/common/common-system-templates.ftl" >			
