@@ -777,7 +777,8 @@
 									data-bind="source: ratingSchemeDataSource, events : { change: select }"
 									style="height: 300px; border-radius:0;"></div>			
 													
-						<div id="rating-scheme-details" class="form-horizontal">						
+						<div id="rating-scheme-details" class="form-horizontal">		
+									<hr/>				
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="form-group no-margin-hr">
