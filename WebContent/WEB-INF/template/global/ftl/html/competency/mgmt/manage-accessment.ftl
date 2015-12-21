@@ -846,7 +846,7 @@
 														<div data-role="listview"
 											                 data-edit-template="rating-level-edit-template"
 											                 data-template="rating-level-view-template"
-											                 data-bind="source: source:ratingLevelDataSource"
+											                 data-bind="source:ratingLevelDataSource"
 											                 style="height: 300px; overflow: auto"></div>													
 													</tbody>
 												</table>					
