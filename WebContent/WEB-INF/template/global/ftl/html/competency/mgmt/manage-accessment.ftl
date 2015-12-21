@@ -848,11 +848,12 @@
 												<table class="table">
 													<thead>
 														<tr>
-															<th>점수</th>
+															<th width="30">점수</th>
 															<th>예시</th>
+															<th>&nbsp;</th>
 														</tr>
 													</thead>
-														<tbody  id="rating-level-listview"
+														<tbody id="rating-level-listview"
 															data-role="listview"
 															data-edit-template="rating-level-edit-template"
 											                data-template="rating-level-view-template"
@@ -906,6 +907,10 @@
 		<tr>
 			<td>#: score #</td>
 			<td>#: title #</td>
+			<td>
+				<a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
+                <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
+			</td>
 		</tr>		
 		</script>
 		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
@@ -917,6 +922,10 @@
 			<td>
 				<input type="text" class="k-textbox" data-bind="value:title" name="Title" required="required" validationMessage="required" />
                     <span data-for="Title" class="k-invalid-msg"></span>
+			</td>
+			<td>
+				<a class="k-button k-update-button" href="\\#"><span class="k-icon k-update"></span></a>
+                <a class="k-button k-cancel-button" href="\\#"><span class="k-icon k-cancel"></span></a>
 			</td>
 		</tr>		
 		</script>										
