@@ -68,7 +68,8 @@
 						return false;
 					},
 					select : function(e){
-						var $this = this;	
+						var $this = this;
+						console.log(e);	
 						var grid = e.data;
 						var selectedRows = this.select();
 						var dataItem = this.dataItem(selectedRows[0]);
