@@ -91,6 +91,10 @@
 						$this.set("updatable", true);
 						return false;
 					},
+					addRatingLevel: function(e){
+						common.ui.listview($('#rating-level-listview')).addRow();
+						e.preventDefault();
+					},
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
@@ -175,7 +179,8 @@
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );	
 				observable.ratingSchemeDataSource.read();
-			}						
+			}
+									
 		}
 		
 		
@@ -832,6 +837,13 @@
 											</ul>
 											<div class="tab-content tab-content-bordered no-padding">
 												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">
+																							
+												
+												<div class="p-xxs bg-gray">
+													<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
+														<span class="btn-label icon fa fa-plus"> 척도 추가</span> 
+													</button>
+												</div>
 																																					
 												<table class="table">
 													<thead>
@@ -842,7 +854,8 @@
 															<th>Username</th>
 														</tr>
 													</thead>
-														<tbody data-role="listview"
+														<tbody id="" data-role="listview"
+															 class="rating-level-listview"
 											                 data-edit-template="rating-level-edit-template"
 											                 data-template="rating-level-view-template"
 											                 data-bind="source:ratingLevelDataSource"
