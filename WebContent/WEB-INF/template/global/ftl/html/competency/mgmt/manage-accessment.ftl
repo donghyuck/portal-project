@@ -69,11 +69,8 @@
 					},
 					select : function(e){
 						var $this = this;
-						console.log(e.data);	
-						console.log($(e.target));
-							
-							
-						var grid = $(e.data);
+						console.log(e);								
+						var grid = common.ui.grid($(e.target));
 						var selectedRows = this.select();
 						var dataItem = this.dataItem(selectedRows[0]);
 						setSource( dataItem );						
