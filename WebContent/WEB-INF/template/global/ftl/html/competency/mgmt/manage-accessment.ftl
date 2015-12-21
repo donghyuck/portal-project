@@ -97,7 +97,7 @@
 						common.ui.progress(renderTo, true);
 						
 						
-						console.log($this.ratingScheme);
+						console.log( common.ui.stringify( $this.ratingScheme ) );
 						
 						/**
 						common.ui.ajax(
