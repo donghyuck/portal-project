@@ -138,8 +138,6 @@
 						var $this = this;
 						source.copy($this.ratingScheme);	
 						$this.propertyDataSource.data($this.ratingScheme.properties);	
-							
-						console.log( common.ui.stringify($this.ratingScheme) );
 						if($this.ratingScheme.get("ratingSchemeId") == 0)
 						{
 							$this.ratingScheme.set("objectType", 1);
@@ -158,10 +156,8 @@
 				});							
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
-			}					
-			
-			renderTo.data("model").ratingSchemeDataSource.fetch();	
-			
+			}		
+			renderTo.data("model").ratingSchemeDataSource.fetch();								
 		}
 		
 		
