@@ -805,7 +805,7 @@
 											</div>
 										</div>
 									</div>									
-									<!--<span class="panel-title">With tabs</span>-->									
+									<span class="panel-title">&nbsp;</span>								
 									<ul class="nav nav-tabs nav-tabs-xs">
 										<li class="">
 											<a href="#" data-toggle="tab">Home</a>
