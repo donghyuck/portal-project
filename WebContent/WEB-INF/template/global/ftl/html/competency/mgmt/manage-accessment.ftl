@@ -70,7 +70,7 @@
 					select : function(e){
 						var $this = this;
 						console.log(e);								
-						var grid = common.ui.grid($(e.target));
+						var grid = common.ui.grid($(e.sender));
 						var selectedRows = this.select();
 						var dataItem = this.dataItem(selectedRows[0]);
 						setSource( dataItem );						
