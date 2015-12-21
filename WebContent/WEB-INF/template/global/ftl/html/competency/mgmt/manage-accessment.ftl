@@ -152,6 +152,7 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);						
 						}
+						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});							
 				renderTo.data("model", observable);	
@@ -465,7 +466,7 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);		
 							$this.competencyDataSource.read({ jobId: $this.job.get('jobId') });		
-							renderTo.find("ul.nav.nav-tabs a:first").tab('show')																		
+							renderTo.find("ul.nav.nav-tabs a:first").tab('show')																					
 						}		
 					}						
 				});
