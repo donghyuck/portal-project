@@ -787,19 +787,52 @@
 									<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
 									<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
 								</div>
-								<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
-								<select class="form-control" data-bind="{value: ratingScheme.scale, visible:editable}" placeholder="척도">
-									<option value="0" disabled selected>척도 선택</option>
-									<option value="2">2점 척도</option>
-									<option value="3">3점 척도</option>
-									<option value="4">4점 척도</option>
-									<option value="5">5점 척도</option>
-									<option value="6">6점 척도</option>
-									<option value="7">7점 척도</option>
-									<option value="8">8점 척도</option>
-								</select>
+								<div class="m-b-sm">
+									<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
+									<select class="form-control" data-bind="{value: ratingScheme.scale, visible:editable}" placeholder="척도">
+										<option value="0" disabled selected>척도 선택</option>
+										<option value="2">2점 척도</option>
+										<option value="3">3점 척도</option>
+										<option value="4">4점 척도</option>
+										<option value="5">5점 척도</option>
+										<option value="6">6점 척도</option>
+										<option value="7">7점 척도</option>
+										<option value="8">8점 척도</option>
+									</select>
+								</div>
 							</div>
 							<div class="col-sm-6">
+							
+							
+						<div class="panel-group" id="rating-scheme-modal-accordion">
+							<div class="panel">
+								<div class="panel-heading">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#rating-scheme-modal-accordion" href="#collapseOne">
+										Collapsible Group Item #1
+									</a>
+								</div> <!-- / .panel-heading -->
+								<div id="collapseOne" class="panel-collapse collapse in" style="height: auto;">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div> <!-- / .panel-body -->
+								</div> <!-- / .collapse -->
+							</div> <!-- / .panel -->
+
+							<div class="panel">
+								<div class="panel-heading">
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#rating-scheme-modal-accordion" href="#collapseTwo">
+										Collapsible Group Item #2
+									</a>
+								</div> <!-- / .panel-heading -->
+								<div id="collapseTwo" class="panel-collapse collapse" style="height: 0px;">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div> <!-- / .panel-body -->
+								</div> <!-- / .collapse -->
+							</div> <!-- / .panel -->
+						</div>
+													
+							
 								<div class="m-b-sm">
 										<div data-role="grid"
 								                 date-scrollable="true"
