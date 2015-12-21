@@ -761,13 +761,13 @@
 						<h3 class="modal-title">척도</h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body no-padding">
-						<div class="p-xxs bg-gray">
+					<div class="modal-body">
+						<div class="p-xxs">
 							<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span>진단척도 추가 </button>
 							<button class="btn btn-flat btn-outline btn-default pull-right" data-bind="click:refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침</button>
 						</div>
 						<div id="rating-scheme-grid" 
-									data-role="grid" class="no-shadow no-border-hr"
+									data-role="grid"
 									 data-auto-bind="false"
 									 data-selectable="true"
 									 data-scrollable="true"
@@ -775,10 +775,8 @@
 									   	{ 'field':'name' , 'title':'이름' }
 									 ]"
 									data-bind="source: ratingSchemeDataSource, events : { change: select }"
-									style="height: 300px; border-radius:0;"></div>
-							
-						<div id="rating-scheme-details" class="padding-sm">
-						
+									style="height: 300px; border-radius:0;"></div>							
+						<div id="rating-scheme-details">						
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="m-b-sm">
@@ -807,8 +805,6 @@
 									<div class="row">
 										<div class="col-sm-12">
 
-
-					<div class="panel-body">
 						<ul id="uidemo-tabs-default-demo" class="nav nav-tabs">
 							<li class="">
 								<a href="#uidemo-tabs-default-demo-home" data-toggle="tab">Home <span class="label label-success">12</span></a>
@@ -816,32 +812,25 @@
 							<li class="active">
 								<a href="#uidemo-tabs-default-demo-profile" data-toggle="tab">Profile <span class="badge badge-primary">12</span></a>
 							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="#uidemo-tabs-default-demo-dropdown1" data-toggle="tab">@fat</a></li>
-									<li><a href="#uidemo-tabs-default-demo-dropdown2" data-toggle="tab">@mdo</a></li>
-								</ul>
-							</li> <!-- / .dropdown -->
 						</ul>
 
 						<div class="tab-content tab-content-bordered">
 							<div class="tab-pane fade" id="uidemo-tabs-default-demo-home">
-								<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+								
 							</div> <!-- / .tab-pane -->
 							<div class="tab-pane fade active in" id="uidemo-tabs-default-demo-profile">
-								<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-							</div> <!-- / .tab-pane -->
-							<div class="tab-pane fade" id="uidemo-tabs-default-demo-dropdown1">
-								<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-							</div> <!-- / .tab-pane -->
-							<div class="tab-pane fade" id="uidemo-tabs-default-demo-dropdown2">
-								<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-							</div> <!-- / .tab-pane -->
+								
+											<div data-role="grid"
+								                 date-scrollable="true"
+								                 data-editable="true"
+								                 data-toolbar="['create']"
+								                 data-columns="[{ 'field': 'name', 'width': 270 },{ 'field': 'value' } ]"
+								                 data-bind="source:propertyDataSource, visible:editable"
+								                 style="height: 200px"></div>
+								                 								
+								
+							</div> <!-- / .tab-pane -->							
 						</div> <!-- / .tab-content -->
-					</div>
-						
-										
 										</div>
 									</div>	
 																
@@ -864,13 +853,7 @@
 									</ul> <!-- / .nav -->
 								</div> <!-- / .panel-heading -->
 								<div class="panel-body">
-												<div data-role="grid"
-								                 date-scrollable="true"
-								                 data-editable="true"
-								                 data-toolbar="['create']"
-								                 data-columns="[{ 'field': 'name', 'width': 270 },{ 'field': 'value' } ]"
-								                 data-bind="source:propertyDataSource, visible:editable"
-								                 style="height: 200px"></div>
+												
 								</div>
 							</div>						
 						</div>	
