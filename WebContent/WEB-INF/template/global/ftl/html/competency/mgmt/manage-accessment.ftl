@@ -916,11 +916,11 @@
 		<script type="text/x-kendo-tmpl" id="rating-level-edit-template">
 		<tr>
 			<td>
-				<input type="text" data-bind="value:score" data-role="numerictextbox" name="Score" required="required" data-type="number" min="0" validationMessage="required" />
+				<input type="number" class="form-control" data-bind="value:score" data-role="numerictextbox" name="Score" required="required" data-type="number" min="0" validationMessage="required" />
                 <span data-for="Score" class="k-invalid-msg"></span>
 			</td>
 			<td>
-				<input type="text" class="k-textbox" data-bind="value:title" name="Title" required="required" validationMessage="required" />
+				<input type="text" class="form-control k-textbox" data-bind="value:title" name="Title" required="required" validationMessage="required" />
                     <span data-for="Title" class="k-invalid-msg"></span>
 			</td>
 			<td>
