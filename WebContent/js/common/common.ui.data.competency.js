@@ -142,6 +142,7 @@
 			description:  { type: "string" },
 			scale: { type: "number", defaultValue:0 },
 			properties : {type: "object" , defaultValue:"[]"},
+			ratingLevels : {type: "object" , ratingLevels:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
 		},
@@ -153,11 +154,25 @@
 	    	target.set("description", this.get("description"));
 	    	target.set("scale", this.get("scale"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
-	    	target.set("creationDate", this.get("creationDate"));	    	
-	    	if( typeof this.get("properties") === 'object' )
-	    		target.set("properties", this.get("properties"));
-	    	else
-	    		target.set("properties", []);
+	    	target.set("creationDate", this.get("creationDate"));	 
+	    	target.set("ratingLevels", this.get("ratingLevels"));	  
+	    	target.set("properties", this.get("properties"));
+		}
+	});
+
+	var RatingLevel = kendo.data.Model.define( {
+		id : "ratingLevelId",
+		fields: {
+			ratingSchemeId: { type: "number", defaultValue: 0},
+			ratingLevelId: { type: "number", defaultValue: 0},
+			title : { type: "string" },
+			score: { type: "number", defaultValue:0 }
+		},
+		copy : function ( target ){
+			target.set("ratingSchemeId", this.get("ratingSchemeId"));
+	    	target.set("ratingLevelId", this.get("ratingLevelId"));
+	    	target.set("title", this.get("title"));
+	    	target.set("score", this.get("score"));    	
 		}
 	});
 	
@@ -203,7 +218,8 @@
 			EssentialElement : EssentialElement,
 			PerformanceCriteria : PerformanceCriteria,
 			Ability : Ability,
-			RatingScheme:RatingScheme
+			RatingScheme:RatingScheme,
+			RatingLevel:RatingLevel
 		}  
 	} );
 	
