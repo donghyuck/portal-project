@@ -92,7 +92,7 @@
 						return false;
 					},
 					addRatingLevel: function(e){
-						common.ui.listview($('#rating-level-listview')).addRow();
+						common.ui.listview($('#rating-level-listview')).add();
 						e.preventDefault();
 					},
 					saveOrUpdate : function(e){
