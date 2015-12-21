@@ -832,7 +832,14 @@
 											</ul>
 											<div class="tab-content tab-content-bordered no-padding">
 												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">
-													
+													<div data-role="grid"
+																	 class="no-border"
+													                 date-scrollable="true"
+													                 data-editable="true"
+													                 data-toolbar="['create']"
+													                 data-columns="[{ 'field': 'score', 'width': 270 , 'title':'점수'},{ 'field': 'value', 'title':'예시' } ]"
+													                 data-bind="source:ratingLevelDataSource, visible:editable"
+													                 style="height: 200px"></div>	
 												</div> <!-- / .tab-pane -->
 												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">													
 																<div data-role="grid"
