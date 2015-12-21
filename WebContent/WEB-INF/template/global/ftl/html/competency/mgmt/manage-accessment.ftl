@@ -70,7 +70,7 @@
 					select : function(e){
 						var $this = this;
 						console.log(e.data);	
-						console.log(e.data('kendoGrid'));
+						console.log($(e));
 							
 							
 						var grid = $(e.data);
