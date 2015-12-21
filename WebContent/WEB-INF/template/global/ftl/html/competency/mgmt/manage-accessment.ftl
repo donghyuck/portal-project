@@ -850,7 +850,7 @@
 														<tr>
 															<th width="175">점수</th>
 															<th>예시</th>
-															<th width="100" >&nbsp;</th>
+															<th width="120" >&nbsp;</th>
 														</tr>
 													</thead>
 														<tbody id="rating-level-listview"
@@ -908,11 +908,9 @@
 			<td>#: score #</td>
 			<td>#: title #</td>
 			<td>
-				<a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
-                <a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
                 <div class="btn-group btn-group-sm">
-                	<a class="btn btn-flat k-edit-button" href="\\#">수정</a>
-               		<a class="btn btn-flat btn-danger k-delete-button" href="\\#">삭제</a>
+                	<a class="btn btn-flat btn-outline btn-primary k-edit-button" href="\\#">수정</a>
+               		<a class="btn btn-flat btn-outline btn-danger k-delete-button" href="\\#">삭제</a>
                 </div>
 			</td>
 		</tr>		
@@ -928,8 +926,10 @@
                     <span data-for="Title" class="k-invalid-msg"></span>
 			</td>
 			<td>
-				<a class="k-button k-update-button" href="\\#"><span class="k-icon k-update"></span></a>
-                <a class="k-button k-cancel-button" href="\\#"><span class="k-icon k-cancel"></span></a>
+                <div class="btn-group btn-group-sm">
+                	<a class="btn btn-flat btn-outline btn-success k-update-button" href="\\#">확인</a>
+               		<a class="btn btn-flat btn-outline btn-danger k-cancel-button" href="\\#">취소</a>
+                </div>                
 			</td>
 		</tr>		
 		</script>										
