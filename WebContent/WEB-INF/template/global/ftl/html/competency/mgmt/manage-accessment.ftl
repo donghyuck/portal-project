@@ -153,18 +153,17 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);						
 						}
-						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
+						
+						
+						if( !$("#rating-scheme-details").is(":visible") ){
+				 			$("#rating-scheme-details").slideDown();	
+				 		}
+				 		renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});							
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 				observable.ratingSchemeDataSource.read();
-								
-				render.on('show.bs.modal', function () {
-				 	if( !$("#rating-scheme-details").is(":visible") ){
-				 		$("#rating-scheme-details").slideDown();				 	
-				 	}
-				})
 			}						
 		}
 		
