@@ -853,24 +853,21 @@
 															<span class="btn-label icon fa fa-undo"></span>변경 취소 
 														</button>
 													</div>																																					
-													<table class="table table-striped" data-bind="attr: { data-editable: editable }">
+													<table class="table table-striped" data-bind="visible:visible">
 														<thead>
 															<tr>
 																<th width="175">점수</th>
 																<th>예시</th>
-																<th width="120" >&nbsp;</th>
 															</tr>
 														</thead>
 														<tbody id="rating-level-listview"
 																class="no-border"
 																data-role="listview"
-																data-edit-template="rating-level-edit-template"
 												                data-template="rating-level-view-template"
 												                data-bind="source:ratingLevelDataSource"
 												                style="height: 200px; overflow: auto">
 												        </tbody>
-													</table>
-													
+													</table>													
 													<div data-role="grid"
 																	 class="no-border"
 													                 date-scrollable="true"
@@ -916,12 +913,6 @@
 		<tr>
 			<td>#: score #</td>
 			<td>#: title #</td>
-			<td>
-                <div class="btn-group btn-group-sm">
-                	<a class="btn btn-flat btn-outline btn-primary k-edit-button" href="\\#">수정</a>
-               		<a class="btn btn-flat btn-outline btn-danger k-delete-button" href="\\#">삭제</a>
-                </div>
-			</td>
 		</tr>		
 		</script>
 		<script type="text/x-kendo-tmpl" id="rating-level-edit-template">
