@@ -99,11 +99,6 @@
 						var $this = this;						
 						var btn = $(e.target);	
 						common.ui.progress(renderTo, true);
-						
-						
-						console.log( common.ui.stringify( $this.ratingScheme ) );
-						
-						/**
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/assessment/rating-scheme/update.json?output=json" />' , 
 							{
@@ -114,11 +109,10 @@
 									$this.ratingSchemeDataSource.read();
 								},
 								complete : function(e){
-									common.ui.progress(renderTo, false);
+									common.ui.progress(renderTo.find(".modal-dialog"), false);
 								}
 							}
-						);							
-						**/
+						);		
 						return false;
 					},					
 					ratingSchemeDataSource : new kendo.data.DataSource({
@@ -453,7 +447,7 @@
 					saveOrUpdate : function(e){
 						var $this = this;
 						var btn = $(e.target);	
-						common.ui.progress(renderTo, true);
+						common.ui.progress(renderTo.find(".modal-dialog"), true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/job/update.json?output=json" />' , 
 							{
@@ -464,7 +458,7 @@
 									getJobGrid().dataSource.read();
 								},
 								complete : function(e){
-									common.ui.progress(renderTo, false);
+									common.ui.progress(renderTo.find(".modal-dialog"), false);
 								}
 							}
 						);	
