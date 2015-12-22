@@ -622,7 +622,7 @@
 			font-weight: normal;
 		}
 		
-		table[data-editable=true] .btn {
+		table[data-editable=false] .btn {
 			display:none;
 		}
 		
