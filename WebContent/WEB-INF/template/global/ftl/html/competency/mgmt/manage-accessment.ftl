@@ -885,14 +885,16 @@
 										</div><!-- / .col-sm-12 -->
 									</div><!-- / .row -->										
 						
+						
+							<div class="p-sm">
+								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	
+							</div>							
 						</div> <!-- /.rating-scheme-details -->
 						
-						<div class="p-sm">
-							<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
-							<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
-							<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
-							<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	
-						</div>	
+						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
