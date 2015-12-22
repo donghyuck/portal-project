@@ -937,7 +937,35 @@
                 </div>                
 			</td>
 		</tr>		
-		</script>										
+		</script>		
+		<script type="text/x-kendo-tmpl" id="property-view-template">
+		<tr>
+			<td>#: name #</td>
+			<td>#: value #</td>
+			<td>
+                <div class="btn-group btn-group-sm">
+                	<a class="btn btn-flat btn-outline btn-primary k-edit-button" href="\\#">수정</a>
+               		<a class="btn btn-flat btn-outline btn-danger k-delete-button" href="\\#">삭제</a>
+                </div>
+			</td>
+		</tr>		
+		</script>
+		<script type="text/x-kendo-tmpl" id="property-edit-template">
+		<tr>
+			<td>
+				<input type="number" data-bind="value: name" data-role="numerictextbox" name="Name" required="required" validationMessage="required" />
+			</td>
+			<td>
+				<input type="text" class="form-control k-textbox" data-bind="value: value" name="Value" required="required" validationMessage="required" />
+			</td>
+			<td>
+                <div class="btn-group btn-group-sm">
+                	<a class="btn btn-flat btn-outline btn-success k-update-button" href="\\#">확인</a>
+               		<a class="btn btn-flat btn-outline btn-danger k-cancel-button" href="\\#">취소</a>
+                </div>                
+			</td>
+		</tr>		
+		</script>												
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
