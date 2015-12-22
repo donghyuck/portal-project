@@ -155,8 +155,16 @@
 	    	target.set("scale", this.get("scale"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate"));	 
-	    	target.set("ratingLevels", this.get("ratingLevels"));	  
-	    	target.set("properties", this.get("properties"));
+	    	
+	    	if( typeof this.get("ratingLevels") === 'object' )
+	    		target.set("ratingLevels", this.get("ratingLevels"));
+	    	else
+	    		target.set("ratingLevels", []);	  
+	    	
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    	else
+	    		target.set("properties", []);	 
 		}
 	});
 
