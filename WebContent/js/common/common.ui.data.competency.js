@@ -142,7 +142,7 @@
 			description:  { type: "string" },
 			scale: { type: "number", defaultValue:0 },
 			properties : {type: "object" , defaultValue:"[]"},
-			ratingLevels : {type: "object" , ratingLevels:"[]"},
+			ratingLevels : {type: "object" , defaultValue:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
 		},
