@@ -622,6 +622,10 @@
 			font-weight: normal;
 		}
 		
+		table[data-editable=true] .btn {
+			display:none;
+		}
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -842,7 +846,7 @@
 														<span class="btn-label icon fa fa-plus"></span>척도 추가 
 													</button>
 												</div>																																					
-												<table class="table table-striped">
+												<table class="table table-striped" data-bind="attr: { data-editable: editable }">
 													<thead>
 														<tr>
 															<th width="175">점수</th>
@@ -851,6 +855,7 @@
 														</tr>
 													</thead>
 													<tbody id="rating-level-listview"
+															class="no-border"
 															data-role="listview"
 															data-edit-template="rating-level-edit-template"
 											                data-template="rating-level-view-template"
