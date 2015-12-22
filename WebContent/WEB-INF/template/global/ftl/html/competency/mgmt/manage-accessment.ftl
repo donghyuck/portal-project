@@ -887,7 +887,7 @@
 													    data-scrollable="true"
 													    data-editable="true"
 													    data-toolbar="['create', 'cancel']"
-													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' }, { 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '250px' }] ]"
+													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '250px' }]"
 													    data-bind="source:propertyDataSource, visible:editable"
 													    style="height: 200px"></div>
 												</div> <!-- / .tab-pane -->							
