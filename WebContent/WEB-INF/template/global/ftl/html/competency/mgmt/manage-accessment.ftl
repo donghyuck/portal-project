@@ -91,15 +91,6 @@
 						$this.set("updatable", true);
 						return false;
 					},
-					addRatingLevel: function(e){
-						common.ui.listview($('#rating-level-listview')).add();
-						e.preventDefault();
-					},
-					undoChangeRatingLevel:function(e){
-						var $this = this;
-						this.ratingLevelDataSource.cancelChanges();
-						e.preventDefault();
-					},
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
