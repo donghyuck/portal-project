@@ -65,6 +65,8 @@
 					create : function(){
 						var $this = this;
 						$this.setSource(new common.ui.data.competency.RatingScheme());
+								
+						console.log("create..");
 						return false;
 					},
 					select : function(e){
