@@ -841,32 +841,29 @@
 											</ul>
 											<div class="tab-content no-padding">
 												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">												
-												<div class="p-sm"  data-bind="visible:editable">
-													<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
-														<span class="btn-label icon fa fa-plus"></span>척도값 추가 
-													</button>
-												</div>																																					
-												<table class="table table-striped" data-bind="attr: { data-editable: editable }">
-													<thead>
-														<tr>
-															<th width="175">점수</th>
-															<th>예시</th>
-															<th width="120" >&nbsp;</th>
-														</tr>
-													</thead>
-													<tbody id="rating-level-listview"
-															class="no-border"
-															data-role="listview"
-															data-edit-template="rating-level-edit-template"
-											                data-template="rating-level-view-template"
-											                data-bind="source:ratingLevelDataSource"
-											                style="height: 300px; overflow: auto">
-											        </tbody>
-												</table>					
-												
-												
-												
-													
+													<div class="p-sm"  data-bind="visible:editable">
+														<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
+															<span class="btn-label icon fa fa-plus"></span>척도값 추가 
+														</button>
+													</div>																																					
+													<table class="table table-striped" data-bind="attr: { data-editable: editable }">
+														<thead>
+															<tr>
+																<th width="175">점수</th>
+																<th>예시</th>
+																<th width="120" >&nbsp;</th>
+															</tr>
+														</thead>
+														<tbody id="rating-level-listview"
+																class="no-border"
+																data-role="listview"
+																data-edit-template="rating-level-edit-template"
+												                data-template="rating-level-view-template"
+												                data-bind="source:ratingLevelDataSource"
+												                style="height: 300px; overflow: auto">
+												        </tbody>
+													</table>
+													<!--
 													<div data-role="grid"
 																	 class="no-border"
 													                 date-scrollable="true"
@@ -874,20 +871,18 @@
 													                 data-toolbar="['create']"
 													                 data-columns="[{ 'field': 'score', 'width': 270 , 'title':'점수'},{ 'field': 'title', 'title':'예시' } ]"
 													                 data-bind="source:ratingLevelDataSource, visible:editable"
-													                 style="height: 200px"></div>	
-													                 
-													                 
+													                 style="height: 200px"></div>
+													-->              
 												</div> <!-- / .tab-pane -->
 												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">													
-																<div data-role="grid"
-																	 class="no-border"
-													                 date-scrollable="true"
-													                 data-editable="true"
-													                 data-toolbar="['create']"
-													                 data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' } ]"
-													                 data-bind="source:propertyDataSource, visible:editable"
-													                 style="height: 200px"></div>								                 								
-								
+													<div data-role="grid"
+														class="no-border"
+													    date-scrollable="true"
+													    data-editable="true"
+													    data-toolbar="['create']"
+													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' } ]"
+													    data-bind="source:propertyDataSource, visible:editable"
+													    style="height: 200px"></div>
 												</div> <!-- / .tab-pane -->							
 											</div> <!-- / .tab-content -->
 										</div><!-- / .col-sm-12 -->
@@ -937,35 +932,7 @@
                 </div>                
 			</td>
 		</tr>		
-		</script>		
-		<script type="text/x-kendo-tmpl" id="property-view-template">
-		<tr>
-			<td>#: name #</td>
-			<td>#: value #</td>
-			<td>
-                <div class="btn-group btn-group-sm">
-                	<a class="btn btn-flat btn-outline btn-primary k-edit-button" href="\\#">수정</a>
-               		<a class="btn btn-flat btn-outline btn-danger k-delete-button" href="\\#">삭제</a>
-                </div>
-			</td>
-		</tr>		
-		</script>
-		<script type="text/x-kendo-tmpl" id="property-edit-template">
-		<tr>
-			<td>
-				<input type="number" data-bind="value: name" data-role="numerictextbox" name="Name" required="required" validationMessage="required" />
-			</td>
-			<td>
-				<input type="text" class="form-control k-textbox" data-bind="value: value" name="Value" required="required" validationMessage="required" />
-			</td>
-			<td>
-                <div class="btn-group btn-group-sm">
-                	<a class="btn btn-flat btn-outline btn-success k-update-button" href="\\#">확인</a>
-               		<a class="btn btn-flat btn-outline btn-danger k-cancel-button" href="\\#">취소</a>
-                </div>                
-			</td>
-		</tr>		
-		</script>												
+		</script>											
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
