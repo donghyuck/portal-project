@@ -876,7 +876,7 @@
 												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">													
 													<div data-role="grid"
 														class="no-border"
-													    date-scrollable="true"
+													    data-scrollable="true"
 													    data-editable="true"
 													    data-toolbar="['create', 'cancel']"
 													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' } ]"
