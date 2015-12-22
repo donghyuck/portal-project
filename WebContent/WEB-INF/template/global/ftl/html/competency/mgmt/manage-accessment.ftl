@@ -95,6 +95,11 @@
 						common.ui.listview($('#rating-level-listview')).add();
 						e.preventDefault();
 					},
+					undoChangeRatingLevel:function(e){
+						var $this = this;
+						this.ratingLevelDataSource.cancelChanges();
+						e.preventDefault();
+					},
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
@@ -843,6 +848,9 @@
 													<div class="p-sm"  data-bind="visible:editable">
 														<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
 															<span class="btn-label icon fa fa-plus"></span>척도값 추가 
+														</button>
+														<button class="btn btn-flat btn-labeled btn-outline btn-default" data-bind="click:undoChangeRatingLevel">
+															<span class="btn-label icon fa fa-undo"></span>변경 취소 
 														</button>
 													</div>																																					
 													<table class="table table-striped" data-bind="attr: { data-editable: editable }">
