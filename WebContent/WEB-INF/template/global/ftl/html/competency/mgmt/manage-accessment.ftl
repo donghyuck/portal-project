@@ -837,12 +837,12 @@
 											</ul>
 											<div class="tab-content no-padding">
 												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">												
-												<div class="p-sm">
+												<div class="p-sm"  data-bind="visible:editable>
 													<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
 														<span class="btn-label icon fa fa-plus"></span>척도 추가 
 													</button>
 												</div>																																					
-												<table class="table">
+												<table class="table table-striped">
 													<thead>
 														<tr>
 															<th width="175">점수</th>
@@ -850,13 +850,16 @@
 															<th width="120" >&nbsp;</th>
 														</tr>
 													</thead>
-														<tbody id="rating-level-listview"
+													<tbody id="rating-level-listview"
 															data-role="listview"
 															data-edit-template="rating-level-edit-template"
 											                data-template="rating-level-view-template"
 											                data-bind="source:ratingLevelDataSource"
-											                style="height: 300px; overflow: auto"></tbody>
+											                style="height: 300px; overflow: auto">
+											        </tbody>
 												</table>					
+												
+												
 												
 													
 													<div data-role="grid"
