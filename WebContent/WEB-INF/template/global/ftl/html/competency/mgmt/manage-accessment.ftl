@@ -63,10 +63,9 @@
 						$this.ratingSchemeDataSource.read();					
 					},
 					create : function(){
+						console.log("create..");
 						var $this = this;
 						$this.setSource(new common.ui.data.competency.RatingScheme());
-								
-						console.log("create..");
 						return false;
 					},
 					select : function(e){
