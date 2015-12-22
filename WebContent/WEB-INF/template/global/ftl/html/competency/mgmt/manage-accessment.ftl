@@ -150,8 +150,8 @@
 						source.copy($this.ratingScheme);	
 						$this.propertyDataSource.data($this.ratingScheme.properties);	
 						$this.ratingLevelDataSource.data($this.ratingScheme.ratingLevels);
-						$this.propertyDataSource.read();
-						$this.ratingLevelDataSource.read();
+						//$this.propertyDataSource.read();
+						//$this.ratingLevelDataSource.read();
 						if($this.ratingScheme.get("ratingSchemeId") == 0)
 						{
 							$this.ratingScheme.set("objectType", 1);
