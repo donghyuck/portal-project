@@ -837,7 +837,7 @@
 											</ul>
 											<div class="tab-content no-padding">
 												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">												
-												<div class="p-sm"  data-bind="visible:editable>
+												<div class="p-sm"  data-bind="visible:editable">
 													<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
 														<span class="btn-label icon fa fa-plus"></span>척도 추가 
 													</button>
