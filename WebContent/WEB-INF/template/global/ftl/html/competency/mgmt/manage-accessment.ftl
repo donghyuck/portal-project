@@ -840,7 +840,7 @@
 													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">척도값</a>
 												</li>
 												<li class="">
-													<a href="#rating-scheme-details-tabs-2" data-toggle="tab" data-bind="visible:editable">속성</a>
+													<a href="#rating-scheme-details-tabs-2" data-toggle="tab">속성</a>
 												</li>
 											</ul>
 											<div class="tab-content no-padding">
