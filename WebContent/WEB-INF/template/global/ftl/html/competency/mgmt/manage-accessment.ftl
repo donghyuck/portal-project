@@ -804,9 +804,9 @@
 									   	{ 'field':'name' , 'title':'이름' }
 									 ]"
 									data-bind="source: ratingSchemeDataSource, events : { change: select }"
-									style="height: 300px; border-radius:0;"></div>			
+									style="height: 200px; border-radius:0;"></div>			
 													
-						<div id="rating-scheme-details" class="form-horizontal" style="display:none;">		
+						<div id="rating-scheme-details" class="form-horizontal" style="display:none;" data-bind="attr: { data-editable: editable }">		
 									<hr/>				
 									<div class="row">
 										<div class="col-sm-12">
@@ -867,19 +867,19 @@
 																data-edit-template="rating-level-edit-template"
 												                data-template="rating-level-view-template"
 												                data-bind="source:ratingLevelDataSource"
-												                style="height: 300px; overflow: auto">
+												                style="height: 200px; overflow: auto">
 												        </tbody>
 													</table>
-													<!--
+													
 													<div data-role="grid"
 																	 class="no-border"
 													                 date-scrollable="true"
 													                 data-editable="true"
 													                 data-toolbar="['create', 'cancel']"
-													                 data-columns="[{ 'field': 'score', 'width': 270 , 'title':'점수'},{ 'field': 'title', 'title':'예시' } ]"
+													                 data-columns="[{ 'field': 'score', 'width': 270 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
 													                 data-bind="source:ratingLevelDataSource, visible:editable"
 													                 style="height: 200px"></div>
-													-->              
+													        
 												</div> <!-- / .tab-pane -->
 												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">													
 													<div data-role="grid"
@@ -887,7 +887,7 @@
 													    data-scrollable="true"
 													    data-editable="true"
 													    data-toolbar="['create', 'cancel']"
-													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '250px' }]"
+													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:propertyDataSource, visible:editable"
 													    style="height: 200px"></div>
 												</div> <!-- / .tab-pane -->							
