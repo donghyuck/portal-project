@@ -833,7 +833,7 @@
 										<div class="col-sm-12">
 											<ul id="rating-scheme-details-tabs" class="nav nav-tabs nav-tabs-xs">
 												<li class="m-l-sm">
-													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">척도 예시</a>
+													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">척도값</a>
 												</li>
 												<li class="">
 													<a href="#rating-scheme-details-tabs-2" data-toggle="tab">속성</a>
@@ -843,7 +843,7 @@
 												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">												
 												<div class="p-sm"  data-bind="visible:editable">
 													<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
-														<span class="btn-label icon fa fa-plus"></span>척도 추가 
+														<span class="btn-label icon fa fa-plus"></span>척도값 추가 
 													</button>
 												</div>																																					
 												<table class="table table-striped" data-bind="attr: { data-editable: editable }">
