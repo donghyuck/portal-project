@@ -973,6 +973,7 @@
 							<div role="tabpanel" class="tab-pane fade" id="essential-element-details-tabs-1">
 								<div id="ability-grid" class="no-border no-shadow no-rounded" 
 										data-role="grid"
+										data-auto-bind="false"
 										data-autoBind="false"
 										data-scrollable="true"
 						                data-editable="true"		

@@ -265,9 +265,7 @@
 				common.ui.bind( renderTo, observable );	
 			}			
 			
-			
-			if( source ){
-				
+			if( source ){				
 				if( source instanceof common.ui.data.competency.CodeSet ){
 					renderTo.data("model").setSource( source ) ;	
 				}else{
