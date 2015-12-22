@@ -835,16 +835,13 @@
 													<a href="#rating-scheme-details-tabs-2" data-toggle="tab">속성</a>
 												</li>
 											</ul>
-											<div class="tab-content tab-content-bordered no-padding">
-												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">
-																							
-												
-												<div class="p-xxs bg-gray">
+											<div class="tab-content no-padding">
+												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">												
+												<div class="p-sm">
 													<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
 														<span class="btn-label icon fa fa-plus"></span>척도 추가 
 													</button>
-												</div>
-																																					
+												</div>																																					
 												<table class="table">
 													<thead>
 														<tr>
