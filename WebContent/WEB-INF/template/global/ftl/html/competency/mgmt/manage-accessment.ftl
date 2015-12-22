@@ -134,12 +134,14 @@
 						error: common.ui.handleAjaxError					
 					}),
 					propertyDataSource :new kendo.data.DataSource({
+						batch: true,
 						data : [],
 						schema: {
                             model: common.ui.data.Property
                         }
 					}),
 					ratingLevelDataSource : new kendo.data.DataSource({
+						batch: true,
 						data : [],
 						schema: {
 							model: common.ui.data.competency.RatingLevel
@@ -865,7 +867,7 @@
 																	 class="no-border"
 													                 date-scrollable="true"
 													                 data-editable="true"
-													                 data-toolbar="['create']"
+													                 data-toolbar="['create', 'cancel']"
 													                 data-columns="[{ 'field': 'score', 'width': 270 , 'title':'점수'},{ 'field': 'title', 'title':'예시' } ]"
 													                 data-bind="source:ratingLevelDataSource, visible:editable"
 													                 style="height: 200px"></div>
@@ -876,7 +878,7 @@
 														class="no-border"
 													    date-scrollable="true"
 													    data-editable="true"
-													    data-toolbar="['create']"
+													    data-toolbar="['create', 'cancel']"
 													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' } ]"
 													    data-bind="source:propertyDataSource, visible:editable"
 													    style="height: 200px"></div>
