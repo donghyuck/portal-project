@@ -876,7 +876,7 @@
 													                 date-scrollable="true"
 													                 data-editable="true"
 													                 data-toolbar="['create', 'cancel']"
-													                 data-columns="[{ 'field': 'score', 'width': 270 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
+													                 data-columns="[{ 'field': 'score', 'width': 170 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
 													                 data-bind="source:ratingLevelDataSource, visible:editable"
 													                 style="height: 200px"></div>
 													        
