@@ -845,14 +845,6 @@
 											</ul>
 											<div class="tab-content no-padding">
 												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">												
-													<div class="p-sm"  data-bind="visible:editable">
-														<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addRatingLevel">
-															<span class="btn-label icon fa fa-plus"></span>척도값 추가 
-														</button>
-														<button class="btn btn-flat btn-labeled btn-outline btn-default" data-bind="click:undoChangeRatingLevel">
-															<span class="btn-label icon fa fa-undo"></span>변경 취소 
-														</button>
-													</div>																																					
 													<table class="table table-striped" data-bind="visible:visible">
 														<thead>
 															<tr>
@@ -860,8 +852,7 @@
 																<th>예시</th>
 															</tr>
 														</thead>
-														<tbody id="rating-level-listview"
-																class="no-border"
+														<tbody class="no-border"
 																data-role="listview"
 												                data-template="rating-level-view-template"
 												                data-bind="source:ratingLevelDataSource"
@@ -878,7 +869,21 @@
 													                 style="height: 200px"></div>
 													        
 												</div> <!-- / .tab-pane -->
-												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">													
+												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">		
+													<table class="table table-striped" data-bind="visible:visible">
+														<thead>
+															<tr>
+																<th width="270">이름</th>
+																<th>값</th>
+															</tr>
+														</thead>
+														<tbody  class="no-border"
+																data-role="listview"
+												                data-template="property-view-template"
+												                data-bind="source:propertyDataSource"
+												                style="height: 200px; overflow: auto">
+												        </tbody>
+													</table>																											
 													<div data-role="grid"
 														class="no-border"
 													    data-scrollable="true"
@@ -890,9 +895,7 @@
 												</div> <!-- / .tab-pane -->							
 											</div> <!-- / .tab-content -->
 										</div><!-- / .col-sm-12 -->
-									</div><!-- / .row -->										
-						
-						
+									</div><!-- / .row -->							
 							<div class="p-sm">
 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
@@ -915,23 +918,11 @@
 			<td>#: title #</td>
 		</tr>		
 		</script>
-		<script type="text/x-kendo-tmpl" id="rating-level-edit-template">
+		<script type="text/x-kendo-tmpl" id="property-view-template">
 		<tr>
-			<td>
-				<input type="number" data-bind="value:score" data-role="numerictextbox" name="Score" required="required" data-type="number" min="0" validationMessage="required" />
-                <span data-for="Score" class="k-invalid-msg"></span>
-			</td>
-			<td>
-				<input type="text" class="form-control k-textbox" data-bind="value:title" name="Title" required="required" validationMessage="required" />
-                    <span data-for="Title" class="k-invalid-msg"></span>
-			</td>
-			<td>
-                <div class="btn-group btn-group-sm">
-                	<a class="btn btn-flat btn-outline btn-success k-update-button" href="\\#">확인</a>
-               		<a class="btn btn-flat btn-outline btn-danger k-cancel-button" href="\\#">취소</a>
-                </div>                
-			</td>
-		</tr>		
+			<td>#: name #</td>
+			<td>#: value #</td>
+		</tr>	
 		</script>											
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
