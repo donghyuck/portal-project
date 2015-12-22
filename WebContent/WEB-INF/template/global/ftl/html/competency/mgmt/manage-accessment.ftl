@@ -62,7 +62,7 @@
 						var $this = this;						
 						$this.ratingSchemeDataSource.read();					
 					},
-					create : function(){
+					create : function(e){
 						console.log("create..");
 						var $this = this;
 						$this.setSource(new common.ui.data.competency.RatingScheme());
@@ -853,7 +853,7 @@
 													</table>													
 													<div data-role="grid"
 																	 class="no-border"
-													                 date-scrollable="true"
+													                 date-scrollable="false"
 													                 data-editable="true"
 													                 data-toolbar="['create', 'cancel']"
 													                 data-columns="[{ 'field': 'score', 'width': 170 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
@@ -879,7 +879,7 @@
 													</table>																											
 													<div data-role="grid"
 														class="no-border"
-													    data-scrollable="true"
+													    data-scrollable="false"
 													    data-editable="true"
 													    data-toolbar="['create', 'cancel']"
 													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' }]"
