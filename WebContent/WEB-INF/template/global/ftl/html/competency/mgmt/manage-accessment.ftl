@@ -882,6 +882,9 @@
 												                data-template="property-view-template"
 												                data-bind="source:propertyDataSource"
 												                style="height: 200px; overflow: auto">
+												            <tr>
+																<td colspan="2">등록된 프로퍼티가 없습니다.</td>
+															</tr>    
 												        </tbody>
 													</table>																											
 													<div data-role="grid"
