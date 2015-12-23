@@ -13,7 +13,10 @@
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css" />',			
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.rtl.css" />',
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.themes.css" />',
-			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.pages.css" />',				
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.pages.css" />',		
+
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
+					
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js" />',
 			'<@spring.url "/js/kendo/kendo.web.min.js" />',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',
