@@ -811,25 +811,18 @@
 						</div>	
 	                </div>            
                 	<div class="col-md-8">
-                    	<div id="assessment-rating-scheme-details" class="ibox float-e-margins animated fadeInRight" data-bind="attr: { data-editable: editable }">
-                    		<div class="panel">
-                    		<div class="panel-heading"></div>
-                    		<div class="panel-body"></div>
-                    		<div class="panel-footer"></div>
-                    		</div>
-                        	<div class="ibox-title">
-                            	<h5>
-								</h5>
-                            	<div class="ibox-tools"></div>
-                        	</div>
-                        	<div class="ibox-content" style="display: block;">
+                		<div id="assessment-rating-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }">
+                    		<div class="panel-heading">
+                    			<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
+								<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
+							</div>
+                    		<div class="panel-body">
+
 								<div class="form-horizontal">			
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="form-group no-margin-hr">
-												<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
-												<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
-											</div>	
+												</div>	
 											<hr/>
 											<div class="form-group no-margin-hr">				
 												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
@@ -913,16 +906,17 @@
 												</div> <!-- / .tab-pane -->							
 											</div> <!-- / .tab-content -->
 										</div><!-- / .col-sm-12 -->
-									</div><!-- / .row -->							
-							<div class="p-sm">
-								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+									</div><!-- / .row -->	
+                    		
+                    		</div>
+                    		<div class="panel-footer">
+ 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
 								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
-								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	
-							</div>							
-						</div> 
-						
-
+								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	                   		
+                    		</div>
+                    	</div>
+                    	
                         	
                         	</div>
                     	</div>
