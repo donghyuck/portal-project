@@ -810,7 +810,7 @@
 							<div id="assessment-rating-scheme-grid" class="no-border"></div>
 						</div>	
 	                </div>
-                	<div class="col-md-8">
+                	<div class="col-md-8 animated fadeInRight">
                     	<div id="assessment-rating-scheme-details" class="ibox float-e-margins">
                         	<div class="ibox-title">
                             	<h5>
