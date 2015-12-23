@@ -703,10 +703,10 @@
 				<div class="row animated fadeInRight">
 	                <div class="col-md-4">                
 						<div class="panel panel-transparent">
-							<div class="panel-heading">
+							<div class="panel-body">
 								<input id="company-dropdown-list" />
 							</div>
-							<div id="assessment-rating-scheme-grid" class="no-border no-shadow"></div>
+							<div id="assessment-rating-scheme-grid" class="no-border"></div>
 						</div>	
 	                </div>
                 <div class="col-md-8">
