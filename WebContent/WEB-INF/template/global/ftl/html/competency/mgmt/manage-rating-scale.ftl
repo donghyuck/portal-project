@@ -865,7 +865,7 @@
 																data-role="listview"
 												                data-template="rating-level-view-template"
 												                data-bind="source:ratingLevelDataSource"
-												                style="height: 200px; overflow: auto">
+												                style="height: 400px; overflow: auto">
 												        </tbody>
 													</table>													
 													<div data-role="grid"
@@ -875,7 +875,7 @@
 													                 data-toolbar="['create', 'cancel']"
 													                 data-columns="[{ 'field': 'score', 'width': 170 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
 													                 data-bind="source:ratingLevelDataSource, visible:editable"
-													                 style="height: 200px"></div>
+													                 style="height: 400px"></div>
 													        
 												</div> <!-- / .tab-pane -->
 												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">		
@@ -890,7 +890,7 @@
 																data-role="listview"
 												                data-template="property-view-template"
 												                data-bind="source:propertyDataSource"
-												                style="height: 200px; overflow: auto">
+												                style="height: 400px; overflow: auto">
 												            
 												        </tbody>
 													</table>																											
@@ -901,7 +901,7 @@
 													    data-toolbar="['create', 'cancel']"
 													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:propertyDataSource, visible:editable"
-													    style="height: 200px"></div>
+													    style="height: 400px"></div>
 												</div> <!-- / .tab-pane -->							
 											</div> <!-- / .tab-content -->
 										</div><!-- / .col-sm-12 -->
