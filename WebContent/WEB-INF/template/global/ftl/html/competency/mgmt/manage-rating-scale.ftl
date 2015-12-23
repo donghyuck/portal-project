@@ -811,23 +811,21 @@
 						</div>	
 	                </div>
                 	<div class="col-md-8 animated fadeInRight">
-                    	<div id="assessment-rating-scheme-details" class="ibox float-e-margins">
+                    	<div id="assessment-rating-scheme-details" class="ibox float-e-margins" data-bind="attr: { data-editable: editable }">
                         	<div class="ibox-title">
                             	<h5>
-								<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
-								<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
 								</h5>
                             	<div class="ibox-tools"></div>
                         	</div>
                         	<div class="ibox-content" style="display: block;">
-
-								<div class="form-horizontal" data-bind="attr: { data-editable: editable }">			
+								<div class="form-horizontal">			
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="form-group no-margin-hr">
 												<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
-												
+												<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
 											</div>	
+											<hr/>
 											<div class="form-group no-margin-hr">				
 												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
 												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
