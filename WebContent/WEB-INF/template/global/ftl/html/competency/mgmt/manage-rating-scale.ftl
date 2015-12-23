@@ -809,15 +809,14 @@
 							</div>
 							<div id="assessment-rating-scheme-grid" class="no-border"></div>
 						</div>	
-	                </div>            
+	                </div><!-- /.com-md-4 -->            
                 	<div class="col-md-8">
                 		<div id="assessment-rating-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }">
-                    		<div class="panel-heading">
+                			<div class="panel-heading">
                     			<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
 								<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
 							</div>
-                    		<div class="panel-body">
-
+							<div class="panel-body">
 								<div class="form-horizontal">			
 									<div class="row">
 										<div class="col-sm-12">
@@ -871,7 +870,7 @@
 													</table>													
 													<div data-role="grid"
 																	 class="no-border"
-													                 date-scrollable="false"
+													                 data-scrollable="false"
 													                 data-editable="true"
 													                 data-toolbar="['create', 'cancel']"
 													                 data-columns="[{ 'field': 'score', 'width': 170 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
@@ -907,21 +906,17 @@
 											</div> <!-- / .tab-content -->
 										</div><!-- / .col-sm-12 -->
 									</div><!-- / .row -->	
-                    		
-                    		</div>
-                    		<div class="panel-footer">
- 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
-								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
-								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
-								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	                   		
-                    		</div>
-                    	</div>
-                	</div><!-- /.rating-scheme-details -->
+                    			</div>
+                    			<div class="panel-footer">
+	 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+									<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+									<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	                   		
+                    			</div>
+                    		</div>                		
+                		</div><!-- /.panel -->  
+                	</div><!-- /.com-md-8 --> 
            		</div>
-            
-            
-            
-            
 				<div class="row">				
 					<div class="col-sm-12">	
 						<div class="panel panel-transparent" style="min-height:300px;">
