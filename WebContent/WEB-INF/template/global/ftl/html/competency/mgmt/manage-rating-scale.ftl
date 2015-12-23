@@ -916,10 +916,6 @@
 								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	                   		
                     		</div>
                     	</div>
-                    	
-                        	
-                        	</div>
-                    	</div>
                 	</div><!-- /.rating-scheme-details -->
            		</div>
             
