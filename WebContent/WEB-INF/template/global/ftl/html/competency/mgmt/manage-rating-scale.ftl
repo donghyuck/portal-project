@@ -46,9 +46,62 @@
 						
 					}
 				});					
-				createRatingSchemeModal();
+				createRatingSchemeGrid();
 			}
 		}]);		
+		
+		function createRatingSchemeGrid(){
+			var renderTo = $("#assessment-rating-scheme-grid");
+			if(! common.ui.exists(renderTo) ){				
+				var companySelector = getCompanySelector();						
+				common.ui.grid(renderTo, {
+					autoBind:false,
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json', type:'post' },
+							parameterMap: function (options, operation){
+								if (operation !== "read") {
+									return kendo.stringify(options);
+								} 
+								return {
+									objectType: 1,
+									objectId: companySelector.value()
+								};
+							}
+						},
+						schema: {
+							model: common.ui.data.competency.RatingScheme
+						}
+					},
+					columns: [
+						{ title: "직무", field: "name"}
+					],
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 직무 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 검색 </button></div>'),
+					resizable: true,
+					editable : false,					
+					selectable : "row",
+					scrollable: true,
+					height: 400,
+					change: function(e) {
+					 	var selectedCells = this.select();	
+					 	if( selectedCells.length == 1){
+	                    	var selectedCell = this.dataItem( selectedCells );	  
+	                    	
+	                    }   
+					},
+					dataBound: function(e) {
+					}		
+				});		
+
+				renderTo.find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});	
+				renderTo.find("button[data-action=create]").click(function(e){				
+				});		
+							
+			}					
+		}
+		
 		
 		function createRatingSchemeModal(){
 			var renderTo = $("#rating-scheme-modal");	
@@ -653,6 +706,7 @@
                               <input id="company-dropdown-list" />
                         </div>
                         <div class="ibox-content">
+                        	<div id="assessment-rating-scheme-grid"></div>
                         </div>
                     </div>
                 </div>
