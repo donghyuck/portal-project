@@ -811,7 +811,7 @@
 						</div>	
 	                </div><!-- /.com-md-4 -->            
                 	<div class="col-md-8">
-                		<div id="assessment-rating-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }">
+                		<div id="assessment-rating-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
                 			<div class="panel-heading">
                     			<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
 								<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
