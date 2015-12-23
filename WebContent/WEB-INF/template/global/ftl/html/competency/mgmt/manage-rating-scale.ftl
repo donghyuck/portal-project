@@ -43,12 +43,17 @@
 						e.token.copy(currentUser);
 					},
 					change: function(e){		
-						
+						getRatingSchemeGrid().dataSource.read();
 					}
 				});					
 				createRatingSchemeGrid();
 			}
 		}]);		
+		
+		function getRatingSchemeGrid(){
+			var renderTo = $("#assessment-rating-scheme-grid");
+			return common.ui.grid(renderTo);
+		}
 		
 		function createRatingSchemeGrid(){
 			var renderTo = $("#assessment-rating-scheme-grid");
@@ -76,7 +81,7 @@
 					columns: [
 						{ title: "직무", field: "name"}
 					],
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 직무 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 검색 </button></div>'),
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 평가척도 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침 </button></div>'),
 					resizable: true,
 					editable : false,					
 					selectable : "row",
@@ -85,8 +90,7 @@
 					change: function(e) {
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
-	                    	var selectedCell = this.dataItem( selectedCells );	  
-	                    	
+	                    	var selectedCell = this.dataItem( selectedCells );	 
 	                    }   
 					},
 					dataBound: function(e) {
