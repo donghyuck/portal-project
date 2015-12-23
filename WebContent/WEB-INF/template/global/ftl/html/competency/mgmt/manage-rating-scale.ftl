@@ -650,7 +650,7 @@
                             <h5>평가척도 방식</h5>
                         </div>
                         <div class="ibox-content no-padding border-left-right">
-                              
+                              <input id="company-dropdown-list" />
                         </div>
                         <div class="ibox-content">
                         </div>
@@ -813,7 +813,7 @@
 					<div class="col-sm-12">	
 						<div class="panel panel-transparent" style="min-height:300px;">
 							<div class="panel-heading">
-								<input id="company-dropdown-list" />
+								
 								<button type="button" class="pull-right btn btn-flat btn-info btn-outline btn-md" data-toggle="modal" data-target="#rating-scheme-modal">
 								  척도관리
 								</button>
