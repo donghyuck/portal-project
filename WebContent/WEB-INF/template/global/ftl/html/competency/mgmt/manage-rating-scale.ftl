@@ -821,7 +821,7 @@
                         	</div>
                         	<div class="ibox-content" style="display: block;">
 
-								<div class="form-horizontal" style="display:none;" data-bind="attr: { data-editable: editable }">			
+								<div class="form-horizontal" data-bind="attr: { data-editable: editable }">			
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="form-group no-margin-hr">
