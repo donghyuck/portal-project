@@ -907,13 +907,13 @@
 										</div><!-- / .col-sm-12 -->
 									</div><!-- / .row -->	
                     			</div>
-                    			<div class="panel-footer">
+                    		</div>    
+                    		<div class="panel-footer">
 	 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 									<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
 									<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
 									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	                   		
-                    			</div>
-                    		</div>                		
+                    		</div>
                 		</div><!-- /.panel -->  
                 	</div><!-- /.com-md-8 --> 
            		</div>
