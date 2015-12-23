@@ -91,6 +91,7 @@
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	 
+	                    	createRatingSchemeDetails(selectedCell);
 	                    }   
 					},
 					dataBound: function(e) {
@@ -100,12 +101,112 @@
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
 				});	
-				renderTo.find("button[data-action=create]").click(function(e){				
+				renderTo.find("button[data-action=create]").click(function(e){	
+					createRatingSchemeDetails(new common.ui.data.competency.RatingScheme());			
 				});		
 							
 			}					
 		}
 		
+		function createRatingSchemeDetails(source){
+			var renderTo = $("#assessment-rating-scheme-details");
+			if( !renderTo.data("model")){		
+
+				var observable =  common.ui.observable({
+					visible : false,
+					editable : false,
+					deletable: false,
+					updatable : false,						
+					ratingScheme: new common.ui.data.competency.RatingScheme(),
+					create : function(e){
+						console.log("create..");
+						var $this = this;
+						$this.setSource(new common.ui.data.competency.RatingScheme());
+						return false;
+					},					
+					view : function(e){
+						var $this = this;		
+						if($this.ratingScheme.ratingSchemeId < 1){
+							$("#rating-scheme-details").hide();	
+						}
+						$this.set("visible", true);
+						$this.set("editable", false);
+						$this.set("updatable", false);
+					},
+					edit : function(e){
+						var $this = this;
+						$this.set("visible", false);
+						$this.set("editable", true);
+						$this.set("updatable", true);
+						return false;
+					},
+					saveOrUpdate : function(e){
+						var $this = this;						
+						var btn = $(e.target);	
+						common.ui.progress(renderTo, true);
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/competency/assessment/rating-scheme/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.ratingScheme ),
+								contentType : "application/json",
+								success : function(response){																	
+									$this.setSource(new common.ui.data.competency.RatingScheme(response));	
+									getRatingSchemeGrid().dataSource.read();
+								},
+								complete : function(e){
+									common.ui.progress(renderTo, false);
+								}
+							}
+						);		
+						return false;
+					},
+					propertyDataSource :new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
+					ratingLevelDataSource : new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+							model: common.ui.data.competency.RatingLevel
+						}		
+					}),
+					setSource: function(source){
+						var $this = this;
+						source.copy($this.ratingScheme);	
+						$this.propertyDataSource.read();
+						$this.ratingLevelDataSource.read();						
+						$this.propertyDataSource.data($this.ratingScheme.properties);	
+						$this.ratingLevelDataSource.data($this.ratingScheme.ratingLevels);
+						if($this.ratingScheme.get("ratingSchemeId") == 0)
+						{
+							$this.ratingScheme.set("objectType", 1);
+							$this.ratingScheme.set("objectId", getCompanySelector().value() );
+							$this.set("visible", false);
+							$this.set("editable", true);
+							$this.set("updatable", true);
+							$this.set("deletable", false);
+						}else{
+							$this.set("visible", true);
+							$this.set("editable", false);
+							$this.set("updatable", false);
+							$this.set("deletable", true);						
+						}						
+						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
+					}
+				});	
+				renderTo.data("model", observable);	
+				kendo.bind(renderTo, observable );	
+			}			
+			if( source ){
+				renderTo.data("model").setSource( source );	
+				if (!renderTo.is(":visible")) 
+					renderTo.show();		
+			}
+		}
 		
 		function createRatingSchemeModal(){
 			var renderTo = $("#rating-scheme-modal");	
@@ -709,155 +810,121 @@
 							<div id="assessment-rating-scheme-grid" class="no-border"></div>
 						</div>	
 	                </div>
-                <div class="col-md-8">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Activites</h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="ibox-content" style="display: block;">
+                	<div class="col-md-8">
+                    	<div id="assessment-rating-scheme-details" class="ibox float-e-margins">
+                        	<div class="ibox-title">
+                            	<h5>
+								<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
+								<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
+								</h5>
+                            	<div class="ibox-tools"></div>
+                        	</div>
+                        	<div class="ibox-content" style="display: block;">
 
-                            <div>
-                                <div class="feed-activity-list">
+								<div class="form-horizontal" style="display:none;" data-bind="attr: { data-editable: editable }">			
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="form-group no-margin-hr">
+												<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
+												
+											</div>	
+											<div class="form-group no-margin-hr">				
+												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
+												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
+											</div>
+											<div class="form-group no-margin-hr">
+												<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
+												<select class="form-control" data-bind="{value: ratingScheme.scale, visible:editable}" placeholder="척도">
+													<option value="0" disabled selected>척도 선택</option>
+													<option value="2">2점 척도</option>
+													<option value="3">3점 척도</option>
+													<option value="4">4점 척도</option>
+													<option value="5">5점 척도</option>
+													<option value="6">6점 척도</option>
+													<option value="7">7점 척도</option>
+													<option value="8">8점 척도</option>
+												</select>
+											</div>
+										</div>
+									</div>			
+									<div class="row">
+										<div class="col-sm-12">
+											<ul id="rating-scheme-details-tabs" class="nav nav-tabs nav-tabs-xs">
+												<li class="m-l-sm">
+													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">척도값</a>
+												</li>
+												<li class="">
+													<a href="#rating-scheme-details-tabs-2" data-toggle="tab">속성</a>
+												</li>
+											</ul>
+											<div class="tab-content no-padding">
+												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">												
+													<table class="table table-striped" data-bind="visible:visible">
+														<thead>
+															<tr>
+																<th width="175">점수</th>
+																<th>예시</th>
+															</tr>
+														</thead>
+														<tbody class="no-border"
+																data-role="listview"
+												                data-template="rating-level-view-template"
+												                data-bind="source:ratingLevelDataSource"
+												                style="height: 200px; overflow: auto">
+												        </tbody>
+													</table>													
+													<div data-role="grid"
+																	 class="no-border"
+													                 date-scrollable="false"
+													                 data-editable="true"
+													                 data-toolbar="['create', 'cancel']"
+													                 data-columns="[{ 'field': 'score', 'width': 170 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
+													                 data-bind="source:ratingLevelDataSource, visible:editable"
+													                 style="height: 200px"></div>
+													        
+												</div> <!-- / .tab-pane -->
+												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">		
+													<table class="table table-striped" data-bind="visible:visible">
+														<thead>
+															<tr>
+																<th width="270">이름</th>
+																<th>값</th>
+															</tr>
+														</thead>
+														<tbody  class="no-border"
+																data-role="listview"
+												                data-template="property-view-template"
+												                data-bind="source:propertyDataSource"
+												                style="height: 200px; overflow: auto">
+												            
+												        </tbody>
+													</table>																											
+													<div data-role="grid"
+														class="no-border"
+													    data-scrollable="false"
+													    data-editable="true"
+													    data-toolbar="['create', 'cancel']"
+													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-bind="source:propertyDataSource, visible:editable"
+													    style="height: 200px"></div>
+												</div> <!-- / .tab-pane -->							
+											</div> <!-- / .tab-content -->
+										</div><!-- / .col-sm-12 -->
+									</div><!-- / .row -->							
+							<div class="p-sm">
+								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	
+							</div>							
+						</div> 
+						
 
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a1.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right text-navy">1m ago</small>
-                                            <strong>Sandra Momot</strong> started following <strong>Monica Smith</strong>. <br>
-                                            <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
-                                            <div class="actions">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                                <a class="btn btn-xs btn-danger"><i class="fa fa-heart"></i> Love</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/profile.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right">5m ago</small>
-                                            <strong>Monica Smith</strong> posted a new blog. <br>
-                                            <small class="text-muted">Today 5:60 pm - 12.06.2014</small>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a2.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right">2h ago</small>
-                                            <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                            <small class="text-muted">Today 2:10 pm - 12.06.2014</small>
-                                            <div class="well">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                                Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                            </div>
-                                            <div class="pull-right">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-                                                <a class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Message</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a3.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right">2h ago</small>
-                                            <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica Smith</strong>. <br>
-                                            <small class="text-muted">2 days ago at 8:30am</small>
-                                            <div class="photos">
-                                                <a target="_blank" href="http://24.media.tumblr.com/20a9c501846f50c1271210639987000f/tumblr_n4vje69pJm1st5lhmo1_1280.jpg"> <img alt="image" class="feed-photo" src="img/p1.jpg"></a>
-                                                <a target="_blank" href="http://37.media.tumblr.com/9afe602b3e624aff6681b0b51f5a062b/tumblr_n4ef69szs71st5lhmo1_1280.jpg"> <img alt="image" class="feed-photo" src="img/p3.jpg"></a>
-                                                </div>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a4.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right text-navy">5h ago</small>
-                                            <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-                                            <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-                                            <div class="actions">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a5.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right">2h ago</small>
-                                            <strong>Kim Smith</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                            <small class="text-muted">Yesterday 5:20 pm - 12.06.2014</small>
-                                            <div class="well">
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                                Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                            </div>
-                                            <div class="pull-right">
-                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/profile.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right">23h ago</small>
-                                            <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                            <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-                                        </div>
-                                    </div>
-                                    <div class="feed-element">
-                                        <a href="#" class="pull-left">
-                                            <img alt="image" class="img-circle" src="img/a7.jpg">
-                                        </a>
-                                        <div class="media-body ">
-                                            <small class="pull-right">46h ago</small>
-                                            <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-                                            <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-primary btn-block m"><i class="fa fa-arrow-down"></i> Show More</button>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+                        	
+                        	</div>
+                    	</div>
+                	</div><!-- /.rating-scheme-details -->
+           		</div>
             
             
             
