@@ -702,17 +702,16 @@
 				
 				<div class="row animated fadeInRight">
                 <div class="col-md-4">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>평가척도 방식</h5>
-                        </div>
-                        <div class="ibox-content no-padding border-left-right">
-                              <input id="company-dropdown-list" />
-                        </div>
-                        <div class="ibox-content">
-                        	<div id="assessment-rating-scheme-grid"></div>
-                        </div>
-                    </div>
+                
+					<div class="panel panel-transparent">
+							<div class="panel-heading">
+							<h5>평가척도 방식</h5>
+								<input id="company-dropdown-list" />
+							</div>
+							<div id="assessment-rating-scheme-grid" class="no-border no-shadow"></div>
+						</div>		
+						                
+                   
                 </div>
                 <div class="col-md-8">
                     <div class="ibox float-e-margins">
