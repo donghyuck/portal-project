@@ -820,9 +820,6 @@
 								<div class="form-horizontal">			
 									<div class="row">
 										<div class="col-sm-12">
-											<div class="form-group no-margin-hr">
-												</div>	
-											<hr/>
 											<div class="form-group no-margin-hr">				
 												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
 												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
