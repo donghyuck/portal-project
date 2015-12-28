@@ -817,8 +817,8 @@
 								</ul>
 							</div>							
 							<div class="tab-content no-padding">
-								<div class="tab-pane fade" id="template-tree-view" tabindex="0" >
-									<div id="assessment-scheme-tabs-1" class="no-border"></div>				
+								<div class="tab-pane fade" id="assessment-scheme-tabs-1" tabindex="0" >
+									<div id="assessment-rating-scheme-grid" class="no-border"></div>				
 								</div>
 								<div class="tab-pane fade" id="assessment-scheme-tabs-2" tabindex="1" >
 								ss
