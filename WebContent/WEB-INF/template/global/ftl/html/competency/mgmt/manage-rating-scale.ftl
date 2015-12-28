@@ -823,6 +823,7 @@
 								<div class="tab-pane fade" id="assessment-scheme-tabs-2" tabindex="1" >
 								ss
 								</div>
+							</div>	
 						</div>	
 	                </div><!-- /.com-md-4 -->            
                 	<div class="col-md-8">
