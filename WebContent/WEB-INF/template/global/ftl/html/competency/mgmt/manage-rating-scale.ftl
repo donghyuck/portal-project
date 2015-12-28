@@ -798,7 +798,6 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
-				<div class="layout">
 				<div class="row animated fadeInRight">
 	                <div class="col-md-4"> 
 						<div class="panel panel-transparent">
@@ -807,7 +806,6 @@
 							</div>	
 							<div id="assessment-rating-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
-					
 	                </div><!-- /.com-md-4 -->            
                 	<div class="col-md-8">
                 		<div id="assessment-rating-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
@@ -912,8 +910,7 @@
                     		</div>
                 		</div><!-- /.panel -->  
                 	</div><!-- /.com-md-8 --> 
-           		</div><!-- /.row --> 
-           		</div>				
+           		</div><!-- /.row --> 	
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
