@@ -801,14 +801,14 @@
 				
 				<div class="row animated fadeInRight">
 	                <div class="col-md-4">      
-	                <div class="layout no-padding bg-white" >         
+	                
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />
 							</div>	
-							<div id="assessment-rating-scheme-grid" class="no-border"></div>	
+							<div id="assessment-rating-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
-					</div>		
+					
 	                </div><!-- /.com-md-4 -->            
                 	<div class="col-md-8">
                 		<div id="assessment-rating-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
