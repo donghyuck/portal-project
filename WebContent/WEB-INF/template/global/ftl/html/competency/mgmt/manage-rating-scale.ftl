@@ -679,6 +679,14 @@
 		    border-radius: 4px;
 		}
 		
+		.layout .left{
+			display:block;
+			height: 100%;			
+			border-right: solid 1px #e2e2e2;			
+		}
+		
+		
+		/**
 		#content-wrapper section.layout:after, #content-wrapper section.layout:before{
 			clear:both;
 			-webkit-box-sizing:border-box;
@@ -780,7 +788,7 @@
 		table[data-editable=false] .btn {
 			display:none;
 		}
-		
+		*/
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -799,9 +807,8 @@
 				</div><!-- / .page-header -->	
 				
 				
-				<div class="row animated fadeInRight">
-	                <div class="col-md-4">      
-	                
+				<div class="layout row animated fadeInRight">
+	                <div class="left col-md-4"> 
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />
