@@ -805,7 +805,10 @@
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />
-							</div>							
+							</div>						
+							<div class="panel-body">
+								<hr/>
+							</div>	
 							<div id="assessment-rating-scheme-grid" class="no-border"></div>	
 						</div>
 					</div>		
