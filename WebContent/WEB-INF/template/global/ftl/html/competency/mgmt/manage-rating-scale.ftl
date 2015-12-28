@@ -800,7 +800,8 @@
 				
 				
 				<div class="row animated fadeInRight">
-	                <div class="layout col-md-4">                
+	                <div class="col-md-4">      
+	                <div class="layout no-padding" >         
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />
@@ -822,7 +823,8 @@
 								ss
 								</div>
 							</div>	
-						</div>	
+						</div>
+					</div>		
 	                </div><!-- /.com-md-4 -->            
                 	<div class="col-md-8">
                 		<div id="assessment-rating-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
