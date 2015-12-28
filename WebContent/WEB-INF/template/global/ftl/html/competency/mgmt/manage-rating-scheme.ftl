@@ -254,10 +254,14 @@
 				
 				<div class="row animated fadeInRight">
 	                <div class="col-md-4"> 
-						<div class="panel panel-transparent">
+	                	<input id="company-dropdown-list" />
+	                	<hr/>
+						<div class="panel panel-default">
+							<!--
 							<div class="panel-heading">
-								<input id="company-dropdown-list" />
-							</div>	
+								
+							</div>
+							-->	
 							<div id="assessment-rating-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
 	                </div><!-- /.com-md-4 -->            
