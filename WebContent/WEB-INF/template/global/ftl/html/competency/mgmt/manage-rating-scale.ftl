@@ -670,14 +670,13 @@
 		}
 				
 				
-		#content-wrapper section.layout {
+		#content-wrapper .layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f5f5f5;		 
 		    min-height: 770px;
 		    height:100%;
-		    width:100%;
-		    position: static;
-		    left:0px;		    
+		    width:auto;
+		    position: static;	    
 		    border-radius: 4px;
 		}
 		
@@ -802,7 +801,7 @@
 				
 				
 				<div class="row animated fadeInRight">
-	                <div class="col-md-4">                
+	                <div class="layout col-md-4">                
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />
