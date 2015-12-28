@@ -661,15 +661,6 @@
 		
 		</script> 		 
 		<style>
-		#xmleditor.panel-body{
-			min-height:577px;
-		}	
-		
-		.k-treeview {
-			min-height:338px;
-		}
-				
-				
 		#content-wrapper .layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f5f5f5;		 
@@ -685,7 +676,12 @@
 			border-right: solid 1px #e2e2e2;			
 		}
 		
-		
+		.no-shadow{
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+				
 		/**
 		#content-wrapper section.layout:after, #content-wrapper section.layout:before{
 			clear:both;
@@ -743,11 +739,7 @@
 			border-top-right-radius:0;
 		}
 		
-		.no-shadow{
-			-webkit-box-shadow: none;
-			-moz-box-shadow: none;
-			box-shadow: none;
-		}
+
 		
 		.no-shadow .k-pager-wrap {
 			border-bottom-width : 0;
