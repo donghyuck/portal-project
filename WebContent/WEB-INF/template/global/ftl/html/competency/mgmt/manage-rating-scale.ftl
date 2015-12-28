@@ -798,8 +798,8 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
-				
-				<div class="layout row animated fadeInRight">
+				<div class="layout">
+				<div class="row animated fadeInRight">
 	                <div class="left col-md-4"> 
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
@@ -912,6 +912,7 @@
                     		</div>
                 		</div><!-- /.panel -->  
                 	</div><!-- /.com-md-8 --> 
+           		</div><!-- /.row --> 
            		</div>				
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
