@@ -806,8 +806,23 @@
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<input id="company-dropdown-list" />
-							</div>
-							<div id="assessment-rating-scheme-grid" class="no-border"></div>
+								
+								<ul class="nav nav-tabs nav-tabs-xs" id="assessment-scheme-tabs">
+									<li class="active">
+										<a href="#assessment-scheme-tabs-1" role="tab" data-toggle="tab" aria-expanded="true">기본</a>
+									</li>
+									<li>
+										<a href="#assessment-scheme-tabs-2" role="tab" data-toggle="tab">커스텀</a>
+									</li>
+								</ul>
+							</div>							
+							<div class="tab-content no-padding">
+								<div class="tab-pane fade" id="template-tree-view" tabindex="0" >
+									<div id="assessment-scheme-tabs-1" class="no-border"></div>				
+								</div>
+								<div class="tab-pane fade" id="assessment-scheme-tabs-2" tabindex="1" >
+								ss
+								</div>
 						</div>	
 	                </div><!-- /.com-md-4 -->            
                 	<div class="col-md-8">
