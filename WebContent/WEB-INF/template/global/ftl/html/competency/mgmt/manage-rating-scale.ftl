@@ -675,7 +675,6 @@
 		    background-color: #f5f5f5;		 
 		    min-height: 770px;
 		    height:100%;
-		    width:auto;
 		    position: static;	    
 		    border-radius: 4px;
 		}
