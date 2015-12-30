@@ -116,7 +116,8 @@
 					visible : false,
 					editable : false,
 					deletable: false,
-					updatable : false,						
+					updatable : false,				
+					selectedRatingScheme : null,		
 					assessmentScheme: new common.ui.data.competency.AssessmentScheme(),
 					create : function(e){
 						console.log("create..");
@@ -157,6 +158,10 @@
 						},
 						error:common.ui.handleAjaxError
 					}),	
+					onRatingSchemeChange: function(e){
+					
+					
+					},
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
@@ -315,7 +320,7 @@
 										                  	data-value-primitive="true"
 										                   	data-text-field="name"
 										                   	data-value-field="ratingSchemeId"
-										                   	data-bind="{value: assessmentScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource , visible:editable,  change: onRatingSchemeChange}" />
+										                   	data-bind="{value: selectedRatingScheme, source: ratingSchemeDataSource , visible:editable,  change: onRatingSchemeChange}" />
 															</td>
 														</tr>
 														<tr>
