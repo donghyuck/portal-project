@@ -312,6 +312,7 @@
 															data-option-label="진단척도"
 															data-role="dropdownlist"
 										                  	data-auto-bind="true"
+										                  	data-value-primitive="true"
 										                   	data-text-field="name"
 										                   	data-value-field="ratingSchemeId"
 										                   	data-bind="{value: ratingScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource , visible:editable}" />
