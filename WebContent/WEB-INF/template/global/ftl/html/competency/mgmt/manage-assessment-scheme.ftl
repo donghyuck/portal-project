@@ -225,6 +225,12 @@
 			-moz-box-shadow: none;
 			box-shadow: none;
 		}
+		
+		input.k-checkbox+label {
+		    font-weight: 100;
+		    color: #555;
+		    line-height: .875em;
+    	}
 			
 		</style>
 	</head>
