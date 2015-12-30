@@ -43,20 +43,20 @@
 						e.token.copy(currentUser);
 					},
 					change: function(e){		
-						getRatingSchemeGrid().dataSource.read();
+						getAssessmentSchemeGrid().dataSource.read();
 					}
 				});					
-				createRatingSchemeGrid();
+				createAssessmentSchemeGrid();
 			}
 		}]);		
 		
-		function getRatingSchemeGrid(){
-			var renderTo = $("#assessment-rating-scheme-grid");
+		function getAssessmentSchemeGrid(){
+			var renderTo = $("#assessment-scheme-grid");
 			return common.ui.grid(renderTo);
 		}
 		
-		function createRatingSchemeGrid(){
-			var renderTo = $("#assessment-rating-scheme-grid");
+		function createAssessmentSchemeGrid(){
+			var renderTo = $("#assessment-scheme-grid");
 			if(! common.ui.exists(renderTo) ){				
 				var companySelector = getCompanySelector();						
 				common.ui.grid(renderTo, {
@@ -91,7 +91,7 @@
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	 
-	                    	createRatingSchemeDetails(selectedCell);
+	                    	createAssessmentSchemeDetails(selectedCell);
 	                    }   
 					},
 					dataBound: function(e) {
@@ -102,14 +102,14 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});	
 				renderTo.find("button[data-action=create]").click(function(e){	
-					createRatingSchemeDetails(new common.ui.data.competency.AssessmentScheme());			
+					createAssessmentSchemeDetails(new common.ui.data.competency.AssessmentScheme());			
 				});		
 							
 			}					
 		}
 		
-		function createRatingSchemeDetails(source){
-			var renderTo = $("#assessment-rating-scheme-details");
+		function createAssessmentSchemeDetails(source){
+			var renderTo = $("#assessment-scheme-details");
 			if( !renderTo.data("model")){		
 
 				var observable =  common.ui.observable({
@@ -117,7 +117,7 @@
 					editable : false,
 					deletable: false,
 					updatable : false,						
-					ratingScheme: new common.ui.data.competency.AssessmentScheme(),
+					assessmentScheme: new common.ui.data.competency.AssessmentScheme(),
 					create : function(e){
 						console.log("create..");
 						var $this = this;
@@ -126,7 +126,7 @@
 					},					
 					view : function(e){
 						var $this = this;		
-						if($this.ratingScheme.ratingSchemeId < 1){
+						if($this.assessmentScheme.assessmentSchemeId < 1){
 							$("#rating-scheme-details").hide();	
 						}
 						$this.set("visible", true);
@@ -160,13 +160,13 @@
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
-						console.log(common.ui.stringify($this.ratingScheme ));
+						console.log(common.ui.stringify($this.assessmentScheme ));
 						/*
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/assessment/rating-scheme/update.json?output=json" />' , 
 							{
-								data : kendo.stringify( $this.ratingScheme ),
+								data : kendo.stringify( $this.assessmentScheme ),
 								contentType : "application/json",
 								success : function(response){																	
 									$this.setSource(new common.ui.data.competency.RatingScheme(response));	
@@ -189,13 +189,13 @@
 					}),
 					setSource: function(source){
 						var $this = this;
-						source.copy($this.ratingScheme);	
+						source.copy($this.assessmentScheme);	
 						$this.propertyDataSource.read();				
-						$this.propertyDataSource.data($this.ratingScheme.properties);	
-						if($this.ratingScheme.get("assessmentSchemeId") == 0)
+						$this.propertyDataSource.data($this.assessmentScheme.properties);	
+						if($this.assessmentScheme.get("assessmentSchemeId") == 0)
 						{
-							$this.ratingScheme.set("objectType", 1);
-							$this.ratingScheme.set("objectId", getCompanySelector().value() );
+							$this.assessmentScheme.set("objectType", 1);
+							$this.assessmentScheme.set("objectId", getCompanySelector().value() );
 							$this.set("visible", false);
 							$this.set("editable", true);
 							$this.set("updatable", true);
@@ -282,11 +282,11 @@
 								
 							</div>
 							-->	
-							<div id="assessment-rating-scheme-grid" class="no-border no-shadow"></div>	
+							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
 	                </div><!-- /.com-md-4 -->            
                 	<div class="col-md-8">
-                		<div id="assessment-rating-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
+                		<div id="assessment-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
                 			<!--<div class="panel-heading">
                     			
 							</div>-->
@@ -295,12 +295,12 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="form-group no-margin-hr">	
-												<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
-												<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
+												<span  data-bind="{text: assessmentScheme.name, visible:visible}"></span>
+												<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: assessmentScheme.name, visible:editable }" placeholder="이름" />
 											</div>
 											<div class="form-group no-margin-hr">				
-												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
-												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
+												<span data-bind="{text: assessmentScheme.description, visible:visible}"></span>
+												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: assessmentScheme.description, visible:editable}" placeholder="설명"></textarea>
 											</div>
 											<div class="no-margin-hr">											
 												<table class="table">							
@@ -315,13 +315,13 @@
 										                  	data-value-primitive="true"
 										                   	data-text-field="name"
 										                   	data-value-field="ratingSchemeId"
-										                   	data-bind="{value: ratingScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource , visible:editable}" />
+										                   	data-bind="{value: assessmentScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource , visible:editable}" />
 															</td>
 														</tr>
 														<tr>
 															<td class="text-muted">중복진단허용</td>
 															<td>
-															<input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
+															<input type="checkbox" data-class="switcher-primary" data-bind="checked: assessmentScheme.multipleApplyAllowed">
 															</td>
 														</tr>
 													</tbody>
