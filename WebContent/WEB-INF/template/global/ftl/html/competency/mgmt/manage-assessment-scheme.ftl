@@ -280,7 +280,7 @@
 												<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked: ratingScheme.multipleApplyAllowed, enabled:editable">
           										<label class="k-checkbox-label" for="eq1">중복진단허용</label>
           									
-          										<input type="checkbox" data-class="switcher-primary" checked="checked">
+          										<input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
           										
           									</div>
 										</div>
