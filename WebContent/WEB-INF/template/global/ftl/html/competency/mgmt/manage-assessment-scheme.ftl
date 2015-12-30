@@ -302,7 +302,31 @@
 												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
 												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
 											</div>
-											<div class="form-group no-margin-hr">
+											<div class="form-group no-margin-hr">											
+												<table class="table table-striped">							
+													<tbody>
+														<tr>
+															<td>중복진단허용</td>
+															<td>
+															<input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
+															</td>
+														</tr>
+														<tr>
+															<td>진단척도</td>
+															<td>
+															<input id="rating-scheme-dorpdown-list"
+															data-option-label="진단척도"
+															data-role="dropdownlist"
+										                  	data-auto-bind="true"
+										                   	data-text-field="name"
+										                   	data-value-field="ratingSchemeId"
+										                   	data-bind="{value: ratingScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource , visible:editable}" />
+															</td>
+														</tr>
+													</tbody>
+												</table>
+						
+											
 												<span style="
 												font-size: 14px;
 											    font-weight: 100;
@@ -312,17 +336,11 @@
 											    padding-bottom: 5px;
 											    padding-right:15px;
 											    vertical-align: bottom;">중복진단허용</span>
-											   <input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
 											   
 											   
 											   
-											   <input id="rating-scheme-dorpdown-list"
-															data-option-label="진단척도"
-															data-role="dropdownlist"
-										                  	data-auto-bind="true"
-										                   	data-text-field="name"
-										                   	data-value-field="ratingSchemeId"
-										                   	data-bind="{value: ratingScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource , visible:editable}" />
+											   
+											   
 										                   	
 											</div>
 										</div>
