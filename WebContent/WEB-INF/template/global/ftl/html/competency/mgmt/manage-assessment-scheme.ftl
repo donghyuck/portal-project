@@ -302,24 +302,6 @@
 												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
 												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
 											</div>
-											<div class="row form-group">
-												<span class="col-sm-4 text-muted">중복진단허용:</span>
-												<div class="col-sm-8">
-													<input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
-												</div>
-											</div>
-											<div class="row form-group">
-												<span class="col-sm-4 text-muted">진단척도:</span>
-												<div class="col-sm-8">
-													<input id="rating-scheme-dorpdown-list"
-															data-option-label="진단척도"
-															data-role="dropdownlist"
-										                  	data-auto-bind="true"
-										                   	data-text-field="name"
-										                   	data-value-field="ratingSchemeId"
-										                   	data-bind="{value: ratingScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource , visible:editable}" />	
-												</div>
-											</div>
 											<div class="no-margin-hr">											
 												<table class="table">							
 													<tbody>
