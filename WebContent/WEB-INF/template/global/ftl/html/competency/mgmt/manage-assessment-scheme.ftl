@@ -63,7 +63,7 @@
 					autoBind:false,
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/mgmt/competency/assessment/assessment-scheme/list.json?output=json', type:'post' },
+							read: { url:'/secure/data/mgmt/competency/assessment-scheme/list.json?output=json', type:'post' },
 							parameterMap: function (options, operation){
 								if (operation !== "read") {
 									return kendo.stringify(options);
@@ -170,7 +170,7 @@
 						
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/competency/assessment/assessment-scheme/update.json?output=json" />' , 
+							'<@spring.url "/secure/data/mgmt/competency/assessment-scheme/update.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.assessmentScheme ),
 								contentType : "application/json",
