@@ -267,14 +267,17 @@
 	                </div><!-- /.com-md-4 -->            
                 	<div class="col-md-8">
                 		<div id="assessment-rating-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
-                			<div class="panel-heading">
-                    			<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
-								<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
-							</div>
+                			<!--<div class="panel-heading">
+                    			
+							</div>-->
 							<div class="panel-body">
 								<div class="form-horizontal">			
 									<div class="row">
 										<div class="col-sm-12">
+											<div class="form-group no-margin-hr">	
+												<span  data-bind="{text: ratingScheme.name, visible:visible}"></span>
+												<input type="text" class="form-control input-md" name="rating-scheme-name" data-bind="{value: ratingScheme.name, visible:editable }" placeholder="이름" />
+											</div>
 											<div class="form-group no-margin-hr">				
 												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
 												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
