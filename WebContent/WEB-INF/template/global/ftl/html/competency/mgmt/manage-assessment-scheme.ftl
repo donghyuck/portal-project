@@ -189,6 +189,9 @@
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});	
+				
+				$(renderTo.find('input[data-class=switcher-primary]')).switcher();
+				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );	
 			}			
