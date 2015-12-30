@@ -210,7 +210,7 @@
 					}
 				});	
 				
-				$(renderTo.find('input[data-class=switcher-primary]')).switcher();
+				$(renderTo.find('input[data-class=switcher-primary]')).switcher({theme: 'square'});
 				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );	
