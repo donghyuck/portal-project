@@ -283,7 +283,7 @@
           
 											
 												<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
-												<select class="form-control" data-bind="{value: ratingScheme.scale, visible:editable}" placeholder="척도">
+												<select class="form-control" data-bind="{value: ratingScheme.scale, enabled:editable}" placeholder="척도">
 													<option value="0" disabled selected>척도 선택</option>
 													<option value="2">2점 척도</option>
 													<option value="3">3점 척도</option>
