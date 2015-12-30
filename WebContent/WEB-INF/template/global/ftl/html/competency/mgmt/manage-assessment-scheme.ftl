@@ -158,31 +158,32 @@
 						},
 						error:common.ui.handleAjaxError
 					}),	
-					onRatingSchemeChange: function(e){
-					console.log(this.selectedRatingScheme);
-					
+					onRatingSchemeChange: function(e){					
 					},
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
+						
+						$this.assessmentScheme.ratingScheme.ratingSchemeId = $this.selectedRatingScheme;
+						 
 						console.log(common.ui.stringify($this.assessmentScheme ));
-						/*
+						
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/competency/assessment/rating-scheme/update.json?output=json" />' , 
+							'<@spring.url "/secure/data/mgmt/competency/assessment/assessment-scheme/update.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.assessmentScheme ),
 								contentType : "application/json",
 								success : function(response){																	
-									$this.setSource(new common.ui.data.competency.RatingScheme(response));	
-									getRatingSchemeGrid().dataSource.read();
+									$this.setSource(new common.ui.data.competency.AssessmentScheme(response));	
+									getAssessmentSchemeGrid().dataSource.read();
 								},
 								complete : function(e){
 									common.ui.progress(renderTo, false);
 								}
 							}
 						);		
-						*/
+						
 						return false;
 					},
 					propertyDataSource :new kendo.data.DataSource({
