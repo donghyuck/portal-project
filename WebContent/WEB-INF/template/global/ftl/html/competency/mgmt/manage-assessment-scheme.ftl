@@ -159,7 +159,7 @@
 						error:common.ui.handleAjaxError
 					}),	
 					onRatingSchemeChange: function(e){
-					
+					console.log(this.selectedRatingScheme);
 					
 					},
 					saveOrUpdate : function(e){
