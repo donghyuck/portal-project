@@ -271,6 +271,11 @@
 												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
 											</div>
 											<div class="form-group no-margin-hr">
+											
+												<input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
+          										<label class="k-checkbox-label" for="eq1">다중진단허용</label>
+          
+											
 												<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
 												<select class="form-control" data-bind="{value: ratingScheme.scale, visible:editable}" placeholder="척도">
 													<option value="0" disabled selected>척도 선택</option>
