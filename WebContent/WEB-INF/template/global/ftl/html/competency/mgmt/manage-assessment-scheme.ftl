@@ -303,13 +303,13 @@
 												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
 											</div>
 											<div class="row form-group">
-												<label class="col-sm-4 control-label">중복진단허용:</label>
+												<span class="col-sm-4 text-muted">중복진단허용:</span>
 												<div class="col-sm-8">
 													<input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
 												</div>
 											</div>
 											<div class="row form-group">
-												<label class="col-sm-4 control-label">진단척도:</label>
+												<span class="col-sm-4 text-muted">진단척도:</span>
 												<div class="col-sm-8">
 													<input id="rating-scheme-dorpdown-list"
 															data-option-label="진단척도"
