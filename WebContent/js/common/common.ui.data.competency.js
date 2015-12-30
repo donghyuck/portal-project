@@ -131,6 +131,35 @@
     		target.set("abilityType", this.get("abilityType"));
 	    }    
 	});		
+
+	var AssessmentScheme = kendo.data.Model.define( {
+		id : "assessmentSchemeId",
+		fields: {
+			assessmentSchemeId: { type: "number", defaultValue: 0},
+			objectType : { type: "number"},
+	    	objectId : { type: "number"},
+			name : { type: "string" },	   
+			description:  { type: "string" },
+			scale: { type: "number", defaultValue:0 },
+			properties : {type: "object" , defaultValue:"[]"},
+	    	modifiedDate: { type: "date"},
+	        creationDate: { type: "date" }	
+		},
+		copy : function ( target ){
+			target.set("assessmentSchemeId", this.get("assessmentSchemeId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	target.set("scale", this.get("scale"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
+	    	target.set("creationDate", this.get("creationDate"));	 	    	
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    	else
+	    		target.set("properties", []);	 
+		}
+	});
 	
 	var RatingScheme = kendo.data.Model.define( {
 		id : "ratingSchemeId",
@@ -227,7 +256,8 @@
 			PerformanceCriteria : PerformanceCriteria,
 			Ability : Ability,
 			RatingScheme:RatingScheme,
-			RatingLevel:RatingLevel
+			RatingLevel:RatingLevel,
+			AssessmentScheme:AssessmentScheme
 		}  
 	} );
 	
