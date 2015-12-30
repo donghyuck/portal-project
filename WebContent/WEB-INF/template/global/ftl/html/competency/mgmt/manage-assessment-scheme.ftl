@@ -306,12 +306,6 @@
 												<table class="table">							
 													<tbody>
 														<tr>
-															<td>중복진단허용</td>
-															<td>
-															<input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
-															</td>
-														</tr>
-														<tr>
 															<td>진단척도</td>
 															<td>
 															<input id="rating-scheme-dorpdown-list"
@@ -321,6 +315,12 @@
 										                   	data-text-field="name"
 										                   	data-value-field="ratingSchemeId"
 										                   	data-bind="{value: ratingScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource , visible:editable}" />
+															</td>
+														</tr>
+														<tr>
+															<td>중복진단허용</td>
+															<td>
+															<input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
 															</td>
 														</tr>
 													</tbody>
