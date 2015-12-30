@@ -170,8 +170,7 @@
 					setSource: function(source){
 						var $this = this;
 						source.copy($this.ratingScheme);	
-						$this.propertyDataSource.read();
-						$this.ratingLevelDataSource.read();						
+						$this.propertyDataSource.read();				
 						$this.propertyDataSource.data($this.ratingScheme.properties);	
 						if($this.ratingScheme.get("assessmentSchemeId") == 0)
 						{
