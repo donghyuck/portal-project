@@ -140,9 +140,28 @@
 						$this.set("updatable", true);
 						return false;
 					},
+					ratingSchemeDataSource: new kendo.data.DataSource({
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { objectType:1, objectId:getCompanySelector().value() }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.RatingScheme
+						},
+						error:common.ui.handleAjaxError
+					}),	
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
+						console.log(common.ui.stringify($this.ratingScheme ));
+						/*
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/assessment/rating-scheme/update.json?output=json" />' , 
@@ -158,6 +177,7 @@
 								}
 							}
 						);		
+						*/
 						return false;
 					},
 					propertyDataSource :new kendo.data.DataSource({
@@ -293,6 +313,17 @@
 											    padding-right:15px;
 											    vertical-align: bottom;">중복진단허용</span>
 											   <input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
+											   
+											   
+											   
+											   <input id="rating-scheme-dorpdown-list"
+															data-option-label="진단척도"
+															data-role="dropdownlist"
+										                  	data-auto-bind="true"
+										                   	data-text-field="name"
+										                   	data-value-field="ratingSchemeId"
+										                   	data-bind="{value: ratingScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource , visible:editable}" />
+										                   	
 											</div>
 										</div>
 									</div>			
