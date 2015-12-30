@@ -287,6 +287,7 @@
 											    line-height: 24px;
 											    display: inline-block;
 											    padding-bottom: 5px;
+											    padding-right:15px;
 											    vertical-align: bottom;">중복진단허용</span>
 											   <input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
 											</div>
