@@ -279,7 +279,7 @@
 											<div class="form-group no-margin-hr">
 											
 												<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked: ratingScheme.multipleApplyAllowed ">
-          										<label class="k-checkbox-label" for="eq1">다중진단허용</label>
+          										<label class="k-checkbox-label" for="eq1">중복진단허용</label>
           
 											
 												<span data-bind="visible:visible"><span data-bind="text: ratingScheme.scale"></span> 점 척도</span>
