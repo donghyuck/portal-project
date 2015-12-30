@@ -303,7 +303,7 @@
 												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
 											</div>
 											<div class="form-group no-margin-hr">											
-												<table class="table table-striped">							
+												<table class="table">							
 													<tbody>
 														<tr>
 															<td>중복진단허용</td>
