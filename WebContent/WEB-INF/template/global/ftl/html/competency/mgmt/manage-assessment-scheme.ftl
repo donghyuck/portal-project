@@ -291,18 +291,6 @@
 											    vertical-align: bottom;">중복진단허용</span>
 											   <input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
 											</div>
-											<div class="form-group no-margin-hr">	
-
-											    
-											    
-											    
-											    
-												<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked: ratingScheme.multipleApplyAllowed, enabled:editable">
-          										<label class="k-checkbox-label" for="eq1">중복진단허용</label>
-          									
-          										
-          										
-          									</div>
 										</div>
 									</div>			
 									<div class="row">
