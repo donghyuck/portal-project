@@ -79,9 +79,9 @@
 						}
 					},
 					columns: [
-						{ title: "평가기준", field: "name"}
+						{ title: "역량진단체계", field: "name"}
 					],
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 평가척도 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침 </button></div>'),
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량진단체계 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침 </button></div>'),
 					resizable: true,
 					editable : false,					
 					selectable : "row",
@@ -167,21 +167,13 @@
                             model: common.ui.data.Property
                         }
 					}),
-					ratingLevelDataSource : new kendo.data.DataSource({
-						batch: true,
-						data : [],
-						schema: {
-							model: common.ui.data.competency.RatingLevel
-						}		
-					}),
 					setSource: function(source){
 						var $this = this;
 						source.copy($this.ratingScheme);	
 						$this.propertyDataSource.read();
 						$this.ratingLevelDataSource.read();						
 						$this.propertyDataSource.data($this.ratingScheme.properties);	
-						$this.ratingLevelDataSource.data($this.ratingScheme.ratingLevels);
-						if($this.ratingScheme.get("ratingSchemeId") == 0)
+						if($this.ratingScheme.get("assessmentSchemeId") == 0)
 						{
 							$this.ratingScheme.set("objectType", 1);
 							$this.ratingScheme.set("objectId", getCompanySelector().value() );
@@ -306,28 +298,7 @@
 											</ul>
 											<div class="tab-content no-padding">
 												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">												
-													<table class="table table-striped" data-bind="visible:visible">
-														<thead>
-															<tr>
-																<th width="175">점수</th>
-																<th>예시</th>
-															</tr>
-														</thead>
-														<tbody class="no-border"
-																data-role="listview"
-												                data-template="rating-level-view-template"
-												                data-bind="source:ratingLevelDataSource"
-												                style="height: 200px; overflow: auto">
-												        </tbody>
-													</table>													
-													<div data-role="grid"
-																	 class="no-border"
-													                 data-scrollable="false"
-													                 data-editable="true"
-													                 data-toolbar="['create', 'cancel']"
-													                 data-columns="[{ 'field': 'score', 'width': 170 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
-													                 data-bind="source:ratingLevelDataSource, visible:editable"
-													                 style="height: 300px"></div>
+													
 													        
 												</div> <!-- / .tab-pane -->
 												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">		
