@@ -279,13 +279,23 @@
 												<span data-bind="{text: ratingScheme.description, visible:visible}"></span>
 												<textarea class="form-control" rows="4"  name="rating-scheme-description"  data-bind="{value: ratingScheme.description, visible:editable}" placeholder="설명"></textarea>
 											</div>
-											<div class="row form-group">
-												<label class="col-sm-4 control-label">중복진단허용</label>
-												<div class="col-sm-8">
-													<input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
-												</div>
+											<div class="form-group no-margin-hr">
+												<span style="
+												font-size: 14px;
+											    font-weight: 100;
+											   	color:#555;
+											    line-height: 24px;
+											    display: inline-block;
+											    padding-bottom: 5px;
+											    vertical-align: bottom;">중복진단허용</span>
+											   <input type="checkbox" data-class="switcher-primary" data-bind="checked: ratingScheme.multipleApplyAllowed">
 											</div>
 											<div class="form-group no-margin-hr">	
+
+											    
+											    
+											    
+											    
 												<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked: ratingScheme.multipleApplyAllowed, enabled:editable">
           										<label class="k-checkbox-label" for="eq1">중복진단허용</label>
           									
