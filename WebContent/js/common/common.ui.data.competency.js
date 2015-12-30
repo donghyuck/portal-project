@@ -141,7 +141,7 @@
 			name : { type: "string" },	   
 			description:  { type: "string" },
 			ratingScheme: { type: "object", defaultValue:"{ratingSchemeId:0}" },
-			properties : {type: "object" , defaultValue: new RatingScheme()},
+			properties : {type: "object" , defaultValue: (new RatingScheme())},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
 		},
