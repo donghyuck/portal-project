@@ -63,7 +63,7 @@
 					autoBind:false,
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json', type:'post' },
+							read: { url:'/secure/data/mgmt/competency/assessment/assessment-scheme/list.json?output=json', type:'post' },
 							parameterMap: function (options, operation){
 								if (operation !== "read") {
 									return kendo.stringify(options);
@@ -75,11 +75,11 @@
 							}
 						},
 						schema: {
-							model: common.ui.data.competency.RatingScheme
+							model: common.ui.data.competency.AssessmentScheme
 						}
 					},
 					columns: [
-						{ title: "평가척도", field: "name"}
+						{ title: "평가기준", field: "name"}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 평가척도 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침 </button></div>'),
 					resizable: true,
@@ -102,7 +102,7 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});	
 				renderTo.find("button[data-action=create]").click(function(e){	
-					createRatingSchemeDetails(new common.ui.data.competency.RatingScheme());			
+					createRatingSchemeDetails(new common.ui.data.competency.AssessmentScheme());			
 				});		
 							
 			}					
@@ -117,11 +117,11 @@
 					editable : false,
 					deletable: false,
 					updatable : false,						
-					ratingScheme: new common.ui.data.competency.RatingScheme(),
+					ratingScheme: new common.ui.data.competency.AssessmentScheme(),
 					create : function(e){
 						console.log("create..");
 						var $this = this;
-						$this.setSource(new common.ui.data.competency.RatingScheme());
+						$this.setSource(new common.ui.data.competency.AssessmentScheme());
 						return false;
 					},					
 					view : function(e){
