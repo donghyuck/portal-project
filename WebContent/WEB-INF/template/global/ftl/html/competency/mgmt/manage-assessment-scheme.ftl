@@ -165,19 +165,11 @@
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
-						
 						if($this.assessmentScheme.get("ratingScheme"))
 						{
-							$this.assessmentScheme.ratingScheme.set('ratingSchemeId',$this.selectedRatingScheme );
-							
-							console.log(common.ui.stringify($this.assessmentScheme.ratingScheme ));
+							$this.assessmentScheme.ratingScheme.set('ratingSchemeId',$this.selectedRatingScheme );							
 						}
-						
-						
-						//$this.assessmentScheme.ratingScheme.ratingSchemeId = $this.selectedRatingScheme;
-						
 						console.log(common.ui.stringify($this.assessmentScheme ));
-						
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/assessment-scheme/update.json?output=json" />' , 
@@ -192,8 +184,7 @@
 									common.ui.progress(renderTo, false);
 								}
 							}
-						);		
-						
+						);								
 						return false;
 					},
 					propertyDataSource :new kendo.data.DataSource({
