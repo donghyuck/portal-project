@@ -139,6 +139,9 @@
 						$this.set("visible", false);
 						$this.set("editable", true);
 						$this.set("updatable", true);
+						
+						//$("#rating-scheme-dorpdown-list").data("kendoDorpDownList").readonly();
+						
 						return false;
 					},
 					ratingSchemeDataSource: new kendo.data.DataSource({
@@ -322,7 +325,7 @@
 										                  	data-value-primitive="true"
 										                   	data-text-field="name"
 										                   	data-value-field="ratingSchemeId"
-										                   	data-bind="value:selectedRatingScheme, source: ratingSchemeDataSource , readonly:visible,  events:{change: onRatingSchemeChange}" />
+										                   	data-bind="value:selectedRatingScheme, source: ratingSchemeDataSource, enabled:editable , events:{change: onRatingSchemeChange}" />
 															</td>
 														</tr>
 														<tr>
