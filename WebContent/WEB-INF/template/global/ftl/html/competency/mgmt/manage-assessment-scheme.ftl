@@ -168,11 +168,13 @@
 						
 						if($this.assessmentScheme.get("ratingScheme"))
 						{
+							$this.assessmentScheme.ratingScheme.set('ratingSchemeId',$this.selectedRatingScheme );
+							
 							console.log(common.ui.stringify($this.assessmentScheme.ratingScheme ));
 						}
 						
 						
-						$this.assessmentScheme.ratingScheme.ratingSchemeId = $this.selectedRatingScheme;
+						//$this.assessmentScheme.ratingScheme.ratingSchemeId = $this.selectedRatingScheme;
 						
 						console.log(common.ui.stringify($this.assessmentScheme ));
 						
