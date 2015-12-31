@@ -139,10 +139,12 @@
 						$this.set("visible", false);
 						$this.set("editable", true);
 						$this.set("updatable", true);
+						/**
 						if($this.assessmentScheme.multipleApplyAllowed) 
 							$('#multiple-apply-allowed-switcher').switcher('on');
 						else
-							$('#multiple-apply-allowed-switcher').switcher('off');						
+							$('#multiple-apply-allowed-switcher').switcher('off');		
+							**/				
 						return false;
 					},
 					ratingSchemeDataSource: new kendo.data.DataSource({
@@ -330,7 +332,9 @@
 														<tr>
 															<td class="text-muted">중복진단허용</td>
 															<td>
-															<input id="multiple-apply-allowed-switcher" type="checkbox" data-class="switcher-primary" data-bind="checked:assessmentScheme.multipleApplyAllowed, visible:editable">
+															<input id="multiple-apply-allowed-switcher" type="checkbox" 
+																data-class="switcher-primary" 
+																data-bind="checked:assessmentScheme.multipleApplyAllowed">
 															</td>
 														</tr>
 													</tbody>
