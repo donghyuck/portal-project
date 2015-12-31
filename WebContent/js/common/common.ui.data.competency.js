@@ -140,6 +140,7 @@
 	    	objectId : { type: "number"},
 			name : { type: "string" },	   
 			description:  { type: "string" },
+			multipleApplyAllowed:{ type:'boolean', defaultValue:false},
 			properties : {type: "object" , defaultValue:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
@@ -153,12 +154,11 @@
 	    	target.set("scale", this.get("scale"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate"));	
-	    	
+	    	target.set("multipleApplyAllowed", this.get("multipleApplyAllowed"));	
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
-	    		target.set("properties", []);	 
-	    	
+	    		target.set("properties", []);	 	    	
 	    	if( this.get("ratingScheme"))
 	    		target.set("ratingScheme", this.get("ratingScheme"));
 	    	else
