@@ -117,7 +117,6 @@
 					editable : false,
 					deletable: false,
 					updatable : false,				
-					selectedRatingScheme : null,		
 					assessmentScheme: new common.ui.data.competency.AssessmentScheme(),
 					create : function(e){
 						console.log("create..");
@@ -221,7 +220,13 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);						
-						}						
+						}					
+							
+						if($this.assessmentScheme.multipleApplyAllowed)
+						$('#multiple-apply-allowed-switcher').switcher('on');
+						else
+						$('#multiple-apply-allowed-switcher').switcher('off');
+						
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});					
