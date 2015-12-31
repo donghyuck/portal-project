@@ -166,7 +166,7 @@
 						var $this = this;						
 						var btn = $(e.target);	
 						
-						if( $this.assessmentScheme.ratingScheme ){
+						if( !$this.assessmentScheme.ratingScheme.ratingSchemeId){
 							$this.assessmentScheme.set('ratingScheme', new common.ui.data.competency.AssessmentScheme() );
 						}
 						
