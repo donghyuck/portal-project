@@ -165,17 +165,8 @@
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
-						
-						if( !$this.assessmentScheme.ratingScheme.ratingSchemeId){
-							$this.assessmentScheme.set('ratingScheme', new common.ui.data.competency.AssessmentScheme() );
-						}
-						
-						console.log(common.ui.stringify($this.assessmentScheme.ratingScheme.ratingSchemeId));
-						
 						$this.assessmentScheme.ratingScheme.ratingSchemeId = $this.selectedRatingScheme;
-						
 						console.log(common.ui.stringify($this.assessmentScheme ));
-						
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/assessment-scheme/update.json?output=json" />' , 
