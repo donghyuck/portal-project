@@ -218,15 +218,13 @@
 						}						
 						
 						if($this.assessmentScheme.multipleApplyAllowed) 
-							switcher.on()
+							$('#multiple-apply-allowed-switcher').switcher('on');
 						else
-							switcher.off()
+							$('#multiple-apply-allowed-switcher').switcher('off');
 								
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});	
-				
-				
 				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );	
