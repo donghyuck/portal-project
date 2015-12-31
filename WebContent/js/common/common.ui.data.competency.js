@@ -162,7 +162,7 @@
 	    	if( typeof this.get("ratingScheme") === 'object' )
 	    		target.set("ratingScheme", this.get("ratingScheme"));
 	    	else
-	    		target.set("ratingScheme", "{ ratingSchemeId:0 }");	  
+	    		target.set("ratingScheme", new RatingScheme());	  
 		}
 	});
 	
