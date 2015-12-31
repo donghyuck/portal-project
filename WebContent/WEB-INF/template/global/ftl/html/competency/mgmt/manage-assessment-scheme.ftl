@@ -269,7 +269,14 @@
 		    color: #555;
 		    line-height: .875em;
     	}
-			
+		.fieldlist {
+            margin: 0 0 -1em;
+            padding: 0;
+        }
+        .fieldlist li {
+            list-style: none;
+            padding-bottom: 1em;
+        }			
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
