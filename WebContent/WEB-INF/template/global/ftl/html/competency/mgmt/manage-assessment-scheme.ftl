@@ -326,7 +326,7 @@
 										                  	data-value-primitive="true"
 										                   	data-text-field="name"
 										                   	data-value-field="ratingSchemeId"
-										                   	data-bind="value:selectedRatingScheme, source: ratingSchemeDataSource, visible:editable,events:{change: onRatingSchemeChange}" />
+										                   	data-bind="value:assessmentScheme.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource, visible:editable,events:{change: onRatingSchemeChange}" />
 															</td>
 														</tr>
 														<tr>
