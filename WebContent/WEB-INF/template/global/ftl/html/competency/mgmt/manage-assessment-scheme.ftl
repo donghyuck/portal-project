@@ -117,7 +117,8 @@
 					visible : false,
 					editable : false,
 					deletable: false,
-					updatable : false,				
+					updatable : false,		
+					multipleApplyAllowed: false,		
 					assessmentScheme: new common.ui.data.competency.AssessmentScheme(),
 					create : function(e){
 						console.log("create..");
@@ -344,7 +345,7 @@
 															<td>
 															<input id="multiple-apply-allowed-switcher" type="checkbox" 
 																data-class="switcher-primary" 
-																data-bind="checked:assessmentScheme.multipleApplyAllowed">
+																data-bind="checked:multipleApplyAllowed">
 															</td>
 														</tr>
 													</tbody>
