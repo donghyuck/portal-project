@@ -152,13 +152,14 @@
 	    	target.set("description", this.get("description"));
 	    	target.set("scale", this.get("scale"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
-	    	target.set("creationDate", this.get("creationDate"));	 	    	
+	    	target.set("creationDate", this.get("creationDate"));	
+	    	
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
 	    		target.set("properties", []);	 
 	    	
-	    	if( typeof this.get("ratingScheme") === 'object' )
+	    	if( this.get("ratingScheme"))
 	    		target.set("ratingScheme", this.get("ratingScheme"));
 	    	else
 	    		target.set("ratingScheme", new RatingScheme());	  
