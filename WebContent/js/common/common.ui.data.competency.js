@@ -140,7 +140,7 @@
 	    	objectId : { type: "number"},
 			name : { type: "string" },	   
 			description:  { type: "string" },
-			ratingScheme: { type: "object", defaultValue:"{ratingSchemeId:0}" },
+			ratingScheme: { type: "object", defaultValue:"{ ratingSchemeId:0 }" },
 			properties : {type: "object" , defaultValue:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
@@ -158,6 +158,11 @@
 	    		target.set("properties", this.get("properties"));
 	    	else
 	    		target.set("properties", []);	 
+	    	
+	    	if( typeof this.get("ratingScheme") === 'object' )
+	    		target.set("ratingScheme", this.get("ratingScheme"));
+	    	else
+	    		target.set("ratingScheme", "{ ratingSchemeId:0 }");	  
 		}
 	});
 	
