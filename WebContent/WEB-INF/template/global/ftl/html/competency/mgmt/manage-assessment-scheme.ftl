@@ -111,7 +111,7 @@
 		function createAssessmentSchemeDetails(source){
 			var renderTo = $("#assessment-scheme-details");
 			if( !renderTo.data("model")){		
-				var switcher = $(renderTo.find('input[data-class=switcher-primary]')).switcher({theme: 'square'});
+				var switcher = $('#multiple-apply-allowed-switcher').switcher({theme: 'square'});
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
@@ -338,7 +338,7 @@
 														<tr>
 															<td class="text-muted">중복진단허용</td>
 															<td>
-															<input type="checkbox" data-class="switcher-primary" data-bind="checked:assessmentScheme.multipleApplyAllowed, visible:editable">
+															<input id="multiple-apply-allowed-switcher" type="checkbox" data-class="switcher-primary" data-bind="checked:assessmentScheme.multipleApplyAllowed, visible:editable">
 															</td>
 														</tr>
 													</tbody>
