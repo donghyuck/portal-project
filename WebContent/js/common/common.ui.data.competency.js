@@ -140,7 +140,7 @@
 	    	objectId : { type: "number"},
 			name : { type: "string" },	   
 			description:  { type: "string" },
-			ratingScheme: { type:"object"},
+			ratingScheme: { type:"object", defaultValue: {ratingSchemeId:0}},
 			properties : {type: "object" , defaultValue:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
