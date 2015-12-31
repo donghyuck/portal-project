@@ -159,13 +159,14 @@
 						error:common.ui.handleAjaxError
 					}),	
 					onRatingSchemeChange: function(e){					
+						console.log($this.selectedRatingScheme);
 					},
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
 						
 						$this.assessmentScheme.ratingScheme.ratingSchemeId = $this.selectedRatingScheme;
-						 
+						
 						console.log(common.ui.stringify($this.assessmentScheme ));
 						
 						common.ui.progress(renderTo, true);
