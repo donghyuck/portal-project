@@ -315,7 +315,7 @@
 															<td class="text-muted">진단척도</td>
 															<td>
 															<input id="rating-scheme-dorpdown-list"
-															data-option-label="진단척도"
+															data-option-label="선택"
 															data-role="dropdownlist"
 										                  	data-auto-bind="true"
 										                  	data-value-primitive="true"
