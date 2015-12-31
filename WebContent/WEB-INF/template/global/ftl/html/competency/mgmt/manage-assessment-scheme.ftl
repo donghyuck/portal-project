@@ -166,7 +166,11 @@
 						var $this = this;						
 						var btn = $(e.target);	
 						
-						console.log(common.ui.stringify($this.assessmentScheme ));
+						if($this.assessmentScheme.get("ratingScheme"))
+						{
+							console.log(common.ui.stringify($this.assessmentScheme.ratingScheme ));
+						}
+						
 						
 						$this.assessmentScheme.ratingScheme.ratingSchemeId = $this.selectedRatingScheme;
 						
