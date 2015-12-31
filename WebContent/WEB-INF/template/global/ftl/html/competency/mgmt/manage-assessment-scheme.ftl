@@ -318,7 +318,7 @@
 														<tr>
 															<td class="text-muted">진단척도</td>
 															<td>
-															<span data-bind="visible:visible, text:assessmentScheme.ratingScheme.name"
+															<span data-bind="visible:visible, text:assessmentScheme.ratingScheme.name"></span>
 															<input id="rating-scheme-dorpdown-list"
 															data-option-label="선택"
 															data-role="dropdownlist"
