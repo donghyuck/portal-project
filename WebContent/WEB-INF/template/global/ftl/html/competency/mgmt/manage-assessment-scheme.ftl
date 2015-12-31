@@ -221,12 +221,13 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);						
 						}					
-							
-						if($this.assessmentScheme.multipleApplyAllowed)
-						$('#multiple-apply-allowed-switcher').switcher('on');
-						else
-						$('#multiple-apply-allowed-switcher').switcher('off');
 						
+						console.log($this.assessmentScheme.multipleApplyAllowed);	
+						if($this.assessmentScheme.multipleApplyAllowed){
+							$('#multiple-apply-allowed-switcher').switcher('on');
+						}else{
+							$('#multiple-apply-allowed-switcher').switcher('off');
+						}
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});					
