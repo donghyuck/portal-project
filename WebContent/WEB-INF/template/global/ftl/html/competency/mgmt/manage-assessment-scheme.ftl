@@ -112,7 +112,6 @@
 			var renderTo = $("#assessment-scheme-details");
 			if( !renderTo.data("model")){		
 				$('#multiple-apply-allowed-switcher').switcher({theme: 'square'});
-				$('#multiple-apply-allowed-switcher').switcher('off');
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
@@ -172,6 +171,9 @@
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
+						
+						
+						
 						/*if($this.assessmentScheme.get("ratingScheme"))
 						{
 							$this.assessmentScheme.ratingScheme.set('ratingSchemeId',$this.selectedRatingScheme );							
@@ -364,9 +366,7 @@
 												</li>
 											</ul>
 											<div class="tab-content no-padding">
-												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">												
-													
-													        
+												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">	
 												</div> <!-- / .tab-pane -->
 												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">		
 													<table class="table table-striped" data-bind="visible:visible">
