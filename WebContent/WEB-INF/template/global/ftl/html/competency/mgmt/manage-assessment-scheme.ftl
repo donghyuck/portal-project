@@ -139,9 +139,10 @@
 						$this.set("visible", false);
 						$this.set("editable", true);
 						$this.set("updatable", true);
-						
-						//$("#rating-scheme-dorpdown-list").data("kendoDorpDownList").readonly();
-						
+						if($this.assessmentScheme.multipleApplyAllowed) 
+							$('#multiple-apply-allowed-switcher').switcher('on');
+						else
+							$('#multiple-apply-allowed-switcher').switcher('off');						
 						return false;
 					},
 					ratingSchemeDataSource: new kendo.data.DataSource({
@@ -216,12 +217,6 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);						
 						}						
-						
-						if($this.assessmentScheme.multipleApplyAllowed) 
-							$('#multiple-apply-allowed-switcher').switcher('on');
-						else
-							$('#multiple-apply-allowed-switcher').switcher('off');
-														
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});					
