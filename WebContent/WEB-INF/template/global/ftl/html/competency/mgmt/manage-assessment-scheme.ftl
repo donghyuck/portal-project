@@ -112,6 +112,7 @@
 			var renderTo = $("#assessment-scheme-details");
 			if( !renderTo.data("model")){		
 				$('#multiple-apply-allowed-switcher').switcher({theme: 'square'});
+				$('#multiple-apply-allowed-switcher').switcher('off');
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
