@@ -1,4 +1,4 @@
-<#ftl encoding="UTF-8"/>
+	<#ftl encoding="UTF-8"/>
 <html decorator="secure">
 <head>
 		<title>관리자 메인</title>		
@@ -318,6 +318,7 @@
 														<tr>
 															<td class="text-muted">진단척도</td>
 															<td>
+															<span data-bind="visible:visible, text:assessmentScheme.ratingScheme.name"
 															<input id="rating-scheme-dorpdown-list"
 															data-option-label="선택"
 															data-role="dropdownlist"
@@ -325,13 +326,13 @@
 										                  	data-value-primitive="true"
 										                   	data-text-field="name"
 										                   	data-value-field="ratingSchemeId"
-										                   	data-bind="value:selectedRatingScheme, source: ratingSchemeDataSource, enabled:editable , events:{change: onRatingSchemeChange}" />
+										                   	data-bind="value:selectedRatingScheme, source: ratingSchemeDataSource, visible:editable,events:{change: onRatingSchemeChange}" />
 															</td>
 														</tr>
 														<tr>
 															<td class="text-muted">중복진단허용</td>
 															<td>
-															<input type="checkbox" data-class="switcher-primary" data-bind="checked: assessmentScheme.multipleApplyAllowed">
+															<input type="checkbox" data-class="switcher-primary" data-bind="checked:assessmentScheme.multipleApplyAllowed, visible:editable">
 															</td>
 														</tr>
 													</tbody>
