@@ -158,7 +158,8 @@
 						},
 						error:common.ui.handleAjaxError
 					}),	
-					onRatingSchemeChange: function(e){					
+					onRatingSchemeChange: function(e){			
+						var $this = this;				
 						console.log($this.selectedRatingScheme);
 					},
 					saveOrUpdate : function(e){
