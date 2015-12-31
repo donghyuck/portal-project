@@ -111,7 +111,7 @@
 		function createAssessmentSchemeDetails(source){
 			var renderTo = $("#assessment-scheme-details");
 			if( !renderTo.data("model")){		
-				var switcher = $('#multiple-apply-allowed-switcher').switcher({theme: 'square'});
+				
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
@@ -220,12 +220,13 @@
 						if($this.assessmentScheme.multipleApplyAllowed) 
 							$('#multiple-apply-allowed-switcher').switcher('on');
 						else
-							$('#multiple-apply-allowed-switcher').switcher('off');
-								
+							$('#multiple-apply-allowed-switcher').switcher('off');	
+														
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});	
 				
+				$('#multiple-apply-allowed-switcher').switcher({theme: 'square'});
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );	
 			}			
