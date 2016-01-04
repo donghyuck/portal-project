@@ -244,7 +244,7 @@
 		</script> 		 
 		<style>
 		
-		#content-wrapper section.layout {
+		#content-wrapper .layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f5f5f5;		 
 		    min-height: 700px;
