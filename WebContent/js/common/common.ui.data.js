@@ -106,6 +106,12 @@
 		    	else 
 		    		return false;		    	
 		    },
+		    isOther: function(){
+		    	if( this.isImage() || this.isPdf())
+		    		return false;
+		    	else 
+		    		return true;
+		    },
 		    copy : function ( target ){
 		    	target.attachmentId = this.get("attachmentId");
 		    	target.set("objectType" , this.get("objectType"));
