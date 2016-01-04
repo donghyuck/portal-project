@@ -14,7 +14,7 @@
 	#if(isPdf()||isImage()){#
 		<button type="button" class="btn btn-primary btn-sm rounded-3x"><i class="fa fa-eye"></i> 파일보기 </button>
 	#}else{# 
-		<a href="<@spring.url '/download/file/#= attachmentId #/#= name #'/>" class="btn btn-primary btn-sm rounded"><i class="fa fa-disk"></i>다운로드</a>
+		<a href="<@spring.url '/download/file/#= attachmentId #/#= name #'/>" class="btn btn-primary rounded"><i class="fa fa-save"></i></a>
 	#}#
 	
 	
