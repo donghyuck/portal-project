@@ -10,7 +10,11 @@
 	# } else { #		
 	<img src="<@spring.url '/images/common/icons/file/blank.png'/>"></a>
 	# } #	
-	<button type="button" class="btn btn-primary btn-sm rounded-3x"><i class="fa fa-eye"></i> 파일보기</button>
+	
+	
+	<button type="button" class="btn btn-primary btn-sm rounded-3x"><i class="fa fa-eye"></i> #if(isPdf()||isImage()){#파일보기#}else{# 다운로드 #}#</button>
+	
+	
 	<div class="file-description">
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
