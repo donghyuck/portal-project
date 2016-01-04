@@ -243,14 +243,50 @@
 				
 		</script> 		 
 		<style>
-		#content-wrapper .layout {
+		
+		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f5f5f5;		 
-		    min-height: 770px;
+		    min-height: 700px;
 		    height:100%;
-		    position: static;	    
+		    width:100%;
+		    position: static;
+		    left:0px;		    
 		    border-radius: 4px;
 		}
+		
+		#content-wrapper .layout:after, #content-wrapper .layout:before{
+			clear:both;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+			display:table;
+		} 
+		
+		.pane.left, .pane.center, pane.bottom {
+			display:block;
+		}
+		
+		.pane.left:after, .pane.center:after, .pane.left:before, .pane.center:before,  {
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;		
+		}
+		
+		#content-wrapper .pane.left {
+			width:400px;
+			position: absolute;
+			height:auto;
+			min-height: 700px;			
+			border-right: solid 1px #e2e2e2;
+		}
+		
+		.pane.left.fixed {
+			position: fixed!important;
+			right : 0 ;
+			top : 0;
+		}
+				
 		
 		.layout .left{
 			display:block;
@@ -294,8 +330,8 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
-				<div class="row animated fadeInRight">
-	                <div class="col-md-4"> 
+				<div class="layout animated fadeInRight">
+	                <div class="pane left"> 
 	                	<input id="company-dropdown-list" />
 	                	<hr/>
 						<div class="panel panel-default">
@@ -306,8 +342,8 @@
 							-->	
 							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
-	                </div><!-- /.com-md-4 -->            
-                	<div class="col-md-8">
+	                </div><!-- /.pane left -->            
+                	<div class="pane center">
                 		<div id="assessment-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
                 			<!--<div class="panel-heading">
                     			
@@ -480,8 +516,8 @@
 									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	                   		
                     		</div>
                 		</div><!-- /.panel -->  
-                	</div><!-- /.com-md-8 --> 
-           		</div><!-- /.row --> 	
+                	</div><!-- /.pane center --> 
+           		</div><!-- /.layout --> 	
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
