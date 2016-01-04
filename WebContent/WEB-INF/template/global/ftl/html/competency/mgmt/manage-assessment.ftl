@@ -512,7 +512,7 @@
 		#content-wrapper section.layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f5f5f5;		 
-		    min-height: 770px;
+		    min-height: 700px;
 		    height:100%;
 		    width:100%;
 		    position: static;
@@ -542,7 +542,7 @@
 			width:400px;
 			position: absolute;
 			height:auto;
-			min-height: 100%;			
+			min-height: 700px;			
 			border-right: solid 1px #e2e2e2;
 		}
 		
