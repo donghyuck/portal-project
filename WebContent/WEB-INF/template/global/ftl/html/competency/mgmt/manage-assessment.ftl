@@ -520,7 +520,7 @@
 		    border-radius: 4px;
 		}
 		
-		#content-wrapper section.layout:after, #content-wrapper section.layout:before{
+		#content-wrapper .layout:after, #content-wrapper .layout:before{
 			clear:both;
 			-webkit-box-sizing:border-box;
 			-moz-box-sizing:border-box;
@@ -528,17 +528,17 @@
 			display:table;
 		} 
 		
-		section.left, section.right, section.bottom {
+		.pane.left, .pane.center, pane.bottom {
 			display:block;
 		}
 		
-		section.left:after, section.right:after, section.left:before, section.right:before,  {
+		.pane.left:after, .pane.center:after, .pane.left:before, .pane.center:before,  {
 			-webkit-box-sizing:border-box;
 			-moz-box-sizing:border-box;
 			box-sizing:border-box;		
 		}
 		
-		#content-wrapper section.left {
+		#content-wrapper .pane.left {
 			width:400px;
 			position: absolute;
 			height:auto;
@@ -546,23 +546,23 @@
 			border-right: solid 1px #e2e2e2;
 		}
 		
-		.left.fixed {
+		.pane.left.fixed {
 			position: fixed!important;
 			right : 0 ;
 			top : 0;
 		}
 		
-		#content-wrapper section.right {
+		#content-wrapper .pane.center {
 			margin-left:400px;
 			height:100%;			
 		}
 		
-		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
+		#content-wrapper .pane.left > .panel, #content-wrapper .pane.right > .panel{
 			border-width:0;
 			margin-bottom:0px;
     	}
     	
-		#content-wrapper section.bottom{
+		#content-wrapper .pane.bottom{
 			padding: 10px 15px;
 			background-color: #f5f5f5;
 			border-top: 1px solid #ddd;
@@ -657,7 +657,7 @@
 				</div>	-->
 				
 				<section class="layout">
-					<section class="left">							
+					<section class="pane left">							
 						<div class="panel panel-transparent">
 							<!--<div class="panel-heading">
 								
@@ -679,7 +679,7 @@
 							<div id="job-grid" class="no-border no-shadow"></div>
 						</div>				
 					</section>
-					<section class="right">	
+					<section class="pane center">	
 						<div id="job-details" class="panel panel-default" style="display:none;">
 							<div class="panel-heading">
 								<strong><span class="panel-title" data-bind="{text: job.name, visible:visible}"></span></strong>
