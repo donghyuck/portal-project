@@ -11,8 +11,12 @@
 	<img src="<@spring.url '/images/common/icons/file/blank.png'/>"></a>
 	# } #	
 	
+	#if(isPdf()||isImage()){#
+		<button type="button" class="btn btn-primary btn-sm rounded-3x"><i class="fa fa-eye"></i> 파일보기 </button>
+	#}else{# 
+		<a href="<@spring.url '/download/file/#= attachmentId #/#= name #'/>">다운로드</a>
+	#}#
 	
-	<button type="button" class="btn btn-primary btn-sm rounded-3x"><i class="fa fa-eye"></i> #if(isPdf()||isImage()){#파일보기#}else{# 다운로드 #}#</button>
 	
 	
 	<div class="file-description">
