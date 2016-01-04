@@ -344,10 +344,10 @@
 				
 				<div class="layout animated fadeInRight">
 	                <div class="pane left"> 
-	                	<div class="panel panel-transparent">
-							
-							<div class="panel-heading">
+	                	<div class="panel panel-transparent">							
+							<div class="panel-body">
 								<input id="company-dropdown-list" />
+								<hr/>
 							</div>
 							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
