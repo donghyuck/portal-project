@@ -639,6 +639,7 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
+				<!--
 				<div class="row">				
 					<div class="col-sm-12">	
 						<div class="panel panel-transparent" style="min-height:300px;">
@@ -653,7 +654,7 @@
 							</div>			
 						</div>					
 					</div>
-				</div>	
+				</div>	-->
 				
 				<section class="layout">
 					<section class="left">							
@@ -662,7 +663,7 @@
 								
 							</div>-->
 							<div class="panel-body">
-								
+								<input id="company-dropdown-list" />
 								<hr/>
 							 	<h5 class="text-primary"><strong>직무분류</strong></h5>
 								<div class="m-b-xs">
