@@ -286,12 +286,23 @@
 			right : 0 ;
 			top : 0;
 		}
-				
 		
-		.layout .left{
-			display:block;
-			height: 100%;			
-			border-right: solid 1px #e2e2e2;			
+		#content-wrapper .pane.center {
+			margin-left:400px;
+			height:100%;			
+		}
+		
+		#content-wrapper .pane.left > .panel, #content-wrapper .pane.right > .panel{
+			border-width:0;
+			margin-bottom:0px;
+    	}
+    	
+		#content-wrapper .pane.bottom{
+			padding: 10px 15px;
+			background-color: #f5f5f5;
+			border-top: 1px solid #ddd;
+			border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px
 		}
 		
 		.no-shadow{
@@ -313,6 +324,7 @@
             list-style: none;
             padding-bottom: 1em;
         }			
+        
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
