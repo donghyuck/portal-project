@@ -449,7 +449,7 @@
 																data-role="listview"
 												                data-template="property-view-template"
 												                data-bind="source:propertyDataSource"
-												                style="height: 200px; overflow: auto">
+												                style="height: 300px; overflow: auto">
 												            
 												        </tbody>
 													</table>																											
