@@ -391,8 +391,7 @@
                         { collapsible: false, resizable:true }
                      ]"
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
-                     class="bg-transparent"
-                     style="height: 100%;">    
+                     class="bg-transparent">    
                    <div class="pane-content no-border">
 						<div class="panel panel-transparent no-margin">							
 							<div class="panel-body">
@@ -403,23 +402,9 @@
 						</div>
                     </div>
                     <div class="pane-content">
-                            <h3>Inner splitter / center pane</h3>
-                            <p>Resizable only.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-				
-				<div class="layout animated fadeInRight">
-	                <div class="pane left"> 
-	                	
-	                </div><!-- /.pane left -->            
-                	<div class="pane center">
+					<!-- detalil -->
+
                 		<div id="assessment-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
-                			<!--<div class="panel-heading">
-                    			
-							</div>-->
 							<div class="panel-body">
 								<div class="form-horizontal">			
 									<div class="row">
@@ -588,6 +573,20 @@
 									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	                   		
                     		</div>
                 		</div><!-- /.panel -->  
+                		
+					<!-- /.details -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+				
+				<div class="layout animated fadeInRight">
+	                <div class="pane left"> 
+	                	
+	                </div><!-- /.pane left -->            
+                	<div class="pane center">
+
                 	</div><!-- /.pane center --> 
            		</div><!-- /.layout --> 	
 			</div> <!-- / #content-wrapper -->
