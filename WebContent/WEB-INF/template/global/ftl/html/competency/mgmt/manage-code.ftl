@@ -119,12 +119,9 @@
 					var selectedRows = getCodeSetTreeList().select();
 					if( selectedRows.length > 0 ){
 						var dataItem = getCodeSetTreeList().dataItem(selectedRows[0]);
-						console.log(common.ui.stringify(dataItem));
-						codeset.set("parentCodeSetId", dataItem.parentCodeSetId);
+						codeset.set("parentCodeSetId", dataItem.codeSetId);
 					} 
-					console.log(selectedRows);
-					
-					//createCodeSetPanel(codeset);
+					createCodeSetPanel(codeset);
 				});	
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					getCodeSetTreeList().dataSource.read();
@@ -352,6 +349,9 @@
 									<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />
 								</div>
 								<div class="panel-body no-padding-b">	
+									<div class="m-b-sm" data-bind="visible:editable">
+										<input type="text" class="form-control input-sm" name="codeset-parent-id" data-bind="{value:codeset.parentCodeSetId, visible:editable }" placeholder="부모 코드 ID 값" />
+									</div>	
 									<div class="m-b-sm">
 										<span  data-bind="{text: codeset.code, visible:visible}"></span>
 										<input type="text" class="form-control input-sm" name="codeset-code" data-bind="{value:codeset.code, visible:editable }" placeholder="코드 값" />
