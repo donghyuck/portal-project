@@ -349,7 +349,7 @@
 								<input id="company-dropdown-list" />
 								<hr/>
 							</div>
-							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
+							<div id="assessment-scheme-grid" class="no-shadow"></div>	
 						</div>
 	                </div><!-- /.col-md-4 -->   
                 	<div class="col-md-8">
