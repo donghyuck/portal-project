@@ -391,7 +391,7 @@
                         { collapsible: false, resizable:true }
                      ]"
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
-                     class="bg-transparent" style="height:100%">    
+                     class="bg-transparent" style="height:100%;">    
                    <div class="pane-content no-border">
 						<div class="panel panel-transparent no-margin">							
 							<div class="panel-body">
