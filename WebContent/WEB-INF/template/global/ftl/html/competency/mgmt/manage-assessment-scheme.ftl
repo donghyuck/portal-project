@@ -51,13 +51,13 @@
 				var viewModel = kendo.observable({
         isVisible: true,
         onResize: function(e) {
-            kendoConsole.log("event :: resize");
+            console.log("event :: resize");
         },
         onExpand: function(e) {
-            kendoConsole.log("event :: expand (" + $(e.pane).text() + ")");
+            console.log("event :: expand (" + $(e.pane).text() + ")");
         },
         onCollapse: function(e) {
-            kendoConsole.log("event :: collapse (" + $(e.pane).text() + ")");
+            console.log("event :: collapse (" + $(e.pane).text() + ")");
         }
     });
     kendo.bind($("#layout"), viewModel);
