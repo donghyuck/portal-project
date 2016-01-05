@@ -391,7 +391,7 @@
                      ]"
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
                      class="bg-transparent"
-                     style="height: 100%; width: 100%;">                                          
+                     style="height: 100%;">                                          
                     <div id="left-pane" style="width:40%;">
                         <div class="pane-content no-border">
                             <h3>Inner splitter / left pane</h3>
