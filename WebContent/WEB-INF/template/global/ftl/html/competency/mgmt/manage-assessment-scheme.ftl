@@ -345,7 +345,7 @@
 				<div class="row animated fadeInRight">
 	                <div class="col-md-4">  
 	                	<div class="panel panel-transparent">							
-							<div class="panel-body">
+							<div class="panel-body no-padding">
 								<input id="company-dropdown-list" />
 								<hr/>
 							</div>
