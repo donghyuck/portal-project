@@ -341,6 +341,59 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
+
+
+		<div data-role="splitter"
+             data-panes="[
+                { collapsible: false },
+                { collapsible: false, size: '70px' },
+                { collapsible: false, resizable: false, size: '70px' }
+             ]"
+             data-orientation="vertical"
+             data-bind="visible: isVisible, events: { resize: onResize }">
+            <div id="top-pane">
+                <div data-role="splitter"
+                     data-panes="[
+                        { collapsible: true },
+                        { collapsible: false },
+                        { collapsible: true }
+                     ]"
+                     data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
+                     style="height: 100%; width: 100%;">
+                    <div id="left-pane">
+                        <div class="pane-content">
+                            <h3>Inner splitter / left pane</h3>
+                            <p>Resizable and collapsible.</p>
+                        </div>
+                    </div>
+                    <div id="center-pane">
+                        <div class="pane-content">
+                            <h3>Inner splitter / center pane</h3>
+                            <p>Resizable only.</p>
+                        </div>
+                    </div>
+                    <div id="right-pane">
+                        <div class="pane-content">
+                            <h3>Inner splitter / right pane</h3>
+                            <p>Resizable and collapsible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="middle-pane">
+                <div class="pane-content">
+                    <h3>Outer splitter / middle pane</h3>
+                    <p>Resizable only.</p>
+                </div>
+            </div>
+            <div id="bottom-pane">
+                <div class="pane-content">
+                    <h3>Outer splitter / bottom pane</h3>
+                    <p>Non-resizable and non-collapsible.</p>
+                </div>
+            </div>
+        </div>
+        
 				
 				<div class="layout animated fadeInRight">
 	                <div class="pane left"> 
