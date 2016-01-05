@@ -326,9 +326,12 @@
 														<tr>
 															<td class="text-muted">중복진단허용</td>
 															<td>
-															<input id="multiple-apply-allowed-switcher" type="checkbox" 
-																data-class="switcher-primary" 
-																data-bind="checked:multipleApplyAllowed, visible:editable">
+																<div data-bind="visible:editable">
+																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
+																	data-class="switcher-primary" 
+																	data-bind="checked:multipleApplyAllowed, visible:editable"/>
+																</div>
+																
 																<ul class="fieldlist">
 														            <li>
 														              	<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked:multipleApplyAllowed">
