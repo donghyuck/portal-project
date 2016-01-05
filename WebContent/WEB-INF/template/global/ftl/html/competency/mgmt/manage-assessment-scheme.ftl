@@ -275,6 +275,9 @@
 			display:table;
 		} 
 		
+		.splitter-layout .k-splitter {
+			height:100%;
+		}
 		
 		#content-wrapper .layout {
 		    border: 1px solid #e2e2e2;
