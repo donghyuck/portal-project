@@ -342,8 +342,8 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
-				<div class="layout animated fadeInRight">
-	                <div class="pane left"> 
+				<div class="row animated fadeInRight">
+	                <div class="col-md-4">  
 	                	<div class="panel panel-transparent">							
 							<div class="panel-body">
 								<input id="company-dropdown-list" />
@@ -351,12 +351,9 @@
 							</div>
 							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
-	                </div><!-- /.pane left -->            
-                	<div class="pane center">
+	                </div><!-- /.col-md-4 -->   
+                	<div class="col-md-8">
                 		<div id="assessment-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
-                			<!--<div class="panel-heading">
-                    			
-							</div>-->
 							<div class="panel-body">
 								<div class="form-horizontal">			
 									<div class="row">
