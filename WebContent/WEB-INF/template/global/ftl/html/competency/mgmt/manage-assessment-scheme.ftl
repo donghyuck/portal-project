@@ -263,6 +263,7 @@
 		.splitter-layout {
 			border: 1px solid #e2e2e2;
 		    background-color: #f5f5f5;	
+		    min-height:auto;
 			height:100%;
 		    width:100%;
 		    border-radius: 4px;
