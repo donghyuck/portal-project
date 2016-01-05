@@ -374,7 +374,7 @@
                         { collapsible: true }
                      ]"
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
-                     style="height: 100%; width: 100%;">
+                     style="height: 100%; width: 100%;">                     
                     <div id="left-pane">
                         <div class="pane-content">
                             <h3>Inner splitter / left pane</h3>
@@ -387,24 +387,6 @@
                             <p>Resizable only.</p>
                         </div>
                     </div>
-                    <div id="right-pane">
-                        <div class="pane-content">
-                            <h3>Inner splitter / right pane</h3>
-                            <p>Resizable and collapsible.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="middle-pane">
-                <div class="pane-content">
-                    <h3>Outer splitter / middle pane</h3>
-                    <p>Resizable only.</p>
-                </div>
-            </div>
-            <div id="bottom-pane">
-                <div class="pane-content">
-                    <h3>Outer splitter / bottom pane</h3>
-                    <p>Non-resizable and non-collapsible.</p>
                 </div>
             </div>
         </div>
