@@ -390,6 +390,7 @@
                         { collapsible: true, resizable:true }
                      ]"
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
+                     class="bg-transparent"
                      style="height: 100%; width: 100%;">   
                                        
                     <div id="left-pane">
