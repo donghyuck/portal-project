@@ -360,9 +360,7 @@
 
 		<div id="layout" data-role="splitter"
              data-panes="[
-                { collapsible: false },
-                { collapsible: false, size: '70px' },
-                { collapsible: false, resizable: false, size: '70px' }
+                { collapsible: false }
              ]"
              data-orientation="vertical"
              data-bind="visible: isVisible, events: { resize: onResize }">
@@ -370,17 +368,18 @@
                 <div data-role="splitter"
                      data-panes="[
                         { collapsible: true },
-                        { collapsible: false },
                         { collapsible: true }
                      ]"
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
-                     style="height: 100%; width: 100%;">                     
+                     style="height: 100%; width: 100%;">   
+                                       
                     <div id="left-pane">
                         <div class="pane-content">
                             <h3>Inner splitter / left pane</h3>
                             <p>Resizable and collapsible.</p>
                         </div>
                     </div>
+                    
                     <div id="center-pane">
                         <div class="pane-content">
                             <h3>Inner splitter / center pane</h3>
