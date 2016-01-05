@@ -428,7 +428,7 @@
                     		<div class="panel-body no-padding">
 											<ul id="rating-scheme-details-tabs" class="nav nav-tabs nav-tabs-xs">
 												<li class="m-l-sm">
-													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">척도값</a>
+													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">역량군</a>
 												</li>
 												<li class="">
 													<a href="#rating-scheme-details-tabs-2" data-toggle="tab">속성</a>
