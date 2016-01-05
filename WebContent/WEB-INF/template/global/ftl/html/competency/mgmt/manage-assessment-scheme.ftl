@@ -392,8 +392,8 @@
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
                      class="bg-transparent"
                      style="height: 100%;">                                          
-                    <div id="left-pane">
-                        <div class="pane-content no-border">
+                   
+                   <div class="pane-content no-border">
 						<div class="panel panel-transparent">							
 							<div class="panel-body">
 								<input id="company-dropdown-list" />
@@ -401,7 +401,6 @@
 							</div>
 							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
-                        </div>
                     </div>
                     
                     <div id="center-pane" style="width:60%;">
