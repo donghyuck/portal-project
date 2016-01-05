@@ -383,7 +383,7 @@
             data-orientation="vertical"
             data-bind="visible: isVisible, events: { resize: onResize }"
             class="splitter-layout">
-            <div id="top-pane">
+            <div style="height:100%;">
                 <div data-role="splitter"
                      data-panes="[
                         { collapsible: true, resizable:true, size:'40%' },
