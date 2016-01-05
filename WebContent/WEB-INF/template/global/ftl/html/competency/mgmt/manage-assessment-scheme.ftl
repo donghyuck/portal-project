@@ -334,13 +334,6 @@
 																<div data-bind="visible:visible" >
 																	<label class="k-checkbox-label" data-bind="visible:multipleApplyAllowed">중복진단을 허용합니다.</label>
 																</div>
-																
-																<ul class="fieldlist">
-														            <li>
-														              	<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked:multipleApplyAllowed">
-														          		<label class="k-checkbox-label" for="eq1">중복진단을 허용합니다.</label>
-														            </li>
-														        </ul>    
 															</td>
 														</tr>
 														<tr>
