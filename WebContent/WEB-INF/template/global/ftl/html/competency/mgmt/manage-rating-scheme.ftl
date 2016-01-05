@@ -214,27 +214,11 @@
 				
 		</script> 		 
 		<style>
-		#content-wrapper .layout {
-		    border: 1px solid #e2e2e2;
-		    background-color: #f5f5f5;		 
-		    min-height: 770px;
-		    height:100%;
-		    position: static;	    
-		    border-radius: 4px;
-		}
-		
-		.layout .left{
-			display:block;
-			height: 100%;			
-			border-right: solid 1px #e2e2e2;			
-		}
-		
 		.no-shadow{
 			-webkit-box-shadow: none;
 			-moz-box-shadow: none;
 			box-shadow: none;
 		}
-			
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -257,11 +241,6 @@
 	                	<input id="company-dropdown-list" />
 	                	<hr/>
 						<div class="panel panel-default">
-							<!--
-							<div class="panel-heading">
-								
-							</div>
-							-->	
 							<div id="assessment-rating-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
 	                </div><!-- /.com-md-4 -->            

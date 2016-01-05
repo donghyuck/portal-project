@@ -353,7 +353,7 @@
 						</div>
 	                </div><!-- /.col-md-4 -->   
                 	<div class="col-md-8">
-                		<div id="assessment-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
+                		<div id="assessment-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none; border-width:3px;">
 							<div class="panel-body">
 								<div class="form-horizontal">			
 									<div class="row">
