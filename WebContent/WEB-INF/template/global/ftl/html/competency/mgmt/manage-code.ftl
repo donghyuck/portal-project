@@ -346,7 +346,7 @@
 							<div id="codeset-details" class="panel panel-default no-border no-margin-b" style="display:none;">
 								<div class="panel-heading">
 									<span class="panel-title" data-bind="{text:codeset.name, visible:visible}"></span>
-									<span class="panel-title" data-bind="{text:codeset.codesetId, visible:visible}"></span>
+									<span class="badge badge-danger" data-bind="{text:codeset.codeSetId, visible:visible}"></span>
 									<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />
 								</div>
 								<div class="panel-body no-padding-b">	
