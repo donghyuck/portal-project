@@ -367,8 +367,8 @@
             <div id="top-pane">
                 <div data-role="splitter"
                      data-panes="[
-                        { collapsible: true, resizable:true, width:'40%' },
-                        { collapsible: true, resizable:true, width:'60%' }
+                        { collapsible: true, resizable:true },
+                        { collapsible: true, resizable:true }
                      ]"
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
                      style="height: 100%; width: 100%;">   
