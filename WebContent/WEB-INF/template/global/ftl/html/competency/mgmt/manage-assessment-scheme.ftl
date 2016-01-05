@@ -338,18 +338,18 @@
 															</td>
 														</tr>
 														<tr>
-															<td class="text-muted">진단유형</td>
+															<td class="text-muted">역량</td>
 															<td>
 
 
 																<ul class="fieldlist">
 														          <li>
 														              <input type="radio" name="engine" id="engine1" class="k-radio" checked="checked">
-														              <label class="k-radio-label" for="engine1">1.4 Petrol, 92kW</label>
+														              <label class="k-radio-label" for="engine1">직업기초역량(직업기초능력)</label>
 														          </li>
 														          <li>
 														              <input type="radio" name="engine" id="engine2" class="k-radio">
-														              <label class="k-radio-label" for="engine2">1.8 Petrol, 118kW</label>
+														              <label class="k-radio-label" for="engine2">직무역량(직무수행능력)</label>
 														          </li>
 														          <li>
 														              <input type="radio" name="engine" id="engine3" class="k-radio">
@@ -384,16 +384,17 @@
 															<ul class="fieldlist">
             <li>
               <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
-          <label class="k-checkbox-label" for="eq1">Rear side airbags</label>
+          <label class="k-checkbox-label" for="eq1">직업기초역량(직업기초능력)</label>
             </li>
             <li>
               <input type="checkbox" id="eq2" class="k-checkbox" checked="checked" disabled="disabled">
-          <label class="k-checkbox-label" for="eq2">Leather trim</label>
+          <label class="k-checkbox-label" for="eq2">직무역량(직무수행능력)</label>
             </li>
             <li>
               <input type="checkbox" id="eq3" class="k-checkbox">
-          <label class="k-checkbox-label" for="eq3">Luggage compartment cover</label>
+          <label class="k-checkbox-label" for="eq3">리더쉽</label>
             </li>
+            <!--
             <li>
               <input type="checkbox" id="eq4" class="k-checkbox">
           <label class="k-checkbox-label" for="eq4">Heated front and rear seats</label>
@@ -410,6 +411,7 @@
               <input type="checkbox" id="eeeeq4" class="k-checkbox" disabled="disabled">
           <label class="k-checkbox-label" for="eeeeq4">Towbar preparation</label>
             </li>
+            -->
         </ul>
 															</td>
 														</tr>													
