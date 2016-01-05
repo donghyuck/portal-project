@@ -328,7 +328,7 @@
 															<td>
 																<div data-bind="visible:editable">
 																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
-																	data-class="switcher-primary" 
+																	data-class="switcher-primary switcher-lg" 
 																	data-bind="checked:multipleApplyAllowed, visible:editable"/>
 																</div>
 																<div data-bind="visible:visible" >
