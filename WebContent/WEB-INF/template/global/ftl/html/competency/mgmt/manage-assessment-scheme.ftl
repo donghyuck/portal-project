@@ -328,7 +328,7 @@
 															<td>
 															<input id="multiple-apply-allowed-switcher" type="checkbox" 
 																data-class="switcher-primary" 
-																data-bind="checked:multipleApplyAllowed">
+																data-bind="checked:multipleApplyAllowed, visible:editable">
 																<ul class="fieldlist">
 														            <li>
 														              	<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked:multipleApplyAllowed">
