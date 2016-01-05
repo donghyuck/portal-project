@@ -332,7 +332,7 @@
 																	data-bind="checked:multipleApplyAllowed, visible:editable"/>
 																</div>
 																<div data-bind="visible:visible" >
-																	<label class="k-checkbox-label" data-bind="visible:multipleApplyAllowed">중복진단을 허용합니다.</label>
+																	<span data-bind="visible:multipleApplyAllowed">중복진단을 허용합니다.</span>
 																</div>
 															</td>
 														</tr>
