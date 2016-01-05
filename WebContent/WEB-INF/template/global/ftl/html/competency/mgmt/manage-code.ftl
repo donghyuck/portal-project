@@ -351,7 +351,7 @@
 								</div>
 								<div class="panel-body no-padding-b">	
 									<div class="m-b-sm" data-bind="visible:editable">
-										<input type="text" class="form-control input-sm" name="codeset-parent-id" data-bind="{value:codeset.parentCodeSetId, visible:editable }" placeholder="부모 코드 ID 값" />
+										<input type="number" min="1" class="form-control input-sm" name="codeset-parent-id" data-bind="{value:codeset.parentCodeSetId, visible:editable }" placeholder="부모 코드 ID 값" />
 									</div>	
 									<div class="m-b-sm">
 										<span  data-bind="{text: codeset.code, visible:visible}"></span>
