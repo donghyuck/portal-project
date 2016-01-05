@@ -426,7 +426,7 @@
                     			</div>
                     		</div>    
                     		<div class="panel-body no-padding">
-											<ul id="rating-scheme-details-tabs" class="nav nav-tabs nav-tabs-xs">
+											<ul id="rating-scheme-details-tabs" class="nav nav-tabs">
 												<li class="m-l-sm">
 													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">역량군</a>
 												</li>
