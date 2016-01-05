@@ -435,9 +435,9 @@
 												</li>
 											</ul>
 											<div class="tab-content no-padding">
-												<div class="tab-pane fade" id="rating-scheme-details-tabs-1">	
+												<div class="tab-pane fade" id="rating-scheme-details-tabs-1" style="min-height:300px;">	
 												</div> <!-- / .tab-pane -->
-												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2">		
+												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2" style="min-height:300px;">		
 													<table class="table table-striped" data-bind="visible:visible">
 														<thead>
 															<tr>
