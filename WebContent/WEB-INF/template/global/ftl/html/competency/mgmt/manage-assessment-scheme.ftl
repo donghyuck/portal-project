@@ -382,8 +382,9 @@
             ]"
             data-orientation="vertical"
             data-bind="visible: isVisible, events: { resize: onResize }"
-            class="splitter-layout">
-            <div style="height:700px;">
+            class="splitter-layout" 
+            style="height:700px;">
+            <div>
                 <div data-role="splitter"
                      data-panes="[
                         { collapsible: true, resizable:true, size:'40%', min:350},
@@ -391,8 +392,7 @@
                      ]"
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
                      class="bg-transparent"
-                     style="height: 100%;">                                          
-                   
+                     style="height: 100%;">    
                    <div class="pane-content no-border">
 						<div class="panel panel-transparent no-margin">							
 							<div class="panel-body">
@@ -402,12 +402,9 @@
 							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
                     </div>
-                    
-                    <div id="center-pane" style="width:60%;">
-                        <div class="pane-content">
+                    <div class="pane-content">
                             <h3>Inner splitter / center pane</h3>
                             <p>Resizable only.</p>
-                        </div>
                     </div>
                 </div>
             </div>
