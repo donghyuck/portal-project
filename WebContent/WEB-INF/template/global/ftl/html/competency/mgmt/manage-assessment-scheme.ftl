@@ -275,9 +275,6 @@
 			display:table;
 		} 
 		
-		.splitter-layout .k-splitter {
-			height:100%;
-		}
 		
 		#content-wrapper .layout {
 		    border: 1px solid #e2e2e2;
@@ -386,7 +383,7 @@
             data-orientation="vertical"
             data-bind="visible: isVisible, events: { resize: onResize }"
             class="splitter-layout">
-            <div style="height:100%;">
+            <div style="height:700px;">
                 <div data-role="splitter"
                      data-panes="[
                         { collapsible: true, resizable:true, size:'40%', min:350},
