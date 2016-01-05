@@ -329,6 +329,12 @@
 															<input id="multiple-apply-allowed-switcher" type="checkbox" 
 																data-class="switcher-primary" 
 																data-bind="checked:multipleApplyAllowed">
+																<ul class="fieldlist">
+														            <li>
+														              	<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked:multipleApplyAllowed">
+														          		<label class="k-checkbox-label" for="eq1">네</label>
+														            </li>
+														        </ul>    
 															</td>
 														</tr>
 														<tr>
