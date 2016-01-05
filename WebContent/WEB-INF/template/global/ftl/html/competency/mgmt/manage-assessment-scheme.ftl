@@ -47,21 +47,6 @@
 					}
 				});					
 				createAssessmentSchemeGrid();
-				
-				var viewModel = kendo.observable({
-        isVisible: true,
-        onResize: function(e) {
-            console.log("event :: resize");
-        },
-        onExpand: function(e) {
-            console.log("event :: expand (" + $(e.pane).text() + ")");
-        },
-        onCollapse: function(e) {
-            console.log("event :: collapse (" + $(e.pane).text() + ")");
-        }
-    });
-    kendo.bind($("#layout"), viewModel);
-    
 			}
 		}]);		
 		
@@ -101,7 +86,7 @@
 					editable : false,					
 					selectable : "row",
 					scrollable: true,
-					height: 589,
+					height: 400,
 					change: function(e) {
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
@@ -259,23 +244,6 @@
 		</script> 		 
 		<style>
 		
-		
-		.splitter-layout {
-			border: 1px solid #e2e2e2;
-		    background-color: #f5f5f5;	
-		    width:100%;
-		    border-radius: 4px;
-		}
-		
-		.splitter-layout:after, .splitter-layout:before{
-			clear:both;
-			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box;
-			box-sizing:border-box;
-			display:table;
-		} 
-		
-		
 		#content-wrapper .layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f5f5f5;		 
@@ -373,38 +341,22 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-
-
-		<div id="layout" 
-			data-role="splitter"
-            data-panes="[
-                { collapsible: false }
-            ]"
-            data-orientation="vertical"
-            data-bind="visible: isVisible, events: { resize: onResize }"
-            class="splitter-layout" 
-            style="height:700px;">
-            <div>
-                <div data-role="splitter"
-                     data-panes="[
-                        { collapsible: true, resizable:true, size:'40%', min:350},
-                        { collapsible: false, resizable:true }
-                     ]"
-                     data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
-                     class="bg-transparent" style="height:100%;">    
-                   <div class="pane-content no-border">
-						<div class="panel panel-transparent no-margin">							
+				
+				<div class="layout animated fadeInRight">
+	                <div class="pane left"> 
+	                	<div class="panel panel-transparent">							
 							<div class="panel-body">
 								<input id="company-dropdown-list" />
 								<hr/>
 							</div>
 							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
 						</div>
-                    </div>
-                    <div class="pane-content">
-					<!-- detalil -->
-
+	                </div><!-- /.pane left -->            
+                	<div class="pane center">
                 		<div id="assessment-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
+                			<!--<div class="panel-heading">
+                    			
+							</div>-->
 							<div class="panel-body">
 								<div class="form-horizontal">			
 									<div class="row">
@@ -573,20 +525,6 @@
 									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	                   		
                     		</div>
                 		</div><!-- /.panel -->  
-                		
-					<!-- /.details -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-				
-				<div class="layout animated fadeInRight">
-	                <div class="pane left"> 
-	                	
-	                </div><!-- /.pane left -->            
-                	<div class="pane center">
-
                 	</div><!-- /.pane center --> 
            		</div><!-- /.layout --> 	
 			</div> <!-- / #content-wrapper -->
