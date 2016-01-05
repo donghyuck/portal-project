@@ -244,67 +244,6 @@
 		</script> 		 
 		<style>
 		
-		#content-wrapper .layout {
-		    border: 1px solid #e2e2e2;
-		    background-color: #f5f5f5;		 
-		    min-height: 700px;
-		    height:100%;
-		    width:100%;
-		    position: static;
-		    left:0px;		    
-		    border-radius: 4px;
-		}
-		
-		#content-wrapper .layout:after, #content-wrapper .layout:before{
-			clear:both;
-			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box;
-			box-sizing:border-box;
-			display:table;
-		} 
-		
-		.pane.left, .pane.center, pane.bottom {
-			display:block;
-		}
-		
-		.pane.left:after, .pane.center:after, .pane.left:before, .pane.center:before,  {
-			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box;
-			box-sizing:border-box;		
-		}
-		
-		#content-wrapper .pane.left {
-			width:400px;
-			position: absolute;
-			height:auto;
-			min-height: 700px;			
-			border-right: solid 1px #e2e2e2;
-		}
-		
-		.pane.left.fixed {
-			position: fixed!important;
-			right : 0 ;
-			top : 0;
-		}
-		
-		#content-wrapper .pane.center {
-			margin-left:400px;
-			height:100%;			
-		}
-		
-		#content-wrapper .pane.left > .panel, #content-wrapper .pane.right > .panel{
-			border-width:0;
-			margin-bottom:0px;
-    	}
-    	
-		#content-wrapper .pane.bottom{
-			padding: 10px 15px;
-			background-color: #f5f5f5;
-			border-top: 1px solid #ddd;
-			border-bottom-right-radius: 3px;
-			border-bottom-left-radius: 3px
-		}
-		
 		.no-shadow{
 			-webkit-box-shadow: none;
 			-moz-box-shadow: none;
@@ -316,6 +255,7 @@
 		    color: #555;
 		    line-height: .875em;
     	}
+    	
 		.fieldlist {
             margin: 0 0 -1em;
             padding: 0;
