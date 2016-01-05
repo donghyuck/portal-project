@@ -386,13 +386,13 @@
             <div id="top-pane">
                 <div data-role="splitter"
                      data-panes="[
-                        { collapsible: true, resizable:true, min:300 },
+                        { collapsible: true, resizable:true, max:400 },
                         { collapsible: false, resizable:true }
                      ]"
                      data-bind="visible: isVisible, events: { resize: onResize, expand: onExpand, collapse: onCollapse }"
                      class="bg-transparent"
                      style="height: 100%;">                                          
-                    <div id="left-pane" style="width:40%;">
+                    <div id="left-pane">
                         <div class="pane-content no-border">
                             <h3>Inner splitter / left pane</h3>
                             <p>Resizable and collapsible.</p>
