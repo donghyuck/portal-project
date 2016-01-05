@@ -394,8 +394,13 @@
                      style="height: 100%;">                                          
                     <div id="left-pane">
                         <div class="pane-content no-border">
-                            <h3>Inner splitter / left pane</h3>
-                            <p>Resizable and collapsible.</p>
+						<div class="panel panel-transparent">							
+							<div class="panel-body">
+								<input id="company-dropdown-list" />
+								<hr/>
+							</div>
+							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
+						</div>
                         </div>
                     </div>
                     
@@ -412,13 +417,7 @@
 				
 				<div class="layout animated fadeInRight">
 	                <div class="pane left"> 
-	                	<div class="panel panel-transparent">							
-							<div class="panel-body">
-								<input id="company-dropdown-list" />
-								<hr/>
-							</div>
-							<div id="assessment-scheme-grid" class="no-border no-shadow"></div>	
-						</div>
+	                	
 	                </div><!-- /.pane left -->            
                 	<div class="pane center">
                 		<div id="assessment-scheme-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none;">
