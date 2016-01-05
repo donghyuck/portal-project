@@ -358,12 +358,14 @@
 				</div><!-- / .page-header -->	
 
 
-		<div id="layout" data-role="splitter"
-             data-panes="[
+		<div id="layout" 
+			data-role="splitter"
+            data-panes="[
                 { collapsible: false }
-             ]"
-             data-orientation="vertical"
-             data-bind="visible: isVisible, events: { resize: onResize }">
+            ]"
+            data-orientation="vertical"
+            data-bind="visible: isVisible, events: { resize: onResize }"
+            class="layout">
             <div id="top-pane">
                 <div data-role="splitter"
                      data-panes="[
@@ -374,7 +376,7 @@
                      style="height: 100%; width: 100%;">   
                                        
                     <div id="left-pane">
-                        <div class="pane-content">
+                        <div class="pane-content no-border">
                             <h3>Inner splitter / left pane</h3>
                             <p>Resizable and collapsible.</p>
                         </div>
