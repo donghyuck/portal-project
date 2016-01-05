@@ -259,6 +259,24 @@
 		</script> 		 
 		<style>
 		
+		
+		.splitter-layout {
+			border: 1px solid #e2e2e2;
+		    background-color: #f5f5f5;	
+			height:100%;
+		    width:100%;
+		    border-radius: 4px;
+		}
+		
+		.splitter-layout:after, .splitter-layout:before{
+			clear:both;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+			display:table;
+		} 
+		
+		
 		#content-wrapper .layout {
 		    border: 1px solid #e2e2e2;
 		    background-color: #f5f5f5;		 
@@ -365,7 +383,7 @@
             ]"
             data-orientation="vertical"
             data-bind="visible: isVisible, events: { resize: onResize }"
-            class="layout">
+            class="splitter-layout">
             <div id="top-pane">
                 <div data-role="splitter"
                      data-panes="[
