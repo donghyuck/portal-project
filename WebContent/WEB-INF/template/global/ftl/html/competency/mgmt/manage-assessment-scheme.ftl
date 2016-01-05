@@ -101,7 +101,7 @@
 					editable : false,					
 					selectable : "row",
 					scrollable: true,
-					height: 600,
+					height: 589,
 					change: function(e) {
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
