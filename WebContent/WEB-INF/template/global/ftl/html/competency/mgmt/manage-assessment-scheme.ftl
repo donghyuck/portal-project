@@ -394,7 +394,7 @@
                      style="height: 100%;">                                          
                    
                    <div class="pane-content no-border">
-						<div class="panel panel-transparent">							
+						<div class="panel panel-transparent no-margin">							
 							<div class="panel-body">
 								<input id="company-dropdown-list" />
 								<hr/>
