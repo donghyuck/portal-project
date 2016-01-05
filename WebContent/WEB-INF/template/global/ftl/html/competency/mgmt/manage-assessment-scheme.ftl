@@ -331,7 +331,7 @@
 																data-bind="checked:multipleApplyAllowed">
 																<ul class="fieldlist">
 														            <li>
-														              	<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked:multipleApplyAllowed, enable:editable">
+														              	<input type="checkbox" id="eq1" class="k-checkbox" data-bind="checked:multipleApplyAllowed">
 														          		<label class="k-checkbox-label" for="eq1">중복진단을 허용합니다.</label>
 														            </li>
 														        </ul>    
