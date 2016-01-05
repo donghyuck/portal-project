@@ -47,6 +47,21 @@
 					}
 				});					
 				createAssessmentSchemeGrid();
+				
+				var viewModel = kendo.observable({
+        isVisible: true,
+        onResize: function(e) {
+            kendoConsole.log("event :: resize");
+        },
+        onExpand: function(e) {
+            kendoConsole.log("event :: expand (" + $(e.pane).text() + ")");
+        },
+        onCollapse: function(e) {
+            kendoConsole.log("event :: collapse (" + $(e.pane).text() + ")");
+        }
+    });
+    kendo.bind($("#layout"), viewModel);
+    
 			}
 		}]);		
 		
@@ -343,7 +358,7 @@
 				</div><!-- / .page-header -->	
 
 
-		<div data-role="splitter"
+		<div id="layout" data-role="splitter"
              data-panes="[
                 { collapsible: false },
                 { collapsible: false, size: '70px' },
