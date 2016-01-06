@@ -79,7 +79,7 @@
 									}
 									return kendo.stringify(options);
 								} 
-								return {companyId: getCompanySelector().value() };
+								return {objectType: 1, objectId:getCompanySelector().value() };
 							}
 						},
 						schema: {
