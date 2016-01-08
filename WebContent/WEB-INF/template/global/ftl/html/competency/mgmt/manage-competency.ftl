@@ -780,7 +780,7 @@
 							<hr/>
 							<div class="row">
 								<div class="col-xs-6">
-									<h5 class="text-danger"><strong>역량군</strong></h5>
+									<h5 class="text-info text-semibold text-xs ">역량군</h5>
 								 	<div class="m-b-xs">
 										<input id="competency-group-dorpdown-list" />
 									</div>	
