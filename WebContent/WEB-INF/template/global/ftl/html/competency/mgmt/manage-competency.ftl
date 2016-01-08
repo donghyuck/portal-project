@@ -834,7 +834,7 @@
 								<p class="p-sm" data-bind="{text: selectedCompetencyGroupCode.name}"></p>		
 								<input id="competency-details-competency-group-dorpdown-list"
 										data-option-label="없음"
-										data-role="combobox"
+										data-role="dropdownlist"
 										data-text-field="name"
 										data-value-field="value"
 										data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource }" />
