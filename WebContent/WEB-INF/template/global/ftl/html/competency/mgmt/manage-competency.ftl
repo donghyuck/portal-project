@@ -837,7 +837,7 @@
 										                  	data-auto-bind="true"
 										                   	data-text-field="name"
 										                   	data-value-field="code"
-										                   	data-bind="{value: selectedCompetencyGroupCode.code, source: competencyGroupDataSource , visible:editable}" />	
+										                   	data-bind="{value: competencyGroupCode, source: competencyGroupDataSource , visible:editable}" />	
 										               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
