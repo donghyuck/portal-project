@@ -299,6 +299,7 @@
 					updatable : false,		
 					hasJob: false,			
 					competency : new common.ui.data.competency.Competency(),
+					competencyGroupCode: new common.ui.data.competency.CodeSet(),
 					competencyGroupDataSource: new kendo.data.DataSource({
 						serverFiltering: true,
 						transport: {
@@ -362,6 +363,7 @@
 						var $this = this;
 						renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
+						
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.competency.set("objectType", 1);
@@ -825,13 +827,13 @@
 							</div>
 							<div class="panel-body no-padding-b">	
 								<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">역량군</h6>
-								<p class="p-sm" data-bind="{text: competency.competencyGroupCode, visible:visible}"></p>		
+								<p class="p-sm" data-bind="{text: competencyGroupCode.name , visible:visible}"></p>		
 								<input id="competency-details-competency-group-dorpdown-list"
 															data-option-label="역량군 선택"
 															data-role="dropdownlist"
 										                  	data-auto-bind="true"
 										                   	data-text-field="name"
-										                   	data-value-field="codeSetId"
+										                   	data-value-field="code"
 										                   	data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource , visible:editable}" />	
 										               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
