@@ -304,7 +304,7 @@
 						transport: {
 							read: {
 								dataType: 'json',
-								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								url: '/secure/data/mgmt/competency/codeset/item/list.json?output=json',
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
@@ -312,8 +312,8 @@
 							}
 						},
 						schema: { 
-							model : {
-								id: 'code',
+							model:{
+								id:'code',
 								fields : {
 									code : {type:"string", defaultValue:null },
 									name : {type:"string", defaultValue:null }								
