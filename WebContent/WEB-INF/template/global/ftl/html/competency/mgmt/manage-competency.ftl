@@ -788,7 +788,7 @@
 				<div class="row animated fadeInRight">
 	                <div class="col-md-4"> 
 						<div class="panel panel-transparent">
-							<div class="panel-body">
+							<div class="panel-body no-padding">
 								<input id="company-dropdown-list" />
 								<hr/>
 								<div class="row">
@@ -830,7 +830,7 @@
 						</div>	                
 	                </div><!-- /.col-md-4 -->   
                 	<div class="col-md-8">
-<div id="competency-details" class="panel panel-default" style="display:none;">
+					<div id="competency-details" class="panel panel-default" style="display:none;">
 						<form>
 							<div class="panel-heading">
 								<strong><span class="panel-title" data-bind="{text: competency.name, visible:visible}"></span></strong>
