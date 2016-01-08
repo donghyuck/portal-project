@@ -369,7 +369,7 @@
 					},
 					setSource : function(source){
 						var $this = this;
-						renderTo.find("form")[0].reset();
+					//	renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
 						
 						if($this.competency.get("competencyId") == 0)
