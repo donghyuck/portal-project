@@ -818,16 +818,18 @@
 								<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량/능력단위" />
 							</div>
 							<div class="panel-body no-padding-b">	
+								<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">역량군</h6>
 								<p class="p-sm" data-bind="{text: competency.competencyGroupCode, visible:visible}"></p>		
 								<input id="competency-details-competency-group-dorpdown-list"
-															data-option-label="역량군"
+															data-option-label="역량군 선택"
 															data-role="dropdownlist"
 										                  	data-auto-bind="true"
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
 										                   	data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource , visible:editable}" />	
-										                   													
+										               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
+									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
 									<table class="table table-striped">
 											<thead>
 												<tr>
