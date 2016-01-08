@@ -41,12 +41,42 @@
 					change: function(e){						
 						getCompetencyGrid().dataSource.read();
 						getClassifiedMajoritySelector().dataSource.read({codeSetId:1});
+						getCompetencyGroupSelector().dataSource.read({codeSetId:321});
 					}
 				});	
 				createCompetencyGrid();									
 				// END SCRIPT
 			}
 		}]);		
+
+		/**
+		 * Competency dorpdown list creater 
+		 */
+		function getCompetencyGroupSelector(){
+			var renderTo = $("#competency-group-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					optionLabel: "역량군 선택",
+					autoBind:false,
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});
+			}
+			return renderTo.data('kendoDropDownList');
+		}
 
 		function getClassifiedMajoritySelector(){
 			var renderTo = $("#classified-majority-dorpdown-list");
@@ -748,6 +778,10 @@
 							 	<h5 class="text-primary"><strong>직무</strong></h5>
 							 	<div class="m-b-xs">
 									<input id="job-dorpdown-list" />
+								</div>	
+							 	<h5 class="text-danger"><strong>역량군</strong></h5>
+							 	<div class="m-b-xs">
+									<input id="competency-group-dorpdown-list" />
 								</div>	
 							 	<h5 class="text-danger"><strong>역량유형</strong></h5>
 							 	<div class="m-b-xs">
