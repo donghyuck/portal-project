@@ -363,7 +363,7 @@
 						var $this = this;
 						renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
-						$this.selectedCompetencyGroupCode.set('code', $this.competency.competencyGroupCode);
+						$this.selectedCompetencyGroupCode.code = $this.competency.competencyGroupCode ;
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.competency.set("objectType", 1);
