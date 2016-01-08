@@ -831,7 +831,7 @@
 															data-role="dropdownlist"
 										                  	data-auto-bind="true"
 										                   	data-text-field="name"
-										                   	data-value-field="code"
+										                   	data-value-field="codeSetId"
 										                   	data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource , visible:editable}" />	
 										               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
