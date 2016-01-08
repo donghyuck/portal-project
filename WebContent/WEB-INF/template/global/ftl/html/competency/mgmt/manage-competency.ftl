@@ -835,11 +835,17 @@
 								<input id="competency-details-competency-group-dorpdown-list"
 										data-option-label="없음"
 															data-role="dropdownlist"
-										                  	data-auto-bind="true"
 										                   	data-text-field="name"
 										                   	data-value-field="code"
 										                   	data-bind="{value:selectedCompetencyGroupCode.code, source: competencyGroupDataSource }" />	
-										               	    													
+								
+								<input id="competency-details-competency-group-combo-box"
+										data-option-label="없음"
+															data-role="combobox"
+										                   	data-text-field="name"
+										                   	data-value-field="code"
+										                   	data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource }" />	
+										                   			               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
 									<table class="table table-striped">
