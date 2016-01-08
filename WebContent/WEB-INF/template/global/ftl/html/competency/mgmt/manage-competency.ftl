@@ -347,6 +347,9 @@
 					saveOrUpdate : function(e){
 						var $this = this;
 						var btn = $(e.target);	
+						
+						console.log( common.ui.stringify($this.competency) );
+						
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/update.json?output=json" />' , 
@@ -368,7 +371,7 @@
 						var $this = this;
 						renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
-						console.log( common.ui.stringify($this.selectedCompetencyGroupCode) );
+						
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.competency.set("objectType", 1);
