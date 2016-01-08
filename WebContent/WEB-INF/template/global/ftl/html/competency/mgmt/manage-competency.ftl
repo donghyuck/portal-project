@@ -654,76 +654,13 @@
                 			
 		</script> 		 
 		<style>
-		/**
-		#xmleditor.panel-body{
-			min-height:577px;
-		}	
 		
-		.k-treeview {
-			min-height:338px;
+		.no-shadow{
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
 		}
-				
-		#content-wrapper section.layout {
-		    border: 1px solid #e2e2e2;
-		    background-color: #f6f6f6;		 
-		    min-height: 800px;
-		    height:100%;
-		    width:100%;
-		    position: static;
-		    left:0px;
-		    border-radius: 4px;
-		}
-		
-		#content-wrapper section.layout:after, #content-wrapper section.layout:before{
-			clear:both;
-			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box;
-			box-sizing:border-box;
-			display:table;
-		} 
-		
-		section.left, section.right, section.bottom {
-			display:block;
-		}
-		
-		section.left:after, section.right:after, section.left:before, section.right:before,  {
-			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box;
-			box-sizing:border-box;		
-		}
-		
-		#content-wrapper section.left {
-			width:450px;
-			position: absolute;
-			height:auto;
-			min-height: 100%;			
-			border-right: solid 1px #e2e2e2;
-		}
-		
-		.left.fixed {
-			position: fixed!important;
-			right : 0 ;
-			top : 0;
-		}
-		
-		#content-wrapper section.right {
-			margin-left:450px;
-			height:100%;			
-		}
-		
-		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
-			border-width:0;
-			margin-bottom:0px;
-    	}
-    	
-		#content-wrapper section.bottom{
-			padding: 10px 15px;
-			background-color: #f5f5f5;
-			border-top: 1px solid #ddd;
-			border-bottom-right-radius: 3px;
-			border-bottom-left-radius: 3px
-		}
-		
+						
 		.essential-element {
 			border-top : 0;
 			border-top-left-radius:0;
@@ -742,6 +679,7 @@
 			-moz-box-shadow: none;
 			box-shadow: none;
 		}
+		
 		.modal-dialog .close  {
 			position: absolute;
 			top: 0;
@@ -767,8 +705,8 @@
 		
 		.k-grid .k-edit-cell {
 		    padding: .3em .3em;
-		}	
-		**/	
+		}
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -826,7 +764,7 @@
 									</div>						
 								</div>						
 							</div>
-							<div id="competency-grid" class="no-border no-shadow"></div>
+							<div id="competency-grid" class="no-shadow"></div>
 						</div>	                
 	                </div><!-- /.col-md-4 -->   
                 	<div class="col-md-8">
