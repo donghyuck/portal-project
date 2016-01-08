@@ -299,6 +299,23 @@
 					updatable : false,		
 					hasJob: false,			
 					competency : new common.ui.data.competency.Competency(),
+					competencyGroupDataSource: new kendo.data.DataSource({
+						serverFiltering: true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" : 321 }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),
 					view : function(e){
 						var $this = this;		
 						if($this.competency.competencyId < 1){
@@ -801,6 +818,15 @@
 								<input type="text" class="form-control input-sm" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량/능력단위" />
 							</div>
 							<div class="panel-body no-padding-b">	
+								<p class="p-sm" data-bind="{text: competency.competencyGroupCode, visible:visible}"></p>		
+								<input id="competency-details-competency-group-dorpdown-list"
+															data-option-label="역량군"
+															data-role="dropdownlist"
+										                  	data-auto-bind="true"
+										                   	data-text-field="name"
+										                   	data-value-field="codeSetId"
+										                   	data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource , visible:editable}" />	
+										                   													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
 									<table class="table table-striped">
 											<thead>
