@@ -363,7 +363,10 @@
 						var $this = this;
 						renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
-						$this.selectedCompetencyGroupCode.code = $this.competency.competencyGroupCode ;
+						
+						//console.log( common.ui.stringify($this.selectedCompetencyGroupCode) );
+						//$this.selectedCompetencyGroupCode.set(  = $this.competency.competencyGroupCode ;
+						
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.competency.set("objectType", 1);
@@ -835,7 +838,7 @@
 										                  	data-auto-bind="true"
 										                   	data-text-field="name"
 										                   	data-value-field="code"
-										                   	data-bind="{value: selectedCompetencyGroupCode, source: competencyGroupDataSource , visible:editable}" />	
+										                   	data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource , visible:editable}" />	
 										               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
