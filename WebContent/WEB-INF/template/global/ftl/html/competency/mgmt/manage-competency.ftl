@@ -908,10 +908,10 @@
 									<table class="table table-striped">
 											<thead>
 												<tr>
-													<th>대분류</th>
-													<th>중분류</th>
-													<th>소분류</th>
-													<th>직무</th>
+													<th width="25%">대분류</th>
+													<th width="25%">중분류</th>
+													<th width="25%">소분류</th>
+													<th width="25%">직무</th>
 												</tr>
 											</thead>
 											<tbody>
