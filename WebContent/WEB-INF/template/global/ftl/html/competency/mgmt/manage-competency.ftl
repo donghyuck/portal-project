@@ -903,26 +903,25 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-					
 						<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
-									<table class="table table-striped">
-											<thead>
+							<table class="table table-striped">
+								<thead>
 												<tr>
 													<th width="25%">대분류</th>
 													<th width="25%">중분류</th>
 													<th width="25%">소분류</th>
 													<th width="25%">직무</th>
 												</tr>
-											</thead>
-											<tbody>
+								</thead>
+								<tbody>
 												<tr>
 													<td><span data-bind="text: competency.job.classification.classifiedMajorityName" ></span></td>
 													<td><span data-bind="text: competency.job.classification.classifiedMiddleName" ></span></td>
 													<td><span data-bind="text: competency.job.classification.classifiedMinorityName" ></span></td>
 													<td class="text-primary"><span data-bind="text: competency.job.name"></span></td>
 												</tr>
-											</tbody>
-										</table>	
+								</tbody>
+							</table>	
 						</div> 
 								
 						<form>
