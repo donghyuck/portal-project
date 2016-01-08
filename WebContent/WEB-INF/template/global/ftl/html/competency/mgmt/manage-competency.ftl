@@ -364,8 +364,10 @@
 						renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
 						
-						console.log( common.ui.stringify($this.competency) );
 						$this.selectedCompetencyGroupCode.set( "code",$this.competency.competencyGroupCode ) ;
+						
+						console.log( common.ui.stringify($this.selectedCompetencyGroupCode) );
+						
 						
 						if($this.competency.get("competencyId") == 0)
 						{
@@ -829,7 +831,7 @@
 							</div>
 							<div class="panel-body no-padding-b">	
 								<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">역량군</h6>
-								<p class="p-sm" data-bind="{text: selectedCompetencyGroupCode.name , visible:visible}"></p>		
+								<p class="p-sm" data-bind="{text: selectedCompetencyGroupCode.name}"></p>		
 								<input id="competency-details-competency-group-dorpdown-list"
 										data-option-label="없음"
 															data-role="dropdownlist"
