@@ -834,7 +834,6 @@
 								<input id="competency-details-competency-group-dorpdown-list"
 															data-option-label="역량군 선택"
 															data-role="dropdownlist"
-															data-value-primitive="true"
 										                  	data-auto-bind="true"
 										                   	data-text-field="name"
 										                   	data-value-field="code"
