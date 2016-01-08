@@ -315,8 +315,8 @@
 							model:{
 								id:'code',
 								fields : {
-									code : {type:"string", defaultValue:null },
-									name : {type:"string", defaultValue:null }								
+									'code' : {type:"string", defaultValue:null },
+									'name' : {type:"string", defaultValue:null }								
 								}
 							}
 						},
