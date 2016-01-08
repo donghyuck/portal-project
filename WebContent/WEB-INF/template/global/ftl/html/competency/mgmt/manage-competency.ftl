@@ -365,7 +365,7 @@
 						source.copy($this.competency);	
 						
 						console.log( common.ui.stringify($this.competency) );
-						//$this.selectedCompetencyGroupCode.set(  = $this.competency.competencyGroupCode ;
+						$this.selectedCompetencyGroupCode.set( "code",$this.competency.competencyGroupCode ) ;
 						
 						if($this.competency.get("competencyId") == 0)
 						{
