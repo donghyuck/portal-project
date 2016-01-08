@@ -830,14 +830,14 @@
 							</div>
 							<div class="panel-body no-padding-b">	
 								<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">역량군</h6>
-								<p class="p-sm" data-bind="{text: selectedcompetencyGroupCode.name , visible:visible}"></p>		
+								<p class="p-sm" data-bind="{text: selectedCompetencyGroupCode.name , visible:visible}"></p>		
 								<input id="competency-details-competency-group-dorpdown-list"
 										data-option-label="없음"
 															data-role="dropdownlist"
 										                  	data-auto-bind="true"
 										                   	data-text-field="name"
 										                   	data-value-field="code"
-										                   	data-bind="{value: selectedcompetencyGroupCode.code, source: competencyGroupDataSource , visible:editable}" />	
+										                   	data-bind="{value: selectedCompetencyGroupCode.code, source: competencyGroupDataSource , visible:editable}" />	
 										               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
