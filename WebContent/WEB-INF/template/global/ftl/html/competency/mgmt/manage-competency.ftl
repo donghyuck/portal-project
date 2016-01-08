@@ -838,6 +838,7 @@
 								<input id="competency-details-competency-group-dorpdown-list"
 										data-option-label="없음"
 										data-role="dropdownlist"
+										data-value-primitive="true"
 										data-text-field="name"
 										data-value-field="code"
 										data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource }" />
