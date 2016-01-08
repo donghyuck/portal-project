@@ -59,7 +59,7 @@
 					optionLabel: "역량군 선택",
 					autoBind:false,
 					dataTextField: 'name',	
-					dataValueField: 'codeSetId',
+					dataValueField: 'code',
 					dataSource: {
 						serverFiltering: false,
 						transport: {
