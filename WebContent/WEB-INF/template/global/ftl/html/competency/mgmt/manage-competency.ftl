@@ -330,6 +330,7 @@
 						$this.set("editable", false);
 						$this.set("updatable", false);
 						$this.set("deletable", true);			
+						$('#competency-details-competency-group-dorpdown-list').data('kendoDropDownList').enable(false);
 						return false;
 					},
 					edit : function(e){
