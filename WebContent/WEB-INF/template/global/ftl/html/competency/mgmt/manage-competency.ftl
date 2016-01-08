@@ -654,6 +654,7 @@
                 			
 		</script> 		 
 		<style>
+		/**
 		#xmleditor.panel-body{
 			min-height:577px;
 		}	
@@ -767,7 +768,7 @@
 		.k-grid .k-edit-cell {
 		    padding: .3em .3em;
 		}	
-			
+		**/	
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -784,52 +785,52 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-				<section class="layout">
-				<section class="left">				
-					<div class="panel panel-transparent">
-						<div class="panel-body">
-							<input id="company-dropdown-list" />
-							<hr/>
-							<div class="row">
-								<div class="col-xs-6">
-									<h5 class="text-info text-semibold text-xs ">역량군</h5>
-								 	<div class="m-b-xs">
-										<input id="competency-group-dorpdown-list" />
-									</div>	
+				<div class="row animated fadeInRight">
+	                <div class="col-md-4"> 
+						<div class="panel panel-transparent">
+							<div class="panel-body">
+								<input id="company-dropdown-list" />
+								<hr/>
+								<div class="row">
+									<div class="col-xs-6">
+										<h5 class="text-info text-semibold text-xs ">역량군</h5>
+									 	<div class="m-b-xs">
+											<input id="competency-group-dorpdown-list" />
+										</div>	
+									</div>
+									<div class="col-xs-6">
+										<h5 class="text-info text-semibold text-xs ">역량유형</h5>
+									 	<div class="m-b-xs">
+											<input id="competency-type-dorpdown-list" />
+										</div>	
+									</div>
 								</div>
-								<div class="col-xs-6">
-									<h5 class="text-info text-semibold text-xs ">역량유형</h5>
-								 	<div class="m-b-xs">
-										<input id="competency-type-dorpdown-list" />
-									</div>	
-								</div>
-							</div>
-							<div class="row">
-							 	<div class="col-xs-6">
-								 	<h5 class="text-primary text-semibold text-xs">직무분류</h5>
-									<div class="m-b-xs">
-										<input id="classified-majority-dorpdown-list" />
-									</div>
-									<div class="m-b-xs">
-										<input id="classified-middle-dorpdown-list" />
-									</div>
-									<div class="m-b-xs">
-										<input id="classified-minority-dorpdown-list" />
-									</div>							 	
-							 	</div>			
-							 	<div class="col-xs-6">
-								 	<h5 class="text-primary text-semibold text-xs">직무</h5>
-								 	<div class="m-b-xs">
-										<input id="job-dorpdown-list" />
-									</div>
+								<div class="row">
+								 	<div class="col-xs-6">
+									 	<h5 class="text-primary text-semibold text-xs">직무분류</h5>
+										<div class="m-b-xs">
+											<input id="classified-majority-dorpdown-list" />
+										</div>
+										<div class="m-b-xs">
+											<input id="classified-middle-dorpdown-list" />
+										</div>
+										<div class="m-b-xs">
+											<input id="classified-minority-dorpdown-list" />
+										</div>							 	
+								 	</div>			
+								 	<div class="col-xs-6">
+									 	<h5 class="text-primary text-semibold text-xs">직무</h5>
+									 	<div class="m-b-xs">
+											<input id="job-dorpdown-list" />
+										</div>
+									</div>						
 								</div>						
-							</div>						
-						</div>
-						<div id="competency-grid" class="no-border no-shadow"></div>
-					</div>
-				</section>									
-				<section class="right">							
-					<div id="competency-details" class="panel panel-default" style="display:none;">
+							</div>
+							<div id="competency-grid" class="no-border no-shadow"></div>
+						</div>	                
+	                </div><!-- /.col-md-4 -->   
+                	<div class="col-md-8">
+<div id="competency-details" class="panel panel-default" style="display:none;">
 						<form>
 							<div class="panel-heading">
 								<strong><span class="panel-title" data-bind="{text: competency.name, visible:visible}"></span></strong>
@@ -932,7 +933,18 @@
 								</div>																
 							</div>						
 						</div>					
-					</div>											
+					</div>	                	
+                	</div><!-- /.col-md-8 --> 
+                </div>	
+                	
+	                
+				
+				<section class="layout">
+				<section class="left">				
+					
+				</section>									
+				<section class="right">							
+															
 				</section><!-- / .right -->
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
