@@ -300,7 +300,7 @@
 					hasJob: false,			
 					competency : new common.ui.data.competency.Competency(),
 					competencyGroupDataSource: new kendo.data.DataSource({
-						serverFiltering: true,
+						serverFiltering: false,
 						transport: {
 							read: {
 								dataType: 'json',
