@@ -243,6 +243,7 @@
 									classifiedMiddleId:getClassifiedMiddleSelector().value(),
 									classifiedMinorityId:getClassifiedMinoritySelector().value(), 	
 									competencyType : getCompetencyTypeSelector().value(),		
+									competencyGroupCode : getCompetencyGroupSelector().value(),
 									jobId: getJobSelector().value(), 							
 									startIndex:options.skip, 
 									pageSize: options.pageSize 
