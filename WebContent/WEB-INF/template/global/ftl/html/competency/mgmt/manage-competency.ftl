@@ -786,7 +786,7 @@
 									</div>	
 								</div>
 								<div class="col-xs-6">
-									<h5 class="text-danger"><strong>역량유형</strong></h5>
+									<h5 class="text-info text-semibold text-xs ">역량유형</h5>
 								 	<div class="m-b-xs">
 										<input id="competency-type-dorpdown-list" />
 									</div>	
@@ -794,7 +794,7 @@
 							</div>
 							<div class="row">
 							 	<div class="col-xs-6">
-								 	<h5 class="text-primary"><strong>직무분류</strong></h5>
+								 	<h5 class="text-primary text-semibold text-xs">직무분류</h5>
 									<div class="m-b-xs">
 										<input id="classified-majority-dorpdown-list" />
 									</div>
@@ -806,7 +806,7 @@
 									</div>							 	
 							 	</div>			
 							 	<div class="col-xs-6">
-								 	<h5 class="text-primary"><strong>직무</strong></h5>
+								 	<h5 class="text-primary text-semibold text-xs">직무</h5>
 								 	<div class="m-b-xs">
 										<input id="job-dorpdown-list" />
 									</div>
