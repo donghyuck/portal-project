@@ -313,9 +313,9 @@
 						},
 						schema: { 
 							model : {
-								id: 'value',
+								id: 'code',
 								fields : {
-									value : {type:"string", defaultValue:null },
+									code : {type:"string", defaultValue:null },
 									name : {type:"string", defaultValue:null }								
 								}
 							}
@@ -836,7 +836,7 @@
 										data-option-label="없음"
 										data-role="dropdownlist"
 										data-text-field="name"
-										data-value-field="value"
+										data-value-field="code"
 										data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource }" />
 										                   			               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
