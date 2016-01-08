@@ -299,7 +299,6 @@
 					updatable : false,		
 					hasJob: false,			
 					competency : new common.ui.data.competency.Competency(),
-					selectedCompetencyGroupCode: new common.ui.data.competency.CodeSet(),
 					competencyGroupDataSource: new kendo.data.DataSource({
 						serverFiltering: true,
 						transport: {
@@ -313,7 +312,13 @@
 							}
 						},
 						schema: { 
-							model : common.ui.data.competency.CodeSet
+							model : {
+								id: 'value',
+								fields : {
+									value : {type:"string", defaultValue:null },
+									name : {type:"string", defaultValue:null }								
+								}
+							}
 						},
 						error:common.ui.handleAjaxError
 					}),
@@ -363,12 +368,7 @@
 						var $this = this;
 						renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
-						
-						$this.selectedCompetencyGroupCode.set( "code",$this.competency.competencyGroupCode ) ;
-						
 						console.log( common.ui.stringify($this.selectedCompetencyGroupCode) );
-						
-						
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.competency.set("objectType", 1);
@@ -834,10 +834,10 @@
 								<p class="p-sm" data-bind="{text: selectedCompetencyGroupCode.name}"></p>		
 								<input id="competency-details-competency-group-dorpdown-list"
 										data-option-label="없음"
-															data-role="combobox"
-										                   	data-text-field="name"
-										                   	data-value-field="code"
-										                   	data-bind="{value:selectedCompetencyGroupCode.code, source: competencyGroupDataSource }" />
+										data-role="combobox"
+										data-text-field="name"
+										data-value-field="value"
+										data-bind="{value: competency.competencyGroupCode, source: competencyGroupDataSource }" />
 										                   			               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
