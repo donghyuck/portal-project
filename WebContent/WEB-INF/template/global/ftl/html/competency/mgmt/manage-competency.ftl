@@ -364,7 +364,7 @@
 						renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
 						
-						//console.log( common.ui.stringify($this.selectedCompetencyGroupCode) );
+						console.log( common.ui.stringify($this.competency) );
 						//$this.selectedCompetencyGroupCode.set(  = $this.competency.competencyGroupCode ;
 						
 						if($this.competency.get("competencyId") == 0)
