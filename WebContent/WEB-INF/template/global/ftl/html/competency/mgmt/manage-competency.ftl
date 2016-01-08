@@ -324,7 +324,8 @@
 						}
 						$this.set("visible", true);
 						$this.set("editable", false);
-						$this.set("updatable", false);
+						$this.set("updatable", false);						
+						$("#competency-details-competency-group-dorpdown-list").data('kendoDropDownList').readonly(true);						
 						return false;
 					},
 					edit : function(e){
@@ -332,6 +333,7 @@
 						$this.set("visible", false);
 						$this.set("editable", true);
 						$this.set("updatable", true);
+						$("#competency-details-competency-group-dorpdown-list").data('kendoDropDownList').readonly(false);
 						renderTo.find("input[name=competency-name]").focus();
 						return false;
 					},
@@ -384,6 +386,8 @@
 							common.ui.grid( renderTo.find(".essential-element") ).dataSource.read({competencyId:$this.competency.competencyId});			
 							renderTo.find("ul.nav.nav-tabs a:first").tab('show')						
 						}
+						
+						$("#competency-details-competency-group-dorpdown-list").data('kendoDropDownList').readonly($this.get("visible"));
 						
 						if( $this.competency.job.jobId > 0 )
 							$this.set("hasJob", true);
@@ -837,7 +841,7 @@
 										                  	data-auto-bind="true"
 										                   	data-text-field="name"
 										                   	data-value-field="code"
-										                   	data-bind="{value: selectedCompetencyGroupCode.code, source: competencyGroupDataSource , visible:editable}" />	
+										                   	data-bind="{value: selectedCompetencyGroupCode.code, source: competencyGroupDataSource }" />	
 										               	    													
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
