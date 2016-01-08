@@ -300,11 +300,10 @@
 					hasJob: false,			
 					competency : new common.ui.data.competency.Competency(),
 					competencyGroupDataSource: new kendo.data.DataSource({
-						serverFiltering: false,
 						transport: {
 							read: {
 								dataType: 'json',
-								url: '/secure/data/mgmt/competency/codeset/item/list.json?output=json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
@@ -841,8 +840,7 @@
 										data-value-primitive="true"
 										data-text-field="name"
 										data-value-field="code"
-										data-bind="value:competency.competencyGroupCode, source: competencyGroupDataSource" />		
-																		                   			               	    													
+										data-bind="value:competency.competencyGroupCode, source: competencyGroupDataSource" />											
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
 									<table class="table table-striped">
