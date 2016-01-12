@@ -13,7 +13,7 @@
 	        competencyUnitCode : { type:"string", editable:true },
 	        competencyGroupCode : { type:"string", editable:true, defaultValue:null },
 	        description: { type: "string", editable: true },
-	        job: {type:"object", defaultValue: new common.ui.data.competency.comJob()}
+	        job: {type:"object", defaultValue: new common.ui.data.competency.Job()}
 	    },	    
 	    copy : function ( target ){
 	    	target.set("competencyId", this.get("competencyId"));
