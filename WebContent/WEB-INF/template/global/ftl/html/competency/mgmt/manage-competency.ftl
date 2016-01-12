@@ -350,10 +350,8 @@
 					},
 					saveOrUpdate : function(e){
 						var $this = this;
-						var btn = $(e.target);	
-						
+						var btn = $(e.target);						
 						console.log( common.ui.stringify($this.competency) );
-						
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/update.json?output=json" />' , 
@@ -375,6 +373,7 @@
 						var $this = this;
 					//	renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
+						console.debug(common.ui.stringify( $this.competency ));
 						if( $this.competency.job.jobId > 0 )
 							$this.set("hasJob", true);
 						else
