@@ -778,36 +778,6 @@
 							<div class="panel-body no-padding-b">	
 								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>								
 								<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
-								
-								<h6 class="text-light-gray text-semibold text-xs" style="margin: 15px 0 5px 0;">역량군</h6>
-								<input id="competency-details-competency-group-dorpdown-list"
-										data-option-label="없음"
-										data-role="dropdownlist"
-										data-value-primitive="true"
-										data-text-field="name"
-										data-value-field="code"
-										data-bind="value:competency.competencyGroupCode, source: competencyGroupDataSource"	>										
-								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
-									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
-									<table class="table table-striped">
-											<thead>
-												<tr>
-													<th width="25%">대분류</th>
-													<th width="25%">중분류</th>
-													<th width="25%">소분류</th>
-													<th width="25%">직무</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td><span data-bind="text: competency.job.classification.classifiedMajorityName" ></span></td>
-													<td><span data-bind="text: competency.job.classification.classifiedMiddleName" ></span></td>
-													<td><span data-bind="text: competency.job.classification.classifiedMinorityName" ></span></td>
-													<td class="text-primary"><span data-bind="text: competency.job.name"></span></td>
-												</tr>
-											</tbody>
-										</table>	
-								</div> 								
 								<div class="p-sm no-padding-hr">
 									<table class="table table-striped">
 											<thead>
@@ -840,6 +810,36 @@
 											</tbody>
 									</table>		
 								</div>
+																
+								<h6 class="text-light-gray text-semibold text-xs" style="margin: 15px 0 5px 0;">역량군</h6>
+								<input id="competency-details-competency-group-dorpdown-list"
+										data-option-label="없음"
+										data-role="dropdownlist"
+										data-value-primitive="true"
+										data-text-field="name"
+										data-value-field="code"
+										data-bind="value:competency.competencyGroupCode, source: competencyGroupDataSource"	>										
+								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
+									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
+									<table class="table table-striped">
+											<thead>
+												<tr>
+													<th width="25%">대분류</th>
+													<th width="25%">중분류</th>
+													<th width="25%">소분류</th>
+													<th width="25%">직무</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><span data-bind="text: competency.job.classification.classifiedMajorityName" ></span></td>
+													<td><span data-bind="text: competency.job.classification.classifiedMiddleName" ></span></td>
+													<td><span data-bind="text: competency.job.classification.classifiedMinorityName" ></span></td>
+													<td class="text-primary"><span data-bind="text: competency.job.name"></span></td>
+												</tr>
+											</tbody>
+										</table>	
+								</div> 	
 								<div class="p-sm text-right">
 									<div class="btn-group">
 										<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
