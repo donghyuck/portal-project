@@ -783,39 +783,24 @@
 								<div class="row">
 									<div class="col-sm-4">
 										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">역량군</h6>
-										<input id="competency-details-competency-group-dorpdown-list"
-										data-option-label="없음"
-										data-role="dropdownlist"
-										data-value-primitive="true"
-										data-text-field="name"
-										data-value-field="code"
-										data-bind="value:competency.competencyGroupCode, source: competencyGroupDataSource"	>	
 									</div>
 									<div class="col-sm-4">
 										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무수준</h6>
-										<span data-bind="visible:visible"><span data-bind="text: competency.level"></span>수준</span>
-													<select id="input-competency-level" class="form-control" data-bind="{value:competency.level, visible:editable}" placeholder="직무 수준">
-														<option value="0" disabled selected>직무 수준 선택</option>
-														<option value="1">1수준</option>
-														<option value="2">2수준</option>
-														<option value="3">3수준</option>
-														<option value="4">4수준</option>
-														<option value="5">5수준</option>
-														<option value="6">6수준</option>
-														<option value="7">7수준</option>
-														<option value="8">8수준</option>
-													</select>
 									</div>
 									<div class="col-sm-4">
 										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">분류코드(NCS코드)</h6>
-										<span data-bind="{text: competency.competencyUnitCode, visible:visible}"></span>
-										<input type="text" class="form-control input-md" name="competency-unit-code" data-bind="{value: competency.competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
 									</div>
 								</div>	
 								
 								
 								<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">역량군</h6>
-																	
+								<input id="competency-details-competency-group-dorpdown-list"
+										data-option-label="없음"
+										data-role="dropdownlist"
+										data-value-primitive="true"
+										data-text-field="name"
+										data-value-field="code"
+										data-bind="value:competency.competencyGroupCode, source: competencyGroupDataSource"	>										
 								<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무분류</h6>
 									<table class="table table-striped">
@@ -848,9 +833,22 @@
 											<tbody>
 												<tr>
 													<td>
-													
+													<span data-bind="visible:visible"><span data-bind="text: competency.level"></span>수준</span>
+													<select id="input-competency-level" class="form-control" data-bind="{value:competency.level, visible:editable}" placeholder="직무 수준">
+														<option value="0" disabled selected>직무 수준 선택</option>
+														<option value="1">1수준</option>
+														<option value="2">2수준</option>
+														<option value="3">3수준</option>
+														<option value="4">4수준</option>
+														<option value="5">5수준</option>
+														<option value="6">6수준</option>
+														<option value="7">7수준</option>
+														<option value="8">8수준</option>
+													</select>
 													</td>
 													<td>
+													<span data-bind="{text: competency.competencyUnitCode, visible:visible}"></span>
+													<input type="text" class="form-control input-md" name="competency-unit-code" data-bind="{value: competency.competencyUnitCode, visible:editable }" placeholder="능력단위분류번호" />
 													</td>
 												</tr>
 											</tbody>
