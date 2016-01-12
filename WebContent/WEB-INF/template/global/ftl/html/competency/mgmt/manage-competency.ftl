@@ -805,7 +805,7 @@
 										</table>	
 								</div> 
 								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>								
-								<textarea class="form-control" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
+								<textarea class="form-control m-t-sm" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
 								<div class="p-sm no-padding-hr">
 									<table class="table table-striped">
 											<thead>
