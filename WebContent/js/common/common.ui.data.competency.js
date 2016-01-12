@@ -24,9 +24,9 @@
 	    		target.set("classification", this.get("classification"));
 	    	}else{
 	    		target.set("classification", {
-	    			classifiedMajorityId:null,
-	    			classifiedMiddleId:null,
-	    			classifiedMinorityId:null
+	    			classifiedMajorityId:0,
+	    			classifiedMiddleId:0,
+	    			classifiedMinorityId:0
 	    		} );
 	    	}	    	
 	    	if( typeof this.get("properties") === 'object' )
@@ -58,7 +58,12 @@
 	    	target.set("level", this.get("level"));
 	    	target.set("competencyUnitCode", this.get("competencyUnitCode"));
 	    	target.set("competencyGroupCode", this.get("competencyGroupCode"));
-	    	target.set("job", this.get("job"));
+	    	
+	    	if( this.get("job") == null ){
+	    		target.set("job", new Job());	    	
+	    	}else{
+	    		target.set("job", this.get("job"));	    		
+	    	}
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
