@@ -1,36 +1,6 @@
 (function($, undefined) {
 	
 	var extend = $.extend;
-	
-	var Competency = kendo.data.Model.define( {
-	    id: "competencyId", // the identifier of the model
-	    fields: {
-	    	competencyId: { type: "number", editable: true, defaultValue: 0  },    	
-	    	objectType: { type: "number", editable: true, defaultValue: 0  },   
-	    	objectId: { type: "number", editable: true, defaultValue: 0  },   
-	        name: { type: "string", editable: true },
-	        level: { type: "number", editable: true, defaultValue: 0  },   
-	        competencyUnitCode : { type:"string", editable:true },
-	        competencyGroupCode : { type:"string", editable:true, defaultValue:null },
-	        description: { type: "string", editable: true },
-	        job: {type:"object", defaultValue: new common.ui.data.competency.Job()}
-	    },	    
-	    copy : function ( target ){
-	    	target.set("competencyId", this.get("competencyId"));
-	    	target.set("objectType", this.get("objectType"));
-	    	target.set("objectId", this.get("objectId"));
-	    	target.set("name", this.get("name"));
-	    	target.set("description", this.get("description"));
-	    	target.set("level", this.get("level"));
-	    	target.set("competencyUnitCode", this.get("competencyUnitCode"));
-	    	target.set("competencyGroupCode", this.get("competencyGroupCode"));
-	    	target.set("job", this.get("job"));
-	    	if( typeof this.get("properties") === 'object' )
-	    		target.set("properties", this.get("properties"));
-	    	else
-	    		target.set("properties", {});
-	    }    
-	});
 
 	var Job = kendo.data.Model.define( {
 	    id: "jobId", // the identifier of the model
@@ -58,8 +28,7 @@
 	    			classifiedMiddleId:null,
 	    			classifiedMinorityId:null
 	    		} );
-	    	}
-	    	
+	    	}	    	
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
@@ -67,6 +36,37 @@
 	    }    
 	});
 	
+	var Competency = kendo.data.Model.define( {
+	    id: "competencyId", // the identifier of the model
+	    fields: {
+	    	competencyId: { type: "number", editable: true, defaultValue: 0  },    	
+	    	objectType: { type: "number", editable: true, defaultValue: 0  },   
+	    	objectId: { type: "number", editable: true, defaultValue: 0  },   
+	        name: { type: "string", editable: true },
+	        level: { type: "number", editable: true, defaultValue: 0  },   
+	        competencyUnitCode : { type:"string", editable:true },
+	        competencyGroupCode : { type:"string", editable:true, defaultValue:null },
+	        description: { type: "string", editable: true },
+	        job: {type:"object", defaultValue: new Job()}
+	    },	    
+	    copy : function ( target ){
+	    	target.set("competencyId", this.get("competencyId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	target.set("level", this.get("level"));
+	    	target.set("competencyUnitCode", this.get("competencyUnitCode"));
+	    	target.set("competencyGroupCode", this.get("competencyGroupCode"));
+	    	target.set("job", this.get("job"));
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    	else
+	    		target.set("properties", {});
+	    }    
+	});
+
+
 	
 	var EssentialElement = kendo.data.Model.define( {
 	    id: "essentialElementId", // the identifier of the model
