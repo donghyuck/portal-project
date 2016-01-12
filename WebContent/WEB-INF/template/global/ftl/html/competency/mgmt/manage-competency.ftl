@@ -330,7 +330,7 @@
 						$this.set("visible", true);
 						$this.set("editable", false);
 						$this.set("updatable", false);
-						if($this.competency.get("competencyId") > 0)){
+						if($this.competency.get("competencyId") > 0){
 							$this.set("deletable", true);
 						}else{
 							$this.set("deletable", false);
@@ -343,7 +343,7 @@
 						$this.set("visible", false);
 						$this.set("editable", true);
 						$this.set("updatable", true);							
-						if($this.competency.get("competencyId") > 0)){
+						if($this.competency.get("competencyId") > 0){
 							$this.set("deletable", true);
 						}else{
 							$this.set("deletable", false);
