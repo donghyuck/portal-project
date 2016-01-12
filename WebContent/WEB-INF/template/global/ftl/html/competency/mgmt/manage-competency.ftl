@@ -378,6 +378,7 @@
 							$this.set("hasJob", true);
 						else
 							$this.set("hasJob", false);
+							
 						if($this.competency.get("competencyId") == 0)
 						{
 							$this.competency.set("objectType", 1);
@@ -777,6 +778,19 @@
 							<div class="panel-body no-padding-b">	
 								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>								
 								<textarea class="form-control m-t-sm" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
+								
+								
+								<div class="row">
+									<div class="col-sm-4">
+										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">역량군</h6>
+									</div>
+									<div class="col-sm-4">
+										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">직무수준</h6>
+									</div>
+									<div class="col-sm-4">
+										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">분류코드(NCS코드)</h6>
+									</div>
+								</div>	
 								
 								
 								<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">역량군</h6>
