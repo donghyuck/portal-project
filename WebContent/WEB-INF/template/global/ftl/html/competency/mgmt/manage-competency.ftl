@@ -889,26 +889,6 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-						<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
-							<table class="table table-striped">
-								<thead>
-												<tr>
-													<th width="25%">대분류</th>
-													<th width="25%">중분류</th>
-													<th width="25%">소분류</th>
-													<th width="25%">직무</th>
-												</tr>
-								</thead>
-								<tbody>
-												<tr>
-													<td><span data-bind="text: competency.job.classification.classifiedMajorityName" ></span></td>
-													<td><span data-bind="text: competency.job.classification.classifiedMiddleName" ></span></td>
-													<td><span data-bind="text: competency.job.classification.classifiedMinorityName" ></span></td>
-													<td class="text-primary"><span data-bind="text: competency.job.name"></span></td>
-												</tr>
-								</tbody>
-							</table>	
-						</div> 
 						<form>
 						<div class="row">
 							<div class="col-sm-12">		
@@ -952,20 +932,45 @@
 								</table>
 							</div>				
 						</div>
-						<div class="row" data-bind="invisible:deletable">
-							<div class="col-sm-offset-6 col-sm-6">
-								<input type="checkbox" id="input-essential-element-opt" class="k-checkbox" data-bind="checked: keepCreating" >
-         						<label class="k-checkbox-label" for="input-essential-element-opt">이어서 하위요소(능력단위요소) 추가하기</label>
+						
+						<div class="p-sm no-padding-hr" data-bind="visible:hasJob">
+							<table class="table table-striped">
+								<thead>
+												<tr>
+													<th width="25%">대분류</th>
+													<th width="25%">중분류</th>
+													<th width="25%">소분류</th>
+													<th width="25%">직무</th>
+												</tr>
+								</thead>
+								<tbody>
+												<tr>
+													<td><span data-bind="text: competency.job.classification.classifiedMajorityName" ></span></td>
+													<td><span data-bind="text: competency.job.classification.classifiedMiddleName" ></span></td>
+													<td><span data-bind="text: competency.job.classification.classifiedMinorityName" ></span></td>
+													<td class="text-primary"><span data-bind="text: competency.job.name"></span></td>
+												</tr>
+								</tbody>
+							</table>	
+						</div> 
+						<div class="row">
+							<div class="col-sm-6">
+								<div data-bind="invisible:deletable">
+									<input type="checkbox" id="input-essential-element-opt" class="k-checkbox" data-bind="checked: keepCreating" >
+		         					<label class="k-checkbox-label" for="input-essential-element-opt">이어서 하위요소(능력단위요소) 추가하기</label>
+								</div>							
+							</div>
+							<div class="col-sm-6">
+								<div class="p-sm text-right">
+									<div class="btn-group">
+										<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+										<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+										<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+										<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
+									</div>
+								</div>							
 							</div>
 						</div>
-							<div class="p-sm text-right">
-								<div class="btn-group">
-									<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
-									<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
-									<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
-									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
-								</div>
-							</div>
 						</form>
 					</div>
 					<div class="modal-body no-padding">
