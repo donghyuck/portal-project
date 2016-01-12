@@ -227,7 +227,7 @@
 			<div id="content-wrapper">
 			
 				<ul class="breadcrumb breadcrumb-page">
-					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_3_3_1") />
+					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_3_4_1") />
 					<li><a href="#">Home</a></li>
 					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
 					<li class="active"><a href="#">${selectedMenu.title}</a></li>
