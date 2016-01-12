@@ -804,6 +804,7 @@
 											</tbody>
 										</table>	
 								</div> 
+								
 								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>								
 								<textarea class="form-control m-t-sm" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
 								<div class="p-sm no-padding-hr">
@@ -907,10 +908,17 @@
 								</tbody>
 							</table>	
 						</div> 
-								
 						<form>
 						<div class="row">
-							<div class="col-sm-12">									
+							<div class="col-sm-12">		
+							
+								<p class="panel-title" data-bind="{text: essentialElement.name, visible:visible}"></p>
+								<input type="text" class="form-control" name="input-essential-element-name" data-bind="{value: essentialElement.name, visible:editable }" placeholder="하위요소(능력단위요소)" />							
+							
+								<p class="p-sm" data-bind="{text: essentialElement.description, visible:visible}"></p>								
+								<textarea class="form-control m-t-sm" rows="4"  name="input-essential-element-description"  data-bind="{value: essentialElement.description, visible:editable}" placeholder="하위요소(능력단위요소) 정의"></textarea>
+								
+														
 								<table class="table table-striped">
 									<thead>
 										<tr>
