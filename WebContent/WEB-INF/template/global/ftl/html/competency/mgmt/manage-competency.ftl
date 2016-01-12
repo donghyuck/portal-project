@@ -330,7 +330,11 @@
 						$this.set("visible", true);
 						$this.set("editable", false);
 						$this.set("updatable", false);
-						$this.set("deletable", true);			
+						if($this.competency.get("competencyId") > 0)){
+							$this.set("deletable", true);
+						}else{
+							$this.set("deletable", false);
+						}		
 						$('#competency-details-competency-group-dorpdown-list').data('kendoDropDownList').enable(false);
 						return false;
 					},
@@ -338,10 +342,14 @@
 						var $this = this;					
 						$this.set("visible", false);
 						$this.set("editable", true);
-						$this.set("updatable", true);
-						$this.set("deletable", false);	
+						$this.set("updatable", true);							
+						if($this.competency.get("competencyId") > 0)){
+							$this.set("deletable", true);
+						}else{
+							$this.set("deletable", false);
+						}
 						$('#competency-details-competency-group-dorpdown-list').data('kendoDropDownList').enable();
-						renderTo.find("input[name=competency-name]").focus();
+						renderTo.find("input[name=competency-name]").focus();						
 						return false;
 					},
 					delete : function(e){
@@ -371,7 +379,6 @@
 					},
 					setSource : function(source){
 						var $this = this;
-					//	renderTo.find("form")[0].reset();
 						source.copy($this.competency);	
 						console.debug(common.ui.stringify( $this.competency ));
 						if( $this.competency.job.jobId > 0 )
@@ -383,13 +390,6 @@
 						{
 							$this.competency.set("objectType", 1);
 							$this.competency.set("objectId", getCompanySelector().value() );
-							/**
-							$this.set("visible", false);
-							$this.set("editable", true);
-							$this.set("updatable", true);
-							$this.set("deletable", false);				
-							renderTo.find("input[name=competency-name]").focus();
-							**/
 							$this.edit();
 							
 						}else{
