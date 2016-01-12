@@ -775,6 +775,10 @@
 								<input type="text" class="form-control" name="competency-name" data-bind="{value: competency.name, visible:editable }" placeholder="역량/능력단위" />
 							</div>
 							<div class="panel-body no-padding-b">	
+								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>								
+								<textarea class="form-control m-t-sm" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
+								
+								
 								<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">역량군</h6>
 								<input id="competency-details-competency-group-dorpdown-list"
 										data-option-label="없음"
@@ -803,10 +807,7 @@
 												</tr>
 											</tbody>
 										</table>	
-								</div> 
-								
-								<p class="p-sm" data-bind="{text: competency.description, visible:visible}"></p>								
-								<textarea class="form-control m-t-sm" rows="4"  name="competency-description"  data-bind="{value: competency.description, visible:editable}" placeholder="역량/능력단위 정의"></textarea>
+								</div> 								
 								<div class="p-sm no-padding-hr">
 									<table class="table table-striped">
 											<thead>
