@@ -318,15 +318,15 @@
 							<div id="codeset-treelist" class="no-shadow" />
 						</div>					
 					</div><!-- / .col-xs-5 -->
+					
 					<div class="col-xs-7">
-
 						<form>
 							<div id="codeset-details" class="panel panel-default" style="display:none;">
 								<div class="panel-heading">
 									<span class="panel-title" data-bind="{text:codeset.name, visible:visible}"></span>
 									<span class="badge badge-danger" data-bind="{text:codeset.codeSetId, visible:visible}"></span>
 									<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />
-								</div>
+								</div><!-- / .panel-header -->								
 								<div class="panel-body no-padding-b">	
 									<div class="m-b-sm" data-bind="visible:editable">
 										<input type="number" min="1" class="form-control input-sm" name="codeset-parent-id" data-bind="{value:codeset.parentCodeSetId, visible:editable }" placeholder="부모 코드 ID 값" />
@@ -348,17 +348,16 @@
 								                 data-bind="source:propertyDataSource, visible:editable"
 								                 style="height: 200px"></div>
 									</div>									
-								</div>
+								</div><!-- / .panel-body -->
 								 <div class="panel-footer">								 
 										<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 										<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
 										<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
 										<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	
-								 </div>
-							</div>
-						</form>
-						<!-- / form -->
-
+								 </div><!-- / .panel-footer -->
+							</div><!-- / .panel -->
+						</form><!-- / form -->
+						
 						<hr class="no-margin"/>
 						
 						<div id="import-panel" class="panel panel-transparent">
@@ -373,8 +372,8 @@
 					                   data-bind="value: fileType,
 					                              source: fileTypes"
 					                   style="width: 100%;"
-					            />
-							
+					            />							
+								
 								<table class="table table-striped">
 									<thead>
 										<tr>
@@ -400,9 +399,10 @@
 									data-width="300"
 					 				data-showFileList="false"
 									data-localization:="{select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' }"
-								>
-							</div>
-						</div>							
+								/>
+								
+							</div><!-- /.panel-body -->
+						</div><!-- /.panel -->							
 					
 					</div><!-- / .col-xs-7 -->
 				</div><!-- / .row --> 
