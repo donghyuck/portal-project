@@ -509,6 +509,7 @@
 									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
 								</div>
 							</div>
+							<hr/>
 							<div class="panel-body no-padding-t">	
 								<ul class="nav nav-tabs nav-tabs-sm">
 									<li class="m-l-sm"><a href="#job-details-tabs-0" data-toggle="tab" data-action="elements">역량(능력단위)</a></li>
