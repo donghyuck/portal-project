@@ -496,6 +496,20 @@
 					updatable : false,	
 					keepCreating : false,
 					hasJob: false,	
+					hasNext : false,
+					hasPrevious : false,
+					next:function(){
+						var that = this;						
+						var nextEl = getEssentialElementGrid().select().next();
+						getEssentialElementGrid().select(nextEl);
+						return false;				
+					},
+					previous:function(){
+						var that = this;						
+						var prevEl = getEssentialElementGrid().select().prev();
+						getEssentialElementGrid().select(prevEl);
+						return false;					
+					},					
 					view : function(e){
 						var $this = this;		
 						if($this.essentialElement.essentialElementId < 1){
@@ -607,12 +621,17 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);
-							renderTo.find("ul.nav.nav-tabs a:last").tab('show');							
-							
+							renderTo.find("ul.nav.nav-tabs a:last").tab('show');	
 							observable.abilityDataSource.read();	
 							observable.performanceCriteriaDataSource.read();
 						}
-						
+
+							
+						var prevEl = getEssentialElementGrid().select().prev();
+						var nextEl = getEssentialElementGrid().select().next();
+						$this.set('hasPrevious', (prevEl.length == 1) );
+						$this.set('hasNext', (nextEl.length == 1) );			
+													
 						if( $this.competency.job.jobId > 0 )
 							$this.set("hasJob", true);
 						else
@@ -884,8 +903,9 @@
 					</div>
 					<div class="modal-body">
 
-						<button title="Previous (Left arrow key)" type="button" class="previous" style="top:15%;"></button>					
-						<button title="Next (Right arrow key)" type="button" class="next"  style="top:15%;"></button>		
+						<button title="Previous (Left arrow key)" type="button" class="previous" style="top:15%;" data-bind="{visible: hasPrevious, click:previous}"></button>					
+						<button title="Next (Right arrow key)" type="button" class="next"  style="top:15%;" data-bind="{visible: hasNext, click:next}"></button>	
+							
 						<form>
 						<div class="row">
 							<div class="col-sm-12">		
