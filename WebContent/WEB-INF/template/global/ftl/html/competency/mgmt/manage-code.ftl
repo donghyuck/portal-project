@@ -358,19 +358,9 @@
 							</div>
 						</form>
 						<!-- / form -->
-						
-					
-					</div><!-- / .col-xs-7 -->
-				</div><!-- / .row --> 
-				
-				
-				<section class="layout">
-					<section class="left">				
-						
-					</section>									
-					<section class="right">
 
 						<hr class="no-margin"/>
+						
 						<div id="import-panel" class="panel panel-transparent">
 							<div class="panel-heading">
 								<h5 class="panel-title">엑셀 업로드</h5>
@@ -412,9 +402,10 @@
 									data-localization:="{select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' }"
 								>
 							</div>
-						</div>						
-					</section>
-				</section>
+						</div>							
+					
+					</div><!-- / .col-xs-7 -->
+				</div><!-- / .row --> 
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
