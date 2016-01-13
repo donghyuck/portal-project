@@ -449,7 +449,7 @@
 					</div> 
 					<div class="col-md-8">
 					
-<div id="job-details" class="panel panel-default" style="display:none;">
+						<div id="job-details" class="panel panel-default" style="display:none;">
 							<div class="panel-heading">
 								<strong><span class="panel-title" data-bind="{text: job.name, visible:visible}"></span></strong>
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable}" placeholder="직무" />
@@ -509,8 +509,8 @@
 									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>
 								</div>
 							</div>
-							<div class="panel-body">	
-								<ul class="nav nav-tabs nav-tabs-xs">
+							<div class="panel-body no-padding-t">	
+								<ul class="nav nav-tabs nav-tabs-sm">
 									<li class="m-l-sm"><a href="#job-details-tabs-0" data-toggle="tab" data-action="elements">역량(능력단위)</a></li>
 									<li><a href="#job-details-tabs-2" data-toggle="tab" data-action="variable-range">직업</a></li>
 									<li><a href="#job-details-tabs-3" data-toggle="tab" data-action="assessment-guide">교과과정</a></li>
