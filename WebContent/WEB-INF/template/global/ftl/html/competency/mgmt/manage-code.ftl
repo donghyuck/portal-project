@@ -319,18 +319,9 @@
 						</div>					
 					</div><!-- / .col-xs-5 -->
 					<div class="col-xs-7">
-					
-					</div><!-- / .col-xs-7 -->
-				</div><!-- / .row --> 
-				
-				
-				<section class="layout">
-					<section class="left">				
-						
-					</section>									
-					<section class="right">
+
 						<form>
-							<div id="codeset-details" class="panel panel-default no-border no-margin-b" style="display:none;">
+							<div id="codeset-details" class="panel panel-default" style="display:none;">
 								<div class="panel-heading">
 									<span class="panel-title" data-bind="{text:codeset.name, visible:visible}"></span>
 									<span class="badge badge-danger" data-bind="{text:codeset.codeSetId, visible:visible}"></span>
@@ -366,6 +357,19 @@
 								 </div>
 							</div>
 						</form>
+						<!-- / form -->
+						
+					
+					</div><!-- / .col-xs-7 -->
+				</div><!-- / .row --> 
+				
+				
+				<section class="layout">
+					<section class="left">				
+						
+					</section>									
+					<section class="right">
+
 						<hr class="no-margin"/>
 						<div id="import-panel" class="panel panel-transparent">
 							<div class="panel-heading">
