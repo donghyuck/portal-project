@@ -283,7 +283,7 @@
 		<style>
 		
 		.k-treeview {
-			min-height:338px;
+			min-height:300px;
 		}	
 		.no-shadow{
 			-webkit-box-shadow: none;
@@ -315,7 +315,7 @@
 								<input id="company-dropdown-list" />
 								<hr/>
 							</div>
-							<div id="codeset-treelist" class="no-shadow"></div>
+							<div id="codeset-treelist" class="no-shadow" style="min-height:300px;"></div>
 							<!-- /. end of tree -->
 						</div>					
 					</div><!-- / .col-xs-5 -->					
