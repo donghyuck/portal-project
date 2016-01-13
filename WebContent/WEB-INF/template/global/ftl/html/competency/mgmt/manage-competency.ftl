@@ -890,7 +890,7 @@
 						<div class="row">
 							<div class="col-sm-12">		
 							
-								<p class="panel-title" data-bind="{text: essentialElement.name, visible:visible}"></p>
+								<h4 class="text-primary" data-bind="{text: essentialElement.name, visible:visible}"></h4>
 								<input type="text" class="form-control" name="input-essential-element-name" data-bind="{value: essentialElement.name, visible:editable }" placeholder="하위요소(능력단위요소)" />							
 							
 								<p class="p-sm" data-bind="{text: essentialElement.description, visible:visible}"></p>								
