@@ -655,13 +655,7 @@
                 			
 		</script> 		 
 		<style>
-		
-		.no-shadow{
-			-webkit-box-shadow: none;
-			-moz-box-shadow: none;
-			box-shadow: none;
-		}
-						
+							
 		.essential-element {
 			border-top : 0;
 			border-top-left-radius:0;
@@ -725,7 +719,7 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				<div class="row animated fadeInRight">
-	                <div class="col-md-4"> 
+	                <div class="col-md-5"> 
 						<div class="panel panel-transparent">
 							<div class="panel-body no-padding">
 								<input id="company-dropdown-list" />
@@ -768,7 +762,7 @@
 							<div id="competency-grid" class="no-shadow"></div>
 						</div>	                
 	                </div><!-- /.col-md-4 -->   
-                	<div class="col-md-8">
+                	<div class="col-md-7">
 					<div id="competency-details" class="panel panel-default" style="display:none;">
 						<form>
 							<div class="panel-heading">
