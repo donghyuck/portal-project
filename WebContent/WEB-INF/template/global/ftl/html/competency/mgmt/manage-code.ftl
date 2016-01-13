@@ -313,6 +313,7 @@
 						<div class="panel panel-transparent">
 							<div class="panel-body no-padding">
 								<input id="company-dropdown-list" />
+								<hr/>
 							</div>
 							<div id="codeset-treelist" class="no-shadow" />
 						</div>					
