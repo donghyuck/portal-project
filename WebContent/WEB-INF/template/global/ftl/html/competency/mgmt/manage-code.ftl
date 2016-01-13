@@ -342,7 +342,7 @@
 										<span data-bind="{text: codeset.description, visible:visible}"></span>
 										<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
 									</div>
-									<div class="m-b-sm">
+									<div class="m-b-sm" style="min-height:200px;">
 										<table class="table table-striped" data-bind="visible:visible">
 											<thead>
 												<tr>
@@ -354,7 +354,7 @@
 													data-role="listview"
 												    data-template="property-view-template"
 												    data-bind="source:propertyDataSource"
-												    style="height: 300px; overflow: auto">
+												    style="height: 200px; overflow: auto">
 												</tbody>
 										</table>			
 										<div data-role="grid"
