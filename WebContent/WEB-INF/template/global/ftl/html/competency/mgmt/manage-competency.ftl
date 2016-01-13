@@ -883,6 +883,9 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
+
+						<button title="Previous (Left arrow key)" type="button" class="previous" style="top:15%;"></button>					
+						<button title="Next (Right arrow key)" type="button" class="next"  style="top:15%;"></button>		
 						<form>
 						<div class="row">
 							<div class="col-sm-12">		
