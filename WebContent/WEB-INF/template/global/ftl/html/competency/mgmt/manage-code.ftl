@@ -329,13 +329,16 @@
 								</div><!-- / .panel-header -->								
 								<div class="panel-body no-padding-b">	
 									<div class="m-b-sm" data-bind="visible:editable">
+										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">부모ID</h6>
 										<input type="number" min="1" class="form-control input-sm" name="codeset-parent-id" data-bind="{value:codeset.parentCodeSetId, visible:editable }" placeholder="부모 코드 ID 값" />
 									</div>	
 									<div class="m-b-sm">
+										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">코드</h6>
 										<span  data-bind="{text: codeset.code, visible:visible}"></span>
 										<input type="text" class="form-control input-sm" name="codeset-code" data-bind="{value:codeset.code, visible:editable }" placeholder="코드 값" />
 									</div>				
 									<div class="m-b-sm">				
+										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">설명</h6>
 										<span data-bind="{text: codeset.description, visible:visible}"></span>
 										<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
 									</div>
