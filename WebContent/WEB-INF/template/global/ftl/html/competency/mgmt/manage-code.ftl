@@ -361,7 +361,7 @@
 								                 date-scrollable="true"
 								                 data-editable="true"
 								                 data-toolbar="['create']"
-								                 data-columns="[{ 'field': 'name', 'width': 270 },{ 'field': 'value' } ]"
+								                 data-columns="[{ 'field': 'name', 'title': '이름', 'width': 270 },{ 'field': 'value', 'title':'값' } ]"
 								                 data-bind="source:propertyDataSource, visible:editable"
 								                 style="height: 200px"></div>
 									</div>									
