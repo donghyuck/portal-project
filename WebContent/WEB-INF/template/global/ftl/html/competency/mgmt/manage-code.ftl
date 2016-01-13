@@ -281,43 +281,16 @@
 
 		</script> 		 
 		<style>
-		#xmleditor.panel-body{
-			min-height:577px;
-		}	
 		
 		.k-treeview {
 			min-height:338px;
+		}	
+		.no-shadow{
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
 		}
 				
-		#content-wrapper section.layout {
-		    border: 1px solid #e2e2e2;
-		    background-color: #f6f6f6;		 
-		    min-height: 663px;
-		    height:100%;
-		    width:100%;
-		    position: relative;
-		    border-radius: 4px;
-		}
-		
-		#content-wrapper section.left {
-			height:100%;
-			float: left;
-			border-right: solid 1px #e2e2e2;
-			position: relative;
-			width:500px;
-		}
-		#content-wrapper section.right {
-			/*margin-left:400px; */
-			height:100%;
-			overflow:hidden;
-			position:relative;
-		}
-		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
-			border-width:0;
-			margin-bottom:0px;
-    	}
-
-		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -334,12 +307,25 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
+				
+				<div class="row animated fadeInRight">
+					<div class="col-xs-5">
+						<div class="panel panel-transparent">
+							<div class="panel-body no-padding">
+								<input id="company-dropdown-list" />
+							</div>
+							<div id="codeset-treelist" class="no-shadow" />
+						</div>					
+					</div><!-- / .col-xs-5 -->
+					<div class="col-xs-7">
+					
+					</div><!-- / .col-xs-7 -->
+				</div><!-- / .row --> 
+				
+				
 				<section class="layout">
 					<section class="left">				
-						<div class="panel panel-transparent">
-							<div class="panel-body"><input id="company-dropdown-list" /></div>
-							<div id="codeset-treelist" class="no-border" />
-						</div>
+						
 					</section>									
 					<section class="right">
 						<form>
