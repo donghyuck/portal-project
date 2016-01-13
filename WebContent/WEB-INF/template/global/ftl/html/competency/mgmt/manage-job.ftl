@@ -443,7 +443,7 @@
 									<input id="classified-minority-dorpdown-list" />
 								</div>	
 							</div>
-							<div id="job-grid" class="no-border no-shadow"></div>
+							<div id="job-grid" class="no-shadow"></div>
 						</div>	
 											
 					</div> 
