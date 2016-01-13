@@ -3,6 +3,40 @@
  admin pages css
 */
 
+/**
+* modal  
+*/
+.modal button.previous {
+	display: block;
+    position: fixed;
+    border:0;
+    opacity: .3;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 5px;
+    z-index: 1049;
+    background: url("/images/common/icons/basic/color/PreviousArrow.svg") no-repeat center;       	
+}
+
+.modal button.next {
+	display: block;
+    position: fixed;
+    border:0;
+    opacity: .3;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 5px;
+    z-index: 1049;
+    background: url("/images/common/icons/basic/color/NextArrow.svg") no-repeat center;       	
+}
+
+.modal button.previous:hover, .modal button.next:hover {
+	opacity: 1;
+}
+
+
 .page-details .details-full-name {
 	font-size: 15px;
 	font-weight: 300;
