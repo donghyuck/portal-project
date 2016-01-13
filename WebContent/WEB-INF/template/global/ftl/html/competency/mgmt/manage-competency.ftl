@@ -510,16 +510,6 @@
 						getEssentialElementGrid().select(prevEl);
 						return false;					
 					},					
-					view : function(e){
-						var $this = this;		
-						if($this.essentialElement.essentialElementId < 1){
-							renderTo.modal('hide');						
-						}						
-						$this.set("visible", true);
-						$this.set("editable", false);
-						$this.set("updatable", false);
-						return false;
-					},
 					abilityDataSource : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/competency/ability/list.json?output=json" />', type:'post' },
@@ -573,6 +563,25 @@
 						$this.set("editable", true);
 						$this.set("updatable", true);
 						$("#input-essential-element-name").focus();
+						
+						$this.set('hasPrevious', false );
+						$this.set('hasNext', false );
+							
+						return false;
+					},
+					view : function(e){
+						var $this = this;		
+						if($this.essentialElement.essentialElementId < 1){
+							renderTo.modal('hide');						
+						}else{
+							$this.set("visible", true);
+							$this.set("editable", false);
+							$this.set("updatable", false);						
+							var prevEl = getEssentialElementGrid().select().prev();
+							var nextEl = getEssentialElementGrid().select().next();
+							$this.set('hasPrevious', (prevEl.length == 1) );
+							$this.set('hasNext', (nextEl.length == 1) );
+						}						
 						return false;
 					},
 					delete : function(e){
@@ -609,29 +618,24 @@
 						var $this = this;				
 						source.copy($this.essentialElement);					
 						if($this.essentialElement.get("essentialElementId") == 0)
-						{
+						{										
 							$this.essentialElement.set("competencyId", $this.competency.competencyId);
-							$this.set("visible", false);
-							$this.set("editable", true);
-							$this.set("updatable", true);
+							//$this.set("visible", false);
+							//$this.set("editable", true);
+							//$this.set("updatable", true);
 							$this.set("deletable", false);	
-							$("#input-essential-element-name").focus();
+							$this.edit();				
+							//$("#input-essential-element-name").focus();
 						}else{
-							$this.set("visible", true);
-							$this.set("editable", false);
-							$this.set("updatable", false);
+							//$this.set("visible", true);
+							//$this.set("editable", false);
+							//$this.set("updatable", false);
 							$this.set("deletable", true);
+							$this.view();
 							renderTo.find("ul.nav.nav-tabs a:last").tab('show');	
 							observable.abilityDataSource.read();	
 							observable.performanceCriteriaDataSource.read();
-						}
-
-							
-						var prevEl = getEssentialElementGrid().select().prev();
-						var nextEl = getEssentialElementGrid().select().next();
-						$this.set('hasPrevious', (prevEl.length == 1) );
-						$this.set('hasNext', (nextEl.length == 1) );			
-													
+						}							
 						if( $this.competency.job.jobId > 0 )
 							$this.set("hasJob", true);
 						else
