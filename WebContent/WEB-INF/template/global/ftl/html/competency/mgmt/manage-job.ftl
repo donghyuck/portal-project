@@ -366,75 +366,6 @@
 		
 		</script> 		 
 		<style>
-		#xmleditor.panel-body{
-			min-height:577px;
-		}	
-		
-		.k-treeview {
-			min-height:338px;
-		}
-				
-				
-		#content-wrapper section.layout {
-		    border: 1px solid #e2e2e2;
-		    background-color: #f5f5f5;		 
-		    min-height: 770px;
-		    height:100%;
-		    width:100%;
-		    position: static;
-		    left:0px;		    
-		    border-radius: 4px;
-		}
-		
-		#content-wrapper section.layout:after, #content-wrapper section.layout:before{
-			clear:both;
-			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box;
-			box-sizing:border-box;
-			display:table;
-		} 
-		
-		section.left, section.right, section.bottom {
-			display:block;
-		}
-		
-		section.left:after, section.right:after, section.left:before, section.right:before,  {
-			-webkit-box-sizing:border-box;
-			-moz-box-sizing:border-box;
-			box-sizing:border-box;		
-		}
-		
-		#content-wrapper section.left {
-			width:400px;
-			position: absolute;
-			height:auto;
-			min-height: 100%;			
-			border-right: solid 1px #e2e2e2;
-		}
-		
-		.left.fixed {
-			position: fixed!important;
-			right : 0 ;
-			top : 0;
-		}
-		
-		#content-wrapper section.right {
-			margin-left:400px;
-			height:100%;			
-		}
-		
-		#content-wrapper section.left > .panel, #content-wrapper section.right > .panel{
-			border-width:0;
-			margin-bottom:0px;
-    	}
-    	
-		#content-wrapper section.bottom{
-			padding: 10px 15px;
-			background-color: #f5f5f5;
-			border-top: 1px solid #ddd;
-			border-bottom-right-radius: 3px;
-			border-bottom-left-radius: 3px
-		}
 		
 		.essential-element {
 			border-top : 0;
@@ -448,13 +379,6 @@
 			box-shadow: none;
 		}
 		
-		.no-shadow .k-pager-wrap {
-			border-bottom-width : 0;
-			-webkit-box-shadow: none;
-			-moz-box-shadow: none;
-			box-shadow: none;
-		}
-
 		.no-top-radius {
 			border-top : 0;
 			border-top-left-radius:0;
@@ -501,12 +425,10 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
-				<section class="layout">
-					<section class="left">							
+				<div class="row animated fadeInRight">
+					<div class="col-md-4">
+					
 						<div class="panel panel-transparent">
-							<!--<div class="panel-heading">
-								
-							</div>-->
 							<div class="panel-body">
 								<input id="company-dropdown-list" />	
 								<hr/>
@@ -522,10 +444,12 @@
 								</div>	
 							</div>
 							<div id="job-grid" class="no-border no-shadow"></div>
-						</div>				
-					</section>
-					<section class="right">	
-						<div id="job-details" class="panel panel-default" style="display:none;">
+						</div>	
+											
+					</div> 
+					<div class="col-md-8">
+					
+<div id="job-details" class="panel panel-default" style="display:none;">
 							<div class="panel-heading">
 								<strong><span class="panel-title" data-bind="{text: job.name, visible:visible}"></span></strong>
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable}" placeholder="직무" />
@@ -613,9 +537,11 @@
 									</div>																
 								</div>	             						                   					
 							</div>
-						</div>
-					</section>
-				</section><!-- / .layout -->
+						</div>					
+					
+					</div>
+				</div>
+				
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
