@@ -343,6 +343,20 @@
 										<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
 									</div>
 									<div class="m-b-sm">
+										<table class="table table-striped" data-bind="visible:visible">
+											<thead>
+												<tr>
+													<th width="270">이름</th>
+													<th>값</th>
+												</tr>
+												</thead>
+												<tbody  class="no-border"
+													data-role="listview"
+												    data-template="property-view-template"
+												    data-bind="source:propertyDataSource"
+												    style="height: 300px; overflow: auto">
+												</tbody>
+										</table>			
 										<div data-role="grid"
 								                 date-scrollable="true"
 								                 data-editable="true"
@@ -419,7 +433,13 @@
             # if (!item.items) { #
                 <a class='delete-link' href='\#'></a> 
             # } #
-        </script>									
+        </script>	
+		<script type="text/x-kendo-tmpl" id="property-view-template">
+		<tr>
+			<td>#: name #</td>
+			<td>#: value #</td>
+		</tr>	
+		</script>        								
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
