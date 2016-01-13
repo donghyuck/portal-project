@@ -315,18 +315,100 @@
 								<input id="company-dropdown-list" />
 								<hr/>
 							</div>
-							<div id="codeset-treelist" class="no-shadow" />
+							<div id="codeset-treelist" class="no-shadow"></div>
+							<!-- /. end of tree -->
 						</div>					
-					</div><!-- / .col-xs-5 -->
-					
+					</div><!-- / .col-xs-5 -->					
 					<div class="col-xs-7">
+						<form>
+							<div id="codeset-details" class="panel panel-default" style="display:none;">
+								<div class="panel-heading">
+									<span class="panel-title" data-bind="{text:codeset.name, visible:visible}"></span>
+									<span class="badge badge-danger" data-bind="{text:codeset.codeSetId, visible:visible}"></span>
+									<input type="text" class="form-control input-sm" name="codeset-name" data-bind="{value:codeset.name, visible:editable }" placeholder="이름" />
+								</div><!-- / .panel-header -->								
+								<div class="panel-body no-padding-b">	
+									<div class="m-b-sm" data-bind="visible:editable">
+										<input type="number" min="1" class="form-control input-sm" name="codeset-parent-id" data-bind="{value:codeset.parentCodeSetId, visible:editable }" placeholder="부모 코드 ID 값" />
+									</div>	
+									<div class="m-b-sm">
+										<span  data-bind="{text: codeset.code, visible:visible}"></span>
+										<input type="text" class="form-control input-sm" name="codeset-code" data-bind="{value:codeset.code, visible:editable }" placeholder="코드 값" />
+									</div>				
+									<div class="m-b-sm">				
+										<span data-bind="{text: codeset.description, visible:visible}"></span>
+										<textarea class="form-control" rows="4"  name="codeset-description"  data-bind="{value: codeset.description, visible:editable}" placeholder="설명"></textarea>
+									</div>
+									<div class="m-b-sm">
+										<div data-role="grid"
+								                 date-scrollable="true"
+								                 data-editable="true"
+								                 data-toolbar="['create']"
+								                 data-columns="[{ 'field': 'name', 'width': 270 },{ 'field': 'value' } ]"
+								                 data-bind="source:propertyDataSource, visible:editable"
+								                 style="height: 200px"></div>
+									</div>									
+								</div><!-- / .panel-body -->
+								 <div class="panel-footer">								 
+										<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+										<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+										<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+										<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	
+								 </div><!-- / .panel-footer -->
+							</div><!-- / .panel -->
+						</form><!-- / form -->
 						
+						<hr class="no-margin"/>
+						
+						<div id="import-panel" class="panel panel-transparent">
+							<div class="panel-heading">
+								<h5 class="panel-title">엑셀 업로드</h5>
+							</div>
+							<div class="panel-body">	
+								<input data-role="dropdownlist"
+					                   data-value-primitive="true"
+					                   data-text-field="text"
+					                   data-value-field="value"
+					                   data-bind="value: fileType,
+					                              source: fileTypes"
+					                   style="width: 100%;"
+					            />							
+								
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th width="30%">CODESET ID</th>
+											<th width="35%">SHEET INDEX</th>
+											<th >ROW 건너뛰기</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input id="import-top-codeset-id" type="number" min="1" class="form-control input-sm" placeholder="최상위 CODESET ID" data-bind="value:codeSetId" /></td>
+											<td><input id="import-top-sheet-index" type="number" min="0" class="form-control input-sm" placeholder="SHEET INDEX" data-bind="value:sheetIndex" /></td>
+											<td><input id="import-skip-row-count" type="number" min="0" class="form-control input-sm" placeholder="ROW 건너뛰기" data-bind="value:skipRowCount" /></td>
+										</tr>
+									</tbody>
+								</table>					
+																									
+								<input name="import-excel-file" type="file"
+									data-role="upload"
+									data-async="{saveUrl:  '<@spring.url "/secure/data/mgmt/competency/codeset/import.json?output=json"/>', autoUpload: true}"							
+									data-bind="events:{upload:upload}"
+									data-multiple="false"
+									data-width="300"
+					 				data-showFileList="false"
+									data-localization:="{select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' }"
+								/>
+								
+							</div><!-- /.panel-body -->
+						</div><!-- /.panel -->								
 					</div><!-- / .col-xs-7 -->
 					
 				</div><!-- / .row --> 
 			</div> <!-- / #content-wrapper -->
-			<div id="main-menu-bg">
-			</div>
+			
+			<div id="main-menu-bg"></div>
 		</div> <!-- / #main-wrapper -->
 		<script id="treeview-template" type="text/kendo-ui-template">
 			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
