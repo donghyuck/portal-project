@@ -111,7 +111,10 @@
 		function createAssessmentSchemeDetails(source){
 			var renderTo = $("#assessment-scheme-details");
 			if( !renderTo.data("model")){		
-				$('#multiple-apply-allowed-switcher').switcher({ on_state_content:"", off_state_content: ""});
+				//$('#multiple-apply-allowed-switcher').switcher({ on_state_content:"", off_state_content: ""});
+				$('input[data-class=switcher-primary]').switcher({ on_state_content:"", off_state_content: ""});
+				
+				feedback-enabled-switcher
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
@@ -352,7 +355,7 @@
 															<td class="text-muted">360도 피드벡</td>
 															<td>
 																<div data-bind="enabled:editable">
-																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
+																	<input id="feedback-enabled-switcher" type="checkbox" 
 																	data-class="switcher-primary switcher-lg" 
 																	data-bind="checked:assessmentScheme.feedbackEnabled"/>
 																</div>
