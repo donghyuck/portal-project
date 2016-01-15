@@ -268,7 +268,11 @@
         .switcher-lg {
         	width:45px;
         }
-        
+	 	.switcher.disabled {
+		    cursor: not-allowed !important;
+		    opacity: .5 !important;
+		    filter: alpha(opacity = 50);
+		}       
         
 		</style>
 	</head>
@@ -331,10 +335,10 @@
 														<tr>
 															<td class="text-muted">중복진단허용</td>
 															<td>
-																<div data-bind="visible:editable">
+																<div data-bind="enabled:editable">
 																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
 																	data-class="switcher-primary switcher-lg" 
-																	data-bind="checked:multipleApplyAllowed, enabled:editable"/>
+																	data-bind="checked:multipleApplyAllowed"/>
 																</div>
 																<div data-bind="visible:visible" >
 																	<span data-bind="visible:multipleApplyAllowed">중복진단을 허용합니다.</span>
