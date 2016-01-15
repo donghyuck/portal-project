@@ -377,7 +377,7 @@
 														          상사
 														          
 														          <label for="percentage">Price Discount:</label>
-                        <input id="percentage" value="0.05" style="width: 100%;" />
+                        										  <input id="percentage" value="0.05" />
                         
 														          <label for="percentage">Price Discount:</label>
                        											 <input id="numeric" type="number" value="1" min="0" max="100" step="1"/>
