@@ -265,6 +265,11 @@
             padding-bottom: 1em;
         }			
         
+        .switcher-lg {
+        	width:45px;
+        }
+        
+        
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
