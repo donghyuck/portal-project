@@ -374,22 +374,9 @@
 															<td>
 																<ul class="fieldlist">
 														          <li>
-														              <input type="radio" name="multiple-apply-allowed" id="multiple-apply-allowed-radio-1" 
-														              	class="k-radio" data-bind="{checked:multipleApplyAllowed}" value="ture">
-														              <label class="k-radio-label" for="multiple-apply-allowed-radio-1">예</label>
-														          </li>
-														          <li>
-														              <input type="radio" name="multiple-apply-allowed" id="multiple-apply-allowed-radio-2" 
-														              	class="k-radio" data-bind="{checked:multipleApplyAllowed} value="false">
-														              <label class="k-radio-label" for="multiple-apply-allowed-radio-2">아니오</label>
-														          </li>
-														        </ul>
-														        
-														        															
-															
-																<ul class="fieldlist">
-														          <li>
 														          상사
+														          <label for="percentage">Price Discount:</label>
+                       											 <input id="numeric" type="number" value="1" min="0" max="100" step="1"/>
 														          </li>
 														          <li>
 														          동료
@@ -401,9 +388,6 @@
 														          본인
 														          </li>
 														        </ul>
-        
-        
-															
 															</td>
 														</tr>	
 														<tr>
