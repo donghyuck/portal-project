@@ -268,7 +268,9 @@
         .switcher-lg {
         	width:45px;
         }
+        
 	 	div[disabled=disabled] > .switcher {
+	 		pointer-events : none;
 		    cursor: not-allowed !important;
 		    opacity: .5 !important;
 		    filter: alpha(opacity = 50);
