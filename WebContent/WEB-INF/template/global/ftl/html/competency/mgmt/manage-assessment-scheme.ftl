@@ -122,6 +122,7 @@
 					deletable: false,
 					updatable : false,		
 					multipleApplyAllowed: false,		
+					feedbackEnabled:false,
 					assessmentScheme: new common.ui.data.competency.AssessmentScheme(),
 					create : function(e){
 						console.log("create..");
@@ -169,8 +170,8 @@
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
-						
-						this.assessmentScheme.get("multipleApplyAllowed", $this.multipleApplyAllowed );
+						this.assessmentScheme.get("multipleApplyAllowed", $this.multipleApplyAllowed );						
+						this.assessmentScheme.get("feedbackEnabled", $this.feedbackEnabled );
 						console.log(common.ui.stringify($this.assessmentScheme ));
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
@@ -222,8 +223,13 @@
 							$('#multiple-apply-allowed-switcher').switcher('on');
 						}else{
 							$('#multiple-apply-allowed-switcher').switcher('off');
-						}
-						
+						}		
+										
+						if($this.assessmentScheme.feedbackEnabled){
+							$('#feedback-enabled-switcher').switcher('on');
+						}else{
+							$('#feedback-enabled-switcher').switcher('off');
+						}						
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});					
@@ -354,11 +360,11 @@
 																<div data-bind="enabled:editable">
 																	<input id="feedback-enabled-switcher" type="checkbox" 
 																	data-class="switcher-primary switcher-lg" 
-																	data-bind="checked:assessmentScheme.feedbackEnabled"/>
+																	data-bind="checked:feedbackEnabled"/>
 																</div>
 																<p data-bind="visible:visible" class="text-xs text-muted">
-																	<span data-bind="visible:assessmentScheme.feedbackEnabled">360도 피드백을 활성화 합니다.</span>
-																	<span data-bind="invisible:assessmentScheme.feedbackEnabled">360도 피드백을 비활성화 합니다.</span>
+																	<span data-bind="visible:feedbackEnabled">360도 피드백을 활성화 합니다.</span>
+																	<span data-bind="invisible:feedbackEnabled">360도 피드백을 비활성화 합니다.</span>
 																</p>
 															</td>
 														</tr>
