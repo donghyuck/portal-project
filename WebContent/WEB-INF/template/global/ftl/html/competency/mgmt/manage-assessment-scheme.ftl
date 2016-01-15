@@ -423,40 +423,56 @@
 															</td>
 														</tr>	
 														<tr>
-															<td></td>
+															<td>역량진단방법</td>
 															<td>
 															
 															<ul class="fieldlist">
 													            <li>
-													              <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
-													          <label class="k-checkbox-label" for="eq1">직업기초역량(직업기초능력)</label>
+													              	<input type="checkbox" id="assessment-methods-1" class="k-checkbox" checked="checked">
+													          		<label class="k-checkbox-label" for="assessment-methods-2">인지능력테스트</label>
 													            </li>
 													            <li>
-													              <input type="checkbox" id="eq2" class="k-checkbox" checked="checked" disabled="disabled">
-													          <label class="k-checkbox-label" for="eq2">직무역량(직무수행능력)</label>
+													              	<input type="checkbox" id="assessment-methods-2" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-2">직무지식테스트</label>
 													            </li>
 													            <li>
-													              <input type="checkbox" id="eq3" class="k-checkbox">
-													          <label class="k-checkbox-label" for="eq3">리더쉽</label>
-													            </li>
-													            <!--
-													            <li>
-													              <input type="checkbox" id="eq4" class="k-checkbox">
-													          <label class="k-checkbox-label" for="eq4">Heated front and rear seats</label>
+													              	<input type="checkbox" id="assessment-methods-3" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-3">PERSONALITY TESTS</label>
 													            </li>
 													            <li>
-													              <input type="checkbox" id="eq5" class="k-checkbox">
-													          <label class="k-checkbox-label" for="eq5">Dual-zone air conditioning</label>
+													              	<input type="checkbox" id="assessment-methods-4" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-4">BIOGRAPHICAL DATA</label>
 													            </li>
 													            <li>
-													              <input type="checkbox" id="eq6" class="k-checkbox">
-													          <label class="k-checkbox-label" for="eq6">Rain sensor</label>
+													              	<input type="checkbox" id="assessment-methods-5" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-5">INTEGRITY TESTS</label>
 													            </li>
 													            <li>
-													              <input type="checkbox" id="eeeeq4" class="k-checkbox" disabled="disabled">
-													          <label class="k-checkbox-label" for="eeeeq4">Towbar preparation</label>
+													              	<input type="checkbox" id="assessment-methods-6" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-6">STRUCTURED INTERVIEWS</label>
 													            </li>
-													            -->
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-7" class="k-checkbox" disabled="disabled">
+													          		<label class="k-checkbox-label" for="assessment-methods-7">PHYSICAL FITNESS TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-8" class="k-checkbox" disabled="disabled">
+													          		<label class="k-checkbox-label" for="assessment-methods-8">PHYSICAL ABILITY TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-9" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-9">SITUATIONAL JUDGMENT TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-10" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-10">WORK SAMPLE TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-11" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-11">ASSESSMENT CENTERS</label>
+													            </li>
+													            
+													            
 													        </ul>
 															</td>
 														</tr>													
