@@ -376,10 +376,10 @@
 														          <li>
 														          상사
 														          
-														          <label for="percentage">Price Discount:</label>
+														          <label for="percentage">가중치:</label>
                         										  <input id="percentage" value="0.05" />
                         
-														          <label for="percentage">Price Discount:</label>
+														          <label for="percentage">최대 인원:</label>
                        											 <input id="numeric" type="number" value="1" min="0" max="100" step="1"/>
 														          </li>
 														          <li>
