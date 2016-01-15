@@ -342,11 +342,13 @@
 															<td>
 																<ul class="fieldlist">
 														          <li>
-														              <input type="radio" name="multiple-apply-allowed" id="multiple-apply-allowed-radio-1" class="k-radio" data-bind="{checked:multipleApplyAllowed}">
+														              <input type="radio" name="multiple-apply-allowed" id="multiple-apply-allowed-radio-1" 
+														              	class="k-radio" data-bind="{checked:multipleApplyAllowed}" value="ture">
 														              <label class="k-radio-label" for="multiple-apply-allowed-radio-1">예</label>
 														          </li>
 														          <li>
-														              <input type="radio" name="multiple-apply-allowed" id="multiple-apply-allowed-radio-2" class="k-radio" data-bind="{checked:multipleApplyAllowed}>
+														              <input type="radio" name="multiple-apply-allowed" id="multiple-apply-allowed-radio-2" 
+														              	class="k-radio" data-bind="{checked:multipleApplyAllowed} value="false">
 														              <label class="k-radio-label" for="multiple-apply-allowed-radio-2">아니오</label>
 														          </li>
 														        </ul>
