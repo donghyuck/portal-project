@@ -141,6 +141,7 @@
 	    }    
 	});		
 
+	
 	var AssessmentScheme = kendo.data.Model.define( {
 		id : "assessmentSchemeId",
 		fields: {
