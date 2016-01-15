@@ -150,7 +150,7 @@
 			name : { type: "string" },	   
 			description:  { type: "string" },
 			multipleApplyAllowed:{ type:'boolean', defaultValue:false},
-			360DegreeFeedbackEnabled:{ type:'boolean', defaultValue:false}, 
+			feedbackEnabled:{ type:'boolean', defaultValue:false}, 
 			properties : {type: "object" , defaultValue:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
@@ -165,7 +165,7 @@
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate"));	
 	    	target.set("multipleApplyAllowed", this.get("multipleApplyAllowed"));
-	    	target.set("360DegreeFeedbackEnabled", this.get("360DegreeFeedbackEnabled"));
+	    	target.set("feedbackEnabled", this.get("feedbackEnabled"));
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
