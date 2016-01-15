@@ -111,10 +111,11 @@
 		function createAssessmentSchemeDetails(source){
 			var renderTo = $("#assessment-scheme-details");
 			if( !renderTo.data("model")){		
-				//$('#multiple-apply-allowed-switcher').switcher({ on_state_content:"", off_state_content: ""});
-				$('input[data-class=switcher-primary]').switcher({ on_state_content:"", off_state_content: ""});
 				
-				//feedback-enabled-switcher
+				$('#multiple-apply-allowed-switcher').switcher({ on_state_content:"", off_state_content: ""});
+				$('#feedback-enabled-switcher').switcher({ on_state_content:"", off_state_content: ""});
+				
+				//
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
