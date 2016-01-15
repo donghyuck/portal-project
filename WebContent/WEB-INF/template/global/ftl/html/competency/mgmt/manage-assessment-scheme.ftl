@@ -376,7 +376,7 @@
 														          <li>
 														          상사
 														          
-														          <label for="percentage">가중치:</label>
+														          <label for="percentage" class="text-xs text-muted">가중치:</label>
                         										  <input id="percentage" value="0.05" />
                         
 														          <label for="percentage">최대 인원:</label>
