@@ -334,7 +334,7 @@
 																<div data-bind="visible:editable">
 																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
 																	data-class="switcher-primary switcher-lg" 
-																	data-bind="checked:multipleApplyAllowed, visible:editable"/>
+																	data-bind="checked:multipleApplyAllowed, enabled:editable"/>
 																</div>
 																<div data-bind="visible:visible" >
 																	<span data-bind="visible:multipleApplyAllowed">중복진단을 허용합니다.</span>
