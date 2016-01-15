@@ -338,10 +338,21 @@
 															</td>
 														</tr>
 														<tr>
-															<td class="text-muted">역량</td>
+															<td class="text-muted">역량진단방법</td>
 															<td>
-
-
+																<ul class="fieldlist">
+														          <li>
+														              <input type="radio" name="multiple-apply-allowed" id="multiple-apply-allowed-radio-1" class="k-radio" data-bind="{checked:multipleApplyAllowed}">
+														              <label class="k-radio-label" for="multiple-apply-allowed-radio-1">예</label>
+														          </li>
+														          <li>
+														              <input type="radio" name="multiple-apply-allowed" id="multiple-apply-allowed-radio-2" class="k-radio" data-bind="{checked:multipleApplyAllowed}>
+														              <label class="k-radio-label" for="multiple-apply-allowed-radio-2">아니오</label>
+														          </li>
+														        </ul>
+														        
+														        															
+															
 																<ul class="fieldlist">
 														          <li>
 														              <input type="radio" name="engine" id="engine1" class="k-radio" checked="checked">
