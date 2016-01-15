@@ -389,32 +389,16 @@
 															
 																<ul class="fieldlist">
 														          <li>
-														              <input type="radio" name="engine" id="engine1" class="k-radio" checked="checked">
-														              <label class="k-radio-label" for="engine1">직업기초역량(직업기초능력)</label>
+														          상사
 														          </li>
 														          <li>
-														              <input type="radio" name="engine" id="engine2" class="k-radio">
-														              <label class="k-radio-label" for="engine2">직무역량(직무수행능력)</label>
+														          동료
 														          </li>
 														          <li>
-														              <input type="radio" name="engine" id="engine3" class="k-radio">
-														              <label class="k-radio-label" for="engine3">2.0 Petrol, 147kW</label>
+														          부하
 														          </li>
 														          <li>
-														              <input type="radio" name="engine" id="engine4" class="k-radio" disabled="disabled">
-														              <label class="k-radio-label" for="engine4">3.6 Petrol, 191kW</label>
-														          </li>
-														          <li>
-														              <input type="radio" name="engine" id="engine5" class="k-radio">
-														              <label class="k-radio-label" for="engine5">1.6 Diesel, 77kW</label>
-														          </li>
-														          <li>
-														              <input type="radio" name="engine" id="engine6" class="k-radio">
-														              <label class="k-radio-label" for="engine6">2.0 Diesel, 103kW</label>
-														          </li>
-														          <li>
-														              <input type="radio" name="engine" id="engine7" class="k-radio" disabled="disabled">
-														              <label class="k-radio-label" for="engine7">2.0 Diesel, 125kW</label>
+														          본인
 														          </li>
 														        </ul>
         
