@@ -78,6 +78,7 @@
 	    fields: {
 	    	essentialElementId: { type: "number", editable: true, defaultValue: 0  },    	
 	    	competencyId: { type: "number", editable: true, defaultValue: 0  },   
+	    	description: { type: "string", editable: true },
 	    	level: { type: "number", editable: true, defaultValue: 0  },   
 	        name: { type: "string", editable: true }
 	    },	    
@@ -85,6 +86,7 @@
 	    	target.set("essentialElementId", this.get("essentialElementId"));
 	    	target.set("competencyId", this.get("competencyId"));
 	    	target.set("level", this.get("level"));
+	    	target.set("description", this.get("description"));
 	    	target.set("name", this.get("name"));
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
@@ -148,6 +150,7 @@
 			name : { type: "string" },	   
 			description:  { type: "string" },
 			multipleApplyAllowed:{ type:'boolean', defaultValue:false},
+			360DegreeFeedbackEnabled:{ type:'boolean', defaultValue:false}, 
 			properties : {type: "object" , defaultValue:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
@@ -161,7 +164,8 @@
 	    	target.set("scale", this.get("scale"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate"));	
-	    	target.set("multipleApplyAllowed", this.get("multipleApplyAllowed"));	
+	    	target.set("multipleApplyAllowed", this.get("multipleApplyAllowed"));
+	    	target.set("360DegreeFeedbackEnabled", this.get("360DegreeFeedbackEnabled"));
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
