@@ -357,8 +357,8 @@
 																	data-bind="checked:multipleApplyAllowed"/>
 																</div>
 																<p data-bind="visible:visible" class="text-xs text-muted">
-																	<span data-bind="visible:multipleApplyAllowed">중복진단을 허용합니다.</span>
-																	<span data-bind="invisible:multipleApplyAllowed">중복진단을 허용하지 않습니다.</span>
+																	<span data-bind="visible:multipleApplyAllowed">360도 피드백을 활성화 합니다.</span>
+																	<span data-bind="invisible:multipleApplyAllowed">360도 피드백을 비활성화 합니다.</span>
 																</p>
 															</td>
 														</tr>
