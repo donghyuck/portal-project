@@ -111,7 +111,7 @@
 		function createAssessmentSchemeDetails(source){
 			var renderTo = $("#assessment-scheme-details");
 			if( !renderTo.data("model")){		
-				$('#multiple-apply-allowed-switcher').switcher({theme: 'square'});
+				$('#multiple-apply-allowed-switcher').switcher({ on_state_content:"", off_state_content: ""});
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
