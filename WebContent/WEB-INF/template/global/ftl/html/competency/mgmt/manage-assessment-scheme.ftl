@@ -342,7 +342,7 @@
 														</tr>
 														<tr>
 															<td class="text-muted">중복진단허용</td>
-															<td>
+															<td class="no-padding-b">
 																<div data-bind="enabled:editable">
 																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
 																	data-class="switcher-primary switcher-lg" 
@@ -356,7 +356,7 @@
 														</tr>
 														<tr>
 															<td class="text-muted">360도 피드벡</td>
-															<td>
+															<td class="no-padding-b">
 																<div data-bind="enabled:editable">
 																	<input id="feedback-enabled-switcher" type="checkbox" 
 																	data-class="switcher-primary switcher-lg" 
