@@ -349,6 +349,21 @@
 															</td>
 														</tr>
 														<tr>
+															<td class="text-muted">360도 피드벡</td>
+															<td>
+																<div data-bind="enabled:editable">
+																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
+																	data-class="switcher-primary switcher-lg" 
+																	data-bind="checked:multipleApplyAllowed"/>
+																</div>
+																<p data-bind="visible:visible" class="text-xs text-muted">
+																	<span data-bind="visible:multipleApplyAllowed">중복진단을 허용합니다.</span>
+																	<span data-bind="invisible:multipleApplyAllowed">중복진단을 허용하지 않습니다.</span>
+																</p>
+															</td>
+														</tr>
+																												
+														<tr>
 															<td class="text-muted">역량진단방법</td>
 															<td>
 																<ul class="fieldlist">
