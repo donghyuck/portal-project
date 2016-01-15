@@ -114,7 +114,7 @@
 				//$('#multiple-apply-allowed-switcher').switcher({ on_state_content:"", off_state_content: ""});
 				$('input[data-class=switcher-primary]').switcher({ on_state_content:"", off_state_content: ""});
 				
-				feedback-enabled-switcher
+				//feedback-enabled-switcher
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
