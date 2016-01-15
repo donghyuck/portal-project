@@ -382,37 +382,37 @@
 															<td>
 															
 															<ul class="fieldlist">
-            <li>
-              <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
-          <label class="k-checkbox-label" for="eq1">직업기초역량(직업기초능력)</label>
-            </li>
-            <li>
-              <input type="checkbox" id="eq2" class="k-checkbox" checked="checked" disabled="disabled">
-          <label class="k-checkbox-label" for="eq2">직무역량(직무수행능력)</label>
-            </li>
-            <li>
-              <input type="checkbox" id="eq3" class="k-checkbox">
-          <label class="k-checkbox-label" for="eq3">리더쉽</label>
-            </li>
-            <!--
-            <li>
-              <input type="checkbox" id="eq4" class="k-checkbox">
-          <label class="k-checkbox-label" for="eq4">Heated front and rear seats</label>
-            </li>
-            <li>
-              <input type="checkbox" id="eq5" class="k-checkbox">
-          <label class="k-checkbox-label" for="eq5">Dual-zone air conditioning</label>
-            </li>
-            <li>
-              <input type="checkbox" id="eq6" class="k-checkbox">
-          <label class="k-checkbox-label" for="eq6">Rain sensor</label>
-            </li>
-            <li>
-              <input type="checkbox" id="eeeeq4" class="k-checkbox" disabled="disabled">
-          <label class="k-checkbox-label" for="eeeeq4">Towbar preparation</label>
-            </li>
-            -->
-        </ul>
+													            <li>
+													              <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
+													          <label class="k-checkbox-label" for="eq1">직업기초역량(직업기초능력)</label>
+													            </li>
+													            <li>
+													              <input type="checkbox" id="eq2" class="k-checkbox" checked="checked" disabled="disabled">
+													          <label class="k-checkbox-label" for="eq2">직무역량(직무수행능력)</label>
+													            </li>
+													            <li>
+													              <input type="checkbox" id="eq3" class="k-checkbox">
+													          <label class="k-checkbox-label" for="eq3">리더쉽</label>
+													            </li>
+													            <!--
+													            <li>
+													              <input type="checkbox" id="eq4" class="k-checkbox">
+													          <label class="k-checkbox-label" for="eq4">Heated front and rear seats</label>
+													            </li>
+													            <li>
+													              <input type="checkbox" id="eq5" class="k-checkbox">
+													          <label class="k-checkbox-label" for="eq5">Dual-zone air conditioning</label>
+													            </li>
+													            <li>
+													              <input type="checkbox" id="eq6" class="k-checkbox">
+													          <label class="k-checkbox-label" for="eq6">Rain sensor</label>
+													            </li>
+													            <li>
+													              <input type="checkbox" id="eeeeq4" class="k-checkbox" disabled="disabled">
+													          <label class="k-checkbox-label" for="eeeeq4">Towbar preparation</label>
+													            </li>
+													            -->
+													        </ul>
 															</td>
 														</tr>													
 													</tbody>
@@ -428,18 +428,27 @@
                     			</div>
                     		</div>    
                     		<div class="panel-body no-padding">
-											<ul id="rating-scheme-details-tabs" class="nav nav-tabs">
+											<ul id="assessment-scheme-details-tabs" class="nav nav-tabs">
 												<li class="m-l-sm">
-													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">역량군</a>
+													<a href="#assessment-scheme-details-tabs-1" data-toggle="tab">직무</a>
 												</li>
 												<li class="">
-													<a href="#rating-scheme-details-tabs-2" data-toggle="tab">속성</a>
+													<a href="#assessment-scheme-details-tabs- 2" data-toggle="tab">역량</a>
 												</li>
+												<li class="">
+													<a href="#assessment-scheme-details-tabs-3" data-toggle="tab">속성</a>
+												</li>												
 											</ul>
 											<div class="tab-content no-padding">
-												<div class="tab-pane fade" id="rating-scheme-details-tabs-1" style="min-height:300px;">	
+												
+												<div class="tab-pane fade" id="assessment-scheme-details-tabs-1" style="min-height:300px;">	
 												</div> <!-- / .tab-pane -->
-												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2" style="min-height:300px;">		
+												
+												
+												<div class="tab-pane fade" id="assessment-scheme-details-tabs-2" style="min-height:300px;">	
+												</div> <!-- / .tab-pane -->
+												
+												<div class="tab-pane fade active in" id="assessment-scheme-details-tabs-3" style="min-height:300px;">		
 													<table class="table table-striped" data-bind="visible:visible">
 														<thead>
 															<tr>
