@@ -143,12 +143,6 @@
 						$this.set("visible", false);
 						$this.set("editable", true);
 						$this.set("updatable", true);
-						/**
-						if($this.assessmentScheme.multipleApplyAllowed) 
-							$('#multiple-apply-allowed-switcher').switcher('on');
-						else
-							$('#multiple-apply-allowed-switcher').switcher('off');		
-							**/				
 						return false;
 					},
 					ratingSchemeDataSource: new kendo.data.DataSource({
@@ -346,11 +340,11 @@
 																<div data-bind="enabled:editable">
 																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
 																	data-class="switcher-primary switcher-lg" 
-																	data-bind="checked:assessmentScheme.multipleApplyAllowed"/>
+																	data-bind="checked:multipleApplyAllowed"/>
 																</div>
 																<p data-bind="visible:visible" class="text-xs text-muted">
-																	<span data-bind="visible:assessmentScheme.multipleApplyAllowed">중복진단을 허용합니다.</span>
-																	<span data-bind="invisible:assessmentScheme.multipleApplyAllowed">중복진단을 허용하지 않습니다.</span>
+																	<span data-bind="visible:multipleApplyAllowed">중복진단을 허용합니다.</span>
+																	<span data-bind="invisible:multipleApplyAllowed">중복진단을 허용하지 않습니다.</span>
 																</p>
 															</td>
 														</tr>
