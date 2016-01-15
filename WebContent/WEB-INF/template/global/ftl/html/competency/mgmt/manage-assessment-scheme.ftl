@@ -354,11 +354,11 @@
 																<div data-bind="enabled:editable">
 																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
 																	data-class="switcher-primary switcher-lg" 
-																	data-bind="checked:assessmentScheme.360DegreeFeedbackEnabled"/>
+																	data-bind="checked:assessmentScheme.feedbackEnabled"/>
 																</div>
 																<p data-bind="visible:visible" class="text-xs text-muted">
-																	<span data-bind="visible:assessmentScheme.360DegreeFeedbackEnabled">360도 피드백을 활성화 합니다.</span>
-																	<span data-bind="invisible:assessmentScheme.360DegreeFeedbackEnabled">360도 피드백을 비활성화 합니다.</span>
+																	<span data-bind="visible:assessmentScheme.feedbackEnabled">360도 피드백을 활성화 합니다.</span>
+																	<span data-bind="invisible:assessmentScheme.feedbackEnabled">360도 피드백을 비활성화 합니다.</span>
 																</p>
 															</td>
 														</tr>
