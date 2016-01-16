@@ -392,7 +392,7 @@
 															                   data-min="0.01"
 															                   data-max="1"
 															                   data-step="0.1"
-															                   data-bind="enable:editable"
+															                   data-bind="enabled:editable"
 															                   style="width: 180px">
 																			</td>
 																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
