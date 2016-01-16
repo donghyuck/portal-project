@@ -327,7 +327,7 @@
 												<table class="table">							
 													<tbody>
 														<tr>
-															<td class="text-muted">진단척도</td>
+															<td width="150" class="text-muted">진단척도</td>
 															<td>
 															<span data-bind="visible:visible, text:assessmentScheme.ratingScheme.name"></span>
 															<input id="rating-scheme-dorpdown-list"
