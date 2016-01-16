@@ -376,7 +376,7 @@
 																<table class="table table-condensed">
 																	<thead>
 																		<tr>
-																			<th>방향</th>
+																			<th width="90">방향</th>
 																			<th>가중치</th>
 																			<th>최대인원</th>
 																		</tr>
