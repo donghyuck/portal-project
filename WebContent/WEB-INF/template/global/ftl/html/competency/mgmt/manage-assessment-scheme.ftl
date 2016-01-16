@@ -384,9 +384,7 @@
 																	<tbody>
 																		<tr>
 																			<td>자신</td>
-																			<td><input value="0.05" />
-																			
-																			
+																			<td>
 																			<input data-role="numerictextbox"
 															                   data-format="p0"
 															                   data-min="0.01"
@@ -395,22 +393,46 @@
 															                   data-bind="enabled:editable"
 															                   style="width: 180px">
 																			</td>
-																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
+																			<td><input data-role="numerictextbox" type="number" value="30" min="0" max="100" step="1" style="width: 100%;" /></td>
 																		</tr>
 																		<tr>
 																			<td>동료</td>
-																			<td><input value="0.05" /></td>
-																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
+																			<td>
+																			<input data-role="numerictextbox"
+															                   data-format="p0"
+															                   data-min="0.01"
+															                   data-max="1"
+															                   data-step="0.1"
+															                   data-bind="enabled:editable"
+															                   style="width: 180px">	
+																			</td>
+																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1"/></td>
 																		</tr>
 																		<tr>
 																			<td>부하</td>
-																			<td><input value="0.05" /></td>
-																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
+																			<td>
+																			<input data-role="numerictextbox"
+															                   data-format="p0"
+															                   data-min="0.01"
+															                   data-max="1"
+															                   data-step="0.1"
+															                   data-bind="enabled:editable"
+															                   style="width: 180px">	
+																			</td>
+																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1"/></td>
 																		</tr>
 																		<tr>
 																			<td>상사</td>
-																			<td><input value="0.05" /></td>
-																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
+																			<td>
+																			<input data-role="numerictextbox"
+															                   data-format="p0"
+															                   data-min="0.01"
+															                   data-max="1"
+															                   data-step="0.1"
+															                   data-bind="enabled:editable"
+															                   style="width: 180px">
+																			</td>
+																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1"/></td>
 																		</tr>
 																	</tbody>
 																</table>															
