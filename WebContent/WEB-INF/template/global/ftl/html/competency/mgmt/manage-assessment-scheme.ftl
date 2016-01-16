@@ -384,7 +384,17 @@
 																	<tbody>
 																		<tr>
 																			<td>자신</td>
-																			<td><input value="0.05" /></td>
+																			<td><input value="0.05" />
+																			
+																			
+																			<input data-role="numerictextbox"
+															                   data-format="p0"
+															                   data-min="1"
+															                   data-max="100"
+															                   data-step="1"
+															                   data-bind=""
+															                   style="width: 180px">
+																			</td>
 																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
 																		</tr>
 																		<tr>
