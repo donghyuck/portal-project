@@ -372,6 +372,39 @@
 														<tr>
 															<td class="text-muted">역량진단방법</td>
 															<td>
+															
+																<table class="table table-condensed">
+																	<thead>
+																		<tr>
+																			<th>방향</th>
+																			<th>가중치</th>
+																			<th>최대인원</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>자신</td>
+																			<td><input value="0.05" /></td>
+																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
+																		</tr>
+																		<tr>
+																			<td>동료</td>
+																			<td><input value="0.05" /></td>
+																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
+																		</tr>
+																		<tr>
+																			<td>부하</td>
+																			<td><input value="0.05" /></td>
+																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
+																		</tr>
+																		<tr>
+																			<td>상사</td>
+																			<td><input value="0.05" /></td>
+																			<td><input type="number" value="1" min="0" max="100" step="1"/></td>
+																		</tr>
+																	</tbody>
+																</table>															
+															
 																<ul class="fieldlist">
 														          <li>
 														          <h5>상사</h5>
