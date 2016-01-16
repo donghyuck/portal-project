@@ -369,7 +369,7 @@
 															</td>
 														</tr>
 																												
-														<tr>
+														<tr data-bind="visible:feedbackEnabled" style="display:none;">
 															<td class="text-muted">역량진단방법</td>
 															<td>
 															
@@ -393,7 +393,7 @@
 															                   data-bind="enabled:editable"
 															                   style="width: 180px">
 																			</td>
-																			<td><input data-role="numerictextbox" type="number" value="30" min="0" max="100" step="1" style="width: 100%;" /></td>
+																			<td><input data-role="numerictextbox" type="number" value="30" min="0" max="100" step="1" style="width: 180px" /></td>
 																		</tr>
 																		<tr>
 																			<td>동료</td>
@@ -406,7 +406,7 @@
 															                   data-bind="enabled:editable"
 															                   style="width: 180px">	
 																			</td>
-																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1"/></td>
+																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1" style="width: 180px"/></td>
 																		</tr>
 																		<tr>
 																			<td>부하</td>
@@ -419,7 +419,7 @@
 															                   data-bind="enabled:editable"
 															                   style="width: 180px">	
 																			</td>
-																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1"/></td>
+																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1" style="width: 180px"/></td>
 																		</tr>
 																		<tr>
 																			<td>상사</td>
@@ -432,30 +432,10 @@
 															                   data-bind="enabled:editable"
 															                   style="width: 180px">
 																			</td>
-																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1"/></td>
+																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1" style="width: 180px"/></td>
 																		</tr>
 																	</tbody>
 																</table>															
-															
-																<ul class="fieldlist">
-														          <li>
-														          <h5>상사</h5>
-														          <label for="percentage" class="text-xs text-muted">가중치:</label>
-                        										  <input id="percentage" value="0.05" />
-                        
-														          <label for="percentage" class="text-xs text-muted">최대 인원:</label>
-                       											 <input id="numeric" type="number" value="1" min="0" max="100" step="1"/>
-														          </li>
-														          <li>
-														          동료
-														          </li>
-														          <li>
-														          부하
-														          </li>
-														          <li>
-														          본인
-														          </li>
-														        </ul>
 															</td>
 														</tr>	
 														<tr>
