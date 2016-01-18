@@ -136,6 +136,7 @@
 				});				
 				getClassifiedMiddleSelector();
 				getClassifiedMinoritySelector();
+				getJobSelector();
 			}
 			return renderTo.data('kendoDropDownList');
 		}
