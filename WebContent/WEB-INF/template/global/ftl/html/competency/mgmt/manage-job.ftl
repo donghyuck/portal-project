@@ -263,8 +263,25 @@
 					deletable: false,
 					updatable : false,					
 					job: new common.ui.data.competency.Job(),
-					classifiedMajorityDataSource: new kendo.data.DataSource({
+					classifyTypeDataSource: new kendo.data.DataSource({
 						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/group/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { objectType:1, objectId:getCompanySelector().value(), name:"JOB_CLASSIFY_SYSTEM" }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),
+					classifiedMajorityDataSource: new kendo.data.DataSource({
+						serverFiltering: true,
 						transport: {
 							read: {
 								dataType: 'json',
@@ -272,7 +289,7 @@
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
-								return { "codeSetId" :  1 }; 
+								return { "codeSetId" :  options.filter.filters[0].value }; 
 							}
 						},
 						schema: { 
