@@ -44,7 +44,7 @@
 						//etClassifiedMajoritySelector().dataSource.read({codeSetId:1});	
 						
 						var data = { objectType:1, objectId:e.data.companyId, name:"JOB_CLASSIFY_SYSTEM" };
-						console.log( kendo.stringify( data ) );
+						//console.log( kendo.stringify( data ) );
 						
 						getClassifySystemSelector().dataSource.read(data);	
 						//getJobGrid().dataSource.read();					
@@ -468,10 +468,11 @@
 							<div class="panel-body">
 								<input id="company-dropdown-list" />	
 								<hr/>								
-								<div class="m-b-xs">
+								
+							 	<h5 class="text-primary text-semibold text-xs">직무분류</h5>
+							 	<div class="m-b-xs">
 									<input id="classify-system-dorpdown-list" />
 								</div>
-							 	<h5 class="text-primary text-semibold text-xs">직무분류</h5>
 								<div class="m-b-xs">
 									<input id="classified-majority-dorpdown-list" />
 								</div>
