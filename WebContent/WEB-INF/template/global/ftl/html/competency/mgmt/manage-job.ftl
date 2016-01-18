@@ -471,7 +471,7 @@
 								
 							 	<h5 class="text-primary text-semibold text-xs">직무분류</h5>
 							 	<div class="m-b-xs">
-									<input id="classify-system-dorpdown-list" />
+									<input id="classify-system-dorpdown-list" style="width:100%;"/>
 								</div>
 								<div class="m-b-xs">
 									<input id="classified-majority-dorpdown-list" />
