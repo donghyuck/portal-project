@@ -42,7 +42,8 @@
 					change: function(item){			
 						//console.log( kendo.stringify( e ) );	
 						//etClassifiedMajoritySelector().dataSource.read({codeSetId:1});	
-						getClassifySystemSelector().dataSource.read({ "objectType" :1, "objectId": item.companyId, "group": "JOB_CLASSIFY_SYSTEM"});	
+						var data = { "objectType" :1, "objectId": item.companyId, "group": "JOB_CLASSIFY_SYSTEM"};
+						getClassifySystemSelector().dataSource.read(data);	
 						//getJobGrid().dataSource.read();					
 					}
 				});	
