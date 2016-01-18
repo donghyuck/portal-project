@@ -39,11 +39,11 @@
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					change: function(item){			
-						console.log( kendo.stringify( item ) );	
+					change: function(e){			
+						console.log( kendo.stringify( e.data ) );	
 						//etClassifiedMajoritySelector().dataSource.read({codeSetId:1});	
 						
-						var data = { objectType:1, objectId:item.companyId, group: "JOB_CLASSIFY_SYSTEM"};
+						var data = { objectType:1, objectId:e.data.companyId, group: "JOB_CLASSIFY_SYSTEM"};
 						console.log( kendo.stringify( data ) );
 						
 						getClassifySystemSelector().dataSource.read(data);	
