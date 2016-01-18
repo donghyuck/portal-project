@@ -39,23 +39,52 @@
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					change: function(e){			
-						console.log( kendo.stringify( e ) );			
-						getJobGrid().dataSource.read();
-						getClassifiedMajoritySelector().dataSource.read({codeSetId:1});						
+					change: function(item){			
+						//console.log( kendo.stringify( e ) );	
+						//etClassifiedMajoritySelector().dataSource.read({codeSetId:1});	
+						getClassifySystemSelector().dataSource.read({ "objectType" :1, "objectId": item.companyId, "group": "JOB_CLASSIFY_SYSTEM"});	
+						//getJobGrid().dataSource.read();					
 					}
 				});	
 				createJobGrid();									
 				// END SCRIPT
 			}
 		}]);		
-
+		
+		function getClassifySystemSelector(){
+			var renderTo = $("#classify-system-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					optionLabel: 직무분류체계",
+					autoBind:false,
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/group/list.json?output=json',
+								type: 'POST'
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});				
+				getClassifiedMajoritySelector();
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+		
 		function getClassifiedMajoritySelector(){
 			var renderTo = $("#classified-majority-dorpdown-list");
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
+					cascadeFrom: "classify-system-dorpdown-list",
 					optionLabel: "대분류",
-					autoBind:false,
+					/*autoBind:false,*/
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					dataSource: {
@@ -65,6 +94,9 @@
 								dataType: 'json',
 								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
 								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
 							}
 						},
 						schema: { 
@@ -431,7 +463,10 @@
 						<div class="panel panel-transparent">
 							<div class="panel-body">
 								<input id="company-dropdown-list" />	
-								<hr/>
+								<hr/>								
+								<div class="m-b-xs">
+									<input id="classify-system-dorpdown-list" />
+								</div>
 							 	<h5 class="text-primary"><strong>직무분류</strong></h5>
 								<div class="m-b-xs">
 									<input id="classified-majority-dorpdown-list" />
