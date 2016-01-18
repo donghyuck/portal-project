@@ -513,6 +513,15 @@
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable}" placeholder="직무" />
 							</div>					
 							<div class="panel-body">	
+							
+										<input id="job-details-classify-type-dorpdown-list"
+															data-option-label="분류체계"
+															data-role="dropdownlist"
+										                  	data-auto-bind="true"
+										                   	data-text-field="name"
+										                   	data-value-field="codeSetId"
+										                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}" />
+										                   	
 										<table class="table table-striped">
 											<thead>
 												<tr>
@@ -528,7 +537,8 @@
 														<input id="job-details-classified-majority-dorpdown-list"
 															data-option-label="대분류"
 															data-role="dropdownlist"
-										                  	data-auto-bind="true"
+										                  	data-auto-bind="false"
+										                  	data-cascade-from="job-details-classify-type-dorpdown-list"
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
 										                   	data-bind="{value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" />														
