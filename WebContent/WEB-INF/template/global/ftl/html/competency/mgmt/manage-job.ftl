@@ -40,7 +40,7 @@
 						e.token.copy(currentUser);
 					},
 					change: function(item){			
-						//console.log( kendo.stringify( e ) );	
+						console.log( kendo.stringify( item ) );	
 						//etClassifiedMajoritySelector().dataSource.read({codeSetId:1});	
 						
 						var data = { objectType:1, objectId:item.companyId, group: "JOB_CLASSIFY_SYSTEM"};
