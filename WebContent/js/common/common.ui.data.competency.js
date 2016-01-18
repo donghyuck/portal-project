@@ -241,6 +241,7 @@
 	    	description:  { type: "string" },
 	    	name : { type: "string", defaultValue:null},	        
 	    	code : { type: "string", defaultValue:null },	        
+	    	groupCode : { type: "string", defaultValue:null },	        
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" },
 	    	enabled : {type: "boolean" },
@@ -254,6 +255,7 @@
 	    	target.set("name", this.get("name"));
 	    	target.set("description", this.get("description"));
 	    	target.set("code", this.get("code"));
+	    	target.set("groupCode", this.get("groupCode"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate"));
 	    	target.set("enabled", this.get("enabled"));
