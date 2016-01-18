@@ -92,7 +92,7 @@
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					dataSource: {
-						serverFiltering: false,
+						serverFiltering: true,
 						transport: {
 							read: {
 								dataType: 'json',
