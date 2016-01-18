@@ -277,6 +277,7 @@
 								} 
 								return {
 									companyId: companySelector.value(), 
+									classifyType:getClassifyTypeSelector().value(),
 									classifiedMajorityId:getClassifiedMajoritySelector().value(),
 									classifiedMiddleId:getClassifiedMiddleSelector().value(),
 									classifiedMinorityId:getClassifiedMinoritySelector().value(), 	
