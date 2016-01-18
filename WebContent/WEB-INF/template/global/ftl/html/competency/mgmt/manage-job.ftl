@@ -513,14 +513,70 @@
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable}" placeholder="직무" />
 							</div>					
 							<div class="panel-body">	
-										<span data-bind="{ text:job.classification.classifyTypeName, visible:visible }" ></span>
-										<input id="job-details-classify-type-dorpdown-list"
-															data-option-label="분류체계"
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th width="30%" >직무분류체계</th>
+											<th>
+												<span data-bind="{ text:job.classification.classifyTypeName, visible:visible }" ></span>
+												<input id="job-details-classify-type-dorpdown-list"
+																	data-option-label="분류체계"
+																	data-role="dropdownlist"
+												                  	data-auto-bind="true"
+												                   	data-text-field="name"
+												                   	data-value-field="codeSetId"
+												                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}" />
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>대분류<td>
+											<td>
+											<span data-bind="{ text:job.classification.classifiedMajorityName, visible:visible }" ></span>
+														<input id="job-details-classified-majority-dorpdown-list"
+															data-option-label="대분류"
 															data-role="dropdownlist"
-										                  	data-auto-bind="true"
+										                  	data-auto-bind="false"
+										                  	data-cascade-from="job-details-classify-type-dorpdown-list"
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}" />
+										                   	data-bind="{value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" />
+											<td>
+										</tr>
+										<tr>
+											<td>중분류<td>
+											<td>
+											<span data-bind="{text: job.classification.classifiedMiddleName, visible:visible}" ></span>
+														<input id="job-details-classified-middle-dorpdown-list" 
+															data-option-label="중분류"
+															data-role="dropdownlist"
+															data-auto-bind="false"
+										                   	data-cascade-from="job-details-classified-majority-dorpdown-list"
+										                   	data-text-field="name"
+										                   	data-value-field="codeSetId"
+										                   	data-bind="{value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" />	
+											<td>
+										</tr>
+										<tr>
+											<td>소분류<td>
+											<td>
+												<span data-bind="{text: job.classification.classifiedMinorityName, visible:visible}" ></span>
+														<input 
+															data-role="dropdownlist"
+															data-option-label="소분류"
+															data-auto-bind="false"
+										                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
+										                   	data-text-field="name"
+										                   	data-value-field="codeSetId"
+										                   	data-bind="{value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" />	
+											<td>
+										</tr>																				
+									</tbody>
+								</table>			
+							
+							
+
 										                   	
 										<table class="table table-striped">
 											<thead>
@@ -533,37 +589,13 @@
 											<tbody>
 												<tr>
 													<td>
-														<span data-bind="{ text:job.classification.classifiedMajorityName, visible:visible }" ></span>
-														<input id="job-details-classified-majority-dorpdown-list"
-															data-option-label="대분류"
-															data-role="dropdownlist"
-										                  	data-auto-bind="false"
-										                  	data-cascade-from="job-details-classify-type-dorpdown-list"
-										                   	data-text-field="name"
-										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" />														
+																												
 													</td>
 													<td>
-														<span data-bind="{text: job.classification.classifiedMiddleName, visible:visible}" ></span>
-														<input id="job-details-classified-middle-dorpdown-list" 
-															data-option-label="중분류"
-															data-role="dropdownlist"
-															data-auto-bind="false"
-										                   	data-cascade-from="job-details-classified-majority-dorpdown-list"
-										                   	data-text-field="name"
-										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" />														
+																											
 													</td>
 													<td>
-														<span data-bind="{text: job.classification.classifiedMinorityName, visible:visible}" ></span>
-														<input 
-															data-role="dropdownlist"
-															data-option-label="소분류"
-															data-auto-bind="false"
-										                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
-										                   	data-text-field="name"
-										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" />														
+																											
 													</td>
 												</tr>
 											</tbody>
