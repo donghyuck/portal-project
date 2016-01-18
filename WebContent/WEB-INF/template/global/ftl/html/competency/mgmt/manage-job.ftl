@@ -43,7 +43,7 @@
 						console.log( kendo.stringify( e.data ) );	
 						//etClassifiedMajoritySelector().dataSource.read({codeSetId:1});	
 						
-						var data = { objectType:1, objectId:e.data.companyId, group: "JOB_CLASSIFY_SYSTEM"};
+						var data = { objectType:1, objectId:e.data.companyId, name:"JOB_CLASSIFY_SYSTEM" };
 						console.log( kendo.stringify( data ) );
 						
 						getClassifySystemSelector().dataSource.read(data);	
