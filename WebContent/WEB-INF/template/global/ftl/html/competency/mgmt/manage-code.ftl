@@ -333,6 +333,11 @@
 										<input type="number" min="1" class="form-control input-sm" name="codeset-parent-id" data-bind="{value:codeset.parentCodeSetId, visible:editable }" placeholder="부모 코드 ID 값" />
 									</div>	
 									<div class="m-b-sm">
+										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">코드그룹</h6>
+										<span  data-bind="{text: codeset.groupCode, visible:visible}"></span>
+										<input type="text" class="form-control input-sm" name="codeset-group-code" data-bind="{value:codeset.groupCode, visible:editable }" placeholder="코드그룹 값" />
+									</div>	
+									<div class="m-b-sm">
 										<h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">코드</h6>
 										<span  data-bind="{text: codeset.code, visible:visible}"></span>
 										<input type="text" class="form-control input-sm" name="codeset-code" data-bind="{value:codeset.code, visible:editable }" placeholder="코드 값" />
