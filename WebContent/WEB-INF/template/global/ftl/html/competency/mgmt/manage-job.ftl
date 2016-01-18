@@ -55,7 +55,7 @@
 			var renderTo = $("#classify-system-dorpdown-list");
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
-					optionLabel: 직무분류체계",
+					optionLabel: "직무분류체계",
 					autoBind:false,
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
