@@ -525,7 +525,8 @@
 												                  	data-auto-bind="true"
 												                   	data-text-field="name"
 												                   	data-value-field="codeSetId"
-												                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}" />
+												                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}"
+												                   	style="width:100%" />
 											</th>
 										</tr>
 									</thead>
@@ -541,7 +542,8 @@
 										                  	data-cascade-from="job-details-classify-type-dorpdown-list"
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" />
+										                   	data-bind="{value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" 
+										                   	style="width:100%"/>
 											</td>
 										</tr>
 										<tr>
@@ -555,7 +557,8 @@
 										                   	data-cascade-from="job-details-classified-majority-dorpdown-list"
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" />	
+										                   	data-bind="{value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" 
+										                   	style="width:100%"/>	
 											</td>
 										</tr>
 										<tr>
@@ -569,37 +572,12 @@
 										                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" />	
+										                   	data-bind="{value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" 
+										                   	style="width:100%"/>	
 											</td>
 										</tr>																				
 									</tbody>
 								</table>			
-							
-							
-
-										                   	
-										<table class="table table-striped">
-											<thead>
-												<tr>
-													<th>대분류</th>
-													<th>중분류</th>
-													<th>소분류</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-																												
-													</td>
-													<td>
-																											
-													</td>
-													<td>
-																											
-													</td>
-												</tr>
-											</tbody>
-									</table>	
 								<p class="p-sm" data-bind="{text: job.description, visible:visible}"></p>								
 								<textarea class="form-control" rows="4"  name="job-description"  data-bind="{value: job.description, visible:editable}" placeholder="직무 정의"></textarea>
 								<div class="p-sm text-right">
