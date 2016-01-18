@@ -24,6 +24,7 @@
 	    		target.set("classification", this.get("classification"));
 	    	}else{
 	    		target.set("classification", {
+	    			classifyType:0,
 	    			classifiedMajorityId:0,
 	    			classifiedMiddleId:0,
 	    			classifiedMinorityId:0

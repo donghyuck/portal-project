@@ -46,7 +46,7 @@
 						var data = { objectType:1, objectId:e.data.companyId, name:"JOB_CLASSIFY_SYSTEM" };
 						//console.log( kendo.stringify( data ) );
 						
-						getClassifySystemSelector().dataSource.read(data);	
+						getClassifyTypeSelector().dataSource.read(data);	
 						//getJobGrid().dataSource.read();					
 					}
 				});	
@@ -55,8 +55,8 @@
 			}
 		}]);		
 		
-		function getClassifySystemSelector(){
-			var renderTo = $("#classify-system-dorpdown-list");
+		function getClassifyTypeSelector(){
+			var renderTo = $("#classify-type-dorpdown-list");
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					optionLabel: "직무분류체계",
@@ -86,7 +86,7 @@
 			var renderTo = $("#classified-majority-dorpdown-list");
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
-					cascadeFrom: "classify-system-dorpdown-list",
+					cascadeFrom: "classify-type-dorpdown-list",
 					optionLabel: "대분류",
 					/*autoBind:false,*/
 					dataTextField: 'name',	
@@ -198,6 +198,7 @@
 								//console.log( kendo.stringify(options) );
 								return {
 									companyId: companySelector.value(),
+									classifiyType:getClassifyTypeSelector().value(),
 									classifiedMajorityId:getClassifiedMajoritySelector().value(),
 									classifiedMiddleId:getClassifiedMiddleSelector().value(),
 									classifiedMinorityId:getClassifiedMinoritySelector().value(), 
@@ -471,7 +472,7 @@
 								
 							 	<h5 class="text-primary text-semibold text-xs">직무분류</h5>
 							 	<div class="m-b-xs">
-									<input id="classify-system-dorpdown-list" style="width:100%;"/>
+									<input id="classify-type-dorpdown-list" style="width:100%;"/>
 								</div>
 								<div class="m-b-xs">
 									<input id="classified-majority-dorpdown-list" />
