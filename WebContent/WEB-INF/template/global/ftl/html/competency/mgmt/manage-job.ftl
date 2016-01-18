@@ -223,7 +223,7 @@
 					pageable: { 
 						refresh:true, 
 						pageSizes:false,  
-						buttonCount: 5,
+						buttonCount: 2,
 						messages: { display: ' {1} / {2}' }  
 					},		
 					resizable: true,
