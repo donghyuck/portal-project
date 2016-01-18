@@ -41,13 +41,13 @@
 					change: function(e){			
 					
 						var data = { objectType:1, objectId:e.data.companyId, name:"JOB_CLASSIFY_SYSTEM" };
-						getClassifySystemSelector().dataSource.read(data);	
+						getClassifyTypeSelector().dataSource.read(data);	
 														
 						//getCompetencyGrid().dataSource.read();
 						//getClassifiedMajoritySelector().dataSource.read({codeSetId:1});
 						getCompetencyGroupSelector().dataSource.read({codeSetId:321});
 						getCompetencyTypeSelector();		
-						getCompetencyGroupSelector();						
+						//getCompetencyGroupSelector();						
 					}
 				});	
 				createCompetencyGrid();									
@@ -84,7 +84,7 @@
 			return renderTo.data('kendoDropDownList');
 		}
 		
-		function getClassifySystemSelector(){
+		function getClassifyTypeSelector(){
 			var renderTo = $("#classify-system-dorpdown-list");
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
@@ -127,6 +127,9 @@
 								dataType: 'json',
 								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
 								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
 							}
 						},
 						schema: { 
