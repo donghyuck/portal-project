@@ -492,13 +492,13 @@
 									<input id="classify-type-dorpdown-list" style="width:100%;"/>
 								</div>
 								<div class="m-b-xs">
-									<input id="classified-majority-dorpdown-list" />
+									<input id="classified-majority-dorpdown-list" style="width:100%;"/>
 								</div>
 								<div class="m-b-xs">
-									<input id="classified-middle-dorpdown-list" />
+									<input id="classified-middle-dorpdown-list" style="width:100%;"/>
 								</div>
 								<div class="m-b-xs">
-									<input id="classified-minority-dorpdown-list" />
+									<input id="classified-minority-dorpdown-list" style="width:100%;"/>
 								</div>	
 							</div>
 							<div id="job-grid" class="no-shadow"></div>
