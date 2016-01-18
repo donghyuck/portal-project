@@ -513,7 +513,7 @@
 								<input type="text" class="form-control input-sm" name="job-name" data-bind="{value: job.name, visible:editable}" placeholder="직무" />
 							</div>					
 							<div class="panel-body">	
-							
+										<span data-bind="{ text:job.classification.classifyName, visible:visible }" ></span>
 										<input id="job-details-classify-type-dorpdown-list"
 															data-option-label="분류체계"
 															data-role="dropdownlist"
