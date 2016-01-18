@@ -198,7 +198,7 @@
 								//console.log( kendo.stringify(options) );
 								return {
 									companyId: companySelector.value(),
-									classifiyType:getClassifyTypeSelector().value(),
+									classifyType:getClassifyTypeSelector().value(),
 									classifiedMajorityId:getClassifiedMajoritySelector().value(),
 									classifiedMiddleId:getClassifiedMiddleSelector().value(),
 									classifiedMinorityId:getClassifiedMinoritySelector().value(), 
