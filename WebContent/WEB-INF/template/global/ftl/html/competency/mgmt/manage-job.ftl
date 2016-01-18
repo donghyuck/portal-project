@@ -531,7 +531,7 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>대분류<td>
+											<td>대분류</td>
 											<td>
 											<span data-bind="{ text:job.classification.classifiedMajorityName, visible:visible }" ></span>
 														<input id="job-details-classified-majority-dorpdown-list"
@@ -542,10 +542,10 @@
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
 										                   	data-bind="{value: job.classification.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" />
-											<td>
+											</td>
 										</tr>
 										<tr>
-											<td>중분류<td>
+											<td>중분류</td>
 											<td>
 											<span data-bind="{text: job.classification.classifiedMiddleName, visible:visible}" ></span>
 														<input id="job-details-classified-middle-dorpdown-list" 
@@ -556,10 +556,10 @@
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
 										                   	data-bind="{value: job.classification.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" />	
-											<td>
+											</td>
 										</tr>
 										<tr>
-											<td>소분류<td>
+											<td>소분류</td>
 											<td>
 												<span data-bind="{text: job.classification.classifiedMinorityName, visible:visible}" ></span>
 														<input 
@@ -570,7 +570,7 @@
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
 										                   	data-bind="{value: job.classification.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" />	
-											<td>
+											</td>
 										</tr>																				
 									</tbody>
 								</table>			
