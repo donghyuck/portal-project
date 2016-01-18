@@ -786,13 +786,13 @@
 									<div class="col-xs-6">
 										<h5 class="text-info text-semibold text-xs ">역량군</h5>
 									 	<div class="m-b-xs">
-											<input id="competency-group-dorpdown-list" />
+											<input id="competency-group-dorpdown-list" style="width:100%"/>
 										</div>	
 									</div>
 									<div class="col-xs-6">
 										<h5 class="text-info text-semibold text-xs ">역량유형</h5>
 									 	<div class="m-b-xs">
-											<input id="competency-type-dorpdown-list" />
+											<input id="competency-type-dorpdown-list" style="width:100%" />
 										</div>	
 									</div>
 								</div>
@@ -801,22 +801,22 @@
 									 	
 									 	<h5 class="text-primary text-semibold text-xs">직무분류</h5>
 									 	<div class="m-b-xs">
-											<input id="classify-system-dorpdown-list" />
+											<input id="classify-system-dorpdown-list" style="width:100%"/>
 										</div>
 										<div class="m-b-xs">
-											<input id="classified-majority-dorpdown-list" />
+											<input id="classified-majority-dorpdown-list" style="width:100%" />
 										</div>
 										<div class="m-b-xs">
-											<input id="classified-middle-dorpdown-list" />
+											<input id="classified-middle-dorpdown-list" style="width:100%"/>
 										</div>
 										<div class="m-b-xs">
-											<input id="classified-minority-dorpdown-list" />
+											<input id="classified-minority-dorpdown-list" style="width:100%"/>
 										</div>							 	
 								 	</div>			
 								 	<div class="col-xs-6">
 									 	<h5 class="text-primary text-semibold text-xs">직무</h5>
 									 	<div class="m-b-xs">
-											<input id="job-dorpdown-list" />
+											<input id="job-dorpdown-list" style="width:100%"/>
 										</div>
 									</div>						
 								</div>						
