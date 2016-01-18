@@ -38,9 +38,13 @@
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					change: function(e){						
-						getCompetencyGrid().dataSource.read();
-						getClassifiedMajoritySelector().dataSource.read({codeSetId:1});
+					change: function(e){			
+					
+						var data = { objectType:1, objectId:e.data.companyId, name:"JOB_CLASSIFY_SYSTEM" };
+						getClassifySystemSelector().dataSource.read(data);	
+														
+						//getCompetencyGrid().dataSource.read();
+						//getClassifiedMajoritySelector().dataSource.read({codeSetId:1});
 						getCompetencyGroupSelector().dataSource.read({codeSetId:321});
 					}
 				});	
@@ -77,17 +81,45 @@
 			}
 			return renderTo.data('kendoDropDownList');
 		}
-
-		function getClassifiedMajoritySelector(){
-			var renderTo = $("#classified-majority-dorpdown-list");
+		
+		function getClassifySystemSelector(){
+			var renderTo = $("#classify-system-dorpdown-list");
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
-					optionLabel: "대분류",
+					optionLabel: "직무분류체계",
 					autoBind:false,
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					dataSource: {
 						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/group/list.json?output=json',
+								type: 'POST'
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});				
+				getClassifiedMajoritySelector();
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+		
+		function getClassifiedMajoritySelector(){
+			var renderTo = $("#classified-majority-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					cascadeFrom: "classify-system-dorpdown-list",
+					optionLabel: "대분류",
+					/*autoBind:false,*/
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering: true,
 						transport: {
 							read: {
 								dataType: 'json',
@@ -762,6 +794,9 @@
 									</div>
 								</div>
 								<div class="row">
+									<div class="m-b-xs">
+										<input id="classify-system-dorpdown-list" />
+									</div>
 								 	<div class="col-xs-6">
 									 	<h5 class="text-primary text-semibold text-xs">직무분류</h5>
 										<div class="m-b-xs">
