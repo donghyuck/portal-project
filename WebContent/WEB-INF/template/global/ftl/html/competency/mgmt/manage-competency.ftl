@@ -946,8 +946,8 @@
 					</div>
 					<div class="modal-body">
 
-						<button title="Previous (Left arrow key)" type="button" class="previous" style="top:15%;" data-bind="{visible: hasPrevious, click:previous}"></button>					
-						<button title="Next (Right arrow key)" type="button" class="next"  style="top:15%;" data-bind="{visible: hasNext, click:next}"></button>	
+						<button title="Previous (Left arrow key)" type="button" class="previous" style="top:75px;" data-bind="{visible: hasPrevious, click:previous}"></button>					
+						<button title="Next (Right arrow key)" type="button" class="next"  style="top:75px;" data-bind="{visible: hasNext, click:next}"></button>	
 							
 						<form>
 						<div class="row">
