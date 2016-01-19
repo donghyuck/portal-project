@@ -445,7 +445,7 @@
 															<ul class="fieldlist">
 													            <li>
 													              	<input type="checkbox" id="assessment-methods-1" class="k-checkbox" checked="checked">
-													          		<label class="k-checkbox-label" for="assessment-methods-2">인지능력테스트</label>
+													          		<label class="k-checkbox-label" for="assessment-methods-1">인지능력테스트</label>
 													            </li>
 													            <li>
 													              	<input type="checkbox" id="assessment-methods-2" class="k-checkbox">
