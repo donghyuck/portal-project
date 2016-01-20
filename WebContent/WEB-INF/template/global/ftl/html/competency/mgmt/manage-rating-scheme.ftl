@@ -272,10 +272,11 @@
 												</select>
 											</div>
 										</div>
-									</div>			
-									<div class="row">
-										<div class="col-sm-12">
-											<ul id="rating-scheme-details-tabs" class="nav nav-tabs nav-tabs-xs">
+									</div>												
+                    			</div>
+                    		</div>    
+                    		<div class="panel-body no-padding">
+											<ul id="rating-scheme-details-tabs" class="nav nav-tabs">
 												<li class="m-l-sm">
 													<a href="#rating-scheme-details-tabs-1" data-toggle="tab">척도값</a>
 												</li>
@@ -334,11 +335,8 @@
 													    data-bind="source:propertyDataSource, visible:editable"
 													    style="height: 300px"></div>
 												</div> <!-- / .tab-pane -->							
-											</div> <!-- / .tab-content -->
-										</div><!-- / .col-sm-12 -->
-									</div><!-- / .row -->	
-                    			</div>
-                    		</div>    
+											</div> <!-- / .tab-content -->                    		
+                    		</div>
                     		<div class="panel-footer">
 	 							<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
