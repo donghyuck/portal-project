@@ -285,7 +285,7 @@
 												</li>
 											</ul>
 											<div class="tab-content no-padding">
-												<div class="tab-pane fade" id="rating-scheme-details-tabs-1" style="min-height:300px;">												
+												<div class="tab-pane fade" id="rating-scheme-details-tabs-1" style="min-height:200px;">												
 													<table class="table table-striped" data-bind="visible:visible">
 														<thead>
 															<tr>
@@ -307,10 +307,10 @@
 													                 data-toolbar="['create', 'cancel']"
 													                 data-columns="[{ 'field': 'score', 'width': 170 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
 													                 data-bind="source:ratingLevelDataSource, visible:editable"
-													                 style="height: 300px"></div>
+													                 style="height: 200px"></div>
 													        
 												</div> <!-- / .tab-pane -->
-												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2" style="min-height:300px;">		
+												<div class="tab-pane fade active in" id="rating-scheme-details-tabs-2" style="min-height:200px;">		
 													<table class="table table-striped" data-bind="visible:visible">
 														<thead>
 															<tr>
@@ -333,7 +333,7 @@
 													    data-toolbar="['create', 'cancel']"
 													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:propertyDataSource, visible:editable"
-													    style="height: 300px"></div>
+													    style="height: 200px"></div>
 												</div> <!-- / .tab-pane -->							
 											</div> <!-- / .tab-content -->                    		
                     		</div>
