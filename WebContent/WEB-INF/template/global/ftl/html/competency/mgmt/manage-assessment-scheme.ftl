@@ -529,8 +529,8 @@
 													<table class="table table-striped" data-bind="visible:visible">
 														<thead>
 															<tr>
-																<th width="270">이름</th>
-																<th>값</th>
+																<th width="270">분류체계</th>
+																<th>대분류</th>
 															</tr>
 														</thead>
 														<tbody  class="no-border"
