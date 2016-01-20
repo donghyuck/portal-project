@@ -302,7 +302,7 @@
 													</table>													
 													<div data-role="grid"
 																	 class="no-border"
-													                 data-scrollable="false"
+													                 data-scrollable="true"
 													                 data-editable="true"
 													                 data-toolbar="['create', 'cancel']"
 													                 data-columns="[{ 'field': 'score', 'width': 170 , 'title':'점수'},{ 'field': 'title', 'title':'예시' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' } ]"
@@ -328,7 +328,7 @@
 													</table>																											
 													<div data-role="grid"
 														class="no-border"
-													    data-scrollable="false"
+													    data-scrollable="true"
 													    data-editable="true"
 													    data-toolbar="['create', 'cancel']"
 													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
