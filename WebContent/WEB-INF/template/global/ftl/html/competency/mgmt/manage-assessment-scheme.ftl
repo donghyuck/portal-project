@@ -525,6 +525,31 @@
 											<div class="tab-content no-padding">
 												
 												<div class="tab-pane fade" id="assessment-scheme-details-tabs-1" style="min-height:300px;">	
+												
+													<table class="table table-striped" data-bind="visible:visible">
+														<thead>
+															<tr>
+																<th width="270">이름</th>
+																<th>값</th>
+															</tr>
+														</thead>
+														<tbody  class="no-border"
+																data-role="listview"
+												                data-template="job-selection-view-template"
+												                data-bind="source:jobSelectionDataSource"
+												                style="height: 300px; overflow: auto">
+												            
+												        </tbody>
+													</table>																											
+													<div data-role="grid"
+														class="no-border"
+													    data-scrollable="true"
+													    data-editable="true"
+													    data-toolbar="['create', 'cancel']"
+													    data-columns="[{ 'field': 'classifyType', 'title':'분류체계'},{ 'field': 'classifiedMajorityId', 'title':'대분류' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-bind="source:jobSelectionDataSource, visible:editable"
+													    style="height: 300px"></div>
+													    												
 												</div> <!-- / .tab-pane -->
 												
 												
@@ -549,10 +574,10 @@
 													</table>																											
 													<div data-role="grid"
 														class="no-border"
-													    data-scrollable="false"
+													    data-scrollable="true"
 													    data-editable="true"
 													    data-toolbar="['create', 'cancel']"
-													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['edit', 'destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:propertyDataSource, visible:editable"
 													    style="height: 300px"></div>
 												</div> <!-- / .tab-pane -->							
@@ -572,7 +597,12 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
-			
+		<script type="text/x-kendo-tmpl" id="property-view-template">
+		<tr>
+			<td>#: classifyType #</td>
+			<td>#: classifiedMajorityId #</td>
+		</tr>	
+		</script>				
 		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
 		<tr>
 			<td>#: score #</td>
