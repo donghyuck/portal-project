@@ -597,7 +597,7 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
-		<script type="text/x-kendo-tmpl" id="property-view-template">
+		<script type="text/x-kendo-tmpl" id="job-selection-view-template">
 		<tr>
 			<td>#: classifyType #</td>
 			<td>#: classifiedMajorityId #</td>
