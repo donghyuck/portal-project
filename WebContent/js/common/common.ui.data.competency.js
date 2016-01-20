@@ -154,6 +154,7 @@
 			multipleApplyAllowed:{ type:'boolean', defaultValue:false},
 			feedbackEnabled:{ type:'boolean', defaultValue:false}, 
 			properties : {type: "object" , defaultValue:"[]"},
+			jobSelections : {type:"object", defalutValue:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
 		},
@@ -168,14 +169,55 @@
 	    	target.set("creationDate", this.get("creationDate"));	
 	    	target.set("multipleApplyAllowed", this.get("multipleApplyAllowed"));
 	    	target.set("feedbackEnabled", this.get("feedbackEnabled"));
+	    	
+	    	if( typeof this.get("jobSelections") === 'object' )
+	    		target.set("jobSelections", this.get("jobSelections"));
+	    	else
+	    		target.set("properties", []);	
+	    	
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
 	    	else
 	    		target.set("properties", []);	 	    	
+	    	
 	    	if( this.get("ratingScheme"))
 	    		target.set("ratingScheme", this.get("ratingScheme"));
 	    	else
 	    		target.set("ratingScheme", new RatingScheme());	  
+		}
+	});
+	
+	var JobSelection = kendo.data.Model.define( {
+		id : "selectionId",
+		fields: {
+			selectionId: { type: "number", defaultValue: 0},
+			objectType : { type: "number", defaultValue:0},
+	    	objectId : { type: "number", defaultValue:0},
+	    	classifyType : { type: "number", defaultValue:0 },
+	    	classifiedMajorityId : { type: "number", defaultValue:0},
+	    	classifiedMiddleId : { type: "number", defaultValue:0},
+	    	classifiedMinorityId : { type: "number", defaultValue:0},
+	    	jobId : { type: "number", defaultValue:0},
+	    	classifyTypeName:  { type: "string" },
+	    	classifiedMajorityName:  { type: "string" },
+	    	classifiedMiddleName:  { type: "string" },
+	    	classifiedMinorityName:  { type: "string" },
+			jobName:  { type: "string" }
+		},
+		copy : function ( target ){
+			target.set("selectionId", this.get("selectionId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("classifyType", this.get("classifyType"));
+	    	target.set("classifiedMajorityId", this.get("classifiedMajorityId"));
+	    	target.set("classifiedMiddleId", this.get("classifiedMiddleId"));
+	    	target.set("classifiedMinorityId", this.get("classifiedMinorityId"));
+	    	target.set("jobId", this.get("jobId"));	 
+	    	target.set("classifyTypeName", this.get("classifyTypeName"));	 
+	    	target.set("classifiedMajorityName", this.get("classifiedMajorityName"));	 
+	    	target.set("classifiedMiddleName", this.get("classifiedMiddleName"));	 
+	    	target.set("classifiedMinorityName", this.get("classifiedMinorityName"));	 
+	    	target.set("jobName", this.get("jobName"));	 
 		}
 	});
 	
@@ -277,7 +319,8 @@
 			Ability : Ability,
 			RatingScheme:RatingScheme,
 			RatingLevel:RatingLevel,
-			AssessmentScheme:AssessmentScheme
+			AssessmentScheme:AssessmentScheme,
+			JobSelection:JobSelection
 		}  
 	} );
 	

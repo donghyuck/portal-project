@@ -172,7 +172,6 @@
 						var btn = $(e.target);	
 						this.assessmentScheme.get("multipleApplyAllowed", $this.multipleApplyAllowed );						
 						this.assessmentScheme.get("feedbackEnabled", $this.feedbackEnabled );
-						console.log(common.ui.stringify($this.assessmentScheme ));
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/assessment-scheme/update.json?output=json" />' , 
@@ -190,6 +189,13 @@
 						);							
 						return false;
 					},
+					jobSelectionDataSource : kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.competency.JobSelection
+                        }
+					}),
 					propertyDataSource :new kendo.data.DataSource({
 						batch: true,
 						data : [],
@@ -202,6 +208,9 @@
 						source.copy($this.assessmentScheme);	
 						$this.propertyDataSource.read();				
 						$this.propertyDataSource.data($this.assessmentScheme.properties);	
+						$this.jobSelectionDataSource.read();	
+						$this.jobSelectionDataSource.data($this.assessmentScheme.jobSelections);	
+						
 						if($this.assessmentScheme.get("assessmentSchemeId") == 0)
 						{
 							$this.assessmentScheme.set("objectType", 1);
@@ -215,10 +224,7 @@
 							$this.set("editable", false);
 							$this.set("updatable", false);
 							$this.set("deletable", true);						
-						}					
-						
-						console.log($this.assessmentScheme.multipleApplyAllowed);	
-						
+						}						
 						if($this.assessmentScheme.multipleApplyAllowed){
 							$('#multiple-apply-allowed-switcher').switcher('on');
 						}else{
