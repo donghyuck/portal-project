@@ -189,7 +189,7 @@
 						);							
 						return false;
 					},
-					jobSelectionDataSource : kendo.data.DataSource({
+					jobSelectionDataSource : new kendo.data.DataSource({
 						batch: true,
 						data : [],
 						schema: {
