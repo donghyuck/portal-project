@@ -164,8 +164,15 @@
 						error:common.ui.handleAjaxError
 					}),	
 					onRatingSchemeChange: function(e){			
-						var $this = this;				
-						console.log($this.selectedRatingScheme);
+						var $this = this;
+					},
+					addJobSelection:function(e){
+						
+						
+						console.log(common.ui.stringify($this.jobSelection)):
+						
+						common.ui.grid($('#assessment-scheme-details-tabs-1 .k-grid')).addRow($this.jobSelection) ;
+						return false;
 					},
 					saveOrUpdate : function(e){
 						var $this = this;						
@@ -657,7 +664,7 @@
 															</div>
 														</div>
 														<div class="panel-footer">
-															<button class="btn btn-flat btn-labeled btn-outline btn-danger"><span class="btn-label icon fa fa-plus"></span> 진단 직무 추가 </button>
+															<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addJobSelection"><span class="btn-label icon fa fa-plus"></span> 진단 직무 추가 </button>
 															<button class="btn btn-flat btn-outline btn-info pull-right"> 변경취소 </button>									
 														</div>
 													</div>												
