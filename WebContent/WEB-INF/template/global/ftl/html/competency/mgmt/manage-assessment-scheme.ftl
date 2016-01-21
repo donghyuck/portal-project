@@ -683,7 +683,7 @@
 													<div data-role="grid"
 														class="no-border"
 													    data-scrollable="true"
-													    data-editable="false"
+													    data-editable="true"
 													    data-columns="[{ 'field': 'classifyTypeName', 'title':'분류체계'},{ 'field': 'classifiedMajorityName', 'title':'대분류' },{ 'field': 'classifiedMiddleName', 'title':'중분류' },{ 'field': 'classifiedMinorityName', 'title':'소분류' },{ 'field': 'jobName', 'title':'직무' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:jobSelectionDataSource, visible:editable"
 													    style="height: 300px"></div>
