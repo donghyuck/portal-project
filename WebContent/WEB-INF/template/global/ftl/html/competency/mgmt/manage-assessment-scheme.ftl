@@ -169,7 +169,7 @@
 					addJobSelection:function(e){
 						
 						
-						console.log(common.ui.stringify($this.jobSelection)):
+						console.log(common.ui.stringify($this.jobSelection));
 						
 						common.ui.grid($('#assessment-scheme-details-tabs-1 .k-grid')).addRow($this.jobSelection) ;
 						return false;
