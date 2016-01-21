@@ -173,6 +173,16 @@
 						if($this.jobSelection.classifyType > 0 ){
 							$this.jobSelection.set("classifyTypeName", $this.classifyTypeDataSource.get($this.jobSelection.classifyType).name);
 						}
+						if($this.jobSelection.classifiedMajorityId > 0 ){
+							$this.jobSelection.set("classifiedMajorityName", $this.classifiedMajorityDataSource.get($this.jobSelection.classifiedMajorityId).name);
+						}
+						if($this.jobSelection.classifiedMiddleId > 0 ){
+							$this.jobSelection.set("classifiedMiddleName", $this.classifiedMiddleDataSource.get($this.jobSelection.classifiedMiddleId).name);
+						}
+						if($this.jobSelection.classifiedMinorityId > 0 ){
+							$this.jobSelection.set("classifiedMinorityName", $this.classifiedMinorityDataSource.get($this.jobSelection.classifiedMinorityId).name);
+						}
+																								
 						common.ui.grid($('#assessment-scheme-details-tabs-1 .k-grid')).dataSource.add($this.jobSelection) ;
 						return false;
 					},
