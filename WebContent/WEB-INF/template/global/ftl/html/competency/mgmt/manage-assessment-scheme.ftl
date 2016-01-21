@@ -167,7 +167,7 @@
 						var $this = this;
 					},
 					addJobSelection:function(e){
-						
+						var $this = this;
 						
 						console.log(common.ui.stringify($this.jobSelection));
 						
