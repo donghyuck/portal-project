@@ -170,20 +170,24 @@
 						var $this = this;
 						
 						console.log(common.ui.stringify($this.jobSelection));
-						if($this.jobSelection.classifyType > 0 ){
-							$this.jobSelection.set("classifyTypeName", $this.classifyTypeDataSource.get($this.jobSelection.classifyType).name);
+						
+						var newJobSelection = common.ui.data.competency.JobSelection();
+						$this.jobSelection.copy(newJobSelection);						
+						EMPTY_JOB_SELECTION.copy($this.jobSelection);
+												
+						if(newJobSelection.classifyType > 0 ){
+							newJobSelection.set("classifyTypeName", $this.classifyTypeDataSource.get(newJobSelection.classifyType).name);
 						}
-						if($this.jobSelection.classifiedMajorityId > 0 ){
-							$this.jobSelection.set("classifiedMajorityName", $this.classifiedMajorityDataSource.get($this.jobSelection.classifiedMajorityId).name);
+						if(newJobSelection.classifiedMajorityId > 0 ){
+							newJobSelection.set("classifiedMajorityName", $this.classifiedMajorityDataSource.get(newJobSelection.classifiedMajorityId).name);
 						}
-						if($this.jobSelection.classifiedMiddleId > 0 ){
-							$this.jobSelection.set("classifiedMiddleName", $this.classifiedMiddleDataSource.get($this.jobSelection.classifiedMiddleId).name);
+						if(newJobSelection.classifiedMiddleId > 0 ){
+							newJobSelection.set("classifiedMiddleName", $this.classifiedMiddleDataSource.get(newJobSelection.classifiedMiddleId).name);
 						}
-						if($this.jobSelection.classifiedMinorityId > 0 ){
-							$this.jobSelection.set("classifiedMinorityName", $this.classifiedMinorityDataSource.get($this.jobSelection.classifiedMinorityId).name);
-						}
-																								
-						common.ui.grid($('#assessment-scheme-details-tabs-1 .k-grid')).dataSource.add($this.jobSelection) ;
+						if(newJobSelection.classifiedMinorityId > 0 ){
+							newJobSelection.set("classifiedMinorityName", $this.classifiedMinorityDataSource.get(newJobSelection.classifiedMinorityId).name);
+						}																								
+						common.ui.grid($('#assessment-scheme-details-tabs-1 .k-grid')).dataSource.add(newJobSelection) ;
 						return false;
 					},
 					saveOrUpdate : function(e){
