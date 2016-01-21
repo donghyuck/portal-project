@@ -170,7 +170,9 @@
 						var $this = this;
 						
 						console.log(common.ui.stringify($this.jobSelection));
-						
+						if($this.jobSelection.classifyType > 0 ){
+							$this.jobSelection.set("classifyTypeName", $this.classifyTypeDataSource.get($this.jobSelection.classifyType).name);
+						}
 						common.ui.grid($('#assessment-scheme-details-tabs-1 .k-grid')).dataSource.add($this.jobSelection) ;
 						return false;
 					},
