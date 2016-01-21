@@ -653,11 +653,13 @@
 										                   	style="width:100%"/>	
 														</div>																																										
 													</div>
+													
+													<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 직무 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 검색 </button></div>
+													
 													<div data-role="grid"
 														class="no-border"
 													    data-scrollable="true"
 													    data-editable="true"
-													    data-toolbar="kendo.template('<div class=/"p-xs/"><button class=/"btn btn-flat btn-labeled btn-outline btn-danger/" data-action=/"create/" data-object-id=/"0/"></button></div>')"
 													    data-columns="[{ 'field': 'classifyType', 'title':'분류체계'},{ 'field': 'classifiedMajorityId', 'title':'대분류' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:jobSelectionDataSource, visible:editable"
 													    style="height: 300px"></div>
