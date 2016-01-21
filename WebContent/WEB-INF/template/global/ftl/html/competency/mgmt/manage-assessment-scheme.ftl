@@ -657,7 +657,7 @@
 														class="no-border"
 													    data-scrollable="true"
 													    data-editable="true"
-													    data-toolbar="['create', 'cancel']"
+													    data-toolbar="kendo.template('<div class=\"p-xs\"><button class=\"btn btn-flat btn-labeled btn-outline btn-danger\" data-action=\"create\" data-object-id=\"0\"></button></div>')"
 													    data-columns="[{ 'field': 'classifyType', 'title':'분류체계'},{ 'field': 'classifiedMajorityId', 'title':'대분류' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:jobSelectionDataSource, visible:editable"
 													    style="height: 300px"></div>
