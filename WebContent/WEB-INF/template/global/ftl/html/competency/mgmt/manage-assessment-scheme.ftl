@@ -113,9 +113,8 @@
 			if( !renderTo.data("model")){		
 				
 				$('#multiple-apply-allowed-switcher').switcher({ on_state_content:"", off_state_content: ""});
-				$('#feedback-enabled-switcher').switcher({ on_state_content:"", off_state_content: ""});
-				
-				//
+				$('#feedback-enabled-switcher').switcher({ on_state_content:"", off_state_content: ""});				
+				var EMPTY_JOB_SELECTION = new common.ui.data.competency.JobSelection();
 				var observable =  common.ui.observable({
 					visible : false,
 					editable : false,
@@ -124,6 +123,7 @@
 					multipleApplyAllowed: false,		
 					feedbackEnabled:false,
 					assessmentScheme: new common.ui.data.competency.AssessmentScheme(),
+					jobSelection: new common.ui.data.competency.JobSelection(),
 					create : function(e){
 						console.log("create..");
 						var $this = this;
@@ -188,7 +188,75 @@
 							}
 						);							
 						return false;
-					},
+					},					
+					classifyTypeDataSource: new kendo.data.DataSource({
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/group/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { objectType:1, objectId:getCompanySelector().value(), name:"JOB_CLASSIFY_SYSTEM" }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),
+					classifiedMajorityDataSource: new kendo.data.DataSource({
+						serverFiltering: true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),	
+					classifiedMiddleDataSource: new kendo.data.DataSource({
+						serverFiltering: true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),		
+					classifiedMinorityDataSource: new kendo.data.DataSource({
+						serverFiltering: true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),						
 					jobSelectionDataSource : new kendo.data.DataSource({
 						batch: true,
 						data : [],
@@ -210,7 +278,7 @@
 						$this.propertyDataSource.data($this.assessmentScheme.properties);	
 						$this.jobSelectionDataSource.read();	
 						$this.jobSelectionDataSource.data($this.assessmentScheme.jobSelections);	
-						
+						EMPTY_JOB_SELECTION.copy($this.jobSelection);
 						if($this.assessmentScheme.get("assessmentSchemeId") == 0)
 						{
 							$this.assessmentScheme.set("objectType", 1);
@@ -248,31 +316,6 @@
 					renderTo.show();		
 			}
 		}
-
-		function classifiedMajorityDropDownEditor (container, options) {
-		   	$('<input required data-text-field="name" data-value-field="codeSetId" data-bind="value:' + options.field + '"/>')
-            .appendTo(container)
-            .kendoDropDownList({
-               	optionLabel: "대분류",
-                autoBind: false,
-                dataSource: {
-					serverFiltering: true,
-					transport: {
-						read: {
-							dataType: 'json',
-							url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
-							type: 'POST'
-						},
-						parameterMap: function (options, operation){
-							return { "codeSetId" :  options.filter.filters[0].value }; 
-						}
-					},
-					schema: { 
-						model : common.ui.data.competency.CodeSet
-					}
-				}		
-            });
-        }
         						
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
@@ -566,12 +609,76 @@
 												            
 												        </tbody>
 													</table>																											
+
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th width="30%" >직무분류체계</th>
+											<th>
+												<input id="job-details-classify-type-dorpdown-list"
+																	data-option-label="분류체계"
+																	data-role="dropdownlist"
+												                  	data-auto-bind="true"
+												                   	data-text-field="name"
+												                   	data-value-field="codeSetId"
+												                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}"
+												                   	style="width:100%" />
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>대분류</td>
+											<td>
+														<input id="job-details-classified-majority-dorpdown-list"
+															data-option-label="대분류"
+															data-role="dropdownlist"
+										                  	data-auto-bind="false"
+										                  	data-cascade-from="job-details-classify-type-dorpdown-list"
+										                   	data-text-field="name"
+										                   	data-value-field="codeSetId"
+										                   	data-bind="{value: jobSelection.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" 
+										                   	style="width:100%"/>
+											</td>
+										</tr>
+										<tr>
+											<td>중분류</td>
+											<td>
+														<input id="job-details-classified-middle-dorpdown-list" 
+															data-option-label="중분류"
+															data-role="dropdownlist"
+															data-auto-bind="false"
+										                   	data-cascade-from="job-details-classified-majority-dorpdown-list"
+										                   	data-text-field="name"
+										                   	data-value-field="codeSetId"
+										                   	data-bind="{value: jobSelection.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" 
+										                   	style="width:100%"/>	
+											</td>
+										</tr>
+										<tr>
+											<td>소분류</td>
+											<td>
+														<input 
+															data-role="dropdownlist"
+															data-option-label="소분류"
+															data-auto-bind="false"
+										                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
+										                   	data-text-field="name"
+										                   	data-value-field="codeSetId"
+										                   	data-bind="{value: jobSelection.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" 
+										                   	style="width:100%"/>	
+											</td>
+										</tr>																				
+									</tbody>
+								</table>	
+								
+
 													<div data-role="grid"
 														class="no-border"
 													    data-scrollable="true"
 													    data-editable="true"
 													    data-toolbar="['create', 'cancel']"
-													    data-columns="[{ 'field': 'classifyType', 'title':'분류체계'},{ 'field': 'classifiedMajorityId', 'editor':classifiedMajorityDropDownEditor, 'title':'대분류' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-columns="[{ 'field': 'classifyType', 'title':'분류체계'},{ 'field': 'classifiedMajorityId', 'title':'대분류' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:jobSelectionDataSource, visible:editable"
 													    style="height: 300px"></div>
 													    												
