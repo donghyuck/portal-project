@@ -608,64 +608,59 @@
 												            
 												        </tbody>
 													</table>																											
-													<div class="row">
-														<div class="col-sm-3">
-															<input id="job-details-classify-type-dorpdown-list"
-																	data-option-label="분류체계"
+													<div class="panel no-border-hr no-border-radius no-margin-b">
+														<div class="panel-body">
+															<div class="row">
+																<div class="col-sm-3">
+																	<input id="job-details-classify-type-dorpdown-list"
+																			data-option-label="분류체계"
+																			data-role="dropdownlist"
+														                  	data-auto-bind="true"
+														                   	data-text-field="name"
+														                   	data-value-field="codeSetId"
+														                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}"
+														                   	style="width:100%" />
+																</div>
+																<div class="col-sm-3">
+																	<input id="job-details-classified-majority-dorpdown-list"
+																	data-option-label="대분류"
 																	data-role="dropdownlist"
-												                  	data-auto-bind="true"
+												                  	data-auto-bind="false"
+												                  	data-cascade-from="job-details-classify-type-dorpdown-list"
 												                   	data-text-field="name"
 												                   	data-value-field="codeSetId"
-												                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}"
-												                   	style="width:100%" />
-														</div>
-														<div class="col-sm-3">
-															<input id="job-details-classified-majority-dorpdown-list"
-															data-option-label="대분류"
-															data-role="dropdownlist"
-										                  	data-auto-bind="false"
-										                  	data-cascade-from="job-details-classify-type-dorpdown-list"
-										                   	data-text-field="name"
-										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: jobSelection.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" 
-										                   	style="width:100%"/>
-														</div>
-														<div class="col-sm-3">
-															<input id="job-details-classified-middle-dorpdown-list" 
-															data-option-label="중분류"
-															data-role="dropdownlist"
-															data-auto-bind="false"
-										                   	data-cascade-from="job-details-classified-majority-dorpdown-list"
-										                   	data-text-field="name"
-										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: jobSelection.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" 
-										                   	style="width:100%"/>
-														</div>
-														<div class="col-sm-3">
-															<input 
-															data-role="dropdownlist"
-															data-option-label="소분류"
-															data-auto-bind="false"
-										                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
-										                   	data-text-field="name"
-										                   	data-value-field="codeSetId"
-										                   	data-bind="{value: jobSelection.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" 
-										                   	style="width:100%"/>	
-														</div>																																										
-													</div>
-													
-													<div class="p-xs bg-gray">
-													<button class="btn btn-flat btn-labeled btn-outline btn-danger"><span class="btn-label icon fa fa-plus"></span> 진단 직무 추가 </button>
-													<button class="btn btn-flat btn-outline btn-info pull-right"> 변경취소 </button>
-													</div>
-													<div class="panel">
-														<div class="panel-body">
-															Panel body content
+												                   	data-bind="{value: jobSelection.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" 
+												                   	style="width:100%"/>
+																</div>
+																<div class="col-sm-3">
+																	<input id="job-details-classified-middle-dorpdown-list" 
+																	data-option-label="중분류"
+																	data-role="dropdownlist"
+																	data-auto-bind="false"
+												                   	data-cascade-from="job-details-classified-majority-dorpdown-list"
+												                   	data-text-field="name"
+												                   	data-value-field="codeSetId"
+												                   	data-bind="{value: jobSelection.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" 
+												                   	style="width:100%"/>
+																</div>
+																<div class="col-sm-3">
+																	<input 
+																	data-role="dropdownlist"
+																	data-option-label="소분류"
+																	data-auto-bind="false"
+												                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
+												                   	data-text-field="name"
+												                   	data-value-field="codeSetId"
+												                   	data-bind="{value: jobSelection.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" 
+												                   	style="width:100%"/>	
+																</div>																																																									
+															</div>
 														</div>
 														<div class="panel-footer">
-														
+															<button class="btn btn-flat btn-labeled btn-outline btn-danger"><span class="btn-label icon fa fa-plus"></span> 진단 직무 추가 </button>
+															<button class="btn btn-flat btn-outline btn-info pull-right"> 변경취소 </button>									
 														</div>
-													</div>													
+													</div>												
 													<div data-role="grid"
 														class="no-border"
 													    data-scrollable="true"
