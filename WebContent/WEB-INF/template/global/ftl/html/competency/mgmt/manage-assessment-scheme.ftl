@@ -625,7 +625,7 @@
 														                  	data-auto-bind="true"
 														                   	data-text-field="name"
 														                   	data-value-field="codeSetId"
-														                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}"
+														                   	data-bind="{value: jobSelection.classifyType, source: classifyTypeDataSource , visible:editable}"
 														                   	style="width:100%" />
 																</div>
 																<div class="col-sm-3">
