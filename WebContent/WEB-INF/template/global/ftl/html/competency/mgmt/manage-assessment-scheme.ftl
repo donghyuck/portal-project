@@ -146,6 +146,30 @@
 						$this.set("updatable", true);
 						return false;
 					},
+					classifiedMajorityDropDownEditor : function(container, options) {
+                    	$('<input required data-text-field="name" data-value-field="codeSetId" data-bind="value:' + options.field + '"/>')
+                        .appendTo(container)
+                        .kendoDropDownList({
+                        	optionLabel: "대분류",
+                            autoBind: false,
+                            dataSource: {
+								serverFiltering: true,
+								transport: {
+									read: {
+										dataType: 'json',
+										url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+										type: 'POST'
+									},
+									parameterMap: function (options, operation){
+										return { "codeSetId" :  options.filter.filters[0].value }; 
+									}
+								},
+								schema: { 
+									model : common.ui.data.competency.CodeSet
+								}
+							}		
+                        });
+                	},
 					ratingSchemeDataSource: new kendo.data.DataSource({
 						serverFiltering: false,
 						transport: {
@@ -546,7 +570,7 @@
 													    data-scrollable="true"
 													    data-editable="true"
 													    data-toolbar="['create', 'cancel']"
-													    data-columns="[{ 'field': 'classifyType', 'title':'분류체계'},{ 'field': 'classifiedMajorityId', 'title':'대분류' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-columns="[{ 'field': 'classifyType', 'title':'분류체계'},{ 'field': 'classifiedMajorityId', 'editor': 'classifiedMajorityDropDownEditor', 'title':'대분류' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:jobSelectionDataSource, visible:editable"
 													    style="height: 300px"></div>
 													    												
