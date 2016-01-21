@@ -171,7 +171,7 @@
 						
 						console.log(common.ui.stringify($this.jobSelection));
 						
-						var newJobSelection = common.ui.data.competency.JobSelection();
+						var newJobSelection = new common.ui.data.competency.JobSelection();
 						$this.jobSelection.copy(newJobSelection);						
 						EMPTY_JOB_SELECTION.copy($this.jobSelection);
 												
