@@ -570,7 +570,7 @@
 													    data-scrollable="true"
 													    data-editable="true"
 													    data-toolbar="['create', 'cancel']"
-													    data-columns="[{ 'field': 'classifyType', 'title':'분류체계'},{ 'field': 'classifiedMajorityId', 'editor': 'classifiedMajorityDropDownEditor', 'title':'대분류' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-columns="[{ 'field': 'classifyType', 'title':'분류체계'},{ 'field': 'classifiedMajorityId', 'editor':classifiedMajorityDropDownEditor, 'title':'대분류' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 													    data-bind="source:jobSelectionDataSource, visible:editable"
 													    style="height: 300px"></div>
 													    												
