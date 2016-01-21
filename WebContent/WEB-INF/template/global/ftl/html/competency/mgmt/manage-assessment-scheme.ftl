@@ -654,8 +654,18 @@
 														</div>																																										
 													</div>
 													
-													<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 직무 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right"> 변경취소 </button></div>
-													
+													<div class="p-xs bg-gray">
+													<button class="btn btn-flat btn-labeled btn-outline btn-danger"><span class="btn-label icon fa fa-plus"></span> 진단 직무 추가 </button>
+													<button class="btn btn-flat btn-outline btn-info pull-right"> 변경취소 </button>
+													</div>
+													<div class="panel">
+														<div class="panel-body">
+															Panel body content
+														</div>
+														<div class="panel-footer">
+														
+														</div>
+													</div>													
 													<div data-role="grid"
 														class="no-border"
 													    data-scrollable="true"
