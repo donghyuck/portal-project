@@ -592,8 +592,7 @@
 											</ul>
 											<div class="tab-content no-padding">
 												
-												<div class="tab-pane fade" id="assessment-scheme-details-tabs-1" style="min-height:300px;">	
-												
+												<div class="tab-pane fade" id="assessment-scheme-details-tabs-1" style="min-height:300px;">
 													<table class="table table-striped" data-bind="visible:visible">
 														<thead>
 															<tr>
@@ -609,13 +608,9 @@
 												            
 												        </tbody>
 													</table>																											
-
-								<table class="table table-striped">
-									<thead>
-										<tr>
-											<th width="30%" >직무분류체계</th>
-											<th>
-												<input id="job-details-classify-type-dorpdown-list"
+													<div class="row">
+														<div class="col-sm-3">
+															<input id="job-details-classify-type-dorpdown-list"
 																	data-option-label="분류체계"
 																	data-role="dropdownlist"
 												                  	data-auto-bind="true"
@@ -623,14 +618,9 @@
 												                   	data-value-field="codeSetId"
 												                   	data-bind="{value: job.classification.classifyType, source: classifyTypeDataSource , visible:editable}"
 												                   	style="width:100%" />
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>대분류</td>
-											<td>
-														<input id="job-details-classified-majority-dorpdown-list"
+														</div>
+														<div class="col-sm-3">
+															<input id="job-details-classified-majority-dorpdown-list"
 															data-option-label="대분류"
 															data-role="dropdownlist"
 										                  	data-auto-bind="false"
@@ -639,12 +629,9 @@
 										                   	data-value-field="codeSetId"
 										                   	data-bind="{value: jobSelection.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" 
 										                   	style="width:100%"/>
-											</td>
-										</tr>
-										<tr>
-											<td>중분류</td>
-											<td>
-														<input id="job-details-classified-middle-dorpdown-list" 
+														</div>
+														<div class="col-sm-3">
+															<input id="job-details-classified-middle-dorpdown-list" 
 															data-option-label="중분류"
 															data-role="dropdownlist"
 															data-auto-bind="false"
@@ -652,13 +639,10 @@
 										                   	data-text-field="name"
 										                   	data-value-field="codeSetId"
 										                   	data-bind="{value: jobSelection.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" 
-										                   	style="width:100%"/>	
-											</td>
-										</tr>
-										<tr>
-											<td>소분류</td>
-											<td>
-														<input 
+										                   	style="width:100%"/>
+														</div>
+														<div class="col-sm-3">
+															<input 
 															data-role="dropdownlist"
 															data-option-label="소분류"
 															data-auto-bind="false"
@@ -667,12 +651,8 @@
 										                   	data-value-field="codeSetId"
 										                   	data-bind="{value: jobSelection.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" 
 										                   	style="width:100%"/>	
-											</td>
-										</tr>																				
-									</tbody>
-								</table>	
-								
-
+														</div>																																										
+													</div>
 													<div data-role="grid"
 														class="no-border"
 													    data-scrollable="true"
