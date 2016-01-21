@@ -608,7 +608,7 @@
 												            
 												        </tbody>
 													</table>																											
-													<div class="panel no-border-hr no-border-radius no-margin-b">
+													<div class="panel no-border-hr no-border-radius no-margin-b" data-bind="visible:editable">
 														<div class="panel-body">
 															<div class="row">
 																<div class="col-sm-3">
