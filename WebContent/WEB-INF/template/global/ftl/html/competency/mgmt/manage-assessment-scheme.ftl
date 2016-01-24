@@ -170,11 +170,13 @@
 						var $this = this;
 						
 						console.log(common.ui.stringify($this.jobSelection));
-						EMPTY_JOB_SELECTION.copy($this.jobSelection);
 						
-						$this.jobSelection.set("objectType", 71);
-						$this.jobSelection.set("objectId", $this.assessmentScheme.get("assessmentSchemeId"));	
-											
+						var newJobSelection = new common.ui.data.competency.JobSelection();
+						$this.jobSelection.copy(newJobSelection);						
+						EMPTY_JOB_SELECTION.copy($this.jobSelection);
+								
+						newJobSelection.set("obejctType", 71);
+						newJobSelection.set("objectId", $this.assessmentScheme.get("assessmentSchemeId"));						
 						if(newJobSelection.classifyType > 0 ){
 							newJobSelection.set("classifyTypeName", $this.classifyTypeDataSource.get(newJobSelection.classifyType).name);
 						}
