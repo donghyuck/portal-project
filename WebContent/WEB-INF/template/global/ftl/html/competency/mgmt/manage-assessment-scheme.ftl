@@ -175,8 +175,9 @@
 						$this.jobSelection.copy(newJobSelection);						
 						EMPTY_JOB_SELECTION.copy($this.jobSelection);
 								
-						newJobSelection.set("obejctType", 71);
-						newJobSelection.set("objectId", $this.assessmentScheme.get("assessmentSchemeId"));						
+						newJobSelection.set("objectType", 71);
+						newJobSelection.set("objectId", $this.assessmentScheme.get("assessmentSchemeId"));		
+										
 						if(newJobSelection.classifyType > 0 ){
 							newJobSelection.set("classifyTypeName", $this.classifyTypeDataSource.get(newJobSelection.classifyType).name);
 						}
