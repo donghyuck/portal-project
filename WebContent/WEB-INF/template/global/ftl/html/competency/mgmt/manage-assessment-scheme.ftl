@@ -298,7 +298,7 @@
                             model: common.ui.data.Property
                         }
 					}),
-					companyDataSource:getCompanySelector.dataSource,
+					companyDataSource:getCompanySelector().dataSource,
 					setSource: function(source){
 						var $this = this;
 						source.copy($this.assessmentScheme);	
