@@ -622,11 +622,11 @@
 													<table class="table table-striped" data-bind="visible:visible">
 														<thead>
 															<tr>
-																<th width="270">분류체계</th>
-																<th>대분류</th>
-																<th>중분류</th>
-																<th>소분류</th>
-																<th>직무</th>
+																<th width="20%">분류체계</th>
+																<th width="20%">대분류</th>
+																<th width="20%">중분류</th>
+																<th width="20%">소분류</th>
+																<th width="20%">직무</th>
 															</tr>
 														</thead>
 														<tbody  class="no-border"
@@ -751,7 +751,7 @@
 			<td>#if(classifiedMajorityName == null){# 전체 #}else{# #: classifiedMajorityName # #}#</td>
 			<td>#if(classifiedMiddleName == null){# 전체 #}else{# #: classifiedMiddleName # #}#</td>
 			<td>#if(classifiedMinorityName == null){# 전체 #}else{# #: classifiedMinorityName # #}#</td>
-			<td>#if(jobName == null){# #}else{# 전체 #: jobName # #}#</td>
+			<td>#if(jobName == null){# 전체 #}else{# 전체 #: jobName # #}#</td>
 		</tr>	
 		</script>				
 		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
