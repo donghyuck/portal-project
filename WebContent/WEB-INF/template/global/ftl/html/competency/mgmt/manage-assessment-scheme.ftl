@@ -744,8 +744,11 @@
 		</div> <!-- / #main-wrapper -->
 		<script type="text/x-kendo-tmpl" id="job-selection-view-template">
 		<tr>
-			<td>#: classifyType #</td>
-			<td>#: classifiedMajorityId #</td>
+			<td>#: classifyTypeName #</td>
+			<td>#: classifiedMajorityName #</td>
+			<td>#: classifiedMiddleName #</td>
+			<td>#: classifiedMinorityName #</td>
+			<td>#: jobName #</td>
 		</tr>	
 		</script>				
 		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
