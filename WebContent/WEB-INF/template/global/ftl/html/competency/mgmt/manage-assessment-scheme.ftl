@@ -310,6 +310,13 @@
                             model: common.ui.data.Property
                         }
 					}),
+					subjectDataSource :new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.competency.AssessmentSubject
+                        }
+					}),
 					companyDataSource:getCompanySelector().dataSource,
 					setSource: function(source){
 						var $this = this;
@@ -319,6 +326,9 @@
 						$this.propertyDataSource.data($this.assessmentScheme.properties);	
 						$this.jobSelectionDataSource.read();	
 						$this.jobSelectionDataSource.data($this.assessmentScheme.jobSelections);
+						$this.subjectDataSource.read();				
+						$this.subjectDataSource.data($this.assessmentScheme.subjects);	
+						
 						
 						EMPTY_JOB_SELECTION.copy($this.jobSelection);
 						
