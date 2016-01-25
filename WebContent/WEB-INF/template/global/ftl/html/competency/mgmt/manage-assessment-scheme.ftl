@@ -712,7 +712,7 @@
 														data-option-label="회사"
 														data-role="dropdownlist"
 														data-auto-bind="true"
-														data-text-field="name"
+														data-text-field="displayName"
 														data-value-field="companyId"
 														       	data-bind="{value: jobSelection.classifyType, source:companyDataSource, visible:editable}"
 														                   	style="width:100%" />
