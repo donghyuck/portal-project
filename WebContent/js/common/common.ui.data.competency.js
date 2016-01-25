@@ -220,6 +220,26 @@
 	    	target.set("jobName", this.get("jobName"));	 
 		}
 	});
+
+	var AssessmentSubject = kendo.data.Model.define( {
+		id : "subjectId",
+		fields: {
+			subjectId: { type: "number", defaultValue: 0},
+			objectType : { type: "number", defaultValue:0},
+	    	objectId : { type: "number", defaultValue:0},
+	    	subjectObjectType : { type: "number", defaultValue:0},
+	    	subjectObjectId : { type: "number", defaultValue:0},
+			subjectObjectName:  { type: "string" }
+		},
+		copy : function ( target ){
+			target.set("subjectId", this.get("subjectId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("subjectObjectType", this.get("subjectObjectType"));
+	    	target.set("subjectObjectId", this.get("subjectObjectId"));
+	    	target.set("subjectObjectName", this.get("subjectObjectName"));
+		}
+	});
 	
 	var RatingScheme = kendo.data.Model.define( {
 		id : "ratingSchemeId",
