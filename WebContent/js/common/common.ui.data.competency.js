@@ -155,6 +155,7 @@
 			feedbackEnabled:{ type:'boolean', defaultValue:false}, 
 			properties : {type: "object" , defaultValue:"[]"},
 			jobSelections : {type:"object", defalutValue:"[]"},
+			subjects : {type:"object", defalutValue:"[]"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
 		},
@@ -169,11 +170,16 @@
 	    	target.set("creationDate", this.get("creationDate"));	
 	    	target.set("multipleApplyAllowed", this.get("multipleApplyAllowed"));
 	    	target.set("feedbackEnabled", this.get("feedbackEnabled"));
+
+	    	if( typeof this.get("subjects") === 'object' )
+	    		target.set("subjects", this.get("subjects"));
+	    	else
+	    		target.set("jobSelections", []);	
 	    	
 	    	if( typeof this.get("jobSelections") === 'object' )
 	    		target.set("jobSelections", this.get("jobSelections"));
 	    	else
-	    		target.set("properties", []);	
+	    		target.set("jobSelections", []);	
 	    	
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties"));
