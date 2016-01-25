@@ -168,10 +168,15 @@
 					},
 					addSubject:function(e){
 						var $this = this;
-						console.log(e.target);
-						console.log($("#job-details-company-list").data('kendoDropDownList').text());
-						console.log($("#job-details-company-list").data('kendoDropDownList').value());
+						var companyDropdown = $("#job-details-company-list").data('kendoDropDownList');
+						var newSubject = new common.ui.data.competency.AssessmentSubject();
+						newSubject.set("objectType", 71);
+						newSubject.set("objectId", $this.assessmentScheme.get("assessmentSchemeId"));
+						newSubject.set("subjectObjectType", 1);
+						newSubject.set("subjectObjectId", companyDropdown.value());
+						newSubject.set("subjectObjectName", companyDropdown.text());
 						
+						companyDropdown.refresh();
 						return false;
 					},
 					addJobSelection:function(e){
