@@ -124,6 +124,7 @@
 					feedbackEnabled:false,
 					assessmentScheme: new common.ui.data.competency.AssessmentScheme(),
 					jobSelection: new common.ui.data.competency.JobSelection(),
+					subject:new new common.ui.data.competency.AssessmentSubject(),
 					create : function(e){
 						console.log("create..");
 						var $this = this;
@@ -297,14 +298,18 @@
                             model: common.ui.data.Property
                         }
 					}),
+					companyDataSource:getCompanySelector.dataSource,
 					setSource: function(source){
 						var $this = this;
 						source.copy($this.assessmentScheme);	
+						
 						$this.propertyDataSource.read();				
 						$this.propertyDataSource.data($this.assessmentScheme.properties);	
 						$this.jobSelectionDataSource.read();	
-						$this.jobSelectionDataSource.data($this.assessmentScheme.jobSelections);	
+						$this.jobSelectionDataSource.data($this.assessmentScheme.jobSelections);
+						
 						EMPTY_JOB_SELECTION.copy($this.jobSelection);
+						
 						if($this.assessmentScheme.get("assessmentSchemeId") == 0)
 						{
 							$this.assessmentScheme.set("objectType", 1);
@@ -610,7 +615,7 @@
 													<a href="#assessment-scheme-details-tabs-1" data-toggle="tab">직무</a>
 												</li>
 												<li class="">
-													<a href="#assessment-scheme-details-tabs- 2" data-toggle="tab">역량</a>
+													<a href="#assessment-scheme-details-tabs- 2" data-toggle="tab">대상자</a>
 												</li>
 												<li class="">
 													<a href="#assessment-scheme-details-tabs-3" data-toggle="tab">속성</a>
@@ -702,6 +707,16 @@
 												
 												
 												<div class="tab-pane fade" id="assessment-scheme-details-tabs-2" style="min-height:300px;">	
+													
+													<input id="job-details-company-list"
+														data-option-label="회사"
+														data-role="dropdownlist"
+														data-auto-bind="true"
+														data-text-field="name"
+														data-value-field="companyId"
+														       	data-bind="{value: jobSelection.classifyType, source:companyDataSource, visible:editable}"
+														                   	style="width:100%" />
+												
 												</div> <!-- / .tab-pane -->
 												
 												<div class="tab-pane fade active in" id="assessment-scheme-details-tabs-3" style="min-height:300px;">		
