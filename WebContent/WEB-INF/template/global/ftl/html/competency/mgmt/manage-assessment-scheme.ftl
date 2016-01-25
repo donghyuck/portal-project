@@ -180,7 +180,8 @@
 						return false;
 					},
 					cancelChanges:function(e){
-						console.log( $($(e.target).data("target")).html() );
+						common.ui.grid( $($(e.target).data("target")) ).cancelChanges();
+						return false; 
 					},
 					addJobSelection:function(e){
 						var $this = this;
