@@ -340,7 +340,8 @@
 			RatingScheme:RatingScheme,
 			RatingLevel:RatingLevel,
 			AssessmentScheme:AssessmentScheme,
-			JobSelection:JobSelection
+			JobSelection:JobSelection,
+			AssessmentSubject:AssessmentSubject
 		}  
 	} );
 	
