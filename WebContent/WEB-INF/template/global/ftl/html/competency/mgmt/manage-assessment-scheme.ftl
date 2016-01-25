@@ -168,8 +168,8 @@
 					},
 					addSubject:function(e){
 						var $this = this;
-						var dropdown = $("#job-details-company-list").data('kendoDropDownList');
-						console.log(dorpdown.value());
+						
+						console.log($("#job-details-company-list").data('kendoDropDownList').value());
 						
 						return false;
 					},
