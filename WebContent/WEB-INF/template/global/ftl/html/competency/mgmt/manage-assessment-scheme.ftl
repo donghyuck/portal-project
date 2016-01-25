@@ -180,7 +180,7 @@
 						return false;
 					},
 					cancelChanges:function(e){
-						log.debug(e.target);
+						console.log(e.target);
 					},
 					addJobSelection:function(e){
 						var $this = this;
