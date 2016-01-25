@@ -169,6 +169,7 @@
 					addSubject:function(e){
 						var $this = this;
 						
+						console.log($("#job-details-company-list").data('kendoDropDownList').text());
 						console.log($("#job-details-company-list").data('kendoDropDownList').value());
 						
 						return false;
