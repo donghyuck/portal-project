@@ -615,7 +615,7 @@
 													<a href="#assessment-scheme-details-tabs-1" data-toggle="tab">직무</a>
 												</li>
 												<li class="">
-													<a href="#assessment-scheme-details-tabs- 2" data-toggle="tab">대상자</a>
+													<a href="#assessment-scheme-details-tabs-2" data-toggle="tab">대상자</a>
 												</li>
 												<li class="">
 													<a href="#assessment-scheme-details-tabs-3" data-toggle="tab">속성</a>
