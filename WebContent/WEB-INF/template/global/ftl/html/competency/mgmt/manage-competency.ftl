@@ -398,12 +398,16 @@
 					saveOrUpdate : function(e){
 						var $this = this;
 						var btn = $(e.target);						
-						console.log( common.ui.stringify($this.competency) );
+						//console.log( common.ui.stringify($this.competency) );
+						var newJob = new common.ui.data.competency.Competency();
+						$this.competency.copy( newJob );
+						newJob.set("job", null);
+						
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/update.json?output=json" />' , 
 							{
-								data : kendo.stringify( $this.competency ),
+								data : kendo.stringify( newJob),
 								contentType : "application/json",
 								success : function(response){																											
 									$this.setSource(new common.ui.data.competency.Competency(response));								
