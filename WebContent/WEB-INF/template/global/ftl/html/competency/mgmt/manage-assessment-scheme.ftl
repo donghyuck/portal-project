@@ -175,7 +175,7 @@
 						newSubject.set("subjectObjectType", 1);
 						newSubject.set("subjectObjectId", companyDropdown.value());
 						newSubject.set("subjectObjectName", companyDropdown.text());
-						
+						common.ui.grid($('#assessment-scheme-details-tabs-2 .k-grid')).dataSource.add(newSubject) ;
 						companyDropdown.refresh();
 						return false;
 					},
