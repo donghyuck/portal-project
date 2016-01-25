@@ -709,7 +709,14 @@
 												<div class="tab-pane fade" id="assessment-scheme-details-tabs-2" style="min-height:300px;">	
 													<div class="panel no-border-hr no-border-radius no-margin-b" data-bind="visible:editable">
 														<div class="panel-body">
-															<div class="row">
+															<input id="job-details-company-list"
+																data-option-label="회사"
+																data-role="dropdownlist"
+																data-auto-bind="true"
+																data-text-field="displayName"
+																data-value-field="companyId"
+														    	data-bind="{value: jobSelection.classifyType, source:companyDataSource, visible:editable}"
+																style="width:100%" />
 															
 														</div>
 														<div class="panel-footer">	
@@ -717,14 +724,7 @@
 															<button class="btn btn-flat btn-outline btn-info pull-right"> 변경취소 </button>	
 														</div>
 													</div>	
-													<input id="job-details-company-list"
-														data-option-label="회사"
-														data-role="dropdownlist"
-														data-auto-bind="true"
-														data-text-field="displayName"
-														data-value-field="companyId"
-														       	data-bind="{value: jobSelection.classifyType, source:companyDataSource, visible:editable}"
-														                   	style="width:100%" />
+													
 												
 												</div> <!-- / .tab-pane -->
 												
