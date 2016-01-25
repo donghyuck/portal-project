@@ -170,6 +170,8 @@
 						var $this = this;
 						var dropdown = $("#job-details-company-list").data('kendoDropDownList');
 						console.log(dorpdown.value());
+						
+						return false;
 					},
 					addJobSelection:function(e){
 						var $this = this;
