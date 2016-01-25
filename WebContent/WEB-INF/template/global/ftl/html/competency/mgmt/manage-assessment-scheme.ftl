@@ -729,6 +729,21 @@
 												
 												
 												<div class="tab-pane fade" id="assessment-scheme-details-tabs-2" style="min-height:300px;">	
+													<table class="table table-striped" data-bind="visible:visible">
+														<thead>
+															<tr>
+																<th width="270">이름</th>
+																<th>값</th>
+															</tr>
+														</thead>
+														<tbody  class="no-border"
+																data-role="listview"
+												                data-template="subject-view-template"
+												                data-bind="source:subjectDataSource"
+												                style="height: 300px; overflow: auto">
+												            
+												        </tbody>
+													</table>
 													<div class="panel no-border-hr no-border-radius no-margin-b" data-bind="visible:editable">
 														<div class="panel-body">
 															<input id="job-details-company-list"
@@ -746,7 +761,13 @@
 															<button class="btn btn-flat btn-outline btn-info pull-right"> 변경취소 </button>	
 														</div>
 													</div>	
-													
+													<div data-role="grid"
+														class="no-border"
+													    data-scrollable="true"
+													    data-editable="true"
+													    data-columns="[{ 'field': 'subjectObjectName', 'title':'이름'},{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-bind="source:subjectDataSource, visible:editable"
+													    style="height: 300px"></div>
 												
 												</div> <!-- / .tab-pane -->
 												
@@ -791,6 +812,11 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
+		<script type="text/x-kendo-tmpl" id="subject-view-template">
+		<tr>
+			<td>#: subjectObjectName #</td>
+		</tr>	
+		</script>	
 		<script type="text/x-kendo-tmpl" id="job-selection-view-template">
 		<tr>
 			<td>#: classifyTypeName #</td>
