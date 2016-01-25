@@ -124,7 +124,6 @@
 					feedbackEnabled:false,
 					assessmentScheme: new common.ui.data.competency.AssessmentScheme(),
 					jobSelection: new common.ui.data.competency.JobSelection(),
-					subject:new common.ui.data.competency.AssessmentSubject(),
 					create : function(e){
 						console.log("create..");
 						var $this = this;
@@ -166,6 +165,11 @@
 					}),	
 					onRatingSchemeChange: function(e){			
 						var $this = this;
+					},
+					addSubject:function(e){
+						var $this = this;
+						var dropdown = $("#job-details-company-list").data('kendoDropDownList');
+						console.log(dorpdown.value());
 					},
 					addJobSelection:function(e){
 						var $this = this;
@@ -715,7 +719,7 @@
 																data-auto-bind="true"
 																data-text-field="displayName"
 																data-value-field="companyId"
-														    	data-bind="{value: jobSelection.classifyType, source:companyDataSource, visible:editable}"
+														    	data-bind="{source:companyDataSource, visible:editable}"
 																style="width:100%" />
 															
 														</div>
