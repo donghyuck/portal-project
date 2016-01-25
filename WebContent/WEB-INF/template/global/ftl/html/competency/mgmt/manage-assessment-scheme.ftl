@@ -124,7 +124,7 @@
 					feedbackEnabled:false,
 					assessmentScheme: new common.ui.data.competency.AssessmentScheme(),
 					jobSelection: new common.ui.data.competency.JobSelection(),
-					subject:new new common.ui.data.competency.AssessmentSubject(),
+					subject:new common.ui.data.competency.AssessmentSubject(),
 					create : function(e){
 						console.log("create..");
 						var $this = this;
