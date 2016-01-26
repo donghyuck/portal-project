@@ -398,10 +398,10 @@
 					saveOrUpdate : function(e){
 						var $this = this;
 						var btn = $(e.target);						
-						//console.log( common.ui.stringify($this.competency) );
+						
 						var newJob = new common.ui.data.competency.Competency();
 						$this.competency.copy( newJob );
-						//newJob.set("job", null);
+						newJob.set("job", null);
 						
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
