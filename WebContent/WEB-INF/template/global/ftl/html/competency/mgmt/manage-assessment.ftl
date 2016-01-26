@@ -251,11 +251,12 @@
                     background: none;
                     box-shadow: none;
                     color: red;
-                }
+                    font-size : 12px;
+        }
 
-                .k-tooltip-validation .k-warning {
-                    display: none;
-                }
+        .k-tooltip-validation .k-warning {
+        	display: none;
+        }
                 
 		</style>
 	</head>
@@ -305,16 +306,14 @@
 					<div class="modal-body">
 						<form>
 						<div class="form-group">
-							<input type="text" class="form-control" data-bind="{value: plan.name }" placeholder="이름" required validationMessage="Enter {0}" />	
-							<p class="help-block">역량진단 이름.</p>
+							<input type="text" class="form-control" data-bind="{value: plan.name }" placeholder="이름" required validationMessage="역량진단 이름을 입력하여 주세요." />	
 						</div>
 						<div class="form-group">
 							<textarea class="form-control m-t-sm" rows="4"  
 										name="input-assessment-plan-description"  
 										data-bind="{value: plan.description }" 
 										placeholder="설명" 
-										required validationMessage="Select movie"></textarea>
-							<p class="help-block text-sm">어떤 역량진단인지를 간략하게 기술하여 주세요.</p>
+										required validationMessage="어떤 역량진단인지를 간략하게 기술하여 주세요."></textarea>
 						</div>	
 						<div class="form-group">	
 							<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단운영체계</h6>
