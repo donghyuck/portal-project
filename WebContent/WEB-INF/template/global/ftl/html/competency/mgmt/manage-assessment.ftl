@@ -141,26 +141,8 @@
 					onStartChange:function(){
 						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
 						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");
-					},
-					onEndChange:function(){
-						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
-						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");				
-					},
-					setSource: function(source){
-						var $this = this;			
-						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
-						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");		
-						source.copy($this.plan);
-						start.max(end.value());
-                   	 	end.min(start.value());
-					}				
-				});
-				
-				/**
-				function startChange() {
-                        var startDate = start.value(),
+						 var startDate = start.value(),
                         endDate = end.value();
-
                         if (startDate) {
                             startDate = new Date(startDate);
                             startDate.setDate(startDate.getDate());
@@ -172,10 +154,11 @@
                             start.max(endDate);
                             end.min(endDate);
                         }
-                    }
-
-                    function endChange() {
-                        var endDate = end.value(),
+					},
+					onEndChange:function(){
+						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
+						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");	
+						var endDate = end.value(),
                         startDate = start.value();
 
                         if (endDate) {
@@ -188,22 +171,24 @@
                             endDate = new Date();
                             start.max(endDate);
                             end.min(endDate);
-                        }
-                    }
-                    var today = kendo.date.today();
-                    var start = $("#input-assessment-plan-start").kendoDateTimePicker({
-                        value: today,
-                        change: startChange,
-                        parseFormats: ["MM/dd/yyyy"]
-                    }).data("kendoDateTimePicker");
-
-                    var end = $("#input-assessment-plan-end").kendoDateTimePicker({
-                        value: today,
-                        change: endChange,
-                        parseFormats: ["MM/dd/yyyy"]
-                    }).data("kendoDateTimePicker");
-*/
-                    
+                        }			
+					},
+					saveOrUpdate : function(e){
+						var $this = this;
+						var btn = $(e.target);	
+						
+						console.log( $this.plan );
+						
+					},	
+					setSource: function(source){
+						var $this = this;			
+						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
+						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");		
+						source.copy($this.plan);
+						start.max(end.value());
+                   	 	end.min(start.value());
+					}				
+				});
 				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
@@ -339,6 +324,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate" >확인</button>		
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
 					</div>
 				</div>
