@@ -175,8 +175,7 @@
 					},
 					saveOrUpdate : function(e){
 						var $this = this;
-						var btn = $(e.target);	
-						
+						var btn = $(e.target);							
 						console.log( $this.plan );
 						
 					},	
