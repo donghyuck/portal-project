@@ -169,9 +169,7 @@
                             endDate = new Date();
                             start.max(endDate);
                             end.min(endDate);
-                        }		
-                        
-                        	
+                        }	                        	
 					},
 					saveOrUpdate : function(e){
 						var $this = this;
@@ -186,8 +184,7 @@
 						start.max(end.value());
                    	 	end.min(start.value());
 					}				
-				});
-				
+				});				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 			}
@@ -196,8 +193,7 @@
 			}
 			renderTo.modal('show');
 		}
-		
-		
+				
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}				
