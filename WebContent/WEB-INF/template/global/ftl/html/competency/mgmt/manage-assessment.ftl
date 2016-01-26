@@ -143,6 +143,58 @@
 						source.copy($this.plan);
 					}				
 				});
+				
+				
+				function startChange() {
+                        var startDate = start.value(),
+                        endDate = end.value();
+
+                        if (startDate) {
+                            startDate = new Date(startDate);
+                            startDate.setDate(startDate.getDate());
+                            end.min(startDate);
+                        } else if (endDate) {
+                            start.max(new Date(endDate));
+                        } else {
+                            endDate = new Date();
+                            start.max(endDate);
+                            end.min(endDate);
+                        }
+                    }
+
+                    function endChange() {
+                        var endDate = end.value(),
+                        startDate = start.value();
+
+                        if (endDate) {
+                            endDate = new Date(endDate);
+                            endDate.setDate(endDate.getDate());
+                            start.max(endDate);
+                        } else if (startDate) {
+                            end.min(new Date(startDate));
+                        } else {
+                            endDate = new Date();
+                            start.max(endDate);
+                            end.min(endDate);
+                        }
+                    }
+                    var today = kendo.date.today();
+                    var start = $("#input-assessment-plan-start").kendoDateTimePicker({
+                        value: today,
+                        change: startChange,
+                        parseFormats: ["MM/dd/yyyy"]
+                    }).data("kendoDateTimePicker");
+
+                    var end = $("#input-assessment-plan-end").kendoDateTimePicker({
+                        value: today,
+                        change: endChange,
+                        parseFormats: ["MM/dd/yyyy"]
+                    }).data("kendoDateTimePicker");
+
+                    start.max(end.value());
+                    end.min(start.value());
+                    
+				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 			}
@@ -249,7 +301,7 @@
 										placeholder="설명"></textarea>
 										
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단운영체계</h6>											
-									<input id="assessment-scheme-dorpdown-list"
+									<input id="input-assessment-scheme-dorpdown-list"
 											data-option-label="선택"
 											data-role="dropdownlist"
 										    data-auto-bind="true"
@@ -257,6 +309,10 @@
 										    data-text-field="name"
 										    data-value-field="assessmentSchemeId"
 										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource" />
+									
+									<h6 class="text-light-gray text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단기간</h6>
+									<input id="input-assessment-plan-start" style="width: 100%;" />
+									<input id="input-assessment-plan-end" style="width: 100%;" />
 										                   		
 								</div>		
 							</div>	
