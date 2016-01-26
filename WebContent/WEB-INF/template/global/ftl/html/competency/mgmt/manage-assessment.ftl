@@ -32,6 +32,7 @@
 			'<@spring.url "/js/ace/ace.js" />'			
 			],
 			complete: function() {
+			
 				var currentUser = new common.ui.data.User();
 				var targetCompany = new common.ui.data.Company();	
 				common.ui.admin.setup({					 
@@ -42,6 +43,7 @@
 						getAssessmentGrid().dataSource.read();
 					}
 				});
+				
 				createAssessmentGrid();
 			}
 		}]);		
@@ -169,13 +171,15 @@
                             endDate = new Date();
                             start.max(endDate);
                             end.min(endDate);
-                        }	                        	
+                        }			
 					},
 					saveOrUpdate : function(e){
 						var $this = this;
-						var btn = $(e.target);							
+						var btn = $(e.target);	
+						
 						console.log( $this.plan );
-					},	
+						
+					}	
 					setSource: function(source){
 						var $this = this;			
 						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
@@ -184,7 +188,8 @@
 						start.max(end.value());
                    	 	end.min(start.value());
 					}				
-				});				
+				});
+				
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );
 			}
@@ -193,7 +198,8 @@
 			}
 			renderTo.modal('show');
 		}
-				
+		
+		
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}				
