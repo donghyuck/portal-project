@@ -242,12 +242,11 @@
 		}       
 		
 		span.k-widget.k-tooltip-validation {
-                    display; inline-block;
-                    width: 160px;
-                    text-align: left;
+			display: block;
+    		margin-top: 5px;
+            text-align: left;
                     border: 0;
                     padding: 0;
-                    margin: 0;
                     background: none;
                     box-shadow: none;
                     color: red;
