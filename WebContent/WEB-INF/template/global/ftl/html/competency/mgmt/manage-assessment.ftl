@@ -32,7 +32,6 @@
 			'<@spring.url "/js/ace/ace.js" />'			
 			],
 			complete: function() {
-			
 				var currentUser = new common.ui.data.User();
 				var targetCompany = new common.ui.data.Company();	
 				common.ui.admin.setup({					 
@@ -43,7 +42,6 @@
 						getAssessmentGrid().dataSource.read();
 					}
 				});
-				
 				createAssessmentGrid();
 			}
 		}]);		
