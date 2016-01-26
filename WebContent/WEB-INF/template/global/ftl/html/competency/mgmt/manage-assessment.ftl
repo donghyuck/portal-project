@@ -43,12 +43,61 @@
 						
 					}
 				});
+				
+				createAssessmentGrid();
 			}
 		}]);		
-				
+
+
+		function getAssessmentGrid(){
+			var renderTo = $("#assessment-grid");
+			return common.ui.grid(renderTo);
+		}
+		
+
+		function createAssessmentSchemeGrid(){
+			var renderTo = $("#assessment-grid");
+			if(! common.ui.exists(renderTo) ){			
+				var companySelector = getCompanySelector();				
+			}
+		}		
+		function getCompanySelector(){
+			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
+		}				
 		</script> 		 
 		<style>
-	
+		
+		.no-shadow{
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+		
+		input.k-checkbox+label {
+		    font-weight: 100;
+		    color: #555;
+		    line-height: .875em;
+    	}
+    	
+		.fieldlist {
+            margin: 0 0 -1em;
+            padding: 0;
+        }
+        .fieldlist li {
+            list-style: none;
+            padding-bottom: 1em;
+        }			
+        
+        .switcher-lg {
+        	width:45px;
+        }
+        
+	 	div[disabled=disabled] > .switcher {
+	 		pointer-events : none;
+		    cursor: not-allowed !important;
+		    opacity: .5 !important;
+		    filter: alpha(opacity = 50);
+		}       
 		
 		</style>
 	</head>
@@ -67,9 +116,20 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-
-
-
+				<div class="row animated fadeInRight">
+	                <div class="col-md-4">  
+	                	<div class="panel panel-transparent">							
+							<div class="panel-body no-padding">
+								<input id="company-dropdown-list" />
+								<hr/>
+							</div>
+						</div>
+						<div id="assessment-grid" class="no-shadow"></div>	
+	                </div><!-- /.col-md-4 -->   
+                	<div class="col-md-8">
+                	
+                	 </div><!-- /.col-md-8 -->                   	 
+                 </div><!-- /.row -->   
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
