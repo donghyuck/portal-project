@@ -309,10 +309,9 @@
 						</div>
 						<div class="form-group">
 							<textarea class="form-control m-t-sm" rows="4"  
-										name="input-assessment-plan-description"  
-										data-bind="{value: plan.description }" 
-										placeholder="설명" 
-										required validationMessage="어떤 역량진단인지를 간략하게 기술하여 주세요."></textarea>
+								data-bind="{value: plan.description }" 
+								placeholder="설명" 
+								required validationMessage="어떤 역량진단인지를 간략하게 기술하여 주세요."></textarea>
 						</div>	
 						<div class="form-group">	
 							<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단운영체계</h6>
@@ -324,7 +323,7 @@
 										    data-text-field="name"
 										    data-value-field="assessmentSchemeId"
 										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource"
-										    required data-required-msg="Select start time"
+										    required data-required-msg="Select schem time"
 										     />
 						</div>
 						<div class="form-group">	
@@ -342,7 +341,7 @@
 									<input name="endDate" data-role="datetimepicker"
 						                   data-bind="value: plan.endDate,
 						                              events: { change: onEndChange }"
-						                              required data-required-msg="Select start time"
+						                              required data-required-msg="Select end time"
 						                   style="width: 100%">
 								</div>
 							</div>	
