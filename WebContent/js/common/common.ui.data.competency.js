@@ -391,6 +391,37 @@
 		}
 	});	
 	
+	var AssessmentPlan = kendo.data.Model.define( {
+	    id: "name", // the identifier of the model
+	    parentId : "parentCodeSetId",
+	    fields: {
+	    	name: { type: "string"},
+	    	description : { type: "string" nullable:true },
+	    	objectType : { type: "number"},
+	    	objectId : { type: "number"},
+	    	assessmentSchemeId:  { type: "number" },
+	    	startDate : { type: "date" },	        
+	    	endDate : { type: "date"}
+	    },    
+	    copy : function ( target ){
+	    	target.set("codeSetId", this.get("codeSetId"));
+	    	target.set("parentCodeSetId", this.get("parentCodeSetId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	target.set("code", this.get("code"));
+	    	target.set("groupCode", this.get("groupCode"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
+	    	target.set("creationDate", this.get("creationDate"));
+	    	target.set("enabled", this.get("enabled"));
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    	else
+	    		target.set("properties", []);	    	
+	    }    
+	});
+	
 	extend( common.ui.data, {
 		competency:{
 			Job : Job,
@@ -403,7 +434,9 @@
 			RatingLevel:RatingLevel,
 			AssessmentScheme:AssessmentScheme,
 			JobSelection:JobSelection,
-			AssessmentSubject:AssessmentSubject
+			AssessmentSubject:AssessmentSubject,
+			AssessmentPlan:AssessmentPlan,
+			Assessment:Assessment
 		}  
 	} );
 	
