@@ -305,17 +305,21 @@
 					<div class="modal-body">
 						<form>
 						<div class="form-group">
-							<input type="text" class="form-control" data-bind="{value: plan.name }" placeholder="이름" required validationMessage="역량진단 이름을 입력하여 주세요." />	
+							<input type="text" name="Name" class="form-control" data-bind="{value: plan.name }" placeholder="이름" required validationMessage="역량진단 이름을 입력하여 주세요." />	
+							<span class="k-invalid-msg" data-for="Name"></span>
 						</div>
 						<div class="form-group">
-							<textarea class="form-control m-t-sm" rows="4"  
+							<textarea name="Desceiption"
+								class="form-control m-t-sm" rows="4"  
 								data-bind="{value: plan.description }" 
 								placeholder="설명" 
 								required validationMessage="어떤 역량진단인지를 간략하게 기술하여 주세요."></textarea>
+							<span class="k-invalid-msg" data-for="Description"></span>	
 						</div>	
 						<div class="form-group">	
 							<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단운영체계</h6>
 							<input id="input-assessment-scheme-dorpdown-list"
+									name="Scheme"
 											data-option-label="선택"
 											data-role="dropdownlist"
 										    data-auto-bind="true"
@@ -325,6 +329,7 @@
 										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource"
 										    required data-required-msg="Select schem time"
 										     />
+							<span class="k-invalid-msg" data-for="Scheme"></span>			     
 						</div>
 						<div class="form-group">	
 							<div class="row">
@@ -335,6 +340,7 @@
 						                              events: { change: onStartChange }"
 						                              required data-required-msg="Select start time"
 						                   style="width: 100%">
+						            <span class="k-invalid-msg" data-for="startDate"></span>		       
 								</div>
 								<div class="col-sm-6">
 									<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">종료일</h6>
@@ -343,6 +349,7 @@
 						                              events: { change: onEndChange }"
 						                              required data-required-msg="Select end time"
 						                   style="width: 100%">
+						            <span class="k-invalid-msg" data-for="endDate"></span>		       
 								</div>
 							</div>	
 						</div>
