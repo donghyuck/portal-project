@@ -179,7 +179,7 @@
 						
 						console.log( $this.plan );
 						
-					}	
+					},	
 					setSource: function(source){
 						var $this = this;			
 						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
