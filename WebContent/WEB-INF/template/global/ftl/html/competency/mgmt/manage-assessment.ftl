@@ -62,13 +62,18 @@
 					<li><a href="#">Home</a></li>
 					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
 					<li class="active"><a href="#">${selectedMenu.title}</a></li>
-				</ul>			
+				</ul>	
+						
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 
+
+
+			</div> <!-- / #content-wrapper -->
+			<div id="main-menu-bg">
 			</div>
-		</div>													
+		</div> <!-- / #main-wrapper -->												
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
