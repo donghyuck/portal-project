@@ -334,6 +334,62 @@
 	    		target.set("properties", []);	    	
 	    }    
 	});
+
+	var Assessment = kendo.data.Model.define( {
+		id : "assessmentId",
+		fields: {
+			assessmentId: { type: "number", defaultValue: 0},
+			objectType : { type: "number"},
+	    	objectId : { type: "number"},
+			name : { type: "string" },	   
+			description:  { type: "string" },
+			multipleApplyAllowed:{ type:'boolean', defaultValue:false},
+			feedbackEnabled:{ type:'boolean', defaultValue:false}, 
+			properties : {type: "object" , defaultValue:"[]"},
+			jobSelections : {type:"object", defalutValue:"[]"},
+			subjects : {type:"object", defalutValue:"[]"},
+			state : { type : "string", editable : true, defaultValue : "INCOMPLETE"	},			
+			staratDate: { type: "date"},
+			endDate: { type: "date"},
+	    	modifiedDate: { type: "date"},
+	        creationDate: { type: "date" }	
+		},
+		copy : function ( target ){
+			target.set("assessmentId", this.get("assessmentSchemeId"));
+	    	target.set("objectType", this.get("objectType"));
+	    	target.set("objectId", this.get("objectId"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	target.set("scale", this.get("scale"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
+	    	target.set("creationDate", this.get("creationDate"));	
+	    	target.set("multipleApplyAllowed", this.get("multipleApplyAllowed"));
+	    	target.set("feedbackEnabled", this.get("feedbackEnabled"));
+	    	target.set("staratDate", this.get("staratDate"));
+	    	target.set("endDate", this.get("endDate"));
+	    	target.set("state", this.get("state"));
+
+	    	if( typeof this.get("subjects") === 'object' )
+	    		target.set("subjects", this.get("subjects"));
+	    	else
+	    		target.set("jobSelections", []);	
+	    	
+	    	if( typeof this.get("jobSelections") === 'object' )
+	    		target.set("jobSelections", this.get("jobSelections"));
+	    	else
+	    		target.set("jobSelections", []);	
+	    	
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    	else
+	    		target.set("properties", []);	 	    	
+	    	
+	    	if( this.get("ratingScheme"))
+	    		target.set("ratingScheme", this.get("ratingScheme"));
+	    	else
+	    		target.set("ratingScheme", new RatingScheme());	  
+		}
+	});	
 	
 	extend( common.ui.data, {
 		competency:{
