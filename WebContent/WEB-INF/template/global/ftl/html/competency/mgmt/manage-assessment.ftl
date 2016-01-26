@@ -248,6 +248,7 @@
 										data-bind="{value: plan.description }" 
 										placeholder="설명"></textarea>
 										
+									<h6 class="text-light-gray text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단운영체계</h6>											
 									<input id="assessment-scheme-dorpdown-list"
 											data-option-label="선택"
 											data-role="dropdownlist"
