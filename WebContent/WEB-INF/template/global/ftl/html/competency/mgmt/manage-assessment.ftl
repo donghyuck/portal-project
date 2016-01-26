@@ -68,19 +68,7 @@
 				</div><!-- / .page-header -->	
 
 			</div>
-		</div>			
-		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
-		<tr>
-			<td>#: score #</td>
-			<td>#: title #</td>
-		</tr>		
-		</script>
-		<script type="text/x-kendo-tmpl" id="property-view-template">
-		<tr>
-			<td>#: name #</td>
-			<td>#: value #</td>
-		</tr>	
-		</script>											
+		</div>													
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
