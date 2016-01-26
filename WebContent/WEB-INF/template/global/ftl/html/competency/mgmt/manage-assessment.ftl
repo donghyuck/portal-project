@@ -119,6 +119,9 @@
 			var parentRenderTo = $("#assessment-details");
 			var renderTo = $("#assessment-plan-modal");			
 			if( !renderTo.data('bs.modal') ){
+			
+				var validator = renderTo.find("form").kendoValidator().data("kendoValidator")
+			
 				var observable =  common.ui.observable({
 					plan:new common.ui.data.competency.AssessmentPlan(),
 					assessmentSchemeDataSource: new kendo.data.DataSource({
@@ -176,8 +179,8 @@
 					saveOrUpdate : function(e){
 						var $this = this;
 						var btn = $(e.target);	
-						
-						console.log( $this.plan );
+						console.log(validator.validate());
+						console.log( common.ui.stringify($this.plan) );
 						
 					},	
 					setSource: function(source){
@@ -284,17 +287,18 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-
+						<form>
 						<div class="form-group">
-							<input type="text" class="form-control" data-bind="{value: plan.name }" placeholder="이름" />	
+							<input type="text" class="form-control" data-bind="{value: plan.name }" placeholder="이름" required validationMessage="Enter {0}" />	
 							<p class="help-block">역량진단 이름.</p>
 						</div>
 						<div class="form-group">
 							<textarea class="form-control m-t-sm" rows="4"  
 										name="input-assessment-plan-description"  
 										data-bind="{value: plan.description }" 
-										placeholder="설명"></textarea>
-							<p class="help-block">어떤 역량진단인지를 간략하게 기술하여 주세요.</p>
+										placeholder="설명" 
+										required validationMessage="Select movie"></textarea>
+							<p class="help-block text-sm">어떤 역량진단인지를 간략하게 기술하여 주세요.</p>
 						</div>	
 						<div class="form-group">	
 							<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단운영체계</h6>
@@ -305,7 +309,9 @@
 										    data-value-primitive="true"
 										    data-text-field="name"
 										    data-value-field="assessmentSchemeId"
-										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource" />
+										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource"
+										    required data-required-msg="Select start time"
+										     />
 						</div>
 						<div class="form-group">	
 							<div class="row">
@@ -314,6 +320,7 @@
 									<input name="startDate" data-role="datetimepicker"
 						                   data-bind="value: plan.startDate,
 						                              events: { change: onStartChange }"
+						                              required data-required-msg="Select start time"
 						                   style="width: 100%">
 								</div>
 								<div class="col-sm-6">
@@ -321,10 +328,12 @@
 									<input name="endDate" data-role="datetimepicker"
 						                   data-bind="value: plan.endDate,
 						                              events: { change: onEndChange }"
+						                              required data-required-msg="Select start time"
 						                   style="width: 100%">
 								</div>
 							</div>	
 						</div>
+						<form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate" >확인</button>		
