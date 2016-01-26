@@ -103,7 +103,10 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});	
 				renderTo.find("button[data-action=create]").click(function(e){	
-					createAssessmenPlanModal(new common.ui.data.competency.AssessmentPlan());			
+					var newPlan = new common.ui.data.competency.AssessmentPlan();
+					newPlan.set("objectType", 1);
+					newPlan.set("objectId",companySelector.value());
+					createAssessmenPlanModal(newPlan);			
 				});					
 			}
 		}		
@@ -116,7 +119,35 @@
 			var parentRenderTo = $("#assessment-details");
 			var renderTo = $("#assessment-plan-modal");			
 			if( !renderTo.data('bs.modal') ){
-			
+				var observable =  common.ui.observable({
+					plan:new common.ui.data.competency.AssessmentPlan(),
+					assessmentSchemeDataSource: new kendo.data.DataSource({
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/assessment/scheme/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { objectType:1, objectId:getCompanySelector().value() }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.AssessmentScheme
+						},
+						error:common.ui.handleAjaxError
+					}),
+					setSource: function(source){
+						var $this = this;				
+						source.copy($this.plan);
+					}				
+				});
+				renderTo.data("model", observable);	
+				kendo.bind(renderTo, observable );
+			}
+			if( source ){
+				renderTo.data("model").setSource( source );		
 			}
 			renderTo.modal('show');
 		}
@@ -202,11 +233,33 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">	
 					<div class="modal-header">
-						<h3 class="modal-title"></h2>
+						<h3 class="modal-title">역량진단계획</h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-					
+
+						<form>
+							<div class="row">
+								<div class="col-sm-12">		
+									<input type="text" class="form-control" name="input-assessment-plan-name" 
+										data-bind="{value: plan.name }" placeholder="이름" />							
+									<textarea class="form-control m-t-sm" rows="4"  
+										name="input-assessment-plan-description"  
+										data-bind="{value: plan.description }" 
+										placeholder="설명"></textarea>
+										
+									<input id="assessment-scheme-dorpdown-list"
+											data-option-label="선택"
+											data-role="dropdownlist"
+										    data-auto-bind="true"
+										    data-value-primitive="true"
+										    data-text-field="name"
+										    data-value-field="assessmentSchemeId"
+										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource" />
+										                   		
+								</div>		
+							</div>	
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
