@@ -395,7 +395,7 @@
 	    id: "name", // the identifier of the model
 	    fields: {
 	    	name: { type: "string"},
-	    	description : { type: "string" nullable:true },
+	    	description : { type: "string", nullable:true },
 	    	objectType : { type: "number"},
 	    	objectId : { type: "number"},
 	    	assessmentSchemeId:  { type: "number" },
