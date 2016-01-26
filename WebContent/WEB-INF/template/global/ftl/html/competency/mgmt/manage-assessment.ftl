@@ -285,18 +285,21 @@
 					</div>
 					<div class="modal-body">
 
-						<form>
-							<div class="row">
-								<div class="col-sm-12">		
-									<input type="text" class="form-control" name="input-assessment-plan-name" 
-										data-bind="{value: plan.name }" placeholder="이름" />							
-									<textarea class="form-control m-t-sm" rows="4"  
+						<div class="form-group">
+							<input type="text" class="form-control" data-bind="{value: plan.name }" placeholder="이름" />	
+							<p class="help-block">역량진단 이름.</p>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control m-t-sm" rows="4"  
 										name="input-assessment-plan-description"  
 										data-bind="{value: plan.description }" 
 										placeholder="설명"></textarea>
-										
-									<h6 class="text-light-gray text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단운영체계</h6>											
-									<input id="input-assessment-scheme-dorpdown-list"
+							<p class="help-block">어떤 역량진단인지를 간략하게 기술하여 주세요.</p>
+						</div>	
+						<div class="row">
+							<div class="col-sm-6">	
+								<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단운영체계</h6>
+								<input id="input-assessment-scheme-dorpdown-list"
 											data-option-label="선택"
 											data-role="dropdownlist"
 										    data-auto-bind="true"
@@ -304,24 +307,25 @@
 										    data-text-field="name"
 										    data-value-field="assessmentSchemeId"
 										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource" />
-									
-									
-									<input name="startDate" data-role="datetimepicker"
+							</div>
+							<div class="col-sm-6"></div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">시작일</h6>
+								<input name="startDate" data-role="datetimepicker"
 					                   data-bind="value: plan.startDate,
 					                              events: { change: onStartChange }"
 					                   style="width: 100%">
-                  					<input name="endDate" data-role="datetimepicker"
+							</div>
+							<div class="col-sm-6">
+								<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">종료일</h6>
+								<input name="endDate" data-role="datetimepicker"
 					                   data-bind="value: plan.endDate,
 					                              events: { change: onEndChange }"
 					                   style="width: 100%">
-                   
-									<h6 class="text-light-gray text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단기간</h6>
-									<input id="input-assessment-plan-start" style="width: 100%;" />
-									<input id="input-assessment-plan-end" style="width: 100%;" />
-										                   		
-								</div>		
-							</div>	
-						</div>
+							</div>
+						</div>	
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate" >확인</button>		
