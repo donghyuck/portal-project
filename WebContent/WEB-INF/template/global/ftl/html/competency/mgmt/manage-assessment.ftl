@@ -107,6 +107,21 @@
 				});					
 			}
 		}		
+
+		function createAssessmentDetails(source){
+		
+		}
+				
+		function createAssessmenPlanModal(source){
+			var parentRenderTo = $("#assessment-details");
+			var renderTo = $("#assessment-plan-modal");			
+			if( !renderTo.data('bs.modal') ){
+			
+			}
+			renderTo.modal('show');
+		}
+		
+		
 		function getCompanySelector(){
 			return common.ui.admin.setup().companySelector($("#company-dropdown-list"));	
 		}				
@@ -173,13 +188,32 @@
 						<div id="assessment-grid" class="no-shadow"></div>	
 	                </div><!-- /.col-md-4 -->   
                 	<div class="col-md-8">
-                	
+                		<div id="assessment-details" class="panel panel-default" style="display:none;">
+                		
+                		</div>
                 	 </div><!-- /.col-md-8 -->                   	 
                  </div><!-- /.row -->   
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
-		</div> <!-- / #main-wrapper -->												
+		</div> <!-- / #main-wrapper -->	
+		
+		<div id="assessment-plan-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">	
+					<div class="modal-header">
+						<h3 class="modal-title"></h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>
+					<div class="modal-body">
+					
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
+					</div>
+				</div>
+			</div>	
+		</div>														
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
