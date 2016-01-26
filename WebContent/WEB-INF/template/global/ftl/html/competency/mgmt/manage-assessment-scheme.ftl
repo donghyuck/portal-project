@@ -63,7 +63,7 @@
 					autoBind:false,
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/mgmt/competency/assessment-scheme/list.json?output=json', type:'post' },
+							read: { url:'/secure/data/mgmt/competency/assessment/scheme/list.json?output=json', type:'post' },
 							parameterMap: function (options, operation){
 								if (operation !== "read") {
 									return kendo.stringify(options);
@@ -184,17 +184,13 @@
 						return false; 
 					},
 					addJobSelection:function(e){
-						var $this = this;
-						
-						console.log(common.ui.stringify($this.jobSelection));
-						
+						var $this = this;						
+						//console.log(common.ui.stringify($this.jobSelection));						
 						var newJobSelection = new common.ui.data.competency.JobSelection();
 						$this.jobSelection.copy(newJobSelection);						
-						EMPTY_JOB_SELECTION.copy($this.jobSelection);
-								
+						EMPTY_JOB_SELECTION.copy($this.jobSelection);								
 						newJobSelection.set("objectType", 71);
-						newJobSelection.set("objectId", $this.assessmentScheme.get("assessmentSchemeId"));		
-										
+						newJobSelection.set("objectId", $this.assessmentScheme.get("assessmentSchemeId"));												
 						if(newJobSelection.classifyType > 0 ){
 							newJobSelection.set("classifyTypeName", $this.classifyTypeDataSource.get(newJobSelection.classifyType).name);
 						}
@@ -217,7 +213,7 @@
 						this.assessmentScheme.get("feedbackEnabled", $this.feedbackEnabled );
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/competency/assessment-scheme/update.json?output=json" />' , 
+							'<@spring.url "/secure/data/mgmt/competency/assessment/scheme/update.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.assessmentScheme ),
 								contentType : "application/json",
