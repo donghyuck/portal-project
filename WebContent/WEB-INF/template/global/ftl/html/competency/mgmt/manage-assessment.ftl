@@ -138,13 +138,25 @@
 						},
 						error:common.ui.handleAjaxError
 					}),
+					onStartChange:function(){
+						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
+						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");
+					},
+					onEndChange:functioin(){
+						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
+						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");				
+					},
 					setSource: function(source){
-						var $this = this;				
+						var $this = this;			
+						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
+						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");		
 						source.copy($this.plan);
+						start.max(end.value());
+                   	 	end.min(start.value());
 					}				
 				});
 				
-				
+				/**
 				function startChange() {
                         var startDate = start.value(),
                         endDate = end.value();
@@ -190,9 +202,7 @@
                         change: endChange,
                         parseFormats: ["MM/dd/yyyy"]
                     }).data("kendoDateTimePicker");
-
-                    start.max(end.value());
-                    end.min(start.value());
+*/
                     
 				
 				renderTo.data("model", observable);	
@@ -310,6 +320,16 @@
 										    data-value-field="assessmentSchemeId"
 										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource" />
 									
+									
+									<input name="startDate" data-role="datetimepicker"
+					                   data-bind="value: plan.startDate,
+					                              events: { change: onStartChange }"
+					                   style="width: 100%">
+                  					<input name="endDate" data-role="datetimepicker"
+					                   data-bind="value: plan.endDate,
+					                              events: { change: onEndChange }"
+					                   style="width: 100%">
+                   
 									<h6 class="text-light-gray text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단기간</h6>
 									<input id="input-assessment-plan-start" style="width: 100%;" />
 									<input id="input-assessment-plan-end" style="width: 100%;" />
