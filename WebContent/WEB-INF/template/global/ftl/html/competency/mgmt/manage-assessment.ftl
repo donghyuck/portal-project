@@ -169,7 +169,9 @@
                             endDate = new Date();
                             start.max(endDate);
                             end.min(endDate);
-                        }			
+                        }		
+                        
+                        	
 					},
 					saveOrUpdate : function(e){
 						var $this = this;
