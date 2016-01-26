@@ -327,7 +327,7 @@
 										    data-text-field="name"
 										    data-value-field="assessmentSchemeId"
 										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource"
-										    required data-required-msg="Select schem time"
+										    required data-required-msg="역량진단운영체계를 선택하여 주십시오."
 										     />
 							<span class="k-invalid-msg" data-for="Scheme"></span>			     
 						</div>
@@ -338,7 +338,7 @@
 									<input name="startDate" data-role="datetimepicker"
 						                   data-bind="value: plan.startDate,
 						                              events: { change: onStartChange }"
-						                              required data-required-msg="Select start time"
+						                              required data-required-msg="진단 시작일을 선택하여 주십시오."
 						                   style="width: 100%">
 						            <span class="k-invalid-msg" data-for="startDate"></span>		       
 								</div>
@@ -347,7 +347,7 @@
 									<input name="endDate" data-role="datetimepicker"
 						                   data-bind="value: plan.endDate,
 						                              events: { change: onEndChange }"
-						                              required data-required-msg="Select end time"
+						                              required data-required-msg="진단 종료일을 선택하여 주십시오."
 						                   style="width: 100%">
 						            <span class="k-invalid-msg" data-for="endDate"></span>		       
 								</div>
