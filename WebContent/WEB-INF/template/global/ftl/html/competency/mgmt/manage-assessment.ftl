@@ -179,9 +179,24 @@
 					saveOrUpdate : function(e){
 						var $this = this;
 						var btn = $(e.target);	
-						console.log(validator.validate());
-						console.log( common.ui.stringify($this.plan) );
-						
+						if(validator.validate()){						
+							common.ui.progress(renderTo, true);
+							common.ui.ajax(
+								'<@spring.url "/secure/data/mgmt/competency/assessment/create.json?output=json" />' , 
+								{
+									data : kendo.stringify($this.plan),
+									contentType : "application/json",
+									success : function(response){																											
+										//$this.setSource(new common.ui.data.competency.Competency(response));								
+										getAssessmentGrid().dataSource.read();
+									},
+									complete : function(e){
+										common.ui.progress(renderTo, false);
+									}
+								}
+							);	
+						}
+						return false;						
 					},	
 					setSource: function(source){
 						var $this = this;			
