@@ -55,7 +55,7 @@
 		}
 		
 
-		function createAssessmentSchemeGrid(){
+		function createAssessmentGrid(){
 			var renderTo = $("#assessment-grid");
 			if(! common.ui.exists(renderTo) ){			
 				var companySelector = getCompanySelector();				
