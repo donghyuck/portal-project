@@ -175,7 +175,6 @@
 						var $this = this;
 						var btn = $(e.target);							
 						console.log( $this.plan );
-						
 					},	
 					setSource: function(source){
 						var $this = this;			
