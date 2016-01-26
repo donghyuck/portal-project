@@ -241,6 +241,22 @@
 		    filter: alpha(opacity = 50);
 		}       
 		
+		span.k-widget.k-tooltip-validation {
+                    display; inline-block;
+                    width: 160px;
+                    text-align: left;
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    background: none;
+                    box-shadow: none;
+                    color: red;
+                }
+
+                .k-tooltip-validation .k-warning {
+                    display: none;
+                }
+                
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
