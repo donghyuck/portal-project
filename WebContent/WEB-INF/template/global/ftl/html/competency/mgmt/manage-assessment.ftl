@@ -142,7 +142,7 @@
 						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
 						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");
 					},
-					onEndChange:functioin(){
+					onEndChange:function(){
 						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
 						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");				
 					},
