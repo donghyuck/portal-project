@@ -296,7 +296,7 @@
 										placeholder="설명"></textarea>
 							<p class="help-block">어떤 역량진단인지를 간략하게 기술하여 주세요.</p>
 						</div>	
-						<div class="form-group col-sm-6">	
+						<div class="form-group">	
 							<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">역량진단운영체계</h6>
 							<input id="input-assessment-scheme-dorpdown-list"
 											data-option-label="선택"
@@ -307,24 +307,24 @@
 										    data-value-field="assessmentSchemeId"
 										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource" />
 						</div>
-						
-						<div class="row">
-							<div class="col-sm-6">
-								<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">시작일</h6>
-								<input name="startDate" data-role="datetimepicker"
-					                   data-bind="value: plan.startDate,
-					                              events: { change: onStartChange }"
-					                   style="width: 100%">
-							</div>
-							<div class="col-sm-6">
-								<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">종료일</h6>
-								<input name="endDate" data-role="datetimepicker"
-					                   data-bind="value: plan.endDate,
-					                              events: { change: onEndChange }"
-					                   style="width: 100%">
-							</div>
-						</div>	
-						
+						<div class="form-group">	
+							<div class="row">
+								<div class="col-sm-6">
+									<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">시작일</h6>
+									<input name="startDate" data-role="datetimepicker"
+						                   data-bind="value: plan.startDate,
+						                              events: { change: onStartChange }"
+						                   style="width: 100%">
+								</div>
+								<div class="col-sm-6">
+									<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">종료일</h6>
+									<input name="endDate" data-role="datetimepicker"
+						                   data-bind="value: plan.endDate,
+						                              events: { change: onEndChange }"
+						                   style="width: 100%">
+								</div>
+							</div>	
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate" >확인</button>		
