@@ -40,7 +40,7 @@
 						e.token.copy(currentUser);
 					},
 					change: function(e){		
-						
+						getAssessmentGrid().dataSource.read();
 					}
 				});
 				
@@ -58,7 +58,53 @@
 		function createAssessmentGrid(){
 			var renderTo = $("#assessment-grid");
 			if(! common.ui.exists(renderTo) ){			
-				var companySelector = getCompanySelector();				
+				
+				var companySelector = getCompanySelector();					
+				common.ui.grid(renderTo, {
+					autoBind:false,
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/mgmt/competency/assessment/list.json?output=json', type:'post' },
+							parameterMap: function (options, operation){
+								if (operation !== "read") {
+									return kendo.stringify(options);
+								} 
+								return {
+									objectType: 1,
+									objectId: companySelector.value()
+								};
+							}
+						},
+						schema: {
+							model: common.ui.data.competency.Assessment
+						}
+					},
+					columns: [
+						{ title: "역량진단", field: "name"}
+					],
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 역량진단계획 추가 </button><button class="btn btn-flat btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"> 새로고침 </button></div>'),
+					resizable: true,
+					editable : false,					
+					selectable : "row",
+					scrollable: true,
+					height: 400,
+					change: function(e) {
+					 	var selectedCells = this.select();	
+					 	if( selectedCells.length == 1){
+	                    	var selectedCell = this.dataItem( selectedCells );	 
+	                    	createAssessmentDetails(selectedCell);
+	                    }   
+					},
+					dataBound: function(e) {
+					}		
+				});		
+
+				renderTo.find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});	
+				renderTo.find("button[data-action=create]").click(function(e){	
+					createAssessmenPlanModal(new common.ui.data.competency.AssessmentPlan());			
+				});					
 			}
 		}		
 		function getCompanySelector(){
