@@ -591,7 +591,11 @@
 									<textarea class="form-control" rows="4"  name="assessment-description"  data-bind="{value: assessment.description, visible:editable}" placeholder="설명"></textarea>
 								</div>
 								
-								<div class="btn-group" data-toggle="buttons">
+								<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">상태</h6>
+								<div class="btn-group btn-sm" data-toggle="buttons">
+								  <label class="btn btn-primary">
+								    <input type="radio" name="state" value="NONE" autocomplete="off" data-bind="checked: assessment.state">NONE
+								  </label>
 								  <label class="btn btn-primary">
 								    <input type="radio" name="state" value="INCOMPLETE" autocomplete="off" data-bind="checked: assessment.state">INCOMPLETE
 								  </label>
