@@ -464,8 +464,6 @@
 			}
 			if( source ){
 				renderTo.data("model").setSource( source );		
-				if (!renderTo.is(":visible")) 
-					renderTo.show();	
 			}
 			renderTo.modal('show');
 		}
@@ -614,8 +612,7 @@
 																												
 														<tr data-bind="visible:feedbackEnabled" style="display:none;">
 															<td class="text-muted">역량진단방법</td>
-															<td>
-															
+															<td>															
 																<table class="table table-condensed">
 																	<thead>
 																		<tr>
@@ -824,7 +821,7 @@
 														<div class="panel-footer">
 															<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addJobSelection"><span class="btn-label icon fa fa-plus"></span> 진단 직무 추가 </button>
 															<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="click:cancelChanges" 
-																data-target="#assessment-scheme-details-tabs-2 .k-grid"> 변경취소 </button>									
+																data-target="#assessment-details-tabs-2 .k-grid"> 변경취소 </button>									
 														</div>
 													</div>												
 													<div data-role="grid"
