@@ -561,6 +561,16 @@
 									<span data-bind="{text: assessment.description, visible:visible}"></span>
 									<textarea class="form-control" rows="4"  name="assessment-description"  data-bind="{value: assessment.description, visible:editable}" placeholder="설명"></textarea>
 								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6">
+											<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">진단 시작일</h6>
+										</div>
+										<div class="col-sm-6">
+											<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">진단 종료일</h6>
+										</div>
+									</div>
+								</div>								
 								<table class="table">							
 													<tbody>
 														<tr>
