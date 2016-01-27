@@ -553,19 +553,15 @@
                 	<div class="col-md-8">
                 		<div id="assessment-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none; border-width:3px;" >
 							<div class="panel-body">
-								<div class="form-horizontal">			
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="form-group no-margin-hr">	
-												<h4  data-bind="{text: assessment.name, visible:visible}"></h4>
-												<input type="text" class="form-control input-md" name="assessment-name" data-bind="{value: assessment.name, visible:editable }" placeholder="이름" />
-											</div>
-											<div class="form-group no-margin-hr">				
-												<span data-bind="{text: assessment.description, visible:visible}"></span>
-												<textarea class="form-control" rows="4"  name="assessment-description"  data-bind="{value: assessment.description, visible:editable}" placeholder="설명"></textarea>
-											</div>
-											<div class="no-margin-hr">											
-												<table class="table">							
+								<div class="form-group">	
+									<h4  data-bind="{text: assessment.name, visible:visible}"></h4>
+									<input type="text" class="form-control input-md" name="assessment-name" data-bind="{value: assessment.name, visible:editable }" placeholder="이름" />
+								</div>
+								<div class="form-group">				
+									<span data-bind="{text: assessment.description, visible:visible}"></span>
+									<textarea class="form-control" rows="4"  name="assessment-description"  data-bind="{value: assessment.description, visible:editable}" placeholder="설명"></textarea>
+								</div>
+								<table class="table">							
 													<tbody>
 														<tr>
 															<td width="150" class="text-muted">진단척도</td>
@@ -731,12 +727,8 @@
 															</td>
 														</tr>													
 													</tbody>
-												</table>            	
-											</div>
-										</div>
-									</div>			
-                    			</div>
-                    		</div>    
+								</table>            	
+                    		</div><!-- /.panel-body -->    
                     		<div class="panel-body no-padding">
 											<ul id="assessment-details-tabs" class="nav nav-tabs">
 												<li class="m-l-sm">
