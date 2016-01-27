@@ -202,6 +202,41 @@
 						common.ui.grid($('#assessment-details-tabs-1 .k-grid')).dataSource.add(newJobSelection) ;
 						return false;
 					},
+					onStartChange:function(){
+						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
+						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");
+						var startDate = start.value(),
+                        endDate = end.value();
+                        if (startDate) {
+                            startDate = new Date(startDate);
+                            startDate.setDate(startDate.getDate());
+                            end.min(startDate);
+                        } else if (endDate) {
+                            start.max(new Date(endDate));
+                        } else {
+                            endDate = new Date();
+                            start.max(endDate);
+                            end.min(endDate);
+                        }
+					},
+					onEndChange:function(){
+						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
+						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");	
+						var endDate = end.value(),
+                        startDate = start.value();
+
+                        if (endDate) {
+                            endDate = new Date(endDate);
+                            endDate.setDate(endDate.getDate());
+                            start.max(endDate);
+                        } else if (startDate) {
+                            end.min(new Date(startDate));
+                        } else {
+                            endDate = new Date();
+                            start.max(endDate);
+                            end.min(endDate);
+                        }			
+					},					
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
@@ -316,32 +351,20 @@
 					companyDataSource:getCompanySelector().dataSource,
 					setSource: function(source){
 						var $this = this;
-						source.copy($this.assessment);	
-						
+						source.copy($this.assessment);							
 						$this.propertyDataSource.read();				
 						$this.propertyDataSource.data($this.assessment.properties);	
 						$this.jobSelectionDataSource.read();	
 						$this.jobSelectionDataSource.data($this.assessment.jobSelections);
 						$this.subjectDataSource.read();				
 						$this.subjectDataSource.data($this.assessment.subjects);	
+						EMPTY_JOB_SELECTION.copy($this.jobSelection);	
 						
-						
-						EMPTY_JOB_SELECTION.copy($this.jobSelection);
-						
-						if($this.assessment.get("assessmentId") == 0)
-						{
-							$this.assessment.set("objectType", 1);
-							$this.assessment.set("objectId", getCompanySelector().value() );
-							$this.set("visible", false);
-							$this.set("editable", true);
-							$this.set("updatable", true);
-							$this.set("deletable", false);
-						}else{
-							$this.set("visible", true);
-							$this.set("editable", false);
-							$this.set("updatable", false);
-							$this.set("deletable", true);						
-						}						
+						$this.set("visible", true);
+						$this.set("editable", false);
+						$this.set("updatable", false);
+						$this.set("deletable", true);							
+												
 						if($this.assessment.multipleApplyAllowed){
 							$('#multiple-apply-allowed-switcher').switcher('on');
 						}else{
@@ -353,6 +376,12 @@
 						}else{
 							$('#feedback-enabled-switcher').switcher('off');
 						}						
+						
+						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
+						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");		
+						start.max(end.value());
+                   	 	end.min(start.value());
+                   	 	
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
 					}
 				});					
@@ -566,10 +595,18 @@
 										<div class="col-sm-6">
 											<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">진단 시작일</h6>
 											<span data-bind="text: assessment.formattedStartDate"></span>
+											<input name="startDate" data-role="datetimepicker"
+						                  	 data-bind="value: assessment.startDate,
+						                              events: { change: onStartChange }"
+						                  	 style="width: 100%">
 										</div>
 										<div class="col-sm-6">
 											<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">진단 종료일</h6>
 											<span data-bind="text: assessment.formattedEndDate"></span>
+											<input name="endDate" data-role="datetimepicker"
+						                  	 data-bind="value: assessment.endDate,
+						                              events: { change: onEndChange }"
+						                  	 style="width: 100%">
 										</div>
 									</div>
 								</div>								
