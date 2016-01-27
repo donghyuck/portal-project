@@ -209,8 +209,8 @@
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
-						this.assessmentScheme.get("multipleApplyAllowed", $this.multipleApplyAllowed );						
-						this.assessmentScheme.get("feedbackEnabled", $this.feedbackEnabled );
+						this.assessmentScheme.set("multipleApplyAllowed", $this.multipleApplyAllowed );						
+						this.assessmentScheme.set("feedbackEnabled", $this.feedbackEnabled );
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/assessment/scheme/update.json?output=json" />' , 

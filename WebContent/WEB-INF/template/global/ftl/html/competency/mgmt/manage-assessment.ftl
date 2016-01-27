@@ -240,8 +240,8 @@
 					saveOrUpdate : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
-						this.assessment.get("multipleApplyAllowed", $this.multipleApplyAllowed );						
-						this.assessment.get("feedbackEnabled", $this.feedbackEnabled );
+						this.assessment.set("multipleApplyAllowed", $this.multipleApplyAllowed );						
+						this.assessment.set("feedbackEnabled", $this.feedbackEnabled );
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/competency/assessment/update.json?output=json" />' , 
@@ -718,7 +718,7 @@
 															</td>
 														</tr>	
 														<tr>
-															<td>역량진단방법</td>
+															<td class="text-muted">역량진단방법</td>
 															<td>
 															
 															<ul class="fieldlist">
