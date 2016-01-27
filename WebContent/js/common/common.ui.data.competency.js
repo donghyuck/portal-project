@@ -349,7 +349,7 @@
 			jobSelections : {type:"object", defalutValue:"[]"},
 			subjects : {type:"object", defalutValue:"[]"},
 			state : { type : "string", editable : true, defaultValue : "INCOMPLETE"	},			
-			staratDate: { type: "date"},
+			startDate: { type: "date"},
 			endDate: { type: "date"},
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	
@@ -365,7 +365,7 @@
 	    	target.set("creationDate", this.get("creationDate"));	
 	    	target.set("multipleApplyAllowed", this.get("multipleApplyAllowed"));
 	    	target.set("feedbackEnabled", this.get("feedbackEnabled"));
-	    	target.set("staratDate", this.get("staratDate"));
+	    	target.set("startDate", this.get("startDate"));
 	    	target.set("endDate", this.get("endDate"));
 	    	target.set("state", this.get("state"));
 
