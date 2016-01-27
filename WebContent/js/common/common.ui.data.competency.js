@@ -355,7 +355,7 @@
 	        creationDate: { type: "date" }	
 		},
 		copy : function ( target ){
-			target.set("assessmentId", this.get("assessmentSchemeId"));
+			target.set("assessmentId", this.get("assessmentId"));
 	    	target.set("objectType", this.get("objectType"));
 	    	target.set("objectId", this.get("objectId"));
 	    	target.set("name", this.get("name"));
