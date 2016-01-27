@@ -464,6 +464,8 @@
 			}
 			if( source ){
 				renderTo.data("model").setSource( source );		
+				if (!renderTo.is(":visible")) 
+					renderTo.show();	
 			}
 			renderTo.modal('show');
 		}
