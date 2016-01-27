@@ -590,6 +590,19 @@
 									<span data-bind="{text: assessment.description, visible:visible}"></span>
 									<textarea class="form-control" rows="4"  name="assessment-description"  data-bind="{value: assessment.description, visible:editable}" placeholder="설명"></textarea>
 								</div>
+								
+								<div class="btn-group" data-toggle="buttons">
+								  <label class="btn btn-primary">
+								    <input type="radio" name="state" value="INCOMPLETE" autocomplete="off" data-bind="checked: assessment.state">INCOMPLETE
+								  </label>
+								  <label class="btn btn-primary">
+								    <input type="radio" name="state" value="PUBLISHED"  autocomplete="off" data-bind="checked: assessment.state">PUBLISHED
+								  </label>
+								  <label class="btn btn-primary">
+								    <input type="radio" name="state" value="DELETED"  autocomplete="off" data-bind="checked: assessment.state">DELETED
+								  </label>
+								</div>
+
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-6">
