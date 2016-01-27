@@ -388,7 +388,19 @@
 	    		target.set("ratingScheme", this.get("ratingScheme"));
 	    	else
 	    		target.set("ratingScheme", new RatingScheme());	  
-		}
+		},
+		formattedCreationDate : function(){
+	    	return kendo.toString(this.get("creationDate"), "g");
+	    },
+	    formattedModifiedDate : function(){
+	    	return kendo.toString(this.get("modifiedDate"), "g");
+	    },
+		formattedStartDate : function(){
+	    	return kendo.toString(this.get("startDate"), "g");
+	    },
+	    formattedEndDate : function(){
+	    	return kendo.toString(this.get("endDate"), "g");
+	    }
 	});	
 	
 	var AssessmentPlan = kendo.data.Model.define( {

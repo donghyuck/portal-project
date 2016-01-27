@@ -565,9 +565,11 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">진단 시작일</h6>
+											<span data-bind="text: assessment.formattedStartDate"></span>
 										</div>
 										<div class="col-sm-6">
 											<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">진단 종료일</h6>
+											<span data-bind="text: assessment.formattedEndDate"></span>
 										</div>
 									</div>
 								</div>								
