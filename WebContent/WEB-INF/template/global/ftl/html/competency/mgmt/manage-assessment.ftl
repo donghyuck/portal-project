@@ -557,7 +557,7 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="form-group no-margin-hr">	
-												<span  data-bind="{text: assessment.name, visible:visible}"></span>
+												<h4  data-bind="{text: assessment.name, visible:visible}"></h4>
 												<input type="text" class="form-control input-md" name="assessment-name" data-bind="{value: assessment.name, visible:editable }" placeholder="이름" />
 											</div>
 											<div class="form-group no-margin-hr">				
