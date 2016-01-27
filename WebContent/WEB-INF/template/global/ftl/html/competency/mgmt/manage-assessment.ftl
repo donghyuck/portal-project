@@ -594,19 +594,13 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">진단 시작일</h6>
-											<span data-bind="text: assessment.formattedStartDate"></span>
-											<input name="startDate" data-role="datetimepicker"
-						                  	 data-bind="value: assessment.startDate,
-						                              events: { change: onStartChange }"
-						                  	 style="width: 100%">
+											<span data-bind="text: assessment.formattedStartDate, visible:visible"></span>
+											<input name="startDate" data-role="datetimepicker" data-bind="value: assessment.startDate, visible:editable, events: { change: onStartChange }" >
 										</div>
 										<div class="col-sm-6">
 											<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">진단 종료일</h6>
-											<span data-bind="text: assessment.formattedEndDate"></span>
-											<input name="endDate" data-role="datetimepicker"
-						                  	 data-bind="value: assessment.endDate,
-						                              events: { change: onEndChange }"
-						                  	 style="width: 100%">
+											<span data-bind="text: assessment.formattedEndDate, visible:visible"></span>
+											<input name="endDate" data-role="datetimepicker" data-bind="value: assessment.endDate, visible:editable, events: { change: onEndChange }" >
 										</div>
 									</div>
 								</div>								
