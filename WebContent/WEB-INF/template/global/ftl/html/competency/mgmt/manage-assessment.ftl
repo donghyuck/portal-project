@@ -112,7 +112,258 @@
 		}		
 
 		function createAssessmentDetails(source){
-		
+			var renderTo = $("#assessment-details");
+			if( !renderTo.data("model")){		
+				
+				$('#multiple-apply-allowed-switcher').switcher({ on_state_content:"", off_state_content: ""});
+				$('#feedback-enabled-switcher').switcher({ on_state_content:"", off_state_content: ""});				
+				var EMPTY_JOB_SELECTION = new common.ui.data.competency.JobSelection();
+				var observable =  common.ui.observable({
+					visible : false,
+					editable : false,
+					deletable: false,
+					updatable : false,		
+					multipleApplyAllowed: false,		
+					feedbackEnabled:false,
+					assessment : new common.ui.data.competency.Assessment(),
+					jobSelection: new common.ui.data.competency.JobSelection(),
+					view : function(e){
+						var $this = this;		
+						if($this.assessment.assessmentId < 1){
+							$("#rating-scheme-details").hide();	
+						}
+						$this.set("visible", true);
+						$this.set("editable", false);
+						$this.set("updatable", false);
+					},
+					edit : function(e){
+						var $this = this;
+						$this.set("visible", false);
+						$this.set("editable", true);
+						$this.set("updatable", true);
+						return false;
+					},
+					ratingSchemeDataSource: new kendo.data.DataSource({
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { objectType:1, objectId:getCompanySelector().value() }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.RatingScheme
+						},
+						error:common.ui.handleAjaxError
+					}),	
+					onRatingSchemeChange: function(e){			
+						var $this = this;
+					},
+					addSubject:function(e){
+						var $this = this;
+						var companyDropdown = $("#job-details-company-list").data('kendoDropDownList');
+						var newSubject = new common.ui.data.competency.AssessmentSubject();
+						newSubject.set("objectType", 70);
+						newSubject.set("objectId", $this.assessment.get("assessmentId"));
+						newSubject.set("subjectObjectType", 1);
+						newSubject.set("subjectObjectId", companyDropdown.value());
+						newSubject.set("subjectObjectName", companyDropdown.text());
+						common.ui.grid($('#assessment-details-tabs-2 .k-grid')).dataSource.add(newSubject) ;
+						companyDropdown.refresh();
+						return false;
+					},
+					cancelChanges:function(e){
+						common.ui.grid( $($(e.target).data("target")) ).cancelChanges();
+						return false; 
+					},
+					addJobSelection:function(e){
+						var $this = this;										
+						var newJobSelection = new common.ui.data.competency.JobSelection();
+						$this.jobSelection.copy(newJobSelection);						
+						EMPTY_JOB_SELECTION.copy($this.jobSelection);								
+						newJobSelection.set("objectType", 70);
+						newJobSelection.set("objectId", $this.assessment.get("assessmentId"));												
+						if(newJobSelection.classifyType > 0 ){
+							newJobSelection.set("classifyTypeName", $this.classifyTypeDataSource.get(newJobSelection.classifyType).name);
+						}
+						if(newJobSelection.classifiedMajorityId > 0 ){
+							newJobSelection.set("classifiedMajorityName", $this.classifiedMajorityDataSource.get(newJobSelection.classifiedMajorityId).name);
+						}
+						if(newJobSelection.classifiedMiddleId > 0 ){
+							newJobSelection.set("classifiedMiddleName", $this.classifiedMiddleDataSource.get(newJobSelection.classifiedMiddleId).name);
+						}
+						if(newJobSelection.classifiedMinorityId > 0 ){
+							newJobSelection.set("classifiedMinorityName", $this.classifiedMinorityDataSource.get(newJobSelection.classifiedMinorityId).name);
+						}																								
+						common.ui.grid($('#assessment-details-tabs-1 .k-grid')).dataSource.add(newJobSelection) ;
+						return false;
+					},
+					saveOrUpdate : function(e){
+						var $this = this;						
+						var btn = $(e.target);	
+						this.assessment.get("multipleApplyAllowed", $this.multipleApplyAllowed );						
+						this.assessment.get("feedbackEnabled", $this.feedbackEnabled );
+						common.ui.progress(renderTo, true);
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/competency/assessment/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.assessment ),
+								contentType : "application/json",
+								success : function(response){																	
+									$this.setSource(new common.ui.data.competency.Assessment(response));	
+									getAssessmentGrid().dataSource.read();
+								},
+								complete : function(e){
+									common.ui.progress(renderTo, false);
+								}
+							}
+						);							
+						return false;
+					},					
+					classifyTypeDataSource: new kendo.data.DataSource({
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/group/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { objectType:1, objectId:getCompanySelector().value(), name:"JOB_CLASSIFY_SYSTEM" }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),
+					classifiedMajorityDataSource: new kendo.data.DataSource({
+						serverFiltering: true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),	
+					classifiedMiddleDataSource: new kendo.data.DataSource({
+						serverFiltering: true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),		
+					classifiedMinorityDataSource: new kendo.data.DataSource({
+						serverFiltering: true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						},
+						error:common.ui.handleAjaxError
+					}),						
+					jobSelectionDataSource : new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.competency.JobSelection
+                        }
+					}),
+					propertyDataSource :new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
+					subjectDataSource :new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.competency.AssessmentSubject
+                        }
+					}),
+					companyDataSource:getCompanySelector().dataSource,
+					setSource: function(source){
+						var $this = this;
+						source.copy($this.assessment);	
+						
+						$this.propertyDataSource.read();				
+						$this.propertyDataSource.data($this.assessment.properties);	
+						$this.jobSelectionDataSource.read();	
+						$this.jobSelectionDataSource.data($this.assessment.jobSelections);
+						$this.subjectDataSource.read();				
+						$this.subjectDataSource.data($this.assessment.subjects);	
+						
+						
+						EMPTY_JOB_SELECTION.copy($this.jobSelection);
+						
+						if($this.assessment.get("assessmentId") == 0)
+						{
+							$this.assessment.set("objectType", 1);
+							$this.assessment.set("objectId", getCompanySelector().value() );
+							$this.set("visible", false);
+							$this.set("editable", true);
+							$this.set("updatable", true);
+							$this.set("deletable", false);
+						}else{
+							$this.set("visible", true);
+							$this.set("editable", false);
+							$this.set("updatable", false);
+							$this.set("deletable", true);						
+						}						
+						if($this.assessment.multipleApplyAllowed){
+							$('#multiple-apply-allowed-switcher').switcher('on');
+						}else{
+							$('#multiple-apply-allowed-switcher').switcher('off');
+						}		
+										
+						if($this.assessment.feedbackEnabled){
+							$('#feedback-enabled-switcher').switcher('on');
+						}else{
+							$('#feedback-enabled-switcher').switcher('off');
+						}						
+						renderTo.find("ul.nav.nav-tabs a:first").tab('show');
+					}
+				});					
+				renderTo.data("model", observable);	
+				kendo.bind(renderTo, observable );	
+			}			
+			if( source ){
+				renderTo.data("model").setSource( source );	
+				if (!renderTo.is(":visible")) 
+					renderTo.show();		
+			}
 		}
 				
 		function createAssessmenPlanModal(source){
@@ -187,7 +438,7 @@
 									data : kendo.stringify($this.plan),
 									contentType : "application/json",
 									success : function(response){																											
-										//$this.setSource(new common.ui.data.competency.Competency(response));								
+										createAssessmentDetails(new common.ui.data.competency.Assessment(response));								
 										getAssessmentGrid().dataSource.read();
 									},
 									complete : function(e){
@@ -300,9 +551,370 @@
 						<div id="assessment-grid" class="no-shadow"></div>	
 	                </div><!-- /.col-md-4 -->   
                 	<div class="col-md-8">
-                		<div id="assessment-details" class="panel panel-default" style="display:none;">
-                		
-                		</div>
+                		<div id="assessment-details" class="panel animated fadeInRight" data-bind="attr: { data-editable: editable }" style="display:none; border-width:3px;" >
+							<div class="panel-body">
+								<div class="form-horizontal">			
+									<div class="row">
+										<div class="col-sm-12">
+											<div class="form-group no-margin-hr">	
+												<span  data-bind="{text: assessment.name, visible:visible}"></span>
+												<input type="text" class="form-control input-md" name="assessment-name" data-bind="{value: assessment.name, visible:editable }" placeholder="이름" />
+											</div>
+											<div class="form-group no-margin-hr">				
+												<span data-bind="{text: assessment.description, visible:visible}"></span>
+												<textarea class="form-control" rows="4"  name="assessment-description"  data-bind="{value: assessment.description, visible:editable}" placeholder="설명"></textarea>
+											</div>
+											<div class="no-margin-hr">											
+												<table class="table">							
+													<tbody>
+														<tr>
+															<td width="150" class="text-muted">진단척도</td>
+															<td>
+															<span data-bind="visible:visible, text:assessment.ratingScheme.name"></span>
+															<input id="rating-scheme-dorpdown-list"
+															data-option-label="선택"
+															data-role="dropdownlist"
+										                  	data-auto-bind="true"
+										                  	data-value-primitive="true"
+										                   	data-text-field="name"
+										                   	data-value-field="ratingSchemeId"
+										                   	data-bind="value:assessment.ratingScheme.ratingSchemeId, source: ratingSchemeDataSource, visible:editable,events:{change: onRatingSchemeChange}" />
+															</td>
+														</tr>
+														<tr>
+															<td class="text-muted">중복진단허용</td>
+															<td class="no-padding-b">
+																<div data-bind="enabled:editable">
+																	<input id="multiple-apply-allowed-switcher" type="checkbox" 
+																	data-class="switcher-primary switcher-lg" 
+																	data-bind="checked:multipleApplyAllowed"/>
+																</div>
+																<p data-bind="visible:visible" class="text-xs text-muted">
+																	<span data-bind="visible:multipleApplyAllowed">중복진단을 허용합니다.</span>
+																	<span data-bind="invisible:multipleApplyAllowed">중복진단을 허용하지 않습니다.</span>
+																</p>
+															</td>
+														</tr>
+														<tr>
+															<td class="text-muted">360도 피드벡</td>
+															<td class="no-padding-b">
+																<div data-bind="enabled:editable">
+																	<input id="feedback-enabled-switcher" type="checkbox" 
+																	data-class="switcher-primary switcher-lg" 
+																	data-bind="checked:feedbackEnabled"/>
+																</div>
+																<p data-bind="visible:visible" class="text-xs text-muted">
+																	<span data-bind="visible:feedbackEnabled">360도 피드백을 활성화 합니다.</span>
+																	<span data-bind="invisible:feedbackEnabled">360도 피드백을 비활성화 합니다.</span>
+																</p>
+															</td>
+														</tr>
+																												
+														<tr data-bind="visible:feedbackEnabled" style="display:none;">
+															<td class="text-muted">역량진단방법</td>
+															<td>
+															
+																<table class="table table-condensed">
+																	<thead>
+																		<tr>
+																			<th width="90">방향</th>
+																			<th>가중치</th>
+																			<th>최대인원</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>자신</td>
+																			<td>
+																			<input data-role="numerictextbox"
+															                   data-format="p0"
+															                   data-min="0.01"
+															                   data-max="1"
+															                   data-step="0.1"
+															                   data-bind="enabled:editable"
+															                   style="width: 180px">
+																			</td>
+																			<td><input data-role="numerictextbox" type="number" value="30" min="0" max="100" step="1" style="width: 180px" /></td>
+																		</tr>
+																		<tr>
+																			<td>동료</td>
+																			<td>
+																			<input data-role="numerictextbox"
+															                   data-format="p0"
+															                   data-min="0.01"
+															                   data-max="1"
+															                   data-step="0.1"
+															                   data-bind="enabled:editable"
+															                   style="width: 180px">	
+																			</td>
+																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1" style="width: 180px"/></td>
+																		</tr>
+																		<tr>
+																			<td>부하</td>
+																			<td>
+																			<input data-role="numerictextbox"
+															                   data-format="p0"
+															                   data-min="0.01"
+															                   data-max="1"
+															                   data-step="0.1"
+															                   data-bind="enabled:editable"
+															                   style="width: 180px">	
+																			</td>
+																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1" style="width: 180px"/></td>
+																		</tr>
+																		<tr>
+																			<td>상사</td>
+																			<td>
+																			<input data-role="numerictextbox"
+															                   data-format="p0"
+															                   data-min="0.01"
+															                   data-max="1"
+															                   data-step="0.1"
+															                   data-bind="enabled:editable"
+															                   style="width: 180px">
+																			</td>
+																			<td><input data-role="numerictextbox" type="number" value="1" min="0" max="100" step="1" style="width: 180px"/></td>
+																		</tr>
+																	</tbody>
+																</table>															
+															</td>
+														</tr>	
+														<tr>
+															<td>역량진단방법</td>
+															<td>
+															
+															<ul class="fieldlist">
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-1" class="k-checkbox" checked="checked">
+													          		<label class="k-checkbox-label" for="assessment-methods-1">인지능력테스트</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-2" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-2">직무지식테스트</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-3" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-3">PERSONALITY TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-4" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-4">BIOGRAPHICAL DATA</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-5" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-5">INTEGRITY TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-6" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-6">STRUCTURED INTERVIEWS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-7" class="k-checkbox" disabled="disabled">
+													          		<label class="k-checkbox-label" for="assessment-methods-7">PHYSICAL FITNESS TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-8" class="k-checkbox" disabled="disabled">
+													          		<label class="k-checkbox-label" for="assessment-methods-8">PHYSICAL ABILITY TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-9" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-9">SITUATIONAL JUDGMENT TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-10" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-10">WORK SAMPLE TESTS</label>
+													            </li>
+													            <li>
+													              	<input type="checkbox" id="assessment-methods-11" class="k-checkbox">
+													          		<label class="k-checkbox-label" for="assessment-methods-11">ASSESSMENT CENTERS</label>
+													            </li>
+													        </ul>
+															</td>
+														</tr>													
+													</tbody>
+												</table>            	
+											</div>
+										</div>
+									</div>			
+                    			</div>
+                    		</div>    
+                    		<div class="panel-body no-padding">
+											<ul id="assessment-details-tabs" class="nav nav-tabs">
+												<li class="m-l-sm">
+													<a href="#assessment-details-tabs-1" data-toggle="tab">직무</a>
+												</li>
+												<li class="">
+													<a href="#assessment-details-tabs-2" data-toggle="tab">대상자</a>
+												</li>
+												<li class="">
+													<a href="#assessment-details-tabs-3" data-toggle="tab">속성</a>
+												</li>												
+											</ul>
+											<div class="tab-content no-padding">
+												
+												<div class="tab-pane fade" id="assessment-details-tabs-1" style="min-height:300px;">
+													<table class="table table-striped" data-bind="visible:visible">
+														<thead>
+															<tr>
+																<th width="20%">분류체계</th>
+																<th width="20%">대분류</th>
+																<th width="20%">중분류</th>
+																<th width="20%">소분류</th>
+																<th width="20%">직무</th>
+															</tr>
+														</thead>
+														<tbody  class="no-border"
+																data-role="listview"
+												                data-template="job-selection-view-template"
+												                data-bind="source:jobSelectionDataSource"
+												                style="height: 300px; overflow: auto">
+												            
+												        </tbody>
+													</table>																											
+													<div class="panel no-border-hr no-border-radius no-margin-b" data-bind="visible:editable">
+														<div class="panel-body">
+															<div class="row">
+																<div class="col-sm-3">
+																	<input id="job-details-classify-type-dorpdown-list"
+																			data-option-label="분류체계"
+																			data-role="dropdownlist"
+														                  	data-auto-bind="true"
+														                   	data-text-field="name"
+														                   	data-value-field="codeSetId"
+														                   	data-bind="{value: jobSelection.classifyType, source: classifyTypeDataSource , visible:editable}"
+														                   	style="width:100%" />
+																</div>
+																<div class="col-sm-3">
+																	<input id="job-details-classified-majority-dorpdown-list"
+																	data-option-label="대분류"
+																	data-role="dropdownlist"
+												                  	data-auto-bind="false"
+												                  	data-cascade-from="job-details-classify-type-dorpdown-list"
+												                   	data-text-field="name"
+												                   	data-value-field="codeSetId"
+												                   	data-bind="{value: jobSelection.classifiedMajorityId, source: classifiedMajorityDataSource , visible:editable}" 
+												                   	style="width:100%"/>
+																</div>
+																<div class="col-sm-3">
+																	<input id="job-details-classified-middle-dorpdown-list" 
+																	data-option-label="중분류"
+																	data-role="dropdownlist"
+																	data-auto-bind="false"
+												                   	data-cascade-from="job-details-classified-majority-dorpdown-list"
+												                   	data-text-field="name"
+												                   	data-value-field="codeSetId"
+												                   	data-bind="{value: jobSelection.classifiedMiddleId, source: classifiedMiddleDataSource, visible:editable }" 
+												                   	style="width:100%"/>
+																</div>
+																<div class="col-sm-3">
+																	<input 
+																	data-role="dropdownlist"
+																	data-option-label="소분류"
+																	data-auto-bind="false"
+												                   	data-cascade-from="job-details-classified-middle-dorpdown-list"
+												                   	data-text-field="name"
+												                   	data-value-field="codeSetId"
+												                   	data-bind="{value: jobSelection.classifiedMinorityId, source: classifiedMinorityDataSource, visible:editable }" 
+												                   	style="width:100%"/>	
+																</div>																																																									
+															</div>
+														</div>
+														<div class="panel-footer">
+															<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addJobSelection"><span class="btn-label icon fa fa-plus"></span> 진단 직무 추가 </button>
+															<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="click:cancelChanges" 
+																data-target="#assessment-scheme-details-tabs-2 .k-grid"> 변경취소 </button>									
+														</div>
+													</div>												
+													<div data-role="grid"
+														class="no-border"
+													    data-scrollable="true"
+													    data-editable="true"
+													    data-columns="[{ 'field': 'classifyTypeName', 'title':'분류체계'},{ 'field': 'classifiedMajorityName', 'title':'대분류' },{ 'field': 'classifiedMiddleName', 'title':'중분류' },{ 'field': 'classifiedMinorityName', 'title':'소분류' },{ 'field': 'jobName', 'title':'직무' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-bind="source:jobSelectionDataSource, visible:editable"
+													    style="height: 300px"></div>
+													    												
+												</div> <!-- / .tab-pane -->
+												
+												
+												<div class="tab-pane fade" id="assessment-details-tabs-2" style="min-height:300px;">	
+													<table class="table table-striped" data-bind="visible:visible">
+														<thead>
+															<tr>
+																<th width="270">대상</th>
+															</tr>
+														</thead>
+														<tbody  class="no-border"
+																data-role="listview"
+												                data-template="subject-view-template"
+												                data-bind="source:subjectDataSource"
+												                style="height: 300px; overflow: auto">
+												            
+												        </tbody>
+													</table>
+													<div class="panel no-border-hr no-border-radius no-margin-b" data-bind="visible:editable">
+														<div class="panel-body">
+															<input id="job-details-company-list"
+																data-option-label="회사"
+																data-role="dropdownlist"
+																data-auto-bind="true"
+																data-text-field="displayName"
+																data-value-field="companyId"
+														    	data-bind="{source:companyDataSource, visible:editable}"
+																style="width:100%" />
+															
+														</div>
+														<div class="panel-footer">	
+															<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addSubject"><span class="btn-label icon fa fa-plus"></span> 진단대상 추가 </button>
+															<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="click:cancelChanges"
+																data-target="#assessment-details-tabs-2 .k-grid" > 변경취소 </button>	
+														</div>
+													</div>	
+													<div 
+														data-role="grid"
+														class="no-border"
+													    data-scrollable="true"
+													    data-editable="true"
+													    data-columns="[{ 'field': 'subjectObjectName', 'title':'이름'},{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-bind="source:subjectDataSource, visible:editable"
+													    style="height: 300px"></div>
+												
+												</div> <!-- / .tab-pane -->
+												
+												<div class="tab-pane fade active in" id="assessment-details-tabs-3" style="min-height:300px;">		
+													<table class="table table-striped" data-bind="visible:visible">
+														<thead>
+															<tr>
+																<th width="270">이름</th>
+																<th>값</th>
+															</tr>
+														</thead>
+														<tbody  class="no-border"
+																data-role="listview"
+												                data-template="property-view-template"
+												                data-bind="source:propertyDataSource"
+												                style="height: 300px; overflow: auto">
+												            
+												        </tbody>
+													</table>																											
+													<div data-role="grid"
+														class="no-border"
+													    data-scrollable="true"
+													    data-editable="true"
+													    data-toolbar="['create', 'cancel']"
+													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-bind="source:propertyDataSource, visible:editable"
+													    style="height: 300px"></div>
+												</div> <!-- / .tab-pane -->							
+											</div> <!-- / .tab-content -->
+											                    		
+                    		</div>
+                    		<div class="panel-footer">
+	 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
+									<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
+									<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
+									<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>	                   		
+                    		</div>
+                		</div><!-- /.panel -->  
                 	 </div><!-- /.col-md-8 -->                   	 
                  </div><!-- /.row -->   
 			</div> <!-- / #content-wrapper -->
