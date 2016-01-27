@@ -93,6 +93,7 @@
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	 
 	                    	createAssessmentDetails(selectedCell);
+	                    	e..preventDefault();
 	                    }   
 					},
 					dataBound: function(e) {
