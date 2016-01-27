@@ -595,7 +595,7 @@
 								</div>
 								
 								<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">상태</h6>
-								<span class="badge badge-success rounded" data-bind="text:assessment.state"></span>
+								<span class="badge badge-success rounded" data-bind="text:assessment.state, visible:visible"></span>
 								<div class="btn-group btn-sm" data-toggle="buttons" data-bind="visible:editable">
 								  <label class="btn btn-primary">
 								    <input type="radio" name="state" value="NONE" autocomplete="off" data-bind="checked: assessment.state">NONE
