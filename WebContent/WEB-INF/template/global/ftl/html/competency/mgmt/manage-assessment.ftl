@@ -987,7 +987,35 @@
 					</div>
 				</div>
 			</div>	
-		</div>														
+		</div>					
+
+
+		<script type="text/x-kendo-tmpl" id="subject-view-template">
+		<tr>
+			<td>#: subjectObjectName #</td>
+		</tr>	
+		</script>	
+		<script type="text/x-kendo-tmpl" id="job-selection-view-template">
+		<tr>
+			<td>#: classifyTypeName #</td>
+			<td>#if(classifiedMajorityName == null){# 전체 #}else{# #: classifiedMajorityName # #}#</td>
+			<td>#if(classifiedMiddleName == null){# 전체 #}else{# #: classifiedMiddleName # #}#</td>
+			<td>#if(classifiedMinorityName == null){# 전체 #}else{# #: classifiedMinorityName # #}#</td>
+			<td>#if(jobName == null){# 전체 #}else{# 전체 #: jobName # #}#</td>
+		</tr>	
+		</script>				
+		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
+		<tr>
+			<td>#: score #</td>
+			<td>#: title #</td>
+		</tr>		
+		</script>
+		<script type="text/x-kendo-tmpl" id="property-view-template">
+		<tr>
+			<td>#: name #</td>
+			<td>#: value #</td>
+		</tr>	
+		</script>											
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
