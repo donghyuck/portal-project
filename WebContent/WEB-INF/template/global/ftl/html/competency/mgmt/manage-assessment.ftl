@@ -375,7 +375,9 @@
 							$('#feedback-enabled-switcher').switcher('on');
 						}else{
 							$('#feedback-enabled-switcher').switcher('off');
-						}						
+						}				
+						
+						renderTo.find("[name=state][value=" + $this.assessment.state + "]").click();		
 						
 						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
 						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");		
