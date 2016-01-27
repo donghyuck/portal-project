@@ -360,7 +360,7 @@
 	    	target.set("objectId", this.get("objectId"));
 	    	target.set("name", this.get("name"));
 	    	target.set("description", this.get("description"));
-	    	target.set("scale", this.get("scale"));
+	    	target.set("ratingScheme", this.get("ratingScheme"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate"));	
 	    	target.set("multipleApplyAllowed", this.get("multipleApplyAllowed"));
