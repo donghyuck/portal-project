@@ -221,6 +221,7 @@
 					</div>
 					<div class="modal-body">
 						<div data-role="grid"
+							 class="hidden"
 			                 data-editable="false"
 			                 data-selectable="row"
 			                 data-columns='[
@@ -231,7 +232,7 @@
 			                 data-bind="source: jobDataSource"
 			                 style="height: 300px"></div>
 			                 
-						<table class="table">
+						<table class="table table-striped">
 		                    <thead>
 		                        <tr>
 		                            <th class="hidden-sm" width="40">&nbsp;</th>
@@ -246,11 +247,6 @@
 				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
 			                </tbody>		                    
 		                </table>
-                
-			                 
-
-
-
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:saveOrUpdate" >확인</button>		
@@ -268,11 +264,11 @@
 							
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
-		                        <tr>
-		                            <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
-		                            <td><input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">#: name #</label></td>
-		                            <td>#: description #</td>
-		                        </tr>			
+		<tr>
+		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
+		    <td><input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">#: name #</label></td>
+			<td>#: description #</td>
+		</tr>			
 		</script>
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
 		<li class="col-sm-6 col-md-4">
