@@ -233,13 +233,11 @@
 		                            <th>직무</th>
 		                        </tr>
 		                    </thead>
-		                    <tbody>
-								<div data-role="listview"
+		                    <tbody data-role="listview"
 									data-selectable="row"
 									data-auto-bind="false"	
 				                 	data-template="my-assessment-job-template"
-				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto">
-				                 	</div>
+				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
 			                </tbody>		                    
 		                </table>
                 
