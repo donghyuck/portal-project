@@ -175,8 +175,8 @@
 		<li class="col-sm-6 col-md-4">
         	<div class="team-img">
         		<ul class="text-right">
-                	<li><button class="btn btn-flat btn-primary btn-outline btn-sm" data-action="apply" data-object-id="#:assessementId#">참여하기</a></li>             
-                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline btn-sm">결과보기</a></li>                        
+                	<li><button class="btn btn-flat btn-primary btn-outline btn-sm" data-action="apply" data-object-id="#:assessmentId#">참여하기</a></li>             
+                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline btn-sm" data-object-id="#:assessmentId#">결과보기</a></li>                        
                 </ul>   	
        		</div>
             <h3>#:name#</h3>
