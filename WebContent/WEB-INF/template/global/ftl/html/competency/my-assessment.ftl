@@ -54,8 +54,6 @@
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
-								if( !currentUser.anonymous ){		 
-								}
 							} 
 						}						
 					},
@@ -67,6 +65,7 @@
 						
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
+				createMyAssessmentListView();
 				// END SCRIPT 				
 			}
 		}]);			
