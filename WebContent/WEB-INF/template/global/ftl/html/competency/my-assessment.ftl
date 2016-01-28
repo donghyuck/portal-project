@@ -218,7 +218,8 @@
 			                 data-editable="false"
 			                 data-selectable="row"
 			                 data-columns='[
-			                                 { "field": "name", "width": 270 , template: "<i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i> #:name#" },
+			                 				 { "title":"&nbsp;", template: "<i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i>" }, 	
+			                                 { "field": "name"},
 			                                 { "field": "description" },
 			                              ]'
 			                 data-bind="source: jobDataSource"
