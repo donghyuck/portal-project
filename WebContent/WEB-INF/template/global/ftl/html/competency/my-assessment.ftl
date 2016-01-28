@@ -219,7 +219,7 @@
 			                 data-bind="source: jobDataSource"
 			                 style="height: 300px"></div>
 			                 
-						<table class="table table-striped">
+						<table class="table">
 		                    <thead>
 		                        <tr>
 		                            <th>#</th>
@@ -228,12 +228,14 @@
 		                            <th>직무</th>
 		                        </tr>
 		                    </thead>
-							<tbody data-role="listview"
+		                    <tbody>
+							<div data-role="listview"
 								data-selectable="row"
 								data-auto-bind="false"	
 			                 	data-template="my-assessment-job-template"
 			                 	data-bind="source: jobDataSource"
-			                	style="height: 300px; overflow: auto"></tbody>		                    
+			                	style="height: 300px; overflow: auto"></div>
+			                </tbody>		                    
 		                </table>
                 
 			                 
