@@ -263,8 +263,8 @@
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		                        <tr>
 		                            <td>Mark</td>
-		                            <td class="hidden-sm">Otto</td>
-		                            <td><i class="icon-flat icon-svg icon-svg-md business-color-work"></i> #: name # </td>
+		                            <td class="hidden-sm"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
+		                            <td>#: name # </td>
 		                            <td><span class="label label-warning">Expiring</span></td>
 		                        </tr>			
 		</script>
