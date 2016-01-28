@@ -91,6 +91,7 @@
 			var renderTo = $("#apply-assessment-modal");	
 			if( !renderTo.data('bs.modal') ){				
 				var observable =  common.ui.observable({
+					secondStep : false,
 					assessment : new common.ui.data.competency.Assessment(),
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
@@ -111,14 +112,17 @@
 					setSource: function(source){
 						var $this = this;
 						var doRead = true;
+						
 						if( source.assessmentId == $this.assessment.assessmentId )
 						{
 							doRead = false;
 						}
 						source.copy($this.assessment);
+						
 						if( doRead )
 							$this.jobDataSource.read();
 						
+						$this.set("secondStep", false);
 						renderTo.find("form")[0].reset();
 					}
 				});		
@@ -126,6 +130,7 @@
 				kendo.bind(renderTo, observable );	
 				$(document).on("click","input[type=radio][data-action='select']", function(e){						
 					var radio = $(this) ;
+					set.('secondStep', true);
 					console.log( radio.val() );
 					
 				});	
@@ -232,7 +237,7 @@
 						<h3 class="modal-title"><span data-bind="text:assessment.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body">
+					<div class="modal-body" data-bind="invisible:secondSetp">
 						
 						<div data-role="grid"
 							 class="hidden"
