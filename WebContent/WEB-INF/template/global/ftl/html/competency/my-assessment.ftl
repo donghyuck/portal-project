@@ -163,7 +163,7 @@
 		
 		
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
-		<li class="col-sm-4">
+		<li class="col-sm-6 col-md-4">
         	<div class="team-img">
         		<ul class="text-right">
                 	<li><a href="\\#" class="btn btn-flat btn-primary btn-outline btn-sm">참여하기</a></li>             
