@@ -123,7 +123,6 @@
 							$this.jobDataSource.read();
 						
 						$this.set("secondStep", false);
-						
 						renderTo.find("form")[0].reset();
 					}
 				});		
@@ -131,7 +130,7 @@
 				kendo.bind(renderTo, observable );	
 				$(document).on("click","input[type=radio][data-action='select']", function(e){						
 					var radio = $(this) ;
-					set.('secondStep', true);
+					observable.set('secondStep', true);
 					console.log( radio.val() );
 					
 				});	
