@@ -109,6 +109,10 @@
 							model: common.ui.data.competency.Job
 						}
 					}),
+					goFirstStep:function(){
+						renderTo.find("form")[0].reset();
+						observable.set('secondStep', false);
+					},
 					setSource: function(source){
 						var $this = this;
 						var doRead = true;
@@ -269,11 +273,11 @@
 		                </table>
 		                </form>
 					</div>
-					<div class="modal-body" class="animated slideDown" data-bind="visible:secondStep">
-						직무를 선택하여 주세요.
+					<div class="modal-body" class="animated slideDown" data-bind="visible:secondStep">						
+						<h3 class="heading-sm">직급를 선택하여 주세요.</h3>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:saveOrUpdate" >확인</button>		
+						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>		
 						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
 					</div>
 				</div>
