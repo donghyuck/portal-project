@@ -209,7 +209,14 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-
+						<div data-role="grid"
+			                 data-editable="false"
+			                 data-columns="[
+			                                 { 'field': 'name', 'width': 270 },
+			                                 { 'field': 'description' },
+			                              ]"
+			                 data-bind="source: jobDataSource"
+			                 style="height: 200px"></div>
 						<div data-role="listview"
 						data-auto-bind="false"	
 		                 data-template="my-assessment-job-template"
