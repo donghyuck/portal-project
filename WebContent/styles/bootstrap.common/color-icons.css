@@ -176,6 +176,12 @@ i.icon-svg {
 }
 
 
+/* Business Color Icons 
+------------------------------------*/
+.icon-svg.business-color-true-false{
+	background-image: url("/images/common/icons/business/color/TrueFalse.svg");
+}
+
 /* SocialNetwork Color Icons 
 ------------------------------------*/
 .icon-svg.social-color-facebook{
