@@ -66,7 +66,7 @@
 		function createMyAssessmentListView(){
 			var renderTo = $('#my-assessment-listview');	
 			if( ! common.ui.exists(renderTo) ){
-				var dataSource = common.ui.datasource( '/data/me/competency/assessment/list.json?output=json',{
+				var dataSource = common.ui.datasource( '<@spring.url "/data/me/competency/assessment/list.json?output=json"/>',{
 					schema:{
 						model: common.ui.data.competency.Assessment
 					}
@@ -94,7 +94,7 @@
 					assessment : new common.ui.data.competency.Assessment(),
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
-							read: { url:'/data/me/competency/assessment/job/list.json?output=json', type:'post' },
+							read: { url:'<@spring.url "/data/me/competency/assessment/job/list.json?output=json'"/>, type:'post' },
 							parameterMap: function (options, operation){
 								if (operation !== "read") {
 									return kendo.stringify(options);
