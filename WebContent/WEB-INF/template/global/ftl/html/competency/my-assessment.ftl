@@ -219,12 +219,25 @@
 			                 data-bind="source: jobDataSource"
 			                 style="height: 300px"></div>
 			                 
-						<div data-role="listview"
-							data-selectable="row"
-							data-auto-bind="false"	
-		                 	data-template="my-assessment-job-template"
-		                 	data-bind="source: jobDataSource"
-		                	style="height: 300px; overflow: auto"></div>
+						<table class="table table-striped">
+		                    <thead>
+		                        <tr>
+		                            <th>#</th>
+		                            <th>First Name</th>
+		                            <th class="hidden-sm">Last Name</th>
+		                            <th>직무</th>
+		                        </tr>
+		                    </thead>
+							<tbody data-role="listview"
+								data-selectable="row"
+								data-auto-bind="false"	
+			                 	data-template="my-assessment-job-template"
+			                 	data-bind="source: jobDataSource"
+			                	style="height: 300px; overflow: auto"></tbody>		                    
+		                </table>
+                
+			                 
+
 
 
 					</div>
@@ -243,7 +256,13 @@
 							
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
-			<i class="icon-flat icon-svg icon-svg-md business-color-work"></i> #: name # <br/>
+		                        <tr>
+		                            <td>1</td>
+		                            <td>Mark</td>
+		                            <td class="hidden-sm">Otto</td>
+		                            <td><i class="icon-flat icon-svg icon-svg-md business-color-work"></i> #: name # </td>
+		                            <td><span class="label label-warning">Expiring</span></td>
+		                        </tr>			
 		</script>
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
 		<li class="col-sm-6 col-md-4">
