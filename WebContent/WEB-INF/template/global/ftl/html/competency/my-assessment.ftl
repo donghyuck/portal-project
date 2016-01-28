@@ -233,7 +233,7 @@
 							
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
-			#: name #
+			<i class="icon-flat icon-svg icon-svg-md business-color-work"></i> #: name # <br/>
 		</script>
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
 		<li class="col-sm-6 col-md-4">
