@@ -134,7 +134,7 @@
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
-		        <ul class="list-unstyled row portfolio-box no-border" id="my-assessment-listview">
+		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-listview">
 		        </ul>
 		    </div>
 			<!-- ./END MAIN CONTENT -->	
@@ -152,6 +152,20 @@
 		
 		
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
+		<li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+        	<div class="team-img">
+        		<i class="icon-svg business-color-true-false"></i>
+            	<img class="img-responsive" src="assets/img/team/img10-md.jpg" alt="">
+                    <ul>
+                        <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
+                    </ul>
+       		</div>
+            <h3>#:name#</h3>
+            <h4>/ Technical Director</h4>
+            <p>#:description#</p>
+        </li>		
 		<li class="col-sm-4">
 		    <a class="thumbnail fancybox" data-rel="gallery" title="#:name#" href="assets/img/main/img18.jpg">
 		    	<i class="icon-svg basic-color-reading"></i>
