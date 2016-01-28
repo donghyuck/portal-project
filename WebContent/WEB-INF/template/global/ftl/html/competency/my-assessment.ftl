@@ -234,7 +234,7 @@
 							
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
-		
+			#: name #
 		</script>
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
 		<li class="col-sm-6 col-md-4">
