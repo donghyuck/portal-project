@@ -266,7 +266,7 @@
 		                    </thead>
 		                    <tbody data-role="listview"
 		                    		class="no-border"
-									data-auto-bind="false"	
+									data-autoBind="false"	
 				                 	data-template="my-assessment-job-template"
 				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
 			                </tbody>		                    
