@@ -237,7 +237,7 @@
 						<h3 class="modal-title"><span data-bind="text:assessment.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body" data-bind="invisible:secondStep">
+					<div class="modal-body" class="animated slideDown" data-bind="invisible:secondStep">
 						
 						<div data-role="grid"
 							 class="hidden"
@@ -251,7 +251,7 @@
 			                 data-bind="source: jobDataSource"
 			                 style="height: 300px"></div>    
 			            <form>     
-			            <h3 class="heading-sm">직무와 직급를 선택하여 주세요.</h3>
+			            <h3 class="heading-sm">직무를 선택하여 주세요.</h3>
 						<table class="table table-striped">
 		                    <thead>
 		                        <tr>
@@ -268,6 +268,9 @@
 			                </tbody>		                    
 		                </table>
 		                </form>
+					</div>
+					<div class="modal-body" class="animated slideDown" data-bind="visible:secondStep">
+						직무를 선택하여 주세요.
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:saveOrUpdate" >확인</button>		
