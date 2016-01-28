@@ -154,7 +154,9 @@
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
 		<li class="col-sm-4">
         	<div class="team-img">
-        		<i class="icon-svg business-color-true-false"></i>            	
+        		<ul class="text-right">
+                	<li><a href="#" class="btn btn-flat btn-info btn-outline btn-rounded btn-sm">진단참여하기</a></li>                        
+                </ul>   	
        		</div>
             <h3>#:name#</h3>
             <h4>#: formattedStartDate() # ~ #: formattedEndDate() #</h4>
