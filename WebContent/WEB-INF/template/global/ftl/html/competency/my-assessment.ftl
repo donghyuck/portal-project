@@ -159,6 +159,11 @@
 		.team-v1 li>.team-img ul{
 			text-align:right;
 		} 
+		
+		.k-listview tr > td{
+			vertical-align: middle;
+		}
+		
 		</style>   	
 		</#compress>
 	</head>
