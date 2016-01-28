@@ -91,8 +91,28 @@
 			var renderTo = $("#apply-assessment-modal");	
 			if( !renderTo.data('bs.modal') ){				
 				var observable =  common.ui.observable({
+					assessment : new common.ui.data.competency.Assessment(),
+					jobDataSource : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'/secure/data/mgmt/competency/job/list.json?output=json', type:'post' },
+							parameterMap: function (options, operation){
+								if (operation !== "read") {
+									return kendo.stringify(options);
+								} 
+								return {
+									assessmentId: observable.assessment.assessmentId
+								};
+							}
+						},						
+						batch: false
+						schema: {
+							model: common.ui.data.competency.Job
+						}
+					}),
 					setSource: function(source){
 						var $this = this;
+						source.copy($this.assessment);
+						$this.jobDataSource.read();
 					}
 				});		
 				renderTo.data("model", observable);	
@@ -190,7 +210,13 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-						ss
+
+						<div data-role="listview"
+		                 data-template="my-assessment-job-template"
+		                 data-bind="source: jobDataSource"
+		                	 style="height: 300px; overflow: auto"></div>
+
+
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate" >확인</button>		
@@ -206,8 +232,9 @@
 		
 							
 		<!-- START TEMPLATE -->									
+		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		
-		
+		</script>
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
 		<li class="col-sm-6 col-md-4">
         	<div class="team-img">
