@@ -123,6 +123,7 @@
 							$this.jobDataSource.read();
 						
 						$this.set("secondStep", false);
+						
 						renderTo.find("form")[0].reset();
 					}
 				});		
