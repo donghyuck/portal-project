@@ -219,8 +219,8 @@
 
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate" >확인</button>		
-						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
+						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:saveOrUpdate" >확인</button>		
+						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
 					</div>
 				</div>
 			</div>	
@@ -239,8 +239,8 @@
 		<li class="col-sm-6 col-md-4">
         	<div class="team-img">
         		<ul class="text-right">
-                	<li><button class="btn btn-flat btn-primary btn-outline btn-sm" data-action="apply" data-object-id="#:assessmentId#">참여하기</a></li>             
-                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline btn-sm" data-object-id="#:assessmentId#">결과보기</a></li>                        
+                	<li><button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentId#">참여하기</a></li>             
+                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline  rounded" data-object-id="#:assessmentId#">결과보기</a></li>                        
                 </ul>   	
        		</div>
             <h3>#:name#</h3>
