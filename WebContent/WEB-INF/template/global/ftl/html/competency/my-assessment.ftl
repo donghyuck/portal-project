@@ -241,7 +241,7 @@
 						<h3 class="modal-title"><span data-bind="text:assessment.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body animated slideInDown" data-bind="invisible:secondStep">
+					<div class="modal-body" data-bind="invisible:secondStep">
 						
 						<div data-role="grid"
 							 class="hidden"
@@ -273,7 +273,7 @@
 		                </table>
 		                </form>
 					</div>
-					<div class="modal-body animated slideInDown" data-bind="visible:secondStep">						
+					<div class="modal-body" data-bind="visible:secondStep">						
 						<h3 class="heading-sm">직급를 선택하여 주세요.</h3>
 					</div>
 					<div class="modal-footer">
