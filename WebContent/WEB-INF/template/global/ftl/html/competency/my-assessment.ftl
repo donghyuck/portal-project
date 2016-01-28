@@ -88,7 +88,7 @@
 					var objectId = btn.data('object-id');
 					var item = dataSource.get(objectId);
 					console.log( common.ui.stringify(item) );
-					
+					createApplyAssessmentModal(item);
 					
 				});
 			}
