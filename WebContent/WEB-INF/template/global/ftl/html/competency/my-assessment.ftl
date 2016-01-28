@@ -110,8 +110,15 @@
 					}),
 					setSource: function(source){
 						var $this = this;
+						var doRead = true;
+						if( source.assessmentId == $this.assessment.assessmentId )
+						{
+							doRead = false;
+						}
 						source.copy($this.assessment);
-						$this.jobDataSource.read();
+						if( doRead )
+							$this.jobDataSource.read();
+						
 						renderTo.find("form")[0].reset();
 					}
 				});		
