@@ -126,6 +126,11 @@
 		}		
 		
 		
+		
+		#apply-assessment-modal .modal-content{
+		    border-radius: 6px !important;
+		}
+		
 		.team-v1 li:hover>.team-img:after {
 			background: #fff;
 		}
@@ -185,7 +190,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
-						
+						ss
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate" >확인</button>		
