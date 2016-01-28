@@ -94,7 +94,7 @@
 					assessment : new common.ui.data.competency.Assessment(),
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
-							read: { url:'/secure/data/mgmt/competency/job/list.json?output=json', type:'post' },
+							read: { url:'/data/me/competency/assessment/job/list.json?output=json', type:'post' },
 							parameterMap: function (options, operation){
 								if (operation !== "read") {
 									return kendo.stringify(options);
