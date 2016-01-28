@@ -266,8 +266,9 @@
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
-		    <td><input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">
-		    	<h6 class="text-light-gray text-xxs" style="margin: 5px 0 5px 0;">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > #:classification.classifiedMinorityName# </h6>
+		    <td>
+		    	<h6 class="text-success hidden-xs text-xxs" style="margin: 5px 0 5px 0;">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > #:classification.classifiedMinorityName# </h6>
+		    	<input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">
 		    	#: name #
 		    </label></td>
 			<td>#: description #</td>
