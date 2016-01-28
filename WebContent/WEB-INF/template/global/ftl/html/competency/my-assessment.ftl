@@ -157,7 +157,7 @@
         		<i class="icon-svg business-color-true-false"></i>            	
        		</div>
             <h3>#:name#</h3>
-            <h4>/ Technical Director</h4>
+            <h4>#: formattedStartDate() # ~ #: formattedEndDate() #</h4>
             <p>#:description#</p>
         </li>	
 	    </script>
