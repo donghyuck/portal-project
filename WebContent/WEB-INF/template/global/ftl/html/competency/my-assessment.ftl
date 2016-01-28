@@ -264,7 +264,7 @@
 		                    </thead>
 		                    <tbody data-role="listview"
 		                    		class="no-border"
-									data-autoBind="false"	
+									data-auto-bind="true"	
 				                 	data-template="my-assessment-job-template"
 				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
 			                </tbody>		                    
@@ -307,7 +307,13 @@
 											<td>
 												<span data-bind="{text: job.name}" ></span>
 											</td>
-										</tr>																														
+										</tr>	
+										<tr>
+											<td>직무정의</td>
+											<td>
+												<span data-bind="{text: job.description}" ></span>
+											</td>
+										</tr>																																								
 									</tbody>
 								</table>	
 														
