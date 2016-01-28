@@ -267,7 +267,10 @@
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
 		    <td><input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">#: name #</label></td>
-			<td>#: description #</td>
+			<td>
+			<h4 class="text=muted">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > #:classification.classifiedMinorityName# </h4>
+			
+			#: description #</td>
 		</tr>			
 		</script>
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
