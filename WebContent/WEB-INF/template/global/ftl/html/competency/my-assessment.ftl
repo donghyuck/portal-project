@@ -259,13 +259,14 @@
 		<!-- END MODAL -->	
 		
 		
+              
 							
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		                        <tr>
 		                            <td>Mark</td>
 		                            <td class="hidden-sm"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
-		                            <td>#: name # </td>
+		                            <td><input type="radio" name="#:uid#" class="k-radio" checked="checked"><label class="k-radio-label" for="#=uid#">#: name #</label></td>
 		                            <td><span class="label label-warning">Expiring</span></td>
 		                        </tr>			
 		</script>
