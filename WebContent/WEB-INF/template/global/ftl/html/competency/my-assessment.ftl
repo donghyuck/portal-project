@@ -152,7 +152,7 @@
 		
 		
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
-		<li class="col-sm-3 col-xs-6 md-margin-bottom-30">
+		<li class="col-sm-4">
         	<div class="team-img">
         		<i class="icon-svg business-color-true-false"></i>
             	<img class="img-responsive" src="assets/img/team/img10-md.jpg" alt="">
@@ -167,12 +167,12 @@
             <p>#:description#</p>
         </li>		
 		<li class="col-sm-4">
-		    <a class="thumbnail fancybox" data-rel="gallery" title="#:name#" href="assets/img/main/img18.jpg">
+		    <a class="thumbnail fancybox" title="#:name#" href="assets/img/main/img18.jpg">
 		    	<i class="icon-svg basic-color-reading"></i>
 		        <span class="portfolio-box-in"><i class="rounded-x icon-magnifier-add"></i></span>
 		    </a>
 		    <div class="headline-left margin-bottom-10"><h3 class="headline-brd">#:name#</h3></div>
-		    <small class="project-tag"><i class="fa fa-tag"></i><a href="\\#">Technology</a>, <a href="\\#">Business</a></small>
+		    <small class="project-tag"><i class="fa fa-tag"></i><a href="#">Technology</a>, <a href="\\#">Business</a></small>
 			<p>#: description #</p>
 			<ul class="list-inline news-v1-info">
                 <li><i class="fa fa-clock-o"></i> #= formattedStartDate() #</li>
