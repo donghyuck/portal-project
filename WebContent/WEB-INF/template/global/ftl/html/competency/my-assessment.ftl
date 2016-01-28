@@ -123,7 +123,12 @@
 					}
 				});		
 				renderTo.data("model", observable);	
-				kendo.bind(renderTo, observable );		
+				kendo.bind(renderTo, observable );	
+				$(document).on("click","input[type=radio][data-action='select']", function(e){						
+					var radio = $(this) ;
+					console.log( radio.val() );
+					
+				});	
 			}
 			if( source ){
 				renderTo.data("model").setSource( source );		
@@ -279,7 +284,7 @@
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
 		    <td>
 		    	<h6 class="text-light-gray hidden-xs text-xxs" style="margin: 5px 0 5px 0;">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > #:classification.classifiedMinorityName# </h6>
-		    	<input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">
+		    	<input type="radio" data-action="select" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">
 		    	#: name #
 		    </label></td>
 			<td>#: description #</td>
