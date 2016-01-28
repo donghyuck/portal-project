@@ -134,7 +134,7 @@
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
-		        <ul class="list-unstyled row portfolio-box" id="my-assessment-listview">
+		        <ul class="list-unstyled row portfolio-box no-border" id="my-assessment-listview">
 		        </ul>
 		    </div>
 			<!-- ./END MAIN CONTENT -->	
