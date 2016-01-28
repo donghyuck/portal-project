@@ -158,14 +158,28 @@
        		</div>
             <h3>#:name#</h3>
             <h4>#: formattedStartDate() # ~ #: formattedEndDate() #</h4>
-            <p>#:description#</p>
-            
-             <ul class="list-unstyled">
-	            # for (var i = 0; i < jobSelections.length ; i++) { #	
-	            # var jb = jobSelections[i] ; #			
-            	<li><i class="fa fa-check color-green"></i> #: jb.classifiedMajorityName # > #: jb.classifiedMiddleName # > #: jb.classifiedMinorityName # </li>	            
-            	# } #
-            </ul>
+            <p>#:description#</p>            
+            <table class="table">
+            	<thead>
+                	<tr>
+                    	<th>대분류</th>
+                        <th>중분류</th>
+                        <th>소분류</th>
+                        <th>직무</th>
+                    </tr>
+                </thead>
+                <tbody>
+ 				# for (var i = 0; i < jobSelections.length ; i++) { #	
+	            # var jb = jobSelections[i] ; #	
+	                <tr>
+                    	<td>#if(jb.classifiedMajorityId > 0){# #:jb.classifiedMajorityName# #}#</td>
+                    	<td>#if(jb.classifiedMiddleId > 0){# #:jb.classifiedMiddleName# #}#</td>
+                    	<td>#if(jb.classifiedMiddleId > 0){# #:jb.classifiedMiddleName# #}#</td>
+                    	<td>#if(jb.jobId > 0){# #:jb.jobName# #}#</td>
+                   	</tr>
+                # } #                
+             	</tbody>
+             </table>
         </li>	
 	    </script>
 	    
