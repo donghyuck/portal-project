@@ -264,7 +264,6 @@
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		                        <tr>
-		                            <td>1</td>
 		                            <td>Mark</td>
 		                            <td class="hidden-sm">Otto</td>
 		                            <td><i class="icon-flat icon-svg icon-svg-md business-color-work"></i> #: name # </td>
