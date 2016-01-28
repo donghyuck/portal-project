@@ -217,10 +217,10 @@
 						<div data-role="grid"
 			                 data-editable="false"
 			                 data-selectable="row"
-			                 data-columns="[
-			                                 { 'field': 'name', 'width': 270 , template: '<td><i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i> #:name#' },
-			                                 { 'field': 'description' },
-			                              ]"
+			                 data-columns='[
+			                                 { "field": "name", "width": 270 , template: "<td><i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i> #:name#" },
+			                                 { "field": "description" },
+			                              ]'
 			                 data-bind="source: jobDataSource"
 			                 style="height: 300px"></div>
 			                 
