@@ -178,7 +178,7 @@
 		<!-- START MODAL -->		
 		
 	<div id="apply-assessment-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-			<div class="modal-dialog modal-md">
+			<div class="modal-dialog modal-md modal-flat">
 				<div class="modal-content">	
 					<div class="modal-header">
 						<h3 class="modal-title">역량진단계획</h2>
