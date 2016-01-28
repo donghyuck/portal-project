@@ -123,7 +123,7 @@
 						}
 						source.copy($this.assessment);
 						
-						if( doRead )
+						if( doRead & $this.assessment.assessmentId > 0 )
 							$this.jobDataSource.read();
 						
 						$this.set("secondStep", false);
