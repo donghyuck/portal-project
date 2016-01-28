@@ -119,10 +119,8 @@
 					<button class="btn-link hvr-pulse-shrink"><i class="icon-flat icon-flat help"></i></button>
 				</div>
 			</div>				
-			<!-- ./END HEADER -->
+			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
-
-
 			<!-- ./END MAIN CONTENT -->	
 	 		
 	 		<!-- START FOOTER -->
@@ -132,7 +130,6 @@
 
 
 		<!-- START COMMENT SLIDE -->		
-		
 		<!-- END COMMENT SLIDE -->	
 							
 		<!-- START TEMPLATE -->									
