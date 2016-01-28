@@ -265,7 +265,7 @@
 		                        <tr>
 		                            <td>Mark</td>
 		                            <td class="hidden-sm"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
-		                            <td><input type="radio" name="input-select-job" class="k-radio"><label class="k-radio-label" for="input-select-job">#: name #</label></td>
+		                            <td><input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">#: name #</label></td>
 		                            <td><span class="label label-warning">Expiring</span></td>
 		                        </tr>			
 		</script>
