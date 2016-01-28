@@ -112,7 +112,7 @@
 						var $this = this;
 						source.copy($this.assessment);
 						$this.jobDataSource.read();
-						render.find("form").reset();
+						render.find("form")[0].reset();
 					}
 				});		
 				renderTo.data("model", observable);	
