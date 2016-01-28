@@ -154,31 +154,12 @@
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
 		<li class="col-sm-4">
         	<div class="team-img">
-        		<i class="icon-svg business-color-true-false"></i>
-            	<img class="img-responsive" src="assets/img/team/img10-md.jpg" alt="">
-                    <ul>
-                        <li><a href="\\#"><i class="icon-custom icon-sm rounded-x fa fa-twitter"></i></a></li>
-                        <li><a href="\\#"><i class="icon-custom icon-sm rounded-x fa fa-facebook"></i></a></li>
-                        <li><a href="\\#"><i class="icon-custom icon-sm rounded-x fa fa-google-plus"></i></a></li>
-                    </ul>
+        		<i class="icon-svg business-color-true-false"></i>            	
        		</div>
             <h3>#:name#</h3>
             <h4>/ Technical Director</h4>
             <p>#:description#</p>
-        </li>		
-		<li class="col-sm-4">
-		    <a class="thumbnail fancybox" title="#:name#" href="assets/img/main/img18.jpg">
-		    	<i class="icon-svg basic-color-reading"></i>
-		        <span class="portfolio-box-in"><i class="rounded-x icon-magnifier-add"></i></span>
-		    </a>
-		    <div class="headline-left margin-bottom-10"><h3 class="headline-brd">#:name#</h3></div>
-		    <small class="project-tag"><i class="fa fa-tag"></i><a href="#">Technology</a>, <a href="\\#">Business</a></small>
-			<p>#: description #</p>
-			<ul class="list-inline news-v1-info">
-                <li><i class="fa fa-clock-o"></i> #= formattedStartDate() #</li>
-                <li><i class="fa fa-clock-o"></i> #= formattedEndDate() #</li>                
-           	</ul>
-		</li>
+        </li>	
 	    </script>
 	    
 		<#include "/html/common/common-homepage-templates.ftl" >		
