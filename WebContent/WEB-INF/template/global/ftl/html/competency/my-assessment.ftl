@@ -108,7 +108,10 @@
 		
 		
 		.team-v1 li:hover>.team-img:after {
-			background: rgba(0, 0, 0, 0.9);
+			background: rgba(0, 0, 0, 0.1);
+		}
+		.team-v1 li>.team-img {
+		    min-height: 50px;
 		}
 		 
 		</style>   	
