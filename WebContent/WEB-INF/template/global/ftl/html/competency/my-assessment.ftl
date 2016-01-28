@@ -82,6 +82,15 @@
               	  	dataSource: dataSource,
                 	template: kendo.template($("#my-assessment-listview-template").html())
         	    });
+        	    
+        	    $(document).on("click","[data-action='apply']", function(e){						
+					var btn = $(this) ;
+					var objectId = btn.data('object-id');
+					var item = dataSource.get(objectId);
+					console.log( common.ui.stringify(item) );
+					
+					
+				});
 			}
 		}
 
@@ -166,7 +175,7 @@
 		<li class="col-sm-6 col-md-4">
         	<div class="team-img">
         		<ul class="text-right">
-                	<li><a href="\\#" class="btn btn-flat btn-primary btn-outline btn-sm">참여하기</a></li>             
+                	<li><button class="btn btn-flat btn-primary btn-outline btn-sm" data-action="apply" data-object-id="#:assessementId#">참여하기</a></li>             
                 	<li><a href="\\#" class="btn btn-flat btn-success btn-outline btn-sm">결과보기</a></li>                        
                 </ul>   	
        		</div>
