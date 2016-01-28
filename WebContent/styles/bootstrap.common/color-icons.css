@@ -201,7 +201,10 @@ i.icon-svg {
 	background-image: url("/images/common/icons/social/color/Twitter.svg");
 }
 
-
-
+/* File Color Icons 
+------------------------------------*/
+.icon-svg.file-color-excel{
+	background-image: url("/images/common/icons/file/color/Excel.svg");
+}
 
 
