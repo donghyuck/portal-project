@@ -71,7 +71,20 @@
 			}
 		}]);			
 
-
+		function createMyAssessmentListView(){
+			var renderTo = $('#my-assessment-listview');	
+			if( ! common.ui.exists(renderTo) ){
+				var dateSource = common.ui.datasource( '/data/me/competency/assessment/list.json?output=json',{
+					schema:{
+						model: common.ui.data.competency.Assessment
+					}
+				});
+				common.ui.listview(renderTo,{
+              	  	dataSource: dataSource,
+                	template: kendo.template($("#my-assessment-listview-template").html())
+        	    });
+			}
+		}
 
 		-->
 		</script>		
@@ -121,6 +134,11 @@
 			</div>				
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
+			<div class="container content">		
+				<div class="row">
+					<div id="my-assessment-listview" ></div>
+				</div>
+			</div>	
 			<!-- ./END MAIN CONTENT -->	
 	 		
 	 		<!-- START FOOTER -->
@@ -133,6 +151,14 @@
 		<!-- END COMMENT SLIDE -->	
 							
 		<!-- START TEMPLATE -->									
+		
+		
+		<script type="text/x-kendo-template" id="my-assessment-listview-template">
+	        <div class="product">
+	            <h3>#:name#</h3>
+	        </div>
+	    </script>
+	    
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<#include "/html/common/common-personalized-templates.ftl" >
 		<#include "/html/common/common-editor-templates.ftl" >	
