@@ -212,7 +212,7 @@
 						<div data-role="grid"
 			                 data-editable="false"
 			                 data-columns="[
-			                                 { 'field': 'name', 'width': 270 },
+			                                 { 'field': 'name', 'width': 270 , template: '#:name#' },
 			                                 { 'field': 'description' },
 			                              ]"
 			                 data-bind="source: jobDataSource"
