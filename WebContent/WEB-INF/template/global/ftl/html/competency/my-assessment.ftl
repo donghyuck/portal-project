@@ -153,8 +153,8 @@
 		
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
 		<li class="col-sm-4">
-		    <a class="thumbnail fancybox" data-rel="gallery" title="Project Three" href="assets/img/main/img18.jpg">
-		    	<img class="full-width img-responsive" src="assets/img/main/img18.jpg" alt="">
+		    <a class="thumbnail fancybox" data-rel="gallery" title="#:name#" href="assets/img/main/img18.jpg">
+		    	<i class="icon-svg basic-color-reading"></i>
 		        <span class="portfolio-box-in"><i class="rounded-x icon-magnifier-add"></i></span>
 		    </a>
 		    <div class="headline-left margin-bottom-10"><h3 class="headline-brd">#:name#</h3></div>
