@@ -231,7 +231,7 @@
 			                              ]'
 			                 data-bind="source: jobDataSource"
 			                 style="height: 300px"></div>    
-			            <h2 class="heading-md">직무와 직급를 선택하여 주세요.</h2>
+			            <h3 class="heading-sm">직무와 직급를 선택하여 주세요.</h3>
 						<table class="table table-striped">
 		                    <thead>
 		                        <tr>
