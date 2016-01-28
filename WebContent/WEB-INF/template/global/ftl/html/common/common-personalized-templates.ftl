@@ -4,9 +4,11 @@
 <script type="text/x-kendo-tmpl" id="attachment-list-view-template">
 <div class="file-wrapper">
 	#if (contentType.match("^image") ) {#
-	<img src="<@spring.url '/download/file/#= attachmentId #/#= name #?thumbnail=true'/>" alt="#:name# 이미지" />		
+	<img src="<@spring.url '/download/file/#= attachmentId #/#= name #?thumbnail=true'/>" alt="#:name#" />		
 	# } else  if (contentType.match("pdf$") ) {#
-	<img src="<@spring.url '/download/file/#= attachmentId #/#= name #?thumbnail=true'/>" alt="#:name# PDF" />		
+	<img src="<@spring.url '/download/file/#= attachmentId #/#= name #?thumbnail=true'/>" alt="#:name#" />
+	# } else  if (contentType.match("spreadsheetml.sheet$") ) {#
+	<img src="<@spring.url '/images/common/icons/logos/color/Excel.svg'/>" alt="#:name#" />
 	# } else { #		
 	<img src="<@spring.url '/images/common/icons/file/blank.png'/>"></a>
 	# } #	
