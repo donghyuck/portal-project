@@ -205,7 +205,7 @@
 			<div class="modal-dialog modal-md modal-flat">
 				<div class="modal-content">	
 					<div class="modal-header">
-						<h3 class="modal-title">#: assessment.name #</h2>
+						<h3 class="modal-title"><span data-bind="text:assessment.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
