@@ -113,7 +113,9 @@
 		.team-v1 li>.team-img {
 		    min-height: 10px;
 		}
-		 
+		.team-v1 li>.team-img ul{
+			text-align:right;
+		} 
 		</style>   	
 		</#compress>
 	</head>
