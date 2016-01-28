@@ -301,7 +301,13 @@
 											<td>
 												<span data-bind="{text: job.classification.classifiedMinorityName}" ></span>
 											</td>
-										</tr>																				
+										</tr>	
+										<tr>
+											<td>직무</td>
+											<td>
+												<span data-bind="{text: job.name}" ></span>
+											</td>
+										</tr>																														
 									</tbody>
 								</table>	
 														
