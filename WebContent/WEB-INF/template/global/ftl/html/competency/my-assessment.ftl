@@ -160,7 +160,7 @@
 			text-align:right;
 		} 
 		
-		.k-listview tr > td{
+		.modal-body .k-listview td{
 			vertical-align: middle;
 		}
 		
