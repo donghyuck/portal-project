@@ -268,7 +268,7 @@
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
 		    <td><input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">#: name #</label></td>
 			<td>
-			<h4 class="text=muted">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > #:classification.classifiedMinorityName# </h4>
+			<h6 class="text-light-gray text-semibold text-xs" style="margin: 15px 0 5px 0;">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > #:classification.classifiedMinorityName# </h6>
 			
 			#: description #</td>
 		</tr>			
