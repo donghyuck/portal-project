@@ -93,6 +93,23 @@
 				});
 			}
 		}
+		
+		function createApplyAssessmentModal(source){
+			var renderTo = $("#apply-assessment-modal");	
+			if( !renderTo.data('bs.modal') ){				
+				var observable =  common.ui.observable({
+					setSource: function(source){
+						var $this = this;
+					}
+				});		
+				renderTo.data("model", observable);	
+				kendo.bind(renderTo, observable );		
+			}
+			if( source ){
+				renderTo.data("model").setSource( source );		
+			}
+			renderTo.modal('show');
+		}
 
 		-->
 		</script>		
@@ -165,8 +182,30 @@
 		</div>				
 
 
-		<!-- START COMMENT SLIDE -->		
-		<!-- END COMMENT SLIDE -->	
+		<!-- START MODAL -->		
+		
+	<div id="apply-assessment-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content">	
+					<div class="modal-header">
+						<h3 class="modal-title">역량진단계획</h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>
+					<div class="modal-body">
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate" >확인</button>		
+						<button type="button" class="btn btn-default btn-flat btn-outline" data-dismiss="modal">닫기</button>			
+					</div>
+				</div>
+			</div>	
+		</div>					
+
+		
+		<!-- END MODAL -->	
+		
+		
 							
 		<!-- START TEMPLATE -->									
 		
