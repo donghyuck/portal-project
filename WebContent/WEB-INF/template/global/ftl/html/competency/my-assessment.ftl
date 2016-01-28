@@ -112,6 +112,7 @@
 						var $this = this;
 						source.copy($this.assessment);
 						$this.jobDataSource.read();
+						render.find("form").reset();
 					}
 				});		
 				renderTo.data("model", observable);	
@@ -220,6 +221,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body">
+						
 						<div data-role="grid"
 							 class="hidden"
 			                 data-editable="false"
@@ -231,6 +233,7 @@
 			                              ]'
 			                 data-bind="source: jobDataSource"
 			                 style="height: 300px"></div>    
+			            <form>     
 			            <h3 class="heading-sm">직무와 직급를 선택하여 주세요.</h3>
 						<table class="table table-striped">
 		                    <thead>
@@ -247,6 +250,7 @@
 				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
 			                </tbody>		                    
 		                </table>
+		                </form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:saveOrUpdate" >확인</button>		
