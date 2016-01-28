@@ -1646,6 +1646,10 @@ article>h3.title:after {
 	text-transform: uppercase;
 }
 
+.text-xxs {
+	font-size : 0.8em;
+}
+
 .text-sm {
 	font-size : 1.1em;
 }
