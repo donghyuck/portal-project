@@ -103,8 +103,7 @@
 									assessmentId: observable.assessment.assessmentId
 								};
 							}
-						},						
-						batch: false
+						},			
 						schema: {
 							model: common.ui.data.competency.Job
 						}
