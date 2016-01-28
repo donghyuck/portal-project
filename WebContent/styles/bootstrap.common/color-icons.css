@@ -182,6 +182,10 @@ i.icon-svg {
 	background-image: url("/images/common/icons/business/color/TrueFalse.svg");
 }
 
+.icon-svg.business-color-work{
+	background-image: url("/images/common/icons/business/color/Work.svg");
+}
+
 /* SocialNetwork Color Icons 
 ------------------------------------*/
 .icon-svg.social-color-facebook{
