@@ -169,6 +169,7 @@
 		    margin-bottom: 0;
 		    line-height: 1.3em;
 		}
+		
 		</style>   	
 		</#compress>
 	</head>
@@ -233,10 +234,9 @@
 						<table class="table">
 		                    <thead>
 		                        <tr>
-		                            <th>#</th>
-		                            <th>First Name</th>
-		                            <th class="hidden-sm">Last Name</th>
+		                            <th>&nbsp;</th>
 		                            <th>직무</th>
+		                            <th>직무정의</th>
 		                        </tr>
 		                    </thead>
 		                    <tbody data-role="listview"
@@ -268,10 +268,9 @@
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		                        <tr>
-		                            <td>Mark</td>
 		                            <td class="hidden-sm"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
 		                            <td><input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">#: name #</label></td>
-		                            <td><span class="label label-warning">Expiring</span></td>
+		                            <td>#: description #</td>
 		                        </tr>			
 		</script>
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
