@@ -218,9 +218,9 @@
 			                 data-editable="false"
 			                 data-selectable="row"
 			                 data-columns='[
-			                 				 { "title":"&nbsp;", template: "<i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i>" }, 	
-			                                 { "field": "name"},
-			                                 { "field": "description" },
+			                 				 { "title":"&nbsp;", "width":"40px", template: "<i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i>" }, 	
+			                                 { "title":"직무", "field": "name"},
+			                                 { "title":"정의", "field": "description" },
 			                              ]'
 			                 data-bind="source: jobDataSource"
 			                 style="height: 300px"></div>
