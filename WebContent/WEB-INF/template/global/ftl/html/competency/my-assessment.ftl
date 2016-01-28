@@ -133,11 +133,10 @@
 			</div>				
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
-			<div class="container content">		
-				<div class="row">
-					<div id="my-assessment-listview" ></div>
-				</div>
-			</div>	
+			<div class="container content-md">
+		        <ul class="list-unstyled row portfolio-box" id="my-assessment-listview">
+		        </ul>
+		    </div>
 			<!-- ./END MAIN CONTENT -->	
 	 		
 	 		<!-- START FOOTER -->
@@ -153,9 +152,15 @@
 		
 		
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
-	        <div class="product">
-	            <h3>#:name#</h3>
-	        </div>
+		<li class="col-sm-4">
+		    <a class="thumbnail fancybox" data-rel="gallery" title="Project Three" href="assets/img/main/img18.jpg">
+		    	<img class="full-width img-responsive" src="assets/img/main/img18.jpg" alt="">
+		        <span class="portfolio-box-in"><i class="rounded-x icon-magnifier-add"></i></span>
+		    </a>
+		    <div class="headline-left margin-bottom-10"><h3 class="headline-brd">#:name#</h3></div>
+		    <small class="project-tag"><i class="fa fa-tag"></i><a href="#">Technology</a>, <a href="#">Business</a></small>
+			<p>#: description #</p>
+		</li>
 	    </script>
 	    
 		<#include "/html/common/common-homepage-templates.ftl" >		
