@@ -31,7 +31,7 @@
 			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
-			'<@spring.url "/js/common/common.ui.data.competency.js"/>'
+			'<@spring.url "/js/common/common.ui.data.competency.js"/>',
 			'<@spring.url "/js/common/common.ui.connect.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>',
 			'<@spring.url "/js/common.pages/common.personalized.js"/>'
