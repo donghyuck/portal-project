@@ -212,6 +212,7 @@
 					<div class="modal-body">
 
 						<div data-role="listview"
+						data-auto-bind="false"	
 		                 data-template="my-assessment-job-template"
 		                 data-bind="source: jobDataSource"
 		                	 style="height: 300px; overflow: auto"></div>
