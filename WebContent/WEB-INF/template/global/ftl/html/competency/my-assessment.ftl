@@ -105,6 +105,12 @@
 			background-size: cover;
 			background-position: center center;			
 		}		
+		
+		
+		.team-v1 li:hover>.team-img:after {
+			background: rgba(0, 0, 0, 0.9);
+		}
+		 
 		</style>   	
 		</#compress>
 	</head>
