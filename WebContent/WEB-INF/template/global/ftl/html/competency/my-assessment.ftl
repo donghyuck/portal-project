@@ -92,6 +92,7 @@
 			if( !renderTo.data('bs.modal') ){				
 				var observable =  common.ui.observable({
 					secondStep : false,
+					job : new common.ui.data.competency.Job(),
 					assessment : new common.ui.data.competency.Assessment(),
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
@@ -115,17 +116,14 @@
 					},
 					setSource: function(source){
 						var $this = this;
-						var doRead = true;
-						
+						var doRead = true;						
 						if( source.assessmentId == $this.assessment.assessmentId )
 						{
 							doRead = false;
 						}
-						source.copy($this.assessment);
-						
+						source.copy($this.assessment);						
 						if( doRead & $this.assessment.assessmentId > 0 )
-							$this.jobDataSource.read();
-						
+							$this.jobDataSource.read();						
 						$this.set("secondStep", false);
 						renderTo.find("form")[0].reset();
 					}
@@ -133,10 +131,10 @@
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );	
 				$(document).on("click","input[type=radio][data-action='select']", function(e){						
-					var radio = $(this) ;
-					observable.set('secondStep', true);
-					console.log( radio.val() );
-					
+					var radio = $(this) ;					
+					var item = observable.jobDataSource.get(radio.val());
+					item.copy(observable.job);
+					observable.set('secondStep', true);					
 				});	
 			}
 			if( source ){
@@ -275,6 +273,38 @@
 					</div>
 					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">						
 						<h3 class="heading-sm">직급를 선택하여 주세요.</h3>
+						
+						<table class="table table-striped">
+									<thead>
+										<tr>
+											<th width="30%" >직무분류체계</th>
+											<th>
+												<span data-bind="{ text:job.classification.classifyTypeName }" ></span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>대분류</td>
+											<td>
+											<span data-bind="{ text:job.classification.classifiedMajorityName }" ></span>
+											</td>
+										</tr>
+										<tr>
+											<td>중분류</td>
+											<td>
+											<span data-bind="{text: job.classification.classifiedMiddleName}" ></span>
+											</td>
+										</tr>
+										<tr>
+											<td>소분류</td>
+											<td>
+												<span data-bind="{text: job.classification.classifiedMinorityName}" ></span>
+											</td>
+										</tr>																				
+									</tbody>
+								</table>	
+														
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>		
