@@ -218,7 +218,7 @@
 			                 data-editable="false"
 			                 data-selectable="row"
 			                 data-columns="[
-			                                 { 'field': 'name', 'width': 270 , template: ' #:name#' },
+			                                 { 'field': 'name', 'width': 270 , template: '<td><i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i> #:name#' },
 			                                 { 'field': 'description' },
 			                              ]"
 			                 data-bind="source: jobDataSource"
@@ -234,12 +234,12 @@
 		                        </tr>
 		                    </thead>
 		                    <tbody>
-							<div data-role="listview"
-								data-selectable="row"
-								data-auto-bind="false"	
-			                 	data-template="my-assessment-job-template"
-			                 	data-bind="source: jobDataSource"
-			                	style="height: 300px; overflow: auto"></div>
+								<div data-role="listview"
+									data-selectable="row"
+									data-auto-bind="false"	
+				                 	data-template="my-assessment-job-template"
+				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto">
+				                 	</div>
 			                </tbody>		                    
 		                </table>
                 
