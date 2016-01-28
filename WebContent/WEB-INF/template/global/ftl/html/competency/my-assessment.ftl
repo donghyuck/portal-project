@@ -73,7 +73,7 @@
 		function createMyAssessmentListView(){
 			var renderTo = $('#my-assessment-listview');	
 			if( ! common.ui.exists(renderTo) ){
-				var dateSource = common.ui.datasource( '/data/me/competency/assessment/list.json?output=json',{
+				var dataSource = common.ui.datasource( '/data/me/competency/assessment/list.json?output=json',{
 					schema:{
 						model: common.ui.data.competency.Assessment
 					}
