@@ -176,7 +176,7 @@
 			background: #fff;
 		}
 		.team-v1 li>.team-img {
-		    min-height: 10px;
+		    min-height: 30px;
 		}
 		.team-v1 li>.team-img ul{
 			text-align:right;
