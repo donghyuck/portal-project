@@ -236,7 +236,7 @@
 		                    <thead>
 		                        <tr>
 		                            <th class="hidden-sm" width="40">&nbsp;</th>
-		                            <th width="30%">직무</th>
+		                            <th width="40%">직무</th>
 		                            <th>직무정의</th>
 		                        </tr>
 		                    </thead>
@@ -266,11 +266,11 @@
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
-		    <td><input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">#: name #</label></td>
-			<td>
-			<h6 class="text-light-gray text-xxs" style="margin: 5px 0 5px 0;">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > #:classification.classifiedMinorityName# </h6>
-			
-			#: description #</td>
+		    <td><input type="radio" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio"><label class="k-radio-label" for="job-#=uid#">
+		    	<h6 class="text-light-gray text-xxs" style="margin: 5px 0 5px 0;">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > #:classification.classifiedMinorityName# </h6>
+		    	#: name #
+		    </label></td>
+			<td>#: description #</td>
 		</tr>			
 		</script>
 		<script type="text/x-kendo-template" id="my-assessment-listview-template">
