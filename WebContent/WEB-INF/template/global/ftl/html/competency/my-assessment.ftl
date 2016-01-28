@@ -234,7 +234,7 @@
 						<table class="table">
 		                    <thead>
 		                        <tr>
-		                            <th>&nbsp;</th>
+		                            <th class="hidden-sm">&nbsp;</th>
 		                            <th>직무</th>
 		                            <th>직무정의</th>
 		                        </tr>
