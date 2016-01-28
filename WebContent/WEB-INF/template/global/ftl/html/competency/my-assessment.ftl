@@ -159,6 +159,13 @@
             <h3>#:name#</h3>
             <h4>#: formattedStartDate() # ~ #: formattedEndDate() #</h4>
             <p>#:description#</p>
+            
+             <ul class="list-unstyled">
+	            # for (var i = 0; i < jobSelections.length ; i++) { #	
+	            # var jb = jobSelections[i] ; #			
+            	<li><i class="fa fa-check color-green"></i> #: jb.classifiedMajorityName # > #: jb.classifiedMiddleName # > #: jb.classifiedMinorityName # </li>	            
+            	# } #
+            </ul>
         </li>	
 	    </script>
 	    
