@@ -161,8 +161,8 @@
 		    <small class="project-tag"><i class="fa fa-tag"></i><a href="#">Technology</a>, <a href="#">Business</a></small>
 			<p>#: description #</p>
 			<ul class="list-inline news-v1-info">
-                <li><i class="fa fa-clock-o"></i> #: formattedStartDate #</li>
-                <li><i class="fa fa-clock-o"></i> #: formattedEndDate #</li>                
+                <li><i class="fa fa-clock-o"></i> #= formattedStartDate #</li>
+                <li><i class="fa fa-clock-o"></i> #= formattedEndDate #</li>                
            	</ul>
 		</li>
 	    </script>
