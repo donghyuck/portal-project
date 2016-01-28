@@ -279,7 +279,7 @@
 										<tr>
 											<th width="30%" >직무분류체계</th>
 											<th>
-												<span data-bind="{ text:job.classification.classifyTypeName }" ></span>
+												<span data-bind="{ text:job.classification.classifyTypeName }" class="text-muted"></span>
 											</th>
 										</tr>
 									</thead>
@@ -287,19 +287,19 @@
 										<tr>
 											<td>대분류</td>
 											<td>
-											<span data-bind="{ text:job.classification.classifiedMajorityName }" ></span>
+											<span data-bind="{ text:job.classification.classifiedMajorityName }" class="text-muted"></span>
 											</td>
 										</tr>
 										<tr>
 											<td>중분류</td>
 											<td>
-											<span data-bind="{text: job.classification.classifiedMiddleName}" ></span>
+											<span data-bind="{text: job.classification.classifiedMiddleName}" class="text-muted"></span>
 											</td>
 										</tr>
 										<tr>
 											<td>소분류</td>
 											<td>
-												<span data-bind="{text: job.classification.classifiedMinorityName}" ></span>
+												<span data-bind="{text: job.classification.classifiedMinorityName}" class="text-muted"></span>
 											</td>
 										</tr>	
 										<tr>
@@ -311,7 +311,7 @@
 										<tr>
 											<td>직무정의</td>
 											<td>
-												<span data-bind="{text: job.description}" ></span>
+												<span data-bind="{text: job.description}" class="text-muted"></span>
 											</td>
 										</tr>																																								
 									</tbody>
