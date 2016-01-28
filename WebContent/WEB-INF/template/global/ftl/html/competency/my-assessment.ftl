@@ -218,7 +218,7 @@
 			                 data-editable="false"
 			                 data-selectable="row"
 			                 data-columns='[
-			                 				 { "title":"&nbsp;", "width":"40px", template: "<i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i>" }, 	
+			                 				 { "title":"&nbsp;", "width":"40px", template: "<i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i> <input type=\"checkbox\" class=\"checkbox\" /> " }, 	
 			                                 { "title":"직무", "field": "name"},
 			                                 { "title":"정의", "field": "description" },
 			                              ]'
