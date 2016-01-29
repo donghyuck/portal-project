@@ -64,7 +64,7 @@
 					autoBind:false,
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/mgmt/competency/assessment/list.json?output=json', type:'post' },
+							read: { url:'<@spring.url "/secure/data/mgmt/competency/assessment/plan/list.json?output=json"/>', type:'post' },
 							parameterMap: function (options, operation){
 								if (operation !== "read") {
 									return kendo.stringify(options);
@@ -149,7 +149,7 @@
 						transport: {
 							read: {
 								dataType: 'json',
-								url: '/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json',
+								url: '<@spring.url "/secure/data/mgmt/competency/assessment/rating-scheme/list.json?output=json"/>',
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
@@ -245,7 +245,7 @@
 						this.assessment.set("feedbackEnabled", $this.feedbackEnabled );
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/competency/assessment/update.json?output=json" />' , 
+							'<@spring.url "/secure/data/mgmt/competency/assessment/plan/update.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.assessment ),
 								contentType : "application/json",
@@ -265,7 +265,7 @@
 						transport: {
 							read: {
 								dataType: 'json',
-								url: '/secure/data/mgmt/competency/codeset/group/list.json?output=json',
+								url: '<@spring.url "/secure/data/mgmt/competency/codeset/group/list.json?output=json"/>',
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
@@ -282,7 +282,7 @@
 						transport: {
 							read: {
 								dataType: 'json',
-								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								url: '<@spring.url "/secure/data/mgmt/competency/codeset/list.json?output=json"/>',
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
@@ -299,7 +299,7 @@
 						transport: {
 							read: {
 								dataType: 'json',
-								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								url: '<@spring.url "/secure/data/mgmt/competency/codeset/list.json?output=json"/>',
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
@@ -316,7 +316,7 @@
 						transport: {
 							read: {
 								dataType: 'json',
-								url: '/secure/data/mgmt/competency/codeset/list.json?output=json',
+								url: '<@spring.url "/secure/data/mgmt/competency/codeset/list.json?output=json"/>',
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
@@ -412,7 +412,7 @@
 						transport: {
 							read: {
 								dataType: 'json',
-								url: '/secure/data/mgmt/competency/assessment/scheme/list.json?output=json',
+								url: '<@spring.url "/secure/data/mgmt/competency/assessment/scheme/list.json?output=json"/>',
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
@@ -465,7 +465,7 @@
 						if(validator.validate()){						
 							common.ui.progress(renderTo, true);
 							common.ui.ajax(
-								'<@spring.url "/secure/data/mgmt/competency/assessment/create.json?output=json" />' , 
+								'<@spring.url "/secure/data/mgmt/competency/assessment/plan/create.json?output=json" />' , 
 								{
 									data : kendo.stringify($this.createPlan),
 									contentType : "application/json",

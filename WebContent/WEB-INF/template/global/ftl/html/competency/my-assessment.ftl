@@ -66,7 +66,7 @@
 		function createMyAssessmentPlanListView(){
 			var renderTo = $('#my-assessment-plan-listview');	
 			if( ! common.ui.exists(renderTo) ){
-				var dataSource = common.ui.datasource( '<@spring.url "/data/me/competency/assessment/list.json?output=json"/>',{
+				var dataSource = common.ui.datasource( '<@spring.url "/data/me/competency/assessment/plan/list.json?output=json"/>',{
 					schema:{
 						model: common.ui.data.competency.AssessmentPlan
 					}
