@@ -58,22 +58,22 @@
 						
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
-				createMyAssessmentListView();
+				createMyAssessmentPlanListView();
 				// END SCRIPT 				
 			}
 		}]);			
 
-		function createMyAssessmentListView(){
-			var renderTo = $('#my-assessment-listview');	
+		function createMyAssessmentPlanListView(){
+			var renderTo = $('#my-assessment-plan-listview');	
 			if( ! common.ui.exists(renderTo) ){
 				var dataSource = common.ui.datasource( '<@spring.url "/data/me/competency/assessment/list.json?output=json"/>',{
 					schema:{
-						model: common.ui.data.competency.Assessment
+						model: common.ui.data.competency.AssessmentPlan
 					}
 				});
 				common.ui.listview(renderTo,{
               	  	dataSource: dataSource,
-                	template: kendo.template($("#my-assessment-listview-template").html())
+                	template: kendo.template($("#my-assessment-plan-listview-template").html())
         	    });
         	    
         	    $(document).on("click","[data-action='apply']", function(e){						
@@ -93,7 +93,7 @@
 				var observable =  common.ui.observable({
 					secondStep : false,
 					job : new common.ui.data.competency.Job(),
-					assessment : new common.ui.data.competency.Assessment(),
+					assessment : new common.ui.data.competency.AssessmentPlan(),
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'<@spring.url "/data/me/competency/assessment/job/list.json?output=json'"/>, type:'post' },
@@ -219,7 +219,7 @@
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
-		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-listview">
+		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview">
 		        </ul>
 		    </div>
 			<!-- ./END MAIN CONTENT -->	
@@ -344,7 +344,7 @@
 			<td>#: description #</td>
 		</tr>			
 		</script>
-		<script type="text/x-kendo-template" id="my-assessment-listview-template">
+		<script type="text/x-kendo-template" id="my-assessment-plan-listview-template">
 		<li class="col-sm-6 col-md-4">
         	<div class="team-img">
         		<ul class="text-right">
