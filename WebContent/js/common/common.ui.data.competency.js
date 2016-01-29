@@ -335,7 +335,7 @@
 	    }    
 	});
 
-	var Assessment = kendo.data.Model.define( {
+	var AssessmentPlan = kendo.data.Model.define( {
 		id : "assessmentId",
 		fields: {
 			assessmentId: { type: "number", defaultValue: 0},
@@ -403,7 +403,7 @@
 	    }
 	});	
 	
-	var AssessmentPlan = kendo.data.Model.define( {
+	var AssessmentCreatePlan = kendo.data.Model.define( {
 	    id: "name", // the identifier of the model
 	    fields: {
 	    	name: { type: "string"},
@@ -438,8 +438,8 @@
 			AssessmentScheme:AssessmentScheme,
 			JobSelection:JobSelection,
 			AssessmentSubject:AssessmentSubject,
-			AssessmentPlan:AssessmentPlan,
-			Assessment:Assessment
+			AssessmentCreatePlan:AssessmentCreatePlan,
+			AssessmentPlan:AssessmentPlan
 		}  
 	} );
 	
