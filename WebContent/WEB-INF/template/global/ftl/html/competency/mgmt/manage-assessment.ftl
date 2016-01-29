@@ -40,22 +40,22 @@
 						e.token.copy(currentUser);
 					},
 					change: function(e){		
-						getAssessmentGrid().dataSource.read();
+						getAssessmentPlanGrid().dataSource.read();
 					}
 				});
 				
-				createAssessmentGrid();
+				createAssessmentPlanGrid();
 			}
 		}]);		
 
 
-		function getAssessmentGrid(){
+		function getAssessmentPlanGrid(){
 			var renderTo = $("#assessment-grid");
 			return common.ui.grid(renderTo);
 		}
 		
 
-		function createAssessmentGrid(){
+		function createAssessmentPlanGrid(){
 			var renderTo = $("#assessment-grid");
 			if(! common.ui.exists(renderTo) ){			
 				
@@ -76,7 +76,7 @@
 							}
 						},
 						schema: {
-							model: common.ui.data.competency.Assessment
+							model: common.ui.data.competency.AssessmentPlan
 						}
 					},
 					columns: [
@@ -92,7 +92,7 @@
 					 	var selectedCells = this.select();	
 					 	if( selectedCells.length == 1){
 	                    	var selectedCell = this.dataItem( selectedCells );	 
-	                    	createAssessmentDetails(selectedCell);
+	                    	createAssessmentPlanDetails(selectedCell);
 	                    	//e.preventDefault();
 	                    }   
 					},
@@ -104,7 +104,7 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});	
 				renderTo.find("button[data-action=create]").click(function(e){	
-					var newPlan = new common.ui.data.competency.AssessmentPlan();
+					var newPlan = new common.ui.data.competency.AssessmentCreatePlan();
 					newPlan.set("objectType", 1);
 					newPlan.set("objectId",companySelector.value());
 					createAssessmenPlanModal(newPlan);			
@@ -112,7 +112,7 @@
 			}
 		}		
 
-		function createAssessmentDetails(source){
+		function createAssessmentPlanDetails(source){
 			var renderTo = $("#assessment-details");
 			if( !renderTo.data("model")){		
 				
@@ -126,7 +126,7 @@
 					updatable : false,		
 					multipleApplyAllowed: false,		
 					feedbackEnabled:false,
-					assessment : new common.ui.data.competency.Assessment(),
+					assessment : new common.ui.data.competency.AssessmentPlan(),
 					jobSelection: new common.ui.data.competency.JobSelection(),
 					view : function(e){
 						var $this = this;		
@@ -250,8 +250,8 @@
 								data : kendo.stringify( $this.assessment ),
 								contentType : "application/json",
 								success : function(response){																	
-									$this.setSource(new common.ui.data.competency.Assessment(response));	
-									getAssessmentGrid().dataSource.read();
+									$this.setSource(new common.ui.data.competency.AssessmentPlan(response));	
+									getAssessmentPlanGrid().dataSource.read();
 								},
 								complete : function(e){
 									common.ui.progress(renderTo, false);
@@ -406,7 +406,7 @@
 				var validator = renderTo.find("form").kendoValidator().data("kendoValidator")
 			
 				var observable =  common.ui.observable({
-					plan:new common.ui.data.competency.AssessmentPlan(),
+					createPlan:new common.ui.data.competency.AssessmentCreatePlan(),
 					assessmentSchemeDataSource: new kendo.data.DataSource({
 						serverFiltering: false,
 						transport: {
@@ -467,7 +467,7 @@
 							common.ui.ajax(
 								'<@spring.url "/secure/data/mgmt/competency/assessment/create.json?output=json" />' , 
 								{
-									data : kendo.stringify($this.plan),
+									data : kendo.stringify($this.createPlan),
 									contentType : "application/json",
 									success : function(response){																											
 										createAssessmentDetails(new common.ui.data.competency.Assessment(response));								
@@ -485,7 +485,7 @@
 						var $this = this;			
 						var start = renderTo.find('input[data-role=datetimepicker][name=startDate]').data("kendoDateTimePicker");
 						var end = renderTo.find('input[data-role=datetimepicker][name=endDate]').data("kendoDateTimePicker");		
-						source.copy($this.plan);
+						source.copy($this.createPlan);
 						start.max(end.value());
                    	 	end.min(start.value());
 					}				
@@ -987,13 +987,13 @@
 					<div class="modal-body">
 						<form>
 						<div class="form-group">
-							<input type="text" name="Name" class="form-control" data-bind="{value: plan.name }" placeholder="이름" required validationMessage="역량진단 이름을 입력하여 주세요." />	
+							<input type="text" name="Name" class="form-control" data-bind="{value: createPlan.name }" placeholder="이름" required validationMessage="역량진단 이름을 입력하여 주세요." />	
 							<span class="k-invalid-msg" data-for="Name"></span>
 						</div>
 						<div class="form-group">
 							<textarea name="Desceiption"
 								class="form-control m-t-sm" rows="4"  
-								data-bind="{value: plan.description }" 
+								data-bind="{value: createPlan.description }" 
 								placeholder="설명" 
 								required validationMessage="어떤 역량진단인지를 간략하게 기술하여 주세요."></textarea>
 							<span class="k-invalid-msg" data-for="Description"></span>	
@@ -1008,7 +1008,7 @@
 										    data-value-primitive="true"
 										    data-text-field="name"
 										    data-value-field="assessmentSchemeId"
-										    data-bind="value:plan.assessmentSchemeId, source: assessmentSchemeDataSource"
+										    data-bind="value:createPlan.assessmentSchemeId, source: assessmentSchemeDataSource"
 										    required data-required-msg="역량진단운영체계를 선택하여 주십시오."
 										     />
 							<span class="k-invalid-msg" data-for="Scheme"></span>			     
@@ -1018,7 +1018,7 @@
 								<div class="col-sm-6">
 									<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">시작일</h6>
 									<input name="startDate" data-role="datetimepicker"
-						                   data-bind="value: plan.startDate,
+						                   data-bind="value: createPlan.startDate,
 						                              events: { change: onStartChange }"
 						                              required data-required-msg="진단 시작일을 선택하여 주십시오."
 						                   style="width: 100%">
@@ -1027,7 +1027,7 @@
 								<div class="col-sm-6">
 									<h6 class="text-primary text-semibold text-xs" style="margin: 15px 0 5px 0;">종료일</h6>
 									<input name="endDate" data-role="datetimepicker"
-						                   data-bind="value: plan.endDate,
+						                   data-bind="value: createPlan.endDate,
 						                              events: { change: onEndChange }"
 						                              required data-required-msg="진단 종료일을 선택하여 주십시오."
 						                   style="width: 100%">
