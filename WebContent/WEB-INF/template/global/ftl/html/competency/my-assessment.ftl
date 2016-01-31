@@ -172,7 +172,6 @@
 			}
 			renderTo.modal('show');
 		}
-
 		-->
 		</script>		
 		<style scoped="scoped">			
