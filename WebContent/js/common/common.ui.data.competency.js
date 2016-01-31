@@ -335,10 +335,43 @@
 	    }    
 	});
 
+	
+	var Assessment = kendo.data.Model.define( {
+	    id: "assessmentId", // the identifier of the model
+	    fields: {
+	    	assessmentId: { type: "number", defaultValue: 0},
+	    	assessmentPlan: { type: "object" },	    	
+	    	assessors:  { type: "object" ,  defaultValue:"[]"},
+	    	candidate : { type: "object", 	defaultValue:new common.ui.data.User()},
+	    	job : { type: "object", nullable:true },
+	    	jobLevel : { type: "number", defaultValue: 0},
+	    	totalScore:  { type: "number", defaultValue: 0 },
+	    	modifiedDate: { type: "date"},
+	        creationDate: { type: "date" },
+	        state : { type : "string", editable : true, defaultValue : "INCOMPLETE"	}
+		},
+	    	
+	    },    
+	    copy : function ( target ){
+	    	target.set("assessmentId", this.get("assessmentId"));
+	    	target.set("assessmentPlan", this.get("assessmentPlan"));
+	    	target.set("assessors", this.get("assessors"));
+	    	target.set("candidate", this.get("candidate"));
+	    	target.set("state", this.get("state"));
+	    	target.set("job", this.get("job"));
+	    	target.set("jobLevel", this.get("jobLevel"));
+	    	target.set("totalScore", this.get("totalScore"));
+	    	target.set("createdDate", this.get("createdDate"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
+		},	
+	    }    
+	});
+	
+	
 	var AssessmentPlan = kendo.data.Model.define( {
 		id : "assessmentId",
 		fields: {
-			assessmentId: { type: "number", defaultValue: 0},
+			assessmentId: { type: "object", defaultValue: 0},
 			objectType : { type: "number"},
 	    	objectId : { type: "number"},
 			name : { type: "string" },	   
@@ -439,7 +472,8 @@
 			JobSelection:JobSelection,
 			AssessmentSubject:AssessmentSubject,
 			AssessmentCreatePlan:AssessmentCreatePlan,
-			AssessmentPlan:AssessmentPlan
+			AssessmentPlan:AssessmentPlan,
+			Assessment:Assessment
 		}  
 	} );
 	
