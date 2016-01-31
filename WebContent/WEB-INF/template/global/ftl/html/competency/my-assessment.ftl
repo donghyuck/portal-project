@@ -102,7 +102,7 @@
 									return kendo.stringify(options);
 								} 
 								return {
-									assessmentId: observable.assessment.assessmentId
+									assessmentId: observable.assessmentPlan.assessmentId
 								};
 							}
 						},			
