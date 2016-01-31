@@ -114,6 +114,30 @@
 						renderTo.find("form")[0].reset();
 						observable.set('secondStep', false);
 					},
+					create : function(e){
+						var $this = this;						
+						var btn = $(e.target);	
+						
+						common.ui.data.competency.Assessment();
+						
+						common.ui.progress(renderTo, true);
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/competency/assessment/plan/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.assessment ),
+								contentType : "application/json",
+								success : function(response){																	
+									$this.setSource(new common.ui.data.competency.AssessmentPlan(response));	
+									getAssessmentPlanGrid().dataSource.read();
+								},
+								complete : function(e){
+									common.ui.progress(renderTo, false);
+								}
+							}
+						);							
+						return false;
+					
+					},
 					setSource: function(source){
 						var $this = this;
 						var doRead = true;						
@@ -264,7 +288,7 @@
 		                    </thead>
 		                    <tbody data-role="listview"
 		                    		class="no-border"
-									data-auto-bind="true"	
+									data-auto-bind="false"	
 				                 	data-template="my-assessment-job-template"
 				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
 			                </tbody>		                    
@@ -319,7 +343,8 @@
 														
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>		
+						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>	
+						<button type="button" class="btn btn-primary btn-flat btn-outline rounded pull-left" data-bind="click:create, visible:secondStep" >진단하기</button>		
 						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
 					</div>
 				</div>
