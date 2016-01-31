@@ -93,7 +93,7 @@
 				var observable =  common.ui.observable({
 					secondStep : false,
 					job : new common.ui.data.competency.Job(),
-					assessment : new common.ui.data.competency.AssessmentPlan(),
+					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'<@spring.url "/data/me/competency/assessment/job/list.json?output=json'"/>, type:'post' },
@@ -117,9 +117,13 @@
 					create : function(e){
 						var $this = this;						
 						var btn = $(e.target);	
-						
 						var newAssessment = new common.ui.data.competency.Assessment();
+						newAssessment.candidate.userId =  getCurrentUser().userId;
+						newAssessment.job.jobId = $this.job.jobId;
+						newAssessment.assessmentPlan.assessmentId = $this.assessmentPlan.assessmentId;
+						
 						console.log( common.ui.stringify(newAssessment) );
+						
 						/**
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
@@ -147,8 +151,8 @@
 						{
 							doRead = false;
 						}
-						source.copy($this.assessment);						
-						if( doRead & $this.assessment.assessmentId > 0 )
+						source.copy($this.assessmentPlan);						
+						if( doRead & $this.assessmentPlan.assessmentId > 0 )
 							$this.jobDataSource.read();						
 						$this.set("secondStep", false);
 						renderTo.find("form")[0].reset();
@@ -262,7 +266,7 @@
 			<div class="modal-dialog modal-md modal-flat">
 				<div class="modal-content">	
 					<div class="modal-header">
-						<h3 class="modal-title"><span data-bind="text:assessment.name"/> </h2>
+						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
