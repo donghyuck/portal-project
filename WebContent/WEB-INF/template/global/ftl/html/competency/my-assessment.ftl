@@ -118,11 +118,12 @@
 						var $this = this;						
 						var btn = $(e.target);	
 						
-						common.ui.data.competency.Assessment();
-						
+						var newAssessment = new common.ui.data.competency.Assessment();
+						console.log( common.ui.stringify(newAssessment) );
+						/**
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/competency/assessment/plan/update.json?output=json" />' , 
+							'<@spring.url "data/me/competency/assessment/create.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.assessment ),
 								contentType : "application/json",
@@ -134,7 +135,8 @@
 									common.ui.progress(renderTo, false);
 								}
 							}
-						);							
+						);			
+						*/				
 						return false;
 					
 					},
