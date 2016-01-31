@@ -147,7 +147,7 @@
 					setSource: function(source){
 						var $this = this;
 						var doRead = true;						
-						if( source.assessmentId == $this.assessment.assessmentId )
+						if( source.assessmentId == $this.assessmentPlan.assessmentId )
 						{
 							doRead = false;
 						}
