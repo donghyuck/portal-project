@@ -10,6 +10,7 @@
 	    	objectId: { type: "number", editable: true, defaultValue: 0  },   
 	        name: { type: "string", editable: true },
 	        description: { type: "string", editable: true },
+	        jobLevels : { type: "object", editable: true, defaultValue:[]},   
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	        
 	    },	    
@@ -19,6 +20,7 @@
 	    	target.set("objectId", this.get("objectId"));
 	    	target.set("name", this.get("name"));
 	    	target.set("description", this.get("description"));
+	    	target.set("jobLevels", this.get("jobLevels"));
 	    	
 	    	if( typeof this.get("classification") === 'object' ){
 	    		target.set("classification", this.get("classification"));
@@ -34,6 +36,28 @@
 	    		target.set("properties", this.get("properties"));
 	    	else
 	    		target.set("properties", {});
+	    }    
+	});
+	
+	var JobLevel = kendo.data.Model.define( {
+	    id: "jobLevelId", // the identifier of the model
+	    fields: {
+	    	jobLevelId: { type: "number", editable: true, defaultValue: 0  },    	
+	    	jobId: { type: "number", editable: true, defaultValue: 0  },   
+	        name: { type: "string", editable: true },
+	        description: { type: "string", editable: true },
+	        level: { type: "number", editable: true, defaultValue: 0  },   
+	        minWorkExperienceYear: { type: "number", editable: true, defaultValue: 0  },   
+	        maxnWorkExperienceYear: { type: "number", editable: true, defaultValue: 0  }
+	    },	    
+	    copy : function ( target ){
+	    	target.set("jobLevelId", this.get("jobLevelId"));
+	    	target.set("jobId", this.get("jobId"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	target.set("level", this.get("level"));
+	    	target.set("minWorkExperienceYear", this.get("minWorkExperienceYear"));
+	    	target.set("maxnWorkExperienceYear", this.get("maxnWorkExperienceYear"));
 	    }    
 	});
 	
@@ -340,10 +364,10 @@
 	    id: "assessmentId", // the identifier of the model
 	    fields: {
 	    	assessmentId: { type: "number", defaultValue: 0},
-	    	assessmentPlan: { type: "object" },	    	
+	    	assessmentPlan: { type: "object", defaultValue:new AssessmentPlan() },	    	
 	    	assessors:  { type: "object" ,  defaultValue:"[]"},
 	    	candidate : { type: "object", 	defaultValue:new common.ui.data.User()},
-	    	job : { type: "object", nullable:true },
+	    	job : { type: "object", nullable:true , defaultValue:new Job() },
 	    	jobLevel : { type: "number", defaultValue: 0},
 	    	totalScore:  { type: "number", defaultValue: 0 },
 	    	modifiedDate: { type: "date"},
@@ -464,6 +488,7 @@
 	extend( common.ui.data, {
 		competency:{
 			Job : Job,
+			JobLevel : JobLevel,
 			CodeSet : CodeSet,
 			Competency : Competency,
 			EssentialElement : EssentialElement,
