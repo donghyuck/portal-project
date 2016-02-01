@@ -32,8 +32,7 @@
 	    			classifiedMiddleId:0,
 	    			classifiedMinorityId:0
 	    		} );
-	    	}	    	
-	    	
+	    	}	 
 	    }    
 	});
 	
