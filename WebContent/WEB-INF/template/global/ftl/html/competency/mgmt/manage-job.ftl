@@ -485,7 +485,7 @@
 			font-weight: normal;
 		}
 		
-		.tab-pane .k-grid-toolbar:first-child {
+		.tab-pane .k-grid-header:first-child th.k-header:first-child, .tab-pane thead.k-grid-header th.k-header:first-child, .tab-pane .k-rtl thead.k-grid-header th.k-header:last-child {
 			border-radius : 0 0 0 0 ;
 		}		
 		
