@@ -643,7 +643,7 @@
 															<input type="number" min="0" class="form-control" placeholder="최대직무경험(년)">
 														</div>
 														<div class="panel-footer">	
-															<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addSubject"><span class="btn-label icon fa fa-plus"></span> 진단대상 추가 </button>
+															<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addSubject"><span class="btn-label icon fa fa-plus"></span> 직무수추가 </button>
 															<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="click:cancelChanges"
 																data-target="#assessment-details-tabs-2 .k-grid" > 변경취소 </button>	
 														</div>
