@@ -640,7 +640,7 @@
 												data-editable="false"
 												data-columns="[{ 'field': 'name', 'title':'이름'},{ 'field': 'description', 'title':'설명'},{ 'field': 'jobLevel', 'title':'직무수준'},{ 'field': 'minWorkExperienceYear', 'title':'최소 직무경험'},{ 'field': 'mixWorkExperienceYear', 'title':최대 직무경험'},
 												{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
-												data-bind="source:subjectDataSource, visible:editable"
+												data-bind="source:jobLevelDataSource, visible:editable"
 												style="height: 300px"></div>								
 									</div>	
 									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-11" style="min-height:300px;">									
