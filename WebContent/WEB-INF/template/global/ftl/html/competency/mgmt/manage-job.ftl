@@ -609,7 +609,31 @@
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-10">
 									</div>	
-									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-11">
+									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-11">									
+													<table class="table table-striped" data-bind="visible:visible">
+														<thead>
+															<tr>
+																<th width="270">이름</th>
+																<th>값</th>
+															</tr>
+														</thead>
+														<tbody  class="no-border"
+																data-role="listview"
+												                data-template="property-view-template"
+												                data-bind="source:propertyDataSource"
+												                style="height: 200px; overflow: auto">
+												            
+												        </tbody>
+													</table>																											
+													<div data-role="grid"
+														class="no-border"
+													    data-scrollable="true"
+													    data-editable="true"
+													    data-toolbar="['create', 'cancel']"
+													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-bind="source:propertyDataSource, visible:editable"
+													    style="height: 200px"></div>
+													    									
 									</div>																
 								</div>	 														
 							</div>
@@ -721,13 +745,23 @@
 			</div>
 		</div>			
 		
-		<script id="treeview-template" type="text/kendo-ui-template">
-			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
-            #: item.name # 
-            # if (!item.items) { #
-                <a class='delete-link' href='\#'></a> 
-            # } #
-        </script>									
+		
+		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
+		<tr>
+			<td>#: name #</td>
+			<td>#: description #</td>
+			<td>#: jobLevel #</td>
+			<td>#: minWorkExperienceYear #</td>
+			<td>#: maxWorkExperienceYear #</td>
+		</tr>		
+		</script>
+		<script type="text/x-kendo-tmpl" id="property-view-template">
+		<tr>
+			<td>#: name #</td>
+			<td>#: value #</td>
+		</tr>	
+		</script>	
+							
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
