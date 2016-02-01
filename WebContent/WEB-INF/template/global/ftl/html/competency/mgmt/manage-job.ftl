@@ -638,9 +638,20 @@
 														<div class="panel-body">
 															<input type="text" class="form-control" placeholder="이름">
 															<textarea class="form-control" rows="4" placeholder="설명"></textarea>
-															<input type="number" min="1" class="form-control" placeholder="직무수준">
-															<input type="number" min="0" class="form-control" placeholder=최소직무경험(년)">
-															<input type="number" min="0" class="form-control" placeholder="최대직무경험(년)">
+															
+															
+															
+															<div class="row">
+																<div class="col-sm-6">
+																	<input type="number" min="1" class="form-control" placeholder="직무수준">
+																</div>
+																<div class="col-sm-6">
+																	<input type="number" min="0" class="form-control" placeholder="최소직무경험(년)">
+																</div>
+																<div class="col-sm-6">
+																	<input type="number" min="0" class="form-control" placeholder="최대직무경험(년)">
+																</div>
+															</div>
 														</div>
 														<div class="panel-footer">	
 															<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addSubject"><span class="btn-label icon fa fa-plus"></span> 직무수추가 </button>
