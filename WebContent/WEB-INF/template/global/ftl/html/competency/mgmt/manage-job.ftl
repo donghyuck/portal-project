@@ -485,7 +485,7 @@
 			font-weight: normal;
 		}
 		
-		.tab-pane .k-grid-header:first-child {
+		.tab-pane .k-grid-toolbar:first-child {
 			border-radius : 0 0 0 0 ;
 		}		
 		
