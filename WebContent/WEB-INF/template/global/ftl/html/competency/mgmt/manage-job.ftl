@@ -489,6 +489,9 @@
 			border-radius : 0 0 0 0 ;
 		}		
 		
+		.tab-pane .k-grid>.k-grouping-header, .tab-pane .k-grid-header:first-child, .tab-pane .k-grid-toolbar:first-child {
+			border-radius : 0 0 0 0 ;
+		}		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
