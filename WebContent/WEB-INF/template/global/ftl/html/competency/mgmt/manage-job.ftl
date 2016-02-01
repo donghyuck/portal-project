@@ -633,7 +633,15 @@
 												data-bind="source:jobLevelDataSource"
 												style="height: 300px; overflow: auto">
 											</tbody>
-										</table>									
+										</table>	
+										<div data-role="grid"
+												class="no-border"
+												data-scrollable="true"
+												data-editable="false"
+												data-columns="[{ 'field': 'name', 'title':'이름'},{ 'field': 'description', 'title':'설명'},{ 'field': 'description', 'title':'직무수준'},{ 'field': 'description', 'title':'최소 직무경험'},{ 'field': 'description', 'title':최대 직무경험'},
+												{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+												data-bind="source:subjectDataSource, visible:editable"
+												style="height: 300px"></div>								
 									</div>	
 									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-11" style="min-height:300px;">									
 										<table class="table table-striped" data-bind="visible:visible">
