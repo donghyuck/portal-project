@@ -638,7 +638,7 @@
 												class="no-border"
 												data-scrollable="true"
 												data-editable="false"
-												data-columns="[{ 'field': 'name', 'title':'이름'},{ 'field': 'description', 'title':'설명'},{ 'field': 'description', 'title':'직무수준'},{ 'field': 'description', 'title':'최소 직무경험'},{ 'field': 'description', 'title':최대 직무경험'},
+												data-columns="[{ 'field': 'name', 'title':'이름'},{ 'field': 'description', 'title':'설명'},{ 'field': 'jobLevel', 'title':'직무수준'},{ 'field': 'minWorkExperienceYear', 'title':'최소 직무경험'},{ 'field': 'mixWorkExperienceYear', 'title':최대 직무경험'},
 												{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 												data-bind="source:subjectDataSource, visible:editable"
 												style="height: 300px"></div>								
