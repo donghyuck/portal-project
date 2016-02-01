@@ -608,32 +608,48 @@
 								</ul>
 								<div class="tab-content">
 									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-10">
+										<table class="table table-striped" data-bind="visible:visible">
+											<thead>
+												<tr>
+													<th>이름</th>
+													<th>설명</th>
+													<th>직무수준</th>
+													<th>직무경험(년)</th>
+												</tr>
+											</thead>
+											<tbody  class="no-border"
+												data-role="listview"
+												data-template="job-level-view-template"
+												data-bind="source:jobLevelDataSource"
+												style="height: 300px; overflow: auto">
+											</tbody>
+										</table>									
 									</div>	
 									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-11">									
-													<table class="table table-striped" data-bind="visible:visible">
-														<thead>
-															<tr>
-																<th width="270">이름</th>
-																<th>값</th>
-															</tr>
-														</thead>
-														<tbody  class="no-border"
-																data-role="listview"
-												                data-template="property-view-template"
-												                data-bind="source:propertyDataSource"
-												                style="height: 200px; overflow: auto">
-												            
-												        </tbody>
-													</table>																											
-													<div data-role="grid"
-														class="no-border"
-													    data-scrollable="true"
-													    data-editable="true"
-													    data-toolbar="['create', 'cancel']"
-													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
-													    data-bind="source:propertyDataSource, visible:editable"
-													    style="height: 200px"></div>
-													    									
+										<table class="table table-striped" data-bind="visible:visible">
+											<thead>
+												<tr>
+													<th width="270">이름</th>
+													<th>값</th>
+												</tr>
+											</thead>
+											<tbody  class="no-border"
+												data-role="listview"
+												data-template="property-view-template"
+												data-bind="source:propertyDataSource"
+												style="height: 200px; overflow: auto">
+											</tbody>
+										</table>																											
+										<div data-role="grid"
+												class="no-border"
+												data-scrollable="true"
+												data-editable="false"
+												data-toolbar="['create', 'cancel']"
+												data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},
+													   		{ 'field': 'value', 'title':'값' },
+													    	{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+												data-bind="source:propertyDataSource, visible:editable"
+												style="height: 200px"></div>		
 									</div>																
 								</div>	 														
 							</div>
@@ -746,13 +762,12 @@
 		</div>			
 		
 		
-		<script type="text/x-kendo-tmpl" id="rating-level-view-template">
+		<script type="text/x-kendo-tmpl" id="job-level-view-template">
 		<tr>
 			<td>#: name #</td>
 			<td>#: description #</td>
 			<td>#: jobLevel #</td>
-			<td>#: minWorkExperienceYear #</td>
-			<td>#: maxWorkExperienceYear #</td>
+			<td>#: minWorkExperienceYear # ~ #: maxWorkExperienceYear #</td>
 		</tr>		
 		</script>
 		<script type="text/x-kendo-tmpl" id="property-view-template">
