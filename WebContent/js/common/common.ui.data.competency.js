@@ -10,7 +10,7 @@
 	    	objectId: { type: "number", editable: true, defaultValue: 0  },   
 	        name: { type: "string", editable: true },
 	        description: { type: "string", editable: true },
-	        properties : { type: "object", editable: true, defaultValue:{}},   
+	        properties : { type: "object", editable: true, defaultValue:[]},   
 	        jobLevels : { type: "object", editable: true, defaultValue:[]},   
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	        
@@ -22,7 +22,7 @@
 	    	target.set("name", this.get("name"));
 	    	target.set("description", this.get("description"));
 	    	target.set("jobLevels", this.get("jobLevels"));
-	    	
+	    	target.set("properties", this.get("properties"));
 	    	if( typeof this.get("classification") === 'object' ){
 	    		target.set("classification", this.get("classification"));
 	    	}else{
@@ -33,10 +33,7 @@
 	    			classifiedMinorityId:0
 	    		} );
 	    	}	    	
-	    	if( typeof this.get("properties") === 'object' )
-	    		target.set("properties", this.get("properties"));
-	    	else
-	    		target.set("properties", {});
+	    	
 	    }    
 	});
 	
