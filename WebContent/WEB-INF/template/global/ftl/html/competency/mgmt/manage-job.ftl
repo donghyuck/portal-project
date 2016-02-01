@@ -614,7 +614,7 @@
 									<li><a href="#job-details-tabs-11" data-toggle="tab" data-action="variable-range">속성</a></li>
 								</ul>
 								<div class="tab-content">
-									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-10">
+									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-10" style="min-height:300px;">
 										<table class="table table-striped" data-bind="visible:visible">
 											<thead>
 												<tr>
@@ -632,7 +632,7 @@
 											</tbody>
 										</table>									
 									</div>	
-									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-11">									
+									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-11" style="min-height:300px;">									
 										<table class="table table-striped" data-bind="visible:visible">
 											<thead>
 												<tr>
