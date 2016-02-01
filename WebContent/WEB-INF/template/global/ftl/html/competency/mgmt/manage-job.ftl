@@ -639,7 +639,7 @@
 												data-scrollable="true"
 												data-editable="true"
 												data-columns="[{ 'field': 'name', 'title':'이름'},{ 'field': 'description', 'title':'설명'},{ 'field': 'level', 'title':'직무수준'},
-													{ 'field': 'minWorkExperienceYear', 'title':'최소직무경험'},
+													{ 'field': 'minWorkExperienceYear', 'title':'최소직무경험'},{ 'field': 'maxWorkExperienceYear', 'title':'최대직무경험'},
 												{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 												data-bind="source:jobLevelDataSource, visible:editable"
 												style="height: 300px"></div>								
