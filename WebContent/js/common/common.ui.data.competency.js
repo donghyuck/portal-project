@@ -45,7 +45,7 @@
 	        description: { type: "string", editable: true },
 	        level: { type: "number", editable: true, defaultValue: 0  },   
 	        minWorkExperienceYear: { type: "number", editable: true, defaultValue: 0  },   
-	        maxnWorkExperienceYear: { type: "number", editable: true, defaultValue: 0  }
+	        maxWorkExperienceYear: { type: "number", editable: true, defaultValue: 0  }
 	    },	    
 	    copy : function ( target ){
 	    	target.set("jobLevelId", this.get("jobLevelId"));
