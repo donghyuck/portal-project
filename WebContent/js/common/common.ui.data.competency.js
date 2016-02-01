@@ -54,7 +54,7 @@
 	    	target.set("description", this.get("description"));
 	    	target.set("level", this.get("level"));
 	    	target.set("minWorkExperienceYear", this.get("minWorkExperienceYear"));
-	    	target.set("maxnWorkExperienceYear", this.get("maxnWorkExperienceYear"));
+	    	target.set("maxWorkExperienceYear", this.get("maxWorkExperienceYear"));
 	    }    
 	});
 	
