@@ -403,6 +403,9 @@
 					setSource : function(source){
 						var $this = this;
 						source.copy($this.job);	
+						
+						console.log(common.ui.stringify($this.job));
+						
 						$this.propertyDataSource.read();
 						$this.jobLevelDataSource.read();						
 						$this.propertyDataSource.data($this.job.properties);	
