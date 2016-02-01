@@ -389,6 +389,7 @@
 					setSource : function(source){
 						var $this = this;
 						source.copy($this.job);	
+						renderTo.find("ul.nav.nav-tabs:first a:first").tab('show');
 						if($this.job.get("jobId") == 0)
 						{
 							$this.job.set("objectType", 1);
@@ -404,7 +405,7 @@
 							$this.set("updatable", false);
 							$this.set("deletable", true);		
 							$this.competencyDataSource.read({ jobId: $this.job.get('jobId') });		
-							renderTo.find("ul.nav.nav-tabs a:first").tab('show')																		
+							renderTo.find("ul.nav.nav-tabs:last a:first").tab('show');																						
 						}
 					}						
 				});
