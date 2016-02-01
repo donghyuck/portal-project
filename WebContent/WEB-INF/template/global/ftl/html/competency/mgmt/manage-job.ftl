@@ -485,6 +485,10 @@
 			font-weight: normal;
 		}
 		
+		.tab-pane .k-grid-header:first-child {
+			border-radius : 0 0 0 0 ;
+		}		
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
