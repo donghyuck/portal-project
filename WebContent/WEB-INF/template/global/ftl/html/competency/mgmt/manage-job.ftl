@@ -581,13 +581,25 @@
 								<p class="p-sm" data-bind="{text: job.description, visible:visible}"></p>								
 								<textarea class="form-control" rows="4"  name="job-description"  data-bind="{value: job.description, visible:editable}" placeholder="직무 정의"></textarea>
 							</div>
-							<div class="panel-footer">
+							<div class="panel-body no-padding">
+								<ul class="nav nav-tabs nav-tabs-sm">
+									<li class="m-l-sm"><a href="#job-details-tabs-10" data-toggle="tab">직무능력수준</a></li>
+									<li><a href="#job-details-tabs-11" data-toggle="tab" data-action="variable-range">속성</a></li>
+								</ul>
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-10">
+									</div>	
+									<div role="tabpanel" class="tab-pane fade" id="job-details-tabs-11">
+									</div>																
+								</div>	 														
+							</div>
+							<div class="panel-footer text-right">
 								<button class="btn btn-primary btn-flat" data-bind="{ visible:visible, click:edit }">변경</button>
 								<button class="btn btn-primary btn-flat btn-outline" data-bind="{ visible:updatable, click:saveOrUpdate }" style="display:none;">저장</button>								
 								<button class="btn btn-default btn-flat btn-outline" data-bind="{visible:updatable, click:view }" style="display:none;">취소</button>								
 								<button class="btn btn-danger btn-flat btn-outline disabled" data-bind="{visible:deletable, click:delete }" style="display:none;">삭제</button>							
 							</div>
-							<div class="panel-body no-padding-t">	
+							<div class="panel-body bg-transparent">	
 								<ul class="nav nav-tabs nav-tabs-sm">
 									<li class="m-l-sm"><a href="#job-details-tabs-0" data-toggle="tab" data-action="elements">역량(능력단위)</a></li>
 									<li><a href="#job-details-tabs-2" data-toggle="tab" data-action="variable-range">직업</a></li>
