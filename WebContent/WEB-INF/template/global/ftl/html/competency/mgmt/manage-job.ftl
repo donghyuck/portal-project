@@ -386,9 +386,28 @@
 						);	
 						return false;						
 					},
+					propertyDataSource :new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
+					jobLevelDataSource : new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+							model: common.ui.data.competency.JobLevel
+						}		
+					}),					
 					setSource : function(source){
 						var $this = this;
 						source.copy($this.job);	
+						$this.propertyDataSource.read();
+						$this.jobLevelDataSource.read();						
+						$this.propertyDataSource.data($this.job.properties);	
+						$this.jobLevelDataSource.data($this.job.jobLevels);
+												
 						renderTo.find("ul.nav.nav-tabs:first a:first").tab('show');
 						if($this.job.get("jobId") == 0)
 						{
