@@ -635,12 +635,9 @@
 											</tbody>
 										</table>	
 										<div class="panel no-border-hr no-border-radius no-margin-b" data-bind="visible:editable">
-														<div class="panel-body">
+														<div class="panel-body animated fadeIn">
 															<input type="text" class="form-control m-b-xs" placeholder="이름">
-															<textarea class="form-control m-b-xs" rows="4" placeholder="설명"></textarea>
-															
-															
-															
+															<textarea class="form-control m-b-xs" rows="4" placeholder="설명"></textarea>															
 															<div class="row">
 																<div class="col-sm-6">
 																	<input type="number" min="1" class="form-control m-b-xs" placeholder="직무수준">
