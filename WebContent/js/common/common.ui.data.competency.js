@@ -10,6 +10,7 @@
 	    	objectId: { type: "number", editable: true, defaultValue: 0  },   
 	        name: { type: "string", editable: true },
 	        description: { type: "string", editable: true },
+	        properties : { type: "object", editable: true, defaultValue:{}},   
 	        jobLevels : { type: "object", editable: true, defaultValue:[]},   
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }	        
