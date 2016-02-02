@@ -133,7 +133,7 @@
 						common.ui.ajax(
 							'<@spring.url "/data/me/competency/assessment/create.json?output=json" />' , 
 							{
-								data : kendo.stringify( $this.assessment ),
+								data : kendo.stringify( newAssessment ),
 								contentType : "application/json",
 								success : function(response){																	
 									getMyAssessmentPlanListView().dataSource.read();
