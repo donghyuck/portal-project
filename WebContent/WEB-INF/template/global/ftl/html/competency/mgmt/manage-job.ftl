@@ -671,9 +671,9 @@
 															</div>
 														</div>
 														<div class="panel-footer">	
-															<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addSubject"><span class="btn-label icon fa fa-plus"></span> 직무능력수준추가 </button>
+															<button class="btn btn-flat btn-labeled btn-outline btn-danger" data-bind="click:addJobLevel"><span class="btn-label icon fa fa-plus"></span> 직무능력수준추가 </button>
 															<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="click:cancelChanges"
-																data-target="#assessment-details-tabs-2 .k-grid" > 변경취소 </button>	
+																data-target="#job-details-tabs-10 .k-grid" > 변경취소 </button>	
 														</div>
 										</div>	
 													
