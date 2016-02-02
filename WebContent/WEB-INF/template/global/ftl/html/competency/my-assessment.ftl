@@ -353,7 +353,7 @@
 										</tr>																																								
 									</tbody>
 								</table>	
-								<ul class="fieldlist" data-role="listview"
+								<ul class="list-unstyled margin-bottom-20 no-border" data-role="listview"
 											data-auto-bind="false"	
 						                 	data-template="my-assessment-job-level-template"
 						                 	data-bind="source: jobLevelDataSource" style="height: 300px; overflow: auto"> 	                    
