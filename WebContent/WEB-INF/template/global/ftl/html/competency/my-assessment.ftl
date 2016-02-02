@@ -292,8 +292,8 @@
 					
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">
-		                    <fieldset>
-								<label class="label">직무를 선택하여 주세요</label>
+							<header>직무를 선택하여 주세요</header>
+		                    <fieldset>								
 								<table class="table table-striped">
 				                    <thead>
 				                        <tr>
