@@ -291,7 +291,7 @@
 					</div>
 					
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
-						<form action="#" class="sky-form no-border">
+						<form action="#" class="sky-form">
 							<label class="label">직무를 선택하여 주세요.</label>
 		                    <table class="table table-striped no-margin">
 				            	<thead>
@@ -355,7 +355,7 @@
 							</table>	
 							
 															
-						<form action="#" class="sky-form no-border">
+						<form action="#" class="sky-form">
 							<label class="label">직급를 선택하여 주세요.</label>				
 							<table class="table table-striped no-margin">
 				            	<thead>
@@ -371,12 +371,14 @@
 						                 	data-template="my-assessment-job-level-template"
 						                 	data-bind="source: jobLevelDataSource" style="height: 300px; overflow: auto"> 
 								</tbody>		                    
-				        	</table>														
+				        	</table>
+				        	<footer>
+				        		<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>	
+				        		<button type="button" class="btn btn-primary btn-flat btn-outline rounded pull-left" data-bind="click:create, visible:secondStep" >진단하기</button>		
+				        	</footer>														
 						</form>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>	
-						<button type="button" class="btn btn-primary btn-flat btn-outline rounded pull-left" data-bind="click:create, visible:secondStep" >진단하기</button>		
+					<div class="modal-footer">						
 						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
 					</div>
 				</div>
