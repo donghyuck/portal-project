@@ -353,16 +353,21 @@
 										</tr>																																								
 									</tbody>
 								</table>	
-								<input 
-										data-option-label="없음"
-										data-role="dropdownlist"
-										data-value-primitive="true"
-										data-text-field="name"
-										data-value-field="level"
-										data-header-template='job-level-header-template'
-										data-template='job-level-value-template'
-										data-bind="source: jobLevelDataSource"style="width:100%"	>	
-													
+								<table class="table table-striped">
+				                    <thead>
+				                        <tr>
+				                            <th class="hidden-sm" width="40">&nbsp;</th>
+				                            <th width="40%">직무</th>
+				                            <th>직무정의</th>
+				                        </tr>
+				                    </thead>
+				                    <tbody data-role="listview"
+				                    		class="no-border"
+											data-auto-bind="false"	
+						                 	data-template="my-assessment-job-level-template"
+						                 	data-bind="source: jobLevelDataSource" style="height: 300px; overflow: auto"> 
+					                </tbody>		                    
+				                </table>		
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>	
@@ -380,13 +385,10 @@
               
 							
 		<!-- START TEMPLATE -->									
-		<script type="text/x-kendo-template" id="job-level-header-template">
-			<div class="dropdown-header k-widget k-header"><span>직무능력수준</span><span>직무경험</span></div>
+		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
+			<input type="radio" name="input-select-job-level" id="job-level-#=uid#" value="#=level#" class="k-radio" checked="checked">
+            <label class="k-radio-label" for="job-level-#=uid#">#: name # ( #:minWorkExperienceYear# ~ #:minWorkExperienceYear# 년 )</label>
 		</script>
-		<script type="text/x-kendo-template" id="job-level-value-template">
-			<span>#:data.name#</span> <span>#:data.minWorkExperienceYear# ~ #:data.maxWorkExperienceYear# 년</span>
-		</script>
-		
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
