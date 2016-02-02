@@ -465,6 +465,7 @@
 			assessmentPlanId: { type: "number", defaultValue: 0},
 	    	assessmentPlan: { type: "AssessmentPlan", defaultValue:new AssessmentPlan() , parse : function(data){
 	    		console.log (data) ;
+	    		return data;
 	    	} },	    	
 	    	userAssessments:  { type: "object" ,  defaultValue:[]},
 	    	userAssessedCount : { type: "number", defaultValue: 0 },
