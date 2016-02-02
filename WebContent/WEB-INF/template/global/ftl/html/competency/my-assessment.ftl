@@ -94,6 +94,7 @@
 				var observable =  common.ui.observable({
 					secondStep : false,
 					job : new common.ui.data.competency.Job(),
+					jobLevel : 0,
 					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
@@ -122,6 +123,7 @@
 						newAssessment.candidate.userId =  getCurrentUser().userId;
 						newAssessment.job.jobId = $this.job.jobId;
 						newAssessment.assessmentPlan.assessmentId = $this.assessmentPlan.assessmentId;
+						newAssessment.jobLevel = $this.jobLevel ;
 						
 						console.log( common.ui.stringify(newAssessment) );
 						
@@ -160,7 +162,7 @@
 						}
 						source.copy($this.assessmentPlan);						
 						if( doRead & $this.assessmentPlan.assessmentId > 0 )
-							$this.jobDataSource.read();						
+							$this.jobDataSource.read();
 						$this.set("secondStep", false);
 						renderTo.find("form")[0].reset();
 					}
@@ -181,16 +183,9 @@
 						observable.jobLevelDataSource.data(observable.job.jobLevels);					
 						observable.set('secondStep', true);	
 					}else if (objectType == 61){
-					
-					
-					}
-					/*
-					var item = observable.jobDataSource.get(radio.val());
-					item.copy(observable.job);
-					observable.jobLevelDataSource.read();
-					observable.jobLevelDataSource.data(observable.job.jobLevels);					
-					observable.set('secondStep', true);				
-					*/	
+						observable.set('jobLevel', objectId );
+						observable.create();
+					}	
 				});	
 			}
 			if( source ){
