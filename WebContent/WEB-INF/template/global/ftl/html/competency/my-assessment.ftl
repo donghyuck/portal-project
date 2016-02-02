@@ -381,10 +381,10 @@
 							
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="job-level-header-template">
-			<div class="dropdown-header k-widget k-header"><span>직무수준</span></div>
+			<div class="dropdown-header k-widget k-header"><span>직무능력수준</span><span>직무경험</span></div>
 		</script>
 		<script type="text/x-kendo-template" id="job-level-value-template">
-			<span>\#:data.name\#</span>
+			<span>\#:data.name\#</span><span>\#:data.minWorkExperienceYear\# ~ \#:data.maxWorkExperienceYear\#</span>
 		</script>
 		
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
