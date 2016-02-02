@@ -238,7 +238,11 @@
 		    padding-bottom: 1em;
 		}		
 		
-		
+		.sky-form .radio input+i:after {
+		    top: 6px;
+		    left: 6px;
+		    background-color: #999;
+		}		
 		
 		</style>   	
 		</#compress>
