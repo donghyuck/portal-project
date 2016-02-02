@@ -162,18 +162,17 @@
 							$this.jobDataSource.read();						
 						$this.set("secondStep", false);
 						renderTo.find("form")[0].reset();
-						
-						this.jobLevelDataSource.read();
-						this.jobLevelDataSource.data($this.job.jobLevels);
-						
 					}
 				});		
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );	
+				
 				$(document).on("click","input[type=radio][data-action='select']", function(e){						
 					var radio = $(this) ;					
 					var item = observable.jobDataSource.get(radio.val());
 					item.copy(observable.job);
+					observable.jobLevelDataSource.read();
+					observable.jobLevelDataSource.data(observable.job.jobLevels);					
 					observable.set('secondStep', true);					
 				});	
 			}
