@@ -101,14 +101,7 @@
 					job : new common.ui.data.competency.Job(),
 					jobLevel : 0,
 					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
-					userAssessedCount : 0,
-					userIncompleteCount : 0,
-					hasIncomplete : function(){
-						if( this.get('userIncompleteCount') > 0 )
-							return true;
-						else 
-							return false;
-					},
+					haseIncomplete :false,
 					userAssessments : [],
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
@@ -169,9 +162,13 @@
 						{
 							doRead = false;
 						}
-						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);			
-						$this.userIncompleteCount = source.userIncompleteCount ;
-						$this.userAssessedCount = source.userAssessedCount;
+						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);		
+						
+						if(source.userIncompleteCount > 0)
+							$this.set('haseIncomplete', true);
+						else
+							$this.set('haseIncomplete', false);
+						
 						$this.userAssessments = source.userAssessments;			
 						if( doRead & $this.assessmentPlan.assessmentId > 0 )
 							$this.jobDataSource.read();
@@ -320,7 +317,7 @@
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">
 							
-							<div data-bind="visible:hasIncomplete, text:hasIncomplete" >sss</div>
+							<div data-bind="visible:haseIncomplete, text:haseIncomplete" >sss</div>
 							
 							<header><span class="text-xxs">직무를 선택하여 주세요.</span></header>
 		                    <table class="table table-striped no-margin">
