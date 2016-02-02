@@ -342,7 +342,6 @@
 		                        <tr>
 		                            <th class="hidden-sm" width="40">&nbsp;</th>
 		                            <th width="40%">직무</th>
-		                            <th>분류</th>
 		                            <th>직무정의</th>
 		                        </tr>
 		                    </thead>
@@ -439,8 +438,13 @@
 		    	<label class="radio"><input type="radio" data-action="select" name="radio" name="input-select-job" value="#=jobId#"><i class="rounded-x"></i>#: name #</label>
 		    	
 		    </td>
-		    <td>#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > #:classification.classifiedMinorityName#</td>
-			<td>#: description #</td>
+			<td>
+			
+				<div class="headline-left">
+                    <h2 class="headline-brd heading-md">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > <span class="color-green">#:classification.classifiedMinorityName#</span></h2>
+                </div>
+				#: description #			
+			</td>
 		</tr>			
 		</script>
 		
