@@ -640,7 +640,16 @@
 															<textarea class="form-control m-b-xs" rows="4" placeholder="설명"></textarea>															
 															<div class="row">
 																<div class="col-sm-6">
-																	<input type="number" min="1" class="form-control m-b-xs" placeholder="직무수준">
+																	<select class="form-control form-group-margin" placeholder="직무수준">
+																		<option value="1">1수준</option>
+																		<option value="2">2수준</option>
+																		<option value="3">3수준</option>
+																		<option value="4">4수준</option>
+																		<option value="5">5수준</option>
+																		<option value="6">6수준</option>
+																		<option value="7">7수준</option>
+																		<option value="8">8수준</option>
+																	</select>
 																</div>
 																<div class="col-sm-6">
 																	<input type="number" min="0" class="form-control m-b-xs" placeholder="최소직무경험(년)">
