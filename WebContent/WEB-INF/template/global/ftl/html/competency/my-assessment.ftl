@@ -290,6 +290,51 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
+
+					<form action="#" class="sky-form">
+                    <header>General Unify Forms</header>
+
+					<fieldset>
+                        <section>
+                            <label class="label">Columned radios</label>
+                            <div class="row">
+                                <div class="col col-4">
+                                    <label class="radio"><input type="radio" name="radio" checked=""><i class="rounded-x"></i>Alexandra</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Alice</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Anastasia</label>
+                                </div>
+                                <div class="col col-4">
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Avelina</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Basilia</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Beatrice</label>
+                                </div>
+                                <div class="col col-4">
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Cassandra</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Clemencia</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Desiderata</label>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <label class="label">Inline radios</label>
+                            <div class="inline-group">
+                                <label class="radio"><input type="radio" name="radio-inline" checked=""><i class="rounded-x"></i>Alexandra</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Alice</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Anastasia</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Avelina</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Beatrice</label>
+                            </div>
+                        </section>
+                    </fieldset>
+
+                    <footer>
+                        <button type="submit" class="btn-u">Submit</button>
+                        <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
+                    </footer>
+                </form>
+                					
+					
 						<form>     
 			            <h3 class="heading-sm">직무를 선택하여 주세요.</h3>
 						<table class="table table-striped">
