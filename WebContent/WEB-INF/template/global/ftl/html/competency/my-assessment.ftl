@@ -103,7 +103,7 @@
 					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
-							read: { url:'<@spring.url "/data/me/competency/assessment/job/list.json?output=json'"/>, type:'post' },
+							read: { url:'<@spring.url "/data/me/competency/assessment/job/list.json?output=json"/>', type:'post' },
 							parameterMap: function (options, operation){
 								if (operation !== "read") {
 									return kendo.stringify(options);
@@ -131,7 +131,7 @@
 
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
-							'<@spring.url "data/me/competency/assessment/create.json?output=json" />' , 
+							'<@spring.url "/data/me/competency/assessment/create.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.assessment ),
 								contentType : "application/json",
