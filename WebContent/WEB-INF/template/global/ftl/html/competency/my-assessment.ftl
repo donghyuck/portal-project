@@ -441,7 +441,7 @@
                 </ul>   	
        		</div>
             <h3>#: assessmentPlan.name#</h3>
-            <h4>#: assessmentPlan.formattedStartDate() # ~ #: assessmentPlan.formattedEndDate() #</h4>
+            <h4>#= kendo.toString( assessmentPlan.startDate, "g") # ~ #: kendo.toString( assessmentPlan.endDate, "g") #</h4>
             <p>#:description#</p>            
             <table class="table">
             	<thead>
