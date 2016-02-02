@@ -225,6 +225,7 @@
 		.modal-body .k-listview td .k-radio-label{
 			font-weight: 100;
 		    margin-bottom: 0;
+		    font-size : 1.2em;
 		    line-height: 1.3em;
 		}
 		
@@ -232,6 +233,7 @@
 			font-weight: 100;
 		    margin-bottom: 0;
 		    line-height: 1.3em;
+		    font-size : 1.2em;
 		    padding-bottom: 1em;
 		}		
 		
