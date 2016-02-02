@@ -67,7 +67,7 @@
 		
 		function getMyAssessmentPlanListView(){
 			var renderTo = $('#my-assessment-plan-listview');	
-			return.common.ui.listview(renderTo);
+			return common.ui.listview(renderTo);
 		}
 
 		function createMyAssessmentPlanListView(){
