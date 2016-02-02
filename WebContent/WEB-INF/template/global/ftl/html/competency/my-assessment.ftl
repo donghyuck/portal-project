@@ -359,8 +359,8 @@
 										data-value-primitive="true"
 										data-text-field="name"
 										data-value-field="level"
-										data-header-template='<div class="dropdown-header k-widget k-header"><span>직무수준</span></div>'
-										data-value-template='<span>\#:data.name\#</span>'
+										data-header-template='job-level-header-template'
+										data-value-template='job-level-value-template'
 										data-bind="source: jobLevelDataSource"	>	
 													
 					</div>
@@ -380,6 +380,13 @@
               
 							
 		<!-- START TEMPLATE -->									
+		<script type="text/x-kendo-template" id="job-level-header-template">
+			<div class="dropdown-header k-widget k-header"><span>직무수준</span></div>
+		</script>
+		<script type="text/x-kendo-template" id="job-level-value-template">
+			<span>\#:data.name\#</span>
+		</script>
+		
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
