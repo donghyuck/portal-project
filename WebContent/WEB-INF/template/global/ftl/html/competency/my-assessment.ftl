@@ -438,8 +438,10 @@
         		<ul class="text-right">
         		#if(assessmentPlan.multipleApplyAllowed || userAssessedCount == 0 || userIncompleteCount > 0 ){#
                 	<li><button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</a></li>
-                #}#	             
+                #}#	     
+                #if(userAssessedCount>0){ #        
                 	<li><a href="\\#" class="btn btn-flat btn-success btn-outline  rounded" data-object-id="#:assessmentPlan.assessmentId#">결과보기</a></li>                        
+                #}#
                 </ul>   	
        		</div>
             <h3>#: assessmentPlan.name#</h3>
