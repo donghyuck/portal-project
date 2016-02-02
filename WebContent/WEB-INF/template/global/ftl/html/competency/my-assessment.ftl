@@ -448,7 +448,7 @@
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
-		    <td> u  
+		    <td> u  hh
 		    	 
 		    </td>
 			<td>
