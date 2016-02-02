@@ -295,7 +295,24 @@
                     <header>General Unify Forms</header>
 					<fieldset>
                         <section>
-                            <label class="label">직무를 선택하여 주세요</label>
+                        <label class="label">직무를 선택하여 주세요</label>
+                      	<table class="table table-striped">
+		                    <thead>
+		                        <tr>
+		                            <th class="hidden-sm" width="40">&nbsp;</th>
+		                            <th width="40%">직무</th>
+		                            <th>분류</th>
+		                            <th>직무정의</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody data-role="listview"
+		                    		class="no-border"
+									data-auto-bind="false"	
+				                 	data-template="my-assessment-job-template"
+				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
+			                </tbody>		                    
+		                </table>
+		                
                             <div class="row">
                                 <div class="col col-4">
                                     <label class="radio"><input type="radio" name="radio" checked=""><i class="rounded-x"></i>Alexandra</label>
