@@ -353,21 +353,11 @@
 										</tr>																																								
 									</tbody>
 								</table>	
-								<table class="table table-striped">
-				                    <thead>
-				                        <tr>
-				                            <th class="hidden-sm" width="40">&nbsp;</th>
-				                            <th width="40%">직무</th>
-				                            <th>직무정의</th>
-				                        </tr>
-				                    </thead>
-				                    <tbody data-role="listview"
-				                    		class="no-border"
+								<ul class="fieldlist" data-role="listview"
 											data-auto-bind="false"	
 						                 	data-template="my-assessment-job-level-template"
-						                 	data-bind="source: jobLevelDataSource" style="height: 300px; overflow: auto"> 
-					                </tbody>		                    
-				                </table>		
+						                 	data-bind="source: jobLevelDataSource" style="height: 300px; overflow: auto"> 	                    
+				                </ul>		
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>	
@@ -386,8 +376,10 @@
 							
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
+		<li>
 			<input type="radio" name="input-select-job-level" id="job-level-#=uid#" value="#=level#" class="k-radio" checked="checked">
             <label class="k-radio-label" for="job-level-#=uid#">#: name # ( #:minWorkExperienceYear# ~ #:minWorkExperienceYear# 년 )</label>
+        </li>    
 		</script>
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		<tr>
