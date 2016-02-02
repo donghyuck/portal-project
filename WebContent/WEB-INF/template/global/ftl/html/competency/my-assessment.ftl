@@ -375,14 +375,11 @@
 						                 	data-template="my-assessment-job-level-template"
 						                 	data-bind="source: jobLevelDataSource" style="height: 300px; overflow: auto"> 
 								</tbody>		                    
-				        	</table>
-				        	<footer>
-				        		<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>	
-				        		<button type="button" class="btn btn-primary btn-flat btn-outline rounded pull-left" data-bind="click:create, visible:secondStep" >진단하기</button>		
-				        	</footer>														
+				        	</table>													
 						</form>
 					</div>
-					<div class="modal-footer">						
+					<div class="modal-footer">	
+						<button type="button" class="btn btn-primary btn-flat btn-outline rounded btn-left" data-bind="click:goFirstStep, visible:secondStep" >이전</button>					
 						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
 					</div>
 				</div>
