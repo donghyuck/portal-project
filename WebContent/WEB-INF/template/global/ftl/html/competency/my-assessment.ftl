@@ -361,7 +361,7 @@
 				            	<thead>
 				                	<tr>
 				                    	<th class="hidden-sm" width="42">&nbsp;</th>
-				                    	<th width="30%">직급</th>
+				                    	<th width="50%">직급</th>
 				                    	<th>직무경험</th>
 				              		</tr>
 				          		</thead>
