@@ -282,7 +282,7 @@
 		<!-- START MODAL -->		
 		
 	<div id="apply-assessment-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-			<div class="modal-dialog modal-md modal-flat">
+			<div class="modal-dialog modal-lg modal-flat">
 				<div class="modal-content">	
 					<div class="modal-header">
 						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
