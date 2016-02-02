@@ -174,6 +174,16 @@
 					var objectId = radio.val();		
 					console.log( "objectType:" + objectType + ", objectId=" + objectId ) ;
 					
+					if( objectType == 60 ){
+						var item = observable.jobDataSource.get(objectId);
+						item.copy(observable.job);
+						observable.jobLevelDataSource.read();
+						observable.jobLevelDataSource.data(observable.job.jobLevels);					
+						observable.set('secondStep', true);	
+					}else if (objectType == 61){
+					
+					
+					}
 					/*
 					var item = observable.jobDataSource.get(radio.val());
 					item.copy(observable.job);
