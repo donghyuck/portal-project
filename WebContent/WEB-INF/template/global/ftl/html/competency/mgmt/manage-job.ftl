@@ -831,7 +831,7 @@
 		<tr>
 			<td>#: name #</td>
 			<td>#: description #</td>
-			<td>#: jobLevel #</td>
+			<td>#: level #</td>
 			<td>#: minWorkExperienceYear # ~ #: maxWorkExperienceYear #</td>
 		</tr>		
 		</script>
