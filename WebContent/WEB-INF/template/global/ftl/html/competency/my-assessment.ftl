@@ -136,7 +136,6 @@
 								data : kendo.stringify( $this.assessment ),
 								contentType : "application/json",
 								success : function(response){																	
-									$this.setSource(new common.ui.data.competency.AssessmentPlan(response));	
 									getMyAssessmentPlanListView().dataSource.read();
 								},
 								complete : function(e){
