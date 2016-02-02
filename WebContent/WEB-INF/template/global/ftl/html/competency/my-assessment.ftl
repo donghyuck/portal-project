@@ -311,24 +311,6 @@
 				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
 			                </tbody>		                    
 		                </table>
-		                
-                            <div class="row">
-                                <div class="col col-4">
-                                    <label class="radio"><input type="radio" name="radio" checked=""><i class="rounded-x"></i>Alexandra</label>
-                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Alice</label>
-                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Anastasia</label>
-                                </div>
-                                <div class="col col-4">
-                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Avelina</label>
-                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Basilia</label>
-                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Beatrice</label>
-                                </div>
-                                <div class="col col-4">
-                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Cassandra</label>
-                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Clemencia</label>
-                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Desiderata</label>
-                                </div>
-                            </div>
                         </section>
                     </fieldset>
                 </form>
