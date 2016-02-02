@@ -441,7 +441,7 @@
 			<td>
 			
 				<div class="headline-left">
-                    <h2 class="headline-brd heading-md">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > <span class="color-green">#:classification.classifiedMinorityName#</span></h2>
+                    <h6 class="heading-md">#:classification.classifiedMajorityName# > #:classification.classifiedMiddleName# > <span class="color-green">#:classification.classifiedMinorityName#</span></h2>
                 </div>
 				#: description #			
 			</td>
