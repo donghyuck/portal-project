@@ -454,7 +454,7 @@
                 </thead>
                 <tbody>
  				# for (var i = 0; i < assessmentPlan.jobSelections.length ; i++) { #	
-	            # var jb = jobSelections[i] ; #	
+	            # var jb = assessmentPlan.jobSelections[i] ; #	
 	                <tr>
                     	<td>#if(jb.classifiedMajorityId > 0){# #:jb.classifiedMajorityName# #}#</td>
                     	<td>#if(jb.classifiedMiddleId > 0){# #:jb.classifiedMiddleName# #}#</td>
