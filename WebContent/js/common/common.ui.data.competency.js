@@ -467,7 +467,7 @@
 	    	userAssessments:  { type: "object" ,  defaultValue:[]},
 	    	userAssessedCount : { type: "number", defaultValue: 0 },
 	    	userIncompleteCount : { type: "number", defaultValue: 0 },
-	    	assessmentPlan.startDate: { type: "date"}
+	    	'assessmentPlan.startDate': { type: "date"}
 	    },
 		copy : function ( target ){
 	    	target.set("assessmentPlanId", this.get("assessmentPlanId"));
