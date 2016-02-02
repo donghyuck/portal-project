@@ -120,6 +120,9 @@
 						var $this = this;						
 
 						console.log($this);
+						console.log( common.ui.stringify($this.job) );
+						
+						
 						
 						var newAssessment = new common.ui.data.competency.Assessment();
 						newAssessment.candidate.userId =  getCurrentUser().userId;
