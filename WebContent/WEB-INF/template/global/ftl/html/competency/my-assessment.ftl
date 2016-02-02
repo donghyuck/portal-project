@@ -359,6 +359,8 @@
 										data-value-primitive="true"
 										data-text-field="name"
 										data-value-field="level"
+										data-header-template='<div class="dropdown-header k-widget k-header"><span>직무수준</span></div>'
+										data-value-template='<span>#:data.name#</span>'
 										data-bind="source: jobLevelDataSource"	>	
 													
 					</div>
