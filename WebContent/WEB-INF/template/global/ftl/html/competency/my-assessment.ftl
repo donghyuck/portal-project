@@ -384,7 +384,7 @@
 			<div class="dropdown-header k-widget k-header"><span>직무능력수준</span><span>직무경험</span></div>
 		</script>
 		<script type="text/x-kendo-template" id="job-level-value-template">
-			<span>\#:data.name\#</span><span>\#:data.minWorkExperienceYear\# ~ \#:data.maxWorkExperienceYear\# 년</span>
+			<span>\#:data.name\#</span> <span>\#:data.minWorkExperienceYear\# ~ \#:data.maxWorkExperienceYear\# 년</span>
 		</script>
 		
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
