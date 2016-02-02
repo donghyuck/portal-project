@@ -64,6 +64,12 @@
 			}
 		}]);			
 
+		
+		function getMyAssessmentPlanListView(){
+			var renderTo = $('#my-assessment-plan-listview');	
+			return.common.ui.listview(renderTo);
+		}
+
 		function createMyAssessmentPlanListView(){
 			var renderTo = $('#my-assessment-plan-listview');	
 			if( ! common.ui.exists(renderTo) ){
@@ -82,8 +88,7 @@
 					var objectId = btn.data('object-id');
 					var item = dataSource.get(objectId);
 					console.log( common.ui.stringify(item) );
-					createApplyAssessmentModal(item);
-					
+					createApplyAssessmentModal(item);					
 				});
 			}
 		}
@@ -117,22 +122,13 @@
 						observable.set('secondStep', false);
 					},
 					create : function(e){
-						var $this = this;						
-
-						console.log($this);
-						console.log( common.ui.stringify($this.job.get('jobId')) );
-						
-						
-						
-						var newAssessment = new common.ui.data.competency.Assessment();
-						console.log( common.ui.stringify(newAssessment) );
-						
+						var $this = this;												
+						var newAssessment = new common.ui.data.competency.Assessment();						
 						newAssessment.candidate.userId =  getCurrentUser().userId;
-						newAssessment.job.jobId = $this.job.jobId ;
+						newAssessment.job = $this.job ;
 						newAssessment.assessmentPlan.assessmentId = $this.assessmentPlan.assessmentId;
 						newAssessment.jobLevel = $this.jobLevel ;
-						
-						/**
+
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "data/me/competency/assessment/create.json?output=json" />' , 
@@ -141,14 +137,14 @@
 								contentType : "application/json",
 								success : function(response){																	
 									$this.setSource(new common.ui.data.competency.AssessmentPlan(response));	
-									getAssessmentPlanGrid().dataSource.read();
+									getMyAssessmentPlanListView().dataSource.read();
 								},
 								complete : function(e){
 									common.ui.progress(renderTo, false);
+									renderTo.modal('hide');
 								}
 							}
-						);			
-						*/				
+						);		
 						return false;
 					
 					},
