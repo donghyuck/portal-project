@@ -118,7 +118,7 @@
 					},
 					create : function(e){
 						var $this = this;						
-						var btn = $(e.target);	
+
 						var newAssessment = new common.ui.data.competency.Assessment();
 						newAssessment.candidate.userId =  getCurrentUser().userId;
 						newAssessment.job.jobId = $this.job.jobId;
