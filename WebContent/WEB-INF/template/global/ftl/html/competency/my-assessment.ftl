@@ -320,7 +320,7 @@
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">
 							
-							<div data-bind="visible: hasIncomplete " >sss</div>
+							<div data-bind="visible:hasIncomplete, text:hasIncomplete" >sss</div>
 							
 							<header><span class="text-xxs">직무를 선택하여 주세요.</span></header>
 		                    <table class="table table-striped no-margin">
