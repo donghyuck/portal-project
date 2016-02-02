@@ -459,6 +459,23 @@
 	    }
 	});
 	
+	var AssessmentStats = kendo.data.Model.define( {
+		id: "assessmentPlanId", // the identifier of the model
+		fields: {
+			assessmentPlanId: { type: "number", defaultValue: 0},
+	    	assessmentPlan: { type: "object", defaultValue:new AssessmentPlan() },	    	
+	    	userAssessments:  { type: "object" ,  defaultValue:[]},
+	    	userAssessedCount : { type: "number", defaultValue: 0 },
+	    	userIncompleteCount : { type: "number", defaultValue: 0 }
+	    },
+		copy : function ( target ){
+	    	target.set("assessmentPlanId", this.get("assessmentPlanId"));
+	    	target.set("assessmentPlan", this.get("assessmentPlan"));
+	    	target.set("userAssessments", this.get("userAssessments"));
+	    	target.set("userAssessedCount", this.get("userAssessedCount"));
+	    	target.set("userIncompleteCount", this.get("userIncompleteCount"));
+		}
+	});
 
 	
 	var AssessmentCreatePlan = kendo.data.Model.define( {
@@ -499,7 +516,8 @@
 			AssessmentSubject:AssessmentSubject,
 			AssessmentCreatePlan:AssessmentCreatePlan,
 			AssessmentPlan:AssessmentPlan,
-			Assessment:Assessment
+			Assessment:Assessment,
+			AssessmentStats:AssessmentStats
 		}  
 	} );
 	
