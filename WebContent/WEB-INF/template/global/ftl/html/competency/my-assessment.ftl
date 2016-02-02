@@ -296,7 +296,7 @@
 		                    <table class="table table-striped no-margin">
 				            	<thead>
 				                	<tr>
-				                    	<th class="hidden-sm" width="40">&nbsp;</th>
+				                    	<th class="hidden-sm" width="42">&nbsp;</th>
 				                    	<th width="30%">직무</th>
 				                    	<th>직무정의</th>
 				              		</tr>
@@ -310,9 +310,7 @@
 				        	</table>
 		                </form>
 					</div>
-					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">				
-						<form action="#" class="sky-form no-border">
-							<label class="label">직급를 선택하여 주세요.</label>
+					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">	
 							<table class="table table-striped">
 								<thead>
 										<tr>
@@ -354,16 +352,27 @@
 											</td>
 										</tr>																																								
 									</tbody>
-							</table>							
-						</form>
-								
-						<h3 class="heading-sm">직급를 선택하여 주세요.</h3>
+							</table>	
 							
-								<ul class="list-unstyled margin-bottom-20 no-border" data-role="listview"
+															
+						<form action="#" class="sky-form no-border">
+							<label class="label">직급를 선택하여 주세요.</label>				
+							<table class="table table-striped no-margin">
+				            	<thead>
+				                	<tr>
+				                    	<th class="hidden-sm" width="42">&nbsp;</th>
+				                    	<th width="30%">직무</th>
+				                    	<th>직무정의</th>
+				              		</tr>
+				          		</thead>
+				          		<tbody data-role="listview"
+				                    		class="no-border"
 											data-auto-bind="false"	
 						                 	data-template="my-assessment-job-level-template"
-						                 	data-bind="source: jobLevelDataSource" style="height: 300px; overflow: auto"> 	                    
-				                </ul>		
+						                 	data-bind="source: jobLevelDataSource" style="height: 300px; overflow: auto"> 
+								</tbody>		                    
+				        	</table>														
+						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>	
