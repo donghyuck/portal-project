@@ -293,7 +293,7 @@
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">
 							<label class="label">직무를 선택하여 주세요</label>
-		                    <table class="table table-striped">
+		                    <table class="table table-striped no-margin">
 				            	<thead>
 				                	<tr>
 				                    	<th class="hidden-sm" width="40">&nbsp;</th>
