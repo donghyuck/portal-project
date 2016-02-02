@@ -125,12 +125,12 @@
 						
 						
 						var newAssessment = new common.ui.data.competency.Assessment();
+						console.log( common.ui.stringify(newAssessment) );
+						
 						newAssessment.candidate.userId =  getCurrentUser().userId;
 						newAssessment.job.jobId = $this.job.jobId ;
 						newAssessment.assessmentPlan.assessmentId = $this.assessmentPlan.assessmentId;
 						newAssessment.jobLevel = $this.jobLevel ;
-						
-						console.log( common.ui.stringify(newAssessment) );
 						
 						/**
 						common.ui.progress(renderTo, true);
