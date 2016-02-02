@@ -156,11 +156,11 @@
 					setSource: function(source){
 						var $this = this;
 						var doRead = true;						
-						if( source.assessmentId == $this.assessmentPlan.assessmentId )
+						if( source.assessmentPlanId == $this.assessmentPlan.assessmentId )
 						{
 							doRead = false;
 						}
-						source.copy($this.assessmentPlan);						
+						source.assessmentPlan.copy($this.assessmentPlan);						
 						if( doRead & $this.assessmentPlan.assessmentId > 0 )
 							$this.jobDataSource.read();
 						$this.set("secondStep", false);
