@@ -289,25 +289,14 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
-						
-						<div data-role="grid"
-							 class="hidden"
-			                 data-editable="false"
-			                 data-selectable="row"
-			                 data-columns='[
-			                 				 { "title":"&nbsp;", "width":"40px", template: "<i class=\"icon-flat icon-svg icon-svg-md business-color-work\"></i> <input type=\"checkbox\" class=\"checkbox\" /> " }, 	
-			                                 { "title":"직무", "field": "name"},
-			                                 { "title":"정의", "field": "description" },
-			                              ]'
-			                 data-bind="source: jobDataSource"
-			                 style="height: 300px"></div>    
-			            <form>     
+						<form>     
 			            <h3 class="heading-sm">직무를 선택하여 주세요.</h3>
 						<table class="table table-striped">
 		                    <thead>
 		                        <tr>
 		                            <th class="hidden-sm" width="40">&nbsp;</th>
 		                            <th width="40%">직무</th>
+		                            <th>분류</th>
 		                            <th>직무정의</th>
 		                        </tr>
 		                    </thead>
