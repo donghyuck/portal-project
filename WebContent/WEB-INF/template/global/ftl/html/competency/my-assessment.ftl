@@ -144,6 +144,12 @@
 						return false;
 					
 					},
+					jobLevelDataSource :new kendo.data.DataSource({
+						data : [],
+						schema: {
+                            model: common.ui.data.competency.JobLevel
+                        }
+					}),
 					setSource: function(source){
 						var $this = this;
 						var doRead = true;						
@@ -156,6 +162,10 @@
 							$this.jobDataSource.read();						
 						$this.set("secondStep", false);
 						renderTo.find("form")[0].reset();
+						
+						this.jobLevelDataSource.read();
+						this.jobLevelDataSource.data($this.job.jobLevels);
+						
 					}
 				});		
 				renderTo.data("model", observable);	
@@ -302,7 +312,6 @@
 					</div>
 					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">						
 						<h3 class="heading-sm">직급를 선택하여 주세요.</h3>
-						
 						<table class="table table-striped">
 									<thead>
 										<tr>
@@ -345,7 +354,14 @@
 										</tr>																																								
 									</tbody>
 								</table>	
-														
+								<input 
+										data-option-label="없음"
+										data-role="dropdownlist"
+										data-value-primitive="true"
+										data-text-field="name"
+										data-value-field="level"
+										data-bind="source: jobLevelDataSource"	>	
+													
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary btn-flat btn-outline rounded" data-bind="click:goFirstStep, visible:secondStep" >이전</button>	
