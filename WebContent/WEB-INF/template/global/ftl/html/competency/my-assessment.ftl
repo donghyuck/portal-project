@@ -291,29 +291,26 @@
 					</div>
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 
-					<form action="#" class="sky-form">
-                    <header>General Unify Forms</header>
-					<fieldset>
-                        <section>
-                        <label class="label">직무를 선택하여 주세요</label>
-                      	<table class="table table-striped">
-		                    <thead>
-		                        <tr>
-		                            <th class="hidden-sm" width="40">&nbsp;</th>
-		                            <th width="40%">직무</th>
-		                            <th>직무정의</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody data-role="listview"
-		                    		class="no-border"
-									data-auto-bind="false"	
-				                 	data-template="my-assessment-job-template"
-				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
-			                </tbody>		                    
-		                </table>
-                        </section>
-                    </fieldset>
-                </form>
+					<form action="#" class="sky-form no-border">
+	                    <fieldset>
+							<label class="label">직무를 선택하여 주세요</label>
+							<table class="table table-striped">
+			                    <thead>
+			                        <tr>
+			                            <th class="hidden-sm" width="40">&nbsp;</th>
+			                            <th width="40%">직무</th>
+			                            <th>직무정의</th>
+			                        </tr>
+			                    </thead>
+			                    <tbody data-role="listview"
+			                    		class="no-border"
+										data-auto-bind="false"	
+					                 	data-template="my-assessment-job-template"
+					                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
+				                </tbody>		                    
+			                </table>
+	                    </fieldset>
+	                </form>
                 					
 					
 						<form>     
