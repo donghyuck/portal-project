@@ -222,7 +222,7 @@
 			vertical-align: middle;
 		}
 		
-		.modal-body .k-listview td .k-radio-label {
+		.modal-body .k-listview td .k-radio-label, ul.list-unstyled li .k-radio-label{
 			font-weight: 100;
 		    margin-bottom: 0;
 		    line-height: 1.3em;
