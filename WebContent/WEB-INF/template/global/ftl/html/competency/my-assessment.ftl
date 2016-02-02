@@ -293,23 +293,21 @@
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">
 							<header>직무를 선택하여 주세요</header>
-		                    <fieldset>								
-								<table class="table table-striped">
-				                    <thead>
-				                        <tr>
-				                            <th class="hidden-sm" width="40">&nbsp;</th>
-				                            <th width="40%">직무</th>
-				                            <th>직무정의</th>
-				                        </tr>
-				                    </thead>
-				                    <tbody data-role="listview"
+		                    <table class="table table-striped">
+				            	<thead>
+				                	<tr>
+				                    	<th class="hidden-sm" width="40">&nbsp;</th>
+				                    	<th width="40%">직무</th>
+				                    	<th>직무정의</th>
+				              		</tr>
+				          		</thead>
+				          		<tbody data-role="listview"
 				                    		class="no-border"
 											data-auto-bind="false"	
 						                 	data-template="my-assessment-job-template"
 						                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
-					                </tbody>		                    
-				                </table>
-		                    </fieldset>
+								</tbody>		                    
+				        	</table>
 		                </form>
 					</div>
 					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">						
