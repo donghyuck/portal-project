@@ -318,7 +318,7 @@
 						<form action="#" class="sky-form no-border">
 							
 							<div data-bind="visible:haseIncomplete" >
-								<span>미완료된진단들이 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</span>
+								<span class="text-danger">미완료된진단들이 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</span>
 							
 							
 							</div>
