@@ -360,7 +360,7 @@
 										data-text-field="name"
 										data-value-field="level"
 										data-header-template='job-level-header-template'
-										data-value-template='job-level-value-template'
+										data-template='job-level-value-template'
 										data-bind="source: jobLevelDataSource"	>	
 													
 					</div>
