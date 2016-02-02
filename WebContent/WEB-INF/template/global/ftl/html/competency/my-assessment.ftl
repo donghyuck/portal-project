@@ -361,8 +361,8 @@
 				            	<thead>
 				                	<tr>
 				                    	<th class="hidden-sm" width="42">&nbsp;</th>
-				                    	<th width="30%">직무</th>
-				                    	<th>직무정의</th>
+				                    	<th width="30%">직급</th>
+				                    	<th>직무경험</th>
 				              		</tr>
 				          		</thead>
 				          		<tbody data-role="listview"
@@ -391,10 +391,16 @@
 							
 		<!-- START TEMPLATE -->									
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
-		<li>
-			<input type="radio" name="input-select-job-level" id="job-level-#=uid#" value="#=level#" class="k-radio" checked="checked">
-            <label class="k-radio-label" for="job-level-#=uid#">#: name # ( #:minWorkExperienceYear# ~ #:minWorkExperienceYear# 년 )</label>
-        </li>    
+		<tr>
+		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
+		    <td>    
+		    	<label class="radio"><input type="radio" name="radio" name="input-select-job-level" value="#=level#"><i class="rounded-x"></i>#: name #</label>
+		    </td>
+			<td>
+				#:minWorkExperienceYear# ~ #:minWorkExperienceYear# 년		
+			</td>
+		</tr>	
+		        
 		</script>
 		
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
