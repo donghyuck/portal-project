@@ -120,7 +120,7 @@
 						var $this = this;						
 
 						console.log($this);
-						console.log( common.ui.stringify($this.job) );
+						console.log( common.ui.stringify($this.job.get('jobId')) );
 						
 						
 						
