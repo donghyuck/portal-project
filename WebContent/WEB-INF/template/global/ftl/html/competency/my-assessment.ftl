@@ -292,7 +292,7 @@
 					
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">
-							<label class="label">직무를 선택하여 주세요</label>
+							<label class="label">직무를 선택하여 주세요.</label>
 		                    <table class="table table-striped no-margin">
 				            	<thead>
 				                	<tr>
@@ -310,10 +310,11 @@
 				        	</table>
 		                </form>
 					</div>
-					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">						
-						<h3 class="heading-sm">직급를 선택하여 주세요.</h3>
-						<table class="table table-striped">
-									<thead>
+					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">				
+						<form action="#" class="sky-form no-border">
+							<label class="label">직급를 선택하여 주세요.</label>
+							<table class="table table-striped">
+								<thead>
 										<tr>
 											<th width="30%" >직무분류체계</th>
 											<th>
@@ -342,8 +343,7 @@
 										</tr>	
 										<tr>
 											<td>직무</td>
-											<td>
-												<span data-bind="{text: job.name}" ></span>
+												<span class="color-green" data-bind="{text: job.name}" ></span>
 											</td>
 										</tr>	
 										<tr>
@@ -353,7 +353,11 @@
 											</td>
 										</tr>																																								
 									</tbody>
-								</table>	
+							</table>							
+						</form>
+								
+						<h3 class="heading-sm">직급를 선택하여 주세요.</h3>
+							
 								<ul class="list-unstyled margin-bottom-20 no-border" data-role="listview"
 											data-auto-bind="false"	
 						                 	data-template="my-assessment-job-level-template"
