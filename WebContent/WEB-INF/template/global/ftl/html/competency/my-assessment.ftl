@@ -292,7 +292,7 @@
 					
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form">
-							<label class="label">직무를 선택하여 주세요.</label>
+							<header class="text-sm">직무를 선택하여 주세요.</label>
 		                    <table class="table table-striped no-margin">
 				            	<thead>
 				                	<tr>
@@ -356,7 +356,7 @@
 							
 															
 						<form action="#" class="sky-form">
-							<label class="label">직급를 선택하여 주세요.</label>				
+							<header class="font-sm">직급를 선택하여 주세요.</header>				
 							<table class="table table-striped no-margin">
 				            	<thead>
 				                	<tr>
