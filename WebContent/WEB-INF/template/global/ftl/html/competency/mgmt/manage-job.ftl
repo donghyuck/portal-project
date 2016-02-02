@@ -263,6 +263,17 @@
 					deletable: false,
 					updatable : false,					
 					job: new common.ui.data.competency.Job(),
+					addJobLevel:function(e){
+						var $this = this;
+						var newJobLevel = new common.ui.data.competency.JobLevel();
+						newJobLevel.set("jobId", $this.job.get("jobId"));
+						common.ui.grid($('#job-details-tabs-10 .k-grid')).dataSource.add(newJobLevel) ;
+						return false;
+					},
+					cancelChanges:function(e){
+						common.ui.grid( $($(e.target).data("target")) ).cancelChanges();
+						return false; 
+					},
 					classifyTypeDataSource: new kendo.data.DataSource({
 						serverFiltering: false,
 						transport: {
