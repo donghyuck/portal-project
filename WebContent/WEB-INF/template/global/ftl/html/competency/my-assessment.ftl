@@ -283,53 +283,33 @@
 		<!-- START MODAL -->		
 		
 	<div id="apply-assessment-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-			<div class="modal-dialog modal-lg modal-flat">
+			<div class="modal-dialog modal-md modal-flat">
 				<div class="modal-content">	
 					<div class="modal-header">
 						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
-
-					<form action="#" class="sky-form no-border">
-	                    <fieldset>
-							<label class="label">직무를 선택하여 주세요</label>
-							<table class="table table-striped">
-			                    <thead>
-			                        <tr>
-			                            <th class="hidden-sm" width="40">&nbsp;</th>
-			                            <th width="40%">직무</th>
-			                            <th>직무정의</th>
-			                        </tr>
-			                    </thead>
-			                    <tbody data-role="listview"
-			                    		class="no-border"
-										data-auto-bind="false"	
-					                 	data-template="my-assessment-job-template"
-					                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
-				                </tbody>		                    
-			                </table>
-	                    </fieldset>
-	                </form>
-                					
 					
-						<form>     
-			            <h3 class="heading-sm">직무를 선택하여 주세요.</h3>
-						<table class="table table-striped">
-		                    <thead>
-		                        <tr>
-		                            <th class="hidden-sm" width="40">&nbsp;</th>
-		                            <th width="40%">직무</th>
-		                            <th>직무정의</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody data-role="listview"
-		                    		class="no-border"
-									data-auto-bind="false"	
-				                 	data-template="my-assessment-job-template"
-				                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
-			                </tbody>		                    
-		                </table>
+					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
+						<form action="#" class="sky-form no-border">
+		                    <fieldset>
+								<label class="label">직무를 선택하여 주세요</label>
+								<table class="table table-striped">
+				                    <thead>
+				                        <tr>
+				                            <th class="hidden-sm" width="40">&nbsp;</th>
+				                            <th width="40%">직무</th>
+				                            <th>직무정의</th>
+				                        </tr>
+				                    </thead>
+				                    <tbody data-role="listview"
+				                    		class="no-border"
+											data-auto-bind="false"	
+						                 	data-template="my-assessment-job-template"
+						                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
+					                </tbody>		                    
+				                </table>
+		                    </fieldset>
 		                </form>
 					</div>
 					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">						
