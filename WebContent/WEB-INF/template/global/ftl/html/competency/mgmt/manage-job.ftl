@@ -267,6 +267,9 @@
 						var $this = this;
 						var newJobLevel = new common.ui.data.competency.JobLevel();
 						newJobLevel.set("jobId", $this.job.get("jobId"));
+						
+						console.log( common.ui.stringify(newJobLevel) );
+						
 						common.ui.grid($('#job-details-tabs-10 .k-grid')).dataSource.add(newJobLevel) ;
 						return false;
 					},
