@@ -430,13 +430,13 @@
 				#: description #			
 			</td>
 		</tr>			
-		</script>
-		
+		</script>		
 		<script type="text/x-kendo-template" id="my-assessment-plan-listview-template">
 		<li class="col-sm-6 col-md-4">
         	<div class="team-img">
         		<ul class="text-right">
         			#= userAssessedCount #
+        			
         			#if( assessmentPlan.multipleApplyAllowed || userAssessedCount === 0 || userIncompleteCount > 0){#
                 	<li><button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</a></li>  
                 	#}#         
