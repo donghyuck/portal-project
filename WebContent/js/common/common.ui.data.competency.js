@@ -432,7 +432,7 @@
 	    	assessmentPlan: { type: "object", defaultValue:new AssessmentPlan() },	    	
 	    	assessors:  { type: "object" ,  defaultValue:[]},
 	    	candidate : { type: "object", 	defaultValue:new common.ui.data.User()},
-	    	job : { type: "object", defaultValue:new Job() },
+	    	job : { type: "object", nullable:true , defaultValue:new Job() },
 	    	jobLevel : { type: "number", defaultValue: 0},
 	    	totalScore:  { type: "number", defaultValue: 0 },
 	    	modifiedDate: { type: "date"},
