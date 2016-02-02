@@ -103,6 +103,12 @@
 					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
 					userAssessedCount ": 0,
 					userIncompleteCount : 0,
+					hasIncomplete : function(){
+						if( this.get('userIncompleteCount') > 0 )
+							return true;
+						else 
+							return false;
+					},
 					userAssessments : [],
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
@@ -313,6 +319,9 @@
 					
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">
+							
+							<div data-bind="visible: hasIncomplete " >sss</div>
+							
 							<header><span class="text-xxs">직무를 선택하여 주세요.</span></header>
 		                    <table class="table table-striped no-margin">
 				            	<thead>
