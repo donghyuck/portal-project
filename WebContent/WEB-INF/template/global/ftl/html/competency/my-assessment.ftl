@@ -343,6 +343,7 @@
 										</tr>	
 										<tr>
 											<td>직무</td>
+											<td>
 												<span class="color-green" data-bind="{text: job.name}" ></span>
 											</td>
 										</tr>	
