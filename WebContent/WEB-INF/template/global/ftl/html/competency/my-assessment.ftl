@@ -101,7 +101,7 @@
 					job : new common.ui.data.competency.Job(),
 					jobLevel : 0,
 					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
-					userAssessedCount ": 0,
+					userAssessedCount : 0,
 					userIncompleteCount : 0,
 					hasIncomplete : function(){
 						if( this.get('userIncompleteCount') > 0 )
