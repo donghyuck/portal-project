@@ -463,10 +463,11 @@
 		id: "assessmentPlanId", // the identifier of the model
 		fields: {
 			assessmentPlanId: { type: "number", defaultValue: 0},
-	    	assessmentPlan: { type: "AssessmentPlan", defaultValue:new AssessmentPlan() ,
+	    	assessmentPlan: { type: "AssessmentPlan", defaultValue:new AssessmentPlan() },	    	
 	    	userAssessments:  { type: "object" ,  defaultValue:[]},
 	    	userAssessedCount : { type: "number", defaultValue: 0 },
-	    	userIncompleteCount : { type: "number", defaultValue: 0 }
+	    	userIncompleteCount : { type: "number", defaultValue: 0 },
+	    	'assessmentPlan.startDate': { type: "date"}
 	    },
 		copy : function ( target ){
 	    	target.set("assessmentPlanId", this.get("assessmentPlanId"));
