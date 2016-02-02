@@ -301,7 +301,6 @@
 		                        <tr>
 		                            <th class="hidden-sm" width="40">&nbsp;</th>
 		                            <th width="40%">직무</th>
-		                            <th>분류</th>
 		                            <th>직무정의</th>
 		                        </tr>
 		                    </thead>
