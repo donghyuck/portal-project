@@ -388,11 +388,7 @@
 		<script type="text/x-kendo-template" id="my-assessment-job-template">
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
-		    <td>
-		    	<input type="radio" data-action="select" name="input-select-job" id="job-#=uid#" value="#=jobId#" class="k-radio">
-		    	<label class="k-radio-label" for="job-#=uid#">
-		    		#: name #		    	
-		    	</label>		    
+		    <td>    
 		    	<label class="radio"><input type="radio" data-action="select" name="radio" name="input-select-job" value="#=jobId#"><i class="rounded-x"></i>#: name #</label>
 		    </td>
 			<td>
