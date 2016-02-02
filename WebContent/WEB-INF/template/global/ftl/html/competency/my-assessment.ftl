@@ -177,7 +177,7 @@
 						$this.userAssessments = source.userAssessments;			
 						
 						if( doRead & $this.assessmentPlan.assessmentId > 0 )
-						{	
+						{
 							$this.jobDataSource.read();
 							$this.assessmentDataSource.read();
 							$this.assessmentDataSource.data( source.userAssessments );
@@ -452,7 +452,7 @@
 		    	 
 		    </td>
 			<td>
-				 
+				 dd
 			</td>
 		</tr>			
 										
