@@ -293,10 +293,9 @@
 
 					<form action="#" class="sky-form">
                     <header>General Unify Forms</header>
-
 					<fieldset>
                         <section>
-                            <label class="label">Columned radios</label>
+                            <label class="label">직무를 선택하여 주세요</label>
                             <div class="row">
                                 <div class="col col-4">
                                     <label class="radio"><input type="radio" name="radio" checked=""><i class="rounded-x"></i>Alexandra</label>
@@ -315,23 +314,7 @@
                                 </div>
                             </div>
                         </section>
-
-                        <section>
-                            <label class="label">Inline radios</label>
-                            <div class="inline-group">
-                                <label class="radio"><input type="radio" name="radio-inline" checked=""><i class="rounded-x"></i>Alexandra</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Alice</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Anastasia</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Avelina</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Beatrice</label>
-                            </div>
-                        </section>
                     </fieldset>
-
-                    <footer>
-                        <button type="submit" class="btn-u">Submit</button>
-                        <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
-                    </footer>
                 </form>
                 					
 					
