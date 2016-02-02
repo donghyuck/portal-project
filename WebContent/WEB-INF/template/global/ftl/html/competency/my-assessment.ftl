@@ -101,6 +101,9 @@
 					job : new common.ui.data.competency.Job(),
 					jobLevel : 0,
 					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
+					userAssessedCount ": 0,
+					userIncompleteCount : 0,
+					userAssessments : [],
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'<@spring.url "/data/me/competency/assessment/job/list.json?output=json"/>', type:'post' },
@@ -160,7 +163,10 @@
 						{
 							doRead = false;
 						}
-						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);						
+						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);			
+						$this.userIncompleteCount = source.userIncompleteCount ;
+						$this.userAssessedCount = source.userAssessedCount;
+						$this.userAssessments = source.userAssessments;			
 						if( doRead & $this.assessmentPlan.assessmentId > 0 )
 							$this.jobDataSource.read();
 						$this.set("secondStep", false);
