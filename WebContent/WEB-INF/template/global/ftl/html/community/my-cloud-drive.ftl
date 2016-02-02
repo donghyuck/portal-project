@@ -246,7 +246,8 @@
 								$img.css("max-height", $window.height() - 10 );	
 								$img.css("max-width", $window.height() - 10 );	
 							}														
-						}							
+						}	
+												
 					},
 					edit : function(){
 						var $this = this;		
