@@ -463,7 +463,7 @@
 		id: "assessmentPlanId", // the identifier of the model
 		fields: {
 			assessmentPlanId: { type: "number", defaultValue: 0},
-	    	assessmentPlan: { type: "object", defaultValue:new AssessmentPlan() },	    	
+	    	assessmentPlan: { type: "AssessmentPlan", defaultValue:new AssessmentPlan() },	    	
 	    	userAssessments:  { type: "object" ,  defaultValue:[]},
 	    	userAssessedCount : { type: "number", defaultValue: 0 },
 	    	userIncompleteCount : { type: "number", defaultValue: 0 },
