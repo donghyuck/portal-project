@@ -169,12 +169,18 @@
 				kendo.bind(renderTo, observable );	
 				
 				$(document).on("click","input[type=radio][data-action='select']", function(e){						
-					var radio = $(this) ;					
+					var radio = $(this) ;			
+					var objectType  = radio.data("object-type");
+					var objectId = radio.val();		
+					console.log( "objectType:" + objectType + ", objectId=" + objectId ) ;
+					
+					/*
 					var item = observable.jobDataSource.get(radio.val());
 					item.copy(observable.job);
 					observable.jobLevelDataSource.read();
 					observable.jobLevelDataSource.data(observable.job.jobLevels);					
-					observable.set('secondStep', true);					
+					observable.set('secondStep', true);				
+					*/	
 				});	
 			}
 			if( source ){
@@ -397,7 +403,7 @@
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
 		    <td>    
-		    	<label class="radio"><input type="radio" name="radio" name="input-select-job-level" value="#=level#"><i class="rounded-x"></i>#: name #</label>
+		    	<label class="radio"><input type="radio" data-action="select" name="input-select-job-level" data-object-type= "61" value="#=level#"><i class="rounded-x"></i>#: name #</label>
 		    </td>
 			<td>
 				#:minWorkExperienceYear# ~ #:minWorkExperienceYear# 년		
@@ -410,7 +416,7 @@
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
 		    <td>    
-		    	<label class="radio"><input type="radio" data-action="select" name="radio" name="input-select-job" value="#=jobId#"><i class="rounded-x"></i>#: name #</label>
+		    	<label class="radio"><input type="radio" data-action="select" name="radio" name="input-select-job" data-object-type= "60" value="#=jobId#"><i class="rounded-x"></i>#: name #</label>
 		    </td>
 			<td>
 				<div class="headline-left">
