@@ -160,7 +160,7 @@
 						{
 							doRead = false;
 						}
-						source.assessmentPlan.copy($this.assessmentPlan);						
+						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);						
 						if( doRead & $this.assessmentPlan.assessmentId > 0 )
 							$this.jobDataSource.read();
 						$this.set("secondStep", false);
