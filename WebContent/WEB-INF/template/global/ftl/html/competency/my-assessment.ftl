@@ -126,7 +126,7 @@
 						
 						var newAssessment = new common.ui.data.competency.Assessment();
 						newAssessment.candidate.userId =  getCurrentUser().userId;
-						newAssessment.job.jobId = $this.job.jobId;
+						newAssessment.job.jobId = $this.job.jobId ;
 						newAssessment.assessmentPlan.assessmentId = $this.assessmentPlan.assessmentId;
 						newAssessment.jobLevel = $this.jobLevel ;
 						
