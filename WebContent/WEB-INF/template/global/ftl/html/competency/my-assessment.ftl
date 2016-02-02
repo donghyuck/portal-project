@@ -73,9 +73,9 @@
 		function createMyAssessmentPlanListView(){
 			var renderTo = $('#my-assessment-plan-listview');	
 			if( ! common.ui.exists(renderTo) ){
-				var dataSource = common.ui.datasource( '<@spring.url "/data/me/competency/assessment/plan/list.json?output=json"/>',{
+				var dataSource = common.ui.datasource( '<@spring.url "/data/me/competency/assessment/plan/stats/list.json?output=json"/>',{
 					schema:{
-						model: common.ui.data.competency.AssessmentPlan
+						model: common.ui.data.competency.AssessmentStats
 					}
 				});
 				common.ui.listview(renderTo,{
@@ -436,12 +436,12 @@
 		<li class="col-sm-6 col-md-4">
         	<div class="team-img">
         		<ul class="text-right">
-                	<li><button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentId#">참여하기</a></li>             
-                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline  rounded" data-object-id="#:assessmentId#">결과보기</a></li>                        
+                	<li><button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</a></li>             
+                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline  rounded" data-object-id="#:assessmentPlan.assessmentId#">결과보기</a></li>                        
                 </ul>   	
        		</div>
-            <h3>#:name#</h3>
-            <h4>#: formattedStartDate() # ~ #: formattedEndDate() #</h4>
+            <h3>#: assessmentPlan.name#</h3>
+            <h4>#: assessmentPlan.formattedStartDate() # ~ #: assessmentPlan.formattedEndDate() #</h4>
             <p>#:description#</p>            
             <table class="table">
             	<thead>
@@ -453,7 +453,7 @@
                     </tr>
                 </thead>
                 <tbody>
- 				# for (var i = 0; i < jobSelections.length ; i++) { #	
+ 				# for (var i = 0; i < assessmentPlan.jobSelections.length ; i++) { #	
 	            # var jb = jobSelections[i] ; #	
 	                <tr>
                     	<td>#if(jb.classifiedMajorityId > 0){# #:jb.classifiedMajorityName# #}#</td>
