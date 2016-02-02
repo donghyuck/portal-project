@@ -102,7 +102,6 @@
 					jobLevel : 0,
 					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
 					haseIncomplete :false,
-					userAssessments : [],
 					jobDataSource : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'<@spring.url "/data/me/competency/assessment/job/list.json?output=json"/>', type:'post' },
@@ -149,6 +148,12 @@
 						return false;
 					
 					},
+					assessmentDataSource: new kendo.data.DataSource({
+						data : [],
+						schema: {
+                            model: common.ui.data.competency.Assessment
+                        }
+					}),
 					jobLevelDataSource :new kendo.data.DataSource({
 						data : [],
 						schema: {
@@ -170,8 +175,13 @@
 							$this.set('haseIncomplete', false);
 						
 						$this.userAssessments = source.userAssessments;			
+						
 						if( doRead & $this.assessmentPlan.assessmentId > 0 )
+						{	
 							$this.jobDataSource.read();
+							$this.assessmentDataSource.read();
+							$this.assessmentDataSource.data( source.userAssessments );
+						}	
 						$this.set("secondStep", false);
 						renderTo.find("form")[0].reset();
 					}
