@@ -55,7 +55,7 @@ yepnope([{
 		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
 			assessment: source ,
-			dataBinding : function(){
+			doRender : function(){
 			createSvgCheckBox();
 			},
 			questionDataSource : new kendo.data.DataSource({
@@ -106,7 +106,7 @@ yepnope([{
  		<div id="my-assessment"> 	
  			<section class="no-border"
 				data-template="my-assessment-template"
-				data-bind="source: questionDataSource, events:{ 'dataBinding' : dataBinding }" style="height: 100%; overflow: auto">		
+				data-bind="source:questionDataSource, events:{dataBinding: doRender }" style="height: 100%; overflow: auto">		
 			</section>	
  		</div>
   			
