@@ -27,7 +27,7 @@ yepnope([{
 				jobs:jobs
 			});		
 			
-			<#if RequestParameters['id']?? >
+			<#if RequestParameters['id']?? && RequestParameters['id']!is_nan >
 				<#assign assessmentId = RequestParameters['id']?number>
 				alert( ${assessmentId} );
 			</#if>					
