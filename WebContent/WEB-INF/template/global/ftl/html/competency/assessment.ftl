@@ -27,7 +27,8 @@ yepnope([{
 		complete : function() {
 			common.ui.setup({
 				features:{
-					wallpaper : true
+					wallpaper : true,
+					loading:true
 				},		
 				jobs:jobs
 			});		
@@ -120,7 +121,9 @@ yepnope([{
 </head>
 <body class="">
 	<div class="page-loader"></div>
- 	<div class="wrapper"></div>
+ 	<div class="wrapper">
+ 		<div class="breadcrumbs-v3"></div>
+ 	</div>
   	<div class="container">
  		<div id="my-assessment"> 	
  			<div class="no-border"
