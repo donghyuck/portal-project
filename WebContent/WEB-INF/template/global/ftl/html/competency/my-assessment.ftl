@@ -475,7 +475,7 @@
 				 dd
 			</td>
 		</tr>			
-										
+		</script>								
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
