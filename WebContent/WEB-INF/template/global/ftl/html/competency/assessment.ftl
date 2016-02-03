@@ -55,9 +55,10 @@ yepnope([{
 		var observable =  common.ui.observable({
 			assessment: source ,
 			doRender : function(){
+			console.log(1);
 				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
 			          function() {
-			               
+			               console.log(2);
 			          }          
 			    );
 			},
