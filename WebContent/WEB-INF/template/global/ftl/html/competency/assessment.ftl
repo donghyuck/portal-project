@@ -12,7 +12,8 @@ yepnope([{
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
-			'css!<@spring.url "/styles/codrops/codrops.svgcheckbox.css"/>',		
+			'css!<@spring.url "/styles/codrops/codrops.svgcheckbox.css"/>',	
+			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',		
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
@@ -72,7 +73,7 @@ yepnope([{
  	<div class="wrapper">
  	</div>
   		<div class="container">
-			<section>
+			<section class="animated fadeInUP">
 				<form class="ac-custom ac-radio ac-fill">
 					<h2>Where do you proactively envision multimedia based expertise and cross-media growth strategies?</h2>
 					<ul>
