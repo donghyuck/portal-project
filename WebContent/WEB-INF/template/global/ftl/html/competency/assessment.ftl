@@ -132,7 +132,7 @@ yepnope([{
 				<input id="#=uid#-rating-#=ratingLevel.ratingLevelId#" name="#=uid#-rating" type="radio">
 				<label for="#=uid#-rating-#=ratingLevel.ratingLevelId#">#: ratingLevel.title #</label>
 			</li>
-			} #
+			# } #
 			</ul>			
 		</form>
 		</script>
