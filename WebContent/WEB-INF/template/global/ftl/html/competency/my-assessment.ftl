@@ -87,7 +87,6 @@
 					var btn = $(this) ;
 					var objectId = btn.data('object-id');
 					var item = dataSource.get(objectId);
-					console.log( common.ui.stringify(item) );
 					createApplyAssessmentModal(item);					
 				});
 			}
@@ -165,8 +164,7 @@
 						{
 							doRead = false;
 						}
-						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);		
-						
+						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);								
 						if(source.userIncompleteCount > 0)
 							$this.set('haseIncomplete', true);
 						else
@@ -189,8 +187,6 @@
 					var radio = $(this) ;			
 					var objectType  = radio.data("object-type");
 					var objectId = radio.val();		
-					console.log( "objectType:" + objectType + ", objectId=" + objectId ) ;
-					
 					if( objectType == 60 ){
 						var item = observable.jobDataSource.get(objectId);
 						item.copy(observable.job);
