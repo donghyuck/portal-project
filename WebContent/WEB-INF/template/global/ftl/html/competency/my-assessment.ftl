@@ -147,6 +147,7 @@
 					},
 					assessmentDataSource: new kendo.data.DataSource({
 						data : [],
+						filter: { field: "state", operator: "neq", value: "ASSESSED" },
 						schema: {
                             model: common.ui.data.competency.Assessment
                         }
