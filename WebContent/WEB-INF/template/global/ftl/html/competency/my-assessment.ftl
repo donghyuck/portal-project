@@ -319,13 +319,14 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>										
 					<div class="modal-body no-padding bg-gray" data-bind="visible:hasIncomplete" style="border-bottom: 1px dashed #e5e5e5;">							
-								<p class="text-muted p-sm">미완료된진단들이 있습니다.</p>
+								<p class="text-muted">미완료된진단이 <span class="text-danger" data-bind="text: userIncompleteCount"></span> 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</p>
 								<table class="table no-margin">
 					            	<thead>
 					                	<tr>
 					                    	<th width="42">&nbsp;</th>
 					                    	<th class="hidden-sm" width="40%">분류</th>
 					                    	<th>직무</th>
+					                    	<th>직급</th>
 					              		</tr>
 					          		</thead>
 					          		<tbody data-role="listview"
@@ -437,7 +438,7 @@
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">							
 							<div data-bind="visible:hasIncomplete" >
-								<p class="text-muted">미완료된진단이 <span class="text-danger" data-bind="text: userIncompleteCount"> </span> 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</p>
+								<p class="text-muted">미완료된진단이 <span class="text-danger" data-bind="text: userIncompleteCount"></span> 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</p>
 								<table class="table bg-gray rounded-2x no-margin">
 					            	<thead>
 					                	<tr>
