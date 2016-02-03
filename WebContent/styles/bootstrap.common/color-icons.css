@@ -175,6 +175,9 @@ i.icon-svg {
 	background-image: url("/images/common/icons/basic/color/NextArrow.svg");
 }
 
+.icon-svg.basic-color-checked-checkbox{
+	background-image: url("/images/common/icons/basic/color/CheckedCheckBox.svg");
+}
 
 /* Business Color Icons 
 ------------------------------------*/
@@ -213,6 +216,13 @@ i.icon-svg {
 ------------------------------------*/
 .icon-svg.file-color-excel{
 	background-image: url("/images/common/icons/file/color/Excel.svg");
+}
+
+
+/* User Color Icons 
+------------------------------------*/
+.icon-svg.user-color-worker{
+	background-image: url("/images/common/icons/user/color/Worker.svg");
 }
 
 
