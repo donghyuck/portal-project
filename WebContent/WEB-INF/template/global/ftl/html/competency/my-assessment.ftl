@@ -452,7 +452,7 @@
 			<td>
 			#: jobLevelName #
 			</td>
-			<td><a href="/display/0/assessment.html?id=\#= assessmentId \#" class="btn btn-flat btn-danger btn-sm">진단완료하기</a></td>
+			<td><a href="/display/0/assessment.html?id=#=assessmentId#" class="btn btn-flat btn-danger btn-sm">진단완료하기</a></td>
 		</tr>			
 		</script>								
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
