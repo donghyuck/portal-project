@@ -52,7 +52,7 @@ yepnope([{
 	} ]);
 	
 	function createMyAssessment(source){
-		var renderTo = $('#my-assessment");	
+		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
 			assessment: source ,
 			questionDataSource : new kendo.data.DataSource({
@@ -77,7 +77,7 @@ yepnope([{
 	}		
 	
 	function getRatingLevels(){
-		var renderTo = $('#my-assessment");	
+		var renderTo = $('#my-assessment');	
 		return renderTo.data("model").assessment.assessmentPlan.ratingScheme.ratingLevels ;
 	}
 	
