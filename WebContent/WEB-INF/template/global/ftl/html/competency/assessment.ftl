@@ -131,8 +131,6 @@ yepnope([{
 			<li>
 				<input id="#=uid#-rating-#=ratingLevel.ratingLevelId#" name="#=uid#-rating" type="radio">
 				<label for="#=uid#-rating-#=ratingLevel.ratingLevelId#">#: ratingLevel.title #</label>
-				<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-				</svg>
 			</li>
 			} #
 			</ul>			
