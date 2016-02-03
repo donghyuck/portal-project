@@ -102,7 +102,7 @@ yepnope([{
 	    color: #000;
 	}	
 	.ac-custom label::before {
-	    border: 4px solid #8e8e93;
+	    border: 4px solid #000;
 	}
 	
 	.ac-custom svg path {
