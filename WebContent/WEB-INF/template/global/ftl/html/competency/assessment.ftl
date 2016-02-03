@@ -55,6 +55,9 @@ yepnope([{
 		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
 			assessment: source ,
+			dataBinding : function(){
+			createSvgCheckBox();
+			},
 			questionDataSource : new kendo.data.DataSource({
 				transport: { 
 					read: { url:'<@spring.url "/data/me/competency/assessment/test/list.json?output=json"/>', type:'post' },
@@ -103,7 +106,7 @@ yepnope([{
  		<div id="my-assessment"> 	
  			<section class="no-border"
 				data-template="my-assessment-template"
-				data-bind="source: questionDataSource, events:{ 'dataBinding' : createSvgCheckBox() }" style="height: 100%; overflow: auto">		
+				data-bind="source: questionDataSource, events:{ 'dataBinding' : dataBinding }" style="height: 100%; overflow: auto">		
 			</section>	
  		</div>
   		
