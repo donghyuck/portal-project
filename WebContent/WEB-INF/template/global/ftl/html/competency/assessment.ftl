@@ -39,8 +39,7 @@ yepnope([{
 						data : { assessmentId : assessmentId},
 						success : function(response){
 							var assessment = new common.ui.data.competency.Assessment(response);		
-							
-							console.log(common.ui.stringify(assessment));
+							createMyAssessment( assessment );
 						}
 					});
 					
@@ -48,30 +47,41 @@ yepnope([{
 			});			
 			<#else>
 			alert("잘못된 접근입니다.");
-			</#if>		
-			
-			var formWrap = document.getElementById( 'fs-form-wrap' );
-
-				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
-					new SelectFx( el, {
-						stickyPlaceholder: false,
-						onChange: function(val){
-							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
-						}
-					});
-				} );
-
-				new FForm( formWrap, {
-					onReview : function() {
-						classie.add( document.body, 'overview' ); // for demo purposes only
-					}
-				} );
-					
+			</#if>					
 		}
 	} ]);
-		
-	-->
-</script>
+	
+	function createMyAssessment(source){
+		var renderTo = $('#my-assessment");	
+		var observable =  common.ui.observable({
+			assessment: source ,
+			questionDataSource : new kendo.data.DataSource({
+				transport: { 
+					read: { url:'<@spring.url "/data/me/competency/assessment/test/list.json?output=json"/>', type:'post' },
+					parameterMap: function (options, operation){
+						if (operation !== "read") {
+							return kendo.stringify(options);
+						} 
+						return {
+							assessmentId: observable.assessment.assessmentId
+						};
+					}
+				},			
+				schema: {
+					model: common.ui.data.competency.AssessmentQuestion
+				}
+			})
+		});
+		renderTo.data("model", observable);	
+		kendo.bind(renderTo, observable );	
+	}		
+	
+	function getRatingLevels(){
+		var renderTo = $('#my-assessment");	
+		return renderTo.data("model").assessment.assessmentPlan.ratingScheme.ratingLevels ;
+	}
+	
+	--></script>
 <style>
 	h2{
 	    display: block;
@@ -88,10 +98,14 @@ yepnope([{
 </head>
 <body class="bg-dark">
 	<div class="page-loader"></div>
- 	<div class="wrapper">
- 	</div>
-  		<div class="container">
- 
+ 	<div class="wrapper"></div>
+  	<div class="container">
+ 		<div id="my-assessment"> 	
+ 			<section class="no-border"
+				data-template="my-assessment-template"
+				data-bind="source: questionDataSource" style="height: 300px; overflow: auto">		
+			</section>	
+ 		</div>
   		
 			<section class="animated fadeInUP">
 				<form class="ac-custom ac-radio ac-fill">
@@ -103,8 +117,17 @@ yepnope([{
 						<li><input id="r4" name="r1" type="radio"><label for="r4">Energistically scale future-proof core competencies</label><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"></svg></li>
 					</ul>
 				</form>
-			</section>
-		</div>	
 			
+	</div>	
+
+		<!-- START TEMPLATE -->	
+		<script type="text/x-kendo-template" id="my-assessment-template">
+		<form class="ac-custom ac-radio ac-fill">
+			<h2>#: question #</h2>
+			#: getRatingLevels().length #			
+		</form>
+		</script>
+		<!-- END TEMPLATE -->	
+					
 </body>
 </html>
