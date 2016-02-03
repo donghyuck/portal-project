@@ -480,6 +480,31 @@
 		}
 	});
 
+	var AssessmentQuestion = kendo.data.Model.define( {
+		id : "questionId",
+		fields: {
+			questionId: { type: "number", defaultValue: 0},
+			competencyId : { type: "number", defaultValue:0},
+			essentialElementId : { type: "number", defaultValue:0},
+			competencyLevel : { type: "number", defaultValue:0},
+			seq : { type: "number", defaultValue:0},
+			competencyName:  { type: "string" },
+			essentialElementName:  { type: "string" },
+			question:  { type: "string" },
+			score : { type: "number", defaultValue:0},
+		},
+		copy : function ( target ){
+			target.set("questionId", this.get("questionId"));
+	    	target.set("competencyId", this.get("competencyId"));
+	    	target.set("essentialElementId", this.get("essentialElementId"));
+	    	target.set("competencyLevel", this.get("competencyLevel"));
+	    	target.set("seq", this.get("seq"));
+	    	target.set("competencyName", this.get("competencyName"));
+	    	target.set("essentialElementName", this.get("essentialElementName"));
+	    	target.set("question", this.get("question"));
+	    	target.set("score", this.get("score"));
+		}
+	});
 	
 	var AssessmentCreatePlan = kendo.data.Model.define( {
 	    id: "name", // the identifier of the model
@@ -520,7 +545,8 @@
 			AssessmentCreatePlan:AssessmentCreatePlan,
 			AssessmentPlan:AssessmentPlan,
 			Assessment:Assessment,
-			AssessmentStats:AssessmentStats
+			AssessmentStats:AssessmentStats,
+			AssessmentQuestion:AssessmentQuestion
 		}  
 	} );
 	
