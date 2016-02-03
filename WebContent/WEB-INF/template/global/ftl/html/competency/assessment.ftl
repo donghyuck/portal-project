@@ -29,16 +29,11 @@ yepnope([{
 			
 			<#if RequestParameters['id']?? >
 				<#assign assessmentId = TextUtils.parseLong( RequestParameters['id'] ) >
-				alert( ${assessmentId} );
 			</#if>					
 			common.ui.ajax( '<@spring.url "/data/accounts/get.json?output=json"/>' , {
 				success : function(response){
 					var currentUser = new common.ui.data.User($.extend( response.user, { roles : response.roles }));
-								
-
-													
-					
-					
+					console.log(common.ui.stringify(currentUser));
 				}
 			});
 
