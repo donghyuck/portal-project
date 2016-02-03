@@ -125,11 +125,12 @@ yepnope([{
 		<form class="ac-custom ac-radio ac-fill">
 			<h2>#: question #</h2>
 			<ul>
-			# for (var i = 0; i < getRatingLevels().length ; i++) { #	
-			# var rating = getRatingLevels()[i] ; #	
+			# var rating = getRatingLevels() ; #
+			# for (var i = 0; i < rating.length ; i++) { #	
+			# var ratingLevel = rating[i] ; #	
 			<li>
-				<input id="#=uid#-rating-#=rating.ratingLevelId#" name="#=uid#-rating" type="radio">
-				<label for="#=uid#-rating-#=rating.ratingLevelId#">#: rating.title #</label>
+				<input id="#=uid#-rating-#=ratingLevel.ratingLevelId#" name="#=uid#-rating" type="radio">
+				<label for="#=uid#-rating-#=ratingLevel.ratingLevelId#">#: ratingLevel.title #</label>
 				<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 				</svg>
 			</li>
