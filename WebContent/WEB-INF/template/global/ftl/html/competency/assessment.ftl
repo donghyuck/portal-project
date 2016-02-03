@@ -105,7 +105,7 @@ yepnope([{
 </style>
 </#compress>
 </head>
-<body class="bg-dark">
+<body class="">
 	<div class="page-loader"></div>
  	<div class="wrapper"></div>
   	<div class="container">
