@@ -56,6 +56,7 @@ yepnope([{
 <style>
 	h2{
 	    display: block;
+	    line-height: 1.5em;
 	    font-size: 1.5em;
 	    -webkit-margin-before: 0.83em;
 	    -webkit-margin-after: 0.83em;
