@@ -6,6 +6,7 @@
 <title>${page.title}</title>
 <script type="text/javascript">
 <!--
+var jobs = [];	
 yepnope([{
     load: [        
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
@@ -19,9 +20,23 @@ yepnope([{
 			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.data.competency.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>'],        
 		complete : function() {
-
+			common.ui.setup({
+					features:{
+						wallpaper : false,
+						lightbox : false,
+						spmenu : false,
+						morphing : false,
+						accounts : {
+							authenticate : function(e){
+								//e.token.copy(currentUser);
+							} 
+						}						
+					},	
+					jobs:jobs
+			});	
 		}
 	} ]);
 	-->
@@ -29,48 +44,9 @@ yepnope([{
 </#compress>
 </head>
 <body>
-	<div class="row">
-		<div class="twelve columns">
-			<img src="http://ncc.phinf.naver.net/ncc01/2012/10/17/133/img01.jpg?type=w323" />
-			<hr />
-		</div>
-	</div>
-	<!-- Second Band (Image Left with Text) -->
-	<div class="row">
-		<div class="four columns">
-			<img src="http://placehold.it/400x300&text=[img]" />
-		</div>
-		<div class="eight columns">
-			<div class="panel radius">
-				<h4>This is a grid session.</h4>
-				<div id="grid"></div>
-			</div>
-		</div>
-	</div>
-	<!-- Third Band (Image Right with Text) -->
-	<div class="row">
-		<div class="eight columns">
-			<div class="panel radius">
-				<p>인터넷 사용현황</p>
-				<div class="chart-wrapper">
-					<div id="chart"></div>
-				</div>
-			</div>
-		</div>
-		<div class="four columns">
-			<img src="http://placehold.it/400x300&text=[img]" />
-		</div>
-	</div>
-	<!-- Start Breadcrumbs -->	    
-	<section class="row">
-	    <div class="twelve columns">
-	        <hr style="margin-top:10px;margin-bottom:10px;" />
-			<ul class="breadcrumbs">
-			  <li class="current"><a href="<@spring.url "/display/main.html"/>">홈</a></li>
-			</ul>
-		</div>
-	</section>
-	<!-- End Breadcrumbs -->	  
+
+	<div class="page-loader"></div>
+ 
 
 </body>
 </html>
