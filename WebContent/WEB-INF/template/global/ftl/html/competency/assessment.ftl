@@ -97,12 +97,12 @@ yepnope([{
 	
 	--></script>
 <style>
-	/**
+	
 	.ac-custom h2 {
 	    font-size: 2em;
 	    line-height: 1.5em;
 	}	
-
+	/**
 	.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
 	    color: #000;
 	}	
@@ -126,7 +126,7 @@ yepnope([{
  	</div>
   	<div class="container">
  		<div id="my-assessment"> 	
- 			<div class="no-border"
+ 			<div class="no-border bg-transparent"
  				data-role="listview"
  			    data-auto-bind="false"
 				data-template="my-assessment-template"
