@@ -353,7 +353,69 @@
 								</tbody>		                    
 				        	</table>
 						</form>						
-					</div>					
+					</div>				
+					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">	
+							<table class="table table-striped">
+								<thead>
+										<tr>
+											<th width="30%" >직무분류체계</th>
+											<th>
+												<span data-bind="{ text:job.classification.classifyTypeName }" class="text-muted"></span>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>대분류</td>
+											<td>
+											<span data-bind="{ text:job.classification.classifiedMajorityName }" class="text-muted"></span>
+											</td>
+										</tr>
+										<tr>
+											<td>중분류</td>
+											<td>
+											<span data-bind="{text: job.classification.classifiedMiddleName}" class="text-muted"></span>
+											</td>
+										</tr>
+										<tr>
+											<td>소분류</td>
+											<td>
+												<span data-bind="{text: job.classification.classifiedMinorityName}" class="text-muted"></span>
+											</td>
+										</tr>	
+										<tr>
+											<td>직무</td>
+											<td>
+												<span class="color-green" data-bind="{text: job.name}" ></span>
+											</td>
+										</tr>	
+										<tr>
+											<td>직무정의</td>
+											<td>
+												<span data-bind="{text: job.description}" class="text-muted"></span>
+											</td>
+										</tr>																																								
+									</tbody>
+							</table>						
+						<form action="#" class="sky-form no-border">
+							<header><span class="text-xxs">직급를 선택하여 주세요.</span></header>				
+							<table class="table table-striped no-margin">
+				            	<thead>
+				                	<tr>
+				                    	<th class="hidden-sm" width="42">&nbsp;</th>
+				                    	<th width="50%">직급</th>
+				                    	<th>직무경험</th>
+				              		</tr>
+				          		</thead>
+				          		<tbody data-role="listview"
+				                    		class="no-border"
+											data-auto-bind="false"	
+						                 	data-template="my-assessment-job-level-template"
+						                 	data-bind="source: jobLevelDataSource" style="height: 300px; overflow: auto"> 
+								</tbody>		                    
+				        	</table>													
+						</form>
+					</div>	
 					<div class="modal-footer">				
 						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
 					</div>
