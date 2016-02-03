@@ -437,6 +437,7 @@
 	    	totalScore:  { type: "number", defaultValue: 0 },
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" },
+	        jobLevelName: { type : "string" },
 	        state : { type : "string", editable : true, defaultValue : "INCOMPLETE"	}    	
 	    },    
 	    copy : function ( target ){
@@ -447,6 +448,7 @@
 	    	target.set("state", this.get("state"));
 	    	target.set("job", this.get("job"));
 	    	target.set("jobLevel", this.get("jobLevel"));
+	    	target.set("jobLevelName", this.get("jobLevelName"));
 	    	target.set("totalScore", this.get("totalScore"));
 	    	target.set("createdDate", this.get("createdDate"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
