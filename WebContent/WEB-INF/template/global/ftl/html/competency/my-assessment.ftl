@@ -336,7 +336,24 @@
 									</tbody>		                    
 					        	</table>		
 							</div>	
-						</form>
+							<hr/>
+							<header><span class="text-xxs">직무를 선택하여 주세요.</span></header>
+		                    <table class="table table-striped no-margin">
+				            	<thead>
+				                	<tr>
+				                    	<th class="hidden-sm" width="42">&nbsp;</th>
+				                    	<th width="30%">직무</th>
+				                    	<th>직무정의</th>
+				              		</tr>
+				          		</thead>
+				          		<tbody data-role="listview"
+				                    		class="no-border"
+											data-auto-bind="false"	
+						                 	data-template="my-assessment-job-template"
+						                 	data-bind="source: jobDataSource" style="height: 300px; overflow: auto"> 
+								</tbody>		                    
+				        	</table>
+						</form>						
 					</div>					
 					<div class="modal-footer">				
 						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
