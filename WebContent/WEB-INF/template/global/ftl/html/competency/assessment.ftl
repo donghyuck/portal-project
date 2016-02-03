@@ -101,8 +101,7 @@ yepnope([{
 	.ac-custom h2 {
 	    font-size: 2em;
 	    line-height: 1.5em;
-	}	
-	/**
+	}	 
 	.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
 	    color: #000;
 	}	
@@ -116,7 +115,7 @@ yepnope([{
 	    
 	.ac-custom label {
 	    color: rgba(0,0,0,0.8);
-	}   **/ 
+	}   
 </style>
 </#compress>
 </head>
