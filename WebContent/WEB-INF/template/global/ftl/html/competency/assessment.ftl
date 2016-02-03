@@ -32,7 +32,10 @@ yepnope([{
 						accounts : {
 							authenticate : function(e){
 								//e.token.copy(currentUser);
-								alert( ${RequestParameters['id']??}  );
+								<#if RequestParameters['id']?? >
+								<#assign assessmentId = RequestParameters['id']?number>
+								alert( assessmentId );
+								</#if>
 							} 
 						}						
 					},	
