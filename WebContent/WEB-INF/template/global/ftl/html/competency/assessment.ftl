@@ -108,6 +108,10 @@ yepnope([{
 	.ac-custom svg path {
     	stroke: #8e8e93;
     }	
+	    
+	.ac-custom label {
+	    color: rgba(0,0,0,0.8);
+	}    
 </style>
 </#compress>
 </head>
