@@ -129,7 +129,6 @@
 						newAssessment.job = $this.job ;
 						newAssessment.assessmentPlan.assessmentId = $this.assessmentPlan.assessmentId;
 						newAssessment.jobLevel = $this.jobLevel ;
-
 						common.ui.progress(renderTo, true);
 						common.ui.ajax(
 							'<@spring.url "/data/me/competency/assessment/create.json?output=json" />' , 
@@ -145,8 +144,7 @@
 								}
 							}
 						);		
-						return false;
-					
+						return false;					
 					},
 					assessmentDataSource: new kendo.data.DataSource({
 						data : [],
