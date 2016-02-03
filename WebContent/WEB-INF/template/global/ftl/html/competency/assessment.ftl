@@ -30,7 +30,7 @@ yepnope([{
 					
 			common.ui.ajax( '<@spring.url "/data/accounts/get.json?output=json"/>' , {
 				success : function(response){
-					var currentUser = new common.ui.data.User(extend( response.user, { roles : response.roles }));
+					var currentUser = new common.ui.data.User($.extend( response.user, { roles : response.roles }));
 								
 								<#if RequestParameters['id']?? >
 								<#assign assessmentId = RequestParameters['id']?number>
