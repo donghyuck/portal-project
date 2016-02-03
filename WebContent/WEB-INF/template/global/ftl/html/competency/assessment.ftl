@@ -97,7 +97,7 @@ yepnope([{
 	
 	--></script>
 <style>
-	
+	/**
 	.ac-custom h2 {
 	    font-size: 2em;
 	    line-height: 1.5em;
@@ -116,14 +116,13 @@ yepnope([{
 	    
 	.ac-custom label {
 	    color: rgba(0,0,0,0.8);
-	}    
+	}   **/ 
 </style>
 </#compress>
 </head>
 <body class="">
 	<div class="page-loader"></div>
  	<div class="wrapper">
- 		<div class="breadcrumbs-v3"></div>
  	</div>
   	<div class="container">
  		<div id="my-assessment"> 	
