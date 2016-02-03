@@ -110,7 +110,7 @@ yepnope([{
  		<div id="my-assessment"> 	
  			<section class="no-border"
 				data-template="my-assessment-template"
-				data-bind="source:questionDataSource, events:{'dataBound': questionDataBound }" style="height: 100%; overflow: auto">		
+				data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
 			</section>	
  		</div>
   			
