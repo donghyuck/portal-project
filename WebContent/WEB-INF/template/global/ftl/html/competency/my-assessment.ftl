@@ -319,6 +319,21 @@
 						<form action="#" class="sky-form no-border">
 							<div data-bind="visible:hasIncomplete" >
 								<span class="text-danger">미완료된진단들이 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</span>
+								<table class="table table-striped no-margin">
+					            	<thead>
+					                	<tr>
+					                    	<th class="hidden-sm" width="42">&nbsp;</th>
+					                    	<th width="30%">직무</th>
+					                    	<th>직무정의</th>
+					              		</tr>
+					          		</thead>
+					          		<tbody data-role="listview"
+					                    		class="no-border"
+												data-auto-bind="false"	
+							                 	data-template="my-assessment-template"
+							                 	data-bind="source:assessmentDataSource" style="height: 300px; overflow: auto"> 
+									</tbody>		                    
+					        	</table>		
 							</div>	
 						
 						
