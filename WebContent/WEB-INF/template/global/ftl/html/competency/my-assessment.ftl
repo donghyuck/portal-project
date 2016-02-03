@@ -468,11 +468,11 @@
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<tr>
 		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
-		    <td> u  hh
-		    	 
+		    <td> 
+		    #: job.classification.classifiedMajorityName# > #: job.classification.classifiedMiddleName# > <span class="color-green">#: job.classification.classifiedMinorityName#</span>		    
 		    </td>
 			<td>
-				 dd
+			#: job.name #
 			</td>
 		</tr>			
 		</script>								
