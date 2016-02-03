@@ -53,7 +53,7 @@ yepnope([{
 <body>
 
 	<div class="page-loader"></div>
- 
+ 	<div class="wrapper"></div>
 
 </body>
 </html>
