@@ -333,6 +333,7 @@
 					                    	<th class="hidden-sm" width="40%">분류</th>
 					                    	<th>직무</th>
 					                    	<th>직급</th>
+					                    	<th>&nbsp;</th>
 					              		</tr>
 					          		</thead>
 					          		<tbody data-role="listview"
@@ -447,13 +448,11 @@
 		    </td>
 			<td>
 			#: job.name #
-						
-			<a href="<@spring.url "/display/0/assessment.html"/>"><span class="btn-flat folder t-0-r-1"></span></a>					
-			
 			</td>
 			<td>
 			#: jobLevelName #
 			</td>
+			<td><a href="/display/0/assessment.html" class="btn btn-flat btn-danger btn-sm">진단완료하기</a></td>
 		</tr>			
 		</script>								
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
