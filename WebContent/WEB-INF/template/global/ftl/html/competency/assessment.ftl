@@ -28,7 +28,7 @@ yepnope([{
 		complete : function() {
 			common.ui.setup({
 				features:{
-					wallpaper : true,
+					wallpaper : false,
 					loading:true
 				},		
 				jobs:jobs
