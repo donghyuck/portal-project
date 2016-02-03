@@ -99,6 +99,7 @@
 					secondStep : false,
 					job : new common.ui.data.competency.Job(),
 					jobLevel : 0,
+					userIncompleteCount : 0,
 					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
 					hasIncomplete :false,
 					jobDataSource : new kendo.data.DataSource({
@@ -167,6 +168,7 @@
 						}
 						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);								
 						
+						$this.set('userIncompleteCount', source.userIncompleteCount);
 						if(source.userIncompleteCount > 0){	
 							$this.set('hasIncomplete', true);
 						}else{
@@ -435,7 +437,7 @@
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">							
 							<div data-bind="visible:hasIncomplete" >
-								<p class="text-danger">미완료된진단이 <span data-bind="text:assessmentDataSource.view().length"/> 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</p>
+								<p class="text-muted">미완료된진단이 <span class="text-danger" data-bind="text: userIncompleteCount"> </span> 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</p>
 								<table class="table bg-gray rounded-2x no-margin">
 					            	<thead>
 					                	<tr>
