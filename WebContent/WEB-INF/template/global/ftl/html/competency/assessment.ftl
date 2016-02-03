@@ -34,7 +34,7 @@ yepnope([{
 								
 								<#if RequestParameters['id']?? >
 								<#assign assessmentId = RequestParameters['id']?number>
-								alert( assessmentId );
+								alert( ${assessmentId} );
 								</#if>
 													
 					
