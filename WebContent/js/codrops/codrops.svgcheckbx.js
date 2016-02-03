@@ -1,3 +1,5 @@
+function createSvgCheckBox () {
+
 if( document.createElement('svg').getAttributeNS ) {
 
 	var checkbxsCross = Array.prototype.slice.call( document.querySelectorAll( 'form.ac-cross input[type="checkbox"]' ) ),
@@ -133,5 +135,7 @@ if( document.createElement('svg').getAttributeNS ) {
 			}
 		} );
 	}
+
+}
 
 }
