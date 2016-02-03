@@ -206,7 +206,8 @@
 		}
 		-->
 		</script>		
-		<style scoped="scoped">			
+		<style scoped="scoped">	
+				
 		/** Breadcrumbs */
 		.breadcrumbs-v3 {
 			position:relative;
@@ -223,9 +224,7 @@
 			background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
 			background-size: cover;
 			background-position: center center;			
-		}		
-		
-		
+		}		 
 		
 		#apply-assessment-modal .modal-content{
 		    border-radius: 6px !important;
@@ -307,21 +306,37 @@
 
 
 		<!-- START MODAL -->		
-		
-	<div id="apply-assessment-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+		<div id="apply-assessment-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-md modal-flat">
 				<div class="modal-content">	
 					<div class="modal-header">
 						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>		
+								
+					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
+						
 					</div>
 					
+					<div class="modal-footer">				
+						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
+					</div>
+				</div>
+			</div>	
+		</div>		
+		
+		<div id="apply-assessment-modal2" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-md modal-flat">
+				<div class="modal-content">	
+					<div class="modal-header">
+						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>		
+								
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
-						<form action="#" class="sky-form no-border">
-							
+						<form action="#" class="sky-form no-border">							
 							<div data-bind="visible:haseIncomplete" >
 								<span class="text-danger">미완료된진단들이 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</span>
-
 								<table class="table table-striped no-margin">
 					            	<thead>
 					                	<tr>
@@ -336,10 +351,8 @@
 							                 	data-template="my-assessment-template"
 							                 	data-bind="source: assessmentDataSource" style="height: 300px; overflow: auto"> 
 									</tbody>		                    
-					        	</table>
-							
-							</div>
-							
+					        	</table>							
+							</div>							
 							<header><span class="text-xxs">직무를 선택하여 주세요.</span></header>
 		                    <table class="table table-striped no-margin">
 				            	<thead>
@@ -400,9 +413,7 @@
 											</td>
 										</tr>																																								
 									</tbody>
-							</table>	
-							
-															
+							</table>						
 						<form action="#" class="sky-form no-border">
 							<header><span class="text-xxs">직급를 선택하여 주세요.</span></header>				
 							<table class="table table-striped no-margin">
@@ -428,14 +439,9 @@
 					</div>
 				</div>
 			</div>	
-		</div>					
-
-		
-		<!-- END MODAL -->	
-		
-		
-              
-							
+		</div>		
+			
+		<!-- END MODAL -->							
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<tr>
