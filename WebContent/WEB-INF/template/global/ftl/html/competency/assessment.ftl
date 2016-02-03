@@ -111,6 +111,7 @@ yepnope([{
   	<div class="container">
  		<div id="my-assessment"> 	
  			<div class="no-border"
+ 				data-role="listview"
  			    data-auto-bind="false"
 				data-template="my-assessment-template"
 				data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
