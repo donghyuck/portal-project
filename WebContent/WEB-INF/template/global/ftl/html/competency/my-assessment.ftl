@@ -337,6 +337,7 @@
 					        	</table>		
 							</div>	
 							<hr/>
+							
 							<header><span class="text-xxs">직무를 선택하여 주세요.</span></header>
 		                    <table class="table table-striped no-margin">
 				            	<thead>
