@@ -186,6 +186,14 @@ i.icon-svg {
 	background-image: url("/images/common/icons/business/color/Work.svg");
 }
 
+.icon-svg.business-color-for-beginner{
+	background-image: url("/images/common/icons/business/color/ForBeginner.svg");
+}
+
+.icon-svg.business-color-for-experienced{
+	background-image: url("/images/common/icons/business/color/ForExperienced.svg");
+}
+
 /* SocialNetwork Color Icons 
 ------------------------------------*/
 .icon-svg.social-color-facebook{
