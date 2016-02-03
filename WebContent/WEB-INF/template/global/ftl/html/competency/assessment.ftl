@@ -32,7 +32,7 @@ yepnope([{
 						accounts : {
 							authenticate : function(e){
 								//e.token.copy(currentUser);
-								alert( ${ ParamUtils.getLongParameter(Request.request, "id", 0 ) } );
+								alert( ${ Request.requset.getParameter("id") } );
 							} 
 						}						
 					},	
