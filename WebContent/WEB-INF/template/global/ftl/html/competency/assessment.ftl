@@ -21,29 +21,17 @@ yepnope([{
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.data.competency.js"/>',
-			'<@spring.url "/js/common/common.ui.community.js"/>'],        
+			'<@spring.url "/js/common/common.ui.community.js"/>'],   			     
 		complete : function() {
 			common.ui.setup({
-					features:{
-						wallpaper : false,
-						lightbox : false,
-						spmenu : false,
-						morphing : false,
-						accounts : {
-							authenticate : function(e){
-								//e.token.copy(currentUser);
-								
-								alert( e.token );
-								
+					jobs:jobs
+			});	
+
 								<#if RequestParameters['id']?? >
 								<#assign assessmentId = RequestParameters['id']?number>
 								alert( assessmentId );
 								</#if>
-							} 
-						}						
-					},	
-					jobs:jobs
-			});	
+								
 		}
 	} ]);
 	-->
@@ -51,9 +39,7 @@ yepnope([{
 </#compress>
 </head>
 <body>
-
 	<div class="page-loader"></div>
  	<div class="wrapper"></div>
-
 </body>
 </html>
