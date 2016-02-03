@@ -333,7 +333,7 @@
 					                    	<th class="hidden-sm" width="40%">분류</th>
 					                    	<th>직무</th>
 					                    	<th>직급</th>
-					                    	<th>&nbsp;</th>
+					                    	<th width="90">&nbsp;</th>
 					              		</tr>
 					          		</thead>
 					          		<tbody data-role="listview"
@@ -452,7 +452,7 @@
 			<td>
 			#: jobLevelName #
 			</td>
-			<td><a href="/display/0/assessment.html" class="btn btn-flat btn-danger btn-sm">진단완료하기</a></td>
+			<td><a href="/display/0/assessment.html?id=\#= assessmentId \#" class="btn btn-flat btn-danger btn-sm">진단완료하기</a></td>
 		</tr>			
 		</script>								
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
