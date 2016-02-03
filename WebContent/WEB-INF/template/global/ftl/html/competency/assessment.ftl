@@ -54,7 +54,7 @@ yepnope([{
 		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
 			assessment: source ,
-			doRender : function(){
+			dataBound : function(e){
 			console.log(1);
 				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
 			          function() {
@@ -110,7 +110,7 @@ yepnope([{
  		<div id="my-assessment"> 	
  			<section class="no-border"
 				data-template="my-assessment-template"
-				data-bind="source:questionDataSource, events:{dataBinding: doRender }" style="height: 100%; overflow: auto">		
+				data-bind="source:questionDataSource, events:{dataBound: dataBound }" style="height: 100%; overflow: auto">		
 			</section>	
  		</div>
   			
