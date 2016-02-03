@@ -315,7 +315,7 @@
 					</div>		
 								
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
-						
+						<form></form>
 					</div>
 					
 					<div class="modal-footer">				
