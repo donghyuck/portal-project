@@ -435,13 +435,14 @@
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">							
 							<div data-bind="visible:hasIncomplete" >
-								<p class="text-danger">미완료된진단들이 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</p>
+								<p class="text-danger">미완료된진단이 <span data-bind="text:assessmentDataSource.total"/> 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</p>
 								<table class="table bg-gray rounded-2x no-margin">
 					            	<thead>
 					                	<tr>
 					                    	<th width="42">&nbsp;</th>
 					                    	<th class="hidden-sm" width="40%">분류</th>
 					                    	<th>직무</th>
+					                    	<th>직급</th>
 					              		</tr>
 					          		</thead>
 					          		<tbody data-role="listview"
@@ -551,6 +552,9 @@
 			<td>
 			#: job.name #
 			</td>
+			<td>
+			#: jobLevelName #
+			</td>
 		</tr>			
 		</script>								
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
@@ -560,7 +564,7 @@
 		    	<label class="radio"><input type="radio" data-action="select" name="input-select-job-level" data-object-type= "61" value="#=level#"><i class="rounded-x"></i>#: name #</label>
 		    </td>
 			<td>
-				#:minWorkExperienceYear# ~ #:minWorkExperienceYear# 년		
+				#:minWorkExperienceYear# ~ #:maxWorkExperienceYear# 년		
 			</td>
 		</tr>	
 		        
