@@ -363,8 +363,8 @@
 					            	<thead>
 					                	<tr>
 					                    	<th class="hidden-sm" width="42">&nbsp;</th>
-					                    	<th width="30%">직무</th>
-					                    	<th>직무정의</th>
+					                    	<th width="40%">분류</th>
+					                    	<th>직무</th>
 					              		</tr>
 					          		</thead>
 					          		<tbody data-role="listview"
