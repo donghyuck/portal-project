@@ -32,6 +32,9 @@ yepnope([{
 						accounts : {
 							authenticate : function(e){
 								//e.token.copy(currentUser);
+								
+								alert( e.token );
+								
 								<#if RequestParameters['id']?? >
 								<#assign assessmentId = RequestParameters['id']?number>
 								alert( assessmentId );
