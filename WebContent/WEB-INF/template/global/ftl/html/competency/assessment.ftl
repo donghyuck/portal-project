@@ -102,6 +102,10 @@ yepnope([{
 	    -webkit-margin-end: 0px;
 	    font-weight: bold;
 	}
+
+	.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
+	    color: #000;
+	}	
 </style>
 </#compress>
 </head>
