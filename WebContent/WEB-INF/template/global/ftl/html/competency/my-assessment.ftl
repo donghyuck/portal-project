@@ -316,7 +316,7 @@
 						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>										
-					<div class="modal-body" data-bind="visible:hasIncomplete" border-bottom: 1px dashed #e5e5e5;">							
+					<div class="modal-body" data-bind="visible:hasIncomplete" style="border-bottom: 1px dashed #e5e5e5;">							
 								<p class="text-danger">미완료된진단들이 있습니다.</p>
 								<table class="table no-margin">
 					            	<thead>
