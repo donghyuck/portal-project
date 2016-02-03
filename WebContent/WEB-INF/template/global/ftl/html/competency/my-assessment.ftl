@@ -416,7 +416,8 @@
 				        	</table>													
 						</form>
 					</div>	
-					<div class="modal-footer">				
+					<div class="modal-footer">	
+						<button type="button" class="btn btn-primary btn-flat btn-outline rounded btn-left" data-bind="click:goFirstStep, visible:secondStep" >이전</button>				
 						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
 					</div>
 				</div>
