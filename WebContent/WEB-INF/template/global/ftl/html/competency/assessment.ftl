@@ -26,6 +26,9 @@ yepnope([{
 			'<@spring.url "/js/common/common.ui.community.js"/>'],   			     
 		complete : function() {
 			common.ui.setup({
+				features:{
+					wallpaper : true
+				},		
 				jobs:jobs
 			});		
 			
