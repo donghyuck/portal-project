@@ -81,6 +81,8 @@ yepnope([{
 		});
 		renderTo.data("model", observable);	
 		kendo.bind(renderTo, observable );	
+		
+		observable.questionDataSource.read();
 	}		
 	
 	function getRatingLevels(){
