@@ -316,8 +316,7 @@
 						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>										
-					<div class="modal-body" data-bind="visible:hasIncomplete">
-							
+					<div class="modal-body" data-bind="visible:hasIncomplete">							
 								<p class="text-danger">미완료된진단들이 있습니다.</p>
 								<table class="table bg-gray rounded-2x no-margin">
 					            	<thead>
@@ -335,7 +334,7 @@
 									</tbody>		                    
 					        	</table>
 					</div>
-					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">		
+					<div class="modal-body no-padding" data-bind="invisible:secondStep" style="min-height:300px;">		
 						<form action="#" class="sky-form no-border">
 							<header><span class="text-xxs">직무를 선택하여 주세요.</span></header>
 		                    <table class="table table-striped no-margin">
