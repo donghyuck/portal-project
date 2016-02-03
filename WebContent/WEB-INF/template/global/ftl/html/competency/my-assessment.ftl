@@ -318,13 +318,13 @@
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">
 							<div data-bind="visible:hasIncomplete" >
-								<span class="text-danger">미완료된진단들이 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</span>
-								<table class="table table-striped no-margin">
+								<p class="text-danger">미완료된진단들이 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</p>
+								<table class="table bg-gray rounded-2x no-margin">
 					            	<thead>
 					                	<tr>
-					                    	<th class="hidden-sm" width="42">&nbsp;</th>
-					                    	<th width="30%">직무</th>
-					                    	<th>직무정의</th>
+					                    	<th width="42">&nbsp;</th>
+					                    	<th class="hidden-sm" width="40%">분류</th>
+					                    	<th>직무</th>
 					              		</tr>
 					          		</thead>
 					          		<tbody data-role="listview"
@@ -358,7 +358,7 @@
 					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">
 						<form action="#" class="sky-form no-border">							
 							<div data-bind="visible:hasIncomplete" >
-								<span class="text-danger">미완료된진단들이 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</span>
+								<p class="text-danger">미완료된진단들이 있습니다. 진단을 완료하거나 새로운 진단을 시작할 수 있습니다.</p>
 								<table class="table bg-gray rounded-2x no-margin">
 					            	<thead>
 					                	<tr>
