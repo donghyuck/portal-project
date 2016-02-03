@@ -170,10 +170,8 @@
 						if(source.userIncompleteCount > 0)
 							$this.set('haseIncomplete', true);
 						else
-							$this.set('haseIncomplete', false);
-						
-						$this.userAssessments = source.userAssessments;			
-						
+							$this.set('haseIncomplete', false);						
+						$this.userAssessments = source.userAssessments;									
 						if( doRead & $this.assessmentPlan.assessmentId > 0 )
 						{
 							$this.jobDataSource.read();
