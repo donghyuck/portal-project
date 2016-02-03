@@ -270,6 +270,10 @@
 		    background-color: #999;
 		}		
 		
+		.sky-form header i.icon-svg {
+		    position: absolute;
+    		left: 12px;
+    	}
 		</style>   	
 		</#compress>
 	</head>
