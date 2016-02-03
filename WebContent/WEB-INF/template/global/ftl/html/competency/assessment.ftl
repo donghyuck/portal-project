@@ -28,19 +28,27 @@ yepnope([{
 			});		
 			
 			<#if RequestParameters['id']?? >
-				<#assign assessmentId = TextUtils.parseLong( RequestParameters['id'] ) >
-			</#if>					
+			var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;			
 			common.ui.ajax( '<@spring.url "/data/accounts/get.json?output=json"/>' , {
 				success : function(response){
-					var currentUser = new common.ui.data.User($.extend( response.user, { roles : response.roles }));
-					console.log(common.ui.stringify(currentUser));
+					var currentUser = new common.ui.data.User($.extend( response.user, { roles : response.roles }));					
+					common.ui.ajax( '<@spring.url "/data/me/competency/assessment/get.json?output=json"/>' , {
+						data : { assessmentId : },
+						success : function(response){
+							var assessment = new common.ui.data.competency.Assessment(response);		
+							
+							console.log(common.ui.stringify(assessment));
+						}
+					});
+					
 				}
-			});
-
-
-								
+			});			
+			<#else>
+			alert("잘못된 접근입니다.");
+			</#if>			
 		}
 	} ]);
+		
 	-->
 </script>
 </#compress>
