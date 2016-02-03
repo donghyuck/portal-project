@@ -33,7 +33,7 @@ yepnope([{
 				success : function(response){
 					var currentUser = new common.ui.data.User($.extend( response.user, { roles : response.roles }));					
 					common.ui.ajax( '<@spring.url "/data/me/competency/assessment/get.json?output=json"/>' , {
-						data : { assessmentId : },
+						data : { assessmentId : assessmentId},
 						success : function(response){
 							var assessment = new common.ui.data.competency.Assessment(response);		
 							
