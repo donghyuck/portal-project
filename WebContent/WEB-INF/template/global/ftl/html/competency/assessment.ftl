@@ -81,7 +81,7 @@ yepnope([{
 		});
 		renderTo.data("model", observable);	
 		kendo.bind(renderTo, observable );	
-		
+	//common.ui.listview(renderTo.find());
 		observable.questionDataSource.read();
 	}		
 	
@@ -110,11 +110,11 @@ yepnope([{
  	<div class="wrapper"></div>
   	<div class="container">
  		<div id="my-assessment"> 	
- 			<section class="no-border"
+ 			<div class="no-border"
  			    data-auto-bind="false"
 				data-template="my-assessment-template"
 				data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
-			</section>	
+			</div>	
  		</div>
   			
 	</div>	
