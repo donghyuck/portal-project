@@ -53,16 +53,24 @@ yepnope([{
 		
 	-->
 </script>
+<style>
+	h2{
+	    display: block;
+	    font-size: 1.5em;
+	    -webkit-margin-before: 0.83em;
+	    -webkit-margin-after: 0.83em;
+	    -webkit-margin-start: 0px;
+	    -webkit-margin-end: 0px;
+	    font-weight: bold;
+	}
+</style>
 </#compress>
 </head>
 <body class="bg-dark">
 	<div class="page-loader"></div>
  	<div class="wrapper">
- 	
- 		<div class="container">
- 	
- 	
- 	
+ 	</div>
+  		<div class="container">
 			<section>
 				<form class="ac-custom ac-radio ac-fill">
 					<h2>Where do you proactively envision multimedia based expertise and cross-media growth strategies?</h2>
@@ -74,9 +82,7 @@ yepnope([{
 					</ul>
 				</form>
 			</section>
-		</div>	 	
- 	
- 	
- 	</div>
+		</div>	
+			
 </body>
 </html>
