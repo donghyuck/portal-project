@@ -446,7 +446,8 @@
 		    #: job.classification.classifiedMajorityName# > #: job.classification.classifiedMiddleName# > <span class="color-green">#: job.classification.classifiedMinorityName#</span>		    
 		    </td>
 			<td>
-			#: job.name #			
+			#: job.name #
+						
 			<a href="<@spring.url "/display/0/assessment.html"/>"><span class="btn-flat folder t-0-r-1"></span></a>					
 			
 			</td>
