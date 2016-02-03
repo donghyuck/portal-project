@@ -92,23 +92,22 @@ yepnope([{
 	
 	--></script>
 <style>
-	h2{
-	    display: block;
+	
+	.ac-custom h2 {
+	    font-size: 2em;
 	    line-height: 1.5em;
-	    font-size: 1.5em;
-	    -webkit-margin-before: 0.83em;
-	    -webkit-margin-after: 0.83em;
-	    -webkit-margin-start: 0px;
-	    -webkit-margin-end: 0px;
-	    font-weight: bold;
-	}
+	}	
 
 	.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
 	    color: #000;
 	}	
 	.ac-custom label::before {
 	    border: 4px solid #000;
-	}	
+	}
+	
+	.ac-custom svg path {
+    	stroke: #8e8e93;
+    }	
 </style>
 </#compress>
 </head>
