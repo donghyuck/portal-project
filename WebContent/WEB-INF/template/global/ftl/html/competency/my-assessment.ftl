@@ -362,8 +362,8 @@
 								<table class="table table-striped no-margin">
 					            	<thead>
 					                	<tr>
-					                    	<th class="hidden-sm" width="42">&nbsp;</th>
-					                    	<th width="40%">분류</th>
+					                    	<th width="42">&nbsp;</th>
+					                    	<th class="hidden-sm" width="40%">분류</th>
 					                    	<th>직무</th>
 					              		</tr>
 					          		</thead>
@@ -467,8 +467,8 @@
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<tr>
-		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
-		    <td> 
+		    <td class="no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
+		    <td class="hidden-sm"> 
 		    #: job.classification.classifiedMajorityName# > #: job.classification.classifiedMiddleName# > <span class="color-green">#: job.classification.classifiedMinorityName#</span>		    
 		    </td>
 			<td>
