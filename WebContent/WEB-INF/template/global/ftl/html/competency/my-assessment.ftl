@@ -316,7 +316,7 @@
 						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>										
-					<div class="modal-body no-padding bg-dark" data-bind="visible:hasIncomplete" style="border-bottom: 1px dashed #e5e5e5;">							
+					<div class="modal-body no-padding bg-gray" data-bind="visible:hasIncomplete" style="border-bottom: 1px dashed #e5e5e5;">							
 								<p class="text-muted p-sm">미완료된진단들이 있습니다.</p>
 								<table class="table no-margin">
 					            	<thead>
@@ -544,7 +544,7 @@
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<tr>
-		    <td class="no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
+		    <td class="no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-true-false"></i></td>
 		    <td class="hidden-sm"> 
 		    #: job.classification.classifiedMajorityName# > #: job.classification.classifiedMiddleName# > <span class="color-green">#: job.classification.classifiedMinorityName#</span>		    
 		    </td>
@@ -555,7 +555,7 @@
 		</script>								
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
 		<tr>
-		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-work"></i></td>
+		    <td class="hidden-sm no-padding"><i class="icon-flat icon-svg icon-svg-md business-color-for-experienced"></i></td>
 		    <td>    
 		    	<label class="radio"><input type="radio" data-action="select" name="input-select-job-level" data-object-type= "61" value="#=level#"><i class="rounded-x"></i>#: name #</label>
 		    </td>
