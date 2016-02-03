@@ -32,6 +32,7 @@ yepnope([{
 						accounts : {
 							authenticate : function(e){
 								//e.token.copy(currentUser);
+								alert( ${request.id} );
 							} 
 						}						
 					},	
