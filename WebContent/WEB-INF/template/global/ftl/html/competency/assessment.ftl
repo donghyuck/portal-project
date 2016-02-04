@@ -86,8 +86,17 @@ yepnope([{
 		});
 		renderTo.data("model", observable);	
 		kendo.bind(renderTo, observable );	
-	//common.ui.listview(renderTo.find());
 		observable.questionDataSource.read();
+		
+		$(document).on("click","[data-action='answer']", function(e){						
+					var btn = $(this) ;
+					var objectId = btn.data('object-id');
+					var objectObjectScore = btn.data('object-score');
+					//var item = dataSource.get(objectId);
+					//createApplyAssessmentModal(item);			
+					console.log( objectId + ">" + objectObjectScore );		
+		});
+		
 	}		
 	
 	function getRatingLevels(){
@@ -191,7 +200,7 @@ yepnope([{
 			# for (var i = 0; i < rating.length ; i++) { #	
 			# var ratingLevel = rating[i] ; #	
 			<li>
-				<input id="#=uid#-rating-#=ratingLevel.ratingLevelId#" name="#=uid#-rating" type="radio">
+				<input id="#=uid#-rating-#=ratingLevel.ratingLevelId#" name="#=uid#-rating" type="radio" data-action="answer" data-object-id="#=questionId#" data-object-score="#=ratingLevel.score#" />
 				<label for="#=uid#-rating-#=ratingLevel.ratingLevelId#">#: ratingLevel.title #</label>
 			</li>
 			# } #
