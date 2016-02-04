@@ -42,7 +42,7 @@ yepnope([{
 					common.ui.ajax( '<@spring.url "/data/me/competency/assessment/get.json?output=json"/>' , {
 						data : { assessmentId : assessmentId},
 						success : function(response){
-							var assessment = new common.ui.data.competency.Assessment(response);		
+							var assessment = new common.ui.data.competency.Assessment(response);
 							createMyAssessment( assessment );
 						}
 					});
@@ -55,6 +55,13 @@ yepnope([{
 								
 		}
 	} ]);
+	
+	function getUserPhotoUrl( user ){
+		if(common.ui.defined(user.username)){			
+			return '<@spring.url "/download/profile" + user.username + "?width=150&height=150"  />';
+		}
+		return '<@spring.url "/images/common/no-avatar.png"  />';
+	}
 	
 	function createMyAssessment(source){
 		var renderTo = $('#my-assessment');	
