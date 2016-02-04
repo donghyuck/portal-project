@@ -67,7 +67,7 @@ yepnope([{
 	function createMyAssessment(source){
 		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
-			visible : false;
+			visible : false,
 			assessment:source ,
 			questionDataBound : function(e){
 				var $this = this;
