@@ -121,6 +121,7 @@ yepnope([{
     }	
 	    
 	.ac-custom label {
+		font-size: 1.5em;
 	    color: rgba(0,0,0,0.8);
 	}   
 </style>
