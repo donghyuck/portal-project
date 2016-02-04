@@ -60,15 +60,21 @@ yepnope([{
 		var observable =  common.ui.observable({
 			assessment:source ,
 			questionDataBound : function(e){
-			console.log(1);
+				console.log(1);
 				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
 			          function() {
 			               console.log(2);
 			          }          
 			    );
 			},
+			saveOrUpdate : function(){
+				var $this = this;
+				$this.questionDataSource.sync();
+			},
 			questionDataSource : new kendo.data.DataSource({
+				batch: true,
 				transport: { 
+					update: { url:'<@spring.url "/data/me/competency/assessment/test/update.json?output=json"/>', type:'post' },
 					read: { url:'<@spring.url "/data/me/competency/assessment/test/list.json?output=json"/>', type:'post' },
 					parameterMap: function (options, operation){
 						if (operation !== "read") {
@@ -187,6 +193,7 @@ yepnope([{
 							data-template="my-assessment-template"
 							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
 					</div>	
+					<button type="button" class="btn btn-primary btn-flat btn-outline" >완료</button>
 		 		</div>
 	 		</div>
 		</div>			
