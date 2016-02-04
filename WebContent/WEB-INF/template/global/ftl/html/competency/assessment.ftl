@@ -224,7 +224,7 @@ yepnope([{
 	  	<div class="container">
 	  		<div class="row" data-bind="visible:visible" style="display:none;">
 		  		<div class="col-sm-12">
-		 			<div class="no-border bg-transparent"
+		 			<div class="no-border bg-transparent animated slideInUp"
 			 				data-role="listview"
 			 			    data-auto-bind="false"
 							data-template="my-assessment-template"
@@ -241,7 +241,7 @@ yepnope([{
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
-		<form class="ac-custom ac-radio ac-fill animated slideInUp" data-object-id="#=questionId#" >
+		<form class="ac-custom ac-radio ac-fill" data-object-id="#=questionId#" >
 			<div class="headline"><h3>#= seq + 1 #.</h3>  #: competencyName# > #: essentialElementName # </div>
 			<h2>#: question #</h2>
 			<ul>
