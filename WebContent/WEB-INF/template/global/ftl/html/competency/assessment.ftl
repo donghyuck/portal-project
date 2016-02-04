@@ -191,6 +191,10 @@ yepnope([{
 			font-size : 24px;	
 		}
 		
+		.headline h3 {		
+			font-size: 2em;
+    		font-weight: 600;
+		}
 	</style>
 </#compress>
 </head>
