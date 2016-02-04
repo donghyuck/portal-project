@@ -223,7 +223,7 @@ yepnope([{
 		 		</div>
 	 		</div>
 		</div>			
-		<div>					
+		<div class="m-t-lg">					
 			<button type="button" class="btn btn-primary btn-flat btn-outline btn-block btn-xxl" data-bind="click:saveOrUpdate">진단 완료</button>
 		</div>
  	</div>
