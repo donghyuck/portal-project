@@ -23,6 +23,7 @@ yepnope([{
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
 			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 
+			'<@spring.url "/js/codrops/modernizr.custom.js"/>', 
 			'<@spring.url "/js/codrops/codrops.fullscreenForm.js"/>', 
 			'<@spring.url "/js/codrops/codrops.selectFx.js"/>', 
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
