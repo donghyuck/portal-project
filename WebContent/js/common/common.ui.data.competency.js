@@ -431,7 +431,7 @@
 	    	assessmentId: { type: "number", defaultValue: 0},
 	    	assessmentPlan: { type: "object", defaultValue:new AssessmentPlan() },	    	
 	    	assessors:  { type: "object" ,  defaultValue:[]},
-	    	candidate : { type: "object", 	defaultValue:new common.ui.data.User() , parse: function( value ){
+	    	'candidate' : { defaultValue:new common.ui.data.User() , parse: function( value ){
 	    		console.log( value );
 	    		return new common.ui.data.User( value );
 	    	} },
