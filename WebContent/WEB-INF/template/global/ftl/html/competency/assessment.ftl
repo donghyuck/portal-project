@@ -75,6 +75,9 @@ yepnope([{
 			          }          
 			    );
 			},
+			getCandidatePhotoUrl: function(){
+				return '<@spring.url "/download/profile/"  />' + this.assessment.candidate.username + '?width=150&height=150'; 
+			},
 			saveOrUpdate : function(){
 				var $this = this;
 				$this.questionDataSource.sync();
