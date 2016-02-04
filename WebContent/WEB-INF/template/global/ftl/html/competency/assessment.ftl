@@ -99,7 +99,9 @@ yepnope([{
 			var objectId = btn.data('object-id');
 			var objectObjectScore = btn.data('object-score');					
 			var assessmentQuestion = observable.questionDataSource.get(objectId);
-			assessmentQuestion.set('score', objectObjectScore);	
+			assessmentQuestion.set('score', objectObjectScore);				
+			common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
+			
 		});
 		
 	}		
