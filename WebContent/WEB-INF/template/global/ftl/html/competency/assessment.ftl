@@ -131,15 +131,18 @@ yepnope([{
  	<div class="wrapper">
  	</div>
   	<div class="container">
- 		<div id="my-assessment"> 	
- 			<div class="no-border bg-transparent"
- 				data-role="listview"
- 			    data-auto-bind="false"
-				data-template="my-assessment-template"
-				data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
-			</div>	
+  		<div class="row">
+	  		<div class="col-sm-12">
+		 		<div id="my-assessment" > 	
+		 			<div class="no-border bg-transparent"
+		 				data-role="listview"
+		 			    data-auto-bind="false"
+						data-template="my-assessment-template"
+						data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
+					</div>	
+				</div>	
+	 		</div>
  		</div>
-  			
 	</div>	
 
 		<!-- START TEMPLATE -->	
