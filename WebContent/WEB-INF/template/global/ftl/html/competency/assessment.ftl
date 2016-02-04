@@ -96,60 +96,86 @@ yepnope([{
 	}
 	
 	--></script>
-<style>
-	
-	.ac-custom h2 {
-	    font-size: 1.5em;
-	    line-height: 1.5em;
-	}	 
-	.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
-	    color: #000;
-	}	
-	
-	.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {
-	    width: 40px;
-	    height: 40px;
-	    top:45%;
-	}
-	
-	.ac-custom label::before {
-	    border: 4px solid #000;
-	    font-size: 1.5em;
-	}
-	
-	.ac-custom svg {
-		top:45%;
-	}
-	
-	.ac-custom svg path {
-    	stroke: #000;
-    }	
-	    
-	.ac-custom label {
-		font-size: 1.5em;
-	    color: rgba(0,0,0,0.8);
-	}   
-</style>
+	<style>
+
+		/** Breadcrumbs */
+		.breadcrumbs-v3 {
+			position:relative;
+		}
+
+		.breadcrumbs-v3 p	{
+			color : #fff;
+			font-size: 24px;
+			font-weight: 200;
+			margin-bottom: 0;
+		}	
+		
+		.breadcrumbs-v3.img-v1 {
+			background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
+			background-size: cover;
+			background-position: center center;			
+		}	
+		
+		/** Svg CheckBox */
+		.ac-custom h2 {
+		    font-size: 1.5em;
+		    line-height: 1.5em;
+		}	 
+		.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
+		    color: #000;
+		}	
+		
+		.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {
+		    width: 40px;
+		    height: 40px;
+		    top:45%;
+		}
+		
+		.ac-custom label::before {
+		    border: 4px solid #000;
+		    font-size: 1.5em;
+		}
+		
+		.ac-custom svg {
+			top:45%;
+		}
+		
+		.ac-custom svg path {
+	    	stroke: #000;
+	    }	
+		    
+		.ac-custom label {
+			font-size: 1.5em;
+		    color: rgba(0,0,0,0.8);
+		}   
+	</style>
 </#compress>
 </head>
 <body class="">
 	<div class="page-loader"></div>
  	<div class="wrapper">
- 	</div>
-  	<div class="container">
-  		<div class="row">
-	  		<div class="col-sm-12">
-		 		<div id="my-assessment" > 	
-		 			<div class="no-border bg-transparent"
-		 				data-role="listview"
-		 			    data-auto-bind="false"
-						data-template="my-assessment-template"
-						data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
+		<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
+			<div class="personalized-controls container text-center p-xl">
+				<p class="text-quote"> ddd	</p>
+				<h1 class="text-xxl">dd</h1>					
+			</div><!--/end container-->
+		</div> 	
+	  	<div class="container">
+	  		<div class="row">
+		  		<div class="col-sm-12">
+			 		<div id="my-assessment" > 	
+			 			<div class="no-border bg-transparent"
+			 				data-role="listview"
+			 			    data-auto-bind="false"
+							data-template="my-assessment-template"
+							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
+						</div>	
 					</div>	
-				</div>	
+		 		</div>
 	 		</div>
- 		</div>
-	</div>	
+		</div>			
+ 	</div>
+
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
