@@ -222,7 +222,7 @@ yepnope([{
 			</div><!--/end container-->
 		</div> 	
 	  	<div class="container">
-	  		<div class="row animated fadeInDown" data-bind="visisble:visible" style="display:none;">
+	  		<div class="row animated fadeInDown" data-bind="visible:visible" style="display:none;">
 		  		<div class="col-sm-12">
 		 			<div class="no-border bg-transparent"
 			 				data-role="listview"
