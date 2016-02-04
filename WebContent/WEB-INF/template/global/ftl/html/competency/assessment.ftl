@@ -185,15 +185,12 @@ yepnope([{
 				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>				
 			</div><!--/end container-->
 		</div> 	
-		
-		<div class="container">
+	  	<div class="container">
 	  		<div class="row">
 		  		<div class="col-sm-12">
 		 			<div class="no-border bg-transparent"
-			 				data-role="scrollview"
-			 				data-content-height="440px"
-			 				data-enable-pager="true"
-			 				data-auto-bind="false"
+			 				data-role="listview"
+			 			    data-auto-bind="false"
 							data-template="my-assessment-template"
 							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
 					</div>	
@@ -201,9 +198,9 @@ yepnope([{
 		 		</div>
 	 		</div>
 		</div>			
- 	</div>	
- 	
- 	
+ 	</div>
+	
+
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<form class="ac-custom ac-radio ac-fill">
