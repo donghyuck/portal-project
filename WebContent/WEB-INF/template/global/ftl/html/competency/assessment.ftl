@@ -87,7 +87,6 @@ yepnope([{
 		renderTo.data("model", observable);	
 		kendo.bind(renderTo, observable );	
 		observable.questionDataSource.read();
-		
 		$(document).on("click","[data-action='answer']", function(e){						
 					var btn = $(this) ;
 					var objectId = btn.data('object-id');
