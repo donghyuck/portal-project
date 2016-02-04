@@ -126,7 +126,7 @@ yepnope([{
 		}	
 		
 		.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {
-			margin-top: -20x;
+			margin-top: -20px;
 		    width: 40px;
 		    height: 40px	;
 		    top:50%;
@@ -148,6 +148,7 @@ yepnope([{
 		.ac-custom label {
 			font-size: 1.5em;
 		    color: rgba(0,0,0,0.8);
+		    font-weight: 200;
 		}   
 	</style>
 </#compress>
