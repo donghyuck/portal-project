@@ -58,7 +58,7 @@ yepnope([{
 	function createMyAssessment(source){
 		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
-			assessment: source ,
+			assessment:source ,
 			questionDataBound : function(e){
 			console.log(1);
 				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
@@ -153,23 +153,21 @@ yepnope([{
 </head>
 <body class="">
 	<div class="page-loader"></div>
- 	<div class="wrapper">
+ 	<div id="my-assessment" class="wrapper">
 		<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
 			<div class="personalized-controls container text-center p-xl">
 				<p class="text-quote"> ddd	</p>
-				<h1 class="text-xxl">dd</h1>					
+				<h1 class="text-xxl" data-bind="text:assessment.assessmentPlan.name"></h1>					
 			</div><!--/end container-->
 		</div> 	
 	  	<div class="container">
 	  		<div class="row">
 		  		<div class="col-sm-12">
-			 		<div id="my-assessment" > 	
-			 			<div class="no-border bg-transparent"
+		 			<div class="no-border bg-transparent"
 			 				data-role="listview"
 			 			    data-auto-bind="false"
 							data-template="my-assessment-template"
 							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
-						</div>	
 					</div>	
 		 		</div>
 	 		</div>
