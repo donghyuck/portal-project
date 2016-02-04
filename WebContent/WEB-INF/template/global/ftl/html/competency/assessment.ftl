@@ -219,7 +219,7 @@ yepnope([{
 			</div><!--/end container-->
 		</div> 	
 	  	<div class="container">
-	  		<div class="row">
+	  		<div class="row animated slideInUp">
 		  		<div class="col-sm-12">
 		 			<div class="no-border bg-transparent"
 			 				data-role="listview"
