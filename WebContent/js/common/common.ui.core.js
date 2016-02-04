@@ -504,10 +504,7 @@
 			if(features.dialog){
 				$(document).on("click", "[data-feature=dialog]", function(e){
 					var target ,
-					$this = $(this);
-					
-					
-					
+					$this = $(this);					
 				});
 			}
 		} 		
