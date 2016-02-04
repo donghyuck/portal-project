@@ -143,7 +143,8 @@ yepnope([{
 		}
 		
 		.ac-custom svg path {
-	    	stroke: #000;
+	    	stroke: #007aff;
+	    	stroke-width: 10px;
 	    }	
 		    
 		.ac-custom label {
