@@ -184,7 +184,15 @@ yepnope([{
 		<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
 			<div class="personalized-controls container text-center p-xl">
 				<h1 class="text-md" data-bind="text:assessment.assessmentPlan.name"></h1>	
-				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>				
+				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>			
+				<div class="credit-item">
+					<div class="credit-img user">
+						<img data-bind="attr:{src:authorPhotoUrl}" class="img-responsive img-circle">
+					</div>
+					<div class="credit-name"> <span data-bind="visible: assessment.candidate.nameVisible, text: assessment.candidate.name "></span><code data-bind="text: assessment.candidate.username"></code> </div>
+					<div class="credit-title"></div>
+				</div>	
+									
 			</div><!--/end container-->
 		</div> 	
 	  	<div class="container">
