@@ -127,8 +127,8 @@ yepnope([{
 		
 		.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {
 			margin-top: -20px;
-		    width: 40px;
-		    height: 40px	;
+		    width: 35px;
+		    height: 35px	;
 		    top:50%;
 		}
 		
@@ -139,6 +139,7 @@ yepnope([{
 		
 		.ac-custom svg {
 			top:50%;
+			left:8px;
 		}
 		
 		.ac-custom svg path {
