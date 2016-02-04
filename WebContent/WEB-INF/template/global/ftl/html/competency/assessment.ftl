@@ -187,7 +187,8 @@ yepnope([{
 		}   
 		
 		.btn-xxl {
-			padding 20px 26px;			
+			padding 20px 26px;		
+			font-size : 24px;	
 		}
 		
 	</style>
