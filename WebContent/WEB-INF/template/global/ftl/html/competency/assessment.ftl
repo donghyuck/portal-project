@@ -156,8 +156,8 @@ yepnope([{
  	<div id="my-assessment" class="wrapper">
 		<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
 			<div class="personalized-controls container text-center p-xl">
-				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>
-				<h1 class="text-xxl" data-bind="text:assessment.assessmentPlan.name"></h1>					
+				<h1 class="text-md" data-bind="text:assessment.assessmentPlan.name"></h1>	
+				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>				
 			</div><!--/end container-->
 		</div> 	
 	  	<div class="container">
