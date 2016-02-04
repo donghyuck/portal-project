@@ -190,7 +190,9 @@ yepnope([{
 		  		<div class="col-sm-12">
 		 			<div class="no-border bg-transparent"
 			 				data-role="mobileScrollView"
-			 			    data-auto-bind="false"
+			 				data-content-height="440px"
+			 				data-enable-pager="true"
+			 				data-auto-bind="false"
 							data-template="my-assessment-template"
 							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
 					</div>	
