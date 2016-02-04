@@ -105,7 +105,7 @@ yepnope([{
 
 		.breadcrumbs-v3 p	{
 			color : #fff;
-			font-size: 24px;
+			font-size: 16px;
 			font-weight: 200;
 			margin-bottom: 0;
 		}	
