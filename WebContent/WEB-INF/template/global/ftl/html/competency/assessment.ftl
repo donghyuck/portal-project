@@ -149,6 +149,8 @@ yepnope([{
 			font-size: 1.5em;
 		    color: rgba(0,0,0,0.8);
 		    font-weight: 200;
+		    padding: 0 0 0 60px;
+		    
 		}   
 	</style>
 </#compress>
