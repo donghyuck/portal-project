@@ -88,12 +88,11 @@ yepnope([{
 		kendo.bind(renderTo, observable );	
 		observable.questionDataSource.read();
 		$(document).on("click","[data-action='answer']", function(e){						
-					var btn = $(this) ;
-					var objectId = btn.data('object-id');
-					var objectObjectScore = btn.data('object-score');
-					//var item = dataSource.get(objectId);
-					//createApplyAssessmentModal(item);			
-					console.log( objectId + ">" + objectObjectScore );		
+			var btn = $(this) ;
+			var objectId = btn.data('object-id');
+			var objectObjectScore = btn.data('object-score');					
+			var assessmentQuestion = observable.questionDataSource.get(objectId);
+			assessmentQuestion.set('score', objectObjectScore);	
 		});
 		
 	}		
@@ -123,6 +122,11 @@ yepnope([{
 			background-size: cover;
 			background-position: center center;			
 		}	
+		
+		
+		#my-assessment {
+			background-color: rgba(245, 245, 245, 0.952941);
+		}
 		
 		/** Svg CheckBox */
 		.ac-custom h2 {
