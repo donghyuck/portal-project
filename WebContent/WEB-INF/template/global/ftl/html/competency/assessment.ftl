@@ -241,7 +241,7 @@ yepnope([{
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
-		<form class="ac-custom ac-radio ac-fill animated slideInDown" data-object-id="#=questionId#" >
+		<form class="ac-custom ac-radio ac-fill animated slideInUp" data-object-id="#=questionId#" >
 			<div class="headline"><h3>#= seq + 1 #.</h3>  #: competencyName# > #: essentialElementName # </div>
 			<h2>#: question #</h2>
 			<ul>
