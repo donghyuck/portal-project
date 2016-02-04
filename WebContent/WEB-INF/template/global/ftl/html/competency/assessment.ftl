@@ -194,6 +194,9 @@ yepnope([{
 		.headline h3 {		
 			font-size: 2em;
     		font-weight: 600;
+    	 	padding-left: 10px;
+    		padding-right: 10px;
+        	border-bottom-width: 3px;
 		}
 	</style>
 </#compress>
