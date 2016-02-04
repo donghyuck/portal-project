@@ -184,8 +184,12 @@ yepnope([{
 		    color: rgba(0,0,0,0.8);
 		    font-weight: 200;
 		    padding: 0 0 0 60px;
-		    
 		}   
+		
+		.btn-xxl {
+			padding 20px 26px;			
+		}
+		
 	</style>
 </#compress>
 </head>
@@ -215,10 +219,12 @@ yepnope([{
 							data-template="my-assessment-template"
 							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
 					</div>	
-					<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate">완료</button>
 		 		</div>
 	 		</div>
 		</div>			
+		<div>					
+			<button type="button" class="btn btn-primary btn-flat btn-outline btn-block btn-xxl" data-bind="click:saveOrUpdate">진단 완료</button>
+		</div>
  	</div>
 	
 
