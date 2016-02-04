@@ -431,7 +431,9 @@
 	    	assessmentId: { type: "number", defaultValue: 0},
 	    	assessmentPlan: { type: "object", defaultValue:new AssessmentPlan() },	    	
 	    	assessors:  { type: "object" ,  defaultValue:[]},
-	    	candidate : { type: "object", 	defaultValue:new common.ui.data.User()},
+	    	candidate : { type: "object", 	defaultValue:new common.ui.data.User() , parse: function( value ){
+	    		return new common.ui.data.User( value );
+	    	} },
 	    	job : { type: "object", nullable:true , defaultValue:new Job() },
 	    	jobLevel : { type: "number", defaultValue: 0},
 	    	totalScore:  { type: "number", defaultValue: 0 },
@@ -453,6 +455,7 @@
 	    	target.set("createdDate", this.get("createdDate"));
 	    	target.set("modifiedDate", this.get("modifiedDate"));
 		},
+		
 		formattedCreationDate : function(){
 	    	return kendo.toString(this.get("creationDate"), "g");
 	    },
