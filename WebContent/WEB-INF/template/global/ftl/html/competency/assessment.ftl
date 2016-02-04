@@ -195,7 +195,7 @@ yepnope([{
 			font-size: 2em;
     		font-weight: 600;
     	 	padding-left: 10px;
-    		padding-right: 10px;
+    		padding-right: 5px;
         	border-bottom-width: 3px;
 		}
 	</style>
@@ -225,7 +225,7 @@ yepnope([{
 			 				data-role="listview"
 			 			    data-auto-bind="false"
 							data-template="my-assessment-template"
-							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
+							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="min-height:500px; height: 100%; overflow: auto">		
 					</div>	
 		 		</div>
 	 		</div>
