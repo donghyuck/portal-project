@@ -185,6 +185,8 @@ yepnope([{
 				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>				
 			</div><!--/end container-->
 		</div> 	
+		
+		
 	  	<div class="container">
 	  		<div class="row">
 		  		<div class="col-sm-12">
