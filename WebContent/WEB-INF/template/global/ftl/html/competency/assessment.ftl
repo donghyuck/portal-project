@@ -178,7 +178,9 @@ yepnope([{
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<form class="ac-custom ac-radio ac-fill">
-			<h4 class="headline text-primary"> #: competencyName# > #: essentialElementName #</h4>
+			<div class="headline-left margin-bottom-10">
+				<h3 class="headline-brd">#: competencyName# <small>#: essentialElementName #</small></h3>			
+			</div>
 			<h2>#: question #</h2>
 			<ul>
 			# var rating = getRatingLevels() ; #
