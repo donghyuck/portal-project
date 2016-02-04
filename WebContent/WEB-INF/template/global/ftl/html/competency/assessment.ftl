@@ -58,7 +58,7 @@ yepnope([{
 	
 	function getUserPhotoUrl( user ){
 		if(common.ui.defined(user.username)){			
-			return '<@spring.url "/download/profile" + user.username + "?width=150&height=150"  />';
+			return '<@spring.url "/download/profile/"  />' + user.username + '?width=150&height=150';
 		}
 		return '<@spring.url "/images/common/no-avatar.png"  />';
 	}
