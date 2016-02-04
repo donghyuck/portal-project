@@ -67,12 +67,15 @@ yepnope([{
 	function createMyAssessment(source){
 		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
+			visible : false;
 			assessment:source ,
 			questionDataBound : function(e){
+				var $this = this;
 				console.log(1);
 				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
 			          function() {
 			               console.log(2);
+			               $this.set('visible', true);
 			          }          
 			    );
 			},
@@ -219,7 +222,7 @@ yepnope([{
 			</div><!--/end container-->
 		</div> 	
 	  	<div class="container">
-	  		<div class="row animated fadeInDown">
+	  		<div class="row animated fadeInDown" data-bind="visisble:visible" style="display:none;">
 		  		<div class="col-sm-12">
 		 			<div class="no-border bg-transparent"
 			 				data-role="listview"
