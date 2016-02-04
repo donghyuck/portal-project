@@ -78,7 +78,7 @@ yepnope([{
 					read: { url:'<@spring.url "/data/me/competency/assessment/test/list.json?output=json"/>', type:'post' },
 					parameterMap: function (options, operation){
 						if (operation !== "read") {
-							return kendo.stringify(options);
+							return kendo.stringify(options.models);
 						} 
 						return {
 							assessmentId: observable.assessment.assessmentId
