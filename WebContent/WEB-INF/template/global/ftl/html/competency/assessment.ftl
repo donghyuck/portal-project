@@ -193,7 +193,7 @@ yepnope([{
 							data-template="my-assessment-template"
 							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="height: 100%; overflow: auto">		
 					</div>	
-					<button type="button" class="btn btn-primary btn-flat btn-outline" >완료</button>
+					<button type="button" class="btn btn-primary btn-flat btn-outline" data-bind="click:saveOrUpdate">완료</button>
 		 		</div>
 	 		</div>
 		</div>			
