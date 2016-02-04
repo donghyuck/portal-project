@@ -99,7 +99,7 @@ yepnope([{
 <style>
 	
 	.ac-custom h2 {
-	    font-size: 2em;
+	    font-size: 1.5em;
 	    line-height: 1.5em;
 	}	 
 	.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
@@ -138,6 +138,7 @@ yepnope([{
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<form class="ac-custom ac-radio ac-fill">
+			<h4 class="headline text-primary"> #: competencyName# > #: essentialElementName #</h4>
 			<h2>#: question #</h2>
 			<ul>
 			# var rating = getRatingLevels() ; #
