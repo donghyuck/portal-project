@@ -198,6 +198,9 @@
 		        photoUrl : { type: "string" , defaultValue: "/images/common/anonymous.png" },
 		        roles: {}
 		    },
+		    getPhotoUrl: function (){
+		    	return photoUrl(this, 150, 150);		    	
+		    },
 		    hasRole : function ( role ) {
 		    	if( typeof( this.roles ) != "undefined" && $.inArray( role, this.roles ) >= 0 )
 					return true
