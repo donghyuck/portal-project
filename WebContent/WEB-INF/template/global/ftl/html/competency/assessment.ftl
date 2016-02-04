@@ -189,7 +189,7 @@ yepnope([{
 	  		<div class="row">
 		  		<div class="col-sm-12">
 		 			<div class="no-border bg-transparent"
-			 				data-role="scrollView"
+			 				data-role="scrollview"
 			 				data-content-height="440px"
 			 				data-enable-pager="true"
 			 				data-auto-bind="false"
