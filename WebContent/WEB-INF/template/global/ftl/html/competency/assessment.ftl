@@ -202,6 +202,8 @@ yepnope([{
 	 		</div>
 		</div>			
  	</div>	
+ 	
+ 	
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<form class="ac-custom ac-radio ac-fill">
