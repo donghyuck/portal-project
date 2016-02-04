@@ -185,8 +185,8 @@ yepnope([{
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<form class="ac-custom ac-radio ac-fill">
 			<div class="headline-left margin-bottom-10">
-				<span class="dropcap-bg">#: seq #</span>
-				<h3 class="headline-brd"> <small>#: competencyName# > #: essentialElementName #</small></h3>			
+				<span class="dropcap-bg rounded-x">#= seq + 1 #</span>
+				<p class="bg-info rounded-3x"><small>#: competencyName# > #: essentialElementName #</small></p>	
 			</div>
 			<h2>#: question #</h2>
 			<ul>
