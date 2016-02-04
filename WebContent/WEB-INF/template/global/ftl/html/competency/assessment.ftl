@@ -188,6 +188,7 @@ yepnope([{
 				<span class="dropcap-bg rounded-x text-md">#= seq + 1 #</span>
 				<p class="bg-info rounded-3x">#: competencyName# > #: essentialElementName #</p>	
 			</div>
+			<div class="headline"><h3>#= seq + 1 # #: competencyName# > #: essentialElementName #</h3></div>
 			<h2>#: question #</h2>
 			<ul>
 			# var rating = getRatingLevels() ; #
