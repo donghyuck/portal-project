@@ -15,6 +15,7 @@ yepnope([{
 			'css!<@spring.url "/styles/codrops/codrops.svgcheckbox.css"/>',	
 			'css!<@spring.url "/styles/codrops/codrops.cs-select.css"/>',	
 			'css!<@spring.url "/styles/codrops/codrops.cs-skin-boxes.css"/>',	
+			'css!<@spring.url "/styles/codrops/codrops.fullscreenForm.css"/>',	
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',				
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
