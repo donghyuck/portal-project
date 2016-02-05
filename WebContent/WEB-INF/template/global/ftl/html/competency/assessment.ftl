@@ -214,9 +214,9 @@ yepnope([{
 				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>			
 				<div class="credit-item">
 					<div class="credit-img user">
-						<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
+						
 					</div>
-					<div class="credit-name"> <span data-bind="visible: assessment.candidate.nameVisible, text: assessment.candidate.name "></span><code data-bind="text: assessment.candidate.username"></code> </div>
+					<div class="credit-name"> <code data-bind="text: assessment.candidate.username"></code> </div>
 					<div class="credit-title"></div>
 				</div>										
 			</div>
@@ -230,13 +230,17 @@ yepnope([{
                     <p data-bind="text:assessment.assessmentPlan.description"></p>
                 </div>
                 <div class="col-sm-4">
-                    <div class="headline"><h2>Product Details</h2></div>
-                    <ul class="list-unstyled project-details">
-                        <li><strong>Client:</strong> Web Design</li>
-                        <li><strong>Date:</strong> 17 October 2014</li>
-                        <li><strong>Categories:</strong> <a href="#">Web Design,</a> <a href="#">Graphic</a></li>
-                        <li><strong>Website:</strong> <a href="#">https://htmlstream.com</a></li>
-                    </ul>
+                    <div class="ibox-content text-center">
+                   		<h1><span data-bind="visible: assessment.candidate.nameVisible, text: assessment.candidate.name"></span></h1>
+                        <div class="m-b-sm">
+                        	<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
+                        </div>
+                        <p class="font-bold">Consectetur adipisicing</p>
+                        <div class="text-center">
+                            <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                            <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>    		
