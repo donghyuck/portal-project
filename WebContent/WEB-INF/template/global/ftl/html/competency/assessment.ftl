@@ -235,6 +235,11 @@ yepnope([{
                         	<h5>진단대상자</h5>                        
                     	</div>
 		            	<div class="ibox-content">
+							<ul class="list-unstyled project-details">                        
+		                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
+		                        <li><strong>직무 수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
+		                        <li><strong>진단방법:</strong> <span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled">자가진단</span><span data-bind="visible:assessment.assessmentPlan.feedbackEnabled">다면진단</span></li>
+	                    	</ul> 		            	
 							<div class="page-credits">				
 								<div class="credit-item">
 									<div class="credit-img user">
@@ -245,12 +250,7 @@ yepnope([{
 									</div>
 									<div class="credit-title"></div>
 								</div>
-							</div>
-							<ul class="list-unstyled project-details">                        
-		                        <li><strong>직무:</strong> 17 October 2014</li>
-		                        <li><strong>Categories:</strong> <a href="#">Web Design,</a> <a href="#">Graphic</a></li>
-		                        <li><strong>Website:</strong> <a href="#">https://htmlstream.com</a></li>
-	                    	</ul>                   
+							</div>                  
                    		</div>
                    	</div>
                                     
