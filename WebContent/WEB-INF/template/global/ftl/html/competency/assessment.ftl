@@ -223,7 +223,7 @@ yepnope([{
 		</div> 	
 		-->
 		<div class=""bg-dark>
-		<div class="container bg-dark">
+		<div class="container">
 			<div class="row margin-bottom-60">
                 <div class="col-sm-8">
                     <div class="headline"><h1 class="text-md" data-bind="text:assessment.assessmentPlan.name"></h1></div>
