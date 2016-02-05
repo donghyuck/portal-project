@@ -230,16 +230,19 @@ yepnope([{
                     <p data-bind="text:assessment.assessmentPlan.description"></p>
                 </div>
                 <div class="col-sm-4">
-                    <div class="ibox-content bg-transparent">
-					<ul class="list-unstyled project-details">
-                        <li>
+                	<div class="ibox">
 							<div class="credit-item">
 								<div class="credit-img user">
 									<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
 								</div>
 								<div class="credit-name"> <code data-bind="text: assessment.candidate.username"></code> </div>
 								<div class="credit-title"></div>
-							</div>	
+							</div>   
+                	</div>
+                    <div class="ibox-content bg-transparent">
+					<ul class="list-unstyled project-details">
+                        <li>
+								
 									</li>
                         <li><strong>Date:</strong> 17 October 2014</li>
                         <li><strong>Categories:</strong> <a href="#">Web Design,</a> <a href="#">Graphic</a></li>
