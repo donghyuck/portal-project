@@ -236,7 +236,9 @@ yepnope([{
 								<div class="credit-img user">
 									<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
 								</div>
-								<div class="credit-name"> <code data-bind="text: assessment.candidate.username"></code> </div>
+								<div class="credit-name">
+									<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span><span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
+								</div>
 								<div class="credit-title"></div>
 							</div>
 						</div>	   
