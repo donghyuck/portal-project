@@ -222,6 +222,7 @@ yepnope([{
 			</div>
 		</div> 	
 		-->
+		<div class=""bg-dark>
 		<div class="container bg-dark">
 			<div class="row margin-bottom-60">
                 <div class="col-sm-8">
@@ -239,6 +240,7 @@ yepnope([{
                 </div>
             </div>
         </div>    		
+        </div>
         <div class="container content-md">    
 	  		<div class="row" data-bind="visible:visible" style="display:none;">
 		  		<div class="col-sm-12">
