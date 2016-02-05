@@ -214,7 +214,7 @@ yepnope([{
 				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>			
 				<div class="credit-item">
 					<div class="credit-img user">
-						
+						<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
 					</div>
 					<div class="credit-name"> <code data-bind="text: assessment.candidate.username"></code> </div>
 					<div class="credit-title"></div>
@@ -230,16 +230,22 @@ yepnope([{
                     <p data-bind="text:assessment.assessmentPlan.description"></p>
                 </div>
                 <div class="col-sm-4">
-                    <div class="ibox-content text-center">
-                   		<h3>대상자 : <span data-bind="visible: assessment.candidate.nameVisible, text: assessment.candidate.name"></span></h3>
-                        <div class="m-b-sm">
-                        	<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
-                        </div>
-                        <p class="font-bold">Consectetur adipisicing</p>
-                        <div class="text-center">
-                            <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                            <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
-                        </div>
+                    <div class="ibox-content bg-transparent">
+					<ul class="list-unstyled project-details">
+                        <li>
+							<div class="credit-item">
+								<div class="credit-img user">
+									<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
+								</div>
+								<div class="credit-name"> <code data-bind="text: assessment.candidate.username"></code> </div>
+								<div class="credit-title"></div>
+							</div>	
+									</li>
+                        <li><strong>Date:</strong> 17 October 2014</li>
+                        <li><strong>Categories:</strong> <a href="#">Web Design,</a> <a href="#">Graphic</a></li>
+                        <li><strong>Website:</strong> <a href="#">https://htmlstream.com</a></li>
+                    </ul>                    
+                   		
                     </div>
                 </div>
             </div>
