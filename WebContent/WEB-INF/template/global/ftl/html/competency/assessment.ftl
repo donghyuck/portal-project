@@ -128,25 +128,6 @@ yepnope([{
 	--></script>
 	<style>
 
-		/** Breadcrumbs */
-		.breadcrumbs-v3 {
-			position:relative;
-		}
-
-		.breadcrumbs-v3 p	{
-			color : #fff;
-			font-size: 16px;
-			font-weight: 200;
-			margin-bottom: 0;
-		}	
-		
-		.breadcrumbs-v3.img-v1 {
-			background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
-			background-size: cover;
-			background-position: center center;			
-		}	
-		
-		
 		#my-assessment {
 			background-color: rgba(245, 245, 245, 0.952941);
 		}
@@ -235,11 +216,6 @@ yepnope([{
                         	<h5>진단대상자</h5>                        
                     	</div>
 		            	<div class="ibox-content">
-							<ul class="list-unstyled project-details">                        
-		                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
-		                        <li><strong>직무 수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
-		                        <li><strong>진단방법:</strong> <span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled">자가진단</span><span data-bind="visible:assessment.assessmentPlan.feedbackEnabled">다면진단</span></li>
-	                    	</ul> 		            	
 							<div class="page-credits">				
 								<div class="credit-item">
 									<div class="credit-img user">
@@ -251,33 +227,13 @@ yepnope([{
 									<div class="credit-title"></div>
 								</div>
 							</div>                  
+							<ul class="list-unstyled project-details">                        
+		                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
+		                        <li><strong>직무 수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
+		                        <li><strong>진단방법:</strong> <span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled">자가진단</span><span data-bind="visible:assessment.assessmentPlan.feedbackEnabled">다면진단</span></li>
+	                    	</ul> 	
                    		</div>
                    	</div>
-                                    
-                	<div class="ibox">
-                		<div class="page-credits">				
-							<div class="credit-item">
-								<div class="credit-img user">
-									<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
-								</div>
-								<div class="credit-name">
-									<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span><span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
-								</div>
-								<div class="credit-title"></div>
-							</div>
-						</div>	   
-                	</div>
-                    <div class="ibox-content bg-transparent">
-					<ul class="list-unstyled project-details">
-                        <li>
-								
-									</li>
-                        <li><strong>Date:</strong> 17 October 2014</li>
-                        <li><strong>Categories:</strong> <a href="#">Web Design,</a> <a href="#">Graphic</a></li>
-                        <li><strong>Website:</strong> <a href="#">https://htmlstream.com</a></li>
-                    </ul>                    
-                   		
-                    </div>
                 </div>
             </div>
         </div>    		
