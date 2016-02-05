@@ -186,6 +186,17 @@ yepnope([{
     		padding-right: 5px;
         	border-bottom-width: 3px;
 		}
+		
+		.ibox-title
+		{
+			background: #272727!important;
+			color:#fff;
+		}
+		
+		.ibox-content {
+			background: #272727!important;
+			color:#f5f5f5;
+		}
 	</style>
 </#compress>
 </head>
@@ -212,7 +223,7 @@ yepnope([{
 			<div class="row">
                 <div class="col-sm-8">
                     <div class="headline no-border">
-                    	<h2 style="color:#fff;" data-bind="text:assessment.assessmentPlan.name"></h2>                    
+                    	<h2 data-bind="text:assessment.assessmentPlan.name"></h2>                    
                     </div>
                     <p class="text-muted" data-bind="text:assessment.assessmentPlan.description"></p>
                 </div>
