@@ -222,16 +222,16 @@ yepnope([{
 			</div>
 		</div> 	
 		-->
-		<div class=""bg-dark>
+		<div class="bg-dark">
 		<div class="container">
-			<div class="row margin-bottom-60">
+			<div class="row">
                 <div class="col-sm-8">
                     <div class="headline"><h1 class="text-md" data-bind="text:assessment.assessmentPlan.name"></h1></div>
                     <p data-bind="text:assessment.assessmentPlan.description"></p>
                 </div>
                 <div class="col-sm-4">
                     <div class="ibox-content text-center">
-                   		<h1><span data-bind="visible: assessment.candidate.nameVisible, text: assessment.candidate.name"></span></h1>
+                   		<h3>대상자 : <span data-bind="visible: assessment.candidate.nameVisible, text: assessment.candidate.name"></span></h3>
                         <div class="m-b-sm">
                         	<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
                         </div>
