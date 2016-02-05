@@ -230,6 +230,30 @@ yepnope([{
                     <p data-bind="text:assessment.assessmentPlan.description"></p>
                 </div>
                 <div class="col-sm-4">
+					<div class="ibox no-margin">
+                		<div class="ibox-title">
+                        	<h5>진단대상자</h5>                        
+                    	</div>
+		            	<div class="ibox-content">
+							<div class="page-credits">				
+								<div class="credit-item">
+									<div class="credit-img user">
+										<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle" src="/download/profile/system?width=150&amp;height=150">
+									</div>
+									<div class="credit-name">
+										<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }">운영자</span><span class="text-muted" data-bind="{ text: assessment.candidate.username }">system</span>
+									</div>
+									<div class="credit-title"></div>
+								</div>
+							</div>
+							<ul class="list-unstyled project-details">                        
+		                        <li><strong>직무:</strong> 17 October 2014</li>
+		                        <li><strong>Categories:</strong> <a href="#">Web Design,</a> <a href="#">Graphic</a></li>
+		                        <li><strong>Website:</strong> <a href="#">https://htmlstream.com</a></li>
+	                    	</ul>                   
+                   		</div>
+                   	</div>
+                                    
                 	<div class="ibox">
                 		<div class="page-credits">				
 							<div class="credit-item">
