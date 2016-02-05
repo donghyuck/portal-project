@@ -175,6 +175,10 @@ yepnope([{
 			font-size : 24px;	
 		}
 		
+		.headline  {
+			border-bottom: 3px solid #e5e5e5;
+		}
+		
 		.headline h3 {		
 			font-size: 2em;
     		font-weight: 600;
