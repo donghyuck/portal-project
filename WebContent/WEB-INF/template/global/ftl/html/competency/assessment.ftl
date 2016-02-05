@@ -224,7 +224,7 @@ yepnope([{
 										<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle" src="/download/profile/system?width=150&amp;height=150">
 									</div>
 									<div class="credit-name">
-										<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }">운영자</span><span class="text-muted" data-bind="{ text: assessment.candidate.username }">system</span>
+										<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span><span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
 									</div>
 									<div class="credit-title"></div>
 								</div>
