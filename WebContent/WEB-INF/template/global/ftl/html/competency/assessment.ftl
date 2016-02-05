@@ -207,10 +207,10 @@ yepnope([{
 		<div class="container">
 			<div class="row">
                 <div class="col-sm-8">
-                    <div class="headline">
-                    	<h1 style="color:#fff;" data-bind="text:assessment.assessmentPlan.name"></h1>                    
+                    <div class="headline no-border">
+                    	<h2 style="color:#fff;" data-bind="text:assessment.assessmentPlan.name"></h2>                    
                     </div>
-                    <p data-bind="text:assessment.assessmentPlan.description"></p>
+                    <p class="text-muted" data-bind="text:assessment.assessmentPlan.description"></p>
                 </div>
                 <div class="col-sm-4">
 					<div class="ibox no-margin">
