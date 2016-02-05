@@ -207,9 +207,10 @@ yepnope([{
 <body class="">
 	<div class="page-loader"></div>
  	<div id="my-assessment" class="wrapper">
+ 	<!--
 		<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
 			<div class="personalized-controls container text-center p-xl">
-				<h1 class="text-md" data-bind="text:assessment.assessmentPlan.name"></h1>	
+				
 				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>			
 				<div class="credit-item">
 					<div class="credit-img user">
@@ -221,7 +222,23 @@ yepnope([{
 									
 			</div><!--/end container-->
 		</div> 	
-	  	<div class="container">
+		-->
+		<div class="container">
+			<div class="row margin-bottom-60">
+                <div class="col-sm-8">
+                    <div class="headline"><h1 class="text-md" data-bind="text:assessment.assessmentPlan.name"></h1></div>
+                    <p data-bind="text:assessment.assessmentPlan.description"></p>
+                </div>
+                <div class="col-sm-4">
+                    <div class="headline"><h2>Product Details</h2></div>
+                    <ul class="list-unstyled project-details">
+                        <li><strong>Client:</strong> Web Design</li>
+                        <li><strong>Date:</strong> 17 October 2014</li>
+                        <li><strong>Categories:</strong> <a href="#">Web Design,</a> <a href="#">Graphic</a></li>
+                        <li><strong>Website:</strong> <a href="#">https://htmlstream.com</a></li>
+                    </ul>
+                </div>
+            </div>		
 	  		<div class="row" data-bind="visible:visible" style="display:none;">
 		  		<div class="col-sm-12">
 		 			<div class="no-border bg-transparent animated slideInUp"
