@@ -222,7 +222,7 @@ yepnope([{
 			</div>
 		</div> 	
 		-->
-		<div class="container">
+		<div class="container content-md">
 			<div class="row margin-bottom-60">
                 <div class="col-sm-8">
                     <div class="headline"><h1 class="text-md" data-bind="text:assessment.assessmentPlan.name"></h1></div>
@@ -237,7 +237,9 @@ yepnope([{
                         <li><strong>Website:</strong> <a href="#">https://htmlstream.com</a></li>
                     </ul>
                 </div>
-            </div>		
+            </div>
+        </div>    		
+        <div class="container">    
 	  		<div class="row" data-bind="visible:visible" style="display:none;">
 		  		<div class="col-sm-12">
 		 			<div class="no-border bg-transparent animated slideInUp"
