@@ -233,6 +233,7 @@ yepnope([{
 		                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
 		                        <li><strong>직무 수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
 		                        <li><strong>진단방법:</strong> <span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled">자가진단</span><span data-bind="visible:assessment.assessmentPlan.feedbackEnabled">다면진단</span></li>
+	                    		<li><strong>진단문항:</strong> <span data-bind="text: questionDataSource.total()"></span></li>
 	                    	</ul> 	
                    		</div>
                    	</div>
