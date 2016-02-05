@@ -232,7 +232,7 @@ yepnope([{
                 		<div class="ibox-title">
                         	<h5>진단대상자</h5>                        
                     	</div>
-		            	<div class="ibox-content">
+		            	<div class="ibox-content no-border">
 							<div class="page-credits">				
 								<div class="credit-item">
 									<div class="credit-img user">
