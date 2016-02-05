@@ -231,13 +231,15 @@ yepnope([{
                 </div>
                 <div class="col-sm-4">
                 	<div class="ibox">
+                		<div class="page-credits">				
 							<div class="credit-item">
 								<div class="credit-img user">
 									<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
 								</div>
 								<div class="credit-name"> <code data-bind="text: assessment.candidate.username"></code> </div>
 								<div class="credit-title"></div>
-							</div>   
+							</div>
+						</div>	   
                 	</div>
                     <div class="ibox-content bg-transparent">
 					<ul class="list-unstyled project-details">
