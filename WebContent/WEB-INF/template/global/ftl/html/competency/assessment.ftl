@@ -218,9 +218,8 @@ yepnope([{
 					</div>
 					<div class="credit-name"> <span data-bind="visible: assessment.candidate.nameVisible, text: assessment.candidate.name "></span><code data-bind="text: assessment.candidate.username"></code> </div>
 					<div class="credit-title"></div>
-				</div>	
-									
-			</div><!--/end container-->
+				</div>										
+			</div>
 		</div> 	
 		-->
 		<div class="container">
@@ -253,7 +252,7 @@ yepnope([{
 		<div class="m-t-lg animated fadeIn" data-bind="visible:visible" style="display:none;">					
 			<button type="button" class="btn btn-primary btn-flat btn-outline btn-block btn-xxl" data-bind="click:saveOrUpdate">진단 완료</button>
 		</div>
- 	</div>
+ 		</div><!--/end container-->
 	
 
 		<!-- START TEMPLATE -->	
