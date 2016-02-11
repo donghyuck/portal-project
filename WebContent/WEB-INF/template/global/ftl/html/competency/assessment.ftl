@@ -198,6 +198,7 @@ yepnope([{
 			 border-bottom: 3px solid #efefef;
 		}
 		
+		/**
 		.ibox-title
 		{
 			background: #272727!important;
@@ -209,6 +210,7 @@ yepnope([{
 			background: #272727!important;
 			color:#f5f5f5;
 		}
+		*/
 		
 		h1, h2, h3, h4, h5, h6 {
 			color:#333;
@@ -249,7 +251,9 @@ yepnope([{
 											<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle" src="<@spring.url "/images/common/anonymous.png"/>">
 										</div>
 										<div class="credit-name">
-											<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span><span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
+											<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span>
+											&nbsp;
+											<span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
 										</div>
 										<div class="credit-title"></div>
 									</div>
