@@ -488,6 +488,7 @@
 		id : "questionId",
 		fields: {
 			questionId: { type: "number", defaultValue: 0},
+			assessmentId: { type: "number", defaultValue: 0},
 			competencyId : { type: "number", defaultValue:0},
 			essentialElementId : { type: "number", defaultValue:0},
 			competencyLevel : { type: "number", defaultValue:0},
@@ -499,6 +500,7 @@
 		},
 		copy : function ( target ){
 			target.set("questionId", this.get("questionId"));
+			target.set("assessmentId", this.get("assessmentId"));
 	    	target.set("competencyId", this.get("competencyId"));
 	    	target.set("essentialElementId", this.get("essentialElementId"));
 	    	target.set("competencyLevel", this.get("competencyLevel"));
