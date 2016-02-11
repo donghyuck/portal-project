@@ -189,8 +189,9 @@ yepnope([{
 		
 		.bg-gray
 		{
-			 background:rgba(242,242,242,0.6);
+			 background:rgba(242,242,242,0.6)!important;
 		}
+		
 		.ibox-title
 		{
 			background: #272727!important;
