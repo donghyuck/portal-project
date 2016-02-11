@@ -201,6 +201,10 @@ yepnope([{
 			 box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
 		}
 		
+		.ibox-title {
+			font-size:1.2em;
+		}
+		
 		/**
 		.ibox-title
 		{
@@ -247,7 +251,7 @@ yepnope([{
 	                		<div class="ibox-title">
 	                        	<h5 class="text-gray">진단대상자</h5>                        
 	                    	</div>
-			            	<div class="ibox-content no-border">
+			            	<div class="ibox-content">
 								<div class="page-credits">				
 									<div class="credit-item">
 										<div class="credit-img user">
@@ -263,7 +267,7 @@ yepnope([{
 								</div>                  
 								<ul class="list-unstyled project-details">                        
 			                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
-			                        <li><strong>직무 수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
+			                        <li><strong>직무수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
 			                        <li><strong>진단방법:</strong> 
 			                        	<span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">자가진단</span>
 			                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단</span>
