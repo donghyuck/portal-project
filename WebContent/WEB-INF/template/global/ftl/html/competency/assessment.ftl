@@ -185,6 +185,9 @@ yepnope([{
 			border-bottom: 3px solid #e5e5e5;
 		}
 		
+		.ibox .page-credits .credit-item {
+			padding: 0 0 10px 0;
+		}
 		.headline h3 {		
 			font-size: 2em;
     		font-weight: 600;
