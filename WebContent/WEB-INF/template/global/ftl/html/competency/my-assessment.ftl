@@ -303,6 +303,27 @@
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
+				<div class="row">
+					<div class="col-sm-12">
+					<h2 class="title-v2">WHAT IS COMPETENCY BASED ASSESSMENT?</h2>
+					
+					<p>Self taught versus academic qualifications</p>
+					
+					<p>This was the question posed on Donald Trump’s The Apprentice. For those not familiar with this show, two groups of people competed over a series of weeks by performing various business related tasks.</p>
+					
+					<p>The winner would eventually become Donald Trump’s apprentice. One group was made up of people with academic qualifications. The other group was made up of people who didn’t have qualifications, but were self taught and running their own businesses.</p>
+					
+					<p>This is a good place to start understanding what competency assessment is all about. The only way to know whether street smarts or book smarts is better, is to look at individual people in their own right. Assessing people using their knowledge and skills in an on the job situation is the key to competency assessment.</p>
+					
+					<p>Every job requires a specific set of knowledge and skills. And this varies depending on the type and complexity of the job. More than just knowing whether street smarts or book smarts is better, competency assessment is all about providing a way of building the skills and knowledge people need to perform their current job. It is also the key element of the succession planning process because it provides a way of developing people for their future roles.</p>
+
+					
+					<img src="<@spring.url "/download/image/9361/What-is-competency-based-assessment-1.gif" />" class="img-responsive"/> 
+					
+					</div>
+				</div>
+			</div>
+			<div class="container content-md">
 		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview">
 		        </ul>
 		    </div>
