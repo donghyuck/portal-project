@@ -9,6 +9,11 @@ i.icon-svg {
     height:64px;
 }
 
+.icon-svg-md {
+    width:48px!important;
+    height:48px!important;	
+}
+
 .icon-svg-xs {
     width:16px!important;
     height:16px!important;	
