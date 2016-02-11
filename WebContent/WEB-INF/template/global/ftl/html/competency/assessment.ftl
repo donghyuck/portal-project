@@ -253,10 +253,10 @@ yepnope([{
 	                		<div class="ibox-title">
 	                        	<h5 class="text-gray">진단대상자</h5>   
 	                        	<i class="icon-flat icon-svg icon-svg-sm basic-color-center-location" style="
-    position: absolute;
-    top: 2px;
-    right: 0px;
-"></i>                     
+								    position: absolute;
+								    top: 10px;
+								    right: 20px;
+								"></i>                     
 	                    	</div>
 			            	<div class="ibox-content">
 								<div class="page-credits">				
