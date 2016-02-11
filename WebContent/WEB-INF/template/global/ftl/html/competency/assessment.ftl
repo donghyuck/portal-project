@@ -95,7 +95,7 @@ yepnope([{
 			questionDataSource : new kendo.data.DataSource({
 				batch: true,
 				transport: { 
-					update: { url:'<@spring.url "/data/me/competency/assessment/test/update.json?output=json"/>', type:'post' },
+					update: { url:'<@spring.url "/data/me/competency/assessment/test/update.json?output=json"/>', contentType:'application/json', type:'post' },
 					read: { url:'<@spring.url "/data/me/competency/assessment/test/list.json?output=json"/>', type:'post' },
 					parameterMap: function (options, operation){
 						if (operation !== "read") {
