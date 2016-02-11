@@ -187,9 +187,10 @@ yepnope([{
         	border-bottom-width: 3px;
 		}
 		
-		.bg-gray
+		.assessment-header
 		{
-			 background:rgba(242,242,242,0.6)!important;
+			 background:rgba(242,242,242,0.6);
+			 border-bottom: 3px solid #efefef;
 		}
 		
 		.ibox-title
@@ -210,9 +211,8 @@ yepnope([{
 </head>
 <body class="">
 	<div class="page-loader"></div>
- 	<div id="my-assessment" class="wrapper">
- 	
-		<div class="bg-gray">
+ 	<div id="my-assessment" class="wrapper"> 	
+		<div class="assessment-header">
 			<div class="container">
 				<div class="row">
 	                <div class="col-sm-8">
