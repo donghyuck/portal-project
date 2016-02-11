@@ -187,6 +187,10 @@ yepnope([{
         	border-bottom-width: 3px;
 		}
 		
+		.bg-gray
+		{
+			 background:rgba(242,242,242,0.6);
+		}
 		.ibox-title
 		{
 			background: #272727!important;
@@ -198,64 +202,52 @@ yepnope([{
 			background: #272727!important;
 			color:#f5f5f5;
 		}
+		
+		
 	</style>
 </#compress>
 </head>
 <body class="">
 	<div class="page-loader"></div>
  	<div id="my-assessment" class="wrapper">
- 	<!--
-		<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
-			<div class="personalized-controls container text-center p-xl">
-				
-				<p class="text-quote" data-bind="text:assessment.assessmentPlan.description"></p>			
-				<div class="credit-item">
-					<div class="credit-img user">
-						<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle">
-					</div>
-					<div class="credit-name"> <code data-bind="text: assessment.candidate.username"></code> </div>
-					<div class="credit-title"></div>
-				</div>										
-			</div>
-		</div> 	
-		-->
-		<div class="bg-dark">
-		<div class="container">
-			<div class="row">
-                <div class="col-sm-8">
-                    <div class="headline no-border">
-                    	<h2 data-bind="text:assessment.assessmentPlan.name"></h2>                    
-                    </div>
-                    <p class="text-muted" data-bind="text:assessment.assessmentPlan.description"></p>
-                </div>
-                <div class="col-sm-4">
-					<div class="ibox no-margin">
-                		<div class="ibox-title">
-                        	<h5>진단대상자</h5>                        
-                    	</div>
-		            	<div class="ibox-content no-border">
-							<div class="page-credits">				
-								<div class="credit-item">
-									<div class="credit-img user">
-										<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle" src="/download/profile/system?width=150&amp;height=150">
+ 	
+		<div class="bg-gray">
+			<div class="container">
+				<div class="row">
+	                <div class="col-sm-8">
+	                    <div class="headline no-border">
+	                    	<h2 data-bind="text:assessment.assessmentPlan.name"></h2>                    
+	                    </div>
+	                    <p class="text-muted" data-bind="text:assessment.assessmentPlan.description"></p>
+	                </div>
+	                <div class="col-sm-4">
+						<div class="ibox no-margin">
+	                		<div class="ibox-title">
+	                        	<h5>진단대상자</h5>                        
+	                    	</div>
+			            	<div class="ibox-content no-border">
+								<div class="page-credits">				
+									<div class="credit-item">
+										<div class="credit-img user">
+											<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle" src="/download/profile/system?width=150&amp;height=150">
+										</div>
+										<div class="credit-name">
+											<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span><span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
+										</div>
+										<div class="credit-title"></div>
 									</div>
-									<div class="credit-name">
-										<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span><span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
-									</div>
-									<div class="credit-title"></div>
-								</div>
-							</div>                  
-							<ul class="list-unstyled project-details">                        
-		                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
-		                        <li><strong>직무 수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
-		                        <li><strong>진단방법:</strong> <span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled">자가진단</span><span data-bind="visible:assessment.assessmentPlan.feedbackEnabled">다면진단</span></li>
-	                    		<li><strong>진단문항:</strong> <span data-bind="text: questionDataSource.total()"></span></li>
-	                    	</ul> 	
-                   		</div>
-                   	</div>
-                </div>
-            </div>
-        </div>    		
+								</div>                  
+								<ul class="list-unstyled project-details">                        
+			                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
+			                        <li><strong>직무 수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
+			                        <li><strong>진단방법:</strong> <span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled">자가진단</span><span data-bind="visible:assessment.assessmentPlan.feedbackEnabled">다면진단</span></li>
+		                    		<li><strong>진단문항:</strong> <span data-bind="text: questionDataSource.total()"></span></li>
+		                    	</ul> 	
+	                   		</div>
+	                   	</div>
+	                </div>
+	            </div><!-- /.row -->
+	        </div>    		
         </div>
         <div class="container content-md">    
 	  		<div class="row" data-bind="visible:visible" style="display:none;">
@@ -264,15 +256,17 @@ yepnope([{
 			 				data-role="listview"
 			 			    data-auto-bind="false"
 							data-template="my-assessment-template"
-							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" style="min-height:500px; height: 100%; overflow: auto">		
+							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" 
+							style="min-height:500px; height: 100%; overflow: auto">		
 					</div>	
 		 		</div>
 	 		</div>
-		</div>			
+		</div><!--/end container-->			
 		<div class="m-t-lg animated fadeIn" data-bind="visible:visible" style="display:none;">					
-			<button type="button" class="btn btn-primary btn-flat btn-outline btn-block btn-xxl" data-bind="click:saveOrUpdate">진단 완료</button>
+			<button type="button" class="btn btn-primary btn-flat btn-outline btn-block btn-xxl" 
+				data-bind="click:saveOrUpdate">진단 완료</button>
 		</div>
- 		</div><!--/end container-->
+ 	</div>
 	
 
 		<!-- START TEMPLATE -->	
