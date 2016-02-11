@@ -209,6 +209,14 @@ yepnope([{
 			color:#333;
 		}
 		
+		.text-gray {
+			color:#333!important;
+		}
+		
+		.project-details li {
+			color:#333!important;
+		}
+		
 	</style>
 </#compress>
 </head>
@@ -227,7 +235,7 @@ yepnope([{
 	                <div class="col-sm-4">
 						<div class="ibox no-margin">
 	                		<div class="ibox-title">
-	                        	<h5>진단대상자</h5>                        
+	                        	<h5 class="text-gray">진단대상자</h5>                        
 	                    	</div>
 			            	<div class="ibox-content no-border">
 								<div class="page-credits">				
