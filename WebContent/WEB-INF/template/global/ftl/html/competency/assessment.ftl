@@ -269,7 +269,7 @@ yepnope([{
 											&nbsp;
 											<span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
 										</div>
-										<div class="credit-title"><span data-bind="text:assessment.candidate.company.name"></span> </div>
+										<div class="credit-title"><span data-bind="text:assessment.candidate.company.displayName"></span> </div>
 									</div>
 								</div>                  
 								<ul class="list-unstyled project-details">                        
