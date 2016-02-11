@@ -304,7 +304,10 @@
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
 				<div class="row">
-					<div class="col-sm-12">
+					<div class="col-sm-6">
+						<img src="<@spring.url "/download/image/9361/What-is-competency-based-assessment-1.gif" />" class="img-responsive"/> 
+					</div>	
+					<div class="col-sm-6">
 					<h2 class="title-v2">WHAT IS COMPETENCY BASED ASSESSMENT?</h2>
 					
 					<p>Self taught versus academic qualifications</p>
@@ -317,9 +320,6 @@
 					
 					<p>Every job requires a specific set of knowledge and skills. And this varies depending on the type and complexity of the job. More than just knowing whether street smarts or book smarts is better, competency assessment is all about providing a way of building the skills and knowledge people need to perform their current job. It is also the key element of the succession planning process because it provides a way of developing people for their future roles.</p>
 
-					
-					<img src="<@spring.url "/download/image/9361/What-is-competency-based-assessment-1.gif" />" class="img-responsive"/> 
-					
 					</div>
 				</div>
 			</div>
