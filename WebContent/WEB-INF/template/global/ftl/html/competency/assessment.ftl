@@ -202,7 +202,7 @@ yepnope([{
 		{
 			background: #272727!important;
 			color:#fff;
-			border-color:#000;
+			border-color:#007aff;
 		}
 		
 		.ibox-content {
