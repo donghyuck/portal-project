@@ -210,11 +210,11 @@ yepnope([{
 		}
 		
 		.text-gray {
-			color:#333!important;
+			color:#f5f5f5!important;
 		}
 		
 		.project-details li {
-			color:#333!important;
+			color:#f5f5f5!important;
 		}
 		
 	</style>
