@@ -194,8 +194,10 @@ yepnope([{
 		
 		.assessment-header
 		{
+			background:#fff;
+			/**
 			 background:rgba(242,242,242,0.6);
-			 /**border-bottom: 3px solid #efefef;*/
+			 border-bottom: 3px solid #efefef;*/
 			 box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
 		}
 		
