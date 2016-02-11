@@ -217,11 +217,11 @@ yepnope([{
 		}
 		
 		.text-gray {
-			color:#f5f5f5!important;
+			color:#333!important;
 		}
 		
 		.project-details li {
-			color:#f5f5f5!important;
+			color:#333!important;
 		}
 		
 	</style>
