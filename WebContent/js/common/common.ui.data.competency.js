@@ -492,6 +492,8 @@
 			competencyId : { type: "number", defaultValue:0},
 			essentialElementId : { type: "number", defaultValue:0},
 			competencyLevel : { type: "number", defaultValue:0},
+			candidateId : { type: "number", defaultValue:0},
+			assessorId : { type: "number", defaultValue:0},
 			seq : { type: "number", defaultValue:0},
 			competencyName:  { type: "string" },
 			essentialElementName:  { type: "string" },
@@ -504,6 +506,8 @@
 	    	target.set("competencyId", this.get("competencyId"));
 	    	target.set("essentialElementId", this.get("essentialElementId"));
 	    	target.set("competencyLevel", this.get("competencyLevel"));
+	    	target.set("candidateId", this.get("candidateId"));
+	    	target.set("assessorId", this.get("assessorId"));
 	    	target.set("seq", this.get("seq"));
 	    	target.set("competencyName", this.get("competencyName"));
 	    	target.set("essentialElementName", this.get("essentialElementName"));
