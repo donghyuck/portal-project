@@ -36,7 +36,9 @@ yepnope([{
 			});		
 			
 			<#if RequestParameters['id']?? >
-			var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;			
+			var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;	
+			var renderTo = $("#my-assessment .assessment-header .ibox");		
+			common.ui.progress(renderTo, true);
 			common.ui.ajax( '<@spring.url "/data/accounts/get.json?output=json"/>' , {
 				success : function(response){
 					var currentUser = new common.ui.data.User($.extend( response.user, { roles : response.roles }));					
@@ -45,6 +47,9 @@ yepnope([{
 						success : function(response){
 							var assessment = new common.ui.data.competency.Assessment(response);
 							createMyAssessment( assessment );
+						},
+						complete : function(e){
+							common.ui.progress(renderTo, false);						
 						}
 					});
 					
@@ -252,7 +257,10 @@ yepnope([{
 								<ul class="list-unstyled project-details">                        
 			                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
 			                        <li><strong>직무 수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
-			                        <li><strong>진단방법:</strong> <span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled">자가진단</span><span data-bind="visible:assessment.assessmentPlan.feedbackEnabled">다면진단</span></li>
+			                        <li><strong>진단방법:</strong> 
+			                        	<span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">자가진단</span>
+			                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단</span>
+			                        </li>
 		                    		<li><strong>진단문항:</strong> <span data-bind="text: questionDataSource.total()"></span></li>
 		                    	</ul> 	
 	                   		</div>
