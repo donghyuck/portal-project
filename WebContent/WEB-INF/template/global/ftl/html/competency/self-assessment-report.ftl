@@ -248,8 +248,8 @@ yepnope([{
                               	 { 'field': 'competencyName', title:'역량' },	
                                  { 'field': 'essentialElementName', title:'하위요소' },
                                  { 'field': 'totalCount' , title:'문항수'},
-                                 { 'field': 'totalScore', title:'점수'},
-                                 {  title:'&nbsp;', template:'#= totalScore/totalCount #',  groupFooterTemplate:'평균 : #= average #' }                                 
+                                 { 'field': 'totalScore', title:'점수' , groupFooterTemplate: '평균 : #= average #'},
+                                 { 'template':'#= totalScore/totalCount #', title:'&nbsp;' }                                 
                               ]"
                  data-bind="source: summaryDataSource"
                  ></div>
