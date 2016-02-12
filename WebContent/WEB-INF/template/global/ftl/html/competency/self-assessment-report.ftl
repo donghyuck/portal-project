@@ -111,6 +111,11 @@ yepnope([{
 						 { field: "finalScore", aggregate: "max" }					
 					] 
 				},
+				aggregate: [
+					{ field: "finalScore", aggregate: "average" },
+                	{ field: "finalScore", aggregate: "min" },
+                    { field: "finalScore", aggregate: "max" }]
+				
 				
 			})
 		});
