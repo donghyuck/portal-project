@@ -378,8 +378,8 @@
 						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>										
-					<div class="modal-body no-padding bg-gray" style="min-height:300px;">							
-								<p class="text-muted p-sm">
+					<div class="modal-body no-padding animated fadeIn" style="min-height:300px;">							
+								<p class="text-muted p-sm bg-gray">
 									진단이력이 <span class="text-danger" data-bind="text:userAssessedCount"></span>건 있습니다. 결과보기 버튼을 클릭하여 진단결과를 확인할 수 있습니다.
 								</p>
 								<table class="table no-margin">
