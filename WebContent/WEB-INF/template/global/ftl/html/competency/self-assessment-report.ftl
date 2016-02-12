@@ -75,16 +75,6 @@ yepnope([{
 		var observable =  common.ui.observable({
 			visible : false,
 			assessment:source ,
-			questionDataBound : function(e){
-				var $this = this;
-				console.log(1);
-				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
-			          function() {
-			               console.log(2);
-			               $this.set('visible', true);
-			          }          
-			    );
-			},
 			getCandidatePhotoUrl: function(){
 				return '<@spring.url "/download/profile/"  />' + this.assessment.candidate.username + '?width=150&height=150'; 
 			},
@@ -92,7 +82,7 @@ yepnope([{
 				var $this = this;
 				$this.questionDataSource.sync();
 			},
-			questionDataSource : new kendo.data.DataSource({
+			summaryDataSource : new kendo.data.DataSource({
 				batch: true,
 				transport: { 
 					read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
@@ -106,13 +96,22 @@ yepnope([{
 					}
 				},			
 				schema: {
-					
+					model: {
+                    	fields: {
+                        	competencyId: { type: "number" },
+                        	competencyName: { type: "string" },
+                        	essentialElementId: { type: "number" },
+                        	essentialElementName: { type: "number" },
+                        	totalCount: { type: "number" },
+                        	totalScore: { type: "number" }
+                        }	
+                    }
 				}
 			})
 		});
 		renderTo.data("model", observable);	
 		kendo.bind(renderTo, observable );	
-		observable.questionDataSource.read();
+		observable.summaryDataSource.read();
 	}		
 	
 	function getRatingLevels(){
@@ -126,44 +125,7 @@ yepnope([{
 		#my-assessment {
 			background-color: rgba(245, 245, 245, 0.952941);
 		}
-		
-		/** Svg CheckBox */
-		.ac-custom h2 {
-		    font-size: 1.5em;
-		    line-height: 1.5em;
-		}	 
-		.ac-custom input[type="checkbox"]:checked + label, .ac-custom input[type="radio"]:checked + label {
-		    color: #000;
-		}	
-		
-		.ac-custom input[type="checkbox"], .ac-custom input[type="radio"], .ac-custom label::before {
-			margin-top: -20px;
-		    width: 35px;
-		    height: 35px	;
-		    top:50%;
-		}
-		
-		.ac-custom label::before {
-		    border: 2px solid #000;
-		    font-size: 1.5em;
-		}
-		
-		.ac-custom svg {
-			top:50%;
-			left:8px;
-		}
-		
-		.ac-custom svg path {
-	    	stroke: #ff3b30;
-	    	stroke-width: 10px;
-	    }	
-		    
-		.ac-custom label {
-			font-size: 1.5em;
-		    color: rgba(0,0,0,0.8);
-		    font-weight: 200;
-		    padding: 0 0 0 60px;
-		}   
+	
 		
 		.btn-xxl {
 			padding 20px 26px;		
@@ -276,13 +238,9 @@ yepnope([{
 	            </div><!-- /.row -->
 	        </div>    		
         </div>
-        <div class="container content-md">    
+        <div class="container content-md">   
 	  		
 		</div><!--/end container-->			
-		<div class="m-t-lg animated fadeIn" data-bind="visible:visible" style="display:none;">					
-			<button type="button" class="btn btn-primary btn-flat btn-outline btn-block btn-xxl" 
-				data-bind="click:saveOrUpdate">진단 완료</button>
-		</div>
  	</div>
 	
 
