@@ -171,10 +171,10 @@
 }
 
 .breadcrumbs-list>li:first-child {
-  margin-left: 12px;
+  margin-left: 10px;
 }
 .breadcrumbs-list>li {
-  font-size: 0.80em;
+  font-size: 0.70em;
   line-height: 2;
   font-weight: 400;
   display: inline-block;
