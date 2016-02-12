@@ -95,8 +95,7 @@ yepnope([{
 			questionDataSource : new kendo.data.DataSource({
 				batch: true,
 				transport: { 
-					update: { url:'<@spring.url "/data/me/competency/assessment/test/update.json?output=json"/>', contentType:'application/json', type:'post' },
-					read: { url:'<@spring.url "/data/me/competency/assessment/test/list.json?output=json"/>', type:'post' },
+					read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
 					parameterMap: function (options, operation){
 						if (operation !== "read") {
 							return kendo.stringify(options.models);
@@ -107,23 +106,13 @@ yepnope([{
 					}
 				},			
 				schema: {
-					model: common.ui.data.competency.AssessmentQuestion
+					
 				}
 			})
 		});
 		renderTo.data("model", observable);	
 		kendo.bind(renderTo, observable );	
 		observable.questionDataSource.read();
-		$(document).on("click","[data-action='answer']", function(e){						
-			var btn = $(this) ;
-			var objectId = btn.data('object-id');
-			var objectObjectScore = btn.data('object-score');					
-			var assessmentQuestion = observable.questionDataSource.get(objectId);
-			assessmentQuestion.set('score', objectObjectScore);				
-			common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
-			
-		});
-		
 	}		
 	
 	function getRatingLevels(){
