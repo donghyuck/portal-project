@@ -382,7 +382,7 @@
 								<p class="text-muted p-sm bg-gray">
 									진단이력이 <span class="text-danger" data-bind="text:userAssessedCount"></span>건 있습니다. 결과보기 버튼을 클릭하여 진단결과를 확인할 수 있습니다.
 								</p>
-								<table class="table no-margin">
+								<table class="table no-margin" style="border-top: 1px solid #ddd;">
 					            	<thead>
 					                	<tr>
 					                    	<th width="42">&nbsp;</th>
@@ -401,8 +401,7 @@
 									</tbody>		                    
 					        	</table>
 					</div>
-					<div class="modal-footer">	
-						<button type="button" class="btn btn-primary btn-flat btn-outline rounded btn-left" >이전</button>				
+					<div class="modal-footer">				
 						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
 					</div>
 				</div>
