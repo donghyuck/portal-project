@@ -249,7 +249,7 @@ yepnope([{
                                  { 'field': 'essentialElementName', title:'하위요소' },
                                  { 'field': 'totalCount' , title:'문항수'},
                                  { 'field': 'totalScore', title:'점수'},
-                                 { 'template':'#= totalScore/totalCount #', title:'&nbsp;', groupFooterTemplate: '평균 : #= average #' }                                 
+                                 {  title:'&nbsp;', template:'#= totalScore/totalCount #',  groupFooterTemplate:'평균 : #= average #' }                                 
                               ]"
                  data-bind="source: summaryDataSource"
                  ></div>
