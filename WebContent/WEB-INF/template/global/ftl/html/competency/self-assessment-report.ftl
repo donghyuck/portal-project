@@ -99,13 +99,14 @@ yepnope([{
                         	essentialElementId: { type: "number" },
                         	essentialElementName: { type: "string" },
                         	totalCount: { type: "number" },
-                        	totalScore: { type: "number" }
+                        	totalScore: { type: "number" },
+                        	finalScore: { type: "number" }
                         }	
                     }
 				},
 				group: {
 					field: "competencyName", aggregates: [
-						 { field: "totalScore", aggregate: "average" },					
+						 { field: "finalScore", aggregate: "average" },					
 					] 
 				},
 				
