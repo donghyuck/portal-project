@@ -106,7 +106,9 @@ yepnope([{
 				},
 				group: {
 					field: "competencyName", aggregates: [
-						 { field: "finalScore", aggregate: "average" },					
+						 { field: "finalScore", aggregate: "average" },	
+						 { field: "finalScore", aggregate: "min" },	
+						 { field: "finalScore", aggregate: "max" }					
 					] 
 				},
 				
@@ -250,7 +252,7 @@ yepnope([{
                                  { 'field': 'essentialElementName', title:'하위요소' },
                                  { 'field': 'totalCount' , title:'문항수'},
                                  { 'field': 'totalScore', title:'점수' },
-                                 { 'field': 'finalScore', title:'&nbsp;', groupFooterTemplate: '역량평균 :  #= average #' }                                 
+                                 { 'field': 'finalScore', title:'&nbsp;', groupFooterTemplate: '역량평균 :  #= average #', footerTemplate: "<div>Min: #= min #</div><div>Max: #= max #</div>"  }                                 
                               ]"
                  data-bind="source: summaryDataSource"
                  ></div>
