@@ -102,6 +102,11 @@ yepnope([{
                         	totalScore: { type: "number" }
                         }	
                     }
+				},
+				group: {
+					field: "competencyId", aggregates: [
+						 { field: "totalCount", aggregate: "average" },					
+					] 
 				}
 			})
 		});
