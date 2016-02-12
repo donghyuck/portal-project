@@ -210,7 +210,13 @@ i.icon-svg {
 	background-image: url("/images/common/icons/business/color/HighPriority.svg");
 }
 
+.icon-svg.business-color-report-card{
+	background-image: url("/images/common/icons/business/color/ReportCard.svg");
+}
 
+.icon-svg.business-color-form{
+	background-image: url("/images/common/icons/business/color/Form.svg");
+}
 
 
 
