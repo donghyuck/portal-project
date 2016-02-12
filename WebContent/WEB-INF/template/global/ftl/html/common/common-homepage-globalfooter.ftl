@@ -72,6 +72,7 @@
 					<div class="footer-logo">
 						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42"   alt="로고 이미지">
 					</div>
+					
 			<#if action.hasWebSiteMenu("FOOTER_MENU") >
 				<#assign website_footer_menu = action.getWebSiteMenu("FOOTER_MENU") />
 				<#if  website_footer_menu.components?has_content >
