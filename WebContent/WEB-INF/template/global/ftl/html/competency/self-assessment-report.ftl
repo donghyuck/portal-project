@@ -106,9 +106,7 @@ yepnope([{
 				},
 				group: {
 					field: "competencyName", aggregates: [
-						 { field: "finalScore", aggregate: "average" },	
-						 { field: "finalScore", aggregate: "min" },	
-						 { field: "finalScore", aggregate: "max" }					
+						 { field: "finalScore", aggregate: "average" }			
 					] 
 				},
 				aggregate: [
