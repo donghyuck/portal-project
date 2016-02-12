@@ -89,8 +89,41 @@
 					var item = dataSource.get(objectId);
 					createApplyAssessmentModal(item);					
 				});
+				
+        	    $(document).on("click","[data-action='result']", function(e){						
+					var btn = $(this) ;
+					var objectId = btn.data('object-id');
+					var item = dataSource.get(objectId);
+					createResultAssessmentModal(item);					
+				});				
 			}
 		}
+		
+		function createResultAssessmentModal(source){
+			var renderTo = $("#result-assessment-modal");	
+			if( !renderTo.data('bs.modal') ){				
+				var observable =  common.ui.observable({
+					assessmentDataSource: new kendo.data.DataSource({
+						data : [],
+						filter: { field: "state", operator: "eq", value: "ASSESSED" },
+						schema: {
+                            model: common.ui.data.competency.Assessment
+                        }
+					}),				
+					setSource: function(source){
+						var $this = this;							
+						$this.assessmentDataSource.read();
+						$this.assessmentDataSource.data( source.userAssessments );						
+					}				
+				});
+				renderTo.data("model", observable);	
+				kendo.bind(renderTo, observable );					
+			}
+			if( source ){
+				renderTo.data("model").setSource( source );		
+			}
+			renderTo.modal('show');			
+		}	
 		
 		function createApplyAssessmentModal(source){
 			var renderTo = $("#apply-assessment-modal");	
@@ -186,8 +219,7 @@
 					}
 				});		
 				renderTo.data("model", observable);	
-				kendo.bind(renderTo, observable );	
-				
+				kendo.bind(renderTo, observable );					
 				$(document).on("click","input[type=radio][data-action='select']", function(e){						
 					var radio = $(this) ;			
 					var objectType  = radio.data("object-type");
@@ -335,7 +367,45 @@
 		</div>				
 
 
-		<!-- START MODAL -->		
+		<!-- START MODAL -->	
+		<div id="result-assessment-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-lg modal-flat">
+				<div class="modal-content">	
+					<div class="modal-header">
+						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>										
+					<div class="modal-body no-padding bg-gray" style="border-bottom: 1px dashed #e5e5e5;">							
+								<p class="text-muted p-sm">
+									진단을 완료하거나 새로운 진단을 시작할 수 있습니다.
+								</p>
+								<table class="table no-margin">
+					            	<thead>
+					                	<tr>
+					                    	<th width="42">&nbsp;</th>
+					                    	<th class="hidden-sm" width="40%">분류</th>
+					                    	<th>직무</th>
+					                    	<th>직급</th>
+					                    	<th>일자</th>
+					                    	<th width="90">&nbsp;</th>
+					              		</tr>
+					          		</thead>
+					          		<tbody data-role="listview"
+					                    		class="no-border"
+												data-auto-bind="false"	
+							                 	data-template="my-assessment-template"
+							                 	data-bind="source:assessmentDataSource" style="height: 300px; overflow: auto"> 
+									</tbody>		                    
+					        	</table>
+					</div>
+					<div class="modal-footer">	
+						<button type="button" class="btn btn-primary btn-flat btn-outline rounded btn-left" >이전</button>				
+						<button type="button" class="btn btn-default btn-flat btn-outline rounded" data-dismiss="modal">닫기</button>			
+					</div>
+				</div>
+			</div>	
+		</div>	
+					
 		<div id="apply-assessment-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-lg modal-flat">
 				<div class="modal-content">	
@@ -479,7 +549,8 @@
 			</td>
 			<td><a href="/display/0/assessment.html?id=#=assessmentId#" class="btn btn-flat btn-primary btn-sm rounded">진단완료하기</a></td>
 		</tr>			
-		</script>								
+		</script>					
+					
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
 		<tr>
 		    <td class="hidden-sm no-padding-vr"><i class="icon-flat icon-svg icon-svg-md business-color-for-experienced"></i></td>
@@ -516,7 +587,7 @@
                 	<li><button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</a></li>
                 #}#	     
                 #if(userAssessedCount>0){ #        
-                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline  rounded" data-object-id="#:assessmentPlan.assessmentId#">결과보기</a></li>                        
+                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline rounded" data-action="result" data-object-id="#:assessmentPlan.assessmentId#">결과보기</a></li>                        
                 #}#
                 </ul>   	
        		</div>
