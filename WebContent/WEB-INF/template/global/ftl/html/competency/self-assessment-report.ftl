@@ -234,6 +234,18 @@ yepnope([{
 	        </div>    		
         </div>
         <div class="container content-md">   
+
+			<div data-role="grid"
+                 data-editable="false"
+                 data-columns="[
+                                 { 'field': 'competencyName', title:'역량'},
+                                 { 'field': 'essentialElementName', title:'하위요소' },
+                                 { 'field': 'totalCount' , title:'문항수'},
+                                 { 'field': 'totalScore', title:'점수' }
+                                 
+                              ]"
+                 data-bind="source: summaryDataSource"
+                 style="height: 200px"></div>
 	  		
 		</div><!--/end container-->			
  	</div>
