@@ -305,6 +305,7 @@
 					pageable: { refresh:true, pageSizes:false,  buttonCount: 2, messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : false,
+					filterable: true,
 					selectable : "row",
 					scrollable: true,
 					height: 500,
