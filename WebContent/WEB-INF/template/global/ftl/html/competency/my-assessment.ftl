@@ -552,7 +552,7 @@
 			</td>
 			<td>
 				#if (state == 'ASSESSED') {#
-					<a href="/display/0/assessment.html?id=#=assessmentId#" class="btn btn-flat btn-success btn-sm rounded">결과보기</a>	
+					<a href="/display/0/my-assessment-report.html?id=#=assessmentId#" class="btn btn-flat btn-success btn-sm rounded">결과보기</a>	
 				#}else{#
 					<a href="/display/0/assessment.html?id=#=assessmentId#" class="btn btn-flat btn-primary btn-sm rounded">진단완료하기</a>				
 				#}#
