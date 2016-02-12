@@ -104,7 +104,7 @@ yepnope([{
                     }
 				},
 				group: {
-					field: "competencyId", aggregates: [
+					field: "competencyName", aggregates: [
 						 { field: "totalCount", aggregate: "average" },					
 					] 
 				}
