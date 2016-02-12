@@ -337,7 +337,7 @@
 
 		<!-- START MODAL -->		
 		<div id="apply-assessment-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-			<div class="modal-dialog modal-md modal-flat">
+			<div class="modal-dialog modal-lg modal-flat">
 				<div class="modal-content">	
 					<div class="modal-header">
 						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
@@ -473,7 +473,7 @@
 			<td>
 			#: jobLevelName #
 			</td>
-			<td><a href="/display/0/assessment.html?id=#=assessmentId#" class="btn btn-flat btn-danger btn-sm">진단완료하기</a></td>
+			<td><a href="/display/0/assessment.html?id=#=assessmentId#" class="btn btn-flat btn-primary btn-sm rounded">진단완료하기</a></td>
 		</tr>			
 		</script>								
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
