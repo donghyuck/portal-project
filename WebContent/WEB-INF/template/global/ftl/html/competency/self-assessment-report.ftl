@@ -106,11 +106,13 @@ yepnope([{
 				},
 				group: {
 					field: "competencyName", aggregates: [
-						 { field: "finalScore", aggregate: "average" }			
+						 { field: "totalCount", aggregate: "sum" },
+						 { field: "finalScore", aggregate: "average" }				
 					] 
 				},
 				aggregate: [
-					{ field: "finalScore", aggregate: "average" },
+					
+					{ field: "totalCount", aggregate: "sum" },
                 	{ field: "finalScore", aggregate: "min" },
                     { field: "finalScore", aggregate: "max" }]
 				
@@ -253,7 +255,7 @@ yepnope([{
                  data-columns="[
                               	 { 'field': 'competencyName', title:'역량' },	
                                  { 'field': 'essentialElementName', title:'하위요소' },
-                                 { 'field': 'totalCount' , title:'문항수'},
+                                 { 'field': 'totalCount' , title:'문항수', groupFooterTemplate: '문항 :  #= sum #'},
                                  { 'field': 'totalScore', title:'점수' },
                                  { 'field': 'finalScore', title:'&nbsp;', groupFooterTemplate: '역량평균 :  #= average #'  }                                 
                               ]"
