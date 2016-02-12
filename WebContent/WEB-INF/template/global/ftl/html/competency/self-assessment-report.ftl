@@ -288,17 +288,7 @@ yepnope([{
 	        </div>    		
         </div>
         <div class="container content-md">    
-	  		<div class="row" data-bind="visible:visible" style="display:none;">
-		  		<div class="col-sm-12">
-		 			<div class="no-border bg-transparent animated slideInUp"
-			 				data-role="listview"
-			 			    data-auto-bind="false"
-							data-template="my-assessment-template"
-							data-bind="source:questionDataSource, events:{dataBound:questionDataBound}" 
-							style="min-height:500px; height: 100%; overflow: auto">		
-					</div>	
-		 		</div>
-	 		</div>
+	  		
 		</div><!--/end container-->			
 		<div class="m-t-lg animated fadeIn" data-bind="visible:visible" style="display:none;">					
 			<button type="button" class="btn btn-primary btn-flat btn-outline btn-block btn-xxl" 
