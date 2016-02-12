@@ -237,6 +237,7 @@ yepnope([{
 
 			<div data-role="grid"
                  data-editable="false"
+                 data-scrollable="false"
                  data-columns="[
                                  { 'field': 'competencyName', title:'역량'},
                                  { 'field': 'essentialElementName', title:'하위요소' },
@@ -246,7 +247,7 @@ yepnope([{
                                  
                               ]"
                  data-bind="source: summaryDataSource"
-                 style="height: 200px"></div>
+                 ></div>
 	  		
 		</div><!--/end container-->			
  	</div>
