@@ -104,8 +104,8 @@ yepnope([{
                     }
 				},
 				group: {
-					field: "competencyName", title:"역량", aggregates: [
-						 { field: "totalCount", aggregate: "average" },					
+					field: "competencyName", aggregates: [
+						 { field: "totalScore", aggregate: "average" },					
 					] 
 				}
 			})
@@ -248,7 +248,7 @@ yepnope([{
                                  { 'field': 'essentialElementName', title:'하위요소' },
                                  { 'field': 'totalCount' , title:'문항수'},
                                  { 'field': 'totalScore', title:'점수' },
-                                 { 'template': '#= kendo.parseFloat( totalScore/totalCount) #', title:'&nbsp;', groupHeaderTemplate: 'Units In Stock: #= value #' }
+                                 { 'template': '#= kendo.parseFloat( totalScore/totalCount) #', title:'&nbsp;', groupFooterTemplate: 'Units In Stock: #= value #' }
                                  
                               ]"
                  data-bind="source: summaryDataSource"
