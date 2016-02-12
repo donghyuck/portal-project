@@ -249,8 +249,7 @@ yepnope([{
                                  { 'field': 'essentialElementName', title:'하위요소' },
                                  { 'field': 'totalCount' , title:'문항수'},
                                  { 'field': 'totalScore', title:'점수' , groupFooterTemplate: '평균 : #= average #'},
-                                 { 'template': '#= kendo.parseFloat( totalScore/totalCount) #', title:'&nbsp;' }
-                                 
+                                 { 'template':'#= totalScore/totalCount #', title:'&nbsp;' }                                 
                               ]"
                  data-bind="source: summaryDataSource"
                  ></div>
