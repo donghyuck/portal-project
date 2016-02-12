@@ -104,7 +104,7 @@
 			if( !renderTo.data('bs.modal') ){				
 				var observable =  common.ui.observable({
 					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
-					userCompleteCount : 0,
+					userAssessedCount : 0,
 					assessmentDataSource: new kendo.data.DataSource({
 						data : [],
 						filter: { field: "state", operator: "eq", value: "ASSESSED" },
@@ -114,7 +114,8 @@
 					}),				
 					setSource: function(source){
 						var $this = this;			
-						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);					
+						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);			
+						$this.set('userAssessedCount', source.userAssessedCount);		
 						$this.assessmentDataSource.read();
 						$this.assessmentDataSource.data( source.userAssessments );						
 					}				
@@ -379,7 +380,7 @@
 					</div>										
 					<div class="modal-body no-padding bg-gray" style="border-bottom: 1px dashed #e5e5e5;">							
 								<p class="text-muted p-sm">
-									진단을 완료하거나 새로운 진단을 시작할 수 있습니다.
+									진단이력이 <span class="text-danger" data-bind="text: userCompleteCount"></span>건 있습니다.
 								</p>
 								<table class="table no-margin">
 					            	<thead>
