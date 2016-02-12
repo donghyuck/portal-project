@@ -248,7 +248,7 @@ yepnope([{
                                  { 'field': 'essentialElementName', title:'하위요소' },
                                  { 'field': 'totalCount' , title:'문항수'},
                                  { 'field': 'totalScore', title:'점수' },
-                                 { 'template': '#= kendo.parseFloat( totalScore/totalCount) #', title:'&nbsp;' }
+                                 { 'template': '#= kendo.parseFloat( totalScore/totalCount) #', title:'&nbsp;', groupHeaderTemplate: 'Units In Stock: #= value #' }
                                  
                               ]"
                  data-bind="source: summaryDataSource"
