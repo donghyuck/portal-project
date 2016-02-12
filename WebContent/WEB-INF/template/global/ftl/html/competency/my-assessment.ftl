@@ -380,7 +380,7 @@
 					</div>										
 					<div class="modal-body no-padding bg-gray" style="border-bottom: 1px dashed #e5e5e5;">							
 								<p class="text-muted p-sm">
-									진단이력이 <span class="text-danger" data-bind="text:userCompleteCount"></span>건 있습니다.
+									진단이력이 <span class="text-danger" data-bind="text:userAssessedCount"></span>건 있습니다.
 								</p>
 								<table class="table no-margin">
 					            	<thead>
