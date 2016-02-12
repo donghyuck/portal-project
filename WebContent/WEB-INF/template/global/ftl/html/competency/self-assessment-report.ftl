@@ -226,7 +226,6 @@ yepnope([{
 			                        	<span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">자가진단</span>
 			                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단</span>
 			                        </li>
-		                    		<li><strong>진단문항:</strong> <span data-bind="text: questionDataSource.total()"></span></li>
 		                    	</ul> 	
 	                   		</div>
 	                   	</div>
