@@ -536,7 +536,7 @@
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<tr>
-		    <td class="no-padding-vr"><i class="icon-flat icon-svg icon-svg-md business-color-true-false"></i></td>
+		    <td class="no-padding-vr"><i class="icon-flat icon-svg icon-svg-sm business-color-true-false"></i></td>
 		    <td class="hidden-sm"> 
 		    #: job.classification.classifiedMajorityName# > #: job.classification.classifiedMiddleName# > <span class="color-green">#: job.classification.classifiedMinorityName#</span>		    
 		    </td>
