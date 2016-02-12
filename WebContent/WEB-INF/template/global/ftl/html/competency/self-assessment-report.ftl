@@ -241,7 +241,6 @@ yepnope([{
 	        </div>    		
         </div>
         <div class="container content-md">   
-
 			<div data-role="grid"
                  data-editable="false"
                  data-scrollable="false"
