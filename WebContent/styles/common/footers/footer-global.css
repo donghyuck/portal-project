@@ -231,7 +231,7 @@
 .footer-global .footer .directorynav  h3 {
 	margin: 0;
 	padding: 0;
-	font-size: 0.900em;
+	font-size: 0.800em;
 	line-height: 1.4167;
 	font-weight: 600;
 	color: #333;
@@ -249,7 +249,7 @@
 }
 
 .directorynav a {
-	font-size: 0.8em;
+	font-size: 0.7em;
 	line-height: 1.99;
 	font-weight: 400;
 	display: inline;
@@ -269,7 +269,7 @@
 	color : #8e8e93;
 	padding: 10px 0 5px;
 	line-height: 1.5em;
-	font-size: .8em;	
+	font-size: .7em;	
 }
 
 .footer-global .copyright p {
