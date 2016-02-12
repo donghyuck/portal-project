@@ -92,7 +92,7 @@
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
 					<div class="copyright-text">
-					<#if action.webSite ?? >${.now?string("yyyy")} &copy; ${action.webSite.company.displayName }. 모든 권리 보유.<#else></#if>
+					<#if action.webSite ?? >Copyright &copy; ${.now?string("yyyy")} ${action.webSite.company.displayName }. 모든 권리 보유.<#else></#if>
 						<#if action.hasWebSiteMenu("RULES_MENU") >
 							<#assign website_rules_menu = action.getWebSiteMenu("RULES_MENU") />
 							<#list website_rules_menu.components as item >					
