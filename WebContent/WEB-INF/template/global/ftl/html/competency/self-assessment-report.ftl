@@ -97,7 +97,7 @@ yepnope([{
                         	competencyId: { type: "number" },
                         	competencyName: { type: "string" },
                         	essentialElementId: { type: "number" },
-                        	essentialElementName: { type: "number" },
+                        	essentialElementName: { type: "string" },
                         	totalCount: { type: "number" },
                         	totalScore: { type: "number" }
                         }	
