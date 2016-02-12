@@ -380,7 +380,7 @@
 					</div>										
 					<div class="modal-body no-padding bg-gray" style="border-bottom: 1px dashed #e5e5e5;">							
 								<p class="text-muted p-sm">
-									진단이력이 <span class="text-danger" data-bind="text: userCompleteCount"></span>건 있습니다.
+									진단이력이 <span class="text-danger" data-bind="text:userCompleteCount"></span>건 있습니다.
 								</p>
 								<table class="table no-margin">
 					            	<thead>
@@ -389,7 +389,7 @@
 					                    	<th class="hidden-sm" width="40%">분류</th>
 					                    	<th>직무</th>
 					                    	<th>직급</th>
-					                    	<th>일자</th>
+					                    	<th>진단일자</th>
 					                    	<th width="90">&nbsp;</th>
 					              		</tr>
 					          		</thead>
@@ -550,7 +550,13 @@
 			<td>
 			#: kendo.toString( new Date( modifiedDate ), "d") #
 			</td>
-			<td><a href="/display/0/assessment.html?id=#=assessmentId#" class="btn btn-flat btn-primary btn-sm rounded">진단완료하기</a></td>
+			<td>
+				#if (state == 'ASSESSED') {#
+					<a href="/display/0/assessment.html?id=#=assessmentId#" class="btn btn-flat btn-success btn-sm rounded">결과보기</a>	
+				#}else{#
+					<a href="/display/0/assessment.html?id=#=assessmentId#" class="btn btn-flat btn-primary btn-sm rounded">진단완료하기</a>				
+				#}#
+			</td>
 		</tr>			
 		</script>					
 					
