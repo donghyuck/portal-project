@@ -338,9 +338,14 @@
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
+		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview">
+		        </ul>
+		    </div>
+
+			<div class="container content">
 				<div class="row">
 					<div class="col-sm-6">
-						<img src="<@spring.url "/download/image/9361/What-is-competency-based-assessment-1.gif" />" class="img-responsive"/> 
+						
 					</div>	
 					<div class="col-sm-6">
 					<h2 class="title-v2">WHAT IS COMPETENCY BASED ASSESSMENT?</h2>
@@ -358,10 +363,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="container content-md">
-		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview">
-		        </ul>
-		    </div>
 			<!-- ./END MAIN CONTENT -->	
 	 		
 	 		<!-- START FOOTER -->
