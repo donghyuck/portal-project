@@ -388,7 +388,7 @@
 						</form>						
 					</div>				
 					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">	
-							<table class="table table-striped">
+							<table class="table table-striped hidden">
 								<thead>
 										<tr>
 											<th width="30%" >직무분류체계</th>
