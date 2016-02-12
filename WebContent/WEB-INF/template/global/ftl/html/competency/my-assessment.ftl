@@ -103,6 +103,8 @@
 			var renderTo = $("#result-assessment-modal");	
 			if( !renderTo.data('bs.modal') ){				
 				var observable =  common.ui.observable({
+					assessmentPlan : new common.ui.data.competency.AssessmentPlan(),
+					userCompleteCount : 0,
 					assessmentDataSource: new kendo.data.DataSource({
 						data : [],
 						filter: { field: "state", operator: "eq", value: "ASSESSED" },
@@ -111,7 +113,8 @@
                         }
 					}),				
 					setSource: function(source){
-						var $this = this;							
+						var $this = this;			
+						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);					
 						$this.assessmentDataSource.read();
 						$this.assessmentDataSource.data( source.userAssessments );						
 					}				
@@ -199,8 +202,7 @@
 						{
 							doRead = false;
 						}
-						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);								
-						
+						new common.ui.data.competency.AssessmentPlan(source.assessmentPlan).copy($this.assessmentPlan);	
 						$this.set('userIncompleteCount', source.userIncompleteCount);
 						if(source.userIncompleteCount > 0){	
 							$this.set('hasIncomplete', true);
