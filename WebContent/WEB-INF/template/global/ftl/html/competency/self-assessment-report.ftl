@@ -250,7 +250,7 @@ yepnope([{
                                  { 'field': 'essentialElementName', title:'하위요소' },
                                  { 'field': 'totalCount' , title:'문항수'},
                                  { 'field': 'totalScore', title:'점수' },
-                                 { 'field': 'finalScore', title:'&nbsp;', groupFooterTemplate: '역량평균 : <span #if( average < 3){ # class=/"text-danger/" #}#> #= average #</span>' }                                 
+                                 { 'field': 'finalScore', title:'&nbsp;', groupFooterTemplate: '역량평균 : #= average #' }                                 
                               ]"
                  data-bind="source: summaryDataSource"
                  ></div>
