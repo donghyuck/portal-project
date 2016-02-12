@@ -379,7 +379,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>										
 					<div class="modal-body no-padding" style="min-height:300px;">							
-								<p class="text-muted p-sm bg-gray">
+								<p class="text-muted p-sm bg-gray no-margin-b">
 									진단이력이 <span class="text-danger" data-bind="text:userAssessedCount"></span>건 있습니다. 결과보기 버튼을 클릭하여 진단결과를 확인할 수 있습니다.
 								</p>
 								<table class="table no-margin" style="border-top: 1px solid #ddd;">
