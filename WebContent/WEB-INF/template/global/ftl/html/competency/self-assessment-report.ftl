@@ -71,7 +71,8 @@ yepnope([{
 				visible : false,
 				assessment: new common.ui.data.competency.Assessment() ,
 				getCandidatePhotoUrl: function(){
-					return '<@spring.url "/download/profile/"  />' + this.assessment.candidate.username + '?width=150&height=150'; 
+					$this = this;
+					return '<@spring.url "/download/profile/"  />' + $this.assessment.candidate.username + '?width=150&height=150'; 
 				},
 				jobLevelDataSource :new kendo.data.DataSource({
 					data : [],
