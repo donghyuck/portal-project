@@ -275,11 +275,13 @@ yepnope([{
 					     	<tbody>
 								<tr>
 									<td width="100">진단목적</td>
-									<td><span data-bind="{ text: data-bind="text:assessment.assessmentPlan.description" }" class="text-muted"></span></td>
+									<td><span data-bind="{ text:assessment.assessmentPlan.description" }" class="text-muted"></span></td>
 								</tr>	
 								<tr>
 									<td>진단기간</td>
-									<td><span data-bind="{text: data-bind="text:assessment.assessmentPlan.startDate"}" class="text-muted"></span> ~ <span data-bind="{text: data-bind="text:assessment.assessmentPlan.endDate"}" class="text-muted"></span></td>
+									<td><span data-bind="{text:assessment.assessmentPlan.startDate"}" class="text-muted"></span> 
+										~ 
+										<span data-bind="{text:assessment.assessmentPlan.endDate"}" class="text-muted"></span></td>
 								</tr>
 								<tr>
 									<td>소분류</td>
