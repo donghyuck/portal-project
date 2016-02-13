@@ -288,13 +288,12 @@ yepnope([{
 						<table class="table">
 					    	<thead>
 					        	<tr>
-					            	<th width="300">&nbsp;</th>
-					                <th class="hidden-sm" width="40%">분류</th>
+					            	<th colspan="2">진단직무</th>
 					           	</tr>
 					   		</thead>
 					     	<tbody>
 								<tr>
-									<td>대분류</td>
+									<td width="100">대분류</td>
 									<td><span data-bind="{ text: assessment.job.classification.classifiedMajorityName }" class="text-muted"></span></td>
 								</tr>	
 								<tr>
@@ -308,7 +307,7 @@ yepnope([{
 								<tr>
 									<td>직무</td>
 									<td>
-										<span class="color-green" data-bind="{text: assessment.job.name}" ></span>
+										<span class="text-primary" data-bind="{text: assessment.job.name}" ></span>
 									</td>
 								</tr>	
 								<tr>
