@@ -328,7 +328,7 @@ yepnope([{
 				    	<thead>
 				           	<tr>
 				               	<th>직위</th>
-				               	<th>직무경험</th>
+				               	<th>직무경력</th>
 				   			</tr>
 				      	</thead>
 						<tbody data-role="listview"
