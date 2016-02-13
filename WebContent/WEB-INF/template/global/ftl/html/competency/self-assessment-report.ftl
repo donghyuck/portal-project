@@ -309,9 +309,9 @@ yepnope([{
                  data-columns="[
 					{ 'field': 'competencyName', title:'역량' },	
 	              	{ 'field': 'essentialElementName', title:'하위요소' },
-	              	{ 'field': 'totalCount' , title:'문항수', aggregates: ['sum'], groupFooterTemplate: '문항수 :  #= sum #', footerTemplate: '문항수: #=sum #'},
+	              	{ 'field': 'totalCount' , title:'문항수', aggregates: "[sum]", groupFooterTemplate: '문항수 :  #= sum #', footerTemplate: '문항수: #=sum #'},
 	          		{ 'field': 'totalScore', title:'점수' },
-	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ['sum', 'max', 'min'], groupFooterTemplate: '역량평균 :  #= average #', footerTemplate:'Average: #=average#, Max: #=max#, Min: #=min#'  }                                 
+	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: "[sum, max, min]", groupFooterTemplate: '역량평균 :  #= average #', footerTemplate:'Average: #=average#, Max: #=max#, Min: #=min#'  }                                 
                  ]"
                  data-bind="source: summaryDataSource"></div>
                          
