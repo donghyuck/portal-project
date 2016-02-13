@@ -149,7 +149,7 @@ yepnope([{
 	              	{ 'field': 'essentialElementName', title:'하위요소' },
 	              	{ 'field': 'totalCount' , title:'문항수', aggregates: ["sum"], groupFooterTemplate: '<span>#= sum #</span>', footerTemplate: "<span>#=sum #</span>"},
 	          		{ 'field': 'totalScore', title:'점수' },
-	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량점수 :  <span>#= sum #</span>', footerTemplate: "Average: #=sum#, Max: #=max#, Min: #=min#"  }                                 
+	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량점수 :  <span>#= sum #</span>', footerTemplate: "총점: #=sum #"  }                                 
 	            ]
 			} );
 		}
