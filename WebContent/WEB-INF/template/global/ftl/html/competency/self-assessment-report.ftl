@@ -127,7 +127,7 @@ yepnope([{
    			columns : [
 				{ 'field': 'competencyName', title:'역량', aggregates: '["count"]', groupFooterTemplate: '문항수 :  #= count #' },	
               	{ 'field': 'essentialElementName', title:'하위요소' },
-              	{ 'field': 'totalCount' , title:'문항수', groupFooterTemplate: '문항 :  #= sum #'},
+              	{ 'field': 'totalCount' , title:'문항수'},
           		{ 'field': 'totalScore', title:'점수' },
             	{ 'field': 'finalScore', title:'&nbsp;', groupFooterTemplate: '역량평균 :  #= average #'  }                                 
             ]
