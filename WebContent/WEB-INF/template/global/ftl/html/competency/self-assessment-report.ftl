@@ -280,7 +280,44 @@ yepnope([{
 	        </div>    		
         </div>
         <div class="container content-md">   
-			<div id="assessed-summary-grid" />        	
+        	<div class="row">
+        		<div class="col-sm-12">
+        			<div class="ibox">
+	                	<div class="ibox-title">fdsa</div>
+	                	<div class="ibox-content">
+
+
+						<table class="table">
+					    	<thead>
+					        	<tr>
+					            	<th width="300">&nbsp;</th>
+					                <th class="hidden-sm" width="40%">분류</th>
+					           	</tr>
+					   		</thead>
+					     	<tbody>
+								<tr>
+									<td>직무</td>
+									<td></td>
+								</tr>	
+								<tr>
+									<td>직무수준</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>진단방법</td>
+									<td></td>
+								</tr>																			
+							</tbody>		                    
+			        	</table>
+	                	</div>
+	                </div>	
+ 				</div>	 
+			</div>           		
+        	<div class="row">
+        		<div class="col-sm-12">
+					<div id="assessed-summary-grid" />  
+				</div>	 
+			</div>     	
 		</div><!--/end container-->			
  	</div>
 	
