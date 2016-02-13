@@ -127,7 +127,7 @@ yepnope([{
    			columns : [
 				{ 'field': 'competencyName', title:'역량' },	
               	{ 'field': 'essentialElementName', title:'하위요소' },
-              	{ 'field': 'totalCount' , title:'문항수', groupFooterTemplate: '문항수 :  #= sum #', footerTemplate: "Average: #=totalCount #"},
+              	{ 'field': 'totalCount' , title:'문항수', aggregates: ["sum"], groupFooterTemplate: '문항수 :  #= sum #', footerTemplate: "Average: #=totalCount #"},
           		{ 'field': 'totalScore', title:'점수' },
             	{ 'field': 'finalScore', title:'&nbsp;', groupFooterTemplate: '역량평균 :  #= average #', footerTemplate: "Average: #=kendo.stringify(data)#"  }                                 
             ]
