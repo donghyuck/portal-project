@@ -248,7 +248,7 @@ yepnope([{
 				<div class="row">
 	                <div class="col-sm-8">
 	                    <div class="headline no-border">
-	                    	<h2 data-bind="text:assessment.assessmentPlan.name"></h2>                    
+	                    	<h2>직무역량진단결과</h2>                    
 	                    </div>
 	                    <p class="text-muted" data-bind="text:assessment.assessmentPlan.description"></p>
 	                </div>
@@ -260,7 +260,7 @@ yepnope([{
         </div>
         <div class="container content-md">   
         
- 			<div class="ibox no-margin">
+ 			<div class="ibox">
 	                		<div class="ibox-title">
 	                        	  <h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
 	                    	</div>
