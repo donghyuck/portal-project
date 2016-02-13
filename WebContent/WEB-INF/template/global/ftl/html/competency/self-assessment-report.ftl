@@ -260,7 +260,7 @@ yepnope([{
 	        </div>    		
         </div>
         <div class="container content-md">   
-        	<div class="assessed-summary-grid" />
+        	<div id="assessed-summary-grid" />
 		</div><!--/end container-->			
  	</div>
 	
