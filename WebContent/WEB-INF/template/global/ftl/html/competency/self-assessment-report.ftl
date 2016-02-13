@@ -287,8 +287,8 @@ yepnope([{
 	        </div>    		
         </div>
         <div class="container content-md">   
-	                	<div class="row">
-		                	<div class="col-sm-6">
+	    	<div class="row">
+		   		<div class="col-sm-6">
 						<table class="table">
 					    	<thead>
 					        	<tr>
@@ -322,8 +322,8 @@ yepnope([{
 								</tr>																										
 							</tbody>		                    
 			        	</table>		                	
-		                	</div>
-		                	<div class="col-sm-6">
+		   		</div>
+		  		<div class="col-sm-6">
 					<table class="table table-striped no-margin">
 				    	<thead>
 				           	<tr>
@@ -337,8 +337,9 @@ yepnope([{
 							data-bind="source:jobLevelDataSource" style="overflow: auto"> 
 						</tbody>		                    
 					</table>			                	
-		                	</div>		                	
-	                	</div>    		
+				</div>		                	
+	        </div>   
+	                	 		
         	<div class="row">
         		<div class="col-sm-12">
         			<h2 class="title-v2">진단결과</h2>
