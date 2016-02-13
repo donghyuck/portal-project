@@ -281,14 +281,14 @@ yepnope([{
         </div>
         <div class="container content-md">   
         	<div class="row">
-        		<div class="col-sm-12">
+        		<div class="col-sm-6">
         			<div class="ibox">
 	                	<div class="ibox-title">fdsa</div>
 	                	<div class="ibox-content">
 						<table class="table">
 					    	<thead>
 					        	<tr>
-					            	<th colspan="2">진단직무</th>
+					            	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md user-color-worker"></i></th>
 					           	</tr>
 					   		</thead>
 					     	<tbody>
@@ -320,7 +320,25 @@ yepnope([{
 			        	</table>
 	                	</div>
 	                </div>	
- 				</div>	 
+ 				</div>
+ 				<div class="col-sm-6">
+					<table class="table table-striped no-margin">
+				    	<thead>
+				           	<tr>
+				               	<th class="hidden-sm" width="42">&nbsp;</th>
+				           		<th width="50%">직급</th>
+				        		<th>직무경험</th>
+				   			</tr>
+				      	</thead>
+						<tbody data-role="listview"
+							class="no-border"
+							data-auto-bind="false"	
+							data-template="my-assessment-job-level-template"
+							data-bind="source: assessment.job.jobLevels" style="overflow: auto"> 
+						</tbody>		                    
+					</table>	 				
+ 				</div>
+ 					 
 			</div>           		
         	<div class="row">
         		<div class="col-sm-12">
