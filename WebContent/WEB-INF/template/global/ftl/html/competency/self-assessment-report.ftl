@@ -327,8 +327,8 @@ yepnope([{
 					<table class="table">
 				    	<thead>
 				           	<tr>
-				               	<th><i class="icon-flat icon-svg icon-svg-md business-color-for-experienced"></i></th>
-				               	<th>직무수준</th>
+				               	<th>직위</th>
+				               	<th>직무경험</th>
 				   			</tr>
 				      	</thead>
 						<tbody data-role="listview"
