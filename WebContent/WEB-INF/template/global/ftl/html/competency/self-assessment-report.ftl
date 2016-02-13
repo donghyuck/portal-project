@@ -47,7 +47,7 @@ yepnope([{
 						data : { assessmentId : assessmentId},
 						success : function(response){
 							var assessment = new common.ui.data.competency.Assessment(response);
-							createMyAssessment( assessment );
+							createMyAssessedSummary(assessment);
 						},
 						complete : function(e){
 							common.ui.progress(renderTo, false);						
@@ -70,7 +70,8 @@ yepnope([{
 		return '<@spring.url "/images/common/no-avatar.png"  />';
 	}
 	
-	function createMyAssessment(source){
+	
+	function createMyAssessedSummary(source){
 		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
 			visible : false,
@@ -79,63 +80,104 @@ yepnope([{
 				return '<@spring.url "/download/profile/"  />' + this.assessment.candidate.username + '?width=150&height=150'; 
 			},
 			summaryDataSource : new kendo.data.DataSource({
+					transport: { 
+						read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
+						parameterMap: function (options, operation){
+							if (operation !== "read") {
+								return kendo.stringify(options.models);
+							} 
+							return {
+								assessmentId: observable.assessment.assessmentId
+							};
+						}
+					},			
+					schema: {
+						model: {
+	                    	fields: {
+	                        	competencyId: { type: "number" },
+	                        	competencyName: { type: "string" },
+	                        	essentialElementId: { type: "number" },
+	                        	essentialElementName: { type: "string" },
+	                        	totalCount: { type: "number" },
+	                        	totalScore: { type: "number" },
+	                        	finalScore: { type: "number" }
+	                        }	
+	                    }
+					},
+					group: {
+						field: "competencyName", aggregates: [
+							 { field: "totalCount", aggregate: "sum" },
+							 { field: "finalScore", aggregate: "average" }				
+						] 
+					},
+					aggregate:[
+						{ field: "totalCount", aggregate: "sum" },
+	                	{ field: "finalScore", aggregate: "min" },
+	                    { field: "finalScore", aggregate: "max" },
+	                    { field: "finalScore", aggregate: "average" }
+	                ]			
 			})
 		});
 		renderTo.data("model", observable);	
 		kendo.bind(renderTo, observable );
-		
-		common.ui.grid( $("#assessed-summary-grid")	, {
-			dataSource : {
-				transport: { 
-					read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
-					parameterMap: function (options, operation){
-						if (operation !== "read") {
-							return kendo.stringify(options.models);
-						} 
-						return {
-							assessmentId: observable.assessment.assessmentId
-						};
-					}
-				},			
-				schema: {
-					model: {
-                    	fields: {
-                        	competencyId: { type: "number" },
-                        	competencyName: { type: "string" },
-                        	essentialElementId: { type: "number" },
-                        	essentialElementName: { type: "string" },
-                        	totalCount: { type: "number" },
-                        	totalScore: { type: "number" },
-                        	finalScore: { type: "number" }
-                        }	
-                    }
-				},
-				group: {
-					field: "competencyName", aggregates: [
-						 { field: "totalCount", aggregate: "sum" },
-						 { field: "finalScore", aggregate: "average" }				
-					] 
-				},
-				aggregate:[
-					{ field: "totalCount", aggregate: "sum" },
-                	{ field: "finalScore", aggregate: "min" },
-                    { field: "finalScore", aggregate: "max" },
-                    { field: "finalScore", aggregate: "average" }
-                ]
-   			},
-   			editable:false,
-   			scrollable : false,
-   			columns : [
-				{ 'field': 'competencyName', title:'역량' },	
-              	{ 'field': 'essentialElementName', title:'하위요소' },
-              	{ 'field': 'totalCount' , title:'문항수', aggregates: ["sum"], groupFooterTemplate: '문항수 :  #= sum #', footerTemplate: "문항수: #=sum #"},
-          		{ 'field': 'totalScore', title:'점수' },
-            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량평균 :  #= average #', footerTemplate: "Average: #=average#, Max: #=max#, Min: #=min#"  }                                 
-            ]
-		} );	
-		
+		observable.summaryDataSource.read();
 	}		
-                              
+	
+	function createMyAssessedSummaryGrid(){
+		var renderTo = $("#assessed-summary-grid");
+		if( !common.ui.exists (renderTo) ){
+			common.ui.grid(renderTo, {
+				dataSource : {
+					transport: { 
+						read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
+						parameterMap: function (options, operation){
+							if (operation !== "read") {
+								return kendo.stringify(options.models);
+							} 
+							return {
+								assessmentId: observable.assessment.assessmentId
+							};
+						}
+					},			
+					schema: {
+						model: {
+	                    	fields: {
+	                        	competencyId: { type: "number" },
+	                        	competencyName: { type: "string" },
+	                        	essentialElementId: { type: "number" },
+	                        	essentialElementName: { type: "string" },
+	                        	totalCount: { type: "number" },
+	                        	totalScore: { type: "number" },
+	                        	finalScore: { type: "number" }
+	                        }	
+	                    }
+					},
+					group: {
+						field: "competencyName", aggregates: [
+							 { field: "totalCount", aggregate: "sum" },
+							 { field: "finalScore", aggregate: "average" }				
+						] 
+					},
+					aggregate:[
+						{ field: "totalCount", aggregate: "sum" },
+	                	{ field: "finalScore", aggregate: "min" },
+	                    { field: "finalScore", aggregate: "max" },
+	                    { field: "finalScore", aggregate: "average" }
+	                ]
+	   			},
+	   			editable:false,
+	   			scrollable : false,
+	   			columns : [
+					{ 'field': 'competencyName', title:'역량' },	
+	              	{ 'field': 'essentialElementName', title:'하위요소' },
+	              	{ 'field': 'totalCount' , title:'문항수', aggregates: ["sum"], groupFooterTemplate: '문항수 :  #= sum #', footerTemplate: "문항수: #=sum #"},
+	          		{ 'field': 'totalScore', title:'점수' },
+	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량평균 :  #= average #', footerTemplate: "Average: #=average#, Max: #=max#, Min: #=min#"  }                                 
+	            ]
+			} );
+		}
+		
+	}                         
                               	
 	function getRatingLevels(){
 		var renderTo = $('#my-assessment');	
@@ -261,7 +303,24 @@ yepnope([{
 	        </div>    		
         </div>
         <div class="container content-md">   
+			<div data-role="grid"
+				 data-auto-bind="false"
+                 data-editable="false"
+                 data-columns="[
+					{ 'field': 'competencyName', title:'역량' },	
+	              	{ 'field': 'essentialElementName', title:'하위요소' },
+	              	{ 'field': 'totalCount' , title:'문항수', aggregates: ['sum'], groupFooterTemplate: '문항수 :  #= sum #', footerTemplate: '문항수: #=sum #'},
+	          		{ 'field': 'totalScore', title:'점수' },
+	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ['sum', 'max', 'min'], groupFooterTemplate: '역량평균 :  #= average #', footerTemplate:'Average: #=average#, Max: #=max#, Min: #=min#'  }                                 
+                 ]"
+                 data-bind="source: summaryDataSource"></div>
+                         
         	<div id="assessed-summary-grid" />
+        	
+	            
+	            
+	            
+	                    	
 		</div><!--/end container-->			
  	</div>
 	
