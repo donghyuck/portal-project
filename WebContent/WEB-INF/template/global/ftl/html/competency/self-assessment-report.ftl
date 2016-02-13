@@ -285,8 +285,6 @@ yepnope([{
         			<div class="ibox">
 	                	<div class="ibox-title">fdsa</div>
 	                	<div class="ibox-content">
-
-
 						<table class="table">
 					    	<thead>
 					        	<tr>
@@ -296,17 +294,29 @@ yepnope([{
 					   		</thead>
 					     	<tbody>
 								<tr>
-									<td>직무</td>
-									<td></td>
+									<td>대분류</td>
+									<td><span data-bind="{ text: assessment.job.classification.classifiedMajorityName }" class="text-muted"></span></td>
 								</tr>	
 								<tr>
-									<td>직무수준</td>
-									<td></td>
+									<td>중분류</td>
+									<td><span data-bind="{text: assessment.job.classification.classifiedMiddleName}" class="text-muted"></span></td>
 								</tr>
 								<tr>
-									<td>진단방법</td>
-									<td></td>
-								</tr>																			
+									<td>소분류</td>
+									<td><span data-bind="{text: assessment.job.classification.classifiedMinorityName}" class="text-muted"></span></td>
+								</tr>	
+								<tr>
+									<td>직무</td>
+									<td>
+										<span class="color-green" data-bind="{text: assessment.job.name}" ></span>
+									</td>
+								</tr>	
+								<tr>
+									<td>직무정의</td>
+									<td>
+										<span data-bind="{text: assessment.job.description}" class="text-muted"></span>
+									</td>
+								</tr>																										
 							</tbody>		                    
 			        	</table>
 	                	</div>
@@ -315,6 +325,7 @@ yepnope([{
 			</div>           		
         	<div class="row">
         		<div class="col-sm-12">
+        			<h2 class="title-v2">진단결과</h2>
 					<div id="assessed-summary-grid" />  
 				</div>	 
 			</div>     	
