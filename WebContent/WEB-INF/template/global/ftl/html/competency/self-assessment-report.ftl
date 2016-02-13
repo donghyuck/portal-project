@@ -79,7 +79,13 @@ yepnope([{
 				return '<@spring.url "/download/profile/"  />' + this.assessment.candidate.username + '?width=150&height=150'; 
 			},
 			summaryDataSource : new kendo.data.DataSource({
-				batch: true,
+			})
+		});
+		renderTo.data("model", observable);	
+		kendo.bind(renderTo, observable );
+		
+		common.ui.gird( $("#assessed-summary-grid")	, {
+			dataSource : {
 				transport: { 
 					read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
 					parameterMap: function (options, operation){
@@ -115,15 +121,21 @@ yepnope([{
 					{ field: "finalScore", aggregate: "average" },
                 	{ field: "finalScore", aggregate: "min" },
                     { field: "finalScore", aggregate: "max" }]
-				
-				
-			})
-		});
-		renderTo.data("model", observable);	
-		kendo.bind(renderTo, observable );	
-		observable.summaryDataSource.read();
+   			},
+   			editable:false,
+   			scrollable : false,
+   			columns : [
+				{ 'field': 'competencyName', title:'역량', aggregates: '["count"]', groupFooterTemplate: '문항수 :  #= count #' },	
+              	{ 'field': 'essentialElementName', title:'하위요소' },
+              	{ 'field': 'totalCount' , title:'문항수', groupFooterTemplate: '문항 :  #= sum #'},
+          		{ 'field': 'totalScore', title:'점수' },
+            	{ 'field': 'finalScore', title:'&nbsp;', groupFooterTemplate: '역량평균 :  #= average #'  }                                 
+            ]
+		} );	
+		
 	}		
-	
+                              
+                              	
 	function getRatingLevels(){
 		var renderTo = $('#my-assessment');	
 		return renderTo.data("model").assessment.assessmentPlan.ratingScheme.ratingLevels ;
@@ -248,7 +260,8 @@ yepnope([{
 	        </div>    		
         </div>
         <div class="container content-md">   
-
+        	<div class="assessed-summary-grid" />
+			/**
 			<div data-role="grid"
                  data-editable="false"
                  data-scrollable="false"
@@ -261,7 +274,7 @@ yepnope([{
                               ]"
                  data-bind="source: summaryDataSource"
                  ></div>
-	  		
+	  		**/
 		</div><!--/end container-->			
  	</div>
 	
