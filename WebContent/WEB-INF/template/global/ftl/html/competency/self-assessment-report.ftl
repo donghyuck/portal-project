@@ -282,47 +282,47 @@ yepnope([{
 									<td><span data-bind="{text:assessment.assessmentPlan.startDate"}" class="text-muted"></span> 
 										~ 
 										<span data-bind="{text:assessment.assessmentPlan.endDate"}" class="text-muted"></span></td>
-								</tr>
+								</tr>	
+								<tr>
+									<td>진단방법</td>
+									<td class="bg-primary">
+										<span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">자가진단</span>
+			                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단</span>
+									</td>
+								</tr>	
 								<tr>
 									<td>진단일</td>
 									<td><span data-bind="{text: assessment.modifiedDate }" class="text-muted"></span></td>
-								</tr>	
+								</tr>
 								<tr>
-									<td>직무</td>
-									<td class="bg-primary">
-										<span data-bind="{text: assessment.job.name}">응용SW엔지니어링</span>
-									</td>
-								</tr>	
-								<tr>
-									<td>직무정의</td>
+									<td>대상자</td>
 									<td>
-										<span data-bind="{text: assessment.job.description}" class="text-muted">응용소프트웨어 엔지니어링은 컴퓨터 프로그래밍 언어로 각 업무에 맞는 소프트웨어의 기능에 관한 설계, 구현 및 테스트를 수행하고, 사용자에게 배포하며, 버전관리를 통해 제품의 성능을 향상시키고, 서비스를 개선하는 일이다.</span>
+
+										<div class="page-credits">				
+											<div class="credit-item">
+												<div class="credit-img user">
+													<img data-bind="attr:{src: candidatePhotoUrl }" class="img-responsive img-circle" src="<@spring.url "/images/common/anonymous.png"/>">
+												</div>
+												<div class="credit-name">
+													<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span>													
+												</div>
+												<div class="credit-title"><span data-bind="text:assessment.candidate.company.displayName"></span> </div>
+											</div>
+										</div>  
+
 									</td>
-								</tr>																										
+								</tr>																									
 							</tbody>		                    
 			        	</table>
 </div>			        	
 	                    	
 			            	<div class="ibox-content">
-								<div class="page-credits">				
-									<div class="credit-item">
-										<div class="credit-img user">
-											<img data-bind="attr:{src: candidatePhotoUrl }" class="img-responsive img-circle" src="<@spring.url "/images/common/anonymous.png"/>">
-										</div>
-										<div class="credit-name">
-											<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span>
-											&nbsp;
-											<span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
-										</div>
-										<div class="credit-title"><span data-bind="text:assessment.candidate.company.displayName"></span> </div>
-									</div>
-								</div>                  
+								                
 								<ul class="list-unstyled project-details">                        
 			                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
 			                        <li><strong>직무수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
 			                        <li><strong>진단방법:</strong> 
-			                        	<span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">자가진단</span>
-			                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단</span>
+			                        	
 			                        </li>
 		                    	</ul> 	
 	                   		</div>
