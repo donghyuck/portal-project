@@ -84,7 +84,7 @@ yepnope([{
 		renderTo.data("model", observable);	
 		kendo.bind(renderTo, observable );
 		
-		common.ui.gird( $("#assessed-summary-grid")	, {
+		common.ui.grid( $("#assessed-summary-grid")	, {
 			dataSource : {
 				transport: { 
 					read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
