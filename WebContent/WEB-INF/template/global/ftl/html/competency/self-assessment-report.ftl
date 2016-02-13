@@ -117,7 +117,7 @@ yepnope([{
 					] 
 				},
 				aggregate: [
-					{ field: "essentialElementName", aggregate: "count" },
+					{ field: "competencyName", aggregate: "count" },
 					{ field: "finalScore", aggregate: "average" },
                 	{ field: "finalScore", aggregate: "min" },
                     { field: "finalScore", aggregate: "max" }]
