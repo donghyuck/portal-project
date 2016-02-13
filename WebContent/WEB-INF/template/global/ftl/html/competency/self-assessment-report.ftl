@@ -37,7 +37,8 @@ yepnope([{
 			});		
 			
 			<#if RequestParameters['id']?? >
-			var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;	
+			var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;
+			
 			var renderTo = $("#my-assessment .assessment-header .ibox");		
 			common.ui.progress(renderTo, true);
 			common.ui.ajax( '<@spring.url "/data/accounts/get.json?output=json"/>' , {
@@ -87,6 +88,11 @@ yepnope([{
 		}
 	}		
 	
+	function getMyAssessment(){
+		var renderTo = $('#my-assessment');
+		return renderTo.data("model").assessment;
+	}
+	
 	function getMyAssessedSummaryGrid(){
 		var renderTo = $("#assessed-summary-grid");
 		return common.ui.grid(renderTo);
@@ -105,7 +111,7 @@ yepnope([{
 								return kendo.stringify(options.models);
 							} 
 							return {
-								assessmentId: observable.assessment.assessmentId
+								assessmentId: getMyAssessment().assessmentId
 							};
 						}
 					},			
