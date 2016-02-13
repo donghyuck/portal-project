@@ -352,7 +352,7 @@ yepnope([{
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
-		<tr>
+		<tr #if ( getMyAssessment().jobLevelName == name ) {# class="bg-dark" #}# >
 		    <td>    
 		    	#: name #
 		    </td>
