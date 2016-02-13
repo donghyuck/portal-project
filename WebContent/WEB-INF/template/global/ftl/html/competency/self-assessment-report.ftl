@@ -288,7 +288,7 @@ yepnope([{
         </div>
         <div class="container content-md">   
 	                	<div class="row">
-		                	<div class="col-sm-6>
+		                	<div class="col-sm-6">
 						<table class="table">
 					    	<thead>
 					        	<tr>
@@ -323,7 +323,7 @@ yepnope([{
 							</tbody>		                    
 			        	</table>		                	
 		                	</div>
-		                	<div class="col-sm-6>
+		                	<div class="col-sm-6">
 					<table class="table table-striped no-margin">
 				    	<thead>
 				           	<tr>
