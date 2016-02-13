@@ -73,9 +73,16 @@ yepnope([{
 				getCandidatePhotoUrl: function(){
 					return '<@spring.url "/download/profile/"  />' + this.assessment.candidate.username + '?width=150&height=150'; 
 				},
+				jobLevelDataSource :new kendo.data.DataSource({
+					data : [],
+					schema: {
+                    	model: common.ui.data.competency.JobLevel
+                    }
+                }),
 				setSource: function(source){
 					var $this = this;
 					source.copy($this.assessment);	
+					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					getMyAssessedSummaryGrid().dataSource.read();
 				}
 			});		
@@ -334,7 +341,7 @@ yepnope([{
 							class="no-border"
 							data-auto-bind="false"	
 							data-template="my-assessment-job-level-template"
-							data-bind="source: assessment.job.jobLevels" style="overflow: auto"> 
+							data-bind="source: jobLevelDataSource" style="overflow: auto"> 
 						</tbody>		                    
 					</table>	 				
  				</div>
