@@ -284,8 +284,8 @@ yepnope([{
 										<span data-bind="{text:assessment.assessmentPlan.endDate"}" class="text-muted"></span></td>
 								</tr>
 								<tr>
-									<td>소분류</td>
-									<td><span data-bind="{text: assessment.job.classification.classifiedMinorityName}" class="text-muted">정보기술개발</span></td>
+									<td>진단일</td>
+									<td><span data-bind="{text: assessment.modifiedDate }" class="text-muted"></span></td>
 								</tr>	
 								<tr>
 									<td>직무</td>
