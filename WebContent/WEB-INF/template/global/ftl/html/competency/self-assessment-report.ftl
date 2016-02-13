@@ -314,13 +314,8 @@ yepnope([{
 	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: '[sum, max, min]', groupFooterTemplate: '역량평균 :  #= average #', footerTemplate:'Average: #=average#, Max: #=max#, Min: #=min#'  }                                 
                  ]"
                  data-bind="source: summaryDataSource"></div>
-                         
-        	<div id="assessed-summary-grid" />
-        	
-	            
-	            
-	            
-	                    	
+                 
+        	<div id="assessed-summary-grid" />        	
 		</div><!--/end container-->			
  	</div>
 	
