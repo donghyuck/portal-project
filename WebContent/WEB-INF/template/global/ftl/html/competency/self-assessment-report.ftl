@@ -332,9 +332,7 @@ yepnope([{
 					<table class="table table-striped no-margin">
 				    	<thead>
 				           	<tr>
-				               	<th class="hidden-sm" width="42">&nbsp;</th>
-				           		<th width="50%">직급</th>
-				        		<th>직무경험</th>
+				               	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md business-color-for-experienced"></i></th>
 				   			</tr>
 				      	</thead>
 						<tbody data-role="listview"
@@ -360,9 +358,8 @@ yepnope([{
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
 		<tr>
-		    <td class="hidden-sm no-padding-vr"><i class="icon-flat icon-svg icon-svg-md business-color-for-experienced"></i></td>
 		    <td>    
-		    	<label class="radio"><input type="radio" data-action="select" name="input-select-job-level" data-object-type= "61" value="#=level#"><i class="rounded-x"></i>#: name #</label>
+		    	#: name #
 		    </td>
 			<td>
 				#:minWorkExperienceYear# ~ #:maxWorkExperienceYear# 년		
