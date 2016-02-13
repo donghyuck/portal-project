@@ -84,7 +84,7 @@ yepnope([{
 				setSource: function(source){
 					var $this = this;
 					source.copy($this.assessment);	
-					$this.set('candidatePhotoUrl',  getUserPhotoUrl(assessment.candidate) );
+					$this.set('candidatePhotoUrl',  getUserPhotoUrl($this.assessment.candidate) );
 					console.log( kendo.stringify( $this.assessment )) ;
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					getMyAssessedSummaryGrid().dataSource.read();
