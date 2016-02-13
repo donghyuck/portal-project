@@ -264,6 +264,43 @@ yepnope([{
 	                		<div class="ibox-title">
 	                        	  <h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
 	                    	</div>
+
+
+						<table class="ibox-content table">
+					    	<thead>
+					        	<tr>
+					            	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md user-color-worker"></i></th>
+					           	</tr>
+					   		</thead>
+					     	<tbody>
+								<tr>
+									<td width="100">대분류</td>
+									<td><span data-bind="{ text: assessment.job.classification.classifiedMajorityName }" class="text-muted">정보통신</span></td>
+								</tr>	
+								<tr>
+									<td>중분류</td>
+									<td><span data-bind="{text: assessment.job.classification.classifiedMiddleName}" class="text-muted">정보기술</span></td>
+								</tr>
+								<tr>
+									<td>소분류</td>
+									<td><span data-bind="{text: assessment.job.classification.classifiedMinorityName}" class="text-muted">정보기술개발</span></td>
+								</tr>	
+								<tr>
+									<td>직무</td>
+									<td class="bg-primary">
+										<span data-bind="{text: assessment.job.name}">응용SW엔지니어링</span>
+									</td>
+								</tr>	
+								<tr>
+									<td>직무정의</td>
+									<td>
+										<span data-bind="{text: assessment.job.description}" class="text-muted">응용소프트웨어 엔지니어링은 컴퓨터 프로그래밍 언어로 각 업무에 맞는 소프트웨어의 기능에 관한 설계, 구현 및 테스트를 수행하고, 사용자에게 배포하며, 버전관리를 통해 제품의 성능을 향상시키고, 서비스를 개선하는 일이다.</span>
+									</td>
+								</tr>																										
+							</tbody>		                    
+			        	</table>
+			        	
+	                    	
 			            	<div class="ibox-content">
 								<div class="page-credits">				
 									<div class="credit-item">
