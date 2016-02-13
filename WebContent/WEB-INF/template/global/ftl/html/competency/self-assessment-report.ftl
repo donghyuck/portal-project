@@ -119,7 +119,9 @@ yepnope([{
 				aggregate:[
 					{ field: "totalCount", aggregate: "sum" },
                 	{ field: "finalScore", aggregate: "min" },
-                    { field: "finalScore", aggregate: "max" }]
+                    { field: "finalScore", aggregate: "max" },
+                    { field: "finalScore", aggregate: "average" }
+                ]
    			},
    			editable:false,
    			scrollable : false,
@@ -128,7 +130,7 @@ yepnope([{
               	{ 'field': 'essentialElementName', title:'하위요소' },
               	{ 'field': 'totalCount' , title:'문항수', aggregates: ["sum"], groupFooterTemplate: '문항수 :  #= sum #', footerTemplate: "문항수: #=sum #"},
           		{ 'field': 'totalScore', title:'점수' },
-            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량평균 :  #= average #', footerTemplate: "Average: #=kendo.stringify(data)#"  }                                 
+            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량평균 :  #= average #', footerTemplate: "Average: #=average#"  }                                 
             ]
 		} );	
 		
