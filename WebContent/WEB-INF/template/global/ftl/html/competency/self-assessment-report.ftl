@@ -112,13 +112,13 @@ yepnope([{
 				},
 				group: {
 					field: "competencyName", aggregates: [
-						 { field: "essentialElementName", aggregate: "count" },
+						 { field: "totalCount", aggregate: "sum" },
 						 { field: "finalScore", aggregate: "average" }				
 					] 
 				},
 				aggregate:[
 					{ field: "competencyName", aggregate: "count" },
-					{ field: "finalScore", aggregate: "average" },
+					{ field: "totalCount", aggregate: "sum" },
                 	{ field: "finalScore", aggregate: "min" },
                     { field: "finalScore", aggregate: "max" }]
    			},
