@@ -250,7 +250,7 @@ yepnope([{
 	                    <div class="headline no-border">
 	                    	<h2>직무역량진단결과</h2>                    
 	                    </div>
-	                    <p class="text-muted" data-bind="text:assessment.assessmentPlan.description"></p>
+	                   
 	                </div>
 	                <div class="col-sm-4">
 						
@@ -266,7 +266,7 @@ yepnope([{
 	                    	</div>
 
 <div class="ibox-content no-padding">
-						<table class=" table">
+						<table class="table no-m-b">
 					    	<thead>
 					        	<tr>
 					            	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md user-color-worker"></i></th>
@@ -285,7 +285,7 @@ yepnope([{
 								</tr>	
 								<tr>
 									<td>진단방법</td>
-									<td class="bg-primary">
+									<td>
 										<span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">자가진단</span>
 			                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단</span>
 									</td>
@@ -316,16 +316,6 @@ yepnope([{
 			        	</table>
 </div>			        	
 	                    	
-			            	<div class="ibox-content">
-								                
-								<ul class="list-unstyled project-details">                        
-			                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
-			                        <li><strong>직무수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
-			                        <li><strong>진단방법:</strong> 
-			                        	
-			                        </li>
-		                    	</ul> 	
-	                   		</div>
 	                   	</div>       
         
         	<h2 class="title-v2">진단직무</h2>
