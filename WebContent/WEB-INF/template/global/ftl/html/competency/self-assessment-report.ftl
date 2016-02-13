@@ -296,7 +296,7 @@ yepnope([{
 								</tr>
 								<tr>
 									<td>대상자</td>
-									<td>
+									<td class="no-padding-b">
 
 										<div class="page-credits">				
 											<div class="credit-item">
