@@ -310,8 +310,8 @@ yepnope([{
 								</tr>	
 								<tr>
 									<td>직무</td>
-									<td>
-										<span class="text-primary" data-bind="{text: assessment.job.name}" ></span>
+									<td class="bg-primary">
+										<span  data-bind="{text: assessment.job.name}" ></span>
 									</td>
 								</tr>	
 								<tr>
@@ -324,7 +324,7 @@ yepnope([{
 			        	</table>		                	
 		   		</div>
 		  		<div class="col-sm-6">
-					<table class="table table-striped no-margin">
+					<table class="table">
 				    	<thead>
 				           	<tr>
 				               	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md business-color-for-experienced"></i></th>
