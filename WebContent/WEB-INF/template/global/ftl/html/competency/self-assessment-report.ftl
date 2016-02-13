@@ -288,10 +288,12 @@ yepnope([{
         </div>
         <div class="container content-md">   
         	<div class="row">
-        		<div class="col-sm-6">
+        		<div class="col-sm-12">
         			<div class="ibox">
 	                	<div class="ibox-title">fdsa</div>
 	                	<div class="ibox-content">
+	                	<div class="row">
+		                	<div class="col-sm-6>
 						<table class="table">
 					    	<thead>
 					        	<tr>
@@ -324,11 +326,9 @@ yepnope([{
 									</td>
 								</tr>																										
 							</tbody>		                    
-			        	</table>
-	                	</div>
-	                </div>	
- 				</div>
- 				<div class="col-sm-6">
+			        	</table>		                	
+		                	</div>
+		                	<div class="col-sm-6>
 					<table class="table table-striped no-margin">
 				    	<thead>
 				           	<tr>
@@ -341,9 +341,13 @@ yepnope([{
 							data-template="my-assessment-job-level-template"
 							data-bind="source:jobLevelDataSource" style="overflow: auto"> 
 						</tbody>		                    
-					</table>	 				
- 				</div>
- 					 
+					</table>			                	
+		                	</div>		                	
+	                	</div>
+						
+	                	</div>
+	                </div>	
+ 				</div> 					 
 			</div>           		
         	<div class="row">
         		<div class="col-sm-12">
