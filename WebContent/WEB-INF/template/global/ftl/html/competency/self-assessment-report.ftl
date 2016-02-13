@@ -287,11 +287,6 @@ yepnope([{
 	        </div>    		
         </div>
         <div class="container content-md">   
-        	<div class="row">
-        		<div class="col-sm-12">
-        			<div class="ibox">
-	                	<div class="ibox-title">fdsa</div>
-	                	<div class="ibox-content">
 	                	<div class="row">
 		                	<div class="col-sm-6>
 						<table class="table">
@@ -343,10 +338,7 @@ yepnope([{
 						</tbody>		                    
 					</table>			                	
 		                	</div>		                	
-	                	</div>
-	                </div>	
- 				</div> 					 
-			</div>           		
+	                	</div>    		
         	<div class="row">
         		<div class="col-sm-12">
         			<h2 class="title-v2">진단결과</h2>
