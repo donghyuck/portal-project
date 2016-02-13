@@ -262,7 +262,7 @@ yepnope([{
 								<div class="page-credits">				
 									<div class="credit-item">
 										<div class="credit-img user">
-											<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle" src="<@spring.url "/images/common/anonymous.png"/>">
+											<img data-bind="attr:{src: getCandidatePhotoUrl }" class="img-responsive img-circle" src="<@spring.url "/images/common/anonymous.png"/>">
 										</div>
 										<div class="credit-name">
 											<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span>
