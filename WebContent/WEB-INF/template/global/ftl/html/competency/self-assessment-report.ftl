@@ -83,7 +83,7 @@ yepnope([{
 					var $this = this;
 					source.copy($this.assessment);	
 					
-					console.log( kendo.stringify( $this.assessment ) ;
+					console.log( kendo.stringify( $this.assessment )) ;
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					getMyAssessedSummaryGrid().dataSource.read();
 				}
