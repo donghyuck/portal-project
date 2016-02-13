@@ -274,12 +274,12 @@ yepnope([{
 					   		</thead>
 					     	<tbody>
 								<tr>
-									<td width="100">대분류</td>
-									<td><span data-bind="{ text: assessment.job.classification.classifiedMajorityName }" class="text-muted">정보통신</span></td>
+									<td width="100">진단목적</td>
+									<td><span data-bind="{ text: data-bind="text:assessment.assessmentPlan.description" }" class="text-muted"></span></td>
 								</tr>	
 								<tr>
-									<td>중분류</td>
-									<td><span data-bind="{text: assessment.job.classification.classifiedMiddleName}" class="text-muted">정보기술</span></td>
+									<td>진단기간</td>
+									<td><span data-bind="{text: data-bind="text:assessment.assessmentPlan.startDate"}" class="text-muted"></span> ~ <span data-bind="{text: data-bind="text:assessment.assessmentPlan.endDate"}" class="text-muted"></span></td>
 								</tr>
 								<tr>
 									<td>소분류</td>
