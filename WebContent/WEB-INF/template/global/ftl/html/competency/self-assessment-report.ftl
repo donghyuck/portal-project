@@ -64,7 +64,7 @@ yepnope([{
 		}
 	} ]);
 	
-	function getCandidatePhotoUrl: function( user ){
+	function getCandidatePhotoUrl( user ){
 		return '<@spring.url "/download/profile/"  />' + user.username + '?width=150&height=150'; 
 	}
 	function createMyAssessedSummary(source){
