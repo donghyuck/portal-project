@@ -265,8 +265,8 @@ yepnope([{
 	                        	  <h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
 	                    	</div>
 
-
-						<table class="ibox-content table">
+<div class="ibox-content no-padding">
+						<table class=" table">
 					    	<thead>
 					        	<tr>
 					            	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md user-color-worker"></i></th>
@@ -299,7 +299,7 @@ yepnope([{
 								</tr>																										
 							</tbody>		                    
 			        	</table>
-			        	
+</div>			        	
 	                    	
 			            	<div class="ibox-content">
 								<div class="page-credits">				
