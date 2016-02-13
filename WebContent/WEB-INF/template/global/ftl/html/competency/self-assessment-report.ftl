@@ -253,14 +253,16 @@ yepnope([{
 	                    <p class="text-muted" data-bind="text:assessment.assessmentPlan.description"></p>
 	                </div>
 	                <div class="col-sm-4">
-						<div class="ibox no-margin">
+						
+	                </div>
+	            </div><!-- /.row -->
+	        </div>    		
+        </div>
+        <div class="container content-md">   
+        
+ 			<div class="ibox no-margin">
 	                		<div class="ibox-title">
-	                        	<h5 class="text-gray">진단대상자</h5>   
-	                        	<i class="icon-flat icon-svg icon-svg-sm basic-color-center-location" style="
-								    position: absolute;
-								    top: 10px;
-								    right: 20px;
-								"></i>                     
+	                        	  <h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
 	                    	</div>
 			            	<div class="ibox-content">
 								<div class="page-credits">				
@@ -285,12 +287,8 @@ yepnope([{
 			                        </li>
 		                    	</ul> 	
 	                   		</div>
-	                   	</div>
-	                </div>
-	            </div><!-- /.row -->
-	        </div>    		
-        </div>
-        <div class="container content-md">   
+	                   	</div>       
+        
         	<h2 class="title-v2">진단직무</h2>
         	<div class="p-xs rounded bordered bg-white m-b-sm">        		
 	    	<div class="row">
