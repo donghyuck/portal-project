@@ -150,8 +150,12 @@ yepnope([{
                 },
                 valueAxis: {
                     labels: {
-                        template: "#= value #"
+                        format: "${0}"
                     }
+                },
+                tooltip: {
+                    visible: true,
+                    format: "${0} bln"
                 }
             });	
             
