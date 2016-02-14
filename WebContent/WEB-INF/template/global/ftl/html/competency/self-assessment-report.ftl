@@ -130,8 +130,8 @@ yepnope([{
 						console.log( kendo.stringify(data) );
 						//$("#assessed-summary-chart").data('kendoChart').dataSource.data = data;
 						createChart();
+						
 			$("#assessed-summary-chart").kendoChart({
-				autoBind:false,
                 title: {
                     text: "Budget report"
                 },
