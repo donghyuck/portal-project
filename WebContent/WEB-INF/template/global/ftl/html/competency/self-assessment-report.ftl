@@ -185,10 +185,10 @@ yepnope([{
 		}
 	}		
 
-function createChart2() {
+function createChart() {
             
 
-		$("#chart2").kendoChart({
+		$("#chart").kendoChart({
                 title: {
                     text: "Market Value of Major Banks"
                 },
@@ -220,7 +220,7 @@ function createChart2() {
                     visible: true,
                     format: "${0} bln"
                 }
-            })
+            });
      }       
             
                     	
