@@ -127,6 +127,7 @@ yepnope([{
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
+						createChart();
 						$("#assessed-summary-chart").kendoChart({
 			                title: {
 			                    text: "Budget report"
@@ -159,7 +160,6 @@ yepnope([{
 			renderTo.data("model", observable);	
 			kendo.bind(renderTo, observable );
 			
-			
 			common.ui.grid($("#assessed-summary-grid"), {
 				autoBind : false,
 				dataSource : observable.summaryDataSource,
@@ -180,6 +180,71 @@ yepnope([{
 			renderTo.data("model").setSource(source);
 		}
 	}		
+               
+               
+ function createChart() {
+            $("#chart").kendoChart({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "../content/dataviz/js/spain-electricity.json",
+                            dataType: "json"
+                        }
+                    },
+                    sort: {
+                        field: "year",
+                        dir: "asc"
+                    }
+                },
+                title: {
+                    text: "Spain electricity production (GWh)"
+                },
+                series: [{
+                    field: "nuclear",
+                    name: "Nuclear"
+                }, {
+                    field: "hydro",
+                    name: "Hydro"
+                }, {
+                    field: "wind",
+                    name: "Wind"
+                }],
+                categoryAxis: {
+                    field: "year",
+                    majorGridLines: {
+                        visible: false
+                    }
+                },
+                valueAxis: {
+                    labels: {
+                        format: "N0"
+                    },
+                    majorUnit: 10000,
+                    plotBands: [{
+                        from: 10000,
+                        to: 30000,
+                        color: "#c00",
+                        opacity: 0.3
+                    }, {
+                        from: 30000,
+                        to: 30500,
+                        color: "#c00",
+                        opacity: 0.8
+                    }],
+                    max: 70000,
+                    line: {
+                        visible: false
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    format: "N0"
+                }
+            });
+        }              
+               
+               
+               
                     	
 	function getMyAssessment(){
 		var renderTo = $('#my-assessment');
