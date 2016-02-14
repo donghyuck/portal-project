@@ -129,7 +129,7 @@ yepnope([{
 						var data = this.data();
 						console.log( kendo.stringify(data) );
 						//$("#assessed-summary-chart").data('kendoChart').dataSource.data = data;
-						
+						createChart();
 			$("#assessed-summary-chart").kendoChart({
 				autoBind:false,
                 title: {
@@ -184,7 +184,43 @@ yepnope([{
 			renderTo.data("model").setSource(source);
 		}
 	}		
-	
+
+
+function createChart() {
+            $("#chart").kendoChart({
+                title: {
+                    text: "Budget report"
+                },
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "../content/dataviz/js/budget-report.json",
+                            dataType: "json"
+                        }
+                    }
+                },
+                seriesDefaults: {
+                    type: "radarLine",
+                    style: "smooth"
+                },
+                series: [{
+                    name: "Budget",
+                    field: "budget"
+                }, {
+                    name: "Spending",
+                    field: "spending"
+                }],
+                categoryAxis: {
+                    field: "unit"
+                },
+                valueAxis: {
+                    labels: {
+                        template: "$#= value / 1000 #k"
+                    }
+                }
+            });
+        }
+        	
 	function getMyAssessment(){
 		var renderTo = $('#my-assessment');
 		return renderTo.data("model").assessment;
@@ -492,6 +528,7 @@ yepnope([{
         	<div class="row">
         		<div class="col-sm-12">
         			<h2 class="title-v2">진단결과</h2>
+        			<div id="chart"></div>  
         			<div id="assessed-summary-chart"></div>  
 					<div id="assessed-summary-grid"></div>  
 				</div>	 
