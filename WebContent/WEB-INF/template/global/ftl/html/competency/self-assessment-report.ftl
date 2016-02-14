@@ -215,9 +215,6 @@ yepnope([{
                     }
                 },
                 valueAxis: {
-                    labels: {
-                        format: "N0"
-                    },
                     majorUnit: .5,
                     plotBands: [{
                         from: 0,
@@ -236,8 +233,7 @@ yepnope([{
                     }
                 },
                 tooltip: {
-                    visible: true,
-                    format: "N0"
+                    visible: true
                 }
             });
         }              
