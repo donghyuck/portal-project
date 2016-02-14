@@ -222,7 +222,7 @@ yepnope([{
                         color: "#c00",
                         opacity: 0.3
                     }, {
-                        from: 2.9,
+                        from: 2.99,
                         to: 3,
                         color: "#c00",
                         opacity: 0.8
