@@ -145,6 +145,29 @@ yepnope([{
 	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량점수 :  <span>#= sum #</span>', footerTemplate: "총점: #=sum #"  }                                 
 	            ]
 			} );
+			$("#assessed-summary-grid").kendoChart({
+				autoBind:false,
+                title: {
+                    text: "Budget report"
+                },
+                dataSource: observable.summaryDataSource,
+                seriesDefaults: {
+                    type: "radarLine"
+                },
+                series: [{
+                    name: "하위요소",
+                    field: "essentialElementName"
+                }],
+                categoryAxis: {
+                    field: "finalScore"
+                },
+                valueAxis: {
+                    labels: {
+                        template: "$#= value / 1000 #k"
+                    }
+                }
+            });			
+			
 		}
 		if( source ){
 			renderTo.data("model").setSource(source);
