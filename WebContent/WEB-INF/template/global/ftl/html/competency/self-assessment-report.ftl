@@ -112,7 +112,7 @@ yepnope([{
 	function createMyAssessedSummaryGrid(){
 		var renderTo = $("#assessed-summary-grid");
 		if( !common.ui.exists (renderTo) ){
-			common.ui.grid(renderTo, {
+			var grid = common.ui.grid(renderTo, {
 				autoBind : false,
 				dataSource : {
 					transport: { 
@@ -163,6 +163,32 @@ yepnope([{
 	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량점수 :  <span>#= sum #</span>', footerTemplate: "총점: #=sum #"  }                                 
 	            ]
 			} );
+			
+			$("#assessed-summary-chart").kendoChart({
+                title: {
+                    text: "Budget report"
+                },
+                dataSource:grid.dataSource,
+                seriesDefaults: {
+                    type: "radarLine"
+                },
+                series: [{
+                    name: "Budget",
+                    field: "budget"
+                }, {
+                    name: "Spending",
+                    field: "spending"
+                }],
+                categoryAxis: {
+                    field: "unit"
+                },
+                valueAxis: {
+                    labels: {
+                        template: "$#= value / 1000 #k"
+                    }
+                }
+            });
+            			
 		}
 		
 	}                         
@@ -378,6 +404,7 @@ yepnope([{
         	<div class="row">
         		<div class="col-sm-12">
         			<h2 class="title-v2">진단결과</h2>
+        			<div id="assessed-summary-chart" />  
 					<div id="assessed-summary-grid" />  
 				</div>	 
 			</div>     	
