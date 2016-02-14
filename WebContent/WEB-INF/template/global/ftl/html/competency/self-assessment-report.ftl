@@ -363,7 +363,7 @@ yepnope([{
 									<td>진단기간</td>
 									<td><span data-bind="{ text: assessment.assessmentPlan.startDate }" class="text-muted"></span> 
 										~ 
-										<span data-bind="{ text: assessment.assessmentPlan.formattedEndDate }" class="text-muted"></span></td>
+										<span data-bind='{ text: kendo.toString( new Date( assessment.assessmentPlan.endDate ), "g") }' class="text-muted"></span></td>
 								</tr>	
 								<tr>
 									<td>진단방법</td>
