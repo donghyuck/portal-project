@@ -138,7 +138,7 @@ yepnope([{
 			
 			common.ui.grid($("#assessed-summary-grid"), {
 				autoBind : false,
-				dataSource : observable.summaryDataSource.view(),
+				dataSource : observable.summaryDataSource,
 	   			editable:false,
 	   			scrollable : false,
 	   			columns : [
@@ -154,7 +154,9 @@ yepnope([{
                 title: {
                     text: "Budget report"
                 },
-                dataSource: observable.summaryDataSource,
+                dataSource:{
+                    data: observable.summaryDataSource.view()
+                },
                 seriesDefaults: {
                     type: "radarLine"
                 },
