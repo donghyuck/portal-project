@@ -125,8 +125,8 @@ yepnope([{
 					source.copy($this.assessment);	
 					$this.set('candidatePhotoUrl',  getUserPhotoUrl($this.assessment.candidate) );
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
-					$this.summaryDataSource.fetch( function(data){
-					
+					$this.summaryDataSource.fetch( function(){
+						var data = this.data();
 						console.log( kendo.stringify( data ) );
 						
 					});
