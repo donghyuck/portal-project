@@ -81,7 +81,8 @@ yepnope([{
 	            // Render the result as a PDF file
 	            return kendo.drawing.exportPDF(group, {
 	                paperSize: "auto",
-	                margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+	                margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" },
+	                multiPage : true
 	            });
 	        })
 	        .done(function(data) {
