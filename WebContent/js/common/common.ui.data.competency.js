@@ -429,7 +429,10 @@
 	    id: "assessmentId", // the identifier of the model
 	    fields: {
 	    	assessmentId: { type: "number", defaultValue: 0},
-	    	assessmentPlan: { type: "object", defaultValue:new AssessmentPlan() },	    	
+	    	assessmentPlan: { type: "object", defaultValue:new AssessmentPlan(),parse: function( value ){
+	    		console.log( value );
+	    		return new AssessmentPlan( value );
+	    	} },	    	
 	    	assessors:  { type: "object" ,  defaultValue:[]},
 	    	'candidate' : { defaultValue:new common.ui.data.User() , parse: function( value ){
 	    		console.log( value );
