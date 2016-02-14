@@ -374,7 +374,7 @@ yepnope([{
 								</tr>	
 								<tr>
 									<td>진단일</td>
-									<td><span data-bind="{text: assessment.modifiedDate }" class="text-muted"></span></td>
+									<td><span data-bind="{text: assessment.formattedModifiedDate }" class="text-muted"></span></td>
 								</tr>
 								<tr>
 									<td>대상자</td>
