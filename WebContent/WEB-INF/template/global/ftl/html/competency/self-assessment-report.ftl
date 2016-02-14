@@ -529,7 +529,7 @@ function createChart() {
         		<div class="col-sm-12">
         			<h2 class="title-v2">진단결과</h2>
         			<div id="chart"></div>  
-        			<div id="assessed-summary-chart" style="width:100%; height:300px;"></div>  
+        			<div id="assessed-summary-chart" style="width:500px; height:300px;"></div>  
 					<div id="assessed-summary-grid"></div>  
 				</div>	 
 			</div>     	
