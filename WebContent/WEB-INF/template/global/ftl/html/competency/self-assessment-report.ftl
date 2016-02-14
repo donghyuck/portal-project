@@ -149,6 +149,7 @@ yepnope([{
 	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량점수 :  <span>#= sum #</span>', footerTemplate: "총점: #=sum #"  }                                 
 	            ]
 			} );
+			
 			/**
 			$("#assessed-summary-grid").kendoChart({
 				autoBind:false,
@@ -487,8 +488,8 @@ yepnope([{
         	<div class="row">
         		<div class="col-sm-12">
         			<h2 class="title-v2">진단결과</h2>
-        			<div id="assessed-summary-chart" />  
-					<div id="assessed-summary-grid" />  
+        			<div id="assessed-summary-chart"></div>  
+					<div id="assessed-summary-grid"></div>  
 				</div>	 
 			</div>     	
 		</div><!--/end container-->			
