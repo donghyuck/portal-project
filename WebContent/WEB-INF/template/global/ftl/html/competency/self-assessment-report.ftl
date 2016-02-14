@@ -216,7 +216,8 @@ yepnope([{
 			},
                 title: {
                     text: "Spain electricity production (GWh)"
-                },
+                    font: "나눔 고딕, Nanum Gothic";
+                }, 
                 seriesDefaults: {
                     type: "bar"
                 },
@@ -233,7 +234,8 @@ yepnope([{
                         visible: true
                     },
                     labels: {
-                        rotation: "auto"
+                        rotation: "auto",
+                        font: "나눔 고딕, Nanum Gothic";
                     }
                 },
                 valueAxis: {
