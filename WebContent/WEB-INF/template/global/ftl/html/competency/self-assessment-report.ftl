@@ -128,7 +128,8 @@ yepnope([{
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
 						createRadarChart(data)
-						createBarChart(data);						
+						createBarChart(data);		
+					});				
 				}
 			});		
 			
