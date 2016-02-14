@@ -127,33 +127,8 @@ yepnope([{
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
-						createChart();
-						$("#assessed-summary-chart").kendoChart({
-			                title: {
-			                    text: "Budget report"
-			                },
-			                dataSource: {
-			                    data: data
-			                },
-			                seriesDefaults: {
-			                    type: "radarLine",
-			                    style: "smooth"
-			                },
-			                series: [{
-			                    name: "본인",
-			                    field: "finalScore"
-			                }],
-			                categoryAxis: {
-			                    field: "essentialElementName"
-			                },
-			                valueAxis: {
-			                    visible: true
-			                },
-			                tooltip: {
-			                    visible: true
-			                }
-			            });			
-					});
+						createRadarChart(data)
+						createBarChart(data);						
 				}
 			});		
 			
@@ -180,37 +155,51 @@ yepnope([{
 			renderTo.data("model").setSource(source);
 		}
 	}		
+    
+    function createRadarChart(data){
+  		var renderTo = $('#assessed-summary-chart');	
+		renderTo.kendoChart({
+			title: {
+				text: "Budget report"
+			},
+			dataSource: {
+				data: data
+			},
+			seriesDefaults: {
+				type: "radarLine",
+				style: "smooth"
+			},
+			series: [{
+				name: "본인",
+				field: "finalScore"
+			}],
+			categoryAxis: {
+				field: "essentialElementName"
+			},
+			valueAxis: {
+				visible: true
+			},
+			tooltip: {
+			 visible: true
+			}
+		});	
+    }           
                
-               
- function createChart() {
-            $("#chart").kendoChart({
-                dataSource: {
-                    transport: {
-                        read: {
-                            url: "../content/dataviz/js/spain-electricity.json",
-                            dataType: "json"
-                        }
-                    },
-                    sort: {
-                        field: "year",
-                        dir: "asc"
-                    }
-                },
+ 	function createBarChart(data) {
+ 		var renderTo = $('#assessed-summary-bar-chart');	
+		renderTo.kendoChart({
+			dataSource: {
+				data:data,
+			},
                 title: {
                     text: "Spain electricity production (GWh)"
                 },
                 series: [{
-                    field: "nuclear",
-                    name: "Nuclear"
-                }, {
-                    field: "hydro",
-                    name: "Hydro"
-                }, {
-                    field: "wind",
-                    name: "Wind"
+                    field: "finalScore",
+                    name: "본인"
                 }],
                 categoryAxis: {
-                    field: "year",
+                    field: "essentialElementName",
                     majorGridLines: {
                         visible: false
                     }
@@ -243,8 +232,6 @@ yepnope([{
             });
         }              
                
-               
-               
                     	
 	function getMyAssessment(){
 		var renderTo = $('#my-assessment');
@@ -254,93 +241,7 @@ yepnope([{
 	function getMyAssessedSummaryGrid(){
 		var renderTo = $("#assessed-summary-grid");
 		return common.ui.grid(renderTo);
-	}
-	
-	function createMyAssessedSummaryGrid(){
-		var renderTo = $("#assessed-summary-grid");
-		if( !common.ui.exists (renderTo) ){
-			var grid = common.ui.grid(renderTo, {
-				autoBind : false,
-				dataSource : {
-					transport: { 
-						read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
-						parameterMap: function (options, operation){
-							if (operation !== "read") {
-								return kendo.stringify(options.models);
-							} 
-							return {
-								assessmentId: getMyAssessment().assessmentId
-							};
-						}
-					},			
-					schema: {
-						model: {
-	                    	fields: {
-	                        	competencyId: { type: "number" },
-	                        	competencyName: { type: "string" },
-	                        	essentialElementId: { type: "number" },
-	                        	essentialElementName: { type: "string" },
-	                        	totalCount: { type: "number" },
-	                        	totalScore: { type: "number" },
-	                        	finalScore: { type: "number" }
-	                        }	
-	                    }
-					},
-					group: {
-						field: "competencyName", aggregates: [
-							 { field: "totalCount", aggregate: "sum" },
-							 { field: "finalScore", aggregate: "sum" }				
-						] 
-					},
-					aggregate:[
-						{ field: "totalCount", aggregate: "sum" },
-						{ field: "finalScore", aggregate: "sum" },
-	                	{ field: "finalScore", aggregate: "min" },
-	                    { field: "finalScore", aggregate: "max" },
-	                    { field: "finalScore", aggregate: "average" }
-	                ]
-	   			},
-	   			editable:false,
-	   			scrollable : false,
-	   			columns : [
-					{ 'field': 'competencyName', title:'역량' },	
-	              	{ 'field': 'essentialElementName', title:'하위요소' },
-	              	{ 'field': 'totalCount' , title:'문항수', aggregates: ["sum"], groupFooterTemplate: '<span>#= sum #</span>', footerTemplate: "<span>#=sum #</span>"},
-	          		{ 'field': 'totalScore', title:'점수' },
-	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량점수 :  <span>#= sum #</span>', footerTemplate: "총점: #=sum #"  }                                 
-	            ]
-			} );
-			
-			/**
-			$("#assessed-summary-chart").kendoChart({
-				autoBind:false,
-                title: {
-                    text: "Budget report"
-                },
-                dataSource: grid.dataSource,
-                seriesDefaults: {
-                    type: "radarLine"
-                },
-                series: [{
-                    name: "Budget",
-                    field: "budget"
-                }, {
-                    name: "Spending",
-                    field: "spending"
-                }],
-                categoryAxis: {
-                    field: "unit"
-                },
-                valueAxis: {
-                    labels: {
-                        template: "$#= value / 1000 #k"
-                    }
-                }
-            });
-            	**/		
-		}
-		
-	}                         
+	}             
                               	
 	function getRatingLevels(){
 		var renderTo = $('#my-assessment');	
@@ -556,7 +457,7 @@ yepnope([{
         			 
         			<div id="assessed-summary-chart"></div>  
 					<div id="assessed-summary-grid"></div>  
-					<div id="chart"></div> 
+					<div id="assessed-summary-bar-chart"></div> 
 				</div>	 
 			</div>     	
 		</div><!--/end container-->			
