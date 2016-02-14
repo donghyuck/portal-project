@@ -38,6 +38,12 @@ yepnope([{
 			});		
 			
 			<#if RequestParameters['id']?? >
+			
+			kendo.pdf.defineFont({
+			    "Nanum Gothic"             : "<@spring.url "/styles/fonts/nanumgothic/v3/NanumGothic-Regular.ttf"/>", // this is a URL
+			    "Nanum Gothic|Bold"        : "<@spring.url "/styles/fonts/nanumgothic/v3/NanumGothic-Bold.ttf"/>"
+			});
+			
 			var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;
 			
 			var renderTo = $("#my-assessment .assessment-header .ibox");		
