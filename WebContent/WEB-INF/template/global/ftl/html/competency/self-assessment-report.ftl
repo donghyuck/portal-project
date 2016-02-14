@@ -165,6 +165,7 @@ yepnope([{
 			} );
 			
 			$("#assessed-summary-chart").kendoChart({
+				autoBind:false,
                 title: {
                     text: "Budget report"
                 },
