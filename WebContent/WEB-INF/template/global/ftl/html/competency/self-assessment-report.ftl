@@ -128,7 +128,34 @@ yepnope([{
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
 						console.log( kendo.stringify(data) );
-						$("#assessed-summary-chart").data('kendoChart').dataSource.data = data;
+						//$("#assessed-summary-chart").data('kendoChart').dataSource.data = data;
+						
+			$("#assessed-summary-chart").kendoChart({
+				autoBind:false,
+                title: {
+                    text: "Budget report"
+                },
+                dataSource: {
+                    data: data
+                },
+                seriesDefaults: {
+                    type: "radarLine"
+                },
+                series: [{
+                    name: "본인",
+                    field: "finalScore"
+                }],
+                categoryAxis: {
+                    field: "essentialElementName"
+                },
+                valueAxis: {
+                    labels: {
+                        template: "#= value #"
+                    }
+                }
+            });	
+            
+            						
 					});
 				}
 			});		
@@ -151,30 +178,7 @@ yepnope([{
 	            ]
 			} );
 			
-			$("#assessed-summary-chart").kendoChart({
-				autoBind:false,
-                title: {
-                    text: "Budget report"
-                },
-                dataSource: {
-                    data: []
-                },
-                seriesDefaults: {
-                    type: "radarLine"
-                },
-                series: [{
-                    name: "본인",
-                    field: "finalScore"
-                }],
-                categoryAxis: {
-                    field: "essentialElementName"
-                },
-                valueAxis: {
-                    labels: {
-                        template: "#= value #"
-                    }
-                }
-            });	
+
 		}
 		if( source ){
 			renderTo.data("model").setSource(source);
