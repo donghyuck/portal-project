@@ -246,7 +246,7 @@ function createChart2() {
             });
         }
 
-$("#chart").kendoChart({
+		$("#chart").kendoChart({
                 title: {
                     text: "Market Value of Major Banks"
                 },
@@ -278,9 +278,9 @@ $("#chart").kendoChart({
                     visible: true,
                     format: "${0} bln"
                 }
-            });
-        }
-        	
+            })
+            
+                    	
 	function getMyAssessment(){
 		var renderTo = $('#my-assessment');
 		return renderTo.data("model").assessment;
