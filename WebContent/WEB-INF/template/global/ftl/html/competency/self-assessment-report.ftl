@@ -93,7 +93,11 @@ yepnope([{
 		if( !renderTo.data("model") ){
 			var observable =  common.ui.observable({
 				visible : false,
-				assessment: new common.ui.data.competency.Assessment() ,
+				assessment: new common.ui.data.competency.Assessment(),
+				saveAsPdf:function(){
+					getPdf( renderTo.find('.pdf-page') );
+					return false;
+				},
 				candidatePhotoUrl: null,
 				jobLevelDataSource :new kendo.data.DataSource({
 					data : [],
@@ -337,7 +341,7 @@ yepnope([{
 	                <div class="col-sm-8">
 	                </div>
 	                <div class="col-sm-4 text-right">
-						<a href="#" class="btn btn-flat btn-outline btn-labeled btn-primary">
+						<a href="#" class="btn btn-flat btn-outline btn-labeled btn-primary" data-bind="click:saveAsPdf">
 							<i class="btn-label icon-flat icon-svg icon-svg-sm file-color-pdf"></i>
 						PDF 저장</a>
 	                </div>
