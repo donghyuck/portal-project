@@ -418,6 +418,7 @@
 	    	return kendo.toString(this.get("modifiedDate"), "g");
 	    },
 		formattedStartDate : function(){
+			console.log( typeof this.get('startDate') );
 	    	return kendo.toString(this.get("startDate"), "g");
 	    },
 	    formattedEndDate : function(){
