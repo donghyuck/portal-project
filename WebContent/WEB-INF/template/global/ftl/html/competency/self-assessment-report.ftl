@@ -217,7 +217,7 @@ yepnope([{
                         opacity: 0.3
                     }, {
                         from: 3,
-                        to: 3.1,
+                        to: 3,
                         color: "#c00",
                         opacity: 0.8
                     }],
