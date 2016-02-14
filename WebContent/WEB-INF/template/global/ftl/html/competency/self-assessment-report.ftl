@@ -344,29 +344,6 @@ yepnope([{
 	        </div>    		
         </div>
         
-
-<div class="page-container hidden-on-narrow">
-        <div class="pdf-page size-a4">
-            <div class="pdf-header">
-                <span class="company-logo">
-                    <img src="../content/web/framework/company-logo.png" /> Blauer See Delikatessen
-                </span>
-                <span class="invoice-number">Invoice #23543</span>
-            </div>
-            <div class="pdf-footer">
-                <p>Blauer See Delikatessen<br />
-                    Lützowplatz 456<br />
-                    Berlin, Germany,  10785
-                </p>
-            </div>
-            <div class="for">
-                <h3>Invoice For</h3>
-                <p>Antonio Moreno<br />
-                    Naucalpan de Juárez<br />
-                    México D.F., Mexico, 53500
-                </p>
-            </div>
-        
         <div class="container content-md pdf-page">   
         
  			<div class="ibox bordered">
