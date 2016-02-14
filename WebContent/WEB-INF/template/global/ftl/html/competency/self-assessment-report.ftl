@@ -331,16 +331,12 @@ yepnope([{
 <body class="">
 	<div class="page-loader"></div>
  	<div id="my-assessment" class="wrapper"> 	
-		<div class="assessment-header">
+		<div class="assessment-header p-sm">
 			<div class="container">
 				<div class="row">
 	                <div class="col-sm-8">
-	                    <div class="headline">
-	                    	<h2>역량진단결과</h2>                    
-	                    </div>
-	                   
 	                </div>
-	                <div class="col-sm-4">
+	                <div class="col-sm-4 text-right">
 						<a href="#" class="btn btn-flat btn-outline btn-labeled btn-primary k-grid-pdf"><span class="btn-label icon fa fa-file-pdf-o"></span>PDF</a>
 	                </div>
 	            </div><!-- /.row -->
