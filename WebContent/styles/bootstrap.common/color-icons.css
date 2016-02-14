@@ -240,6 +240,9 @@ i.icon-svg {
 .icon-svg.file-color-excel{
 	background-image: url("/images/common/icons/file/color/Excel.svg");
 }
+.icon-svg.file-color-pdf{
+	background-image: url("/images/common/icons/file/color/Pdf.svg")!important;
+}
 
 
 /* User Color Icons 
@@ -247,5 +250,7 @@ i.icon-svg {
 .icon-svg.user-color-worker{
 	background-image: url("/images/common/icons/user/color/Worker.svg");
 }
+
+
 
 
