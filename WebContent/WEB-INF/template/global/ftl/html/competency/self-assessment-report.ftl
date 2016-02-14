@@ -260,13 +260,13 @@ yepnope([{
         </div>
         <div class="container content-md">   
         
- 			<div class="ibox">
+ 			<div class="ibox bordered">
 	                		<div class="ibox-title">
 	                        	  <h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
 	                    	</div>
 
-<div class="ibox-content no-padding">
-						<table class="table no-m-b">
+<div class="ibox-content">
+						<table class="table no-margin-b">
 					    	<thead>
 					        	<tr>
 					            	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md user-color-worker"></i></th>
