@@ -81,18 +81,71 @@ yepnope([{
                     	model: common.ui.data.competency.JobLevel
                     }
                 }),
+                summaryDataSource : new kendo.data.DataSource({
+					transport: { 
+						read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
+						parameterMap: function (options, operation){
+							if (operation !== "read") {
+								return kendo.stringify(options.models);
+							} 
+							return {
+								assessmentId: observable.assessment.assessmentId
+							};
+						}
+					},			
+					schema: {
+						model: {
+	                    	fields: {
+	                        	competencyId: { type: "number" },
+	                        	competencyName: { type: "string" },
+	                        	essentialElementId: { type: "number" },
+	                        	essentialElementName: { type: "string" },
+	                        	totalCount: { type: "number" },
+	                        	totalScore: { type: "number" },
+	                        	finalScore: { type: "number" }
+	                        }	
+	                    }
+					},
+					group: {
+						field: "competencyName", aggregates: [
+							 { field: "totalCount", aggregate: "sum" },
+							 { field: "finalScore", aggregate: "sum" }				
+						] 
+					},
+					aggregate:[
+						{ field: "totalCount", aggregate: "sum" },
+						{ field: "finalScore", aggregate: "sum" },
+	                	{ field: "finalScore", aggregate: "min" },
+	                    { field: "finalScore", aggregate: "max" },
+	                    { field: "finalScore", aggregate: "average" }
+	                ]                
+                }),
 				setSource: function(source){
 					var $this = this;
 					source.copy($this.assessment);	
 					$this.set('candidatePhotoUrl',  getUserPhotoUrl($this.assessment.candidate) );
 					console.log( kendo.stringify( $this.assessment )) ;
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
-					getMyAssessedSummaryGrid().dataSource.read();
+					$this.summaryDataSource.dataSource.read();
 				}
 			});		
+			
 			renderTo.data("model", observable);	
 			kendo.bind(renderTo, observable );
-			createMyAssessedSummaryGrid();
+			
+			common.ui.grid($("#assessed-summary-grid"), {
+				autoBind : false,
+				dataSource : observable.summaryDataSource,
+	   			editable:false,
+	   			scrollable : false,
+	   			columns : [
+					{ 'field': 'competencyName', title:'역량' },	
+	              	{ 'field': 'essentialElementName', title:'하위요소' },
+	              	{ 'field': 'totalCount' , title:'문항수', aggregates: ["sum"], groupFooterTemplate: '<span>#= sum #</span>', footerTemplate: "<span>#=sum #</span>"},
+	          		{ 'field': 'totalScore', title:'점수' },
+	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량점수 :  <span>#= sum #</span>', footerTemplate: "총점: #=sum #"  }                                 
+	            ]
+			} );
 		}
 		if( source ){
 			renderTo.data("model").setSource(source);
