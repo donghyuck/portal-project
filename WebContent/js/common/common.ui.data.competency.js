@@ -424,6 +424,9 @@
 	    	return kendo.toString(this.get("startDate"), "g");
 	    },
 	    formattedEndDate : function(){
+			if( typeof this.get('endDate') == 'string' ){
+				return kendo.toString( new Date(this.get("endDate")), "g");
+			}	    	
 	    	return kendo.toString(this.get("endDate"), "g");
 	    }
 	});	
