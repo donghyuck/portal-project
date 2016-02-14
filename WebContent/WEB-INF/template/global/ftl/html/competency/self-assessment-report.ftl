@@ -154,7 +154,7 @@ yepnope([{
                 title: {
                     text: "Budget report"
                 },
-                dataSource: { data: observable.summaryDataSource.view()},
+                dataSource: { data: []},
                 seriesDefaults: {
                     type: "radarLine"
                 },
