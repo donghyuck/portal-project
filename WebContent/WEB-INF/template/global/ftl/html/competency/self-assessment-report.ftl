@@ -216,7 +216,7 @@ yepnope([{
 			},
                 title: {
                     text: "역량진단 차트",
-                    font: ' .9em "나눔 고딕", "Nanum Gothic"'
+                    font: '.9em'
                 },
                 seriesDefaults: {
                     type: "bar"
