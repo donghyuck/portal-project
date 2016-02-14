@@ -186,67 +186,9 @@ yepnope([{
 	}		
 
 function createChart2() {
-            $("#chart2").kendoChart({
-                dataSource: {
-                    transport: {
-                        read: {
-                            url: "../content/dataviz/js/spain-electricity.json",
-                            dataType: "json"
-                        }
-                    },
-                    sort: {
-                        field: "year",
-                        dir: "asc"
-                    }
-                },
-                title: {
-                    text: "Spain electricity production (GWh)"
-                },
-                series: [{
-                    field: "nuclear",
-                    name: "Nuclear"
-                }, {
-                    field: "hydro",
-                    name: "Hydro"
-                }, {
-                    field: "wind",
-                    name: "Wind"
-                }],
-                categoryAxis: {
-                    field: "year",
-                    majorGridLines: {
-                        visible: false
-                    }
-                },
-                valueAxis: {
-                    labels: {
-                        format: "N0"
-                    },
-                    majorUnit: 10000,
-                    plotBands: [{
-                        from: 10000,
-                        to: 30000,
-                        color: "#c00",
-                        opacity: 0.3
-                    }, {
-                        from: 30000,
-                        to: 30500,
-                        color: "#c00",
-                        opacity: 0.8
-                    }],
-                    max: 70000,
-                    line: {
-                        visible: false
-                    }
-                },
-                tooltip: {
-                    visible: true,
-                    format: "N0"
-                }
-            });
-        }
+            
 
-		$("#chart").kendoChart({
+		$("#chart2").kendoChart({
                 title: {
                     text: "Market Value of Major Banks"
                 },
@@ -279,6 +221,7 @@ function createChart2() {
                     format: "${0} bln"
                 }
             })
+     }       
             
                     	
 	function getMyAssessment(){
