@@ -170,7 +170,7 @@ yepnope([{
                 },
                 valueAxis: {
                     labels: {
-                        template: "$#= value #k"
+                        template: "#= value #"
                     }
                 }
             });	
