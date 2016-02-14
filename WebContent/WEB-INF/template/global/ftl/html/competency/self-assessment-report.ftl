@@ -135,6 +135,7 @@ yepnope([{
 			renderTo.data("model", observable);	
 			kendo.bind(renderTo, observable );
 			
+			
 			common.ui.grid($("#assessed-summary-grid"), {
 				autoBind : false,
 				dataSource : observable.summaryDataSource,
@@ -165,7 +166,7 @@ yepnope([{
                     field: "essentialElementName"
                 }],
                 categoryAxis: {
-                    field: "essentialElementName"
+                    field: "finalScore"
                 },
                 valueAxis: {
                     labels: {
