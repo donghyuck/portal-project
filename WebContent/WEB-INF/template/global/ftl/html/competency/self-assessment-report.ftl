@@ -146,7 +146,7 @@ yepnope([{
                     field: "finalScore"
                 }],
                 categoryAxis: {
-                    field: "essentialElementName"
+                    field: "competencyName"
                 },
                 valueAxis: {
                     labels: {
