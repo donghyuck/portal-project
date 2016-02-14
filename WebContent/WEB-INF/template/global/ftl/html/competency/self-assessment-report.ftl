@@ -127,39 +127,33 @@ yepnope([{
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
-						console.log( kendo.stringify(data) );
-						//$("#assessed-summary-chart").data('kendoChart').dataSource.data = data;
-						createChart();
-						
-			$("#assessed-summary-chart").kendoChart({
-                title: {
-                    text: "Budget report"
-                },
-                dataSource: {
-                    data: data
-                },
-                seriesDefaults: {
-                    type: "radarLine"
-                },
-                series: [{
-                    name: "본인",
-                    field: "finalScore"
-                }],
-                categoryAxis: {
-                    field: "essentialElementName"
-                },
-                valueAxis: {
-                    labels: {
-                        format: "${0}"
-                    }
-                },
-                tooltip: {
-                    visible: true,
-                    format: "${0} bln"
-                }
-            });	
-            
-            						
+						$("#assessed-summary-chart").kendoChart({
+			                title: {
+			                    text: "Budget report"
+			                },
+			                dataSource: {
+			                    data: data
+			                },
+			                seriesDefaults: {
+			                    type: "radarLine"
+			                },
+			                series: [{
+			                    name: "본인",
+			                    field: "finalScore"
+			                }],
+			                categoryAxis: {
+			                    field: "essentialElementName"
+			                },
+			                valueAxis: {
+			                    labels: {
+			                        format: "${0}"
+			                    }
+			                },
+			                tooltip: {
+			                    visible: true,
+			                    format: "${0}"
+			                }
+			            });			
 					});
 				}
 			});		
@@ -188,42 +182,6 @@ yepnope([{
 			renderTo.data("model").setSource(source);
 		}
 	}		
-
-function createChart() {
-            
-
-		$("#chart").kendoChart({
-                title: {
-                    text: "Market Value of Major Banks"
-                },
-                legend: {
-                    position: "bottom"
-                },
-                seriesDefaults: {
-                    type: "radarLine"
-                },
-                series: [{
-                    name: "Market value as of 2007",
-                    data: [116, 165, 215, 75, 100, 49, 80, 116, 108, 90, 67, 76, 91, 255, 120]
-                }],
-                categoryAxis: {
-                    categories: ["Santander", "JP Morgan", "HSBC", "Credit Suisse",
-                        "Goldman Sachs", "Morgan Stanley", "Societe Generale", "UBS",
-                        "BNP Paribas", "Unicredit", "Credit Agricole", "Deutsche Bank",
-                        "Barclays", "Citigroup", "RBS"]
-                },
-                valueAxis: {
-                    labels: {
-                        format: "${0}"
-                    }
-                },
-                tooltip: {
-                    visible: true,
-                    format: "${0} bln"
-                }
-            });
-     }       
-            
                     	
 	function getMyAssessment(){
 		var renderTo = $('#my-assessment');
