@@ -124,9 +124,8 @@ yepnope([{
 					var $this = this;
 					source.copy($this.assessment);	
 					$this.set('candidatePhotoUrl',  getUserPhotoUrl($this.assessment.candidate) );
-					console.log( kendo.stringify( $this.assessment )) ;
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
-					$this.summaryDataSource.dataSource.read();
+					$this.summaryDataSource.read();
 				}
 			});		
 			
