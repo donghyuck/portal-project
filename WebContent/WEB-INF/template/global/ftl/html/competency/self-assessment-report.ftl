@@ -282,7 +282,10 @@ yepnope([{
 		#my-assessment {
 			background-color: rgba(245, 245, 245, 0.952941);
 		}
-	
+
+		.pdf-page {
+            font-family: "DejaVu Sans", "Arial", sans-serif;
+        }	
 		
 		.btn-xxl {
 			padding 20px 26px;		
