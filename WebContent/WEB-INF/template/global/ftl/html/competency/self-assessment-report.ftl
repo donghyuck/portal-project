@@ -80,7 +80,7 @@ yepnope([{
 					schema: {
                     	model: common.ui.data.competency.JobLevel
                     }
-                }),
+                }),               
                 summaryDataSource : new kendo.data.DataSource({
 					transport: { 
 						read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
@@ -138,7 +138,7 @@ yepnope([{
 			
 			common.ui.grid($("#assessed-summary-grid"), {
 				autoBind : false,
-				dataSource : observable.summaryDataSource,
+				dataSource : observable.summaryDataSource.view(),
 	   			editable:false,
 	   			scrollable : false,
 	   			columns : [
