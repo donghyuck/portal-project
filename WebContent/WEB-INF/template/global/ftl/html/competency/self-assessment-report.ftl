@@ -164,10 +164,10 @@ yepnope([{
                 },
                 series: [{
                     name: "하위요소",
-                    field: "finalScore"
+                    field: "essentialElementName"
                 }],
                 categoryAxis: {
-                    field: "essentialElementName"
+                    field: "finalScore"
                 },
                 valueAxis: {
                     labels: {
