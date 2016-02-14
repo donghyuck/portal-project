@@ -218,12 +218,12 @@ yepnope([{
  	function createBarChart(data) {
  		var renderTo = $('#assessed-summary-bar-chart');	
 		renderTo.kendoChart({
+			encoding : "UTF-8",
 			dataSource: {
 				data:data,
 			},
                 title: {
                     text: "역량진단 차트",
-                    font: '.9em'
                 },
                 seriesDefaults: {
                     type: "bar"
