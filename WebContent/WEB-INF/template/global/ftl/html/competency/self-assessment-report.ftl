@@ -215,8 +215,8 @@ yepnope([{
 				data:data,
 			},
                 title: {
-                    text: "Spain electricity production (GWh)"
-                    font: "나눔 고딕, Nanum Gothic";
+                    text: "Spain electricity production (GWh)",
+                    font: "나눔 고딕, Nanum Gothic"
                 }, 
                 seriesDefaults: {
                     type: "bar"
@@ -235,7 +235,7 @@ yepnope([{
                     },
                     labels: {
                         rotation: "auto",
-                        font: "나눔 고딕, Nanum Gothic";
+                        font: "나눔 고딕, Nanum Gothic"
                     }
                 },
                 valueAxis: {
