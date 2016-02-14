@@ -209,19 +209,19 @@ yepnope([{
                     labels: {
                         format: "N0"
                     },
-                    majorUnit: 10000,
+                    majorUnit: .5,
                     plotBands: [{
-                        from: 10000,
-                        to: 30000,
+                        from: 0,
+                        to: 3,
                         color: "#c00",
                         opacity: 0.3
                     }, {
-                        from: 30000,
-                        to: 30500,
+                        from: 3,
+                        to: 3.1,
                         color: "#c00",
                         opacity: 0.8
                     }],
-                    max: 70000,
+                    max: 6,
                     line: {
                         visible: false
                     }
