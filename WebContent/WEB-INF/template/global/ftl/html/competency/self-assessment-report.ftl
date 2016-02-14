@@ -11,13 +11,14 @@ yepnope([{
     load: [        
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
-			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',
-			'css!<@spring.url "/styles/codrops/codrops.svgcheckbox.css"/>',	
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',		
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/kendo/jszip.min.js"/>',
+			'<@spring.url "/js/kendo/pako_deflate.min.js"/>',	
 			'<@spring.url "/js/kendo/kendo.all.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
@@ -67,11 +68,28 @@ yepnope([{
 	function getUserPhotoUrl(user){
 		return '<@spring.url "/download/profile/"  />' + user.username + '?width=150&height=150'; 
 	}
+	    
+	function getPdf( selector ) {
+		 kendo.drawing.drawDOM( selector )
+	        .then(function(group) {
+	            // Render the result as a PDF file
+	            return kendo.drawing.exportPDF(group, {
+	                paperSize: "auto",
+	                margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+	            });
+	        })
+	        .done(function(data) {
+	            // Save the PDF file
+	            kendo.saveAs({
+	                dataURI: data,
+	                fileName: "역량진단결과.pdf",
+	                proxyURL: "<@spring.url "/download/export"/>"
+	            });
+	        });
+	}
 	
 	function createMyAssessedSummary(source){
 		var renderTo = $('#my-assessment');	
-		
-		
 		if( !renderTo.data("model") ){
 			var observable =  common.ui.observable({
 				visible : false,
@@ -151,8 +169,6 @@ yepnope([{
 	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량점수 :  <span>#= sum #</span>', footerTemplate: "총점: #=sum #"  }                                 
 	            ]
 			} );
-			
-
 		}
 		if( source ){
 			renderTo.data("model").setSource(source);
@@ -295,20 +311,7 @@ yepnope([{
 		.ibox-title {
 			font-size:1.2em;
 		}		
-		/**
-		.ibox-title
-		{
-			background: #272727!important;
-			color:#fff;
-			border-color:#007aff;
-		}
-		
-		.ibox-content {
-			background: #272727!important;
-			color:#f5f5f5;
-		}
-		*/
-		
+
 		h1, h2, h3, h4, h5, h6 {
 			color:#333;
 		}
@@ -332,13 +335,13 @@ yepnope([{
 			<div class="container">
 				<div class="row">
 	                <div class="col-sm-8">
-	                    <div class="headline no-border">
-	                    	<h2>직무역량진단결과</h2>                    
+	                    <div class="headline">
+	                    	<h2>역량진단결과</h2>                    
 	                    </div>
 	                   
 	                </div>
 	                <div class="col-sm-4">
-						
+						<a href="#" class="btn btn-flat btn-outline btn-labeled btn-primary k-grid-pdf"><span class="btn-label icon fa fa-file-pdf-o"></span>PDF</a>
 	                </div>
 	            </div><!-- /.row -->
 	        </div>    		
