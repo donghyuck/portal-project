@@ -363,7 +363,7 @@ yepnope([{
 									<td>진단기간</td>
 									<td><span data-bind="{ text: assessment.assessmentPlan.formattedStartDate }" class="text-muted"></span> 
 										~ 
-										<span data-bind="{ text: assessment.assessmentPlan.endDate }" class="text-muted"></span></td>
+										<span data-bind="{ text: assessment.assessmentPlan.formattedEndDate }" class="text-muted"></span></td>
 								</tr>	
 								<tr>
 									<td>진단방법</td>
