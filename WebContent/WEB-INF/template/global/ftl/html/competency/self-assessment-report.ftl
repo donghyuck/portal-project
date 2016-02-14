@@ -164,6 +164,7 @@ yepnope([{
 	            ]
 			} );
 			
+			/**
 			$("#assessed-summary-chart").kendoChart({
 				autoBind:false,
                 title: {
@@ -189,7 +190,7 @@ yepnope([{
                     }
                 }
             });
-            			
+            	**/		
 		}
 		
 	}                         
