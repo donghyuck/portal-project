@@ -163,11 +163,11 @@ yepnope([{
                     type: "radarLine"
                 },
                 series: [{
-                    name: "하위요소",
-                    field: "essentialElementName"
+                    name: "본인",
+                    field: "finalScore"
                 }],
                 categoryAxis: {
-                    field: "finalScore"
+                    field: "essentialElementName"
                 },
                 valueAxis: {
                     labels: {
