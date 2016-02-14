@@ -135,7 +135,8 @@ yepnope([{
 			                    data: data
 			                },
 			                seriesDefaults: {
-			                    type: "radarLine"
+			                    type: "radarLine",
+			                    style: "smooth"
 			                },
 			                series: [{
 			                    name: "본인",
@@ -145,13 +146,10 @@ yepnope([{
 			                    field: "essentialElementName"
 			                },
 			                valueAxis: {
-			                    labels: {
-			                        format: "${0}"
-			                    }
+			                    visible: true
 			                },
 			                tooltip: {
-			                    visible: true,
-			                    format: "${0}"
+			                    visible: true
 			                }
 			            });			
 					});
