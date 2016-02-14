@@ -19,6 +19,7 @@ yepnope([{
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.dataviz.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
 			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
