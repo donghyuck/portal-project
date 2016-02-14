@@ -337,9 +337,9 @@ yepnope([{
 	                <div class="col-sm-8">
 	                </div>
 	                <div class="col-sm-4 text-right">
-						<a href="#" class="btn btn-flat btn-outline btn-labeled btn-primary k-grid-pdf">
-							<i class="btn-label icon-flat icon-svg icon-svg-md file-color-pdf"></i>
-						PDF</a>
+						<a href="#" class="btn btn-flat btn-outline btn-labeled btn-primary">
+							<i class="btn-label icon-flat icon-svg icon-svg-sm file-color-pdf"></i>
+						PDF 저장</a>
 	                </div>
 	            </div><!-- /.row -->
 	        </div>    		
