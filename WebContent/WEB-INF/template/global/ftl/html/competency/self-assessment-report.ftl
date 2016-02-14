@@ -70,6 +70,8 @@ yepnope([{
 	
 	function createMyAssessedSummary(source){
 		var renderTo = $('#my-assessment');	
+		
+		
 		if( !renderTo.data("model") ){
 			var observable =  common.ui.observable({
 				visible : false,
@@ -340,6 +342,53 @@ yepnope([{
 	            </div><!-- /.row -->
 	        </div>    		
         </div>
+        
+
+<div class="page-container hidden-on-narrow">
+        <div class="pdf-page size-a4">
+            <div class="pdf-header">
+                <span class="company-logo">
+                    <img src="../content/web/framework/company-logo.png" /> Blauer See Delikatessen
+                </span>
+                <span class="invoice-number">Invoice #23543</span>
+            </div>
+            <div class="pdf-footer">
+                <p>Blauer See Delikatessen<br />
+                    Lützowplatz 456<br />
+                    Berlin, Germany,  10785
+                </p>
+            </div>
+            <div class="for">
+                <h3>Invoice For</h3>
+                <p>Antonio Moreno<br />
+                    Naucalpan de Juárez<br />
+                    México D.F., Mexico, 53500
+                </p>
+            </div>
+
+            <div class="from">
+                <h3>From</h3>
+                <p style="padding-bottom: 20px; border-bottom: 1px solid #e5e5e5;">Hanna Moos <br />
+                    Lützowplatz 456<br />
+                    Berlin, Germany,  10785
+                </p>
+                <p style="padding-top: 20px;">
+                    Invoice ID: 23543<br />
+                   Invoice Date: 12.03.2014<br />
+                   Due Date: 27.03.2014
+                </p>
+            </div>
+            <div class="pdf-body">
+                <div id="grid"></div>
+                <p class="signature">
+                    Signature: ________________ <br /><br />
+                    Date: 12.03.2014
+                </p>
+            </div>
+        </div>
+    </div>
+    
+        
         <div class="container content-md">   
         
  			<div class="ibox bordered">
