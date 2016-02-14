@@ -419,7 +419,7 @@
 	    },
 		formattedStartDate : function(){
 			if( typeof this.get('startDate') == 'string' ){
-				return return kendo.toString( new Date(this.get("startDate")), "g");
+				return kendo.toString( new Date(this.get("startDate")), "g");
 			}
 	    	return kendo.toString(this.get("startDate"), "g");
 	    },
