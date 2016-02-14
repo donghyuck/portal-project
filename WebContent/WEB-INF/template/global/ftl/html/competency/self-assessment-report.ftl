@@ -195,6 +195,9 @@ yepnope([{
                 title: {
                     text: "Spain electricity production (GWh)"
                 },
+                seriesDefaults: {
+                    type: "bar"
+                },
                 series: [{
                     field: "finalScore",
                     name: "본인"
@@ -203,6 +206,12 @@ yepnope([{
                     field: "essentialElementName",
                     majorGridLines: {
                         visible: false
+                    },
+                    minorGridLines: {
+                        visible: true
+                    },
+                    labels: {
+                        rotation: "auto"
                     }
                 },
                 valueAxis: {
