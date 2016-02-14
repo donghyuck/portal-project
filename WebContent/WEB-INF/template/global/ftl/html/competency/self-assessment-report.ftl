@@ -18,8 +18,7 @@ yepnope([{
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',		
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
-			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
-			'<@spring.url "/js/kendo/kendo.dataviz.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.all.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
 			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
@@ -169,7 +168,7 @@ yepnope([{
                 title: {
                     text: "Budget report"
                 },
-                dataSource:grid.dataSource,
+                dataSource: grid.dataSource,
                 seriesDefaults: {
                     type: "radarLine"
                 },
