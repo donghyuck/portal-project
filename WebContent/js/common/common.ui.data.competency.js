@@ -418,7 +418,7 @@
 	    	return kendo.toString(this.get("modifiedDate"), "g");
 	    },
 		formattedStartDate : function(){
-			if( typeof this.get('startDate') == 'string')){
+			if( typeof this.get('startDate') == 'string' ){
 				return return kendo.toString( new Date(this.get("startDate")), "g");
 			}
 	    	return kendo.toString(this.get("startDate"), "g");
