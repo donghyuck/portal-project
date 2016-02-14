@@ -150,7 +150,7 @@ yepnope([{
 	            ]
 			} );
 			
-			$("#assessed-summary-grid").kendoChart({
+			$("#assessed-summary-chart").kendoChart({
 				autoBind:false,
                 title: {
                     text: "Budget report"
