@@ -215,9 +215,8 @@ yepnope([{
 				data:data,
 			},
                 title: {
-                    text: "Spain electricity production (GWh)",
-                    font: "나눔 고딕, Nanum Gothic"
-                }, 
+                    text: "Spain electricity production (GWh)"
+                },
                 seriesDefaults: {
                     type: "bar"
                 },
@@ -234,8 +233,7 @@ yepnope([{
                         visible: true
                     },
                     labels: {
-                        rotation: "auto",
-                        font: "나눔 고딕, Nanum Gothic"
+                        rotation: "auto"
                     }
                 },
                 valueAxis: {
@@ -285,7 +283,11 @@ yepnope([{
 			background-color: rgba(245, 245, 245, 0.952941);
 		}
 	
-		
+		.k-widget {
+	        font-family: "나눔 고딕", "Nanum Gothic";
+	        font-size: .9em;
+	    }		
+	    
 		.btn-xxl {
 			padding 20px 26px;		
 			font-size : 24px;	
