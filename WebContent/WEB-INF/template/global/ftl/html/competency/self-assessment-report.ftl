@@ -127,8 +127,7 @@ yepnope([{
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
-						console.log( kendo.stringify( data ) );
-						
+						$("#assessed-summary-chart").data('kendoChart').dataSource.data = data;
 					});
 				}
 			});		
@@ -155,7 +154,9 @@ yepnope([{
                 title: {
                     text: "Budget report"
                 },
-                dataSource: observable.summaryDataSource ,
+                dataSource: {
+                    data: []
+                },
                 seriesDefaults: {
                     type: "radarLine"
                 },
