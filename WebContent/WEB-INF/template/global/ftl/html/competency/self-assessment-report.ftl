@@ -321,6 +321,51 @@ yepnope([{
 			color:#333!important;
 		}
 		
+		
+		.pdf-page {
+            margin: 0 auto;
+            box-sizing: border-box;
+            box-shadow: 0 5px 10px 0 rgba(0,0,0,.3);
+            background-color: #fff;
+            color: #333;
+            position: relative;
+        }
+        .pdf-header {
+            position: absolute;
+            top: .5in;
+            height: .6in;
+            left: .5in;
+            right: .5in;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .invoice-number {
+            padding-top: .17in;
+            float: right;
+        }
+        .pdf-footer {
+            position: absolute;
+            bottom: .5in;
+            height: .6in;
+            left: .5in;
+            right: .5in;
+            padding-top: 10px;
+            border-top: 1px solid #e5e5e5;
+            text-align: left;
+            color: #787878;
+            font-size: 12px;
+        }
+        .pdf-body {
+            position: absolute;
+            top: 3.7in;
+            bottom: 1.2in;
+            left: .5in;
+            right: .5in;
+        }
+
+        .size-a4 { width: 8.3in; height: 11.7in; }
+        .size-letter { width: 8.5in; height: 11in; }
+        .size-executive { width: 7.25in; height: 10.5in; }
+        		
 	</style>
 </#compress>
 </head>
