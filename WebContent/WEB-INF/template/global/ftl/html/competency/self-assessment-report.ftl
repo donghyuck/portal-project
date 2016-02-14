@@ -531,8 +531,8 @@ function createChart() {
         	<div class="row">
         		<div class="col-sm-12">
         			<h2 class="title-v2">진단결과</h2>
-        			<div id="chart" style="width:500px; height:300px;"></div>  
-        			<div id="assessed-summary-chart" style="width:500px; height:300px;"></div>  
+        			<div id="chart"></div>  
+        			<div id="assessed-summary-chart"></div>  
 					<div id="assessed-summary-grid"></div>  
 				</div>	 
 			</div>     	
