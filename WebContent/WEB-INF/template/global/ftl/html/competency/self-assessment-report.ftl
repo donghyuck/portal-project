@@ -150,13 +150,12 @@ yepnope([{
 	            ]
 			} );
 			
-			/**
 			$("#assessed-summary-grid").kendoChart({
 				autoBind:false,
                 title: {
                     text: "Budget report"
                 },
-                dataSource: { data: []},
+                dataSource: observable.summaryDataSource ,
                 seriesDefaults: {
                     type: "radarLine"
                 },
@@ -172,9 +171,7 @@ yepnope([{
                         template: "$#= value #k"
                     }
                 }
-            });		
-            */	
-			
+            });	
 		}
 		if( source ){
 			renderTo.data("model").setSource(source);
