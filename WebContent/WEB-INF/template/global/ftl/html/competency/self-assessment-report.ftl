@@ -149,6 +149,7 @@ yepnope([{
 	            	{ 'field': 'finalScore', title:'&nbsp;', aggregates: ["sum", "max", "min"], groupFooterTemplate: '역량점수 :  <span>#= sum #</span>', footerTemplate: "총점: #=sum #"  }                                 
 	            ]
 			} );
+			
 			$("#assessed-summary-grid").kendoChart({
 				autoBind:false,
                 title: {
