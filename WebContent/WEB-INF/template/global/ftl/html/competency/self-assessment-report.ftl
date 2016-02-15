@@ -223,7 +223,7 @@ yepnope([{
 				data:data,
 			},
                 title: {
-                    text: "역량진단 차트",
+                    text: "척도에 따른 진단결과 차트",
                 },
                 seriesDefaults: {
                     type: "bar"
