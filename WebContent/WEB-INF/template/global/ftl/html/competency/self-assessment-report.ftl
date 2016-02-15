@@ -164,7 +164,7 @@ yepnope([{
 						$this.set('finalMaxScore', aggregates.finalScore.max);
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
-						$this.elementDataSource.data = data;
+						$this.elementDataSource.data(data);
 						createRadarChart(data)
 						createBarChart(data);		
 					});				
