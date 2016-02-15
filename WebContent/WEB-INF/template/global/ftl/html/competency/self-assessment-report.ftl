@@ -428,16 +428,14 @@ yepnope([{
 		}
 		
 		.score-image {
-		    display: inline-block;
-		    width: 32px;
-		    height: 32px;
-		    border-radius: 50%;
-		    background-size: 32px 35px;
+		    display: inline-block!important;
+		    border-radius: 50%!important;
+		    background-size: 48px 48px;
 		    background-position: center center;
 		    vertical-align: middle;
 		    line-height: 32px;
 		    box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
-		    margin-left: 5px;
+		    margin-left: 0px;
 		}							
 	</style>
 </#compress>
