@@ -394,6 +394,7 @@ yepnope([{
 			
 		.bg-selected {
 			background-color: #3498db!important;
+			color:#fff;
 		}	
 			
 	</style>
