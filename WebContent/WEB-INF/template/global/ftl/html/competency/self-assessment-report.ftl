@@ -383,6 +383,7 @@ yepnope([{
 		    text-transform: uppercase;
 		    font-family: Arial, Helvetica, sans-serif;
 		    font-size: .8em;
+		    color:#333;
 		}		
 			
 		.bg-selected {
@@ -395,13 +396,15 @@ yepnope([{
 		}
 		
 		.service-block-header {		
+			padding: 20px;
 		}
 		
 		.service-block-body{
+			padding: 20px;
 			background-color: #fff!important;
+			color:#333!important;
 		}
-		
-		
+
 		.highest {
 		    color: #B5FF40!important;
 		    font-size: 36px!important;	
@@ -414,7 +417,7 @@ yepnope([{
 		    color: #cd151e!important;
 		    font-size: 36px!important;	
 		}
-					
+							
 	</style>
 </#compress>
 </head>
@@ -580,13 +583,14 @@ yepnope([{
 
 							<div class="col-sm-6">
 							<!--
-								<div class="service-block-v3 service-block-blue">
+								<div class="service-block-v3 service-block-blue no-padding">
+								<div class="service-block-header">
 									<i class="icon-screen-desktop"></i>
 									<span class="service-heading">Overall Page Views</span>
 									<span class="counter">324,056</span>
-
+								</div>
 									<div class="clearfix margin-bottom-10"></div>
-
+								<div class="service-block-body">
 									<div class="row margin-bottom-20">
 										<div class="col-xs-6 service-in">
 											<small>Last Week</small>
@@ -605,6 +609,7 @@ yepnope([{
 										</div>
 										<small>15% higher <strong>than last month</strong></small>
 									</div>
+								</div>	
 								</div>
 							-->
 							</div>
