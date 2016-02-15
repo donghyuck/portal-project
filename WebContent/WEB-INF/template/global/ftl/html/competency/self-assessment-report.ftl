@@ -673,7 +673,7 @@ yepnope([{
 		
 		<script type="text/x-kendo-template" id="my-assessed-score-column-template">			
 			#if ( data.finalScore < 3 ) {#
-			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-trainers"></i>			
+			<i class="score-image icon-flat icon-svg icon-svg-md basic-color-siren"></i>			
 			#}else if ( data.finalScore >= 3 && data.finalScore < 3.75 ) {#
 			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-walking"></i>
 			#}else if ( data.finalScore > 3.75 && data.finalScore < 4 ){#
