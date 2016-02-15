@@ -641,7 +641,7 @@ yepnope([{
                  data-editable="false"
                  data-scrollable="false"
                  data-columns="[
-                                 { 'field': 'competencyName', 'width': 270 , 'groupable':false}
+                                 { 'field': 'essentialElementName'}
                               ]"
                  data-bind="source: summaryDataSource"
                  style="height: 200px"></div>
