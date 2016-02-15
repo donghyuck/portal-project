@@ -566,7 +566,7 @@ yepnope([{
 									<span class="assessed_final_score" data-bind="text:finalTotalScore"></span>
 									<div class="clearfix margin-bottom-10"></div>
 								</div>	
-								<div class="service-block-body">	
+								<div class="service-block-body rounded-bottom">	
 									<div class="row">
 										<div class="col-xs-4 service-in">
 											<small>가장낮은영역점수</small>
