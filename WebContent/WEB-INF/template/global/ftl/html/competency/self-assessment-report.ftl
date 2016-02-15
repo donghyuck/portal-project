@@ -192,7 +192,7 @@ yepnope([{
   		var renderTo = $('#assessed-summary-chart');	
 		renderTo.kendoChart({
 			title: {
-				text: "Budget report"
+				text: "타 집단과의 영역별 점수 비교"
 			},
 			dataSource: {
 				data: data
@@ -226,7 +226,7 @@ yepnope([{
 				data:data,
 			},
                 title: {
-                    text: "척도에 따른 진단결과 차트",
+                    text: "척도에 따른 영역별 점수 분포",
                 },
                 seriesDefaults: {
                     type: "bar"
