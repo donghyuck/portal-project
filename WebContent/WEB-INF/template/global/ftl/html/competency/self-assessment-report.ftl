@@ -703,7 +703,7 @@ yepnope([{
 				</div>	 
 			</div>     
 			<h2 class="title-v2">역량별 상세 분석</h2>        	 		
-        	<div id="assessed-competency-details" class="row no-border bg-transparent">
+        	<div id="assessed-competency-details" class="no-border bg-transparent">
         	
         	</div>	
 		</div><!--/end container-->			
