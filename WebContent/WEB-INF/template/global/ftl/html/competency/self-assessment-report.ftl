@@ -394,6 +394,14 @@ yepnope([{
 			font-family: Arial, Helvetica, sans-serif;
 		}
 		
+		.service-block-header {		
+		}
+		
+		.service-block-body{
+			background-color: #fff!important;
+		}
+		
+		
 		.highest {
 		    color: #B5FF40!important;
 		    font-size: 36px!important;	
