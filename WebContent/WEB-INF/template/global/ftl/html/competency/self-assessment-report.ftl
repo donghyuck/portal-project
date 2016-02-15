@@ -388,6 +388,7 @@ yepnope([{
 
 		.service-block-v3 .service-in small {
 		    text-transform: uppercase;
+		    font-family: Arial, Helvetica, sans-serif;
 		    font-size: .8em;
 		}		
 			
@@ -544,7 +545,7 @@ yepnope([{
 									<div class="row margin-bottom-20">
 										<div class="col-xs-4 service-in">
 											<small>가장낮은영역점수</small>
-											<h4 class="counter" data-bind="text:finalMinScore"></h4>
+											<h4 class="counter text-danger" data-bind="text:finalMinScore"></h4>
 										</div>
 										<div class="col-xs-4 text-center service-in">
 											<small>평균영역점수</small>
