@@ -174,7 +174,7 @@ yepnope([{
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
 						
-						createRadarChart(data)
+						createRadarChart($('#assessed-summary-chart'), data)
 						createBarChart(data);		
 						/*
 						var _template = kendo.template($("#my-assessed-conpetency-detail-template").html());
@@ -193,11 +193,15 @@ yepnope([{
 						$.each($this.summaryDataSource.view(), function( index, item ) {
 							dataSource.add( { 'competencyName': item.value } );						
 						});
-						
+												
 						$("#assessed-competency-details").kendoListView({
 						     dataSource: dataSource,
 						     template: kendo.template($("#my-assessed-conpetency-detail-template").html()),
-						     autoBind: true
+						     dataBound: function(){
+						     
+						     	console.log(this.dataItems())
+						     
+						     }
 						 });
 						 
 
@@ -227,8 +231,7 @@ yepnope([{
 		}
 	}		
     
-    function createRadarChart(data){
-  		var renderTo = $('#assessed-summary-chart');	
+    function createRadarChart(renderTo, data){
 		renderTo.kendoChart({
 			title: {
 				text: "타 집단과의 영역별 점수 비교"
