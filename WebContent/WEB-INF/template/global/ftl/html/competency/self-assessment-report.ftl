@@ -635,9 +635,8 @@ yepnope([{
 					        			
 					<div id="assessed-summary-grid" class="margin-bottom-10"></div>  
 
-					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">		
-
-								<table class="table no-margin" style="border-top: 1px solid #ddd;">
+					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">
+								<table class="table no-margin">
 					            	<thead>
 					                	<tr>
 					                    	<th>역량</th>
@@ -666,14 +665,11 @@ yepnope([{
 		
 		<script type="text/x-kendo-template" id="my-assessed-score-template">
 		<tr>
-		    <td>    
-		    	
+		    <td>    		    	
 		    </td>
-			<td>
-			
+			<td>			
 			</td>
-			<td>
-			
+			<td>			
 			</td>			
 		</tr>			        
 		</script>		
