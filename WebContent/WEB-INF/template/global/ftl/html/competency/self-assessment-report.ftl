@@ -158,6 +158,10 @@ yepnope([{
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
+						
+						
+						console.log( kendo.stringify( $this.summaryDataSource.aggregates() ) );
+						
 						createRadarChart(data)
 						createBarChart(data);		
 					});				
