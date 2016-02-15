@@ -728,10 +728,10 @@ yepnope([{
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
 		<div class="competency-summary-box">
 			<div class="separator-2"></div>
-			<h3>#: competencyName #</h3>
+			<h4>#: competencyName #</h4>
 			<div class="row">
 				<div class="col-sm-6">
-					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">
+					<div class="k-content rounded bordered margin-bottom-10">
 						<div class="chart"></div>
 					</div>
 				</div>			
