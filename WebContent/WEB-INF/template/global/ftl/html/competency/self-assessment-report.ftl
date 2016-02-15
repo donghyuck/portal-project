@@ -386,6 +386,10 @@ yepnope([{
 		    font-size: .8em;
 		}		
 			
+		.bg-selected {
+			background-color: #3498db!important;
+		}	
+			
 	</style>
 </#compress>
 </head>
@@ -411,8 +415,7 @@ yepnope([{
 				<div class="ibox-title">
 					<h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
 				</div>
-
-<div class="ibox-content bg-transparent">
+				<div class="ibox-content bg-transparent">
 						<table class="table no-margin-b">
 					    	<thead>
 					        	<tr>
@@ -460,10 +463,9 @@ yepnope([{
 									</td>
 								</tr>																									
 							</tbody>		                    
-			        	</table>
-</div>			        	
-	                    	
-	                   	</div>       
+			       	</table>
+				</div>  	
+			</div>       
         
         	<h2 class="title-v2">진단직무</h2>
         	<div class="p-xs rounded bordered bg-white m-b-sm">        		
@@ -490,7 +492,7 @@ yepnope([{
 									</tr>	
 									<tr>
 										<td>직무</td>
-										<td class="bg-primary">
+										<td class="bg-selected">
 											<span  data-bind="{text: assessment.job.name}" ></span>
 										</td>
 									</tr>	
@@ -529,7 +531,7 @@ yepnope([{
         		
 						<div class="row margin-bottom-10">
 							<div class="col-sm-6 sm-margin-bottom-20">
-								<div class="service-block-v3 service-block-u">
+								<div class="service-block-v3 service-block-u rounded">
 									<i class="icon-flat icon-svg icon-svg-md business-color-for-beginner"></i>
 									<span class="service-heading" style="font-size:.6em;" >직무역량진단결과</span>
 									<span class="assessed_final_score">32.21</span>
@@ -560,6 +562,7 @@ yepnope([{
 							</div>
 
 							<div class="col-sm-6">
+							<!--
 								<div class="service-block-v3 service-block-blue">
 									<i class="icon-screen-desktop"></i>
 									<span class="service-heading">Overall Page Views</span>
@@ -586,6 +589,7 @@ yepnope([{
 										<small>15% higher <strong>than last month</strong></small>
 									</div>
 								</div>
+							-->
 							</div>
 						</div>
 						
@@ -600,7 +604,7 @@ yepnope([{
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
-		<tr #if ( getMyAssessment().jobLevelName == name ) {# class="bg-primary" #}# >
+		<tr #if ( getMyAssessment().jobLevelName == name ) {# class="bg-selected" #}# >
 		    <td>    
 		    	#: name #
 		    </td>
