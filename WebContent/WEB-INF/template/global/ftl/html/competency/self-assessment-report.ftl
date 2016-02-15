@@ -732,7 +732,7 @@ yepnope([{
 		<div class="ibox">
 			<div class="separator-2"></div>
 			<h4>#: competencyName #</h4>
-			<div class="ibox-content no-padding rounded-bottom">
+			<div class="ibox-content rounded-bottom" style="padding:5px;">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="chart"></div>
