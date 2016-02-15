@@ -262,6 +262,18 @@ yepnope([{
                         to: 3.75,
                         color: "#c00",
                         opacity: 0.2
+                    },
+                    {
+                        from: 3,
+                        to: 3.75,
+                        color: "#4cd964",
+                        opacity: 0.5
+                    },
+                    {
+                        from: 4,
+                        to: 5,
+                        color: "#34aadc",
+                        opacity: 0.5
                     }
                     
                     ],
