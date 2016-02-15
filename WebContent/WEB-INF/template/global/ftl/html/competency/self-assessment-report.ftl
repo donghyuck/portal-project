@@ -372,7 +372,7 @@ yepnope([{
 		}
 		
 		.assessed_final_score {
-
+			font: 400 12px Arial, Helvetica, sans-serif;
 			font-size: 110px;
 		    line-height: 1em;
 		    letter-spacing: -2px;
