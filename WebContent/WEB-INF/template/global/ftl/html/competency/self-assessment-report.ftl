@@ -639,7 +639,7 @@ yepnope([{
 					<div data-role="grid"
 					data-auto-bind="false"
                  data-editable="false"
-                 data-groupable="true"
+                 data-groupable="false"
                  data-columns="[
                                  { 'field': 'competencyName', 'width': 270 }
                               ]"
