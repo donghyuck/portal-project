@@ -694,7 +694,7 @@ yepnope([{
 
 			<div class="clearfix margin-bottom-20"></div>
 			<div class="separator-2"></div>  
-			<h3>전체 역영별 분석</h3> 
+			<h3>1. 전체 진단 영역별 분석</h3> 
 								
 					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">	
 						<div id="assessed-summary-chart"></div>  				
@@ -703,7 +703,10 @@ yepnope([{
 					        			
 					<div id="assessed-summary-grid" class="margin-bottom-10"></div>  
 
-					
+			<div class="clearfix margin-bottom-20"></div>
+			<div class="separator-2"></div>  
+			<h3>3. 진단 척도에 따른 상세 분석</h3> 
+								
 					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">		
 						<div id="assessed-summary-bar-chart"></div> 		
 					</div>
@@ -727,7 +730,7 @@ yepnope([{
 			</div>   
 			<div class="clearfix margin-bottom-20"></div>
 			<div class="separator-2"></div>  
-			<h3>역량별 상세 분석</h3>        	 		
+			<h3>3. 역량별 상세 분석</h3>        	 		
         	<div id="assessed-competency-details" class="no-border bg-transparent"></div>	
 		</div><!--/end container-->			
  	</div>
