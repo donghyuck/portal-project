@@ -172,8 +172,9 @@ yepnope([{
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
 						
-						
-						console.log( kendo.stringify( $this.summaryDataSource.view()) );
+						$.each($this.summaryDataSource.view(), function( index, value ) {
+							console.log( value.competencyName );						
+						});
 						
 
 					});				
