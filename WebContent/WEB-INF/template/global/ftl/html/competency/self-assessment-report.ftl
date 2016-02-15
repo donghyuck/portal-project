@@ -406,11 +406,11 @@ yepnope([{
 		}
 
 		.highest {
-		    color: #B5FF40!important;
+		    color: #639514!important;
 		    font-size: 36px!important;	
 		}
 		.average {			
-		    color: #fff!important;
+		    color: #4da3d5!important;
 		    font-size: 36px!important;	
 		}		
 		.lowest {			
