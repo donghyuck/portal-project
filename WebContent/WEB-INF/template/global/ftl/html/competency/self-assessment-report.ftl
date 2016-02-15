@@ -712,13 +712,14 @@ yepnope([{
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
-		
-						<div class="news-v1-in">
-							<h3>#: competencyName #</h3>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
-							
-						</div>
+		<div class="ibox bordered rounded">
+				<div class="ibox-title">
+					<h2>#: competencyName #</h2>                        
+				</div>
+				<div class="ibox-content">
 						
+				</div>  	
+		</div>						
 		</script>	
 		
 		
