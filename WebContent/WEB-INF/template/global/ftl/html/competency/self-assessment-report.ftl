@@ -455,6 +455,7 @@ yepnope([{
 	                <div class="col-sm-4 text-right">
 						<a href="#" class="icon-svg-btn " data-bind="click:saveAsPdf">
 							<i class="btn-label icon-flat icon-svg icon-svg-sm file-color-pdf"></i>
+						</a>	
 	                </div>
 	            </div><!-- /.row -->
 	        </div>    		
