@@ -397,12 +397,18 @@ yepnope([{
 			color:#fff;
 		}	
 		
-		.lowest {
+		.service-block-v3 .service-in h4 {
 			font-family: Arial, Helvetica, sans-serif;
-		    color: #cd151e!important;	
-		    margin: 0;
-		    font-size: 36px!important;
-		    font-weight: 700;		
+		}
+		
+		.highest {
+		    color: #639514!important;
+		    font-size: 36px!important;	
+		}
+		
+		.lowest {			
+		    color: #cd151e!important;
+		    font-size: 36px!important;	
 		}
 					
 	</style>
@@ -562,7 +568,7 @@ yepnope([{
 										</div>
 										<div class="col-xs-4 text-right service-in">
 											<small>가장높은영역점수</small>
-											<h4 class="counter" data-bind="text:finalMaxScore"></h4>
+											<h4 class="counter highest" data-bind="text:finalMaxScore"></h4>
 										</div>
 									</div>
 									<div class="statistics">
