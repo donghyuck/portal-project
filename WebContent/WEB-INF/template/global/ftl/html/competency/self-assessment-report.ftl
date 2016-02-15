@@ -380,6 +380,11 @@ yepnope([{
 		    text-indent: -8px;
 		    color: #fff;		
 		}  
+
+		.service-block-v3 .service-in small {
+		    text-transform: uppercase;
+		    font-size: .8em;
+		}		
 			
 	</style>
 </#compress>
@@ -530,12 +535,16 @@ yepnope([{
 									<span class="assessed_final_score">32.21</span>
 									<div class="clearfix margin-bottom-10"></div>
 									<div class="row margin-bottom-20">
-										<div class="col-xs-6 service-in">
-											<small>Last Week</small>
-											<h4 class="assessed_final_score">32.21</h4>
+										<div class="col-xs-4 service-in">
+											<small>가장낮은영역점수</small>
+											<h4 class="counter">32.21</h4>
 										</div>
-										<div class="col-xs-6 text-right service-in">
-											<small>Last Month</small>
+										<div class="col-xs-4 text-center service-in">
+											<small>평균영역점수</small>
+											<h4 class="counter">6,048</h4>
+										</div>
+										<div class="col-xs-4 text-right service-in">
+											<small>가장높은영역점수</small>
 											<h4 class="counter">6,048</h4>
 										</div>
 									</div>
