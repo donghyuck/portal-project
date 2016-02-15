@@ -166,6 +166,11 @@ yepnope([{
 						$this.set('finalMaxScore', aggregates.finalScore.max);
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
+						
+						dataSource.group({ field: "competencyId" });
+						var view = dataSource.view();
+						console.log( kendo.stringify(view) );
+						
 						$this.elementDataSource.data(data);
 						createRadarChart(data)
 						createBarChart(data);		
