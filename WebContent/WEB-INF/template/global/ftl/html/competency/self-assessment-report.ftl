@@ -526,7 +526,7 @@ yepnope([{
 								<div class="service-block-v3 service-block-u">
 									<i class="icon-users"></i>
 									<span class="service-heading">Overall Visits</span>
-									<span class="counter">52,147</span>
+									<span class="assessed_final_score">52,147</span>
 
 									<div class="clearfix margin-bottom-10"></div>
 
