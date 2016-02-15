@@ -205,6 +205,10 @@ yepnope([{
 			series: [{
 				name: "본인",
 				field: "finalScore"
+			},
+			{
+				name: "전체",
+				field: "othersAverageScore"
 			}],
 			categoryAxis: {
 				field: "essentialElementName"
