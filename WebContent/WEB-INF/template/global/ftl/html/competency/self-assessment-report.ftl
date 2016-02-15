@@ -198,9 +198,9 @@ yepnope([{
 						     dataSource: dataSource,
 						     template: kendo.template($("#my-assessed-conpetency-detail-template").html()),
 						     dataBound: function(){
-						     
-						     	console.log(this.dataItems())
-						     
+						     	$.each(this.dataItems(), function( index, item ) {
+						     		console.log( item.uid + "/" + item.get("competencyName") );						     	
+						     	});
 						     }
 						 });
 						 
