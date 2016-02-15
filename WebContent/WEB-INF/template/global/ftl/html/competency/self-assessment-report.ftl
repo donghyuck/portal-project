@@ -198,7 +198,7 @@ yepnope([{
 						     template: kendo.template($("#my-assessed-conpetency-detail-template").html()),
 						     dataBound: function(){
 						     	
-						     	$("#assessed-competency-details").removeClass("k-widget k-listview")
+						     	$("#assessed-competency-details").removeClass("k-widget k-listview");
 						     	
 						     	$.each(this.dataItems(), function( index, item ) {
 						     		console.log( item.uid + "/" + item.get("competencyName") );
@@ -729,10 +729,10 @@ yepnope([{
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
-		<div class="competency-summary-box">
+		<div class="ibox">
 			<div class="separator-2"></div>
 			<h4>#: competencyName #</h4>
-			<div class="row">
+			<div class="ibox-content">
 				<div class="col-sm-6">
 					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">
 						<div class="chart"></div>
@@ -742,8 +742,6 @@ yepnope([{
 					<div class="grid"></div>
 				</div>
 			</div>
-			
-			
 		</div>						
 		</script>	
 		
