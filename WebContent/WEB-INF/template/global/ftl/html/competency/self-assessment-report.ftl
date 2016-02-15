@@ -361,14 +361,13 @@ yepnope([{
 	        </div>    		
         </div>
         
-        <div class="container content-md pdf-page">   
-        
- 			<div class="ibox bordered">
-	                		<div class="ibox-title">
-	                        	  <h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
-	                    	</div>
+        <div class="container content-md pdf-page">           
+ 			<div class="ibox bordered rounded">
+				<div class="ibox-title">
+					<h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
+				</div>
 
-<div class="ibox-content">
+<div class="ibox-content bg-transparent">
 						<table class="table no-margin-b">
 					    	<thead>
 					        	<tr>
