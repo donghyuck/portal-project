@@ -656,8 +656,8 @@ yepnope([{
                  		data-scrollable="false"
                  		data-columns="[
                  			{ 'field': 'competencyName', title:'역량' },
-                        	{ 'field': 'essentialElementName', title:'진단영역', 'template':$('\#my-assessed-score-column-template').html() },
-                        	{ 'field': 'finalScore', title:'점수' },
+                        	{ 'field': 'essentialElementName', title:'진단영역'},
+                        	{ 'field': 'finalScore', title:'점수', 'template':$('\#my-assessed-score-column-template').html()  },
                       	]"
                 		 data-bind="source:elementDataSource"
                 		 style="min-height:200px"></div>
@@ -681,7 +681,7 @@ yepnope([{
 			#}else if ( data.finalScore >= 4){#
 			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-exercise"></i>
 			#}#       
-			#: data.essentialElementName #
+			#: data.finalScore #
 		</script>		
 		
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
