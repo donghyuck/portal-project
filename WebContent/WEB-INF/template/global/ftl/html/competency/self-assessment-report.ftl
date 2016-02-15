@@ -372,6 +372,7 @@ yepnope([{
 		}
 		
 		.assessed_final_score {
+			display:block;
 			font: 400 12px Arial, Helvetica, sans-serif;
 			font-size: 110px;
 		    line-height: 1em;
@@ -525,7 +526,7 @@ yepnope([{
 							<div class="col-sm-6 sm-margin-bottom-20">
 								<div class="service-block-v3 service-block-u">
 									<i class="icon-users"></i>
-									<span class="service-heading">역량진단점수</span>
+									<span class="service-heading" style="font-size:.6em;" >역량진단점수</span>
 									<span class="assessed_final_score">32.21</span>
 									<div class="clearfix margin-bottom-10"></div>
 									<div class="row margin-bottom-20">
