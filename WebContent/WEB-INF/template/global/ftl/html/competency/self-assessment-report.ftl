@@ -694,7 +694,7 @@ yepnope([{
 
 			<div class="clearfix margin-bottom-20"></div>
 			<div class="separator-2"></div>  
-			<h3>1. 전체 진단 영역별 분석</h3> 
+			<h3>1. 전체 진단 영역별 점수 분석</h3> 
 								
 					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">	
 						<div id="assessed-summary-chart"></div>  				
