@@ -371,6 +371,14 @@ yepnope([{
 			color:#333!important;
 		}
 		
+		.assessed_final_score {
+
+			font-size: 110px;
+		    line-height: 1em;
+		    letter-spacing: -2px;
+		    text-indent: -8px;
+		    color: #454447;		
+		}  
 			
 	</style>
 </#compress>
@@ -525,7 +533,7 @@ yepnope([{
 									<div class="row margin-bottom-20">
 										<div class="col-xs-6 service-in">
 											<small>Last Week</small>
-											<h4 class="counter">1,385</h4>
+											<h4 class="assessed_final_score">1,385</h4>
 										</div>
 										<div class="col-xs-6 text-right service-in">
 											<small>Last Month</small>
