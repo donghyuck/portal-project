@@ -101,6 +101,10 @@ yepnope([{
 			var observable =  common.ui.observable({
 				visible : false,
 				assessment: new common.ui.data.competency.Assessment(),
+				finalTotalScore : 0 ,
+				finalMaxScore : 0,
+				finalMinScore : 0,
+				finalAvgScore : 0,
 				saveAsPdf:function(){
 					getPdf( renderTo.find('.pdf-page') );
 					return false;
@@ -158,10 +162,11 @@ yepnope([{
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
-						
-						
-						console.log( kendo.stringify( $this.summaryDataSource.aggregates() ) );
-						
+						var aggregates = $this.summaryDataSource.aggregates();
+						$this.set('finalTotalScore', aggregates.finalScore.sum);
+						$this.set('finalMaxScore', aggregates.finalScore.max);
+						$this.set('finalMinScore', aggregates.finalScore.min);
+						$this.set('finalAvgScore', aggregates.finalScore.average);
 						createRadarChart(data)
 						createBarChart(data);		
 					});				
@@ -534,20 +539,20 @@ yepnope([{
 								<div class="service-block-v3 service-block-u rounded">
 									<i class="icon-flat icon-svg icon-svg-md business-color-for-beginner"></i>
 									<span class="service-heading" style="font-size:.6em;" >직무역량진단결과</span>
-									<span class="assessed_final_score">32.21</span>
+									<span class="assessed_final_score" data-bind="text:finalTotalScore"></span>
 									<div class="clearfix margin-bottom-10"></div>
 									<div class="row margin-bottom-20">
 										<div class="col-xs-4 service-in">
 											<small>가장낮은영역점수</small>
-											<h4 class="counter">32.21</h4>
+											<h4 class="counter" data-bind="text:finalMinScore"></h4>
 										</div>
 										<div class="col-xs-4 text-center service-in">
 											<small>평균영역점수</small>
-											<h4 class="counter">6,048</h4>
+											<h4 class="counter" data-bind="text:finalAvgScore"></h4>
 										</div>
 										<div class="col-xs-4 text-right service-in">
 											<small>가장높은영역점수</small>
-											<h4 class="counter">6,048</h4>
+											<h4 class="counter" data-bind="text:finalMaxScore"></h4>
 										</div>
 									</div>
 									<div class="statistics">
