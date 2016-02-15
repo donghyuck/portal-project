@@ -264,8 +264,8 @@ yepnope([{
                         opacity: 0.2
                     },
                     {
-                        from: 3,
-                        to: 3.75,
+                        from: 3.75,
+                        to: 4,
                         color: "#4cd964",
                         opacity: 0.5
                     },
@@ -277,7 +277,7 @@ yepnope([{
                     }
                     
                     ],
-                    max: 6,
+                    max: 5,
                     line: {
                         visible: false
                     }
