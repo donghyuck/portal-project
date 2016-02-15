@@ -559,11 +559,14 @@ yepnope([{
         		
 						<div class="row margin-bottom-10">
 							<div class="col-sm-6 sm-margin-bottom-20">
-								<div class="service-block-v3 service-block-u rounded">
+								<div class="service-block-v3 service-block-u no-padding rounded">
+								<div class="service-block-header">
 									<i class="icon-flat icon-svg icon-svg-md business-color-for-beginner"></i>
 									<span class="service-heading" style="font-size:.6em;" >직무역량진단결과</span>
 									<span class="assessed_final_score" data-bind="text:finalTotalScore"></span>
 									<div class="clearfix margin-bottom-10"></div>
+								</div>	
+								<div class="service-block-body">	
 									<div class="row">
 										<div class="col-xs-4 service-in">
 											<small>가장낮은영역점수</small>
@@ -578,6 +581,7 @@ yepnope([{
 											<h4 class="counter highest" data-bind="text:finalMaxScore"></h4>
 										</div>
 									</div>
+								</div>	
 								</div>
 							</div>
 
