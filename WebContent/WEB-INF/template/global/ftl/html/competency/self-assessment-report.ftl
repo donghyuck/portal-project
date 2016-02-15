@@ -173,9 +173,7 @@ yepnope([{
 						$this.set('finalAvgScore', aggregates.finalScore.average);
 						
 						
-						$this.elementDataSource.group({ field: "competencyId" });
-						var view = this.view();
-						console.log( kendo.stringify(view) );
+						console.log( kendo.stringify( $this.summaryDataSource.view()) );
 						
 
 					});				
