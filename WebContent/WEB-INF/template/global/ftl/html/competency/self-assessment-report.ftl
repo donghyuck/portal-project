@@ -571,7 +571,6 @@ yepnope([{
 		        </div>   
 	        </div>
 	                	 		
-	                	 		
 	        <h2 class="title-v2">진단결과</h2>        	 		
         	<div class="row">
         		<div class="col-sm-12">
@@ -642,14 +641,15 @@ yepnope([{
 					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">	
 						<div id="assessed-summary-chart"></div>  				
 					</div>
+
+					        			
+					<div id="assessed-summary-grid" class="margin-bottom-10"></div>  
+
 					
 					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">		
 						<div id="assessed-summary-bar-chart"></div> 		
 					</div>
-					        			
-					<div id="assessed-summary-grid" class="margin-bottom-10"></div>  
-
-
+					
 					<div data-role="grid"
 						data-auto-bind="false"
                  		data-editable="false"
