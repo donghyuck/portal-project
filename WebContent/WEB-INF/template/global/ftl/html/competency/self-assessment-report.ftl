@@ -13,7 +13,8 @@ yepnope([{
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/headers/header-v6.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',
-			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',		
+			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',	
+			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
@@ -446,13 +447,13 @@ yepnope([{
 <body class="">
 	<div class="page-loader"></div>
  	<div id="my-assessment" class="wrapper"> 	
-		<div class="header-v6 header-classic-dark header-sticky">
+		<div class="header-v6 header-classic-dark header-sticky p-xs">
 			<div class="container">
 				<div class="row">
 	                <div class="col-sm-8">
 	                </div>
 	                <div class="col-sm-4 text-right">
-						<a href="#" class="btn btn-flat btn-outline btn-labeled btn-primary" data-bind="click:saveAsPdf">
+						<a href="#" class="icon-svg-btn " data-bind="click:saveAsPdf">
 							<i class="btn-label icon-flat icon-svg icon-svg-sm file-color-pdf"></i>
 						PDF 저장</a>
 	                </div>
