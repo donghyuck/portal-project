@@ -453,65 +453,129 @@ yepnope([{
         
         	<h2 class="title-v2">진단직무</h2>
         	<div class="p-xs rounded bordered bg-white m-b-sm">        		
-	    	<div class="row">
-		   		<div class="col-sm-6">
+		    	<div class="row">
+			   		<div class="col-sm-6">
+							<table class="table">
+						    	<thead>
+						        	<tr>
+						            	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md user-color-worker"></i></th>
+						           	</tr>
+						   		</thead>
+						     	<tbody>
+									<tr>
+										<td width="100">대분류</td>
+										<td><span data-bind="{ text: assessment.job.classification.classifiedMajorityName }" class="text-muted"></span></td>
+									</tr>	
+									<tr>
+										<td>중분류</td>
+										<td><span data-bind="{text: assessment.job.classification.classifiedMiddleName}" class="text-muted"></span></td>
+									</tr>
+									<tr>
+										<td>소분류</td>
+										<td><span data-bind="{text: assessment.job.classification.classifiedMinorityName}" class="text-muted"></span></td>
+									</tr>	
+									<tr>
+										<td>직무</td>
+										<td class="bg-primary">
+											<span  data-bind="{text: assessment.job.name}" ></span>
+										</td>
+									</tr>	
+									<tr>
+										<td>직무정의</td>
+										<td>
+											<span data-bind="{text: assessment.job.description}" class="text-muted"></span>
+										</td>
+									</tr>																										
+								</tbody>		                    
+				        	</table>		                	
+			   		</div>
+			  		<div class="col-sm-6">
 						<table class="table">
 					    	<thead>
-					        	<tr>
-					            	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md user-color-worker"></i></th>
-					           	</tr>
-					   		</thead>
-					     	<tbody>
-								<tr>
-									<td width="100">대분류</td>
-									<td><span data-bind="{ text: assessment.job.classification.classifiedMajorityName }" class="text-muted"></span></td>
-								</tr>	
-								<tr>
-									<td>중분류</td>
-									<td><span data-bind="{text: assessment.job.classification.classifiedMiddleName}" class="text-muted"></span></td>
-								</tr>
-								<tr>
-									<td>소분류</td>
-									<td><span data-bind="{text: assessment.job.classification.classifiedMinorityName}" class="text-muted"></span></td>
-								</tr>	
-								<tr>
-									<td>직무</td>
-									<td class="bg-primary">
-										<span  data-bind="{text: assessment.job.name}" ></span>
-									</td>
-								</tr>	
-								<tr>
-									<td>직무정의</td>
-									<td>
-										<span data-bind="{text: assessment.job.description}" class="text-muted"></span>
-									</td>
-								</tr>																										
+					           	<tr>
+					               	<th>직위</th>
+					               	<th>직무경력</th>
+					   			</tr>
+					      	</thead>
+							<tbody data-role="listview"
+								class="no-border"
+								data-auto-bind="false"	
+								data-template="my-assessment-job-level-template"
+								data-bind="source:jobLevelDataSource" style="overflow: auto"> 
 							</tbody>		                    
-			        	</table>		                	
-		   		</div>
-		  		<div class="col-sm-6">
-					<table class="table">
-				    	<thead>
-				           	<tr>
-				               	<th>직위</th>
-				               	<th>직무경력</th>
-				   			</tr>
-				      	</thead>
-						<tbody data-role="listview"
-							class="no-border"
-							data-auto-bind="false"	
-							data-template="my-assessment-job-level-template"
-							data-bind="source:jobLevelDataSource" style="overflow: auto"> 
-						</tbody>		                    
-					</table>			                	
-				</div>		                	
-	        </div>   
+						</table>			                	
+					</div>		                	
+		        </div>   
 	        </div>
 	                	 		
+	                	 		
+	        <h2 class="title-v2">진단결과</h2>        	 		
         	<div class="row">
         		<div class="col-sm-12">
-        			<h2 class="title-v2">진단결과</h2>
-        			 
+        		
+						<div class="row margin-bottom-10">
+							<div class="col-sm-6 sm-margin-bottom-20">
+								<div class="service-block-v3 service-block-u">
+									<i class="icon-users"></i>
+									<span class="service-heading">Overall Visits</span>
+									<span class="counter">52,147</span>
+
+									<div class="clearfix margin-bottom-10"></div>
+
+									<div class="row margin-bottom-20">
+										<div class="col-xs-6 service-in">
+											<small>Last Week</small>
+											<h4 class="counter">1,385</h4>
+										</div>
+										<div class="col-xs-6 text-right service-in">
+											<small>Last Month</small>
+											<h4 class="counter">6,048</h4>
+										</div>
+									</div>
+									<div class="statistics">
+										<h3 class="heading-xs">Statistics in Progress Bar <span class="pull-right">67%</span></h3>
+										<div class="progress progress-u progress-xxs">
+											<div style="width: 67%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="67" role="progressbar" class="progress-bar progress-bar-light">
+											</div>
+										</div>
+										<small>11% less <strong>than last month</strong></small>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="service-block-v3 service-block-blue">
+									<i class="icon-screen-desktop"></i>
+									<span class="service-heading">Overall Page Views</span>
+									<span class="counter">324,056</span>
+
+									<div class="clearfix margin-bottom-10"></div>
+
+									<div class="row margin-bottom-20">
+										<div class="col-xs-6 service-in">
+											<small>Last Week</small>
+											<h4 class="counter">26,904</h4>
+										</div>
+										<div class="col-xs-6 text-right service-in">
+											<small>Last Month</small>
+											<h4 class="counter">124,766</h4>
+										</div>
+									</div>
+									<div class="statistics">
+										<h3 class="heading-xs">Statistics in Progress Bar <span class="pull-right">89%</span></h3>
+										<div class="progress progress-u progress-xxs">
+											<div style="width: 89%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="89" role="progressbar" class="progress-bar progress-bar-light">
+											</div>
+										</div>
+										<small>15% higher <strong>than last month</strong></small>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						        			
+        		
         			<div id="assessed-summary-chart"></div>  
 					<div id="assessed-summary-grid"></div>  
 					<div id="assessed-summary-bar-chart"></div> 
