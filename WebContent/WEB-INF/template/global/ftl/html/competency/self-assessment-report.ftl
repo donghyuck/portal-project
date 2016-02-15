@@ -761,7 +761,7 @@ yepnope([{
 			#}else if ( data.finalScore >= 3 && data.finalScore < 3.75 ) {#
 			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-walking"></i>
 			단기간 향상이 가능
-			#}else if ( data.finalScore > 3.75 && data.finalScore < 4 ){#
+			#}else if ( data.finalScore >= 3.75 && data.finalScore < 4 ){#
 			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-running"></i>
 			목표 영역
 			#}else if ( data.finalScore >= 4){#
