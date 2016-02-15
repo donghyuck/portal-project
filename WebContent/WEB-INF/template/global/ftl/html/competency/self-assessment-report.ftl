@@ -199,10 +199,10 @@ yepnope([{
 						     dataBound: function(){
 						     	$.each(this.dataItems(), function( index, item ) {
 						     		console.log( item.uid + "/" + item.get("competencyName") );
-						     		var _renderTo = $('#' + item.uid );
-						     		
-						     		$this.elementDataSource.filter({ field: "competencyName", operator: "eq", value: item.get("competencyName") });		
-						     		createRadarChart(_renderTo.find('.chart'), $this.elementDataSource.view() );
+						     		var _renderTo = $('[data-uid=' + item.uid + ']');
+						     		var _dataSource = new kendo.data.DataSource({ data : $this.elementDataSource.data() });
+						     		_dataSource.filter({ field: "competencyName", operator: "eq", value: item.get("competencyName") });		
+						     		createRadarChart(_renderTo.find('.chart'), _dataSource.view() );
 						     						     	
 						     	});
 						     }
