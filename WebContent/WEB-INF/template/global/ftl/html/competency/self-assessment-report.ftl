@@ -164,7 +164,6 @@ yepnope([{
 					$this.set('candidatePhotoUrl',  getUserPhotoUrl($this.assessment.candidate) );
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					$this.summaryDataSource.fetch( function(){
-						
 						var data = this.data();
 						$this.elementDataSource.data(data);
 						
@@ -199,7 +198,12 @@ yepnope([{
 						     template: kendo.template($("#my-assessed-conpetency-detail-template").html()),
 						     dataBound: function(){
 						     	$.each(this.dataItems(), function( index, item ) {
-						     		console.log( item.uid + "/" + item.get("competencyName") );						     	
+						     		console.log( item.uid + "/" + item.get("competencyName") );
+						     		var _renderTo = $('#' + item.uid );
+						     		
+						     		$this.elementDataSource.filter({ field: "competencyName", operator: "eq", value: item.get("competencyName") });		
+						     		createRadarChart(_renderTo.find('.chart'), $this.elementDataSource.view() );
+						     						     	
 						     	});
 						     }
 						 });
