@@ -58,7 +58,11 @@ yepnope([{
 					});
 					
 				}
-			});			
+			});		
+			
+			$(window).on("resize", function() {
+		      kendo.resize($(".chart-wrapper"));
+		    });	
 			<#else>
 			alert("잘못된 접근입니다.");
 			</#if>				
@@ -163,18 +167,23 @@ yepnope([{
 						
 						var data = this.data();
 						$this.elementDataSource.data(data);
-						createRadarChart(data)
-						createBarChart(data);		
-												
+						
 						var aggregates = $this.summaryDataSource.aggregates();
 						$this.set('finalTotalScore', aggregates.finalScore.sum);
 						$this.set('finalMaxScore', aggregates.finalScore.max);
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
 						
+						createRadarChart(data)
+						createBarChart(data);		
+						/*
+						var _template = kendo.template($("#my-assessed-conpetency-detail-template").html());
 						$.each($this.summaryDataSource.view(), function( index, item ) {
 							console.log( item.value );						
 						});
+						*/
+						var view = new kendo.View('my-assessed-conpetency-detail-template', { model: $this.summaryDataSource.view(), evalTemplate: true });
+						view.render($("#assessed-competency-details")); 
 						
 
 					});				
@@ -585,8 +594,7 @@ yepnope([{
 	                	 		
 	        <h2 class="title-v2">진단결과</h2>        	 		
         	<div class="row">
-        		<div class="col-sm-12">
-        		
+        		<div class="col-sm-12">        		
 						<div class="row margin-bottom-10">
 							<div class="col-sm-6 sm-margin-bottom-20">
 								<div class="service-block-v3 service-block-u no-padding rounded">
@@ -678,12 +686,28 @@ yepnope([{
                 		 style="min-height:200px"></div>
                  
 				</div>	 
-			</div>     	
+			</div>     
+			<h2 class="title-v2">역량별 상세 분석</h2>        	 		
+        	<div id="assessed-competency-details">
+        	
+        	</div>	
 		</div><!--/end container-->			
  	</div>
 	
 
 		<!-- START TEMPLATE -->	
+		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">			
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">
+					<div class="chart"></div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="grid"></div>
+			</div>
+		</div>
+		</script>	
 		
 		
 		<script type="text/x-kendo-template" id="my-assessed-score-column-template">			
