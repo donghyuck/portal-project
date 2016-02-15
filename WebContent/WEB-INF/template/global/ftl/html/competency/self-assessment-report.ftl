@@ -202,7 +202,7 @@ yepnope([{
 						     		var _renderTo = $('[data-uid=' + item.uid + ']');
 						     		var _dataSource = new kendo.data.DataSource({ data : $this.elementDataSource.data() });
 						     		_dataSource.filter({ field: "competencyName", operator: "eq", value: item.get("competencyName") });		
-						     		createRadarChart(_renderTo.find('.chart'), item.get("competencyName") + ' 역량' , _dataSource.view() );
+						     		createRadarChart(_renderTo.find('.chart'), null , _dataSource.view() );
 						     		common.ui.grid(_renderTo.find('.grid'), {
 						     			dataSource : _dataSource,
 						     			editable:false,
