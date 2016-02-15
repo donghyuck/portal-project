@@ -402,7 +402,7 @@ yepnope([{
 		}
 		
 		.highest {
-		    color: #639514!important;
+		    color: #B5FF40!important;
 		    font-size: 36px!important;	
 		}
 		.average {			
@@ -560,7 +560,7 @@ yepnope([{
 									<span class="service-heading" style="font-size:.6em;" >직무역량진단결과</span>
 									<span class="assessed_final_score" data-bind="text:finalTotalScore"></span>
 									<div class="clearfix margin-bottom-10"></div>
-									<div class="row margin-bottom-20">
+									<div class="row">
 										<div class="col-xs-4 service-in">
 											<small>가장낮은영역점수</small>
 											<h4 class="counter lowest" data-bind="text:finalMinScore"></h4>
@@ -573,14 +573,6 @@ yepnope([{
 											<small>가장높은영역점수</small>
 											<h4 class="counter highest" data-bind="text:finalMaxScore"></h4>
 										</div>
-									</div>
-									<div class="statistics">
-										<h3 class="heading-xs">Statistics in Progress Bar <span class="pull-right">67%</span></h3>
-										<div class="progress progress-u progress-xxs">
-											<div style="width: 67%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="67" role="progressbar" class="progress-bar progress-bar-light">
-											</div>
-										</div>
-										<small>11% less <strong>than last month</strong></small>
 									</div>
 								</div>
 							</div>
