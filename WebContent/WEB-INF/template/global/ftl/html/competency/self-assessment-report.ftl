@@ -720,8 +720,10 @@ yepnope([{
                 		 style="min-height:200px"></div>
                  
 				</div>	 
-			</div>     
-			<h2 class="title-v2">역량별 상세 분석</h2>        	 		
+			</div>   
+			
+			<div class="separator-2"></div>  
+			<h2>역량별 상세 분석</h2>        	 		
         	<div id="assessed-competency-details" class="no-border bg-transparent"></div>	
 		</div><!--/end container-->			
  	</div>
@@ -729,9 +731,8 @@ yepnope([{
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
-		<div class="ibox">
-			<div class="separator-2"></div>
-			<h4>#: competencyName #</h4>
+		<div class="ibox">			
+			<h5>#: competencyName #</h5>
 			<div class="ibox-content rounded-bottom" style="padding:5px;">
 				<div class="row">
 					<div class="col-sm-6">
