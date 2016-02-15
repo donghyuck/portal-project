@@ -645,7 +645,7 @@ yepnope([{
                  		data-editable="false"
                  		data-scrollable="false"
                  		data-columns="[
-                                 { 'field': 'essentialElementName'}
+                                 { 'field': 'essentialElementName', title:'진단영역'}
                       	]"
                 		 data-bind="source:elementDataSource"
                 		 style="min-height:200px"></div>
