@@ -130,7 +130,8 @@ yepnope([{
 	                        	essentialElementName: { type: "string" },
 	                        	totalCount: { type: "number" },
 	                        	totalScore: { type: "number" },
-	                        	finalScore: { type: "number" }
+	                        	finalScore: { type: "number" },
+	                        	othersAverageScore: { type: "number" }
 	                        }	
 	                    }
 					},
