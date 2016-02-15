@@ -396,7 +396,14 @@ yepnope([{
 			background-color: #3498db!important;
 			color:#fff;
 		}	
-			
+		
+		.lowest {
+		    color: #cd151e!important;	
+		    margin: 0;
+		    font-size: 36px;
+		    font-weight: 700;		
+		}
+					
 	</style>
 </#compress>
 </head>
@@ -546,7 +553,7 @@ yepnope([{
 									<div class="row margin-bottom-20">
 										<div class="col-xs-4 service-in">
 											<small>가장낮은영역점수</small>
-											<h4 class="counter text-danger" data-bind="text:finalMinScore"></h4>
+											<h4 class="counter lowest" data-bind="text:finalMinScore"></h4>
 										</div>
 										<div class="col-xs-4 text-center service-in">
 											<small>평균영역점수</small>
