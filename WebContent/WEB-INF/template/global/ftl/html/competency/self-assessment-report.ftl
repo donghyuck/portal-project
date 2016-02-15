@@ -108,7 +108,10 @@ yepnope([{
 					schema: {
                     	model: common.ui.data.competency.JobLevel
                     }
-                }),               
+                }),          
+				elementDataSource :new kendo.data.DataSource({
+					data : []
+                }),                        
                 summaryDataSource : new kendo.data.DataSource({
 					transport: { 
 						read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
@@ -161,6 +164,7 @@ yepnope([{
 						$this.set('finalMaxScore', aggregates.finalScore.max);
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
+						$this.elementDataSource.data = data;
 						createRadarChart(data)
 						createBarChart(data);		
 					});				
@@ -643,7 +647,7 @@ yepnope([{
                  data-columns="[
                                  { 'field': 'essentialElementName'}
                               ]"
-                 data-bind="source: summaryDataSource"
+                 data-bind="source: elementDataSource"
                  style="height: 200px"></div>
                  
 				</div>	 
