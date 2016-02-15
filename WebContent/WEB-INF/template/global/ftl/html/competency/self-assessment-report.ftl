@@ -110,7 +110,6 @@ yepnope([{
                     }
                 }),          
 				elementDataSource :new kendo.data.DataSource({
-					sortable: true,
 					data : []
                 }),                        
                 summaryDataSource : new kendo.data.DataSource({
@@ -654,6 +653,7 @@ yepnope([{
 					<div data-role="grid"
 						data-auto-bind="false"
                  		data-editable="false"
+                 		data-sortable="true"
                  		data-scrollable="false"
                  		data-columns="[
                  			{ 'field': 'competencyName', title:'역량' },
