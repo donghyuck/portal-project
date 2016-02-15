@@ -736,7 +736,7 @@ yepnope([{
 					</div>
 				</div>			
 				<div class="col-sm-6">
-					<div class="listview"></div>
+					<div class="grid"></div>
 				</div>
 			</div>
 		</div>						
