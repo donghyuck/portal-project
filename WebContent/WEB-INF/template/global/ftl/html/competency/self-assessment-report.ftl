@@ -110,6 +110,7 @@ yepnope([{
                     }
                 }),          
 				elementDataSource :new kendo.data.DataSource({
+					sortable: true,
 					data : []
                 }),                        
                 summaryDataSource : new kendo.data.DataSource({
