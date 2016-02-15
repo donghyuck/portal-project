@@ -181,11 +181,24 @@ yepnope([{
 						$.each($this.summaryDataSource.view(), function( index, item ) {
 							console.log( item.value );						
 						});
-						*/
+						
 						console.log( $this.summaryDataSource.view().length );				
 						var view = new kendo.View('my-assessed-conpetency-detail-template', { model: $this.summaryDataSource.view(), evalTemplate: true });
-						view.render($("#assessed-competency-details")); 
+						view.render($("#assessed-competency-details"));
+						*/
+						var dataSource = new kendo.data.DataSource({
+						  data: []
+						});
+						$.each($this.summaryDataSource.view(), function( index, item ) {
+							dataSource.add( { 'competencyName': item.value } );						
+						});
 						
+						$("#assessed-competency-details").kendoListView({
+						     dataSource: dataSource,
+						     template: kendo.template($("#my-assessed-conpetency-detail-template").html()),
+						     autoBind: false
+						 });
+						 
 
 					});				
 				}
