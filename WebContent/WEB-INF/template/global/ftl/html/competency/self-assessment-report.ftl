@@ -398,9 +398,10 @@ yepnope([{
 		}	
 		
 		.lowest {
+			font-family: Arial, Helvetica, sans-serif;
 		    color: #cd151e!important;	
 		    margin: 0;
-		    font-size: 36px;
+		    font-size: 36px!important;
 		    font-weight: 700;		
 		}
 					
