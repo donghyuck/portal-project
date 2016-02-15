@@ -639,9 +639,9 @@ yepnope([{
 					<div data-role="grid"
 					data-auto-bind="false"
                  data-editable="false"
-                 data-groupable="false"
+                 data-scrollable="false"
                  data-columns="[
-                                 { 'field': 'competencyName', 'width': 270 }
+                                 { 'field': 'competencyName', 'width': 270 , 'groupable':false}
                               ]"
                  data-bind="source: summaryDataSource"
                  style="height: 200px"></div>
