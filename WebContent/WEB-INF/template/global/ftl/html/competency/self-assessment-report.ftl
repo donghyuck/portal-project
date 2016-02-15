@@ -405,7 +405,10 @@ yepnope([{
 		    color: #639514!important;
 		    font-size: 36px!important;	
 		}
-		
+		.average {			
+		    color: #fff!important;
+		    font-size: 36px!important;	
+		}		
 		.lowest {			
 		    color: #cd151e!important;
 		    font-size: 36px!important;	
@@ -564,7 +567,7 @@ yepnope([{
 										</div>
 										<div class="col-xs-4 text-center service-in">
 											<small>평균영역점수</small>
-											<h4 class="counter" data-bind="text:finalAvgScore"></h4>
+											<h4 class="counter average" data-bind="text:finalAvgScore"></h4>
 										</div>
 										<div class="col-xs-4 text-right service-in">
 											<small>가장높은영역점수</small>
