@@ -641,14 +641,14 @@ yepnope([{
 
 
 					<div data-role="grid"
-					data-auto-bind="false"
-                 data-editable="false"
-                 data-scrollable="false"
-                 data-columns="[
+						data-auto-bind="false"
+                 		data-editable="false"
+                 		data-scrollable="false"
+                 		data-columns="[
                                  { 'field': 'essentialElementName'}
-                              ]"
-                 data-bind="source: elementDataSource"
-                 style="height: 200px"></div>
+                      	]"
+                		 data-bind="source:elementDataSource"
+                		 style="min-height:200px"></div>
                  
 				</div>	 
 			</div>     	
