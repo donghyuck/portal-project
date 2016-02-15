@@ -191,14 +191,13 @@ yepnope([{
 						  data: []
 						});
 						$.each($this.summaryDataSource.view(), function( index, item ) {
-							dataSource.data.push( { 'competencyName': item.value } );						
+							dataSource.add( { 'competencyName': item.value } );						
 						});
-						
 						
 						$("#assessed-competency-details").kendoListView({
 						     dataSource: dataSource,
 						     template: kendo.template($("#my-assessed-conpetency-detail-template").html()),
-						     autoBind: false
+						     autoBind: true
 						 });
 						 
 
