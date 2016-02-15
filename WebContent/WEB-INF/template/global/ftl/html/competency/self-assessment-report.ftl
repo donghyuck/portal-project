@@ -182,6 +182,7 @@ yepnope([{
 							console.log( item.value );						
 						});
 						*/
+						console.log( $this.summaryDataSource.view().length );				
 						var view = new kendo.View('my-assessed-conpetency-detail-template', { model: $this.summaryDataSource.view(), evalTemplate: true });
 						view.render($("#assessed-competency-details")); 
 						
