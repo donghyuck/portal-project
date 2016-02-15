@@ -377,7 +377,7 @@ yepnope([{
 		    line-height: 1em;
 		    letter-spacing: -2px;
 		    text-indent: -8px;
-		    color: #454447;		
+		    color: #fff;		
 		}  
 			
 	</style>
@@ -525,15 +525,13 @@ yepnope([{
 							<div class="col-sm-6 sm-margin-bottom-20">
 								<div class="service-block-v3 service-block-u">
 									<i class="icon-users"></i>
-									<span class="service-heading">Overall Visits</span>
-									<span class="assessed_final_score">52,147</span>
-
+									<span class="service-heading">역량진단점수</span>
+									<span class="assessed_final_score">32.21</span>
 									<div class="clearfix margin-bottom-10"></div>
-
 									<div class="row margin-bottom-20">
 										<div class="col-xs-6 service-in">
 											<small>Last Week</small>
-											<h4 class="assessed_final_score">1,385</h4>
+											<h4 class="assessed_final_score">32.21</h4>
 										</div>
 										<div class="col-xs-6 text-right service-in">
 											<small>Last Month</small>
