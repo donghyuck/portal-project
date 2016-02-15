@@ -691,7 +691,11 @@ yepnope([{
 							</div>
 						</div>
 						
-					
+
+			<div class="clearfix margin-bottom-20"></div>
+			<div class="separator-2"></div>  
+			<h3>전체 역영별 분석</h3> 
+								
 					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">	
 						<div id="assessed-summary-chart"></div>  				
 					</div>
