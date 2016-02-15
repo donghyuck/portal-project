@@ -207,7 +207,8 @@ yepnope([{
 				field: "essentialElementName"
 			},
 			valueAxis: {
-				visible: true
+				visible: true,
+				max: 5
 			},
 			tooltip: {
 			 visible: true
