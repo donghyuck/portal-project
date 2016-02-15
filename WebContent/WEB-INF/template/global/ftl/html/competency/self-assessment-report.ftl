@@ -703,7 +703,7 @@ yepnope([{
 				</div>	 
 			</div>     
 			<h2 class="title-v2">역량별 상세 분석</h2>        	 		
-        	<div id="assessed-competency-details" class="no-border bg-transparent">
+        	<div id="assessed-competency-details" class="row no-border bg-transparent">
         	
         	</div>	
 		</div><!--/end container-->			
@@ -712,17 +712,18 @@ yepnope([{
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
-		<h4>#: competencyName #</h4>	
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">
-					<div class="chart"></div>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="grid"></div>
-			</div>
-		</div>
+		
+						<div class="news-v1-in">
+							<h3>#: competencyName #</h3>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+							<ul class="list-inline news-v1-info">
+								<li><span>By</span> <a href="#">Kathy Reyes</a></li>
+								<li>|</li>
+								<li><i class="fa fa-clock-o"></i> July 02, 2014</li>
+								<li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 14</a></li>
+							</ul>
+						</div>
+						
 		</script>	
 		
 		
