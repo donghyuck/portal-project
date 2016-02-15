@@ -619,9 +619,17 @@ yepnope([{
 							</div>
 						</div>
 						
-        			<div id="assessed-summary-chart" class="bordered margin-bottom-10"></div>  
+					
+					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">	
+						<div id="assessed-summary-chart"></div>  				
+					</div>
+					
+					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">		
+						<div id="assessed-summary-bar-chart"></div> 		
+					</div>
+					        			
 					<div id="assessed-summary-grid" class="margin-bottom-10"></div>  
-					<div id="assessed-summary-bar-chart" class="bordered"></div> 
+					
 				</div>	 
 			</div>     	
 		</div><!--/end container-->			
