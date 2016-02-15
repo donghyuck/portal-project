@@ -645,7 +645,7 @@ yepnope([{
                  		data-editable="false"
                  		data-scrollable="false"
                  		data-columns="[
-                                 { 'field': 'essentialElementName', title:'진단영역'}
+                                 { 'field': 'essentialElementName', title:'진단영역', template='my-assessed-score-column-template'}
                       	]"
                 		 data-bind="source:elementDataSource"
                 		 style="min-height:200px"></div>
@@ -659,15 +659,8 @@ yepnope([{
 		<!-- START TEMPLATE -->	
 		
 		
-		<script type="text/x-kendo-template" id="my-assessed-score-template">
-		<tr>
-		    <td>    		    	
-		    </td>
-			<td>			
-			</td>
-			<td>			
-			</td>			
-		</tr>			        
+		<script type="text/x-kendo-template" id="my-assessed-score-column-template">
+		hello		        
 		</script>		
 		
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
