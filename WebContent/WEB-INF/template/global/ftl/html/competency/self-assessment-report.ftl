@@ -286,7 +286,7 @@ yepnope([{
                     ],
                     max: 5,
                     line: {
-                        visible: true
+                        visible: false
                     }
                 },
                 tooltip: {
