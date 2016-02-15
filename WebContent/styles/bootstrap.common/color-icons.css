@@ -187,6 +187,9 @@ i.icon-svg {
 .icon-svg.basic-color-center-location{
 	background-image: url("/images/common/icons/basic/color/CenterDirection.svg");
 }
+.icon-svg.basic-color-siren{
+	background-image: url("/images/common/icons/basic/color/Siren.svg");
+}
 
 /* Business Color Icons 
 ------------------------------------*/
@@ -252,5 +255,18 @@ i.icon-svg {
 }
 
 
-
+/* Sports Color Icons 
+------------------------------------*/
+.icon-svg.sports-color-exercise{
+	background-image: url("/images/common/icons/sports/color/Exercise.svg");
+}
+.icon-svg.sports-color-running{
+	background-image: url("/images/common/icons/sports/color/Running.svg");
+}
+.icon-svg.sports-color-trainers{
+	background-image: url("/images/common/icons/sports/color/Trainers.svg");
+}
+.icon-svg.sports-color-walking{
+	background-image: url("/images/common/icons/sports/color/Walking.svg");
+}
 
