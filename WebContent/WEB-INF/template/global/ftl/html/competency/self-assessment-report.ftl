@@ -669,10 +669,17 @@ yepnope([{
 		<!-- START TEMPLATE -->	
 		
 		
-		<script type="text/x-kendo-template" id="my-assessed-score-column-template">
-			
+		<script type="text/x-kendo-template" id="my-assessed-score-column-template">			
+			#if ( data.finalScore < 3 ) {#
+			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-trainers"></i>			
+			#}else if ( data.finalScore >= 3 && data.finalScore < 3.75 ) {#
 			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-walking"></i>
-			#= kendo.stringify(data) #	        
+			#}else if ( data.finalScore > 3.75 && data.finalScore < 4 ){#
+			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-running"></i>
+			#}else if ( data.finalScore >= 4){#
+			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-exercise"></i>
+			#}#       
+			#: data.essentialElementName #
 		</script>		
 		
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
