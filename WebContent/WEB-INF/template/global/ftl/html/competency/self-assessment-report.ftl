@@ -426,7 +426,19 @@ yepnope([{
 		    color: #cd151e!important;
 		    font-size: 36px!important;	
 		}
-							
+		
+		.score-image {
+		    display: inline-block;
+		    width: 32px;
+		    height: 32px;
+		    border-radius: 50%;
+		    background-size: 32px 35px;
+		    background-position: center center;
+		    vertical-align: middle;
+		    line-height: 32px;
+		    box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+		    margin-left: 5px;
+		}							
 	</style>
 </#compress>
 </head>
@@ -660,7 +672,9 @@ yepnope([{
 		
 		
 		<script type="text/x-kendo-template" id="my-assessed-score-column-template">
-		hello		        
+			
+			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-walking"></i>
+				        
 		</script>		
 		
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
