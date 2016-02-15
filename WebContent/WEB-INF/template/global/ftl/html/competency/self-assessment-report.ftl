@@ -716,12 +716,7 @@ yepnope([{
 						<div class="news-v1-in">
 							<h3>#: competencyName #</h3>
 							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
-							<ul class="list-inline news-v1-info">
-								<li><span>By</span> <a href="#">Kathy Reyes</a></li>
-								<li>|</li>
-								<li><i class="fa fa-clock-o"></i> July 02, 2014</li>
-								<li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 14</a></li>
-							</ul>
+							
 						</div>
 						
 		</script>	
