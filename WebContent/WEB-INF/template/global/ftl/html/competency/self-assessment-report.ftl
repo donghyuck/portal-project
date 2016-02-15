@@ -11,6 +11,7 @@ yepnope([{
     load: [        
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/headers/header-v6.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',	
@@ -445,7 +446,7 @@ yepnope([{
 <body class="">
 	<div class="page-loader"></div>
  	<div id="my-assessment" class="wrapper"> 	
-		<div class="assessment-header p-sm">
+		<div class="header-v6 header-classic-dark header-sticky">
 			<div class="container">
 				<div class="row">
 	                <div class="col-sm-8">
