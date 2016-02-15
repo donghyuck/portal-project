@@ -197,6 +197,7 @@ yepnope([{
 						     dataSource: dataSource,
 						     template: kendo.template($("#my-assessed-conpetency-detail-template").html()),
 						     dataBound: function(){
+						     	$("#assessed-competency-details").removeClass('.k-widget');
 						     	$.each(this.dataItems(), function( index, item ) {
 						     		console.log( item.uid + "/" + item.get("competencyName") );
 						     		var _renderTo = $('[data-uid=' + item.uid + ']');
