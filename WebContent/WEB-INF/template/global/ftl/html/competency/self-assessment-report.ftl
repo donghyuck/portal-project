@@ -648,7 +648,6 @@ yepnope([{
 					          		<tbody data-role="listview"
 					                    		class="no-border"
 												data-auto-bind="false"	
-							                 	data-template="my-assessed-score-template"
 							                 	data-bind="source:summaryDataSource"> 
 									</tbody>		                    
 					        	</table>
