@@ -161,14 +161,15 @@ yepnope([{
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
+						
 						var aggregates = $this.summaryDataSource.aggregates();
 						$this.set('finalTotalScore', aggregates.finalScore.sum);
 						$this.set('finalMaxScore', aggregates.finalScore.max);
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
 						
-						dataSource.group({ field: "competencyId" });
-						var view = dataSource.view();
+						$this.summaryDataSource.group({ field: "competencyId" });
+						var view = this.view();
 						console.log( kendo.stringify(view) );
 						
 						$this.elementDataSource.data(data);
