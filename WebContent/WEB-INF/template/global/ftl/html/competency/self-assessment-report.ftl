@@ -634,7 +634,27 @@ yepnope([{
 					</div>
 					        			
 					<div id="assessed-summary-grid" class="margin-bottom-10"></div>  
-					
+
+					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">		
+
+								<table class="table no-margin" style="border-top: 1px solid #ddd;">
+					            	<thead>
+					                	<tr>
+					                    	<th>역량</th>
+					                    	<th>분야</th>
+					                    	<th>점수</th>
+					                    	<th>&nbsp;</th>
+					              		</tr>
+					          		</thead>
+					          		<tbody data-role="listview"
+					                    		class="no-border"
+												data-auto-bind="false"	
+							                 	data-template="my-assessed-score-template"
+							                 	data-bind="source:summaryDataSource"> 
+									</tbody>		                    
+					        	</table>
+						
+					</div>		
 				</div>	 
 			</div>     	
 		</div><!--/end container-->			
@@ -642,6 +662,22 @@ yepnope([{
 	
 
 		<!-- START TEMPLATE -->	
+		
+		
+		<script type="text/x-kendo-template" id="my-assessed-score-template">
+		<tr>
+		    <td>    
+		    	
+		    </td>
+			<td>
+			
+			</td>
+			<td>
+			
+			</td>			
+		</tr>			        
+		</script>		
+		
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
 		<tr #if ( getMyAssessment().jobLevelName == name ) {# class="bg-selected" #}# >
 		    <td>    
