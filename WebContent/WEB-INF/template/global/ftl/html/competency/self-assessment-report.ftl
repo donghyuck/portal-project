@@ -703,22 +703,16 @@ yepnope([{
 				</div>	 
 			</div>     
 			<h2 class="title-v2">역량별 상세 분석</h2>        	 		
-        	<div id="assessed-competency-details" class="no-border bg-transparent">
-        	
-        	</div>	
+        	<div id="assessed-competency-details" class="no-border bg-transparent"></div>	
 		</div><!--/end container-->			
  	</div>
 	
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
-		<div class="ibox bordered rounded">
-				<div class="ibox-title">
-					<h2>#: competencyName #</h2>                        
-				</div>
-				<div class="ibox-content">
-						
-				</div>  	
+		<div>
+			<div class="separator-2"></div>
+			<h3>#: competencyName #</h3>
 		</div>						
 		</script>	
 		
