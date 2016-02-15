@@ -672,7 +672,7 @@ yepnope([{
 		<script type="text/x-kendo-template" id="my-assessed-score-column-template">
 			
 			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-walking"></i>
-				        
+			#= kendo.stringify(data) #	        
 		</script>		
 		
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
