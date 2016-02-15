@@ -635,25 +635,16 @@ yepnope([{
 					        			
 					<div id="assessed-summary-grid" class="margin-bottom-10"></div>  
 
-					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">
-								<table class="table no-margin">
-					            	<thead>
-					                	<tr>
-					                    	<th>역량</th>
-					                    	<th>분야</th>
-					                    	<th>점수</th>
-					                    	<th>&nbsp;</th>
-					              		</tr>
-					          		</thead>
-					          		<tbody data-role="listview"
-					                    		class="no-border"
-												data-autBind="false"	
-							                 	data-template="my-assessed-score-template"
-							                 	data-bind="source:summaryDataSource"> 
-									</tbody>		                    
-					        	</table>
-						
-					</div>		
+
+					<div data-role="grid"
+					data-auto-bind="false"
+                 data-editable="false"
+                 data-columns="[
+                                 { 'field': 'competencyName', 'width': 270 }
+                              ]"
+                 data-bind="source: summaryDataSource"
+                 style="height: 200px"></div>
+                 
 				</div>	 
 			</div>     	
 		</div><!--/end container-->			
