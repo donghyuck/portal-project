@@ -252,7 +252,7 @@ yepnope([{
                         color: "#c00",
                         opacity: 0.2
                     }, {
-                        from: 2.999,
+                        from: 2.99,
                         to: 3,
                         color: "#c00",
                         opacity: 0.9
@@ -270,7 +270,7 @@ yepnope([{
                         opacity: 0.4
                     },
                     {
-                        from: 3.999,
+                        from: 3.99,
                         to: 4,
                         color: "#1A96E5",
                         opacity: 0.9
