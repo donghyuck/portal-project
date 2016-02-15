@@ -676,7 +676,7 @@ yepnope([{
 		<script type="text/x-kendo-template" id="my-assessed-score-column-template">			
 			#if ( data.finalScore < 3 ) {#
 			<i class="score-image icon-flat icon-svg icon-svg-md basic-color-siren"></i>	
-			지속적 노력이 필요 		
+			<span class="text-danger">지속적 노력이 필요</span> 		
 			#}else if ( data.finalScore >= 3 && data.finalScore < 3.75 ) {#
 			<i class="score-image icon-flat icon-svg icon-svg-md sports-color-walking"></i>
 			단기간 향상이 가능
