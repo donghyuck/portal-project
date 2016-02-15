@@ -203,7 +203,16 @@ yepnope([{
 						     		var _dataSource = new kendo.data.DataSource({ data : $this.elementDataSource.data() });
 						     		_dataSource.filter({ field: "competencyName", operator: "eq", value: item.get("competencyName") });		
 						     		createRadarChart(_renderTo.find('.chart'), item.get("competencyName") + ' 역량' , _dataSource.view() );
-						     						     	
+						     		common.ui.grid(_renderTo.find('.grid'), {
+						     			dataSource : _dataSource,
+						     			editable:false,
+	   									scrollable : false,
+	   									columns : [
+	   										{ 'field': 'essentialElementName', title:'영역' },
+	   										{ 'field': 'finalScore', title:'본인점수'},
+	   										{ 'field': 'othersAverageScore', title:'전체평균'}
+	   									]
+						     		});				     	
 						     	});
 						     }
 						 });
