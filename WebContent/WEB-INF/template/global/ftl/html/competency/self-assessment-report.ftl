@@ -656,7 +656,8 @@ yepnope([{
                  		data-scrollable="false"
                  		data-columns="[
                  			{ 'field': 'competencyName', title:'역량' },
-                        	{ 'field': 'essentialElementName', title:'진단영역', 'template':$('\#my-assessed-score-column-template').html() }
+                        	{ 'field': 'essentialElementName', title:'진단영역', 'template':$('\#my-assessed-score-column-template').html() },
+                        	{ 'field': 'finalScore', title:'점수' },
                       	]"
                 		 data-bind="source:elementDataSource"
                 		 style="min-height:200px"></div>
