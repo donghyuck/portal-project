@@ -172,8 +172,8 @@ yepnope([{
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
 						
-						$.each($this.summaryDataSource.view(), function( index, value ) {
-							console.log( kendo.stringify(value) );						
+						$.each($this.summaryDataSource.view(), function( index, item ) {
+							console.log( item.value );						
 						});
 						
 
