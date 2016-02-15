@@ -562,7 +562,7 @@ yepnope([{
 								<div class="service-block-v3 service-block-u no-padding rounded">
 								<div class="service-block-header">
 									<i class="icon-flat icon-svg icon-svg-md business-color-for-beginner"></i>
-									<span class="service-heading" style="font-size:.6em;" >직무역량진단결과</span>
+									<span class="service-heading" style="font-size:.7em;" >직무역량진단결과</span>
 									<span class="assessed_final_score" data-bind="text:finalTotalScore"></span>
 									<div class="clearfix margin-bottom-10"></div>
 								</div>	
