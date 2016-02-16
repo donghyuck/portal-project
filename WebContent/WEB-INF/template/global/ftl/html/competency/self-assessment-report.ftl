@@ -120,7 +120,7 @@ yepnope([{
                 }),                        
                 summaryDataSource : new kendo.data.DataSource({
 					transport: { 
-						read: { url:'<@spring.url "/data/me/competency/assessment/test/summary.json?output=json"/>', type:'post' },
+						read: { url:'<@spring.url "/data/me/competency/assessment/test/scores.json?output=json"/>', type:'post' },
 						parameterMap: function (options, operation){
 							if (operation !== "read") {
 								return kendo.stringify(options.models);
