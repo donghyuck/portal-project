@@ -199,7 +199,7 @@ yepnope([{
 						     			data : $this.elementDataSource.data(), 
 						     			filter: { field: "competencyId", operator: "eq", value: item.get("competencyId") }
 						     		});
-						     		createRadarChart(_renderTo.find('.chart'), null , _dataSource.view() );
+						     		
 						     		common.ui.grid(_renderTo.find('.grid'), {
 						     			dataSource : _dataSource,
 						     			editable:false,
@@ -209,7 +209,9 @@ yepnope([{
 	   										{ 'field': 'finalScore', title:'본인점수'},
 	   										{ 'field': 'othersAverageScore', title:'전체평균'}
 	   									]
-						     		});				     	
+						     		});	
+						     		
+						     		createRadarChart(_renderTo.find('.chart'), null , _dataSource.view() );			     	
 						     	});
 						     }
 						 });
