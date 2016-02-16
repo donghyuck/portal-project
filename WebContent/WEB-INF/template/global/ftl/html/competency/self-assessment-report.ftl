@@ -739,7 +739,7 @@ yepnope([{
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
 		<div class="ibox">			
-			<h5><i class="fa fa-circle-o"></i> #: competencyName #</h5>
+			<h5><i class="fa fa-circle-o"></i> #: name  #</h5>
 			<div class="ibox-content rounded-bottom" style="padding:5px; border:1px solid \#dbdbdb;">
 				<div class="row">
 					<div class="col-sm-12">
