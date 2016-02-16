@@ -195,8 +195,10 @@ yepnope([{
 						     	$.each(this.dataItems(), function( index, item ) {
 						     		console.log( item.uid + "/" + item.get("competencyName") );
 						     		var _renderTo = $('[data-uid=' + item.uid + ']');
-						     		var _dataSource = new kendo.data.DataSource({ data : $this.elementDataSource.data() });
-						     		_dataSource.filter({ field: "competencyId", operator: "eq", value: item.get("competencyId") });		
+						     		var _dataSource = new kendo.data.DataSource({ 
+						     			data : $this.elementDataSource.data(), 
+						     			filter: { field: "competencyId", operator: "eq", value: item.get("competencyId") }
+						     		});
 						     		createRadarChart(_renderTo.find('.chart'), null , _dataSource.view() );
 						     		common.ui.grid(_renderTo.find('.grid'), {
 						     			dataSource : _dataSource,
