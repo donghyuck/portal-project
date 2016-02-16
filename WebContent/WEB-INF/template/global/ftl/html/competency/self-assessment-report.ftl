@@ -190,7 +190,6 @@ yepnope([{
 						     dataBound: function(){						     	
 						     	$("#assessed-competency-details").removeClass("k-widget k-listview");						     	
 						     	$.each(this.dataItems(), function( index, item ) {
-						     		console.log( item.uid + "/" + item.get("competencyName") );
 						     		var _renderTo = $('[data-uid=' + item.uid + ']');
 						     		var _dataSource = new kendo.data.DataSource({ 
 						     			data : $this.elementDataSource.data(), 
@@ -737,6 +736,7 @@ yepnope([{
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
 		<div class="ibox">			
 			<h5><i class="fa fa-circle-o"></i> #: name  #</h5>
+			<p>#: description #</p>
 			<div class="ibox-content rounded-bottom" style="padding:5px; border:1px solid \#dbdbdb;">
 				<div class="row">
 					<div class="col-sm-12">
