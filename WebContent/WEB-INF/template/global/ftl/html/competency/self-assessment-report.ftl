@@ -289,6 +289,7 @@ yepnope([{
 			},
                 title: {
                     text: "척도에 따른 영역별 점수 분포",
+                    font: "44px Arial,Helvetica,sans-serif"
                 },
                 seriesDefaults: {
                     type: "bar"
