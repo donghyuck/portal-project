@@ -182,7 +182,7 @@ yepnope([{
 						$this.set('finalMaxScore', aggregates.finalScore.max);
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
-						createRadarChart($('#assessed-summary-chart'), '모든 진단 영역별 점수',  data)
+						createRadarChart($('#assessed-summary-chart'), '영역별 점수 비교',  data)
 						createBarChart(data);		
 						$("#assessed-competency-details").kendoListView({
 						     dataSource: $this.competencyDataSource,
@@ -291,7 +291,11 @@ yepnope([{
                 series: [{
                     field: "finalScore",
                     name: "본인"
-                }],
+                },
+                {
+					name: "전체",
+					field: "othersAverageScore"
+				}],
                 categoryAxis: {
                     field: "essentialElementName",
                     majorGridLines: {
