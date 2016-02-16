@@ -169,9 +169,10 @@ yepnope([{
 					source.copy($this.assessment);	
 					$this.set('candidatePhotoUrl',  getUserPhotoUrl($this.assessment.candidate) );
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);	
-					$this.competencyDataSource.data($this.assessment.competencies);		
-					$this.competencyDataSource.filter( { field: "level", operator: "gte", value: $this.assessment.obLevel });
-					$this.competencyDataSource.read();
+					$this.competencyDataSource.data( $this.assessment.competencies );		
+					//$this.competencyDataSource.filter( { field: "level", operator: "gte", value: $this.assessment.obLevel });
+					
+					
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
 						$this.elementDataSource.data(data);
