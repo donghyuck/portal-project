@@ -114,6 +114,12 @@ yepnope([{
 					schema: {
                     	model: common.ui.data.competency.JobLevel
                     }
+                }), 
+                competencyDataSource :new kendo.data.DataSource({
+					data : [],
+					schema: {
+                    	model: common.ui.data.competency.JobLevel
+                    }
                 }),          
 				elementDataSource :new kendo.data.DataSource({
 					data : []
@@ -162,12 +168,17 @@ yepnope([{
 					var $this = this;
 					source.copy($this.assessment);	
 					$this.set('candidatePhotoUrl',  getUserPhotoUrl($this.assessment.candidate) );
-					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);		
+					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);	
+					$this.competencyDataSource.data($this.assessment.competencies);		
+					
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
 						$this.elementDataSource.data(data);
 						
 						var aggregates = $this.summaryDataSource.aggregates();
+						
+						console.log( kendo.stringify (aggregates) );
+						
 						$this.set('finalTotalScore', aggregates.finalScore.sum);
 						$this.set('finalMaxScore', aggregates.finalScore.max);
 						$this.set('finalMinScore', aggregates.finalScore.min);
@@ -175,36 +186,17 @@ yepnope([{
 						
 						createRadarChart($('#assessed-summary-chart'), '모든 진단 영역별 점수',  data)
 						createBarChart(data);		
-						/*
-						var _template = kendo.template($("#my-assessed-conpetency-detail-template").html());
-						$.each($this.summaryDataSource.view(), function( index, item ) {
-							console.log( item.value );						
-						});
 						
-										
-						var view = new kendo.View('my-assessed-conpetency-detail-template', { model: $this.summaryDataSource.view(), evalTemplate: true });
-						view.render($("#assessed-competency-details"));
-						*/
-						
-						var dataSource = new kendo.data.DataSource({
-						  data: []
-						});
-						$.each($this.summaryDataSource.view(), function( index, item ) {
-							dataSource.add( { 'competencyName': item.value } );						
-						});
-												
 						$("#assessed-competency-details").kendoListView({
-						     dataSource: dataSource,
+						     dataSource: $this.competencyDataSource,
 						     template: kendo.template($("#my-assessed-conpetency-detail-template").html()),
-						     dataBound: function(){
-						     	
-						     	$("#assessed-competency-details").removeClass("k-widget k-listview");
-						     	
+						     dataBound: function(){						     	
+						     	$("#assessed-competency-details").removeClass("k-widget k-listview");						     	
 						     	$.each(this.dataItems(), function( index, item ) {
 						     		console.log( item.uid + "/" + item.get("competencyName") );
 						     		var _renderTo = $('[data-uid=' + item.uid + ']');
 						     		var _dataSource = new kendo.data.DataSource({ data : $this.elementDataSource.data() });
-						     		_dataSource.filter({ field: "competencyName", operator: "eq", value: item.get("competencyName") });		
+						     		_dataSource.filter({ field: "competencyId", operator: "eq", value: item.get("competencyId") });		
 						     		createRadarChart(_renderTo.find('.chart'), null , _dataSource.view() );
 						     		common.ui.grid(_renderTo.find('.grid'), {
 						     			dataSource : _dataSource,
