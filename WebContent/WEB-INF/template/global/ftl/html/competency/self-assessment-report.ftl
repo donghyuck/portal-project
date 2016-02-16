@@ -193,12 +193,14 @@ yepnope([{
 						     		var _renderTo = $('[data-uid=' + item.uid + ']');
 						     		var _dataSource = new kendo.data.DataSource({ 
 						     			data : $this.elementDataSource.data(), 
+						     			sort: { field: "finalScore", dir: "asc" },
 						     			filter: { field: "competencyId", operator: "eq", value: item.get("competencyId") }
 						     		});
 						     		common.ui.grid(_renderTo.find('.grid'), {
 						     			dataSource : _dataSource,
 						     			editable:false,
 	   									scrollable : false,
+	   									
 	   									columns : [
 	   										{ 'field': 'essentialElementName', title:'영역' },
 	   										{ 'field': 'finalScore', title:'본인점수'},
