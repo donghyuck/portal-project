@@ -306,7 +306,8 @@ yepnope([{
                         visible: true
                     },
                     labels: {
-                        rotation: "auto"
+                        rotation: "auto",
+                        font: '400 .9em "나눔 고딕", "Nanum Gothic"'
                     }
                 },
                 valueAxis: {
