@@ -170,7 +170,7 @@ yepnope([{
 					$this.set('candidatePhotoUrl',  getUserPhotoUrl($this.assessment.candidate) );
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);	
 					$this.competencyDataSource.data( $this.assessment.competencies );		
-					//$this.competencyDataSource.filter( { field: "level", operator: "gte", value: $this.assessment.jobLevel });
+					$this.competencyDataSource.filter( { field: "level", operator: "gte", value: $this.assessment.jobLevel });
 					
 					
 					$this.summaryDataSource.fetch( function(){
