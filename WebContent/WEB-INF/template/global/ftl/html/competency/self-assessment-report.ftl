@@ -384,7 +384,7 @@ yepnope([{
 	
 		.k-widget {
 	        font-family: "나눔 고딕", "Nanum Gothic";
-	        font-size: .9em;
+	        font-size: 1em;
 	    }		
 	    
 		.btn-xxl {
@@ -445,7 +445,7 @@ yepnope([{
 
 		.service-block-v3 .service-in small {
 		    text-transform: uppercase;
-		    font-family: Arial, Helvetica, sans-serif;
+		    /*font-family: Arial, Helvetica, sans-serif;*/
 		    font-size: .8em;
 		    color:#333;
 		}		
