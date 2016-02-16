@@ -351,6 +351,7 @@ yepnope([{
                     }
                     
                     ],
+                    min: 0,
                     max: 5,
                     line: {
                         visible: false
