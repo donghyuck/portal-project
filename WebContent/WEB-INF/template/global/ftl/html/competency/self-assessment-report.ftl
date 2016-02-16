@@ -250,6 +250,9 @@ yepnope([{
 			title: {
 				text: title
 			},
+			legend: {
+                position: "bottom"
+            },
 			dataSource: {
 				data: data
 			},
@@ -285,6 +288,7 @@ yepnope([{
 			dataSource: {
 				data:data,
 			},
+			
                 title: {
                     text: "척도에 따른 영역별 점수 분포"
                 },
