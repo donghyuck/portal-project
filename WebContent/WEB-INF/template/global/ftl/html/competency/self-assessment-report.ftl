@@ -286,8 +286,7 @@ yepnope([{
 				data:data,
 			},
                 title: {
-                    text: "척도에 따른 영역별 점수 분포",
-                    font: "44px Arial,Helvetica,sans-serif"
+                    text: "척도에 따른 영역별 점수 분포"
                 },
                 seriesDefaults: {
                     type: "bar"
@@ -740,7 +739,7 @@ yepnope([{
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
 		<div class="ibox">			
-			<h5>#: competencyName #</h5>
+			<h5><i class="fa fa-angle-right"></i> #: competencyName #</h5>
 			<div class="ibox-content rounded-bottom" style="padding:5px;">
 				<div class="row">
 					<div class="col-sm-12">
