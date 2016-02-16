@@ -446,6 +446,7 @@
 	    	} },
 	    	job : { type: "object", nullable:true , defaultValue:new Job() },
 	    	jobLevel : { type: "number", defaultValue: 0},
+	    	competencies : { type: "object" ,  defaultValue:[]},
 	    	totalScore:  { type: "number", defaultValue: 0 },
 	    	modifiedDate: { type: "date"},
 	        creationDate: { type: "date" },
@@ -456,6 +457,7 @@
 	    	target.set("assessmentId", this.get("assessmentId"));
 	    	target.set("assessmentPlan", this.get("assessmentPlan"));
 	    	target.set("assessors", this.get("assessors"));
+	    	target.set("competencies", this.get("competencies"));
 	    	target.set("candidate", this.get("candidate"));
 	    	target.set("state", this.get("state"));
 	    	target.set("job", this.get("job"));
