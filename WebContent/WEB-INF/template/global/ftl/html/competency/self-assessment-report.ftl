@@ -623,7 +623,21 @@ yepnope([{
 								data-template="my-assessment-job-level-template"
 								data-bind="source:jobLevelDataSource" style="overflow: auto"> 
 							</tbody>		                    
-						</table>			                	
+						</table>	
+						<table class="table">
+					    	<thead>
+					           	<tr>
+					               	<th>필요역량</th>
+					               	<th>수준</th>
+					   			</tr>
+					      	</thead>
+							<tbody data-role="listview"
+								class="no-border"
+								data-auto-bind="false"	
+								data-template="my-assessment-competency-template"
+								data-bind="source:competencyDataSource" style="overflow: auto"> 
+							</tbody>		                    
+						</table>									                	
 					</div>		                	
 		        </div>   
 	        </div>
@@ -772,7 +786,18 @@ yepnope([{
 			강점 영역
 			#}#
 		</script>		
-		
+
+		<script type="text/x-kendo-template" id="my-assessment-competency-template">
+		<tr>
+		    <td>    
+		    	#: name #
+		    </td>
+			<td>
+				#: level # 수준	
+			</td>
+		</tr>			        
+		</script>
+				
 		<script type="text/x-kendo-template" id="my-assessment-job-level-template">
 		<tr #if ( getMyAssessment().jobLevelName == name ) {# class="bg-selected" #}# >
 		    <td>    
