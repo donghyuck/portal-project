@@ -385,6 +385,7 @@ yepnope([{
 	
 		.k-widget {
 	        font-family: "나눔 고딕", "Nanum Gothic";
+	        font-weight:400;
 	        font-size: 1em;
 	    }		
 	    
