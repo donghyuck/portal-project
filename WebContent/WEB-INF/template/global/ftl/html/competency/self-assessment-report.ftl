@@ -171,23 +171,18 @@ yepnope([{
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);	
 					$this.competencyDataSource.data($this.assessment.competencies);		
 					$this.competencyDataSource.filter( { field: "level", operator: "gte", value: $this.assessment.obLevel });
-					
+					$this.competencyDataSource.read();
 					$this.summaryDataSource.fetch( function(){
 						var data = this.data();
 						$this.elementDataSource.data(data);
-						
 						var aggregates = $this.summaryDataSource.aggregates();
-						
 						console.log( kendo.stringify (aggregates) );
-						
 						$this.set('finalTotalScore', aggregates.finalScore.sum);
 						$this.set('finalMaxScore', aggregates.finalScore.max);
 						$this.set('finalMinScore', aggregates.finalScore.min);
 						$this.set('finalAvgScore', aggregates.finalScore.average);
-						
 						createRadarChart($('#assessed-summary-chart'), '모든 진단 영역별 점수',  data)
 						createBarChart(data);		
-						
 						$("#assessed-competency-details").kendoListView({
 						     dataSource: $this.competencyDataSource,
 						     template: kendo.template($("#my-assessed-conpetency-detail-template").html()),
