@@ -273,6 +273,7 @@ yepnope([{
 			},
 			valueAxis: {
 				visible: true,
+				min: 0,
 				max: 5
 			},
 			tooltip: {
