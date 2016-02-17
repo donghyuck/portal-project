@@ -269,7 +269,7 @@ yepnope([{
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
 							<h1 class="g-color-white g-mb-25" data-bind="text:assessment.assessmentPlan.name"></h1>
-							<p class="g-color-white g-mb-40">Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+							<p class="g-color-white g-mb-40"><span data-bind="text:assessment.assessmentPlan.description"></span></p>
 	 						<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>
 						</div>
 					</div>
