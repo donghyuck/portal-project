@@ -619,17 +619,22 @@ yepnope([{
 									<td>대상자</td>
 									<td class="no-padding-b">
 
-										<div class="page-credits">				
-											<div class="credit-item">
-												<div class="credit-img user">
-													<img data-bind="attr:{src: candidatePhotoUrl }" class="img-responsive img-circle" src="<@spring.url "/images/common/anonymous.png"/>">
-												</div>
-												<div class="credit-name">
-													<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span>													
-												</div>
-												<div class="credit-title"><span data-bind="text:assessment.candidate.company.displayName"></span> </div>
+
+										<div class="profile-blog">
+											<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src: candidatePhotoUrl }" alt="">
+											<div class="name-location">
+												<strong><span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span></strong>
+												<span><span data-bind="text:assessment.candidate.company.displayName"></span>/span>
 											</div>
-										</div>  
+											<div class="clearfix margin-bottom-20"></div>
+											<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
+											<hr>
+											<ul class="list-inline share-list">
+												<li><i class="fa fa-bell"></i><a href="#">37 Notifications</a></li>
+												<li><i class="fa fa-group"></i><a href="#">46 Followers</a></li>
+												<li><i class="fa fa-share"></i><a href="#">Share</a></li>
+											</ul>
+										</div>
 
 									</td>
 								</tr>																									
