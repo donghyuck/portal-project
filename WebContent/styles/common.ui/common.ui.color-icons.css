@@ -1,0 +1,325 @@
+@charset "UTF-8";
+
+i.icon-svg {
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+	width: 64px;
+	height: 64px;
+}
+
+.icon-svg-md {
+	width: 48px !important;
+	height: 48px !important;
+}
+
+.icon-svg-xs {
+	width: 16px !important;
+	height: 16px !important;
+}
+
+.icon-svg-sm {
+	width: 32px !important;
+	height: 32px !important;
+}
+
+.icon-svg-lg {
+	width: 128px !important;
+	height: 128px !important;
+}
+
+.icon-svg-btn {
+	margin: 0 .6rem .6rem 0;
+	color: #9b9b9b;
+	display: inline-block;
+	/* width: 5.5rem; */
+	/* height: 6rem; */
+	position: relative;
+	text-align: center;
+	border: 2px solid transparent;
+	border-radius: 6px !important;
+	-webkit-transition: 75ms linear all;
+	transition: 75ms linear all;
+}
+
+.icon-svg-btn:hover {
+	background: #f4f4f4;
+	color: #000;
+	text-decoration: none;
+}
+
+.icon-svg-btn:after {
+	clear: both;
+	content: "" !important;
+}
+
+/* Basic Color Icons 
+------------------------------------*/
+.icon-svg.basic-color-home {
+	background-image: url("/images/common/icons/basic/color/Home.svg");
+}
+
+.icon-svg.basic-color-folder {
+	background-image: url("/images/common/icons/basic/color/Folder.svg");
+}
+
+.icon-svg.basic-color-document-folder {
+	background-image:
+		url("/images/common/icons/basic/color/DocumentFolder.svg");
+}
+
+.icon-svg.basic-color-internet-folder {
+	background-image:
+		url("/images/common/icons/basic/color/InternetFolder.svg");
+}
+
+.icon-svg.basic-color-news {
+	background-image: url("/images/common/icons/basic/color/News.svg");
+}
+
+.icon-svg.basic-color-picture {
+	background-image: url("/images/common/icons/basic/color/Picture.svg");
+}
+
+.icon-svg.basic-color-settings {
+	background-image: url("/images/common/icons/basic/color/Settings.svg");
+}
+
+.icon-svg.basic-color-share {
+	background-image: url("/images/common/icons/basic/color/Share.svg");
+}
+
+.icon-svg.basic-color-services {
+	background-image: url("/images/common/icons/basic/color/Services.svg");
+}
+
+.icon-svg.basic-color-contacts {
+	background-image: url("/images/common/icons/basic/color/Contacts.svg");
+}
+
+.icon-svg.basic-color-file {
+	background-image: url("/images/common/icons/basic/color/File.svg");
+}
+
+.icon-svg.basic-color-document {
+	background-image: url("/images/common/icons/basic/color/Document.svg");
+}
+
+.icon-svg.basic-color-cloud-upload {
+	background-image: url("/images/common/icons/basic/color/Upload2.svg");
+}
+
+.icon-svg.basic-color-cloud-download {
+	background-image: url("/images/common/icons/basic/color/Download2.svg");
+}
+
+.icon-svg.basic-color-rating {
+	background-image: url("/images/common/icons/basic/color/Rating.svg");
+}
+
+.icon-svg.basic-color-cloud-storage {
+	background-image:
+		url("/images/common/icons/basic/color/CloudStorage.svg");
+}
+
+.icon-svg.basic-color-poll-topic {
+	background-image: url("/images/common/icons/basic/color/PollTopic.svg");
+}
+
+.icon-svg.basic-color-page-overview {
+	background-image:
+		url("/images/common/icons/basic/color/PageOverview.svg");
+}
+
+.icon-svg.basic-color-magazine {
+	background-image: url("/images/common/icons/basic/color/Magazine.svg");
+}
+
+.icon-svg.basic-color-paper {
+	background-image: url("/images/common/icons/basic/color/Paper.svg");
+}
+
+.icon-svg.basic-color-advertising {
+	background-image:
+		url("/images/common/icons/basic/color/Advertising.svg");
+}
+
+.icon-svg.basic-color-add-user {
+	background-image: url("/images/common/icons/basic/color/AddUser.svg");
+}
+
+.icon-svg.basic-color-remove-user {
+	background-image: url("/images/common/icons/basic/color/RemoveUser.svg");
+}
+
+.icon-svg.basic-color-find-user {
+	background-image: url("/images/common/icons/basic/color/FindUser.svg");
+}
+
+.icon-svg.basic-color-box-filled {
+	background-image: url("/images/common/icons/basic/color/BoxFilled.svg");
+}
+
+.icon-svg.basic-color-help {
+	background-image: url("/images/common/icons/basic/color/Help.svg");
+}
+
+.icon-svg.basic-color-reading {
+	background-image: url("/images/common/icons/basic/color/Reading.svg");
+}
+
+.icon-svg.basic-color-survey {
+	background-image: url("/images/common/icons/basic/color/Survey.svg");
+}
+
+.icon-svg.basic-color-plus {
+	background-image: url("/images/common/icons/basic/color/Plus.svg");
+}
+
+.icon-svg.basic-color-cancle {
+	background-image: url("/images/common/icons/basic/color/Cancle.svg");
+}
+
+.icon-svg.basic-color-comment {
+	background-image: url("/images/common/icons/basic/color/Comment.svg");
+}
+
+.icon-svg.basic-color-filter {
+	background-image:
+		url("/images/common/icons/basic/color/EmptyFilter.svg");
+}
+
+.icon-svg.basic-color-filled-filter {
+	background-image:
+		url("/images/common/icons/basic/color/FilledFilter.svg");
+}
+
+.icon-svg.basic-color-add-image {
+	background-image: url("/images/common/icons/basic/color/AddImage.svg");
+}
+
+.icon-svg.basic-color-up {
+	background-image: url("/images/common/icons/basic/color/Up.svg");
+}
+
+.icon-svg.basic-color-collapse-arrow {
+	background-image:
+		url("/images/common/icons/basic/color/CollapseArrow.svg");
+}
+
+.icon-svg.basic-color-previous-arrow {
+	background-image:
+		url("/images/common/icons/basic/color/PreviousArrow.svg");
+}
+
+.icon-svg.basic-color-next-arrow {
+	background-image: url("/images/common/icons/basic/color/NextArrow.svg");
+}
+
+.icon-svg.basic-color-checked-checkbox {
+	background-image:
+		url("/images/common/icons/basic/color/CheckedCheckBox.svg");
+}
+
+.icon-svg.basic-color-center-location {
+	background-image:
+		url("/images/common/icons/basic/color/CenterDirection.svg");
+}
+
+.icon-svg.basic-color-siren {
+	background-image: url("/images/common/icons/basic/color/Siren.svg");
+}
+
+/* Business Color Icons 
+------------------------------------*/
+.icon-svg.business-color-true-false {
+	background-image:
+		url("/images/common/icons/business/color/TrueFalse.svg");
+}
+
+.icon-svg.business-color-work {
+	background-image: url("/images/common/icons/business/color/Work.svg");
+}
+
+.icon-svg.business-color-for-beginner {
+	background-image:
+		url("/images/common/icons/business/color/ForBeginner.svg");
+}
+
+.icon-svg.business-color-for-experienced {
+	background-image:
+		url("/images/common/icons/business/color/ForExperienced.svg");
+}
+
+.icon-svg.business-color-high-priority {
+	background-image:
+		url("/images/common/icons/business/color/HighPriority.svg");
+}
+
+.icon-svg.business-color-report-card {
+	background-image:
+		url("/images/common/icons/business/color/ReportCard.svg");
+}
+
+.icon-svg.business-color-form {
+	background-image: url("/images/common/icons/business/color/Form.svg");
+}
+
+.icon-svg.business-color-phone {
+	background-image: url("/images/common/icons/business/color/Phone.svg");
+}
+
+/* SocialNetwork Color Icons 
+------------------------------------*/
+.icon-svg.social-color-facebook {
+	background-image: url("/images/common/icons/social/color/Facebook.svg");
+}
+
+.icon-svg.social-color-google {
+	background-image:
+		url("/images/common/icons/social/color/GooglePlus.svg");
+}
+
+.icon-svg.social-color-tumblr {
+	background-image: url("/images/common/icons/social/color/Tumblr.svg");
+}
+
+.icon-svg.social-color-twitter {
+	background-image: url("/images/common/icons/social/color/Twitter.svg");
+}
+
+/* File Color Icons 
+------------------------------------*/
+.icon-svg.file-color-excel {
+	background-image: url("/images/common/icons/file/color/Excel.svg");
+}
+
+.icon-svg.file-color-pdf {
+	background-image: url("/images/common/icons/file/color/Pdf.svg")
+		!important;
+}
+
+/* User Color Icons 
+------------------------------------*/
+.icon-svg.user-color-worker {
+	background-image: url("/images/common/icons/user/color/Worker.svg");
+}
+
+/* Sports Color Icons 
+------------------------------------*/
+.icon-svg.sports-color-exercise {
+	background-image: url("/images/common/icons/sports/color/Exercise.svg");
+}
+
+.icon-svg.sports-color-running {
+	background-image: url("/images/common/icons/sports/color/Running.svg");
+}
+
+.icon-svg.sports-color-trainers {
+	background-image: url("/images/common/icons/sports/color/Trainers.svg");
+}
+
+.icon-svg.sports-color-walking {
+	background-image: url("/images/common/icons/sports/color/Walking.svg");
+}
