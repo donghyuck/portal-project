@@ -1355,7 +1355,8 @@ h4 {
 .assessment-nav.top-nav-collapse .navbar-brand,
 .assessment-nav.top-nav-collapse .navbar-nav > li > a,
 .assessment-nav.top-nav-collapse .navbar-nav > li > a:before {
-  color: #2d2d37;
+  /*color: #2d2d37;*/
+  color:#fff
 }
 
 /*Removing the little circles*/
