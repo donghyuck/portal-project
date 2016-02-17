@@ -575,7 +575,7 @@ yepnope([{
 				<div class="container no-padding-left">
 
 					<div class="row collapse navbar-collapse"  id="navbar-ex1-collapse"> 
-						<div class="col-md-6 no-side-padding">
+						<div class="col-md-12 no-side-padding">
 							<div class="pull-left">
 								<div class="menu-container">
 									<ul class="nav navbar-nav">
