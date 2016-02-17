@@ -505,7 +505,7 @@ yepnope([{
 			<div class="container">
 				<div class="menu-container page-scroll">
 					<a class="navbar-brand no-padding" href="#body">
-						<img  src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="${action.webSite.company.name} Logo" style="height:42px; width:100%;">
+						<img  src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="${action.webSite.company.name} Logo" style="height:42px; width:auto;">
 					</a>
 				</div>	
 				<div class="tel-block hidden-3xs">
