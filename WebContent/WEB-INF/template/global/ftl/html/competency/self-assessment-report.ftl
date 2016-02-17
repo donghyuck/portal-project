@@ -551,6 +551,7 @@ yepnope([{
  	<div id="my-assessment" class="wrapper"> 	
 	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse" data-role="navigation" data-offset-top="150">
 			<div class="container">
+				<!--
 				<div class="menu-container page-scroll">
 					<a class="navbar-brand no-padding" href="#body">
 						<img  src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="${action.webSite.company.name} Logo" style="height:42px; width:auto;">
@@ -560,6 +561,37 @@ yepnope([{
 					<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
 					1-800-643-4500
 				</div>
+				-->
+				
+				<div class="row collapse navbar-collapse navbar-ex1-collapse">
+					<div class="col-md-6 no-side-padding">
+						<div class="pull-left">
+							<div class="menu-container">
+								<ul class="nav navbar-nav">
+									<li class="page-scroll home active">
+										<a href="#body">Home</a>
+									</li>
+									<li class="page-scroll">
+										<a href="#about">About</a>
+									</li>
+									<li class="page-scroll">
+										<a href="#services">Services</a>
+									</li>
+									<li class="page-scroll">
+										<a href="#projects">Projects</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="tel-block hidden-3xs">
+						<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
+						1-800-643-4500
+					</div>
+				</div>
+				
+
+				
 			</div>
 			<!-- /.container -->
 		</nav>	
