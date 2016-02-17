@@ -1361,7 +1361,7 @@ h4 {
 }
 
 /*Removing the little circles*/
-.one-page-header.architecture-nav .navbar-nav > li > a:before {
+.one-page-header.assessment-nav .navbar-nav > li > a:before {
     display: none;
 }
 
