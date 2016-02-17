@@ -316,55 +316,6 @@ yepnope([{
 				</div>
 			  <!-- Promo Content END -->
   		</section>        	
-	
-		<div class="assessment-header">
-			<div class="container">
-				<div class="row">
-	                <div class="col-sm-8">
-	                    <div class="headline no-border">
-	                    	<h2 data-bind="text:assessment.assessmentPlan.name"></h2>                    
-	                    </div>
-	                    <p class="text-muted" data-bind="text:assessment.assessmentPlan.description"></p>
-	                </div>
-	                <div class="col-sm-4">
-						<div class="ibox no-margin">
-	                		<div class="ibox-title">
-	                        	<h5 class="text-gray">진단대상자</h5>   
-	                        	<i class="icon-flat icon-svg icon-svg-sm basic-color-center-location" style="
-								    position: absolute;
-								    top: 10px;
-								    right: 20px;
-								"></i>                     
-	                    	</div>
-			            	<div class="ibox-content">
-								<div class="page-credits">				
-									<div class="credit-item">
-										<div class="credit-img user">
-											<img data-bind="attr:{src: getCandidatePhotoUrl() }" class="img-responsive img-circle" src="<@spring.url "/images/common/anonymous.png"/>">
-										</div>
-										<div class="credit-name">
-											<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span>
-											&nbsp;
-											<span class="text-muted" data-bind="{ text: assessment.candidate.username }"></span>
-										</div>
-										<div class="credit-title"><span data-bind="text:assessment.candidate.company.displayName"></span> </div>
-									</div>
-								</div>                  
-								<ul class="list-unstyled project-details">                        
-			                        <li><strong>직무:</strong> <span data-bind="text: assessment.job.name"></span></li>
-			                        <li><strong>직무수준:</strong> <span data-bind="text: assessment.jobLevelName"></span></li>
-			                        <li><strong>진단방법:</strong> 
-			                        	<span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">자가진단</span>
-			                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단</span>
-			                        </li>
-		                    		<li><strong>진단문항:</strong> <span data-bind="text: questionDataSource.total()"></span></li>
-		                    	</ul> 	
-	                   		</div>
-	                   	</div>
-	                </div>
-	            </div><!-- /.row -->
-	        </div>    		
-        </div>
         <div class="container content-md">    
 	  		<div class="row" data-bind="visible:visible" style="display:none;">
 		  		<div class="col-sm-12">
