@@ -270,7 +270,15 @@ yepnope([{
 						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
 							<h1 class="g-color-white g-mb-25" data-bind="text:assessment.assessmentPlan.name"></h1>
 							<p class="g-color-white g-mb-40"><span data-bind="text:assessment.assessmentPlan.description"></span></p>
-							
+							<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>
+						</div>
+					</div>
+				</div>
+			  <!-- Promo Content END -->
+  		</section>        	
+		<section class="container g-mb-30">
+		  	<div class="book-section g-bg-default rounded">
+
 							<table class="table">
 				            	<thead>
 				                	<tr>
@@ -309,46 +317,8 @@ yepnope([{
 				                    	<td> <span data-bind="text: questionDataSource.total()"></span> </td>
 				                   	</tr>					                   				                   					                   	
 				             	</tbody>
-				             </table>				             
-	 						<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>
-						</div>
-					</div>
-				</div>
-			  <!-- Promo Content END -->
-  		</section>        	
-		<section class="container g-mb-30">
-		  	<div class="book-section g-bg-default rounded">
-					<form action="#" class="sky-form clearfix">
-						<div class="row">
-							<div class="col col-3 g-xs-mb-20">
-								<label class="input">
-									<span class="icon-append icon-user"></span>
-									<input class="rounded" type="text" placeholder="Your name">
-								</label>
-							</div>
-							<div class="col col-3 g-xs-mb-20">
-								<label class="input">
-									<span class="icon-append icon-envelope"></span>
-									<input class="rounded" type="text" placeholder="Your email">
-								</label>
-							</div>
-							<div class="col col-4 g-xs-mb-20">
-								<label class="select">
-									<select class="rounded">
-										<option value="0" selected="">Choose service</option>
-										<option value="1">Service 1</option>
-										<option value="2">Service 2</option>
-										<option value="3">Service 3</option>
-										<option value="4">Service 4</option>
-									</select>
-									<i></i>
-								</label>
-							</div>
-							<div class="col col-2">
-								<button type="submit" class="btn-u btn-u-lg btn-u-upper rounded">Get now</button>
-							</div>
-						</div>
-					</form>
+				             </table>	
+				             					
 		  	</div>
 		  </section>
 		    		
