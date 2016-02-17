@@ -861,8 +861,9 @@ h4 {
 
 .tel-block i {
 	position: relative;
-	top: 3px;
+	top: 0px;
 	margin-right: 3px;
+	vertical-align: 0px;
 }
 
 /*---
