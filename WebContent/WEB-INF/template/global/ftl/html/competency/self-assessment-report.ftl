@@ -555,20 +555,6 @@ yepnope([{
 			</div>
 			<!-- /.container -->
 		</nav>	
-		<div class="header-v6 header-classic-dark header-sticky p-xs">
-			<div class="container">
-				<div class="row">
-	                <div class="col-sm-8">
-	                </div>
-	                <div class="col-sm-4 text-right">
-						<a href="#" class="icon-svg-btn " data-bind="click:saveAsPdf">
-							<i class="btn-label icon-flat icon-svg icon-svg-sm file-color-pdf"></i>
-						</a>	
-	                </div>
-	            </div><!-- /.row -->
-	        </div>    		
-        </div>
-
 		<section class="intro-section">
 		<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 307px; background: none;">
 				<!-- Promo Content BEGIN -->
