@@ -565,7 +565,7 @@ yepnope([{
 				</div>
 				-->				
 				<div class="menu-container">
-					<button type="button" class="navbar-toggle pull-right collapsed" data-toggle="collapse" data-target="#navbar-ex1-collapse" aria-expanded="false">
+					<button type="button" class="navbar-toggle pull-right collapsed" data-toggle="collapse" data-target="#navbar-ex1-collapse" aria-expanded="false" style="z-index:100;">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
