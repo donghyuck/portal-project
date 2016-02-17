@@ -1345,7 +1345,7 @@ h4 {
 
 
 /*Designing the header and its components*/
-.one-page-header.architecture-nav .navbar-nav > li > a {
+.one-page-header.assessment-nav .navbar-nav > li > a {
     color: #fff;
     font-size: 11px;
     font-weight: bold;
@@ -1354,9 +1354,9 @@ h4 {
     letter-spacing: 1px;
 }
 
-.architecture-nav.top-nav-collapse .navbar-brand,
-.architecture-nav.top-nav-collapse .navbar-nav > li > a,
-.architecture-nav.top-nav-collapse .navbar-nav > li > a:before {
+.assessment-nav.top-nav-collapse .navbar-brand,
+.assessment-nav.top-nav-collapse .navbar-nav > li > a,
+.assessment-nav.top-nav-collapse .navbar-nav > li > a:before {
   color: #2d2d37;
 }
 
