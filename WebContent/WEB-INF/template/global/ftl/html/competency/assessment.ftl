@@ -318,7 +318,7 @@ yepnope([{
 		<section class="intro-section">
 		<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 307px; background: none;">
 				<!-- Promo Content BEGIN -->
-				<div class="container valign__middle text-center" style="padding-top: 16.7072px;">
+				<div class="container valign__middle text-center" style="padding-top: 60px;">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
 							<h1 class="g-color-white g-mb-25" data-bind="text:assessment.assessmentPlan.name"></h1>
