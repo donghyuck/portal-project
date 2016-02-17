@@ -503,7 +503,7 @@ yepnope([{
 			<div class="container">
 				<div class="menu-container page-scroll">
 					<a class="navbar-brand" href="#body">
-						<img src="assets/img/logo-light.png" alt="ALT">
+						<img  src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="${action.webSite.company.name} Logo">
 					</a>
 				</div>
 	
