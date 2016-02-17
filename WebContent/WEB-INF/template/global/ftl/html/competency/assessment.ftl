@@ -245,7 +245,38 @@ yepnope([{
 </head>
 <body class="">
 	<div class="page-loader"></div>
+	
  	<div id="my-assessment" class="wrapper"> 	
+	
+	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse" data-role="navigation" data-offset-top="150">
+			<div class="container">
+				<div class="menu-container page-scroll">
+					<a class="navbar-brand no-padding" href="#body">
+						<img  src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="${action.webSite.company.name} Logo" style="height:42px; width:auto;">
+					</a>
+				</div>	
+				<div class="tel-block hidden-3xs">
+					<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
+					1-800-643-4500
+				</div>
+			</div>
+			<!-- /.container -->
+		</nav>	
+		<section class="intro-section">
+		<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 307px; background: none;">
+				<!-- Promo Content BEGIN -->
+				<div class="container valign__middle text-center" style="padding-top: 16.7072px;">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
+							<h1 class="g-color-white g-mb-25">Expert health advice &amp; care for wealth life</h1>
+							<p class="g-color-white g-mb-40">Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+	 						<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>
+						</div>
+					</div>
+				</div>
+			  <!-- Promo Content END -->
+  		</section>        	
+	
 		<div class="assessment-header">
 			<div class="container">
 				<div class="row">
