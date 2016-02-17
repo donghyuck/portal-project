@@ -550,7 +550,8 @@ yepnope([{
 <body class="">
 	<div class="page-loader"></div>
  	<div id="my-assessment" class="wrapper"> 	
-	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" data-role="navigation" data-offset-top="150">
+	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" 
+	 		data-role="navigation" data-offset-top="150">
 			<div class="container">
 				<!--
 				<div class="menu-container page-scroll">
@@ -563,29 +564,41 @@ yepnope([{
 					1-800-643-4500
 				</div>
 				-->				
-				<div class="row collapse navbar-collapse navbar-ex1-collapse">
-					<div class="col-md-6 no-side-padding">
-						<div class="pull-left">
-							<div class="menu-container">
-								<ul class="nav navbar-nav">
-									<li class="home">
-										<a href="#body">Home</a>
-									</li>
-									<li class="">
-										<a href="#about">역량진단</a>
-									</li>
-									<li class="active">
-										<a href="#">진단결과</a>
-									</li>
-								</ul>
+				<div class="menu-container">
+					<button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="container no-padding-left">
+
+					<div class="row collapse navbar-collapse navbar-ex1-collapse">
+						<div class="col-md-6 no-side-padding">
+							<div class="pull-left">
+								<div class="menu-container">
+									<ul class="nav navbar-nav">
+										<li class="home">
+											<a href="#body">Home</a>
+										</li>
+										<li class="">
+											<a href="#about">역량진단</a>
+										</li>
+										<li class="active">
+											<a href="#">진단결과</a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="tel-block hidden-3xs">
-						<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
-						070-7807-4040
-					</div>
-				</div>				
+						<div class="tel-block hidden-3xs">
+							<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
+							070-7807-4040
+						</div>
+					</div>						
+				
+				</div>
 			</div>
 			<!-- /.container -->
 		</nav>	
