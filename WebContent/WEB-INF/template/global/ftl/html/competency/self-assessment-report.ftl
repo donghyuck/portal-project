@@ -568,17 +568,14 @@ yepnope([{
 						<div class="pull-left">
 							<div class="menu-container">
 								<ul class="nav navbar-nav">
-									<li class="home active">
+									<li class="home">
 										<a href="#body">Home</a>
 									</li>
 									<li class="">
-										<a href="#about">About</a>
+										<a href="#about">역량진단</a>
 									</li>
-									<li class="">
-										<a href="#services">Services</a>
-									</li>
-									<li class="">
-										<a href="#projects">Projects</a>
+									<li class="active">
+										<a href="#services">진단결과</a>
 									</li>
 								</ul>
 							</div>
@@ -601,7 +598,7 @@ yepnope([{
 				<div class="container valign__middle text-center" style="padding-top: 70px;">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
-							<h1 class="g-color-white g-mb-25">Expert health advice &amp; care for wealth life</h1>
+							<h1 class="g-color-white g-mb-25">Expert advice &amp; care for wealth life</h1>
 							<p class="g-color-white g-mb-40">Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
 	 						<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>
 						</div>
