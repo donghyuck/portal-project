@@ -10,8 +10,7 @@ var jobs = [];
 yepnope([{
     load: [        
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
-			'css!<@spring.url "/styles/bootstrap.themes/unify/headers/header-v6.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/one.style.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',	
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',		
