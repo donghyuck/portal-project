@@ -11,6 +11,7 @@ yepnope([{
     load: [        
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/one.style.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.css"/>',	
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
 			'css!<@spring.url "/styles/common.ui.pages/assessment/competency-assessment.style.css"/>',			
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',	
