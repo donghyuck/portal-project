@@ -504,11 +504,10 @@ yepnope([{
 	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse" data-role="navigation" data-offset-top="150">
 			<div class="container">
 				<div class="menu-container page-scroll">
-					<a class="navbar-brand" href="#body">
-						<img  src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="${action.webSite.company.name} Logo">
+					<a class="navbar-brand no-padding" href="#body">
+						<img  src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="${action.webSite.company.name} Logo" style="height:42px; width:100%;">
 					</a>
-				</div>
-	
+				</div>	
 				<div class="tel-block hidden-3xs">
 					<i class="icon-electronics-042"></i> 1-800-643-4500
 				</div>
