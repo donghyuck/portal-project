@@ -270,6 +270,46 @@ yepnope([{
 						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
 							<h1 class="g-color-white g-mb-25" data-bind="text:assessment.assessmentPlan.name"></h1>
 							<p class="g-color-white g-mb-40"><span data-bind="text:assessment.assessmentPlan.description"></span></p>
+							
+							<table class="table">
+				            	<thead>
+				                	<tr>
+				                    	<th>대상자</th>
+				                        <th>
+											<div class="profile-blog">
+												<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src: getCandidatePhotoUrl() }" alt=""/>
+												<div class="name-location">
+													<strong><span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span></strong>
+													<span data-bind="text:assessment.candidate.company.displayName"></span>
+												</div>
+												<div class="clearfix margin-bottom-20"></div>
+												<hr>
+											</div>
+										</th>
+				                    </tr>
+				                </thead>
+				                <tbody>
+					                <tr>
+				                    	<td> 선택직무 </td>
+				                    	<td> <span data-bind="text: assessment.job.name"></span> </td>
+				                   	</tr>
+					                <tr>
+				                    	<td> 직무수준 </td>
+				                    	<td> <span data-bind="text: assessment.jobLevelName"></span> </td>
+				                   	</tr>
+					                <tr>
+				                    	<td> 선택직무 </td>
+				                    	<td> 
+											<span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">자가진단</span>
+				                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단</span>
+										</td>
+				                   	</tr>	
+					                <tr>
+				                    	<td> 진단문항 </td>
+				                    	<td> <span data-bind="text: questionDataSource.total()"></span> </td>
+				                   	</tr>					                   				                   					                   	
+				             	</tbody>
+				             </table>				             
 	 						<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>
 						</div>
 					</div>
