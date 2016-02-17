@@ -508,7 +508,7 @@ yepnope([{
 					</a>
 				</div>	
 				<div class="tel-block hidden-3xs">
-					<i class="icon-flat icon-svg icon-svg-md business-color-phone"></i>
+					<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
 					1-800-643-4500
 				</div>
 			</div>
