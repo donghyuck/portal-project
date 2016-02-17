@@ -549,7 +549,7 @@ yepnope([{
 <body class="">
 	<div class="page-loader"></div>
  	<div id="my-assessment" class="wrapper"> 	
-	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse" data-role="navigation" data-offset-top="150">
+	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" data-role="navigation" data-offset-top="150">
 			<div class="container">
 				<!--
 				<div class="menu-container page-scroll">
