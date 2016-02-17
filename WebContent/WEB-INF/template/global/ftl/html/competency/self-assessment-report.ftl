@@ -378,6 +378,24 @@ yepnope([{
 	--></script>
 	<style>
 
+		html {
+			width: 100%;
+			height: 100%;
+		}
+		body {
+			width: 100%;
+			height: 100%;
+			color: #333;
+			font-size: 14px;
+			line-height: 1.5;
+			background: #fff;
+		  text-rendering: optimizeLegibility;
+		  -webkit-font-smoothing: antialiased;
+		  -moz-osx-font-smoothing: grayscale;
+		  -moz-font-feature-settings: "liga", "kern";
+		  text-rendering: optimizelegibility;
+		}
+
 		.navbar-brand > img {
 		    width: 150px;
 		}
