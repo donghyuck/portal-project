@@ -389,13 +389,18 @@ yepnope([{
 			font-size: 14px;
 			line-height: 1.5;
 			background: #fff;
-		  text-rendering: optimizeLegibility;
-		  -webkit-font-smoothing: antialiased;
-		  -moz-osx-font-smoothing: grayscale;
-		  -moz-font-feature-settings: "liga", "kern";
-		  text-rendering: optimizelegibility;
+			  text-rendering: optimizeLegibility;
+			  -webkit-font-smoothing: antialiased;
+			  -moz-osx-font-smoothing: grayscale;
+			  -moz-font-feature-settings: "liga", "kern";
+			  text-rendering: optimizelegibility;
 		}
 
+		.one-page-header.top-nav-collapse {
+		    box-shadow: none;
+		    background: rgba(0,0,0,.4);
+		    padding: 7px 0;
+		}
 		.navbar-brand > img {
 		    width: 150px;
 		}
