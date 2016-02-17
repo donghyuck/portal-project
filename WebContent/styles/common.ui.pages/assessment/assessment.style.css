@@ -1377,7 +1377,8 @@ h4 {
   height: 1px;
 }
 .one-page-header.assessment-nav.top-nav-collapse .navbar-toggle .icon-bar {
-  background: #7d7d8f;
+  /*background: #7d7d8f;*/
+  background:#f5f5f5;
 }
 
 .one-page-header.assessment-nav .navbar-toggle:hover .icon-bar {
