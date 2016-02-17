@@ -568,16 +568,16 @@ yepnope([{
 						<div class="pull-left">
 							<div class="menu-container">
 								<ul class="nav navbar-nav">
-									<li class="page-scroll home active">
+									<li class="home active">
 										<a href="#body">Home</a>
 									</li>
-									<li class="page-scroll">
+									<li class="">
 										<a href="#about">About</a>
 									</li>
-									<li class="page-scroll">
+									<li class="">
 										<a href="#services">Services</a>
 									</li>
-									<li class="page-scroll">
+									<li class="">
 										<a href="#projects">Projects</a>
 									</li>
 								</ul>
