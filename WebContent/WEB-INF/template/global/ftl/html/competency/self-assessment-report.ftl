@@ -575,7 +575,7 @@ yepnope([{
 				<div class="container no-padding-left">
 
 					<div class="row collapse navbar-collapse"  id="navbar-ex1-collapse"> 
-						<div class="col-md-12 no-side-padding">
+						<div class="col-md-5 no-side-padding">
 							<div class="pull-left">
 								<div class="menu-container">
 									<ul class="nav navbar-nav">
@@ -592,6 +592,8 @@ yepnope([{
 								</div>
 							</div>
 						</div>
+						<div class="col-md-2 no-side-padding"></div>
+						<div class="col-md-5 no-side-padding"></div>
 						<div class="tel-block hidden-3xs">
 							<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
 							070-7807-4040
