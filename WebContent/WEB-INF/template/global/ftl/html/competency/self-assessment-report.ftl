@@ -423,6 +423,10 @@ yepnope([{
 		#my-assessment {
 			background-color: rgba(245, 245, 245, 0.952941);
 		}
+		
+		.g-heading-v9 h2 {
+			font-size : 3.5em;
+		}
 	
 		.k-widget {
 	        font-family: "나눔 고딕", "Nanum Gothic";
