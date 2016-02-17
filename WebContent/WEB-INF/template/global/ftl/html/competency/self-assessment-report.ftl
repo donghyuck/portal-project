@@ -568,7 +568,21 @@ yepnope([{
 	            </div><!-- /.row -->
 	        </div>    		
         </div>
-        
+
+		<section class="intro-section">
+		<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 307px; background: none;">
+				<!-- Promo Content BEGIN -->
+				<div class="container valign__middle text-center" style="padding-top: 16.7072px;">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
+							<h1 class="g-color-white g-mb-25">Expert health advice &amp; care for wealth life</h1>
+							<p class="g-color-white g-mb-40">Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+	 						<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>
+						</div>
+					</div>
+				</div>
+			  <!-- Promo Content END -->
+  		</section>        
         <div class="container content-md pdf-page">           
  			<div class="ibox bordered rounded">
 				<div class="ibox-title">
