@@ -33,13 +33,15 @@ yepnope([{
 			'<@spring.url "/js/common/common.ui.data.competency.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>'],   			     
 		complete : function() {
-			common.ui.setup({
-				features:{
-					wallpaper : false,
-					loading:true
-				},		
-				jobs:jobs
-			});		
+				common.ui.setup({
+					features:{
+						wallpaper : true				
+					},
+					wallpaper : {
+						renderTo:$(".fullscreen-static-image")
+					},	
+					jobs:jobs
+				});	
 			
 			handleHeader();
 			
