@@ -1347,7 +1347,7 @@ h4 {
 /*Designing the header and its components*/
 .one-page-header.assessment-nav .navbar-nav > li > a {
     color: #fff;
-    font-size: 11px;
+    font-size: .9em;
     font-weight: bold;
     text-transform: uppercase;
     padding: 20px 30px;
