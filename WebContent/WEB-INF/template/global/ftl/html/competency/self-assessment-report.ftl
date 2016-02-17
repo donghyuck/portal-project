@@ -583,15 +583,12 @@ yepnope([{
 				</div>
 			</div>
 			       
- 			<div class="ibox bordered rounded">
-				<div class="ibox-title">
-					<h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
-				</div>
-				<div class="ibox-content bg-transparent">
+ 			<div class="p-xs rounded bordered bg-white m-b-sm">
 						<table class="table no-margin-b">
 					    	<thead>
 					        	<tr>
-					            	<th colspan="2"><i class="icon-flat icon-svg icon-svg-md user-color-worker"></i></th>
+					            	<th>진단명</th>
+					            	<th><span data-bind="text:assessment.assessmentPlan.name"></span></th>
 					           	</tr>
 					   		</thead>
 					     	<tbody>
@@ -636,7 +633,6 @@ yepnope([{
 								</tr>																									
 							</tbody>		                    
 			       	</table>
-				</div>  	
 			</div>       
         
         	<h2 class="title-v2">진단직무</h2>
