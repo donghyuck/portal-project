@@ -624,7 +624,7 @@ yepnope([{
 											<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src: candidatePhotoUrl }" alt=""/>
 											<div class="name-location">
 												<strong><span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span></strong>
-												<span><span data-bind="text:assessment.candidate.company.displayName"></span>/span>
+												<span data-bind="text:assessment.candidate.company.displayName"></span>
 											</div>
 											<div class="clearfix margin-bottom-20"></div>
 											<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
