@@ -596,7 +596,7 @@ yepnope([{
 			<!-- /.container -->
 		</nav>	
 		<section class="intro-section">
-		<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 307px; background: none;">
+		<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 350px; background: none;">
 				<!-- Promo Content BEGIN -->
 				<div class="container valign__middle text-center" style="padding-top: 16.7072px;">
 					<div class="row">
