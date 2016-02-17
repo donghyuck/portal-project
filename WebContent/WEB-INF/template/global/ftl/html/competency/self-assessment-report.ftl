@@ -569,7 +569,16 @@ yepnope([{
 				</div>
 			  <!-- Promo Content END -->
   		</section>        
-        <div class="container content-md pdf-page">           
+        <div class="container content pdf-page">           
+ 
+ 			<div class="row g-mb-40 text-center">
+	  			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+					<div class="g-heading-v9 text-center">
+						<h2>역량진단결과</h2>
+					</div>
+				</div>
+			</div>
+			       
  			<div class="ibox bordered rounded">
 				<div class="ibox-title">
 					<h2 data-bind="text:assessment.assessmentPlan.name"></h2>                        
