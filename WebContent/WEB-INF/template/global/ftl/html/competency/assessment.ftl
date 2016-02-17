@@ -14,7 +14,7 @@ yepnope([{
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.css"/>',	
 			
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
-			'css!<@spring.url "/styles/common.ui.pages/assessment/competency-assessment.style.css"/>',		
+			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',		
 			
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
 			
@@ -288,17 +288,30 @@ yepnope([{
 	
  	<div id="my-assessment" class="wrapper"> 	
 	
-	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse" data-role="navigation" data-offset-top="150">
+	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" data-role="navigation" data-offset-top="150">
 			<div class="container">
-				<div class="menu-container page-scroll">
-					<a class="navbar-brand no-padding" href="#body">
-						<img  src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="${action.webSite.company.name} Logo" style="height:42px; width:auto;">
-					</a>
-				</div>	
-				<div class="tel-block hidden-3xs">
-					<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
-					1-800-643-4500
-				</div>
+				<div class="row collapse navbar-collapse navbar-ex1-collapse">
+					<div class="col-md-6 no-side-padding">
+						<div class="pull-left">
+							<div class="menu-container">
+								<ul class="nav navbar-nav">
+									<li class="home">
+										<a href="#body">Home</a>
+									</li>
+									<li class="active">
+										<a href="#">역량진단</a>
+									</li>
+									<li class="">
+										<a href="#services">진단결과</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="tel-block hidden-3xs">
+						<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
+						070-7807-4040
+					</div>
 			</div>
 			<!-- /.container -->
 		</nav>	
