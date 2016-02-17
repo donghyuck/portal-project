@@ -14,7 +14,7 @@ yepnope([{
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.css"/>',	
 			
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
-			'css!<@spring.url "/styles/common.ui.pages/assessment/competency-assessment.style.css"/>',			
+			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',			
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',	
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',	
@@ -542,7 +542,8 @@ yepnope([{
 		    line-height: 32px;
 		    box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
 		    margin-left: 0px;
-		}							
+		}					
+				
 	</style>
 </#compress>
 </head>
@@ -561,8 +562,7 @@ yepnope([{
 					<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
 					1-800-643-4500
 				</div>
-				-->
-				
+				-->				
 				<div class="row collapse navbar-collapse navbar-ex1-collapse">
 					<div class="col-md-6 no-side-padding">
 						<div class="pull-left">
@@ -575,7 +575,7 @@ yepnope([{
 										<a href="#about">역량진단</a>
 									</li>
 									<li class="active">
-										<a href="#services">진단결과</a>
+										<a href="#">진단결과</a>
 									</li>
 								</ul>
 							</div>
@@ -583,12 +583,9 @@ yepnope([{
 					</div>
 					<div class="tel-block hidden-3xs">
 						<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
-						1-800-643-4500
+						070-7807-4040
 					</div>
-				</div>
-				
-
-				
+				</div>				
 			</div>
 			<!-- /.container -->
 		</nav>	
