@@ -378,6 +378,10 @@ yepnope([{
 	--></script>
 	<style>
 
+		.navbar-brand > img {
+		    width: 150px;
+		}
+
 		#my-assessment {
 			background-color: rgba(245, 245, 245, 0.952941);
 		}
