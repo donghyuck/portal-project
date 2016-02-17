@@ -1442,3 +1442,14 @@ h4 {
 		margin: 0px 0 0;
 	}
 }
+
+
+.no-side-padding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.no-padding-left {
+	padding-left: 0;
+}
+
