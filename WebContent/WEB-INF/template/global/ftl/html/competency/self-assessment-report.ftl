@@ -379,7 +379,6 @@ yepnope([{
 	--></script>
 	<style>
 	
-
 		#my-assessment {
 			background-color: rgba(245, 245, 245, 0.952941);
 		}
@@ -509,8 +508,7 @@ yepnope([{
 					</a>
 				</div>	
 				<div class="tel-block hidden-3xs">
-					<i class="icon-electronics-042"></i> 
-					<i class="score-image icon-flat icon-svg icon-svg-md business-color-phone"></i>
+					<i class="icon-flat icon-svg icon-svg-md business-color-phone"></i>
 					1-800-643-4500
 				</div>
 			</div>
