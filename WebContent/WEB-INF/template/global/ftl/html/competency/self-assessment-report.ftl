@@ -809,7 +809,7 @@ yepnope([{
 			<h3>1. 전체 진단 영역별 점수 분석</h3> 
 								
 					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">	
-						<div id="assessed-summary-chart"></div>  				
+						<div id="assessed-summary-chart" class="chart-wrapper"></div>  				
 					</div>
 
 					        			
@@ -820,7 +820,7 @@ yepnope([{
 			<h3>2. 진단 척도에 따른 영역별 점수 분석</h3> 
 								
 					<div class="p-xs rounded bordered bg-white m-b-sm margin-bottom-10">		
-						<div id="assessed-summary-bar-chart"></div> 		
+						<div id="assessed-summary-bar-chart" class="chart-wrapper"></div> 		
 					</div>
 					
 					<div data-role="grid"
