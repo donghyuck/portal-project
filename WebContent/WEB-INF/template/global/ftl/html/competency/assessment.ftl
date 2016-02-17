@@ -277,22 +277,14 @@ yepnope([{
 			  <!-- Promo Content END -->
   		</section>        	
 		<section class="container g-mb-30">
-		  	<div class="book-section g-bg-default rounded">
+		  	<div class="book-section g-bg-default rounded no-margin-b">
 
 							<table class="table">
 				            	<thead>
 				                	<tr>
 				                    	<th>대상자</th>
 				                        <th>
-											<div class="profile-blog">
-												<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src: getCandidatePhotoUrl() }" alt=""/>
-												<div class="name-location">
-													<strong><span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span></strong>
-													<span data-bind="text:assessment.candidate.company.displayName"></span>
-												</div>
-												<div class="clearfix margin-bottom-20"></div>
-												<hr>
-											</div>
+											<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span>
 										</th>
 				                    </tr>
 				                </thead>
