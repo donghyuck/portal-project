@@ -382,6 +382,20 @@ yepnope([{
 		    width: 150px;
 		}
 
+		.tel-block {
+		    color: #fff;
+		    font-size: 22px;
+		    font-weight: 300;
+		    padding: 4px 0;
+		    float: right;
+		}
+		
+		.tel-block i {
+		    position: relative;
+		    top: 3px;
+		    margin-right: 3px;
+		}		
+
 		#my-assessment {
 			background-color: rgba(245, 245, 245, 0.952941);
 		}
