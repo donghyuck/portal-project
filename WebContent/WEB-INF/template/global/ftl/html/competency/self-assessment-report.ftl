@@ -627,13 +627,7 @@ yepnope([{
 												<span data-bind="text:assessment.candidate.company.displayName"></span>
 											</div>
 											<div class="clearfix margin-bottom-20"></div>
-											<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
 											<hr>
-											<ul class="list-inline share-list">
-												<li><i class="fa fa-bell"></i><a href="#">37 Notifications</a></li>
-												<li><i class="fa fa-group"></i><a href="#">46 Followers</a></li>
-												<li><i class="fa fa-share"></i><a href="#">Share</a></li>
-											</ul>
 										</div>
 
 									</td>
