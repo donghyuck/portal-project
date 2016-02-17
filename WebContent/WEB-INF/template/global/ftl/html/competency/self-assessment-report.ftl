@@ -11,6 +11,7 @@ yepnope([{
     load: [        
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/one.style.css"/>',	
+			'css!<@spring.url "/styles/common.ui.pages/assessment/competency-assessment.style.css"/>',				
 			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',	
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',		
@@ -377,47 +378,7 @@ yepnope([{
 	
 	--></script>
 	<style>
-
-		html {
-			width: 100%;
-			height: 100%;
-		}
-		body {
-			width: 100%;
-			height: 100%;
-			color: #333;
-			font-size: 14px;
-			line-height: 1.5;
-			background: #fff;
-			  text-rendering: optimizeLegibility;
-			  -webkit-font-smoothing: antialiased;
-			  -moz-osx-font-smoothing: grayscale;
-			  -moz-font-feature-settings: "liga", "kern";
-			  text-rendering: optimizelegibility;
-		}
-
-		.one-page-header.top-nav-collapse {
-		    box-shadow: none;
-		    background: rgba(0,0,0,.4);
-		    padding: 7px 0;
-		}
-		.navbar-brand > img {
-		    width: 150px;
-		}
-
-		.tel-block {
-		    color: #fff;
-		    font-size: 22px;
-		    font-weight: 300;
-		    padding: 4px 0;
-		    float: right;
-		}
-		
-		.tel-block i {
-		    position: relative;
-		    top: 3px;
-		    margin-right: 3px;
-		}		
+	
 
 		#my-assessment {
 			background-color: rgba(245, 245, 245, 0.952941);
