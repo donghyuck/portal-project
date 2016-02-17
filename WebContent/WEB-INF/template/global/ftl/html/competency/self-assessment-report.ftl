@@ -499,6 +499,20 @@ yepnope([{
 <body class="">
 	<div class="page-loader"></div>
  	<div id="my-assessment" class="wrapper"> 	
+	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse" data-role="navigation" data-offset-top="150">
+			<div class="container">
+				<div class="menu-container page-scroll">
+					<a class="navbar-brand" href="#body">
+						<img src="assets/img/logo-light.png" alt="ALT">
+					</a>
+				</div>
+	
+				<div class="tel-block hidden-3xs">
+					<i class="icon-electronics-042"></i> 1-800-643-4500
+				</div>
+			</div>
+			<!-- /.container -->
+		</nav>	
 		<div class="header-v6 header-classic-dark header-sticky p-xs">
 			<div class="container">
 				<div class="row">
