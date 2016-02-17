@@ -1342,8 +1342,6 @@ h4 {
 	top: 2px;
 }
 
-
-
 /*Designing the header and its components*/
 .one-page-header.assessment-nav .navbar-nav > li > a {
     color: #fff;
@@ -1371,4 +1369,74 @@ h4 {
 .one-page-header .navbar-nav > li.active > a:focus,
 .one-page-header .navbar-nav > li.active > a {
 	color: #c94645 !important;
+}
+
+/*Designing the toggle button for responsive*/
+.one-page-header.assessment-nav .navbar-toggle .icon-bar {
+  background: #fff;
+  height: 1px;
+}
+.one-page-header.assessment-nav.top-nav-collapse .navbar-toggle .icon-bar {
+  background: #7d7d8f;
+}
+
+.one-page-header.assessment-nav .navbar-toggle:hover .icon-bar {
+    background: #c94645 !important;
+}
+
+@media (max-width: 1200px) {
+	/*fixing the list items below 1200px*/
+	.one-page-header.assessment-nav .navbar-nav > li > a {
+	    padding: 15px 20px;
+	}
+}
+
+@media (max-width: 991px) and (min-width: 990px){
+	/*Controling the issue right before the breakpoint*/
+	.one-page-header.assessment-nav .navbar-nav > li > a {
+	    padding: 17px 20px 13px;
+	}
+
+	/*Hiding the center logo for below 992px*/
+	.assessment-nav .logo {
+		display: none;
+	}
+
+}
+
+@media (max-width: 991px) {
+	/*Hiding the center logo for below 990px*/
+	.navbar.assessment-nav > .container .navbar-brand.logo-centered,
+	.navbar.assessment-nav > .container-fluid .navbar-brand.logo-centered {
+		display: none;
+	}
+
+	.architecture-nav .left {
+		float: none;
+	}
+
+	.architecture-nav .right {
+		float: left;
+	}
+
+	/*Displaying the navbar below 990px*/
+	.navbar.assessment-nav > .container .navbar-brand.logo-left,
+	.navbar.assessment-nav > .container-fluid .navbar-brand.logo-left {
+		display: block;
+		padding: 11px 10px 6px;
+	}
+
+	/*Other header controls*/
+	.one-page-header.assessment-nav .navbar-nav > li > a {
+	    padding: 17px 10px 13px;
+	}
+
+	.assessment-nav .navbar-collapse {
+		border: none;
+		box-shadow: none;
+	}
+
+	.assessment-nav .navbar-toggle {
+		margin: 13px 0 0;
+	}
 }
