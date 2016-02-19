@@ -445,6 +445,7 @@
 	    		return new common.ui.data.User( value );
 	    	} },
 	    	job : { type: "object", nullable:true , defaultValue:new Job() },
+	    	jobLevelId:  { type: "number", defaultValue: 0 },
 	    	jobLevel : { type: "number", defaultValue: 0},
 	    	competencies : { type: "object" ,  defaultValue:[]},
 	    	totalScore:  { type: "number", defaultValue: 0 },
