@@ -1457,8 +1457,8 @@ h4 {
 
 .modal-dialog .close  {
 	position: absolute;
-	top: 0;
-	right: 15px;
+	top: 5px;
+	right: 5px;
 	line-height: 50px;
 	font-size: 40px;
 	display: block;
