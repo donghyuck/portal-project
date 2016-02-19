@@ -1091,7 +1091,7 @@
 		applyTo = options.applyTo || $("#u-navbar"),
 		renderTo = options.renderTo || applyTo.find("[data-feature-name='u-accounts']") ;
 		if( renderTo.length == 0  ){
-			$('body').append("<div [data-feature-name='u-accounts'] />");
+			$('body').append("<div data-feature-name='u-accounts' />");
 			renderTo = $("[data-feature-name='u-accounts']");
 		}
 		
