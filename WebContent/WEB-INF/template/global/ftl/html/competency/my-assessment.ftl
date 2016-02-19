@@ -30,7 +30,6 @@
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.data.competency.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>'],
-			],			
 			complete: function() {		
 				
 				common.ui.setup({
