@@ -35,10 +35,8 @@
 				common.ui.setup({
 					features:{
 						wallpaper : true,
-						lightbox : true,
-						spmenu : false,
-						morphing : false,
 						accounts : {
+							render : false,
 							authenticate : function(e){
 							console.log( kendo.stringify(e.token) );
 								e.token.copy(currentUser);
