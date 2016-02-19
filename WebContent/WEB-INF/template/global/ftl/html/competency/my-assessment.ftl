@@ -348,6 +348,7 @@
 						<span class="icon-bar"></span>
 					</button>
 				</div>
+				<div class="container no-padding-left">
 				<div class="row collapse navbar-collapse" id="navbar-ex1-collapse" >
 					<div class="col-md-5 no-side-padding">
 						<div class="pull-left">
@@ -370,6 +371,7 @@
 						<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
 						070-7807-4040
 					</div>
+				</div>
 				</div>
 			</div>
 			<!-- /.container -->
