@@ -597,10 +597,10 @@
              </table>
            		<div class="text-right">
         		#if(assessmentPlan.multipleApplyAllowed || userAssessedCount == 0 || userIncompleteCount > 0 ){#
-                	<button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</a>
+                	<button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</button>
                 #}#	     
                 #if(userAssessedCount>0){ #        
-                	<a href="\\#" class="btn btn-flat btn-success btn-outline rounded" data-action="result" data-object-id="#:assessmentPlan.assessmentId#">결과보기</a>                     
+                	<button href="\\#" class="btn btn-flat btn-success btn-outline rounded" data-action="result" data-object-id="#:assessmentPlan.assessmentId#">결과보기</button>                     
                 #}#
                 </div> 
         </li>	
