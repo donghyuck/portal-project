@@ -424,10 +424,7 @@ yepnope([{
 	--></script>
 	<style>
 	
-		#my-assessment {
-			background-color: rgba(245, 245, 245, 0.952941);
-		}
-		
+
 		.g-heading-v9 h2 {
 			font-size : 3.5em;
 		}
