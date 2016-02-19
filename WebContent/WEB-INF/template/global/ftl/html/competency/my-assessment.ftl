@@ -319,7 +319,7 @@
 			<!-- /.container -->
 		</nav>	
 		<section class="intro-section">
-		<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 307px; background: none;">
+			<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 307px; background: none;">
 				<!-- Promo Content BEGIN -->
 				<div class="container valign__middle text-center" style="padding-top: 60px;">
 					<div class="row">
@@ -330,7 +330,8 @@
 						</div>
 					</div>
 				</div>
-			  <!-- Promo Content END -->
+			</div>	
+		  	<!-- Promo Content END -->
   		</section>     					
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
