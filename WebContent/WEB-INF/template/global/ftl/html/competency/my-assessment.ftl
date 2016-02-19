@@ -595,14 +595,14 @@
                 # } #                
              	</tbody>
              </table>
-           		<ul class="text-right">
+           		<div class="text-right">
         		#if(assessmentPlan.multipleApplyAllowed || userAssessedCount == 0 || userIncompleteCount > 0 ){#
-                	<li><button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</a></li>
+                	<button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</a>
                 #}#	     
                 #if(userAssessedCount>0){ #        
-                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline rounded" data-action="result" data-object-id="#:assessmentPlan.assessmentId#">결과보기</a></li>                        
+                	<a href="\\#" class="btn btn-flat btn-success btn-outline rounded" data-action="result" data-object-id="#:assessmentPlan.assessmentId#">결과보기</a>                     
                 #}#
-                </ul> 
+                </div> 
         </li>	
 	    </script>
 		<!-- ./END TEMPLATE -->
