@@ -361,6 +361,7 @@
 						<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
 						070-7807-4040
 					</div>
+				</div>
 			</div>
 			<!-- /.container -->
 		</nav>	
