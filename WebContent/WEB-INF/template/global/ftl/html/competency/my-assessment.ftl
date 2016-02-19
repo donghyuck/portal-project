@@ -340,6 +340,14 @@
 			<!-- START HEADER -->		
 		<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" data-role="navigation" data-offset-top="150">
 			<div class="container">
+				<div class="menu-container">
+					<button type="button" class="navbar-toggle pull-right collapsed" data-toggle="collapse" data-target="#navbar-ex1-collapse" aria-expanded="false" style="z-index:100;">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
 				<div class="row collapse navbar-collapse navbar-ex1-collapse">
 					<div class="col-md-6 no-side-padding">
 						<div class="pull-left">
