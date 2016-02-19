@@ -1099,8 +1099,6 @@
 				return renderTo.data("kendoUserAssistanceBar");
 			}						
 		}else{
-			authenticate : function() {
-				var that = this;
 				ajax( that.options.url || AUTHENTICATE_URL , {
 					success : function(response){
 							var token = new common.ui.data.User(extend( response.user, { roles : response.roles }));
@@ -1113,7 +1111,6 @@
 							}
 					}
 				});
-			}			
 		}
 	}	
 	
