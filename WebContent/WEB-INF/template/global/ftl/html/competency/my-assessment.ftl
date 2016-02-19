@@ -74,7 +74,10 @@
 				});
 				common.ui.listview(renderTo,{
               	  	dataSource: dataSource,
-                	template: kendo.template($("#my-assessment-plan-listview-template").html())
+                	template: kendo.template($("#my-assessment-plan-listview-template").html()),
+                	dataBound: function(){		
+                		renderTo.removeClass("k-widget k-listview");                	
+                	}
         	    });
         	    
         	    $(document).on("click","[data-action='apply']", function(e){						
