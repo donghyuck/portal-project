@@ -1120,7 +1120,7 @@
 			kendo.notify(that);
 		},
 		options : {
-			render : true,
+			refresh : true,
 			name : "UserAssistanceBar",
 			allowToSignIn : false,
 			allowToSignUp : false,
