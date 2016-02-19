@@ -1111,7 +1111,7 @@
 			Widget.fn.init.call(that, element, options);
 			
 			console.log(options);
-			console.log(taht.options);
+			console.log(that.options);
 			
 			element = that.wrapper = that.element;
 			options = that.options;
