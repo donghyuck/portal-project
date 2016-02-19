@@ -1099,7 +1099,7 @@
 				return renderTo.data("kendoUserAssistanceBar");
 			}						
 		}else{
-				ajax( that.options.url || AUTHENTICATE_URL , {
+				ajax( options.url || AUTHENTICATE_URL , {
 					success : function(response){
 							var token = new common.ui.data.User(extend( response.user, { roles : response.roles }));
 							token.set('isSystem', false);
