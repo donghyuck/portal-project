@@ -1089,27 +1089,18 @@
 	function accounts( options ){		
 		var options = options || {},
 		applyTo = options.applyTo || $("#u-navbar"),
-		renderTo = applyTo.find("[data-feature-name='u-accounts']") ;
-		if( renderTo.length == 1  ){
-			// html  exist 			
-			if( !renderTo.data("kendoUserAssistanceBar") )
-			{
-				return new UserAssistanceBar(renderTo, options);				
-			}else{
-				return renderTo.data("kendoUserAssistanceBar");
-			}						
+		renderTo = options.renderTo || applyTo.find("[data-feature-name='u-accounts']") ;
+		if( renderTo.length == 0  ){
+			$('body').append("<div [data-feature-name='u-accounts'] />");
+			renderTo = $("[data-feature-name='u-accounts']");
+		}
+		
+		if( !renderTo.data("kendoUserAssistanceBar") )
+		{
+			options.render = false;
+			return new UserAssistanceBar(renderTo, options);				
 		}else{
-				ajax( options.url || AUTHENTICATE_URL , {
-					success : function(response){
-							var token = new common.ui.data.User(extend( response.user, { roles : response.roles }));
-							token.set('isSystem', false);
-							if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
-								token.set('isSystem', true);			
-							if( options.authenticate ){								
-								options.authenticate({ token : that.token });
-							}
-					}
-				});
+			return renderTo.data("kendoUserAssistanceBar");
 		}
 	}	
 	
@@ -1124,6 +1115,7 @@
 			kendo.notify(that);
 		},
 		options : {
+			render : true,
 			name : "UserAssistanceBar",
 			allowToSignIn : false,
 			allowToSignUp : false,
@@ -1138,7 +1130,10 @@
 						if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
 							token.set('isSystem', true);			
 						token.copy(that.token);	
-						that.refresh();
+						
+						if( that.options.render )
+							that.refresh();
+						
 						that.trigger(AUTHENTICATE,{ token : that.token });
 				}
 			});
@@ -1188,145 +1183,6 @@
 	});
 	
 })(jQuery);
-/**
-;(function($, undefined) {
-	
-	var ui = common.ui,
-	kendo = window.kendo, 
-	Widget = kendo.ui.Widget, 
-	isPlainObject = $.isPlainObject, 
-	ObservableObject = kendo.data.ObservableObject,
-	proxy = $.proxy, 
-	extend = $.extend, 
-	placeholderSupported = kendo.support.placeholder, 
-	browser = kendo.support.browser, 
-	isFunction = kendo.isFunction, 
-	template = kendo.template,
-	UNDEFINED = 'undefined',	
-	AUTHENTICATE = "authenticate",
-	SHOWN = "shown", 
-	EXPAND = "expand",
-	COLLAPSE = "collapse",
-	ROLE_ADMIN = "ROLE_ADMIN", 
-	ROLE_SYSTEM = "ROLE_SYSTEM", 	
-	LOGIN_URL = "/login",
-	CALLBACK_URL_TEMPLATE = kendo.template("#if ( typeof( externalLoginHost ) == 'string'  ) { #http://#= externalLoginHost ## } #/community/connect-socialnetwork.do?media=#= media #&domainName=#= domain #"), 
-	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",	
-	guid = common.guid,
-	ajax = ui.ajax,
-	handleAjaxError = ui.handleAjaxError,
-	defined = ui.defined,
-	templates = {};
-	
-	var Accounts = Widget.extend({
-		init : function(element, options) {
-			var that = this,
-			token = that.token = new common.ui.data.User(),
-			content,
-			id;			
-			Widget.fn.init.call(that, element, options);
-			options = that.options;			
-			element = that.element;			
-			content = that.content = options.content;			
-			id = element.attr("id");			
-			if( options.render ){
-				if( defined(that.options.template) ){
-					content = that.options.template(token);
-				}
-				if(options.allowToSignIn && element.is(":hidden")){
-					element.show();					
-				}
-			}
-			that.authenticate();
-			kendo.notify(that);
-		},
-		options : {
-			name : "ExtAccounts",
-			allowToSignIn : false,
-			allowToSignUp : false,
-			render : true,
-			content : "",
-			messages : {
-				title : "로그인",
-				loginFail : "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다.",
-				loginError : "잘못된 접근입니다."			
-			},
-			expand: true
-		},
-		events : [ AUTHENTICATE, SHOWN, EXPAND, COLLAPSE ],		
-		authenticate : function() {
-			var that = this;
-			ajax( that.options.url || AUTHENTICATE_URL, {
-				success : function(response){
-						var token = new common.ui.data.User($.extend( response.currentUser, { roles : response.roles }));
-						token.set('isSystem', false);
-						if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
-							token.set('isSystem', true);			
-						token.copy(that.token);	
-						if( that.options.render && defined(that.options.template) ){
-							that.content = that.options.template(that.token);
-							that.refresh();
-						}
-						that.trigger(AUTHENTICATE,{ token : that.token });
-				}
-			});		
-		},
-		_fireExpendEvent : function (){
-			var that = this;
-			if($("body").hasClass("aside-menu-in") ){
-				that.trigger(EXPAND);
-			}else{
-				that.trigger(COLLAPSE);
-			}
-		},
-		refresh : function( ){			
-			var that = this ,
-			options = that.options,
-			element = that.element,
-			content = that.content ;									
-			
-			element.html(content);
-			
-			if( options.expand ){
-				var aside= element.find('.navbar-toggle-aside-menu');	
-				if( aside.length > 0 ){	
-					var target = aside.attr("href");	
-					if($(target).length == 0 )
-					{
-						var template = kendo.template($("#account-sidebar-template").html());
-						$("body").append( template(that.token) );
-					}						
-					$( target + ' button.btn-close:first').click(function(e){
-						
-						$("body").toggleClass("aside-menu-in");
-						that._fireExpendEvent();
-					});						
-					aside.click(function(e){
-						$("body").toggleClass("aside-menu-in");
-						that._fireExpendEvent();
-						return false;							
-					});							
-				}
-			}			
-			that.trigger(SHOWN);
-		}
-	});
-	
-	function accounts (render, options){
-		if( !render.data("kendoExtAccounts") )
-		{
-			return new Accounts(render, options);				
-		}else{
-			return render.data("kendoExtAccounts");
-		}				
-	}
-	
-	extend(ui, {
-		accounts : common.ui.accounts || accounts		
-	});
-	
-})(jQuery);
-**/
 
 /**
  * ButtonGroup
