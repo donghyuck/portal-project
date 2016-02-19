@@ -1105,7 +1105,6 @@
 							token.set('isSystem', false);
 							if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
 								token.set('isSystem', true);			
-							token.copy(that.token);	
 							if( options.authenticate ){								
 								options.authenticate({ token : that.token });
 							}
