@@ -1092,17 +1092,29 @@
 		renderTo = applyTo.find("[data-feature-name='u-accounts']") ;
 		if( renderTo.length == 1  ){
 			// html  exist 			
+			if( !renderTo.data("kendoUserAssistanceBar") )
+			{
+				return new UserAssistanceBar(renderTo, options);				
+			}else{
+				return renderTo.data("kendoUserAssistanceBar");
+			}						
 		}else{
-			// html not exist. 
-			// append			
+			authenticate : function() {
+				var that = this;
+				ajax( that.options.url || AUTHENTICATE_URL , {
+					success : function(response){
+							var token = new common.ui.data.User(extend( response.user, { roles : response.roles }));
+							token.set('isSystem', false);
+							if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
+								token.set('isSystem', true);			
+							token.copy(that.token);	
+							if( options.authenticate ){								
+								options.authenticate({ token : that.token });
+							}
+					}
+				});
+			}			
 		}
-		
-		if( !renderTo.data("kendoUserAssistanceBar") )
-		{
-			return new UserAssistanceBar(renderTo, options);				
-		}else{
-			return renderTo.data("kendoUserAssistanceBar");
-		}				
 	}	
 	
 	var UserAssistanceBar = Widget.extend({
