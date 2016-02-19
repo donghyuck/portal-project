@@ -1109,13 +1109,18 @@
 			var that = this,
 			token = that.token = new common.ui.data.User();
 			Widget.fn.init.call(that, element, options);
+			
+			console.log(options);
+			console.log(taht.options);
+			
 			element = that.wrapper = that.element;
 			options = that.options;
+			
 			that.authenticate();
 			kendo.notify(that);
 		},
 		options : {
-			render : true,
+			enable: true,
 			name : "UserAssistanceBar",
 			allowToSignIn : false,
 			allowToSignUp : false,
