@@ -40,6 +40,7 @@
 						morphing : false,
 						accounts : {
 							authenticate : function(e){
+							console.log( kendo.stringify(e.token) );
 								e.token.copy(currentUser);
 							} 
 						}						
