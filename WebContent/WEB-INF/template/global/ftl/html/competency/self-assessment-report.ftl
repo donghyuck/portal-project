@@ -576,10 +576,10 @@ yepnope([{
 								<div class="menu-container">
 									<ul class="nav navbar-nav">
 										<li class="home">
-											<a href="#body">Home</a>
+											<a href="#">Home</a>
 										</li>
 										<li class="">
-											<a href="#about">역량진단</a>
+											<a href="<@spring.url "/display/assessment/my-assessment.html"/>">역량진단</a>
 										</li>
 										<li class="active">
 											<a href="#">진단결과</a>
