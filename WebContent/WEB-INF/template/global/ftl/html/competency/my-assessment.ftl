@@ -18,6 +18,7 @@
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',				
 			'css!<@spring.url "/styles/codrops/codrops.svgcheckbox.css"/>',	
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',					
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',					
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
