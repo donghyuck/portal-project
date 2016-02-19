@@ -223,7 +223,7 @@
 				kendo.bind(renderTo, observable );		
 				
 				
-				renderTo.on("click", "[data-action='redirect']", function(e){
+				$(document).on("click", "[data-action='redirect']", function(e){
 					alert(1);
 				});
 							
