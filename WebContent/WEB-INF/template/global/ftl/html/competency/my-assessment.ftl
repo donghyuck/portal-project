@@ -568,52 +568,7 @@
 		</script>
 		
 		<script type="text/x-kendo-template" id="my-assessment-plan-listview-template">
-		<li class="col-sm-6 col-md-4">
-		
-	<div class="ibox poll float-e-margins" data-object-id="2" data-uid="97c3c771-417c-4a8c-88b6-456627daeff8" role="option" aria-selected="false">
-		<div class="ibox-title">
-			 <h3>#: assessmentPlan.name#</h3>
-		</div>
-		<div class="ibox-content">
-			<div class="row">
-				<div class="col-sm-6">
-					<h4>#= kendo.toString( new Date(assessmentPlan.startDate), "g") # ~ #: kendo.toString( new Date( assessmentPlan.endDate), "g") #</h4>
-					<p>#: assessmentPlan.description#</p>    
-					<table class="table">
-		            	<thead>
-		                	<tr>
-		                    	<th>대분류</th>
-		                        <th>중분류</th>
-		                        <th>소분류</th>
-		                        <th>직무</th>
-		                    </tr>
-		                </thead>
-		                <tbody>
-		 				# for (var i = 0; i < assessmentPlan.jobSelections.length ; i++) { #	
-			            # var jb = assessmentPlan.jobSelections[i] ; #	
-			                <tr>
-		                    	<td>#if(jb.classifiedMajorityId > 0){# #:jb.classifiedMajorityName# #}#</td>
-		                    	<td>#if(jb.classifiedMiddleId > 0){# #:jb.classifiedMiddleName# #}#</td>
-		                    	<td>#if(jb.classifiedMiddleId > 0){# #:jb.classifiedMiddleName# #}#</td>
-		                    	<td>#if(jb.jobId > 0){# #:jb.jobName# #}#</td>
-		                   	</tr>
-		                # } #                
-		             	</tbody>
-		             </table>								
-								
-				</div>
-			</div>
-		</div>	
-		<div class="ibox-footer">
-        		#if(assessmentPlan.multipleApplyAllowed || userAssessedCount == 0 || userIncompleteCount > 0 ){#
-                	<button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</button>
-                #}#	     
-                #if(userAssessedCount>0){ #        
-                	<button href="\\#" class="btn btn-flat btn-success btn-outline rounded" data-action="result" data-object-id="#:assessmentPlan.assessmentId#">결과보기</button>                     
-                #}#		
-		</div>
-	</div>
-			
+		<li class="col-sm-6 col-md-6 col-lg-4">
         	<div class="team-img"> 	
        		</div>
             <h3>#: assessmentPlan.name#</h3>
