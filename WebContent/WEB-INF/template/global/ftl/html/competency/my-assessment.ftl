@@ -567,15 +567,7 @@
 		
 		<script type="text/x-kendo-template" id="my-assessment-plan-listview-template">
 		<li class="col-sm-6 col-md-4">
-        	<div class="team-img">
-        		<ul class="text-right">
-        		#if(assessmentPlan.multipleApplyAllowed || userAssessedCount == 0 || userIncompleteCount > 0 ){#
-                	<li><button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</a></li>
-                #}#	     
-                #if(userAssessedCount>0){ #        
-                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline rounded" data-action="result" data-object-id="#:assessmentPlan.assessmentId#">결과보기</a></li>                        
-                #}#
-                </ul>   	
+        	<div class="team-img"> 	
        		</div>
             <h3>#: assessmentPlan.name#</h3>
             <h4>#= kendo.toString( new Date(assessmentPlan.startDate), "g") # ~ #: kendo.toString( new Date( assessmentPlan.endDate), "g") #</h4>
@@ -601,6 +593,14 @@
                 # } #                
              	</tbody>
              </table>
+           		<ul class="text-right">
+        		#if(assessmentPlan.multipleApplyAllowed || userAssessedCount == 0 || userIncompleteCount > 0 ){#
+                	<li><button class="btn btn-flat btn-primary btn-outline  rounded" data-action="apply" data-object-id="#:assessmentPlan.assessmentId#">참여하기</a></li>
+                #}#	     
+                #if(userAssessedCount>0){ #        
+                	<li><a href="\\#" class="btn btn-flat btn-success btn-outline rounded" data-action="result" data-object-id="#:assessmentPlan.assessmentId#">결과보기</a></li>                        
+                #}#
+                </ul> 
         </li>	
 	    </script>
 		<!-- ./END TEMPLATE -->
