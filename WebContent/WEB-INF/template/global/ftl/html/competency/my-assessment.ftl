@@ -333,7 +333,7 @@
 		</style>   	
 		</#compress>
 	</head>
-	<body id="doc" class="">
+	<body class="">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->		
