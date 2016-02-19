@@ -1097,7 +1097,6 @@
 		
 		if( !renderTo.data("kendoUserAssistanceBar") )
 		{
-			options.render = false;
 			return new UserAssistanceBar(renderTo, options);				
 		}else{
 			return renderTo.data("kendoUserAssistanceBar");
@@ -1120,7 +1119,7 @@
 			kendo.notify(that);
 		},
 		options : {
-			refresh : true,
+			render : true,
 			name : "UserAssistanceBar",
 			allowToSignIn : false,
 			allowToSignUp : false,
