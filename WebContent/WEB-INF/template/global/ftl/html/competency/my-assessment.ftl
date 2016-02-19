@@ -348,8 +348,8 @@
 						<span class="icon-bar"></span>
 					</button>
 				</div>
-				<div class="row collapse navbar-collapse navbar-ex1-collapse">
-					<div class="col-md-6 no-side-padding">
+				<div class="row collapse navbar-collapse" id="navbar-ex1-collapse" >
+					<div class="col-md-5 no-side-padding">
 						<div class="pull-left">
 							<div class="menu-container">
 								<ul class="nav navbar-nav">
