@@ -11,31 +11,25 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
-			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',	
-			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
-			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',	
-			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
-			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
-			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/one.style.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.css"/>',				
+			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
+			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',					
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',				
+			'css!<@spring.url "/styles/codrops/codrops.svgcheckbox.css"/>',	
+			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',					
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',					
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
-			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
 			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
-			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 	
-			'<@spring.url "/js/common.plugins/switchery.min.js"/>',	
-			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 		
-			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', , 
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.data.competency.js"/>',
-			'<@spring.url "/js/common/common.ui.connect.js"/>',
-			'<@spring.url "/js/common/common.ui.community.js"/>',
-			'<@spring.url "/js/common.pages/common.personalized.js"/>'
+			'<@spring.url "/js/common/common.ui.community.js"/>'],
 			],			
 			complete: function() {		
 				
@@ -52,7 +46,7 @@
 						}						
 					},
 					wallpaper : {
-						renderTo:$(".breadcrumbs-v3")
+						renderTo:$(".fullscreen-static-image")
 					},	
 					jobs:jobs
 				});	
@@ -246,25 +240,7 @@
 		}
 		-->
 		</script>		
-		<style scoped="scoped">	
-				
-		/** Breadcrumbs */
-		.breadcrumbs-v3 {
-			position:relative;
-		}
-
-		.breadcrumbs-v3 p	{
-			color : #fff;
-			font-size: 24px;
-			font-weight: 200;
-			margin-bottom: 0;
-		}	
-		
-		.breadcrumbs-v3.img-v1 {
-			background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
-			background-size: cover;
-			background-position: center center;			
-		}		 
+		<style scoped="scoped">
 		
 		.modal-content{
 		    border-radius: 6px !important;
@@ -312,61 +288,63 @@
 		</style>   	
 		</#compress>
 	</head>
-	<body id="doc" class="bg-white">
+	<body id="doc" class="">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->		
-			<#include "/html/common/common-homepage-menu.ftl" >		
-			<#if action.isSetNavigator()  >
-			<#assign navigator = action.getNavigator() />		
-			<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
-				<div class="personalized-controls container text-center p-xl">
-					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
-					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>					
-					<a href="<@spring.url "/display/0/my-home.html"/>"><span class="btn-flat home t-0-r-2"></span></a>
-					<a href="<@spring.url "/display/0/my-driver.html"/>"><span class="btn-flat folder t-0-r-1"></span></a>					
-					<span class="btn-flat settings"></span>
-					</div><!--/end container-->
+		<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" data-role="navigation" data-offset-top="150">
+			<div class="container">
+				<div class="row collapse navbar-collapse navbar-ex1-collapse">
+					<div class="col-md-6 no-side-padding">
+						<div class="pull-left">
+							<div class="menu-container">
+								<ul class="nav navbar-nav">
+									<li class="home">
+										<a href="#body">Home</a>
+									</li>
+									<li class="active">
+										<a href="#">역량진단</a>
+									</li>
+									<li class="">
+										<a href="#services">진단결과</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="tel-block hidden-3xs">
+						<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
+						070-7807-4040
+					</div>
 			</div>
-			</#if>
-			<div class="footer-buttons-wrapper">
-				<div class="footer-buttons">
-					<button class="btn-link hvr-pulse-shrink" data-action="create" data-object-type="40"><i class="icon-flat microphone"></i></button>
-					<button class="btn-link hvr-pulse-shrink"><i class="icon-flat icon-flat help"></i></button>
+			<!-- /.container -->
+		</nav>	
+		<section class="intro-section">
+		<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 307px; background: none;">
+				<!-- Promo Content BEGIN -->
+				<div class="container valign__middle text-center" style="padding-top: 60px;">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
+							<h1 class="g-color-white g-mb-25" data-bind="text:assessment.assessmentPlan.name"></h1>
+							<p class="g-color-white g-mb-40"><span data-bind="text:assessment.assessmentPlan.description"></span></p>
+							<!--<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>-->
+						</div>
+					</div>
 				</div>
-			</div>				
+			  <!-- Promo Content END -->
+  		</section>     					
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
 		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview">
 		        </ul>
 		    </div>
-
-			<div class="container content">
-				<div class="row">
-					<div class="col-sm-6">
-						
-					</div>	
-					<div class="col-sm-6">
-					<h2 class="title-v2">WHAT IS COMPETENCY BASED ASSESSMENT?</h2>
-					
-					<p>Self taught versus academic qualifications</p>
-					
-					<p>This was the question posed on Donald Trump’s The Apprentice. For those not familiar with this show, two groups of people competed over a series of weeks by performing various business related tasks.</p>
-					
-					<p>The winner would eventually become Donald Trump’s apprentice. One group was made up of people with academic qualifications. The other group was made up of people who didn’t have qualifications, but were self taught and running their own businesses.</p>
-					
-					<p>This is a good place to start understanding what competency assessment is all about. The only way to know whether street smarts or book smarts is better, is to look at individual people in their own right. Assessing people using their knowledge and skills in an on the job situation is the key to competency assessment.</p>
-					
-					<p>Every job requires a specific set of knowledge and skills. And this varies depending on the type and complexity of the job. More than just knowing whether street smarts or book smarts is better, competency assessment is all about providing a way of building the skills and knowledge people need to perform their current job. It is also the key element of the succession planning process because it provides a way of developing people for their future roles.</p>
-
-					</div>
-				</div>
-			</div>
 			<!-- ./END MAIN CONTENT -->	
 	 		
 	 		<!-- START FOOTER -->
-			<#include "/html/common/common-homepage-globalfooter.ftl" >		
+
+
+
 			<!-- ./END FOOTER -->					
 		</div>				
 
