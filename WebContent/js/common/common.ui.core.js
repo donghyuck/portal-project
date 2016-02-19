@@ -1131,6 +1131,7 @@
 							token.set('isSystem', true);			
 						token.copy(that.token);	
 						
+						console.log ("render:" + that.options.render); 
 						if( that.options.render )
 							that.refresh();
 						
