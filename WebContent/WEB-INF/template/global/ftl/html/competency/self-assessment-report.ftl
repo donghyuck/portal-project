@@ -645,7 +645,7 @@ yepnope([{
 
 
 										<div class="profile-blog">
-											<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src: candidatePhotoUrl }" alt=""/>
+											<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src: candidatePhotoUrl }" alt="" width="120"/>
 											<div class="name-location">
 												<strong><span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span></strong>
 												<span data-bind="text:assessment.candidate.company.displayName"></span>
