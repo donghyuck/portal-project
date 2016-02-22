@@ -10,15 +10,20 @@ var jobs = [];
 yepnope([{
     load: [        
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/one.style.css"/>',	
-			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/style.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-v6.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/default.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
+			'css!<@spring.url "/styles/jquery.sliding-panel/jquery.sliding-panel.css"/>',
 			
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
-			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',			
+			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',	
+					
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',	
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
+			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/kendo/jszip.min.js"/>',
