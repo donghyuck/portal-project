@@ -338,63 +338,85 @@
 		</style>   	
 		</#compress>
 	</head>
-	<body class="">
+	<body class="header-fixed promo-padding-top sliding-panel-ini sliding-panel-flag-right">
 		<div class="page-loader"></div>
 		<div class="wrapper">
-			<!-- START HEADER -->		
-		<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" data-role="navigation" data-offset-top="150">
-			<div class="container">
-				<div class="menu-container">
-					<button type="button" class="navbar-toggle pull-right collapsed" data-toggle="collapse" data-target="#navbar-ex1-collapse" aria-expanded="false" style="z-index:100;">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="container no-padding-left">
-					<div class="row collapse navbar-collapse" id="navbar-ex1-collapse" >
-						<div class="col-md-5 no-side-padding">
-							<div class="menu-container">
-								<ul class="nav navbar-nav">
-									<li class="home">
-										<a href="#body">Home</a>
-									</li>
-									<li class="active">
-										<a href="#">역량진단</a>
-									</li>
-									<!--
-									<li class="">
-										<a href="#services">진단결과</a>
-									</li>-->
-								</ul>
-							</div>
+			<!-- START HEADER -->	
+			<!--=== Header v6 ===-->
+			<div class="header-v6 header-border-bottom header-dark-dropdown header-sticky">
+			<!-- Navbar -->
+			<div class="navbar mega-menu" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="menu-container">
+						<button type="button" class="navbar-toggle sliding-panel__btn">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<!-- Navbar Brand -->
+						<div class="navbar-brand">
+							<a href="index.html">
+								<img class="default-logo" src="assets/img/logo3-dark.png" alt="Logo">
+								<img class="shrink-logo" src="assets/img/logo3-dark.png" alt="Logo">
+							</a>
 						</div>
-						<div class="tel-block hidden-3xs">
-							<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
-							070-7807-4040
+						<!-- ENd Navbar Brand -->
+
+						<!-- Header Inner Right -->
+						<div class="header-inner-right">
+							<ul class="menu-icons-list">
+								<li class="menu-icons shopping-cart">
+									<i class="menu-icons-style radius-x fa fa-shopping-cart"></i>
+									<span class="badge">0</span>
+									<div class="shopping-cart-open">
+										<span class="shc-title">No products in the Cart</span>
+										<button type="button" class="btn-u"><i class="fa fa-shopping-cart"></i> Cart</button>
+										<span class="shc-total">Total: <strong>$0.00</strong></span>
+									</div>
+								</li>
+								<li class="menu-icons">
+									<i class="menu-icons-style search search-close search-btn fa fa-search"></i>
+									<div class="search-open">
+										<input type="text" class="animated fadeIn form-control" placeholder="Start searching ...">
+									</div>
+								</li>
+							</ul>
 						</div>
+						<!-- End Header Inner Right -->
 					</div>
 				</div>
 			</div>
-			<!-- /.container -->
-		</nav>	
-		<section class="intro-section">
-			<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 307px; background: none;">
-				<!-- Promo Content BEGIN -->
-				<div class="container valign__middle text-center" style="padding-top: 60px;">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
-							<h1 class="g-color-white g-mb-25" data-bind="text:assessment.assessmentPlan.name"></h1>
-							<p class="g-color-white g-mb-40"><span data-bind="text:assessment.assessmentPlan.description"></span></p>
-							<!--<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>-->
-						</div>
+			<!-- End Navbar -->
+			</div>
+			<!--=== End Header v6 ===-->
+
+			<!-- Promo Block -->
+			<div class="promo-bg-img-v2 fullheight promo-bg-fixed">
+				<div class="container valign__middle text-center" data-start="opacity: 1;" data-500="opacity: 0;">
+					<div class="margin-bottom-20">
+						<a class="promo-video-icon-wrap color-light rounded-x animated fadeInUp wow cbp-lightbox" data-wow-duration="2s" data-wow-delay=".5s" data-title="Video Presentation" href="https://player.vimeo.com/video/58363288?&rel=0&autoplay=1">
+							<i class="promo-video-icon icon-control-play"></i>
+						</a>
+						<div id="cbp-lightbox" class="dp-none"></div>
+					</div>
+	
+					<span class="promo-text-v1 color-light margin-bottom-10 animated fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="1s">
+						UNIFY BOOTSTRAP TEMPLATE
+					</span>
+	
+					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20" data-wow-duration="1.5s" data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
+	
+					<div class="animated fadeInUp wow" data-wow-duration="1.2s" data-wow-delay="2s">
+						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x margin-right-10">Learn More</a>
+						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x">Purchase Now</a>
 					</div>
 				</div>
-			</div>	
-		  	<!-- Promo Content END -->
-  		</section>     					
+			</div>
 			<!-- ./END HEADER -->			
+		
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
 		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview">
