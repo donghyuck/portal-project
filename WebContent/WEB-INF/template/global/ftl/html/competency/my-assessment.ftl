@@ -413,7 +413,7 @@
 			<!--=== End Header v6 ===-->
 
 			<!-- Promo Block -->
-			<div class="promo-bg-img-v2 fullheight promo-bg-fixed" style="height:350px;">
+			<div class="promo-bg-img-v2 fullheight promo-bg-fixed" style="height:300px;">
 				<div class="container valign__middle text-center" data-start="opacity: 1;" data-500="opacity: 0;">
 					<div class="margin-bottom-20">
 						<a class="promo-video-icon-wrap color-light rounded-x animated fadeInUp wow cbp-lightbox" data-wow-duration="2s" data-wow-delay=".5s" data-title="Video Presentation" href="https://player.vimeo.com/video/58363288?&rel=0&autoplay=1">
@@ -423,26 +423,20 @@
 					</div>
 	
 					<span class="promo-text-v1 color-light margin-bottom-10 animated fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="1s">
-						LET'S MAKE SOMETHING GREAT
+						UNIFY BOOTSTRAP TEMPLATE
 					</span>
 	
 					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20" data-wow-duration="1.5s" data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
-					<p>
-					You know your gaps, you have your training needs analysis.
-Now what?  How about we make something great.  How about we give your people a tool to plan and carry out development. That would be nice.
-
-But what would be even better is if you could give them some options for learning and development. Things like training courses, eLearning and coaching suggestions. That would be really nice.
-					</p>
-					<!--
+	
 					<div class="animated fadeInUp wow" data-wow-duration="1.2s" data-wow-delay="2s">
 						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x margin-right-10">Learn More</a>
 						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x">Purchase Now</a>
 					</div>
-					-->
-					
 				</div>
 			</div>
 			<!-- ./END HEADER -->			
+		
+		
 		
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
