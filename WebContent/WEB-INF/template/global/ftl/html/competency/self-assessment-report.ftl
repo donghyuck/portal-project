@@ -26,6 +26,7 @@ yepnope([{
 			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/jquery.sliding-panel/jquery.sliding-panel.js"/>',
 			'<@spring.url "/js/kendo/jszip.min.js"/>',
 			'<@spring.url "/js/kendo/pako_deflate.min.js"/>',	
 			'<@spring.url "/js/kendo/kendo.all.min.js"/>',
@@ -74,8 +75,7 @@ yepnope([{
 			
 			$(window).on("resize", function() {
 		      kendo.resize($(".chart-wrapper"));
-		    });	
-		    
+		    });			    
 			handleHeader();								
 		}
 	} ]);
