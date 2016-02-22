@@ -387,44 +387,16 @@ yepnope([{
 		return renderTo.data("model").assessment.assessmentPlan.ratingScheme.ratingLevels ;
 	}
 
-
-	// Header
+	// Fixed Header
 	function handleHeader() {
-		// jQuery to collapse the navbar on scroll
-		var OffsetTop = $('.navbar').attr('data-offset-top');
-		if ($('.navbar').offset().top > OffsetTop) {
-			$('.navbar-fixed-top').addClass('top-nav-collapse');
-		}
-		$(window).scroll(function() {
-			if ($('.navbar').offset().top > OffsetTop) {
-				$('.navbar-fixed-top').addClass('top-nav-collapse');
-			} else {
-				$('.navbar-fixed-top').removeClass('top-nav-collapse');
-			}
-		});
-
-		var $offset = 0;
-		if ($('.one-page-nav-scrolling').hasClass('one-page-nav__fixed')) {
-			$offset = $(".one-page-nav-scrolling").height()+8;
-		}
-		// jQuery for page scrolling feature - requires jQuery Easing plugin
-		$('.page-scroll a').bind('click', function(event) {
-			var $position = $($(this).attr('href')).offset().top;
-			$('html, body').stop().animate({
-				scrollTop: $position - $offset
-			}, 600);
-			event.preventDefault();
-		});
-
-		var $scrollspy = $('body').scrollspy({target: '.one-page-nav-scrolling', offset: $offset+2});
-
-		// Collapse Navbar When It's Clickicked
-		$(window).scroll(function() {
-			$('.navbar-collapse.in').collapse('hide');
+		jQuery(window).scroll(function() {
+		  if (jQuery(window).scrollTop() > 100) {
+			jQuery('.header-fixed .header-sticky').addClass('header-fixed-shrink');
+		  } else {
+			jQuery('.header-fixed .header-sticky').removeClass('header-fixed-shrink');
+		  }
 		});
 	}
-
-	
 	
 	--></script>
 	<style>
