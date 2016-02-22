@@ -33,6 +33,7 @@
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
 			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
+			
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', , 
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
@@ -422,6 +423,12 @@
 					</span>
 	
 					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20" data-wow-duration="1.5s" data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
+					
+					p>
+					Every job requires a specific set of knowledge and skills. And this varies depending on the type and complexity of the job. More than just knowing whether street smarts or book smarts is better, competency assessment is all about providing a way of building the skills and knowledge people need to perform their current job. It is also the key element of the succession planning process because it provides a way of developing people for their future roles.
+					
+					
+					</p>
 					<!--
 					<div class="animated fadeInUp wow" data-wow-duration="1.2s" data-wow-delay="2s">
 						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x margin-right-10">Learn More</a>
