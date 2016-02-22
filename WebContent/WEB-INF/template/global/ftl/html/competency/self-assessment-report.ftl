@@ -70,6 +70,8 @@ yepnope([{
 				jobs:jobs
 			});	
 			
+			var currentUser = new common.ui.data.User();	
+			
 			$(window).on("resize", function() {
 		      kendo.resize($(".chart-wrapper"));
 		    });	
