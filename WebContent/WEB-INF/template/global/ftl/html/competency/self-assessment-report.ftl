@@ -47,6 +47,9 @@ yepnope([{
 						render : false,
 						authenticate : function(e){
 							e.token.copy(currentUser);
+							
+							console.log(common.ui.stringify(currentUser))
+							
 							<#if RequestParameters['id']?? >
 							var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;
 							var renderTo = $("#my-assessment");		
