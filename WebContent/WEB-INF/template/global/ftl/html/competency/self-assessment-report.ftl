@@ -864,7 +864,7 @@ yepnope([{
 					<div class="col-sm-12">
 						<div class="chart chart-wrapper" style="height:320px;"></div>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-12">
 						<div class="grid"></div>
 					</div>
 				</div>
