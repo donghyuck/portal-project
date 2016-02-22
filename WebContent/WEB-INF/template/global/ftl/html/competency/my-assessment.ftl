@@ -359,9 +359,10 @@
 									<li class="active">
 										<a href="#">역량진단</a>
 									</li>
+									<!--
 									<li class="">
 										<a href="#services">진단결과</a>
-									</li>
+									</li>-->
 								</ul>
 							</div>
 						</div>
