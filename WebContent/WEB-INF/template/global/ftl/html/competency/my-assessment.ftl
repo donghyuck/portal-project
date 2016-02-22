@@ -358,7 +358,7 @@
 
 						<!-- Navbar Brand -->
 						<div class="navbar-brand">
-							<a href="index.html">
+							<a href="/">
 								<img class="default-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
 								<img class="shrink-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
 							</a>
