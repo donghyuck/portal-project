@@ -268,7 +268,7 @@
 			});
 		}
 		// Header
-		function handleHeader() {
+		function handleHeader2() {
 			// jQuery to collapse the navbar on scroll
 			var OffsetTop = $('.navbar').attr('data-offset-top');
 			if ($('.navbar').offset().top > OffsetTop) {
