@@ -38,46 +38,43 @@ yepnope([{
 			'<@spring.url "/js/common/common.ui.data.competency.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>'],   			     
 		complete : function() {
-				common.ui.setup({
-					features:{
-						wallpaper : true				
-					},
-					wallpaper : {
-						renderTo:$(".fullscreen-static-image")
-					},	
-					jobs:jobs
-				});	
+			common.ui.setup({
+				features:{
+					wallpaper : true,
+					accounts : {
+						render : false,
+						authenticate : function(e){
+							e.token.copy(currentUser);
+							<#if RequestParameters['id']?? >
+							var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;
+							var renderTo = $("#my-assessment");		
+							common.ui.ajax( '<@spring.url "/data/me/competency/assessment/get.json?output=json"/>' , {
+								data : { assessmentId : assessmentId},
+								success : function(response){
+									var assessment = new common.ui.data.competency.Assessment(response);
+									createMyAssessedSummary(assessment);
+								},
+								complete : function(e){
+									common.ui.progress(renderTo, false);						
+								}
+							});		
+							<#else>
+							alert("잘못된 접근입니다.");					
+							</#if>	
+						} 
+					}						
+				},
+				wallpaper : {
+					renderTo:$(".promo-bg-img-v2")
+				},	
+				jobs:jobs
+			});	
 			
-			handleHeader();
-			
-			<#if RequestParameters['id']?? >
-			var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;
-			var renderTo = $("#my-assessment .assessment-header .ibox");		
-			common.ui.progress(renderTo, true);
-			common.ui.ajax( '<@spring.url "/data/accounts/get.json?output=json"/>' , {
-				success : function(response){
-					var currentUser = new common.ui.data.User($.extend( response.user, { roles : response.roles }));					
-					common.ui.ajax( '<@spring.url "/data/me/competency/assessment/get.json?output=json"/>' , {
-						data : { assessmentId : assessmentId},
-						success : function(response){
-							var assessment = new common.ui.data.competency.Assessment(response);
-							createMyAssessedSummary(assessment);
-						},
-						complete : function(e){
-							common.ui.progress(renderTo, false);						
-						}
-					});
-					
-				}
-			});		
-			        
 			$(window).on("resize", function() {
 		      kendo.resize($(".chart-wrapper"));
 		    });	
-			<#else>
-			alert("잘못된 접근입니다.");
-			</#if>				
-								
+		    
+			handleHeader();								
 		}
 	} ]);
 	
@@ -521,74 +518,85 @@ yepnope([{
 	</style>
 </#compress>
 </head>
-<body class="">
+<body class="header-fixed promo-padding-top sliding-panel-ini sliding-panel-flag-right">
 	<div class="page-loader"></div>
- 	<div id="my-assessment" class="wrapper"> 	
-	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" 
-	 		data-role="navigation" data-offset-top="150">
-			<div class="container">
-				<!--
-				<div class="menu-container page-scroll">
-					<a class="navbar-brand no-padding" href="#body">
-						<img  src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="${action.webSite.company.name} Logo" style="height:42px; width:auto;">
-					</a>
-				</div>	
-				<div class="tel-block hidden-3xs">
-					<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
-					1-800-643-4500
-				</div>
-				-->				
-				<div class="menu-container">
-					<button type="button" class="navbar-toggle pull-right collapsed" data-toggle="collapse" data-target="#navbar-ex1-collapse" aria-expanded="false" style="z-index:100;">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="container no-padding-left">
-					<div class="row collapse navbar-collapse"  id="navbar-ex1-collapse"> 
-						<div class="col-md-6 no-side-padding">
-								<div class="menu-container">
-									<ul class="nav navbar-nav">
-										<li class="home">
-											<a href="#">Home</a>
-										</li>
-										<li class="">
-											<a href="<@spring.url "/display/assessment/my-assessment.html"/>">역량진단</a>
-										</li>
-										<li class="active">
-											<a href="#">진단결과</a>
-										</li>
-									</ul>
-								</div>
+ 	<div id="my-assessment" class="wrapper"> 
+<!-- START HEADER -->	
+			<!--=== Header v6 ===-->
+			<div class="header-v6 header-border-bottom header-dark-dropdown header-sticky">
+			<!-- Navbar -->
+			<div class="navbar mega-menu" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="menu-container">
+						<button type="button" class="navbar-toggle sliding-panel__btn">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<!-- Navbar Brand -->
+						<div class="navbar-brand">
+							<a href="/">
+								<img class="default-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
+								<img class="shrink-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
+							</a>
 						</div>
-						<div class="col-md-6 no-side-padding">
-						<div class="tel-block hidden-3xs">
-							<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
-							070-7807-4040
+						<!-- ENd Navbar Brand --> 
+						<!-- Header Inner Right -->
+						<!--
+						<div class="header-inner-right">
+							<ul class="menu-icons-list"> 
+								<li class="menu-icons shopping-cart">
+									<i class="menu-icons-style radius-x fa fa-shopping-cart"></i>
+									<span class="badge">0</span>
+									<div class="shopping-cart-open">
+										<span class="shc-title">No products in the Cart</span>
+										<button type="button" class="btn-u"><i class="fa fa-shopping-cart"></i> Cart</button>
+										<span class="shc-total">Total: <strong>$0.00</strong></span>
+									</div>
+								</li>
+							
+								<li class="menu-icons">
+									<i class="menu-icons-style search search-close search-btn fa fa-search"></i>
+									<div class="search-open">
+										<input type="text" class="animated fadeIn form-control" placeholder="Start searching ...">
+									</div>
+								</li>
+							</ul>
 						</div>
-						</div>
-					</div>						
-				
-				</div>
-			</div>
-			<!-- /.container -->
-		</nav>	
-		<section class="intro-section">
-		<div class="fullscreen-static-image fullheight" style="position: relative; z-index: 0; height: 350px; background: none;">
-				<!-- Promo Content BEGIN -->
-				<div class="container valign__middle text-center" style="padding-top: 60px;">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
-							<h1 class="g-color-white g-mb-25">Expert advice &amp; care for wealth life</h1>
-							<p class="g-color-white g-mb-40">Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-	 						<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>
-						</div>
+						-->
+						<!-- End Header Inner Right -->
 					</div>
 				</div>
-			  <!-- Promo Content END -->
-  		</section>        
+			</div>
+			<!-- End Navbar -->
+			</div>
+			<!--=== End Header v6 ===--> 
+			<!-- Promo Block -->
+			<div class="promo-bg-img-v2 fullheight promo-bg-fixed" style="height:350px;">
+				<div class="container valign__middle text-center" data-start="opacity: 1;" data-500="opacity: 0;">
+					<div class="margin-bottom-20">
+						<a class="promo-video-icon-wrap color-light rounded-x animated fadeInUp wow cbp-lightbox" data-wow-duration="2s" data-wow-delay=".5s" data-title="Video Presentation" href="https://player.vimeo.com/video/58363288?&rel=0&autoplay=1">
+							<i class="promo-video-icon icon-control-play"></i>
+						</a>
+						<div id="cbp-lightbox" class="dp-none"></div>
+					</div>
+	
+					<span class="promo-text-v1 color-light margin-bottom-10 animated fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="1s">
+						COMPETENCY ASSSSEMENT
+					</span>
+	
+					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20" data-wow-duration="1.5s" data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
+					<!--
+					<div class="animated fadeInUp wow" data-wow-duration="1.2s" data-wow-delay="2s">
+						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x margin-right-10">Learn More</a>
+						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x">Purchase Now</a>
+					</div>-->
+				</div>
+			</div>
+		<!-- ./END HEADER -->
         <div class="container content pdf-page">           
  
  			<div class="row g-mb-40 text-center">
