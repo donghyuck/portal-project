@@ -18,9 +18,7 @@
 			'css!<@spring.url "/styles/jquery.sliding-panel/jquery.sliding-panel.css"/>',									
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
 			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',					
-			
-			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',				
-			'css!<@spring.url "/styles/codrops/codrops.svgcheckbox.css"/>',	
+
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',					
 			
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
