@@ -51,7 +51,7 @@
 						}						
 					},
 					wallpaper : {
-						renderTo:$(".fullscreen-static-image")
+						renderTo:$(".promo-bg-img-v2")
 					},	
 					jobs:jobs
 				});	
