@@ -413,7 +413,7 @@
 			<!--=== End Header v6 ===-->
 
 			<!-- Promo Block -->
-			<div class="promo-bg-img-v2 fullheight promo-bg-fixed" style="height:300px;">
+			<div class="promo-bg-img-v2 fullheight promo-bg-fixed" style="height:350px;">
 				<div class="container valign__middle text-center" data-start="opacity: 1;" data-500="opacity: 0;">
 					<div class="margin-bottom-20">
 						<a class="promo-video-icon-wrap color-light rounded-x animated fadeInUp wow cbp-lightbox" data-wow-duration="2s" data-wow-delay=".5s" data-title="Video Presentation" href="https://player.vimeo.com/video/58363288?&rel=0&autoplay=1">
