@@ -13,7 +13,7 @@
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/style.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-v6.css"/>',	
-			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/header-v6.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/default.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
 			'css!<@spring.url "/styles/jquery.sliding-panel/jquery.sliding-panel.css"/>',									
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
