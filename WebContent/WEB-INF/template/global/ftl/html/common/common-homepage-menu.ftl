@@ -13,7 +13,12 @@
 			<div class="header">
 				<div class="topbar">
 					<div class="container">
-						<!-- Topbar Navigation -->
+						<!-- Logo -->
+						<a class="logo" href="/">
+							<img id="logo-header" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42" class="img-circle" alt="${action.webSite.company.name}Logo">
+						</a>
+						<!-- End Logo -->
+						<!-- Topbar  -->
 						<ul id="u-navbar" class="loginbar pull-right">
 							<li class="languagesSelector">
 								<i class="fa fa-globe"></i>
@@ -39,21 +44,17 @@
 							<li><a href="<@spring.url '/accounts/signup?ver=1'/>">회원가입</a></li>   
 							</#if>
 						</ul>
-						<!-- End Topbar Navigation -->
+						<!-- End Topbar -->
+						<!-- Toggle get grouped for better mobile display -->
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="fa fa-bars"></span>
+						</button>
+						<!-- End Toggle -->						
 					</div>
 				</div>
-				<nav class="navbar navbar-default mega-menu" role="navigation">
+				<nav class="collapse navbar-collapse mega-menu navbar-responsive-collapse" role="navigation">
 					<div class="container">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">								
-								<span class="sr-only">${webSite.description} toggle navigation</span>
-								<span class="fa fa-bars"></span>
-							</button>	
-							<a class="navbar-brand" href="/">
-								<img id="logo-header" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42" class="img-circle" alt="Logo">
-							</a>
-						</div>	
 						<div class="collapse navbar-collapse navbar-responsive-collapse ">
 							<ul class="nav navbar-nav navbar-left">
 				<#list webSiteMenu.components as item >
