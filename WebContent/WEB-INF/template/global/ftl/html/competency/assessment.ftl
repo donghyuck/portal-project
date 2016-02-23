@@ -135,6 +135,30 @@
 					</div>
 				</div>
 			</div>
+			
+			<div class="bg-color-light">
+				<div class="container content-sm">
+					<div class="row">
+						<div class="col-md-6 md-margin-bottom-50">
+							<img class="img-responsive" src="assets/img/mockup/imac2.png" alt="">
+						</div>
+						<div class="col-md-6">
+							<br><br><br>
+							<div class="headline-left margin-bottom-30">
+								<h2 class="headline-brd">WE ARE UNIFY AGENCY</h2>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+							</div>
+							<ul class="list-unstyled lists-v2 margin-bottom-30">
+								<li><i class="fa fa-check"></i> Suspendisse eget augue non dolor ultrices</li>
+								<li><i class="fa fa-check"></i> Donec eget aliquet tortor, quis lacinia dolor</li>
+								<li><i class="fa fa-check"></i> Curabitur ut augue at mi eleifend lobortis</li>
+								<li><i class="fa fa-check"></i> Eleifend eget aliquet tortor, quis lacinia dolor</li>
+							</ul>
+							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-dark">Learn More</a>
+						</div><!--/end row-->
+					</div>
+				</div>
+			</div>			
 			<!-- ./END MAIN CONTENT -->	
 	 		
 	 		<!-- START FOOTER -->
