@@ -11,20 +11,25 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
-			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
-			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',		
-			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
-			'css!<@spring.url "/styles/bootstrap.themes/common/awesome-bootstrap-checkbox.css"/>',
-			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-default.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/dark-red.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
 			
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',			
+			'css!<@spring.url "/styles/bootstrap.themes/common/awesome-bootstrap-checkbox.css"/>',
+			
+			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
+			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',	
 			
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
-			'css!<@spring.url "/styles/codrops/codrops.dialog-sally.css"/>',					
+			'css!<@spring.url "/styles/codrops/codrops.dialog-sally.css"/>',			
+					
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',	
+			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
+			
 			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
