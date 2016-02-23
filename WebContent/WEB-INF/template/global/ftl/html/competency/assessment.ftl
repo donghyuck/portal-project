@@ -170,6 +170,7 @@
 
 						
 		<!-- START TEMPLATE -->	
+		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- ./END TEMPLATE -->
 	</body>    
 </html>
