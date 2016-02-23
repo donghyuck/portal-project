@@ -1124,7 +1124,8 @@ border-top-right-radius:6px!important;
 .arrow-down:after {
 	content: ' ';
 	top: 0;
-	left: 50%;
+	top:initial;
+	bottom: 50%;
 	content: " ";
 	margin-left: -25px;
 	position: absolute;
@@ -1144,7 +1145,8 @@ border-top-right-radius:6px!important;
 	left: 50%;
 	margin-left: -10px;
 	bottom: 0;
-	}
+	top:initial;
+}
 
 .arrow-down.arrow-gray:after
 {	
