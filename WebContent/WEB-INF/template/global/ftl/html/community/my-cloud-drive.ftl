@@ -624,7 +624,7 @@
 										
 					console.log("target:" + getMyDriverPhotoSource()  );
 										
-					if(getMyDriverPhotoSource() == 30){
+					if(getMyDriverPhotoSource() == 30 || getMyDriverPhotoSource() == 1 ){
 						if(getCurrentUser().hasRole('ROLE_ADMIN') || getCurrentUser().hasRole('ROLE_SYSTEM') ){
 							if(u_btn.is(":hidden"))
 								u_btn.show();
