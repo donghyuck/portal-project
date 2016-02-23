@@ -118,10 +118,10 @@
 			<!-- START MAIN CONTENT -->
 			<div class="container content">
 				<div class="row">
-					<div class="col-sm-6">
-						
-					</div>	
-					<div class="col-sm-6">
+					<div class="col-md-6 md-margin-bottom-50">
+						<img class="img-responsive" src="<@spring.url "/download/image/9451/ncs.png"/>" alt="">
+					</div>
+					<div class="col-md-6">
 					<h2 class="title-v2">국가직무능력표준 기반 직업역량진단</h2>
 					
 					<p>Self taught versus academic qualifications</p>
@@ -144,7 +144,7 @@
 				<div class="container content-sm">
 					<div class="row">
 						<div class="col-md-6 md-margin-bottom-50">
-							<img class="img-responsive" src="assets/img/mockup/imac2.png" alt="">
+							<img class="img-responsive" src="<@spring.url "/download/image/9451/ncs.png"/>" alt="">
 						</div>
 						<div class="col-md-6">
 							<br><br><br>
