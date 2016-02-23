@@ -11,14 +11,14 @@
 				<#assign webSite = action.webSite />				
 				<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />	
 			<div class="header">
-				<div class="topbar">
-					<div class="container">
-						<!-- Logo -->
-						<a class="logo" href="/">
-							<img id="logo-header" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42" class="img-circle" alt="${action.webSite.company.name}Logo">
-						</a>
-						<!-- End Logo -->
-						<!-- Topbar  -->
+				<div class="container">
+					<!-- Logo -->
+					<a class="logo" href="/">
+						<img id="logo-header" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42" class="img-circle" alt="${action.webSite.company.name}Logo">
+					</a>
+					<!-- End Logo -->
+					<!-- Topbar  -->
+					<div class="topbar">
 						<ul id="u-navbar" class="loginbar pull-right">
 							<li class="languagesSelector">
 								<i class="fa fa-globe"></i>
@@ -44,15 +44,17 @@
 							<li><a href="<@spring.url '/accounts/signup?ver=1'/>">회원가입</a></li>   
 							</#if>
 						</ul>
-						<!-- End Topbar -->
-						<!-- Toggle get grouped for better mobile display -->
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="fa fa-bars"></span>
-						</button>
-						<!-- End Toggle -->						
 					</div>
+					<!-- End Topbar -->
+						
+					<!-- Toggle get grouped for better mobile display -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="fa fa-bars"></span>
+					</button>
+					<!-- End Toggle -->						
 				</div>
+				
 				<nav class="collapse navbar-collapse mega-menu navbar-responsive-collapse" role="navigation">
 					<div class="container">
 						<div class="collapse navbar-collapse navbar-responsive-collapse ">
