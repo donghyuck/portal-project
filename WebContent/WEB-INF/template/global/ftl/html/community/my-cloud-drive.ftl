@@ -622,11 +622,10 @@
 					var u_btn = $('#my-photos button[data-action=upload]');
 					
 										
-					console.log("target:" + getMyDriverAttachmentSource()  );
-					console.log("roles:" +  common.ui.stringify(getCurrentUser()) ); 
-					
+					console.log("target:" + getMyDriverPhotoSource()  );
+										
 					if(getMyDriverPhotoSource() == 30){
-						if(getCurrentUser().hasRole('ROLE_SITE_ADMIN')){
+						if(getCurrentUser().hasRole('ROLE_ADMIN') || getCurrentUser().hasRole('ROLE_SYSTEM') ){
 							if(u_btn.is(":hidden"))
 								u_btn.show();
 						}else{
