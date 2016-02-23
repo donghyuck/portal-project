@@ -117,7 +117,7 @@
 												</ul>
 											</li>
 										<#else>								
-											<li><a href="${sub_item.page}" target="_blank"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>
+											<li><a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>
 										</#if>								
 									</#list>
 									</ul>
