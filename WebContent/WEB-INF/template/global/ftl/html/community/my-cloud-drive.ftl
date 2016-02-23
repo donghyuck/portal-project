@@ -187,6 +187,9 @@
 				
 				$("#attachment-source-list input[type=radio][name=attachment-source]").on("change", function () {
 					var u_btn = $('#my-files button[data-action=upload]');
+					
+					console.log("target:" + getMyDriverAttachmentSource()  );
+					console.log("roles":" + common.ui.stringify(getCurrentUser()) ); 
 					if(getMyDriverAttachmentSource() == 30){
 						if(getCurrentUser().hasRole('ROLE_SITE_ADMIN')){
 							if(u_btn.is(":hidden"))
