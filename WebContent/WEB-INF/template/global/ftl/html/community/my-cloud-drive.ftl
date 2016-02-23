@@ -857,39 +857,6 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-		
-		
-		/** image post modal */
-	
-			/*
-			.interactive-slider-v2 {
-				max-height : 220px;
-				color : #fff;
-				overflow:hidden;
-			}		
-			
-			.interactive-slider-v2 p	{
-				color : #fff;
-				font-size: 24px;
-				font-weight: 200;
-				margin-bottom: 0;
-			}	
-						
-			.interactive-slider-v2 h1 , .interactive-slider-v2 p {
-				color : #fff;
-			}
-						
-			.btn.btn-flat.btn-lg{
-				font-size : 2.5em;
-				font-weight:200;
-			}
-												
-			#image-gallery-pager { 
-				margin-top: 5px; 
-			}
-			*/
-			
-			
 			
 			.panel-upload {
 				margin-top : 5px!important;
