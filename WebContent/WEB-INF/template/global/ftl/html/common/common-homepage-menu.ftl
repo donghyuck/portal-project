@@ -57,8 +57,9 @@
 				
 				<nav class="collapse navbar-collapse mega-menu navbar-responsive-collapse" role="navigation">
 					<div class="container">
-						<div class="collapse navbar-collapse navbar-responsive-collapse ">
+					
 							<ul class="nav navbar-nav">
+							
 				<#list webSiteMenu.components as item >
 					<#if WebSiteUtils.isUserAccessAllowed(item) >
 						<#if  item.components?has_content >
@@ -130,8 +131,7 @@
 						</#if>
 					</#if>		
 				</#list>		
-							</ul>				
-						</div>						
+							</ul>						
 					</div>
 				</nav><!-- /.topbar -->
 				<!--<span class="v-header-shadow"></span>-->
