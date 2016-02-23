@@ -111,12 +111,12 @@
 											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a>
 												<ul class="dropdown-menu">
 													<#list sub_item.components as sub_sub_item >
-													<li data-menu-item="${sub_sub_item.name}"><a href="${sub_item.page}">${ sub_sub_item.title }</a></li>
+													<li data-menu-item="${sub_sub_item.name}"><a href="${sub_item.page}" target="_blank">${ sub_sub_item.title }</a></li>
 													</#list>
 												</ul>
 											</li>
 										<#else>								
-											<li><a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>
+											<li><a href="${sub_item.page}" target="_blank"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>
 										</#if>								
 									</#list>
 									</ul>
