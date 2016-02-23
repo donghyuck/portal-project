@@ -114,11 +114,6 @@
 			</div>				
 			<!-- ./END HEADER -->			
 			<!-- START MAIN CONTENT -->
-			<div class="container content-md">
-		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview">
-		        </ul>
-		    </div>
-
 			<div class="container content">
 				<div class="row">
 					<div class="col-sm-6">
