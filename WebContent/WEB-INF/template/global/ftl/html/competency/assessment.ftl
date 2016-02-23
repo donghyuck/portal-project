@@ -120,7 +120,7 @@
 						
 					</div>	
 					<div class="col-sm-6">
-					<h2 class="title-v2">국가직무능력표준 기반 직무역량진단</h2>
+					<h2 class="title-v2">국가직무능력표준 기반 직업역량진단</h2>
 					
 					<p>Self taught versus academic qualifications</p>
 					
