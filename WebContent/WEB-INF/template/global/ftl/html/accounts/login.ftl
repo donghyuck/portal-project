@@ -381,7 +381,7 @@
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 							<div class="or rounded-x text-center">또는</div>
 							</#if>
-							<section id="signin-status" class="text-danger p-xs"></section>			
+							<div id="signin-status" class="alert alert-danger fade in"></div>	
 							<div class="input-group margin-bottom-10">
 								<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
 								<input name="username" type="text" class="form-control rounded-right" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
