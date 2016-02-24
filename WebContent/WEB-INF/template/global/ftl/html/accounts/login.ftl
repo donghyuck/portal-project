@@ -34,17 +34,31 @@
 			],			
 			complete: function() {
 			
-				common.ui.setup({
-					features:{
-						wallpaper : true,
-						loading:true
-					}
-				});	
-					
-				//prepareSocialSignOn();
-				//prepareSignOn();
-				prepareSocialSignOn();
-				createSignInBlock();
+			common.ui.setup({
+				features:{
+					wallpaper : true,
+					accounts : {
+						render : false,
+						authenticate : function(e){
+							if( !e.token.anonymous ){							
+								var template = kendo.template($("#alert-template").html());	
+								$(".container:first").prepend(template(e.token));	
+							}else{
+								prepareSocialSignOn();
+								createSignInBlock();	
+							}
+						} 
+					}						
+				},
+				wallpaper : {
+					renderTo:$(".promo-bg-img-v2")
+				},	
+				jobs:jobs
+			});
+			
+			
+
+				
 				
 			}
 		}]);			
