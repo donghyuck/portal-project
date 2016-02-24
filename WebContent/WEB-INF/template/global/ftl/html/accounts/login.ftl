@@ -138,10 +138,17 @@
 	
 		-->
 		</script>
-		<style>	
+		<style>
+		
+.login-block .or {
+	padding:0;
+}
+			
 		
 		/* Registration and Login Page v2
 			------------------------------------*/
+			
+			
 		.wrapper {
 			background:transparent;
 		}
