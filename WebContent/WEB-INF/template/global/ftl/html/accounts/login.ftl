@@ -309,40 +309,43 @@
 			<div class="container" style="min-height:570px;">
 			
 			<div class="row">			
-			<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block">
+			<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block" id="signin" >
 				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
 				<form action="#" width="400px;">
 					<div class="login-block">
-						
+						<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 						<div class="social-login text-center no-border no-padding">							
 							<ul class="list-inline margin-bottom-20">
 								<li>
-									<button class="icon-svg-btn bg-transparent">									
+									<a href="#" class="icon-svg-btn bg-transparent" data-original-title="Twitter">									
 										<i class="icon-flat icon-svg icon-svg-md social-color-twitter"></i>
-									</button>
+									</a>
 								</li>
 								<li>
-									<button class="icon-svg-btn bg-transparent">									
+									<a href="#" class="icon-svg-btn bg-transparent" data-original-title="Facebook">									
 										<i class="icon-flat icon-svg icon-svg-md social-color-facebook"></i>
-									</button>
+									</a>
 								</li>
 							</ul>							
 						</div>
+						</#if>
 						<div class="email-login">
+							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 							<div class="or rounded-x text-center">또는</div>
+							</#if>
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
-								<input type="text" class="form-control rounded-right" placeholder="아이디 또는 이메일">
+								<input name="username" type="text" class="form-control rounded-right" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
 							</div>
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
-								<input type="password" class="form-control rounded-right" placeholder="비밀번호">
+								<input name="password" type="password" class="form-control rounded-right" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요.">
 							</div>
 							<div class="checkbox">
 								<ul class="list-inline">
 									<li>
 										<label>
-											<input type="checkbox"> 로그인 상태 유지
+											<input type="checkbox" name="remember"> 로그인 상태 유지
 										</label>
 									</li>
 								</ul>
@@ -364,7 +367,7 @@
 				</form>
 			</div>
 			</div>			
-					<div id="signin" class="reg-block animated" style="display:none;">	
+					<div  class="reg-block animated" style="display:none;">	
 						<div class="reg-block-header">
 							<h2></h2>
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
