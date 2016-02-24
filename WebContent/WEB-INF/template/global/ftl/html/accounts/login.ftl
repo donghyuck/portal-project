@@ -360,6 +360,7 @@
 			<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block" id="signin" >
 				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
 				<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
+					<input type="hidden" name="output" value="json" />			
 					<div class="login-block">
 						<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 						<div class="social-login text-center no-border no-padding">							
