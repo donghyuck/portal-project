@@ -275,12 +275,12 @@
 	top: 5px;
 	left: 0;
 	display: block;
-	width: 13px;
-	height: 13px;
 	outline: none;
-	border-width: 2px;
 	border-style: solid;
 	background: #fff;
+    width: 17px;
+    height: 17px;
+    border-width: 1px;
 }
 .sky-form .radio i {
 	border-radius: 50%;
