@@ -144,6 +144,13 @@
 	padding:0;
 }
 			
+.login-block .email-login {
+	color: rgba(0,0,0,.5);
+	padding-top: 60px;
+	border-top: 1px solid #eee;
+	position: relative;
+}
+
 		
 		/* Registration and Login Page v2
 			------------------------------------*/
@@ -300,9 +307,10 @@
 									</button>
 								</li>
 							</ul>
-							<div class="or rounded-x">또는</div>
+							
 						</div>
-						<div class="email-login text-center">
+						<div class="email-login">
+							<div class="or rounded-x">또는</div>
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
 								<input type="text" class="form-control rounded-right" placeholder="Username">
