@@ -343,7 +343,7 @@
 									</li>
 								</ul>
 							</div>	
-							<div class="row margin-bottom-70">
+							<div class="row margin-bottom-30">
 								<div class="col-md-12">
 									<button type="submit" class="btn-u btn-u-blue btn-block rounded">로그인</button>
 									<div class="text-center margin-top-20">
@@ -353,8 +353,9 @@
 							</div>	
 							
 						</div>	
-						<p>${action.webSite.displayName}에 처음이세요? <br >지금 <span class="text-primary">가입</span>하세요.</p>
-										
+						<p class="text-right">
+							${action.webSite.displayName}에 처음이세요?  지금 <span class="text-primary">가입</span>하세요.
+						</p>			
 					</div>
 				</form>
 			</div>
