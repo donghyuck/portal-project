@@ -147,7 +147,7 @@
 									if( $("#signin-status").is(":hidden") ){
 										$("#signin-status").show();
 									}									
-									$("input[type='password']").val("").focus();											
+									$("input[type='password']").focus().val("");											
 								} else {        	   
 									$("#signin-status").html("");                         
 									location.href="<@spring.url "/display/0/my-home.html"/>";
