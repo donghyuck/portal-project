@@ -144,6 +144,9 @@
 							success : function( response ) {   
 								if( response.error ){ 
 									$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
+									if( $("#signin-status").is(":visible") ){
+										$("#signin-status").show();
+									}									
 									$("input[type='password']").val("").focus();											
 								} else {        	   
 									$("#signin-status").html("");                         
@@ -382,7 +385,7 @@
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 							<div class="or rounded-x text-center">또는</div>
 							</#if>
-							<div id="signin-status" class="alert alert-danger fade in"></div>	
+							<div id="signin-status" class="alert alert-danger fade in" style="display:none;"></div>	
 							<div class="input-group margin-bottom-10">
 								<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
 								<input name="username" type="text" class="form-control rounded-right" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
