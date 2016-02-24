@@ -98,6 +98,11 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />		
+			<script>
+			jobs.push(function () {
+				$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
+			});
+			</script>			
 			<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
 				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
