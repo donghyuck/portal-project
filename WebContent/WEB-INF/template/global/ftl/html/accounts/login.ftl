@@ -247,17 +247,16 @@
 }
 
 
-.radio,.checkbox {
-	margin-top: 0;
-}
-
-.form-block .radio i,.form-block .checkbox i {
+/**/
+/* radios and checkboxes */
+/**/
+.sky-form .radio i,.sky-form .checkbox i {
 	width: 17px;
 	height: 17px;
 	border-width: 1px;
 }
 
-.form-block .checkbox input+i:after {
+.sky-form .checkbox input+i:after {
 	top: 2px;
 	left: 0;
 	font: normal 10px FontAwesome;
@@ -266,24 +265,25 @@
 /**/
 /* checked state */
 /**/
-.form-block .radio input+i:after {
+.sky-form .radio input+i:after {
 	top: 5px;
 	left: 5px;
 	background-color: #999;
 }
 
-.form-block .checkbox input+i:after {
+.sky-form .checkbox input+i:after {
 	color: #999;
 }
 
-.form-block .radio input:checked+i, .form-block .checkbox input:checked+i, .form-block .toggle input:checked+i
+.sky-form .radio input:checked+i,.sky-form .checkbox input:checked+i,.sky-form .toggle input:checked+i
 	{
 	border-color: #999;
 }
 
-.form-block .rating input:checked  ~ label {
+.sky-form .rating input:checked  ~ label {
 	color: #72c02c;
 }
+
 
 		
 		/* Registration and Login Page v2
@@ -364,7 +364,7 @@
 			<div class="row">			
 				<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block" id="signin" style="display:none;">
 					<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
-					<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
+					<form name="signin-fm" role="form" method="POST" accept-charset="utf-8" class="sky-form">
 						<input type="hidden" name="output" value="json" />			
 						<div class="login-block">
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
