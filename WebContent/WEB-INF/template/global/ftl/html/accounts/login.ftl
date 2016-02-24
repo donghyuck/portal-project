@@ -311,7 +311,7 @@
 			<div class="row">			
 			<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block" id="signin" >
 				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
-				<form action="#">
+				<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
 					<div class="login-block">
 						<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 						<div class="social-login text-center no-border no-padding">							
@@ -355,7 +355,7 @@
 							</div>	
 							<div class="row margin-bottom-30">
 								<div class="col-md-12">
-									<button type="submit" class="btn-u btn-u-blue btn-block rounded">로그인</button>
+									<button type="submit" class="btn-u btn-u-blue btn-block rounded" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>로그인</button>
 									<div class="text-center margin-top-20">
 										<a class="btn-link" href="#">아이디 또는 비밀번호를 잊으셨나요 ?</a>
 									</div>
