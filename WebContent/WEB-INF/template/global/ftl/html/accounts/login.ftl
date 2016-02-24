@@ -153,7 +153,7 @@
 
 .form-block {
 	padding:15px;
-    width: 380px;
+    min-width: 380px;
     margin: 60px auto;	
     float: right;
 }
