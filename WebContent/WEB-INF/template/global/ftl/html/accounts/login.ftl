@@ -311,11 +311,11 @@
 							<div class="or rounded-x text-center">또는</div>
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
-								<input type="text" class="form-control rounded-right" placeholder="Username">
+								<input type="text" class="form-control rounded-right" placeholder="아이디 또는 이메일">
 							</div>
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
-								<input type="password" class="form-control rounded-right" placeholder="Password">
+								<input type="password" class="form-control rounded-right" placeholder="비밀번호">
 							</div>
 							<div class="checkbox">
 								<ul class="list-inline">
@@ -332,7 +332,7 @@
 							</div>	
 							<div class="row margin-bottom-70">
 								<div class="col-md-12">
-									<button type="submit" class="btn-u btn-u-blue btn-block rounded">Sign In</button>
+									<button type="submit" class="btn-u btn-u-blue btn-block rounded">로그인</button>
 								</div>
 							</div>	
 						</div>	
