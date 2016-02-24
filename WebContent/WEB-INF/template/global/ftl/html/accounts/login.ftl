@@ -322,112 +322,76 @@
 					</div>					
 				</div>
 			</nav>		
-			<div class="container" style="min-height:570px;">
-			
+			<div class="container" style="min-height:570px;">			
 			<div class="row">			
-			<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block" id="signin" style="display:none;">
-				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
-				<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
-					<input type="hidden" name="output" value="json" />			
-					<div class="login-block">
-						<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
-						<div class="social-login text-center no-border no-padding">							
-							<ul class="list-inline margin-bottom-20">
-								<li>
-									<a href="#" class="icon-svg-btn bg-transparent" data-original-title="Twitter">									
-										<i class="icon-flat icon-svg icon-svg-md social-color-twitter"></i>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="icon-svg-btn bg-transparent" data-original-title="Facebook">									
-										<i class="icon-flat icon-svg icon-svg-md social-color-facebook"></i>
-									</a>
-								</li>
-							</ul>							
-						</div>
-						</#if>
-						<div class="email-login">
+				<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block" id="signin" style="display:none;">
+					<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
+					<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
+						<input type="hidden" name="output" value="json" />			
+						<div class="login-block">
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
-							<div class="or rounded-x text-center">또는</div>
-							</#if>
-							<div id="signin-status" class="alert alert-danger rounded-2x no-border" style="display:none;"></div>	
-							<div class="input-group margin-bottom-10">
-								<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
-								<input name="username" type="text" class="form-control rounded-right" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
-							</div>
-							<span class="k-invalid-msg" data-for="username"></span>
-							<div class="input-group margin-bottom-10">
-								<span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
-								<input name="password" type="password" class="form-control rounded-right" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요.">
-							</div>
-							<span class="k-invalid-msg" data-for="password"></span>
-							<div class="checkbox">
-								<ul class="list-inline">
+							<div class="social-login text-center no-border no-padding">							
+								<ul class="list-inline margin-bottom-20">
 									<li>
-										<label>
-											<input type="checkbox" name="remember"> 로그인 상태 유지
-										</label>
+										<a href="#" class="icon-svg-btn bg-transparent" data-original-title="Twitter">									
+											<i class="icon-flat icon-svg icon-svg-md social-color-twitter"></i>
+										</a>
 									</li>
-								</ul>
-							</div>	
-							<div class="row margin-bottom-30">
-								<div class="col-md-12">
-									<button data-action="signin" type="submit" class="btn-u btn-u-blue btn-block rounded" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>로그인</button>
-									<div class="text-center margin-top-20">
-										<a class="btn-link" href="#">아이디 또는 비밀번호를 잊으셨나요 ?</a>
-									</div>
-								</div>
-							</div>	
-							
-						</div>	
-						<p class="text-center">
-							${action.webSite.displayName}에 처음이세요?  지금 <a class="btn-link" href="<@spring.url "/accounts/signup"/>">가입</a> 하세요.
-						</p>			
-					</div>
-				</form>
-			</div>
-			</div>			
-					<div  class="reg-block animated" style="display:none;">	
-						<div class="reg-block-header">
-							<h2></h2>
-							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
-							<ul class="social-icons text-center">
-								<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
-								<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
-								<!--
-								<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
-								<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
-								-->
-							</ul>
+									<li>
+										<a href="#" class="icon-svg-btn bg-transparent" data-original-title="Facebook">									
+											<i class="icon-flat icon-svg icon-svg-md social-color-facebook"></i>
+										</a>
+									</li>
+								</ul>							
+							</div>
 							</#if>
-							<p class="m-t-md">${action.webSite.displayName} 회원이 아니신가요? <br >지금 <span class="text-primary">가입</span>하세요.</p>        
-							<p class="text-right" ><a class="btn btn-info btn-flat btn-outline" href="<@spring.url "/accounts/signup"/>">가입하기</a></p>    
+							<div class="email-login">
+								<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
+								<div class="or rounded-x text-center">또는</div>
+								</#if>
+								<div id="signin-status" class="alert alert-danger rounded-2x no-border" style="display:none;"></div>	
+								<div class="input-group margin-bottom-10">
+									<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
+									<input name="username" type="text" class="form-control rounded-right" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
+								</div>
+								<span class="k-invalid-msg" data-for="username"></span>
+								<div class="input-group margin-bottom-10">
+									<span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
+									<input name="password" type="password" class="form-control rounded-right" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요.">
+								</div>
+								<span class="k-invalid-msg" data-for="password"></span>
+								
+								<div class="input-group margin-bottom-10">
+              						<input type="checkbox" id="remember-me" class="k-checkbox" name="remember-me">
+          							<label class="k-checkbox-label" for="remember-me">로그인 상태 유지</label>
+            					</div>
+            
+								<div class="checkbox">
+									<ul class="list-inline">
+										<li>
+											<label>
+												<input type="checkbox" name="remember"> 로그인 상태 유지
+											</label>
+										</li>
+									</ul>
+								</div>	
+								<div class="row margin-bottom-30">
+									<div class="col-md-12">
+										<button data-action="signin" type="submit" class="btn-u btn-u-blue btn-block rounded" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>로그인</button>
+										<div class="text-center margin-top-20">
+											<a class="btn-link" href="#">아이디 또는 비밀번호를 잊으셨나요 ?</a>
+										</div>
+									</div>
+								</div>	
+								
+							</div>	
+							<p class="text-center">
+								${action.webSite.displayName}에 처음이세요?  지금 <a class="btn-link" href="<@spring.url "/accounts/signup"/>">가입</a> 하세요.
+							</p>			
 						</div>
-						<section id="signin-status" class="text-danger p-xs"></section>			
-						<form name="signin-fm" role="form" method="POST" accept-charset="utf-8" class="sky-form">
-							<input type="hidden" name="output" value="json" />									
-							<fieldset>											
-								<section>
-									<label class="input">
-										<i class="icon-append fa fa-envelope"></i>
-										<input type="text" name="username" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
-									</label>
-								</section>
-								<section>
-									<label class="input">
-										<i class="icon-append fa fa-lock"></i>
-										<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
-									</label>
-								</section>
-								<section>							
-									<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
-								</section>
-							</fieldset>		
-							<footer>
-								<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-action="signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
-							</footer>
-						</form><!-- /form -->		
-					</div>
+					</form>
+				</div>
+			</div>	
 		</div><!-- /.container -->
 		<footer>
 			<nav class="navbar navbar-static-bottom">
