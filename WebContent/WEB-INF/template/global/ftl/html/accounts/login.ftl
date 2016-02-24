@@ -432,12 +432,7 @@
 									<input name="password" type="password" class="form-control rounded-right" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요.">
 								</div>
 								<span class="k-invalid-msg" data-for="password"></span>
-								
-								<div class="input-group margin-bottom-10">
-              						<input type="checkbox" id="remember-me" class="k-checkbox" name="remember-me">
-          							<label class="k-checkbox-label" for="remember-me">로그인 상태 유지</label>
-            					</div>
-            
+
 								<label class="checkbox">
 									<input type="checkbox" name="rememberMe">
 									<i></i>
