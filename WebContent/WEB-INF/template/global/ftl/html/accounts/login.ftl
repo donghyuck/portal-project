@@ -280,9 +280,6 @@
 	border-color: #999;
 }
 
-.sky-form .rating input:checked  ~ label {
-	color: #72c02c;
-}
 
 
 		
