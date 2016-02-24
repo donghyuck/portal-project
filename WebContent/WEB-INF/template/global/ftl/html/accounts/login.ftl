@@ -287,10 +287,11 @@
 			</nav>		
 			<div class="container" style="min-height:570px;">
 			
-			<div class="form-block" style="height: 793px;">
+			<div class="row equal-height-columns">
+			
+			<div class="col-md-6 col-sm-6 col-offset-6 form-block equal-height-column" style="height: 793px;">
 				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
 				<form action="#">
-				
 					<div class="login-block">
 						
 						<div class="social-login text-center no-border no-padding">							
@@ -341,7 +342,7 @@
 					</div>
 				</form>
 			</div>
-						
+			</div>			
 					<div id="signin" class="reg-block animated" style="display:none;">	
 						<div class="reg-block-header">
 							<h2></h2>
