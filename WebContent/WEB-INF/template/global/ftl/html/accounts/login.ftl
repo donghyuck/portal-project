@@ -318,9 +318,9 @@
 							<div class="or rounded-x">또는</div>
 							<ul class="list-inline margin-bottom-20">
 								<li>
-									<button class="btn rounded btn-lg btn-facebook">
-										<i class="fa fa-facebook"></i> Facebook Sign in
-									</button>
+									<a class="btn-link">
+										<i class="icon-flat icon-svg icon-svg-md user-color-worker"></i>
+									</a>
 								</li>
 								<li>
 									<button class="btn rounded btn-lg btn-twitter">
