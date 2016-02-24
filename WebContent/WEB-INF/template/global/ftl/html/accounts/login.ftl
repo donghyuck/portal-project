@@ -96,8 +96,6 @@
 		
 		
 		
-		
-		
 		function prepareSocialSignOn(){	
 			var renderTo = $("#signin");				
 			common.ui.ajax("<@spring.url "/connect/list.json"/>", {
@@ -107,7 +105,7 @@
 					renderTo2.html( html );							
 					$("a[data-action='connect']").click(function(e){
 						var $this = $(this);	
-						kendo.ui.progress(renderTo, true);							
+						//kendo.ui.progress(renderTo, true);							
 						var popup = window.open( 
 							"<@spring.url "/connect/"/>" + $this.data("provider-id") + "/authorize",
 							$this.data("provider-id") + " Window", 
