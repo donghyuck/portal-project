@@ -212,10 +212,10 @@
     min-width: 380px;
     margin: 60px auto;	
     float: right;
-		    border-radius: 6px!important;
-		 	border: 1px solid rgba(0,0,0,.2);
-			-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
-    		box-shadow: 0 5px 10px rgba(0,0,0,.2);		    
+	border-radius: 6px!important;
+	border: 1px solid rgba(0,0,0,.2);
+	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);		    
 }
 
 
