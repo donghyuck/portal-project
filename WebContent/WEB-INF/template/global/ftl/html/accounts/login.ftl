@@ -62,6 +62,7 @@
 				//var btn = renderTo.find("button[data-action='signin']");
 				if( validator.validate() ){
 					//btn.button('loading');
+					$("#signin-status").hide();
 					common.ui.progress(renderTo, true);		
 					common.ui.ajax(
 						"<@spring.url "/login_auth"/>", 
