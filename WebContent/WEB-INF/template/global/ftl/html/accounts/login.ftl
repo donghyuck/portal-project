@@ -246,40 +246,72 @@
     font-size: .9em;
 }
 
-
 /**/
 /* radios and checkboxes */
 /**/
-.sky-form .radio i,.sky-form .checkbox i {
-	width: 17px;
-	height: 17px;
-	border-width: 1px;
+.sky-form .radio,
+.sky-form .checkbox {
+	margin-bottom: 4px;
+	padding-left: 27px;
+	font-size: 15px;
+	line-height: 27px;
+	color: #404040;
+	cursor: pointer;
 }
-
-.sky-form .checkbox input+i:after {
-	top: 2px;
-	left: 0;
-	font: normal 10px FontAwesome;
+.sky-form .radio:last-child,
+.sky-form .checkbox:last-child {
+	margin-bottom: 0;
 }
-
-/**/
-/* checked state */
-/**/
-.sky-form .radio input+i:after {
+.sky-form .radio input,
+.sky-form .checkbox input {
+	position: absolute;
+	left: -9999px;
+}
+.sky-form .radio i,
+.sky-form .checkbox i {
+	position: absolute;
 	top: 5px;
-	left: 5px;
-	background-color: #999;
+	left: 0;
+	display: block;
+	width: 13px;
+	height: 13px;
+	outline: none;
+	border-width: 2px;
+	border-style: solid;
+	background: #fff;
 }
-
-.sky-form .checkbox input+i:after {
-	color: #999;
+.sky-form .radio i {
+	border-radius: 50%;
 }
-
-.sky-form .radio input:checked+i,.sky-form .checkbox input:checked+i,.sky-form .toggle input:checked+i
-	{
-	border-color: #999;
+.sky-form .radio input + i:after,
+.sky-form .checkbox input + i:after {
+	position: absolute;
+	opacity: 0;
+	-ms-transition: opacity 0.1s;
+	-moz-transition: opacity 0.1s;
+	-webkit-transition: opacity 0.1s;
 }
-
+.sky-form .radio input + i:after {
+	content: '';
+	top: 4px;
+	left: 4px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+}
+.sky-form .checkbox input + i:after {
+	content: '\f00c';
+	top: -1px;
+	left: -1px;
+	width: 15px;
+	height: 15px;
+	font: normal 12px/16px FontAwesome;
+	text-align: center;
+}
+.sky-form .radio input:checked + i:after,
+.sky-form .checkbox input:checked + i:after {
+	opacity: 1;
+}
 
 
 		
