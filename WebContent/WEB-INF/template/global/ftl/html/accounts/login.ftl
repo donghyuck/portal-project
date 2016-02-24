@@ -271,6 +271,64 @@
 				</div>
 			</nav>		
 			<div class="container" style="min-height:570px;">
+			
+			<div class="form-block">
+				<a href="index.html">
+					<img src="assets/img/themes/logo1-blue.png" alt="">
+				</a>
+				<h2 class="margin-bottom-30">Login To Your Account</h2>
+				<form action="#">
+					<div class="login-block">
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
+							<input type="text" class="form-control rounded-right" placeholder="Username">
+						</div>
+
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
+							<input type="password" class="form-control rounded-right" placeholder="Password">
+						</div>
+
+						<div class="checkbox">
+							<ul class="list-inline">
+								<li>
+									<label>
+										<input type="checkbox"> Remember me
+									</label>
+								</li>
+
+								<li class="pull-right">
+									<a href="#">Forgot password?</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="row margin-bottom-70">
+							<div class="col-md-12">
+								<button type="submit" class="btn-u btn-u-blue btn-block rounded">Sign In</button>
+							</div>
+						</div>
+
+						<div class="social-login text-center">
+							<div class="or rounded-x">Or</div>
+							<ul class="list-inline margin-bottom-20">
+								<li>
+									<button class="btn rounded btn-lg btn-facebook">
+										<i class="fa fa-facebook"></i> Facebook Sign in
+									</button>
+								</li>
+								<li>
+									<button class="btn rounded btn-lg btn-twitter">
+										<i class="fa fa-twitter"></i> Twitter Sign in
+									</button>
+								</li>
+							</ul>
+							<p>Don't have an account? <a href="page_registration2.html">Create New</a></p>
+						</div>
+					</div>
+				</form>
+			</div>
+						
 					<div id="signin" class="reg-block animated" style="display:none;">	
 						<div class="reg-block-header">
 							<h2></h2>
