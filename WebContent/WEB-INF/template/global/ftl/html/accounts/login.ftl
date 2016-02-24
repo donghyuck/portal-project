@@ -290,11 +290,10 @@
 			</nav>		
 			<div class="container" style="min-height:570px;">
 			
-			<div class="row equal-height-columns">
-			
-			<div class="col-md-6 col-sm-4 col-sm-offset-8 col-md-offset-6 form-block equal-height-column p-sm" style="height: 793px;">
+			<div class="row">			
+			<div class="col-sm-6 col-sm-offset-6 form-block">
 				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
-				<form action="#">
+				<form action="#" width="400px;">
 					<div class="login-block">
 						
 						<div class="social-login text-center no-border no-padding">							
