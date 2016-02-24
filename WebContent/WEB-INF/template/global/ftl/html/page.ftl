@@ -7,8 +7,10 @@
 		<!--
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-default.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/dark-red.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',			
+			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
