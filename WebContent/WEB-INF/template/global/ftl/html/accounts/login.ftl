@@ -283,37 +283,9 @@
 			<div class="form-block" style="height: 793px;">
 				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
 				<form action="#">
+				
 					<div class="login-block">
-						<div class="input-group margin-bottom-20">
-							<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
-							<input type="text" class="form-control rounded-right" placeholder="Username">
-						</div>
-
-						<div class="input-group margin-bottom-20">
-							<span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
-							<input type="password" class="form-control rounded-right" placeholder="Password">
-						</div>
-
-						<div class="checkbox">
-							<ul class="list-inline">
-								<li>
-									<label>
-										<input type="checkbox"> Remember me
-									</label>
-								</li>
-
-								<li class="pull-right">
-									<a href="#">Forgot password?</a>
-								</li>
-							</ul>
-						</div>
-
-						<div class="row margin-bottom-70">
-							<div class="col-md-12">
-								<button type="submit" class="btn-u btn-u-blue btn-block rounded">Sign In</button>
-							</div>
-						</div>
-
+						
 						<div class="social-login text-center">
 							<div class="or rounded-x">또는</div>
 							<ul class="list-inline margin-bottom-20">
@@ -330,6 +302,32 @@
 							</ul>
 							<p>${action.webSite.displayName}에 처음이세요? <br >지금 <span class="text-primary">가입</span>하세요.</p>
 						</div>
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
+							<input type="text" class="form-control rounded-right" placeholder="Username">
+						</div>
+						<div class="input-group margin-bottom-20">
+							<span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
+							<input type="password" class="form-control rounded-right" placeholder="Password">
+						</div>
+						<div class="checkbox">
+							<ul class="list-inline">
+								<li>
+									<label>
+										<input type="checkbox"> Remember me
+									</label>
+								</li>
+
+								<li class="pull-right">
+									<a href="#">Forgot password?</a>
+								</li>
+							</ul>
+						</div>	
+						<div class="row margin-bottom-70">
+							<div class="col-md-12">
+								<button type="submit" class="btn-u btn-u-blue btn-block rounded">Sign In</button>
+							</div>
+						</div>					
 					</div>
 				</form>
 			</div>
