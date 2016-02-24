@@ -377,7 +377,7 @@
 							
 						</div>	
 						<p class="text-center">
-							${action.webSite.displayName}에 처음이세요?  지금 <span class="text-primary">가입</span> 하세요.
+							${action.webSite.displayName}에 처음이세요?  지금 <a class="btn-link" href="<@spring.url "/accounts/signup"/>">가입</a> 하세요.
 						</p>			
 					</div>
 				</form>
