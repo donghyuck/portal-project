@@ -11,7 +11,6 @@
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-default.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/dark-red.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
-			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/page_signin_signup_v4.css"/>',
 			
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
@@ -405,15 +404,11 @@
           							<label class="k-checkbox-label" for="remember-me">로그인 상태 유지</label>
             					</div>
             
-								<div class="checkbox">
-									<ul class="list-inline">
-										<li>
-											<label>
-												<input type="checkbox" name="remember"> 로그인 상태 유지
-											</label>
-										</li>
-									</ul>
-								</div>	
+								<label class="checkbox">
+									<input type="checkbox" name="rememberMe">
+									<i></i>
+								</label>
+											
 								<div class="row margin-bottom-30">
 									<div class="col-md-12">
 										<button data-action="signin" type="submit" class="btn-u btn-u-blue btn-block rounded" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>로그인</button>
