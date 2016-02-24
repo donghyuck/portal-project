@@ -48,20 +48,20 @@
 		function prepareSocialSignOn(){	
 			var renderTo = $("#signin");				
 			common.ui.ajax("<@spring.url "/connect/list.json"/>", {
-					success: function(response){ 
-						var renderTo = $("#signin .social-icons");
-						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , response.media );
-						renderTo.html( html );							
-						$("a[data-action='connect']").click(function(e){
-							var $this = $(this);	
-							kendo.ui.progress(renderTo, true);							
-							var popup = window.open( 
-								"<@spring.url "/connect/"/>" + $this.data("provider-id") + "/authorize",
-								$this.data("provider-id") + " Window", 
-								"height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes");	
-							return false;								
-						});
-					}				
+				success: function(response){ 
+					var renderTo = $("#signin .social-icons");
+					var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , response.media );
+					renderTo.html( html );							
+					$("a[data-action='connect']").click(function(e){
+						var $this = $(this);	
+						kendo.ui.progress(renderTo, true);							
+						var popup = window.open( 
+							"<@spring.url "/connect/"/>" + $this.data("provider-id") + "/authorize",
+							$this.data("provider-id") + " Window", 
+							"height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes");	
+						return false;								
+					});
+				}				
 			});		
 		}
 
@@ -337,10 +337,12 @@
 								<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
 								<input name="username" type="text" class="form-control rounded-right" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
 							</div>
+							<span class="k-invalid-msg" data-for="username"></span>
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
 								<input name="password" type="password" class="form-control rounded-right" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요.">
 							</div>
+							<span class="k-invalid-msg" data-for="password"></span>
 							<div class="checkbox">
 								<ul class="list-inline">
 									<li>
