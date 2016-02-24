@@ -291,7 +291,7 @@
 			<div class="container" style="min-height:570px;">
 			
 			<div class="row">			
-			<div class="col-sm-6 col-sm-offset-6 form-block">
+			<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block">
 				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
 				<form action="#" width="400px;">
 					<div class="login-block">
