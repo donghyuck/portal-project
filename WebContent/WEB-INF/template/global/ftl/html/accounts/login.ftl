@@ -153,6 +153,8 @@
 
 .form-block {
 	padding:15px;
+    width: 350px;
+    margin: 60px auto;	
 }
 		
 		/* Registration and Login Page v2
