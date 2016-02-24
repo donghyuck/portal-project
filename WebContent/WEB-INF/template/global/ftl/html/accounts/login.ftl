@@ -311,7 +311,7 @@
 			<div class="row">			
 			<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block" id="signin" >
 				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
-				<form action="#" width="400px;">
+				<form action="#">
 					<div class="login-block">
 						<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 						<div class="social-login text-center no-border no-padding">							
@@ -333,12 +333,12 @@
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 							<div class="or rounded-x text-center">또는</div>
 							</#if>
-							<div class="input-group margin-bottom-20">
+							<div class="input-group margin-bottom-10">
 								<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
 								<input name="username" type="text" class="form-control rounded-right" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
 							</div>
 							<span class="k-invalid-msg" data-for="username"></span>
-							<div class="input-group margin-bottom-20">
+							<div class="input-group margin-bottom-10">
 								<span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
 								<input name="password" type="password" class="form-control rounded-right" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요.">
 							</div>
