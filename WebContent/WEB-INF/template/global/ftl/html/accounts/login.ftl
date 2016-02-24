@@ -35,6 +35,7 @@
 			complete: function() {
 			
 			console.log( '${action.url}'); 
+			
 			common.ui.setup({
 				features:{
 					wallpaper : true,
@@ -43,7 +44,6 @@
 						authenticate : function(e){
 							var renderTo = $("#signin");		
 							if( !e.token.anonymous ){				
-											
 								var template = kendo.template($("#alert-template").html());	
 								$(".container:first").prepend(template(e.token));	
 							}else{
