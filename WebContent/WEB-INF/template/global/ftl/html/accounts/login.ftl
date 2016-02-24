@@ -34,6 +34,7 @@
 			],			
 			complete: function() {
 			
+			console.log(${url}); 
 			common.ui.setup({
 				features:{
 					wallpaper : true,
