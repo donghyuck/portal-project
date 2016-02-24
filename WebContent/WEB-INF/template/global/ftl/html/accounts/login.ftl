@@ -257,8 +257,9 @@
 	padding-left: 27px;
 	font-size: 1.0em;
 	line-height: 27px;
-	 color: #999;
+	color: #999;
 	cursor: pointer;
+	font-weight:200;
 }
 .sky-form .radio:last-child,
 .sky-form .checkbox:last-child {
@@ -309,7 +310,7 @@
 	width: 15px;
 	height: 15px;
 	color:#999;
-	font: normal 12px/16px FontAwesome;
+	font: normal 10px FontAwesome;
 	text-align: center;
 }
 .sky-form .radio input:checked + i:after,
