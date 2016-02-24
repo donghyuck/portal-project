@@ -62,7 +62,7 @@
 				//var btn = renderTo.find("button[data-action='signin']");
 				if( validator.validate() ){
 					//btn.button('loading');
-					$("#signin-status").hide();
+					$("#signin-status").fadeOut();
 					common.ui.progress(renderTo, true);		
 					common.ui.ajax(
 						"<@spring.url "/login_auth"/>", 
@@ -73,7 +73,7 @@
 									$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
 									
 									if( $("#signin-status").is(":hidden") ){
-										$("#signin-status").show();
+										$("#signin-status").fadeIn();
 									}	
 									
 									$("input[type='password']").val("").focus();											
