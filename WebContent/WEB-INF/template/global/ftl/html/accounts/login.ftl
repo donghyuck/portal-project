@@ -407,6 +407,7 @@
 								<label class="checkbox">
 									<input type="checkbox" name="rememberMe">
 									<i></i>
+									로그인 상태 유지
 								</label>
 											
 								<div class="row margin-bottom-30">
