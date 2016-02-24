@@ -355,7 +355,7 @@
 							</div>	
 							<div class="row margin-bottom-30">
 								<div class="col-md-12">
-									<button type="submit" class="btn-u btn-u-blue btn-block rounded" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>로그인</button>
+									<button data-action="signin" type="submit" class="btn-u btn-u-blue btn-block rounded" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>로그인</button>
 									<div class="text-center margin-top-20">
 										<a class="btn-link" href="#">아이디 또는 비밀번호를 잊으셨나요 ?</a>
 									</div>
