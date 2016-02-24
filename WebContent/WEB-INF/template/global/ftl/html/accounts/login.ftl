@@ -134,8 +134,8 @@
 			renderTo.find("form").submit(function(e) {		
 				event.preventDefault();				
 				var btn = renderTo.find("button[data-action='signin']");
-				
-				if( validator.validate() ){
+				$("#signin-status").hide();
+				if( validator.validate() ){					
 					btn.button('loading');
 					common.ui.ajax(
 						"<@spring.url "/login_auth"/>", 
