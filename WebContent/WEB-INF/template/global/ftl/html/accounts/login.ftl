@@ -243,6 +243,10 @@
 
 }
 
+.k-invalid-msg {
+    font-size: .9em;
+}
+
 		
 		/* Registration and Login Page v2
 			------------------------------------*/
