@@ -34,7 +34,11 @@
 			],			
 			complete: function() {
 			
-			console.log( '${action.url?}'); 
+			<#if action.url??>
+			  console.log( '${action.url}'); 
+			</#if>
+			
+			
 			
 			common.ui.setup({
 				features:{
