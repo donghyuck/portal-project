@@ -17,8 +17,7 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
-			
-			
+						
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jquery.plugins/jquery.ui.shake.min.js"/>',
 			'<@spring.url "/js/jquery.jgrowl/jquery.jgrowl.min.js"/>',			
