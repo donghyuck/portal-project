@@ -293,8 +293,7 @@
 				
 					<div class="login-block">
 						
-						<div class="social-login text-center">
-							
+						<div class="social-login text-center no-border no-padding">							
 							<ul class="list-inline margin-bottom-20">
 								<li>
 									<button class="icon-svg-btn bg-transparent">									
@@ -306,11 +305,10 @@
 										<i class="icon-flat icon-svg icon-svg-md social-color-facebook"></i>
 									</button>
 								</li>
-							</ul>
-							
+							</ul>							
 						</div>
 						<div class="email-login">
-							<div class="or rounded-x">또는</div>
+							<div class="or rounded-x text-center">또는</div>
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
 								<input type="text" class="form-control rounded-right" placeholder="Username">
