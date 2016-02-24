@@ -321,12 +321,12 @@
 								<ul class="list-inline">
 									<li>
 										<label>
-											<input type="checkbox"> Remember me
+											<input type="checkbox"> 로그인 상태 유지
 										</label>
 									</li>
 	
 									<li class="pull-right">
-										<a href="#">Forgot password?</a>
+										<a href="#">아이디 또는 비밀번호를 잊으셨나요 ?</a>
 									</li>
 								</ul>
 							</div>	
