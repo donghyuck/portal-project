@@ -65,7 +65,7 @@
 					
 					if( $("#signin-status").is(":visible") ){
 						$("#signin-status").fadeOut();
-					
+					}
 					common.ui.progress(renderTo, true);		
 					common.ui.ajax(
 						"<@spring.url "/login_auth"/>", 
