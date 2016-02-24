@@ -249,13 +249,15 @@
 /**/
 /* radios and checkboxes */
 /**/
+
+
 .sky-form .radio,
 .sky-form .checkbox {
 	margin-bottom: 4px;
 	padding-left: 27px;
-	font-size: 15px;
+	font-size: 1.0em;
 	line-height: 27px;
-	color: #404040;
+	 color: #999;
 	cursor: pointer;
 }
 .sky-form .radio:last-child,
