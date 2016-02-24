@@ -323,9 +323,8 @@
 									</a>
 								</li>
 								<li>
-									<button class="btn rounded btn-lg btn-twitter">
-									
-										<i class="icon-flat icon-svg icon-svg-md user-color-worker"> Twitter Sign in
+									<button class="btn rounded btn-lg btn-twitter">									
+										<i class="icon-flat icon-svg icon-svg-md user-color-worker"></i> Twitter Sign in
 									</button>
 								</li>
 							</ul>
