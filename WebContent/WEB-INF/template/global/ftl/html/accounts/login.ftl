@@ -34,7 +34,7 @@
 			],			
 			complete: function() {
 			
-			console.log( '${action.url?exists}'); 
+			console.log( '${action.url}'); 
 			common.ui.setup({
 				features:{
 					wallpaper : true,
