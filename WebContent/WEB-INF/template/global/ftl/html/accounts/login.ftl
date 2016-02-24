@@ -151,6 +151,9 @@
 	position: relative;
 }
 
+.form-block {
+	padding:15px;
+}
 		
 		/* Registration and Login Page v2
 			------------------------------------*/
