@@ -39,11 +39,58 @@
 						wallpaper : true,
 						loading:true
 					}
-				});		
-				prepareSocialSignOn();
-				prepareSignOn();				
+				});	
+					
+				//prepareSocialSignOn();
+				//prepareSignOn();
+				
+				createSignInBlock();
+				
 			}
 		}]);			
+		
+		
+		functioin createSignInBlock(){
+			var renderTo = $("#signin");			
+			var validator = renderTo.find("form").kendoValidator({
+				errorTemplate: "<p class='text-danger'>#=message#</p>"
+			}).data("kendoValidator");			
+		
+			renderTo.find("form").submit(function(e) {		
+				event.preventDefault();				
+				//var btn = renderTo.find("button[data-action='signin']");
+				if( validator.validate() ){
+					//btn.button('loading');
+					common.ui.progress(renderTo, true);		
+					common.ui.ajax(
+						"<@spring.url "/login_auth"/>", 
+						{
+							data: renderTo.find("form").serialize(),
+							success : function( response ) {   
+								if( response.error ){ 
+									$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
+									$("input[type='password']").val("").focus();											
+								} else {        	   
+									$("#signin-status").html("");                         
+									location.href="<@spring.url "/display/0/my-home.html"/>";
+								} 	
+							},
+							complete: function(jqXHR, textStatus ){					
+								//btn.button('reset');
+								common.ui.progress(renderTo, false);		
+							}	
+						}
+					);	
+				}else{        			      
+					//btn.button('reset');
+				}			
+				return false ;
+			});		
+		}
+		
+		
+		
+		
 		
 		function prepareSocialSignOn(){	
 			var renderTo = $("#signin");				
