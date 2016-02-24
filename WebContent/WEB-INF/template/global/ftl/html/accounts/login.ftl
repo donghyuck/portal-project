@@ -333,8 +333,12 @@
 							<div class="row margin-bottom-70">
 								<div class="col-md-12">
 									<button type="submit" class="btn-u btn-u-blue btn-block rounded">로그인</button>
+									<div class="text-center">
+										<a class="btn-link" href="#">아이디 또는 비밀번호를 잊으셨나요 ?</a>
+									</div>
 								</div>
 							</div>	
+							
 						</div>	
 						<p>${action.webSite.displayName}에 처음이세요? <br >지금 <span class="text-primary">가입</span>하세요.</p>
 										
