@@ -247,6 +247,45 @@
     font-size: .9em;
 }
 
+
+.radio,.checkbox {
+	margin-top: 0;
+}
+
+.form-block .radio i,.form-block .checkbox i {
+	width: 17px;
+	height: 17px;
+	border-width: 1px;
+}
+
+.form-block .checkbox input+i:after {
+	top: 2px;
+	left: 0;
+	font: normal 10px FontAwesome;
+}
+
+/**/
+/* checked state */
+/**/
+.form-block .radio input+i:after {
+	top: 5px;
+	left: 5px;
+	background-color: #999;
+}
+
+.form-block .checkbox input+i:after {
+	color: #999;
+}
+
+.form-block .radio input:checked+i, .form-block .checkbox input:checked+i, .form-block .toggle input:checked+i
+	{
+	border-color: #999;
+}
+
+.form-block .rating input:checked  ~ label {
+	color: #72c02c;
+}
+
 		
 		/* Registration and Login Page v2
 			------------------------------------*/
