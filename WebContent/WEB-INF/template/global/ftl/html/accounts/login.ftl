@@ -103,7 +103,7 @@
 			common.ui.ajax("<@spring.url "/connect/list.json"/>", {
 				success: function(response){ 
 					var renderTo2 = renderTo.find('.social-login ul');
-					var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"# } #><a href="\\#" class="icon-svg-btn bg-transparent" data-original-title="#= provider #"><i class="icon-flat icon-svg icon-svg-md social-color-#= provider.toLowerCase() #"></i></a></li>') , response.media );
+					var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"# } #><a href="\\#" class="icon-svg-btn bg-transparent" data-action="connect" data-provider-id="#= provider #"><i class="icon-flat icon-svg icon-svg-md social-color-#= provider.toLowerCase() #"></i></a></li>') , response.media );
 					renderTo2.html( html );							
 					$("a[data-action='connect']").click(function(e){
 						var $this = $(this);	
