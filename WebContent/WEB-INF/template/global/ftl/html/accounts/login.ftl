@@ -104,7 +104,7 @@
 				success: function(response){ 
 					var renderTo2 = renderTo.find('.social-login ul');
 					var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"# } #><a href="\\#" class="icon-svg-btn bg-transparent" data-original-title="#= provider #"><i class="icon-flat icon-svg icon-svg-md social-color-#= provider.toLowerCase() #"></i></a></li>') , response.media );
-					renderTo.html( html );							
+					renderTo2.html( html );							
 					$("a[data-action='connect']").click(function(e){
 						var $this = $(this);	
 						kendo.ui.progress(renderTo, true);							
