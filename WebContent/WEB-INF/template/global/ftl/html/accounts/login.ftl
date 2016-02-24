@@ -397,7 +397,7 @@
 			<div class="container" style="min-height:570px;">			
 			<div class="row">			
 				<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block" id="signin" style="display:none;">
-					<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
+					<h2 class="margin-bottom-30 text-center">${action.webSite.displayName}에 로그인</h2>
 					<form name="signin-fm" role="form" method="POST" accept-charset="utf-8" class="sky-form">
 						<input type="hidden" name="output" value="json" />			
 						<div class="login-block">
