@@ -403,7 +403,7 @@
 						<div class="login-block">
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 							<div class="social-login text-center no-border no-padding">							
-								<ul class="list-inline margin-bottom-20">
+								<ul class="list-inline margin-bottom-30">
 									<li>
 										<a href="#" class="icon-svg-btn bg-transparent" data-original-title="Twitter">									
 											<i class="icon-flat icon-svg icon-svg-md social-color-twitter"></i>
