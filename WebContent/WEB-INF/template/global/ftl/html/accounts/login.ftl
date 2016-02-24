@@ -324,16 +324,12 @@
 											<input type="checkbox"> 로그인 상태 유지
 										</label>
 									</li>
-	
-									<li class="pull-right">
-										<a href="#">아이디 또는 비밀번호를 잊으셨나요 ?</a>
-									</li>
 								</ul>
 							</div>	
 							<div class="row margin-bottom-70">
 								<div class="col-md-12">
 									<button type="submit" class="btn-u btn-u-blue btn-block rounded">로그인</button>
-									<div class="text-center">
+									<div class="text-center margin-top-20">
 										<a class="btn-link" href="#">아이디 또는 비밀번호를 잊으셨나요 ?</a>
 									</div>
 								</div>
