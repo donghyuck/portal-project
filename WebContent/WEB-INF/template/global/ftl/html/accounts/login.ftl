@@ -144,7 +144,7 @@
 							success : function( response ) {   
 								if( response.error ){ 
 									$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
-									if( !$("#signin-status").is(":visible") ){
+									if( !$("#signin-status").is("visible") ){
 										$("#signin-status").show();
 									}									
 									$("input[type='password']").val("").focus();											
