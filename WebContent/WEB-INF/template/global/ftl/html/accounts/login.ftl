@@ -273,11 +273,8 @@
 			</nav>		
 			<div class="container" style="min-height:570px;">
 			
-<div class="form-block" style="height: 793px;">
-				<a href="index.html">
-					<img src="assets/img/themes/logo1-blue.png" alt="">
-				</a>
-				<h2 class="margin-bottom-30">Login To Your Account</h2>
+			<div class="form-block" style="height: 793px;">
+				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
 				<form action="#">
 					<div class="login-block">
 						<div class="input-group margin-bottom-20">
@@ -311,7 +308,7 @@
 						</div>
 
 						<div class="social-login text-center">
-							<div class="or rounded-x">Or</div>
+							<div class="or rounded-x">또는</div>
 							<ul class="list-inline margin-bottom-20">
 								<li>
 									<button class="btn rounded btn-lg btn-facebook">
@@ -324,7 +321,7 @@
 									</button>
 								</li>
 							</ul>
-							<p>회원이 아니신가요? <br >지금 <span class="text-primary">가입</span>하세요.</p>
+							<p>${action.webSite.displayName}에 처음이세요? <br >지금 <span class="text-primary">가입</span>하세요.</p>
 						</div>
 					</div>
 				</form>
