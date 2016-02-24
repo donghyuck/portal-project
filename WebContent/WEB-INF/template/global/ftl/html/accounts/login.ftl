@@ -62,7 +62,10 @@
 				//var btn = renderTo.find("button[data-action='signin']");
 				if( validator.validate() ){
 					//btn.button('loading');
-					$("#signin-status").fadeOut();
+					
+					if( $("#signin-status").is(":visible") ){
+						$("#signin-status").fadeOut();
+					
 					common.ui.progress(renderTo, true);		
 					common.ui.ajax(
 						"<@spring.url "/login_auth"/>", 
@@ -70,12 +73,8 @@
 							data: renderTo.find("form").serialize(),
 							success : function( response ) {   
 								if( response.error ){ 
-									$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
-									
-									if( $("#signin-status").is(":hidden") ){
-										$("#signin-status").fadeIn();
-									}	
-									
+									$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");									
+									$("#signin-status").fadeIn();									
 									$("input[type='password']").val("").focus();											
 								} else {        	   
 									$("#signin-status").html("");                         
