@@ -159,6 +159,10 @@
 }
 
 
+.login-block .social-login {
+	border : 0 ;
+}
+
 @media (min-width: 992px)
 {
 
