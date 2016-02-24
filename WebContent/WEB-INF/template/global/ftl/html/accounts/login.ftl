@@ -289,7 +289,7 @@
 			
 			<div class="row equal-height-columns">
 			
-			<div class="col-md-6 col-sm-6 col-offset-6 form-block equal-height-column" style="height: 793px;">
+			<div class="col-md-6 col-sm-4 col-sm-offset-8 col-md-offset-6 form-block equal-height-column p-sm" style="height: 793px;">
 				<h2 class="margin-bottom-30">${action.webSite.displayName}에 로그인</h2>
 				<form action="#">
 					<div class="login-block">
