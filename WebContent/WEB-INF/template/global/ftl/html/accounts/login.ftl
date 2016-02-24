@@ -299,14 +299,16 @@
 	left: 4px;
 	width: 5px;
 	height: 5px;
+	color:#999;
 	border-radius: 50%;
 }
 .sky-form .checkbox input + i:after {
 	content: '\f00c';
-	top: -1px;
-	left: -1px;
+	top: 2px;
+	left: 0px;
 	width: 15px;
 	height: 15px;
+	color:#999;
 	font: normal 12px/16px FontAwesome;
 	text-align: center;
 }
