@@ -318,13 +318,13 @@
 							<div class="or rounded-x">또는</div>
 							<ul class="list-inline margin-bottom-20">
 								<li>
-									<a class="btn-link">
-										<i class="icon-flat icon-svg icon-svg-md user-color-worker"></i>
-									</a>
+									<button class="icon-svg-btn bg-transparent">									
+										<i class="icon-flat icon-svg icon-svg-md social-color-twitter"></i>
+									</button>
 								</li>
 								<li>
-									<button class="btn rounded btn-lg btn-twitter">									
-										<i class="icon-flat icon-svg icon-svg-md social-color-facebook"></i> Twitter Sign in
+									<button class="icon-svg-btn bg-transparent">									
+										<i class="icon-flat icon-svg icon-svg-md social-color-facebook"></i>
 									</button>
 								</li>
 							</ul>
