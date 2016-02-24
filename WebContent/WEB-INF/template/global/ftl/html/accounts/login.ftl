@@ -353,7 +353,7 @@
 							</div>	
 							
 						</div>	
-						<p class="text-right">
+						<p class="text-center">
 							${action.webSite.displayName}에 처음이세요?  지금 <span class="text-primary">가입</span>하세요.
 						</p>			
 					</div>
