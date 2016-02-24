@@ -156,6 +156,17 @@
     width: 350px;
     margin: 60px auto;	
 }
+
+
+@media (min-width: 992px)
+{
+
+	.login-block, .reg-block {
+		min-width : 350px;
+	}
+
+}
+
 		
 		/* Registration and Login Page v2
 			------------------------------------*/
