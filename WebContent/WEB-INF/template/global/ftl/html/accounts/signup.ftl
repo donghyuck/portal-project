@@ -501,7 +501,7 @@
 							</#if>	
 						</div>
 						
-								<form role="form" id="signup-form" name="fm1" method="POST" accept-charset="utf-8" >
+								<form role="form" id="signup-form" name="fm1" method="POST" accept-charset="utf-8" class="sky-form">
 									<div class="heading heading-v4">
                         				<h6>혹은 직접 입력하여 주세요.</h6>
                     				</div>
