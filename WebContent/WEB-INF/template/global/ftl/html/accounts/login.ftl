@@ -57,7 +57,8 @@
 			}).data("kendoValidator");			
 		
 			renderTo.find("form").submit(function(e) {		
-				event.preventDefault();				
+				event.preventDefault();	
+				console.log("--------");			
 				//var btn = renderTo.find("button[data-action='signin']");
 				if( validator.validate() ){
 					//btn.button('loading');
