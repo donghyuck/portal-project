@@ -43,7 +43,7 @@
 					
 				//prepareSocialSignOn();
 				//prepareSignOn();
-				
+				prepareSocialSignOn();
 				createSignInBlock();
 				
 			}
