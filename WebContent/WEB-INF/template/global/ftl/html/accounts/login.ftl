@@ -324,7 +324,7 @@
 									</button>
 								</li>
 							</ul>
-							<p>Don't have an account? <a href="page_registration2.html">Create New</a></p>
+							<p>회원이 아니신가요? <br >지금 <span class="text-primary">가입</span>하세요.</p>
 						</div>
 					</div>
 				</form>
