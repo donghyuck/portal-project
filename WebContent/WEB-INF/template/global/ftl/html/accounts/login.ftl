@@ -49,11 +49,7 @@
 							}
 						} 
 					}						
-				},
-				wallpaper : {
-					renderTo:$(".promo-bg-img-v2")
-				},	
-				jobs:jobs
+				}
 			});
 			
 			
