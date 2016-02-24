@@ -50,7 +50,7 @@
 		}]);			
 		
 		
-		functioin createSignInBlock(){
+		function createSignInBlock(){
 			var renderTo = $("#signin");			
 			var validator = renderTo.find("form").kendoValidator({
 				errorTemplate: "<p class='text-danger'>#=message#</p>"
