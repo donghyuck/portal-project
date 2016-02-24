@@ -80,7 +80,7 @@
 			} );		
 			
 			var validator = renderTo.find("form").kendoValidator({
-				errorTemplate: "<div class='note note-error'>#=message#</div>"
+				errorTemplate: "<p class='text-danger'>#=message#</p>"
 			}).data("kendoValidator");
 			
 			renderTo.find("form").submit(function(e) {		
