@@ -355,7 +355,54 @@
 			<!-- START HEADER -->	
 			<!--=== Header v6 ===-->
 			<div class="header-v6 header-border-bottom header-dark-dropdown header-sticky">
-			<#include "/html/competency/common/common-assessment-menu.ftl" >		
+			<!-- Navbar -->
+			<div class="navbar mega-menu" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="menu-container">
+						<button type="button" class="navbar-toggle sliding-panel__btn">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<!-- Navbar Brand -->
+						<div class="navbar-brand">
+							<a href="/">
+								<img class="default-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
+								<img class="shrink-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
+							</a>
+						</div>
+						<!-- ENd Navbar Brand --> 
+						<!-- Header Inner Right -->
+						<!--
+						<div class="header-inner-right">
+							<ul class="menu-icons-list"> 
+								<li class="menu-icons shopping-cart">
+									<i class="menu-icons-style radius-x fa fa-shopping-cart"></i>
+									<span class="badge">0</span>
+									<div class="shopping-cart-open">
+										<span class="shc-title">No products in the Cart</span>
+										<button type="button" class="btn-u"><i class="fa fa-shopping-cart"></i> Cart</button>
+										<span class="shc-total">Total: <strong>$0.00</strong></span>
+									</div>
+								</li>
+							
+								<li class="menu-icons">
+									<i class="menu-icons-style search search-close search-btn fa fa-search"></i>
+									<div class="search-open">
+										<input type="text" class="animated fadeIn form-control" placeholder="Start searching ...">
+									</div>
+								</li>
+							</ul>
+						</div>
+						-->
+						<!-- End Header Inner Right -->
+					</div>
+				</div>
+			</div>
+			<!-- End Navbar -->		
 			</div>
 			<!--=== End Header v6 ===--> 
 			<!-- Promo Block -->
@@ -556,16 +603,17 @@
 		
 		<div class="sliding-panel bg-color-darker">
 			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
+				<#if action.webSite ?? >
+				<#assign onePageMenu = action.getWebSiteMenu("ONEPAGE_COMPETENCY_MENU") />	
 				<ul class="sliding-navigation">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="page_about3.html">Abour Us</a></li>
-					<li><a href="page_services.html">Services</a></li>
-					<li><a href="page_profile.html">Profile</a></li>
-					<li><a href="blog_large_right_sidebar1.html">Blog</a></li>
-					<li><a href="portfolio_3_columns_grid_text.html">Our Work</a></li>
-					<li><a href="page_contact1.html">Contact Us</a></li>
+					<#list onePageMenu.components as item >
+					<#if WebSiteUtils.isUserAccessAllowed(item) >
+					<li><a href="${item.page}">${item.title}</a></li>	
+					</#if>	
+					</#list>	
 				</ul>
-	
+				</#if>		
+				
 				<h4>Contacts</h4>
 				<address>
 					58, Lorem Lis Street, Central Ave<br>
