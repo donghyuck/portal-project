@@ -628,10 +628,10 @@
 				</address>
 
 								<div id="current-user-profile" class="profile-blog">
-									<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>"  alt="">
+									<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src: photoUrl } alt="">
 									<div class="name-location">
-										<strong data-bind="text:name"></strong>
-										<span><i class="fa fa-map-marker"></i> <a href="#">California,</a> <a href="#">US</a></span>
+										<strong data-bind="text:name"></strong> 
+										<span><i class="fa fa-building></i> </span>
 									</div>
 									
 									<div class="clearfix margin-bottom-20"></div>
