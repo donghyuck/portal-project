@@ -76,6 +76,7 @@ yepnope([{
 			});	
 			
 			var currentUser = new common.ui.data.User();	
+			kendo.bind( $("#current-user-profile"), currentUser); 	
 			
 			$(window).on("resize", function() {
 		      kendo.resize($(".chart-wrapper"));
@@ -550,30 +551,6 @@ yepnope([{
 							</a>
 						</div>
 						<!-- ENd Navbar Brand --> 
-						<!-- Header Inner Right -->
-						<!--
-						<div class="header-inner-right">
-							<ul class="menu-icons-list"> 
-								<li class="menu-icons shopping-cart">
-									<i class="menu-icons-style radius-x fa fa-shopping-cart"></i>
-									<span class="badge">0</span>
-									<div class="shopping-cart-open">
-										<span class="shc-title">No products in the Cart</span>
-										<button type="button" class="btn-u"><i class="fa fa-shopping-cart"></i> Cart</button>
-										<span class="shc-total">Total: <strong>$0.00</strong></span>
-									</div>
-								</li>
-							
-								<li class="menu-icons">
-									<i class="menu-icons-style search search-close search-btn fa fa-search"></i>
-									<div class="search-open">
-										<input type="text" class="animated fadeIn form-control" placeholder="Start searching ...">
-									</div>
-								</li>
-							</ul>
-						</div>
-						-->
-						<!-- End Header Inner Right -->
 					</div>
 				</div>
 			</div>
@@ -642,7 +619,7 @@ yepnope([{
 								<tr>
 									<td>진단일</td>
 									<td><span data-bind="{text: assessment.formattedModifiedDate }" class="text-muted"></span></td>
-								</tr>
+								</tr><!--
 								<tr>
 									<td>대상자</td>
 									<td class="no-padding-b profile">
@@ -659,7 +636,7 @@ yepnope([{
 										</div>
 
 									</td>
-								</tr>																									
+								</tr>	-->																								
 							</tbody>		                    
 			       	</table>
 			</div>       
@@ -843,39 +820,8 @@ yepnope([{
         	<div id="assessed-competency-details" class="no-border bg-transparent"></div>	
 		</div><!--/end container-->			
  	</div>
-	
-
-		<div class="sliding-panel bg-color-darker">
-			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
-				<ul class="sliding-navigation">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="page_about3.html">Abour Us</a></li>
-					<li><a href="page_services.html">Services</a></li>
-					<li><a href="page_profile.html">Profile</a></li>
-					<li><a href="blog_large_right_sidebar1.html">Blog</a></li>
-					<li><a href="portfolio_3_columns_grid_text.html">Our Work</a></li>
-					<li><a href="page_contact1.html">Contact Us</a></li>
-				</ul>
-	
-				<h4>Contacts</h4>
-				<address>
-					58, Lorem Lis Street, Central Ave<br>
-					New York, US<br><br>
-					Phone: 938 334 6049<br>
-					Fax: 938 334 6050<br><br>
-					Email: <a href="mailto:#">info@htmlstream.com</a><br>
-				</address>
-	
-				<ul class="list-inline social-icons-v1 social-icons-v1--dark">
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				</ul>
-			</div>
-	
-			<a href="javascript:void(0);" class="sliding-panel__close">Close</a>
-		</div>
+		
+		<#include "/html/competency/common-sliding-panel.ftl" >			
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
 		<div class="ibox">			
