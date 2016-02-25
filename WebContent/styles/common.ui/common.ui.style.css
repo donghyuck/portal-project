@@ -6,6 +6,224 @@
 /*Import Font*/
 @import url(../fonts/nanumgothic.css);
 
+------------------------------------*/
+/* 1. COMMON UI User Navigation Bar 
+------------------------------------*/
+.header .navbar .nav>li>.u-accounts {
+/*	color: #999;*/
+	cursor: pointer;
+	min-width: 52 px;
+	font-size: 15px;
+	text-align: left;
+	/*padding: 3px 10px 0px 10px;*/
+	padding-left: 5px;
+	padding-right: 10px;
+	/*background: #f7f7f7;*/
+	border-top-left-radius: 4px !important;
+	border-top-right-radius: 4px !important;	
+	display: inline-block;
+	bottom: -2px;
+}
+
+.u-accounts .u-accounts-photo {
+	background-size: 32px 32px;
+	/*border-radius: 50% !important;*/
+	border-top-left-radius: 4px !important;
+	border-top-right-radius: 4px !important;
+	display: inline-block;
+	top: 4px;
+	position: absolute;
+	height: 32px;
+	width: 32px;
+	opacity: .8;
+}
+
+.u-accounts .u-accounts-name {
+	padding-left: 40px;
+}
+.topbar  .u-accounts {
+	padding-left: 10px;
+}
+.topbar .u-accounts-photo {
+	background-size: 16px 16px;
+	border-top-left-radius: 2px !important;
+	border-top-right-radius: 2px !important;
+	top: 0px;
+	height: 16px;
+	width: 16px;
+	opacity: .5;
+}
+
+.topbar .u-accounts-name {
+	padding-left: 20px;
+}
+
+.topbar .u-accounts:hover {
+	text-decoration: none;
+}
+
+.topbar .u-accounts:hover  .u-accounts-name {
+	font-weight: 800;
+}
+
+.topbar .u-accounts:hover .u-accounts-photo {
+	opacity: 1;
+}	
 
 
+
+
+.header .navbar .nav>li>.u-accounts:hover{
+	color: #333;
+	/*background: #f7f7f7;	*/
+	border-bottom: solid 2px transparent;
+	font-weight: 600;
+}
+
+.header .navbar .nav>li>.u-accounts:hover .u-accounts-name{
+	/*font-weight: 600;*/
+}
+
+
+.header .navbar .nav>li>.u-accounts:hover .u-accounts-photo{
+	opacity: 1;
+}
+
+.header .navbar .nav>li>a.avatar {
+	padding-right: 0;
+	padding-left: 12px;
+	min-width: 21px;
+	margin : 0;
+	margin-right: 12px;
+	right: -4px;
+	padding: 11px 10px 6px 10px;
+	background-image: url(/images/common/icons/sitechrome.png);
+	background-position: 6px -236px;
+	background-repeat: no-repeat;
+	background-size: 300px auto;
+}
+
+.header .navbar .nav>li>a.avatar:hover{
+	background-position: -182px -236px;
+	text-decoration: none;
+}
+
+.header .navbar .nav>li>a.avatar  span{
+	display: block;
+}
+
+.header .navbar .nav>li>a.avatar  span.u-account-name {
+	padding-left: 22px;
+	padding-right: 2px;	
+}
+
+.header .navbar .nav>li>a.avatar:hover  span {
+	background-position: -182px -236px;
+	text-decoration: none;
+}
+
+.header .navbar .nav>li>a.avatar:after {
+	right: -4px;
+	display: block;
+	content: "";
+	width: 21px;
+	height: 19px;
+	background-position: 0 0;
+	position: absolute;
+	top: 14px;	
+	background-image: url(/images/common/icons/sitechrome.png);
+	background-repeat: no-repeat;
+	background-size: 300px auto;	
+}
+
+
+.avatar-btn {
+	border-radius: 50% !important;
+	top: 2px;
+}
+
+.header .navbar .nav>li>.avatar {
+	color: #aaa;
+	cursor: pointer;
+	min-width: 35px;
+	font-size: 15px;
+	text-align: center;
+	background: #f7f7f7;
+	padding: 11px 0 12px;
+	display: inline-block;
+	/* border-bottom: solid 2px #aaa; */
+}
+
+@media ( min-width : 992px) {
+	.header .navbar .nav>li>.avatar {
+		/* bottom: -2px; */
+		position: relative;
+	}
+}
+
+.header .navbar .nav>li>.avatar:hover {
+	color: #72c02c;
+	background: #f7f7f7;
+	border-bottom-color: #72c02c;
+}
+
+@media ( max-width : 991px) {
+	.header .navbar .nav>li>.avatar {
+		color: #999;
+		width: 35px;
+		height: 34px;
+		text-align: left;
+		background: #eee;
+		line-height: 12px;
+		text-align: center;
+		margin: 5px 10px 0;
+		border-bottom: none;
+	}
+	.header .navbar .nav>li>.avatar:hover {
+		background: #5fb611;
+		color: #fff !important;
+	}
+}
+
+
+.navbar-toggle-account {
+	position: relative;
+	float: right;
+	padding: 9px 10px;
+	margin-top: 8px;
+	margin-right: 15px;
+	margin-bottom: 8px;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.navbar-toggle-account  img {
+	max-height: 32px;
+}
+
+.tooltip-alert {
+	opacity: 1;
+	top: 100%;
+	padding: 2px 8px 3px;
+	color: #a94442;
+}
+
+.navbar-toggle-inverse {
+	position: relative;
+	float: right;
+	padding: 6px 10px 2px;
+	margin-top: 6px;
+	margin-right: 0px;
+	margin-bottom: 8px;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+a.navbar-toggle-inverse :hover {
+	color: #2980b9;
+}
 
