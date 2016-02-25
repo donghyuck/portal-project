@@ -278,3 +278,170 @@ body.aside-menu-in .aside-menu {
 		overflow-y: hidden;
 	}
 }
+
+
+
+.btn-close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	overflow: hidden;
+	border: none;
+	background: url(/images/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+	z-index: 1001;
+}
+
+.btn-close.btn-close-grey {
+	background: url(/images/cross-grey.png) no-repeat center center;
+}
+
+.btn-close.btn-sm {
+	width: 40px;
+	height: 40px;
+	top: 15px;
+	right: 15px;
+}
+
+.btn-close.btn-xs {
+	width: 20px;
+	height: 20px;
+	top: 5px;
+	right: 0px;
+}
+
+.btn-down {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 25px;
+	right: 25px;
+	cursor: pointer;	
+	background: url(/images/common/white-angle-down.png) no-repeat center center;	
+} 
+
+.btn-down.btn-down-grey {
+	background: url(/images/common/grey-angle-down.png) no-repeat center center;		
+}
+.btn-down.btn-xs {
+	width: 20px;
+	height: 20px;	
+}	
+
+.btn-up{
+	position: absolute;
+	cursor: pointer;	
+	background: url(/images/common/white-angle-up.png) no-repeat center center;		
+}
+
+.btn-up.btn-up-gray {
+	background: url(/images/common/grey-angle-up.png) no-repeat center center;		
+}
+
+.btn-up.btn-md {
+	top: 0;
+	right: 5px;
+	height: 45px;
+	width: 45px;
+	background-size: 25px 25px;		
+}
+
+.panel-heading .btn-close.btn-xs , .panel-heading .btn-close.btn-sm {
+	position: relative;
+	float: right;
+}
+
+.close-sm {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 25px;
+	right: 25px;
+	cursor: pointer;
+}
+
+.close-sm::before,.close-sm::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	height: 1px;
+	background: #888;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.close-sm::after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+
+.close-sm:hover::before,.close-sm:hover::after {
+	background: #333;
+}
+
+.side-section-title {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	margin-top: 15px;
+	padding: 8px 15px;
+	font-size: 11px;
+	text-transform: uppercase;
+	color: #616161;
+}
+
+.side-section-title.white {
+	color: #fff;
+}
+
+.aside-menu .contact-info,.aside-menu .profile-info {
+	padding: 15px;
+	color: #fff;
+}
+
+.aside-menu .contact-info h5,.aside-menu .contact-info p {
+	color: #fff;
+	font-size: 12px;
+}
+
+.contact-info h5 {
+	margin: 0;
+}
+
+.aside-menu .account-content {
+	text-align: left;
+	padding: 10px;
+	line-height: 24px;
+	list-style: none;
+	color: #fff;
+}
+
+.side-section-nav  .dropdown-menu>li>a:hover {
+	background: #222222;
+}
+
+.side-section-nav {
+	position: relative;
+	border-bottom: solid 2px #616161;
+	/*margin: 0px 10px 0px 10px;*/
+}
+
+.header .navbar .nav>li>.options {
+	color: #aaa;
+	cursor: pointer;
+	min-width: 35px;
+	font-size: 15px;
+	text-align: center;
+	background: #f7f7f7;
+	padding: 11px 0 12px;
+	display: inline-block;
+	border-bottom: solid 2px #aaa;
+}
