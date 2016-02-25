@@ -821,7 +821,10 @@ yepnope([{
 		</div><!--/end container-->			
  	</div>
 		
-		<#include "/html/competency/common-sliding-panel.ftl" >			
+		
+		<#include "/html/competency/common-sliding-panel.ftl" >		
+		
+			
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessed-conpetency-detail-template">		
 		<div class="ibox">			
