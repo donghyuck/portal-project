@@ -632,11 +632,7 @@
 									<div class="name-location">
 										<span data-bind="text:name"></span>
 									</div>
-									
-									<div class="clearfix margin-bottom-20"></div>
-									
-									<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
-									
+									<div class="clearfix margin-bottom-20"></div>									
 								</div>
 
 			</div>
