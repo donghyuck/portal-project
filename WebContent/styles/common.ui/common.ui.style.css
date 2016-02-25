@@ -6,9 +6,9 @@
 /*Import Font*/
 @import url(../fonts/nanumgothic.css);
 
-------------------------------------*/
-/* 1. COMMON UI User Navigation Bar 
-------------------------------------*/
+/*------------------------------------*/
+/* 1. COMMON UI User Navigation Bar   */
+/*------------------------------------*/
 .header .navbar .nav>li>.u-accounts {
 /*	color: #999;*/
 	cursor: pointer;
@@ -229,7 +229,7 @@ a.navbar-toggle-inverse :hover {
 
 
 
-/*2. Main Aside Menu
+/* 2. Main Aside Menu
 ------------------------------------*/
 .wrapper {
 	position: relative;
