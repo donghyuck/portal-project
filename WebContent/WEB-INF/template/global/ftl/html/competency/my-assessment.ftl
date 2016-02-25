@@ -614,6 +614,7 @@
 				</ul>
 				</#if>		
 				
+				<i class="icon-flat icon-svg icon-svg-md business-color-online-support"></i>
 				<h4>문의</h4>
 				<address>
 					서울특별시 구로구 구로동 235-2 <br>
