@@ -14,7 +14,8 @@
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-v6.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/default.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
-			'css!<@spring.url "/styles/jquery.sliding-panel/jquery.sliding-panel.css"/>',									
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.min.css"/>',
+			'css!<@spring.url "/styles/jquery.sliding-panel/jquery.sliding-panel.css"/>',	
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
 			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',				
@@ -614,6 +615,7 @@
 				</ul>
 				</#if>		
 				
+				
 				<i class="icon-flat icon-svg icon-svg-md business-color-online-support"></i>
 				<h4>문의</h4>
 				<address>
@@ -623,7 +625,23 @@
 					Fax: 070-7614-3113<br><br>
 					Email: <a href="mailto:#">jhlee@podosw.com</a><br>
 				</address>
-	
+
+								<div class="profile-blog">
+									<img class="rounded-x" src="assets/img/testimonials/img1.jpg" alt="">
+									<div class="name-location">
+										<strong>Mikel Andrews</strong>
+										<span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
+									</div>
+									<div class="clearfix margin-bottom-20"></div>
+									<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
+									<hr>
+									<ul class="list-inline share-list">
+										<li><i class="fa fa-bell"></i><a href="#">12 Notifications</a></li>
+										<li><i class="fa fa-group"></i><a href="#">54 Followers</a></li>
+										<li><i class="fa fa-share"></i><a href="#">Share</a></li>
+									</ul>
+								</div>
+									
 				<ul class="list-inline social-icons-v1 social-icons-v1--dark">
 					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
