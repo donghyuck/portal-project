@@ -46,7 +46,7 @@
 							render : false,
 							authenticate : function(e){
 							console.log( kendo.stringify(e.token) );
-								e.token.copy(currentUser);
+								e.token.copy(currentUser);								
 							} 
 						}						
 					},
@@ -57,7 +57,8 @@
 				});	
 				handleHeader();		
 				// ACCOUNTS LOAD			
-				var currentUser = new common.ui.data.User();			
+				var currentUser = new common.ui.data.User();	
+				kendo.bind( $("#current-user-profile", currentUser); 		
 				createMyAssessmentPlanListView();
 				// END SCRIPT 				
 			}
@@ -626,7 +627,7 @@
 					Email: <a href="mailto:#">jhlee@podosw.com</a><br>
 				</address>
 
-								<div class="profile-blog">
+								<div id="current-user-profile" class="profile-blog">
 									<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" alt="">
 									<div class="name-location">
 										<strong>Mikel Andrews</strong>
@@ -638,13 +639,7 @@
 									<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
 									
 								</div>
-									
-				<ul class="list-inline social-icons-v1 social-icons-v1--dark">
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				</ul>
+
 			</div>
 	
 			<a href="javascript:void(0);" class="sliding-panel__close">Close</a>
