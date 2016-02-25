@@ -16,8 +16,7 @@
 <link  rel="stylesheet" type="text/css"  href="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/kendo/kendo.metro.min.css" />
 <link  rel="stylesheet" type="text/css"  href="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/bootstrap/3.3.4/bootstrap.min.css" />
 <link  rel="stylesheet" type="text/css"  href="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/bootstrap.themes/unify/1.9.1/style.css" />
-
-<link  rel="stylesheet" type="text/css"  href="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/common/common.style.css" />
+<link  rel="stylesheet" type="text/css"  href="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/common.ui/common.ui.styles.css" />
 
 <script src="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/yepnope/1.5.4/yepnope.min.js"></script>
 <decorator:head />
@@ -28,7 +27,6 @@
 		padding-top: 0px !important;
 		background: #fff;
 		border-bottom: 2px solid rgba(150, 150, 150, 0.23);	
-	/*	background: url(/images/common/pattern.png) repeat; */
 	}	
 	
 	.header .navbar-brand {
