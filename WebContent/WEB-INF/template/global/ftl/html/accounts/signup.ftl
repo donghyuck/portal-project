@@ -6,12 +6,18 @@
 		<script type="text/javascript"><!--		
 		yepnope([{
 			load: [
-			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
-			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>', 
-			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',			
-			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',	
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',			
+			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',	
+			'css!<@spring.url "/styles/fonts/line-icons.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-default.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/dark-red.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/page_signin_signup_v4.css"/>',
+			
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
+			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
+			
+					
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jquery.plugins/jquery.ui.shake.min.js"/>',
 			'<@spring.url "/js/jquery.jgrowl/jquery.jgrowl.min.js"/>',			
@@ -27,19 +33,36 @@
 			'<@spring.url "/js/common/common.ui.connect.min.js"/>'
 			],	
 			complete: function() {
-				
+                <#if action.url??>
+				  console.log( '${action.url}'); 
+				</#if>	
+				// START SCRIPT	
 				common.ui.setup({
 					features:{
 						wallpaper : true,
-						loading:true
+						accounts : {
+							render : false,
+							authenticate : function(e){
+								var renderTo = $("#signup");		
+								if( !e.token.anonymous ){				
+									createAlertBlock(e.token);
+								}else{
+									renderTo.fadeIn()
+									prepareSignUp()	
+								}
+							} 
+						}						
 					}
-				});									
-				// START SCRIPT	
-				prepareSignUp();
+				});	
 				// END SCRIPT            
 			}
 		}]);	
 
+		function createAlertBlock(currentUser){
+			var template = kendo.template($("#alert-template").html());	
+			$(".container:first").prepend(template(currentUser));			
+		}
+		
 		function prepareSignUp () {	
 			common.ui.data.user( {
 				success : function ( user ) {				

@@ -23,7 +23,7 @@
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',						
-			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
+			'<@spring.url "/js/bootstrap/3.3.5/bootstrap.min.js"/>',
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 				
 			'<@spring.url "/js/common/common.ui.core.js"/>',
@@ -31,37 +31,35 @@
 			'<@spring.url "/js/common/common.ui.data.min.js"/>',
 			'<@spring.url "/js/common/common.ui.connect.min.js"/>'
 			],			
-			complete: function() {
-			
-			<#if action.url??>
-			  console.log( '${action.url}'); 
-			</#if>
-			
-			
-			
-			common.ui.setup({
-				features:{
-					wallpaper : true,
-					accounts : {
-						render : false,
-						authenticate : function(e){
-							var renderTo = $("#signin");		
-							if( !e.token.anonymous ){				
-								var template = kendo.template($("#alert-template").html());	
-								$(".container:first").prepend(template(e.token));	
-							}else{
-								renderTo.fadeIn()
-								prepareSocialSignOn();
-								createSignInBlock();	
-							}
-						} 
-					}						
-				}
-			});
-				
+			complete: function() {			
+				<#if action.url??>
+				  console.log( '${action.url}'); 
+				</#if>			
+				common.ui.setup({
+					features:{
+						wallpaper : true,
+						accounts : {
+							render : false,
+							authenticate : function(e){									
+								if( !e.token.anonymous ){				
+									createAlertBlock(e.token);
+								}else{
+									var renderTo = $("#signin");	
+									renderTo.fadeIn()
+									prepareSocialSignOn();
+									createSignInBlock();	
+								}
+							} 
+						}						
+					}
+				});				
 			}
 		}]);			
 		
+		function createAlertBlock(currentUser){
+			var template = kendo.template($("#alert-template").html());	
+			$(".container:first").prepend(template(currentUser));			
+		}
 		
 		function createSignInBlock(){
 			var renderTo = $("#signin");			
@@ -108,7 +106,6 @@
 		}
 		
 		
-		
 		function prepareSocialSignOn(){	
 			var renderTo = $("#signin");				
 			common.ui.ajax("<@spring.url "/connect/list.json"/>", {
@@ -128,59 +125,6 @@
 				}				
 			});		
 		}
-
-		function prepareSignOn () {			
-			var renderTo = $("#signin");	
-			common.ui.data.user( {
-				success : function ( user ) {				
-					if( !user.anonymous ){
-						$(".reg-block fieldset").prop("disabled", true);
-						var template = kendo.template($("#alert-template").html());	
-						$(".container:first").prepend(template(user));				
-					}else{
-						renderTo.show();
-					}													
-				}				
-			} );		
-			
-			var validator = renderTo.find("form").kendoValidator({
-				errorTemplate: "<p class='text-danger'>#=message#</p>"
-			}).data("kendoValidator");
-			
-			renderTo.find("form").submit(function(e) {		
-				event.preventDefault();				
-				var btn = renderTo.find("button[data-action='signin']");
-				$("#signin-status").hide();
-				if( validator.validate() ){					
-					btn.button('loading');
-					common.ui.ajax(
-						"<@spring.url "/login_auth"/>", 
-						{
-							data: renderTo.find("form").serialize(),
-							success : function( response ) {   
-								if( response.error ){ 
-									$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
-									if( $("#signin-status").is(":hidden") ){
-										$("#signin-status").show();
-									}									
-									$("input[type='password']").focus().val("");											
-								} else {        	   
-									$("#signin-status").html("");                         
-									location.href="<@spring.url "/display/0/my-home.html"/>";
-								} 	
-							},
-							complete: function(jqXHR, textStatus ){					
-								btn.button('reset');
-							}	
-						}
-					);	
-				}else{        			      
-					btn.button('reset');
-				}			
-				return false ;
-			});			
-		}
-				
 
 		function handleCallbackResult( success ){
 			var renderTo = $("#signin");	
