@@ -628,9 +628,9 @@
 				</address>
 
 								<div id="current-user-profile" class="profile-blog">
-									<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" alt="">
+									<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>"  alt="">
 									<div class="name-location">
-										<strong>Mikel Andrews</strong>
+										<strong data-bind="text:name"></strong>
 										<span><i class="fa fa-map-marker"></i> <a href="#">California,</a> <a href="#">US</a></span>
 									</div>
 									
