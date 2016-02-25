@@ -563,7 +563,7 @@ body.aside-menu-in .aside-menu {
 * Meag manu
 */
 .header .mega-menu .mega-menu-content {
-padding: 20px 10px;
+padding: 20px 10px !important;
 }
 
 .header h3.mega-menu-heading {
