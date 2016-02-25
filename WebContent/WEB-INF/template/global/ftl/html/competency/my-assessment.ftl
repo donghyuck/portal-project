@@ -631,7 +631,7 @@
 									<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src: photoUrl } alt="" />
 									<div class="name-location">
 										<strong data-bind="text:name"></strong> 
-										  <span><i class="fa fa-building"></i><small data-bind="text:company.displayName"></small></span>
+										<span><small><i class="fa fa-building"></i><span data-bind="text:company.displayName"></span></small></span>
 									</div>
 									
 									<div class="clearfix margin-bottom-20"></div>
