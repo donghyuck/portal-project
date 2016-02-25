@@ -614,13 +614,13 @@
 				</ul>
 				</#if>		
 				
-				<h4>Contacts</h4>
+				<h4>문의</h4>
 				<address>
-					58, Lorem Lis Street, Central Ave<br>
-					New York, US<br><br>
-					Phone: 938 334 6049<br>
-					Fax: 938 334 6050<br><br>
-					Email: <a href="mailto:#">info@htmlstream.com</a><br>
+					서울특별시 구로구 구로동 235-2 <br>
+					에이스하이엔드타워 917<br><br>
+					Phone: 070-7807-4040<br>
+					Fax: 070-7614-3113<br><br>
+					Email: <a href="mailto:#">jhlee@podosw.com</a><br>
 				</address>
 	
 				<ul class="list-inline social-icons-v1 social-icons-v1--dark">
