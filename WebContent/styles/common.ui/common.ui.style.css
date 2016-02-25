@@ -1,4 +1,6 @@
 @CHARSET "utf-8";
+/*Import Footers*/
+@import url(footers/footer-global.css);
 
 /*Import CSS Plugins*/
 @import url(../jquery.jgrowl/jquery.jgrowl.min.css);
