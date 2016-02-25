@@ -630,7 +630,7 @@
 									<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" alt="">
 									<div class="name-location">
 										<strong>Mikel Andrews</strong>
-										<span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
+										<span><i class="fa fa-map-marker"></i> <a href="#">California,</a> <a href="#">US</a></span>
 									</div>
 									
 									<div class="clearfix margin-bottom-20"></div>
