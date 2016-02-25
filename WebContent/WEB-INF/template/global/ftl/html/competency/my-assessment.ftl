@@ -627,7 +627,7 @@
 				</address>
 
 								<div class="profile-blog">
-									<img class="rounded-x" src="assets/img/testimonials/img1.jpg" alt="">
+									<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" alt="">
 									<div class="name-location">
 										<strong>Mikel Andrews</strong>
 										<span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
