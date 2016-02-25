@@ -22,7 +22,6 @@
 			'css!<@spring.url "/styles/codrops/codrops.dialog-sandra.css"/>',	
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
-			'css!<@spring.url "/styles/common.ui/common.ui.styles.css"/>',	
 			'css!<@spring.url "/styles/common.ui.pages/community/personalized.css"/>',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
