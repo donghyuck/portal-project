@@ -18,15 +18,12 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
-			
-					
+			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
+			'css!<@spring.url "/styles/codrops/codrops.dialog-sandra.css"/>',	
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
-			
-			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
-			'css!<@spring.url "/styles/codrops/codrops.dialog-sandra.css"/>',					
-			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',	
-			
+			'css!<@spring.url "/styles/common.ui/common.ui.styles.css"/>',	
+			'css!<@spring.url "/styles/common.ui.pages/community/personalized.css"/>',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
 			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
