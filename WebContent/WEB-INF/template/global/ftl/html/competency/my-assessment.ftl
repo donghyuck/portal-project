@@ -58,7 +58,7 @@
 				handleHeader();		
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();	
-				kendo.bind( $("#current-user-profile", currentUser); 		
+				kendo.bind( $("#current-user-profile"), currentUser); 		
 				createMyAssessmentPlanListView();
 				// END SCRIPT 				
 			}
