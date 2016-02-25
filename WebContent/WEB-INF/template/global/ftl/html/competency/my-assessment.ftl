@@ -632,14 +632,11 @@
 										<strong>Mikel Andrews</strong>
 										<span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
 									</div>
+									
 									<div class="clearfix margin-bottom-20"></div>
+									
 									<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
-									<hr>
-									<ul class="list-inline share-list">
-										<li><i class="fa fa-bell"></i><a href="#">12 Notifications</a></li>
-										<li><i class="fa fa-group"></i><a href="#">54 Followers</a></li>
-										<li><i class="fa fa-share"></i><a href="#">Share</a></li>
-									</ul>
+									
 								</div>
 									
 				<ul class="list-inline social-icons-v1 social-icons-v1--dark">
