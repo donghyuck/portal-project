@@ -270,6 +270,11 @@ i.icon-svg {
 	background-image: url("/images/common/icons/business/color/Phone.svg");
 }
 
+.icon-svg.business-color-online-support {
+	background-image: url("/images/common/icons/business/color/OnlineSupport.svg");
+}
+
+
 /* SocialNetwork Color Icons 
 ------------------------------------*/
 .icon-svg.social-color-facebook {
