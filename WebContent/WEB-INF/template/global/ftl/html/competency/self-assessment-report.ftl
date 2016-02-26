@@ -551,6 +551,12 @@ yepnope([{
 							</a>
 						</div>
 						<!-- ENd Navbar Brand --> 
+						<div class="header-inner-right">
+							<div id="current-user-profile" class="profile-blog" style="line-height: 94px;">
+								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
+							</div>
+						</div>
+												
 					</div>
 				</div>
 			</div>
@@ -571,12 +577,7 @@ yepnope([{
 						COMPETENCY ASSSSEMENT
 					</span>
 	
-					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20" data-wow-duration="1.5s" data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
-					<!--
-					<div class="animated fadeInUp wow" data-wow-duration="1.2s" data-wow-delay="2s">
-						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x margin-right-10">Learn More</a>
-						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x">Purchase Now</a>
-					</div>-->
+					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20 visible-lg" data-wow-duration="1.5s" data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
 				</div>
 			</div>
 		<!-- ./END HEADER -->

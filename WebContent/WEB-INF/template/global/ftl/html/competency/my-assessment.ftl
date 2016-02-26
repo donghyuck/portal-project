@@ -322,6 +322,7 @@
 			text-align:right;
 		} 
 		
+		
 		.modal-body .k-listview td{
 			vertical-align: middle;
 		}
@@ -380,8 +381,7 @@
 							</a>
 						</div>
 						<!-- ENd Navbar Brand --> 
-						<!-- Header Inner Right -->
-						
+						<!-- Header Inner Right -->						
 						<div class="header-inner-right">
 							<div id="current-user-profile" class="profile-blog" style="line-height: 94px;">
 								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
