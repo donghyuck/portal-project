@@ -179,6 +179,8 @@ yepnope([{
 				setSource: function(source){
 					var $this = this;
 					source.copy($this.assessment);	
+					
+					$this.set('visible', true);
 					$this.set('candidatePhotoUrl',  getUserPhotoUrl($this.assessment.candidate) );
 					$this.jobLevelDataSource.data($this.assessment.job.jobLevels);	
 					$this.competencyDataSource.data( $this.assessment.competencies );		
@@ -578,7 +580,7 @@ yepnope([{
 				</div>
 			</div>
 		<!-- ./END HEADER -->
-        <div id="my-assessment" class="container content pdf-page">           
+        <div id="my-assessment" class="container content pdf-page" style="display:none;">           
  
  			<div class="row g-mb-40 text-center">
 	  			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
