@@ -614,10 +614,7 @@
 					<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block">
 					
 						<div class="reg-block">
-							<a href="index.html">
-								<img src="assets/img/themes/logo1-default.png" alt="">
-							</a>
-							<h2 class="margin-bottom-30">Create new account</h2>
+							<h2 class="margin-bottom-30">회원가입</h2>
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-pencil color-green"></i></span>
