@@ -33,12 +33,9 @@
 	</script>	
 	<style scoped="scoped">
 	
-	.cbp-bicontrols {
-		top: 80%;
-	}
-	.cbp-bicontrols span:before {
-		font-size: 40px;
-		opacity: 0.7;
+	#slideshow {
+		width:100%;
+		height:100%;
 	}
 	
 	.panel {
