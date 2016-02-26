@@ -524,8 +524,8 @@ yepnope([{
 </head>
 <body class="header-fixed promo-padding-top sliding-panel-ini sliding-panel-flag-right">
 	<div class="page-loader"></div>
- 	<div id="my-assessment" class="wrapper"> 
-<!-- START HEADER -->	
+ 	<div class="wrapper"> 	
+		<!-- START HEADER -->	
 			<!--=== Header v6 ===-->
 			<div class="header-v6 header-border-bottom header-dark-dropdown header-sticky">
 			<!-- Navbar -->
@@ -578,7 +578,7 @@ yepnope([{
 				</div>
 			</div>
 		<!-- ./END HEADER -->
-        <div class="container content pdf-page">           
+        <div id="my-assessment" class="container content pdf-page">           
  
  			<div class="row g-mb-40 text-center">
 	  			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
