@@ -380,7 +380,7 @@
 						<!-- Header Inner Right -->
 						<div class="header-inner-right">
 							<div id="current-user-profile" class="profile-blog" style="line-height: 94px;">
-								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src: photoUrl } alt=" "="">
+								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
 							</div>
 						</div>				
 						<!-- End Header Inner Right -->
