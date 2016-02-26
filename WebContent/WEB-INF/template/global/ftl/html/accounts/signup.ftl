@@ -613,8 +613,7 @@
 				<div class="row">			
 					<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block">
 					
-						<div class="reg-block no-border">
-							<h2 class="margin-bottom-20">회원가입</h2>							
+						<div class="reg-block no-border">						
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 								
 								<div class="row">
@@ -660,7 +659,7 @@
 												서비스 약관과 개인정보취급방침 및 개인정보 수집항목•이용목적•보유기간에 동의합니다.
 											</label>
 							</div>		
-							<button type="submit" class="btn-u btn-block rounded">확인</button>
+							<button type="submit" class="btn-u btn-block rounded">가입</button>
 							</form>
 						</div>					
 					
