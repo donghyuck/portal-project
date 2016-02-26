@@ -670,7 +670,6 @@
 						<div class="reg-block-header no-border">
 							<h2>회원가입</h2>
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
-								<p>쇼셜계정을 사용하여 손쉽게 회원 가입 하실수 있습니다.</p>
 								<div class="row">
 									<div class="col-sm-6">
 										<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg" data-bind="{click:connectWith}" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
