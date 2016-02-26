@@ -88,8 +88,12 @@
 									$("#signin-status").fadeIn();									
 									$("input[type='password']").val("").focus();											
 								} else {        	   
-									$("#signin-status").html("");                         
+									$("#signin-status").html("");    
+									<#if action.url??>
+									location.href="<@spring.url "${action.url}"/>";
+									<#else>
 									location.href="<@spring.url "/display/0/my-home.html"/>";
+									</#if>	
 								} 	
 							},
 							complete: function(jqXHR, textStatus ){					
