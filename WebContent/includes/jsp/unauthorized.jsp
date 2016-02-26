@@ -53,6 +53,11 @@
 		top: 50%;
 		margin: -150px 0 0 -150px;
 		color: #FFF;
+		z-index:1;
+	}
+	p{
+		color : #fff;
+		font-size : 1.2 em;
 	}
 				
 	</style>	
