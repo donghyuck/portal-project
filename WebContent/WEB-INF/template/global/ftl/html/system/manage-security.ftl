@@ -68,7 +68,14 @@
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/role/list.json?output=json"/>', type:'post' },
 							create: { url:'<@spring.url "/secure/data/mgmt/role/create.json?output=json"/>', type:'post', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/role/update.json?output=json"/>', type:'post', contentType : "application/json" }
+							update: { url:'<@spring.url "/secure/data/mgmt/role/update.json?output=json"/>', type:'post', contentType : "application/json" },
+							parameterMap: function (options, operation){			
+								if (operation !== "read" && options.models) {
+									return kendo.stringify(options.models);
+								}else{ 
+									return {};
+								}
+							}
 						},						
 						batch: false, 
 						pageSize: 15,
