@@ -458,6 +458,10 @@
 	}
 		
 		
+		button[data-target=facebook],button[data-target=twitter]{
+			font-size:1em;
+		}
+		
 		/**
 		.reg-block {
 			width: 480px;
