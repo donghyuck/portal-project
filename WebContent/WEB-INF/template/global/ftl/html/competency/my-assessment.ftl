@@ -428,6 +428,8 @@
 					</p>
                 </div>
                 <div class="call-action-v1-in inner-btn page-scroll">
+                		${springMacroRequestContext.getRequestUri()}
+                
                     <a href="#portfolio" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">회원가입</a>
                 </div>
             </div>
