@@ -617,7 +617,7 @@
 				<div class="row">			
 					<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block">
 					
-						<div class="reg-block no-border">						
+						<div id="signup" class="reg-block no-border">						
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 								
 								<div class="row">
@@ -654,7 +654,12 @@
 								<span class="input-group-addon rounded-left"><i class="icon-lock color-green"></i></span>
 								<input type="password" class="form-control rounded-right" placeholder="비밀번호">
 							</div>
-		
+
+							<div class="input-group margin-bottom-30">
+								<span class="input-group-addon rounded-left"><i class="icon-lock color-green"></i></span>
+								<input type="password" class="form-control rounded-right" placeholder="비밀번호확인">
+							</div>
+									
 							<div class="margin-bottom-30">
 											<label class="checkbox">
 												<input type="checkbox"  id="signupInputAgree" name="signupInputAgree" data-bind="checked:form.agree" required validationMessage="회원가입을 위하여 동의가 필요합니다.">
@@ -672,7 +677,7 @@
 			</div>		
 								
 			<div class="container" style="min-height:570px;">
-					<div id="signup" class="reg-block animated fadeIn" style="display:none;" data-bind={visible:visible}>	
+					<div  class="reg-block animated fadeIn" style="display:none;" data-bind={visible:visible}>	
 						<div class="reg-block-header no-border">
 							<h2>회원가입</h2>
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
