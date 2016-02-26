@@ -17,11 +17,11 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
 			
-			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
-			
+			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',				
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',
+			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
@@ -127,20 +127,18 @@
 						<img class="img-responsive" src="<@spring.url "/download/image/9451/ncs.png"/>" alt="">
 					</div>
 					<div class="col-md-6">
-					<h2 class="title-v2">국가직무능력표준 기반 직업역량진단</h2>
+					<h2 class="title-v2">국가직무능력표준 기반 직무역량진단</h2>
 					
-					<p>Self taught versus academic qualifications</p>
+					<p>국가직무능력표준(이하 NCS)는 산업현장에서 직무를 수행하기 위하여 요구되는 지식∙기술∙태도 등을 국가가 산업부문별수준별로 체계화 한 것입니다.</p>
 					
-					<p>This was the question posed on Donald Trump’s The Apprentice. For those not familiar with this show, two groups of people competed over a series of weeks by performing various business related tasks.</p>
-					
-					<p>The winner would eventually become Donald Trump’s apprentice. One group was made up of people with academic qualifications. The other group was made up of people who didn’t have qualifications, but were self taught and running their own businesses.</p>
-					
-					<p>This is a good place to start understanding what competency assessment is all about. The only way to know whether street smarts or book smarts is better, is to look at individual people in their own right. Assessing people using their knowledge and skills in an on the job situation is the key to competency assessment.</p>
-					
-					<p>Every job requires a specific set of knowledge and skills. And this varies depending on the type and complexity of the job. More than just knowing whether street smarts or book smarts is better, competency assessment is all about providing a way of building the skills and knowledge people need to perform their current job. It is also the key element of the succession planning process because it provides a way of developing people for their future roles.</p>
-
-					<a href="<@spring.url "/display/competency/my-assessment.html" />" class="btn-u btn-brd btn-u-lg btn-brd-hover btn-u-dark">직업역량진단 체험하기</a>
-
+					<p>회사는 NCS를 활용하여 직원 개개인의 직무능력을 정확하게 진단할 수 있습니다. </p>
+					<p>채용∙승진이나 적재적소에 인력배치 그리고 재교육 등을 쉽게할 수 있고 결과적으로 직무능력중심의 공정한 인사관리가 가능하게 됩니다.</p>
+					<hr/>
+					<p>개인은 직업에서 요구되는 역량을 본인이 어느 정도 보유하고 있는지 알 수 있습니다.<p>
+					<p><p>
+					<p><p>
+					<p><p>
+					<a href="<@spring.url "/display/competency/my-assessment.html" />" class="btn-u btn-brd btn-u-lg btn-brd-hover btn-u-dark">직업역량진단하기</a>
 					</div>
 				</div>
 			</div>
