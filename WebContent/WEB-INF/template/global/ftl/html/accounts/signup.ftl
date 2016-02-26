@@ -274,6 +274,12 @@
 		    color: #fff;
 		    background: rgba(255, 255, 255, 0.3);
 		}
+		
+		.navbar-fixed-top .navbar-btn : hover {
+			color: #000;
+			background:#fff;
+		}
+		
 		.navbar-fixed-top .navbar-text {
 			padding: 5px;
 			color:#fff;
