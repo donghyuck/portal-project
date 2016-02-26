@@ -419,10 +419,14 @@
 		            <div class="call-action-v1-box">
 		                <div class="call-action-v1-in">
 		                    <h3 class="color-light">Contact us at <span class="color-green">support@htmlstream.com</span> or give us a call <span class="color-green">+44 (35) 77 3892</span></h3>
-		                    <p class="color-light">Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+		                    <p class="color-light">
+		                    
+		                    Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.
+		                    역량진단 서비스는 가입후 이용하실수 있습니다. 역량진단만을 체험하시고 싶은신 분들의 고객 센터로 연락주시면 체험을 위한 임시 계정을 안내해드립니다. 	                    
+		                    </p>
 		                </div>
 		                <div class="call-action-v1-in inner-btn page-scroll">
-		                    <a href="#portfolio" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">REGISTER TODAY</a>
+		                    <a href="#portfolio" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">회원가입</a>
 		                </div>
 		            </div>
 		        </div>			
