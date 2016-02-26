@@ -414,24 +414,26 @@
 			</div>
 			<!-- ./END HEADER --> 
 			<!-- START MAIN CONTENT -->
+			
+	<div class="call-action-v1 bg-color-dark margin-bottom-40">
+        <div class="container">
+            <div class="call-action-v1-box">
+                <div class="call-action-v1-in">
+                    <h3 class="color-light">
+                    서비스 문의는 <span class="color-green">jhlee@podosw.com</span> 메일 또는 <span class="color-green">070-7807-4040</span> 로 전화 주세요.
+                    </h3>
+                    <p class="color-light">
+ 					제공되는 역량진단 서비스는 프로토타입 수준입니다. 
+ 					역량진단 서비스는 회원 가입후 이용하실수 있습니다. 
+					</p>
+                </div>
+                <div class="call-action-v1-in inner-btn page-scroll">
+                    <a href="#portfolio" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">회원가입</a>
+                </div>
+            </div>
+        </div>
+    </div>			
 			<div class="container content-md">
-				<div class="call-action-v1 call-action-v1-boxed bg-color-dark animated fadeInUp margin-bottom-40">
-		            <div class="call-action-v1-box">
-		                <div class="call-action-v1-in">
-		                    <h3 class="color-light">이용에 어려움이 있으시면 메일 <span class="color-green">support@htmlstream.com</span> 또는 전화 주세요. <span class="color-green">+44 (35) 77 3892</span></h3>
-		                    <p class="color-light">
-		                    
-		                    Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.
-		                    역량진단 서비스는 회원 가입후 이용하실수 있습니다. 
-		                    서비스 관련 자세한 사항은 고객센터로 연락주시면 안내해드립니다. 	                    
-		                    </p>
-		                </div>
-		                <div class="call-action-v1-in inner-btn page-scroll">
-		                    <a href="#portfolio" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">회원가입</a>
-		                </div>
-		            </div>
-		        </div>			
-		        
 		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview"></ul>
 		    </div>
 			<!-- ./END MAIN CONTENT -->	 
