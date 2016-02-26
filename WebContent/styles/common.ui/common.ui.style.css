@@ -8,6 +8,13 @@
 /*Import Font*/
 @import url(../fonts/nanumgothic.css);
 
+body {
+	color: #333;
+	font-size: 13px;
+	line-height: 1.6;
+	font-family: "나눔 고딕", "Nanum Gothic";   
+}
+
 /*------------------------------------*/
 /* 1. COMMON UI User Navigation Bar   */
 /*------------------------------------*/
