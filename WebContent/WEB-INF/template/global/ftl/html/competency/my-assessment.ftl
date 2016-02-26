@@ -378,28 +378,6 @@
 						</div>
 						<!-- ENd Navbar Brand --> 
 						<!-- Header Inner Right -->
-						<!--
-						<div class="header-inner-right">
-							<ul class="menu-icons-list"> 
-								<li class="menu-icons shopping-cart">
-									<i class="menu-icons-style radius-x fa fa-shopping-cart"></i>
-									<span class="badge">0</span>
-									<div class="shopping-cart-open">
-										<span class="shc-title">No products in the Cart</span>
-										<button type="button" class="btn-u"><i class="fa fa-shopping-cart"></i> Cart</button>
-										<span class="shc-total">Total: <strong>$0.00</strong></span>
-									</div>
-								</li>
-							
-								<li class="menu-icons">
-									<i class="menu-icons-style search search-close search-btn fa fa-search"></i>
-									<div class="search-open">
-										<input type="text" class="animated fadeIn form-control" placeholder="Start searching ...">
-									</div>
-								</li>
-							</ul>
-						</div>
-						-->
 						<!-- End Header Inner Right -->
 					</div>
 				</div>
@@ -412,15 +390,20 @@
 				<div class="container valign__middle text-center" data-start="opacity: 1;" data-500="opacity: 0;">
 					<div class="margin-bottom-20">
 					</div>	
-					<span class="promo-text-v1 color-light margin-bottom-10 animated fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="1s">
+					<span class="promo-text-v1 color-light margin-bottom-10 animated fadeInUp wow visible-md" data-wow-duration="1.5s" data-wow-delay="1s">
 						COMPETENCY ASSSSEMENT
 					</span>	
-					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20" data-wow-duration="1.5s" data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
+					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20" data-wow-duration="1.5s " data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
 					
 					<p style="color:#f5f5f5;">
-					Every job requires a specific set of knowledge and skills. And this varies depending on the type and complexity of the job. More than just knowing whether street smarts or book smarts is better, competency assessment is all about providing a way of building the skills and knowledge people need to perform their current job. It is also the key element of the succession planning process because it provides a way of developing people for their future roles.
 					
 					
+					Every job requires a specific set of knowledge and skills. And this varies depending on the type and complexity of the job. 
+					More than just knowing whether street smarts or book smarts is better, 
+					competency assessment is all about providing a way of building the skills and knowledge people need to perform their current job. 
+					
+					It is also the key element of the succession planning process because it provides a way of developing people for their future roles.
+										
 					</p>
 					<!--
 					<div class="animated fadeInUp wow" data-wow-duration="1.2s" data-wow-delay="2s">
