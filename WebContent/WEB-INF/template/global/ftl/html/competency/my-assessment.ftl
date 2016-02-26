@@ -415,6 +415,7 @@
 			<!-- ./END HEADER --> 
 			<!-- START MAIN CONTENT -->
 			
+	<#if user.anonymous >		
 	<div class="call-action-v1 bg-color-dark margin-bottom-40">
         <div class="container">
             <div class="call-action-v1-box">
@@ -432,7 +433,8 @@
                 </div>
             </div>
         </div>
-    </div>			
+    </div>
+    </#if>			
 			<div class="container content-md">
 		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview"></ul>
 		    </div>
