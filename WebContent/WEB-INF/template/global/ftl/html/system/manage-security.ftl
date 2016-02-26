@@ -71,8 +71,8 @@
 							update: { url:'<@spring.url "/secure/data/mgmt/role/update.json?output=json"/>', type:'post', contentType : "application/json" },
 							parameterMap: function (options, operation){
 							console.log(options);			
-								if (operation !== "read" && options.models) {
-									return kendo.stringify(options.models);
+								if (operation !== "read" && options) {
+									return kendo.stringify(options);
 								}else{ 
 									return {};
 								}
