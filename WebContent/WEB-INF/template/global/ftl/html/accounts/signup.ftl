@@ -114,6 +114,7 @@
 					        "agree":  { type:"boolean", defaultVlaue: false }
 						}
 					});
+					
 				var observable =  common.ui.observable({
 					visible : true,
 					connectWith : function(e){
@@ -151,6 +152,7 @@
 					},
 					errorTemplate: "<p class='text-danger'>#=message#</p>"
 				}).data("kendoValidator");
+				
 				renderTo.find("form").submit(function(e) {		
 					e.preventDefault();				
 					if( validator.validate() ){
@@ -617,7 +619,7 @@
 				<div class="row">			
 					<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block">
 					
-						<div id="signup" class="reg-block no-border">						
+						<div id="signup" class="reg-block no-border" style="display:none;" data-bind="{visible:visible}">						
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 								
 								<div class="row">
