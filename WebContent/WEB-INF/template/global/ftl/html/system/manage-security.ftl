@@ -67,7 +67,7 @@
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/role/list.json?output=json"/>', type:'post' },
-							create: { url:'<@spring.url "/secure/data/mgmt/role/create.json?output=json"/>', type:'post' }
+							create: { url:'<@spring.url "/secure/data/mgmt/role/create.json?output=json"/>', type:'post' },
 							update: { url:'<@spring.url "/secure/data/mgmt/role/update.json?output=json"/>', type:'post' }
 						},						
 						batch: false, 
