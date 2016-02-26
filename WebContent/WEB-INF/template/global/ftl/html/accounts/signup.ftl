@@ -637,34 +637,34 @@
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-pencil color-green"></i></span>
-								<input type="text" class="form-control rounded-right" placeholder="이름">
+								<input name="name" type="text" class="form-control rounded-right" placeholder="이름"  data-bind="value: form.name" required data-required-msg="이름을 입력하여 주십시오.">
 							</div>
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-user color-green"></i></span>
-								<input type="text" class="form-control rounded-right" placeholder="아이디">
+								<input name="username" type="text" class="form-control rounded-right" placeholder="아이디" data-bind="value: form.username" data-available  required data-required-msg="아이디를 입력하여 주십시오.">
 							</div>
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-envelope color-green"></i></span>
-								<input type="email" class="form-control rounded-right" placeholder="메일">
+								<input name="email" type="email" class="form-control rounded-right" placeholder="메일" data-bind="value: form.email" required  data-required-msg="메일주소를 입력하여 주십시오." data-email-msg="메일주소 형식이 바르지 않습니다.">
 							</div>
 		
 							<div class="input-group margin-bottom-30">
 								<span class="input-group-addon rounded-left"><i class="icon-lock color-green"></i></span>
-								<input type="password" class="form-control rounded-right" placeholder="비밀번호">
+								<input name="password1"type="password" class="form-control rounded-right" placeholder="비밀번호" data-bind="value: form.password1" required data-required-msg="비밀번호를 입력하여 주십시오." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}" validationMessage="비밀번호는 대문자, 소문자, 숫자, 특수문자를 포합하는 8자이상이여야 합니다.">
 							</div>
 
 							<div class="input-group margin-bottom-30">
 								<span class="input-group-addon rounded-left"><i class="icon-lock color-green"></i></span>
-								<input type="password" class="form-control rounded-right" placeholder="비밀번호확인">
+								<input name="password2" type="password" class="form-control rounded-right" placeholder="비밀번호확인" data-matches="form.password1" data-bind="value: form.password2" required data-matches-msg="비밀번호를 정확하게 다시 입력하여 주세요." data-required-msg="비밀번호를 다시한번 입력하여 주십시오.">
 							</div>
 									
 							<div class="margin-bottom-30">
 											<label class="checkbox">
-												<input type="checkbox"  id="signupInputAgree" name="signupInputAgree" data-bind="checked:form.agree" required validationMessage="회원가입을 위하여 동의가 필요합니다.">
+												<input type="checkbox" name="agree" data-bind="checked:form.agree" required validationMessage="회원가입을 위하여 동의가 필요합니다.">
 												<i></i>
-												<div class="note note-error k-invalid-msg" data-for="signupInputAgree" role="alert" style="display: none;">회원가입을 위하여 동의가 필요합니다.</div>												
+												<span class="k-invalid-msg" data-for="agree" role="alert" style="display: none;">회원가입을 위하여 동의가 필요합니다.</span>												
 												서비스 약관과 개인정보취급방침 및 개인정보 수집항목•이용목적•보유기간에 동의합니다.
 											</label>
 							</div>		
