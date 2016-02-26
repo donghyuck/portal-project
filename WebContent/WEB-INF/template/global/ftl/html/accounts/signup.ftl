@@ -174,45 +174,8 @@
 					}
 					console.log( common.ui.stringify( observable.form ) ) ;
 				});	
-/**
-
-
-				renderTo.find("form").submit(function(e) {		
-					e.preventDefault();				
-					var btn = renderTo.find("button[data-action='signin']");
-					if( validator.validate() ){
-						btn.button('loading');
-						common.ui.ajax(
-							"<@spring.url "/login_auth"/>", 
-							{
-								data: renderTo.find("form").serialize(),
-								contentType : "application/json",
-								success : function( response ) {   
-									if( response.error ){ 
-										$("#signin-status").html("입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다.");
-										$("input[type='password']").val("").focus();											
-									} else {        	   
-										$("#signin-status").html("");                         
-										location.href="<@spring.url "/display/0/my-home.html"/>";
-									} 	
-								},
-								complete: function(jqXHR, textStatus ){					
-									btn.button('reset');
-								}	
-							}
-						);	
-					}else{        			      
-						btn.button('reset');
-					}			
-					return false ;
-				});			
-*/						
-			
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );
-
-
-
 			}
 		}
 		
@@ -504,7 +467,14 @@
 						<a class="navbar-brand" href="/">
 							<img alt="Brand" src="/download/logo/company/${action.webSite.company.name}">
 						</a>
-					</div>					
+					</div>	
+
+
+					<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-3"> 
+						<p class="navbar-text">이미 이용하고 계신가요 ?</p> 
+						<button type="button" class="btn-u btn-brd btn-u-lg btn-brd-hover btn-u-dark navbar-btn">로그인</button> 
+					</div>
+	
 				</div>
 			</nav>		
 			<div class="container" style="min-height:570px;">
