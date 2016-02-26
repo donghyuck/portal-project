@@ -423,7 +423,7 @@
 		                    
 		                    Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.
 		                    역량진단 서비스는 회원 가입후 이용하실수 있습니다. 
-		                    서비스 관련 자세한 사항은 연락주시면 안내해드립니다. 	                    
+		                    서비스 관련 자세한 사항은 고객센터로 연락주시면 안내해드립니다. 	                    
 		                    </p>
 		                </div>
 		                <div class="call-action-v1-in inner-btn page-scroll">
