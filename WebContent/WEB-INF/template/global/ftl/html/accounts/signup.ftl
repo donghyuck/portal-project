@@ -268,6 +268,21 @@
 		</script>
 		
 		<style>
+		
+		.btn-login {
+		    border: #fff solid 1px;
+		    color: #fff;
+		    background: rgba(255, 255, 255, 0.3);
+		}
+		
+		a.btn-login:hover{
+			background:#fff;
+			color:#ccc;
+		}
+		
+		
+		
+		
 		.wrapper {
 			background:transparent;
 		}
@@ -330,6 +345,11 @@
 			margin-top : 15px;
 			margin-bottom : 20px;
 		}
+		
+		
+		
+		
+		
 		
 		.reg-block {
 			width: 480px;
@@ -472,7 +492,7 @@
 
 					<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-3"> 
 						<p class="navbar-text">이미 이용하고 계신가요 ?</p> 
-						<button type="button" class="btn-u btn-brd btn-u-lg btn-brd-hover btn-u-dark navbar-btn">로그인</button> 
+						<button type="button" class="btn-u btn-brd btn-u-lg btn-login navbar-btn">로그인</button> 
 					</div>
 	
 				</div>
