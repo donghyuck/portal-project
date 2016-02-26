@@ -278,6 +278,7 @@
 		.navbar-fixed-top .navbar-btn:hover {
 			color: #000!important;
 			background:#fff!important;
+			border:#fff solid 1px !important;
 		}
 		
 		.navbar-fixed-top .navbar-text {
