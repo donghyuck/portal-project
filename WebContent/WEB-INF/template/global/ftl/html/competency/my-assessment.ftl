@@ -64,6 +64,9 @@
 			}
 		}]);			
 
+		function getCurrentUser () {
+			return common.ui.accounts().token ;
+		}
 		
 		function getMyAssessmentPlanListView(){
 			var renderTo = $('#my-assessment-plan-listview');	
@@ -177,6 +180,7 @@
 								contentType : "application/json",
 								success : function(response){																	
 									getMyAssessmentPlanListView().dataSource.read();
+									console.log(common.ui.stringify(response));
 								},
 								complete : function(e){
 									common.ui.progress(renderTo, false);
@@ -299,6 +303,7 @@
 			$(window).scroll(function() {
 				$('.navbar-collapse.in').collapse('hide');
 			});
+	
 		}
 			
 		-->
