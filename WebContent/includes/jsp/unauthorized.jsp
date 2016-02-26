@@ -15,7 +15,7 @@
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jquery/1.10.2/jquery.min.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jgrowl/jquery.jgrowl.min.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/kendo/kendo.web.min.js',
-			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/kendo/kendo.ko_KR.js',			
+			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/kendo.extension/kendo.ko_KR.js',			
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/bootstrap/3.3.4/bootstrap.min.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common.plugins/query.backstretch.min.js', 			
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.ui.core.js',						
