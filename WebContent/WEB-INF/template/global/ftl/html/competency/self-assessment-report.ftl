@@ -580,7 +580,7 @@ yepnope([{
 				</div>
 			</div>
 		<!-- ./END HEADER -->
-        <div id="my-assessment" class="container content pdf-page" style="display:none;" data-bind="visible:visible">     
+        <div id="my-assessment" class="container content pdf-page animated slideInUp" style="display:none;" data-bind="visible:visible">     
  			<div class="row g-mb-40 text-center">
 	  			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
 					<div class="g-heading-v9 text-center">
