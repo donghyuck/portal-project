@@ -1,6 +1,6 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@ page import="architecture.common.user.*"%>
-<html decorator="homepage">
+<html decorator="unify">
 <head>
 <title>접근 권한이 없습니다.</title>
 <%
