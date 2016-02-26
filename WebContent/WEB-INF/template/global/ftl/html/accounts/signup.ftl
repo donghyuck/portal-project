@@ -615,6 +615,19 @@
 					
 						<div class="reg-block">
 							<h2 class="margin-bottom-30">회원가입</h2>
+							
+							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
+								<p>쇼셜계정을 사용하여 손쉽게 회원 가입 하실수 있습니다.</p>
+								<div class="row">
+									<div class="col-sm-6">
+										<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg" data-bind="{click:connectWith}" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
+									</div>
+									<div class="col-sm-6">
+										<button class="btn btn-block btn-flat btn-outline rounded btn-info btn-lg" data-bind="{click:connectWith}" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 회원가입</button>
+									</div>
+								</div>		
+							</#if>			
+		
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-pencil color-green"></i></span>
