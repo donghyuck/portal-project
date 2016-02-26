@@ -181,7 +181,7 @@
 								success : function(response){																	
 									//getMyAssessmentPlanListView().dataSource.read();
 									//console.log(common.ui.stringify(response));
-									common.ui.redirect("<@spring.url "/display/assessment/do-assessment.html"/>", {id:response.assessmentId}, "POST");
+									common.redirect("<@spring.url "/display/assessment/do-assessment.html"/>", {id:response.assessmentId}, "POST");
 								},
 								complete : function(e){
 									common.ui.progress(renderTo, false);
