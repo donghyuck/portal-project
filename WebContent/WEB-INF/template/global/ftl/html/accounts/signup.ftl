@@ -165,8 +165,12 @@
 							success : function( response ) {   
 								if( response.error ){ 
 																		
-								} else {        	   
+								} else {    							
+									<#if action.url??>
+									location.href="<@spring.url "/accounts/login?ver=1&url=${action.url}"/>";
+									<#else>
 									location.href="<@spring.url "/accounts/login?ver=1"/>";
+									</#if>
 								} 	
 							},
 							complete: function(jqXHR, textStatus ){					
@@ -258,7 +262,9 @@
 		}
 
 		function goLogin(){
+			
 			window.location.replace("/accounts/login.do");
+			
 		}	
 				
 		function homepage(){
