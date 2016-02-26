@@ -462,7 +462,7 @@
 						<h3 class="modal-title"><span data-bind="text:assessmentPlan.name"/> </h2>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>										
-					<div class="modal-body no-padding" style="min-height:300px;">							
+					<div class="modal-body no-padding " style="min-height:300px;">							
 								<p class="text-muted p-sm bg-gray no-margin-b">
 									진단이력이 <span class="text-danger" data-bind="text:userAssessedCount"></span>건 있습니다. 결과보기 버튼을 클릭하여 진단결과를 확인할 수 있습니다.
 								</p>
@@ -522,7 +522,7 @@
 									</tbody>		                    
 					        	</table>
 					</div>
-					<div class="modal-body" data-bind="invisible:secondStep" style="min-height:300px;">		
+					<div class="modal-body animated fadeIn" data-bind="invisible:secondStep" style="min-height:300px;">		
 						<form action="#" class="sky-form no-border">
 							<header>
 								<i class="icon-flat icon-svg icon-svg-sm basic-color-checked-checkbox"></i>
@@ -544,7 +544,7 @@
 				        	</table>
 						</form>						
 					</div>				
-					<div class="modal-body" data-bind="visible:secondStep" style="min-height:300px;">	
+					<div class="modal-body animated fadeIn" data-bind="visible:secondStep" style="min-height:300px;">	
 							<table class="table table-striped hidden">
 								<thead>
 										<tr>
