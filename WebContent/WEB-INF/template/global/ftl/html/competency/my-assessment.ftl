@@ -306,7 +306,7 @@
 		<style scoped="scoped">
 		
 		.promo-bg-fixed p{
-			font-size : 1em;
+			font-size : 1.2em;
 		}
 		.modal-content{
 		    border-radius: 6px !important;
