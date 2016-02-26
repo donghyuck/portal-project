@@ -23,7 +23,11 @@
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.ui.data.js'			
 			],
 		complete: function() {
-			var slideshow = $('#slideshow').extFullscreenSlideshow();
+			
+			common.ui.backstretch({
+				renderTo:$("#slideshow")				
+			});
+			//var slideshow = $('#slideshow').extFullscreenSlideshow();
 		}		
 	}]);			
 	-->
