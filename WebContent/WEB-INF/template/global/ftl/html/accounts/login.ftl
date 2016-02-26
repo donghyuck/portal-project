@@ -398,7 +398,13 @@
 								
 							</div>	
 							<p class="text-center">
-								${action.webSite.displayName}에 처음이세요?  지금 <a class="btn-link" href="<@spring.url "/accounts/signup"/>">가입</a> 하세요.
+								${action.webSite.displayName}에 처음이세요?  지금 
+								<#if action.url??>
+									<a class="btn-link" href="<@spring.url "/accounts/signup?url=${action.url}"/>">가입</a>
+								<#else>
+									<a class="btn-link" href="<@spring.url "/accounts/signup"/>">가입</a>
+								</#if>	
+								하세요.
 							</p>			
 						</div>
 					</form>
