@@ -493,7 +493,12 @@
 					</div>	
 					<div class="collapse navbar-collapse pull-right"> 
 						<p class="navbar-text">이미 이용하고 계신가요 ?</p> 
-						<a href="<@spring.url"/accounts/login?ver=1&<#if action.url??>url=${action.url}</#if>"/>" class="btn-u btn-brd btn-u-md navbar-btn">로그인</a> 
+						<#if action.url??>
+						<a href="<@spring.url"/accounts/login?ver=1&url=${action.url}"/>" class="btn-u btn-brd btn-u-md navbar-btn">로그인</a> 		
+						<#else>
+						<a href="<@spring.url"/accounts/login?ver=1"/>" class="btn-u btn-brd btn-u-md navbar-btn">로그인</a> 				
+						</#if>
+						
 					</div>
 	
 				</div>
