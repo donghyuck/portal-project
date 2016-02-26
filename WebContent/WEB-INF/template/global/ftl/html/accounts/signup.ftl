@@ -634,22 +634,22 @@
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-pencil color-green"></i></span>
-								<input type="text" class="form-control rounded-right" placeholder="Your name">
+								<input type="text" class="form-control rounded-right" placeholder="이름">
 							</div>
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-user color-green"></i></span>
-								<input type="text" class="form-control rounded-right" placeholder="Username">
+								<input type="text" class="form-control rounded-right" placeholder="아이디">
 							</div>
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-envelope color-green"></i></span>
-								<input type="email" class="form-control rounded-right" placeholder="Your email">
+								<input type="email" class="form-control rounded-right" placeholder="메일">
 							</div>
 		
 							<div class="input-group margin-bottom-30">
 								<span class="input-group-addon rounded-left"><i class="icon-lock color-green"></i></span>
-								<input type="password" class="form-control rounded-right" placeholder="Password">
+								<input type="password" class="form-control rounded-right" placeholder="비밀번호">
 							</div>
 		
 							<div class="margin-bottom-30">
