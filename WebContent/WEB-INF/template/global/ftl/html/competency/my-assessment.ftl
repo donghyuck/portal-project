@@ -308,7 +308,7 @@
 		.promo-bg-fixed p{
 			font-size : 1.2em;
 		}
-		.navbar .my-profile-img:hover .my-profile-view {
+		.navbar .my-profile-img .my-profile-view {
 			display:none;
 		}
 		
