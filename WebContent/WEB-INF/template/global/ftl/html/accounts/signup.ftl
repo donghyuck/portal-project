@@ -359,7 +359,7 @@
 
 	.form-block {
 		padding:15px;
-	    min-width: 380px;
+	    min-width: 420px;
 	    margin: 60px auto;	
 	    float: right;
 		border-radius: 6px!important;
@@ -376,7 +376,7 @@
 	@media (min-width: 992px)
 	{
 		.reg-block, .reg-block {
-			min-width : 350px;
+			min-width : 390px;
 		}
 	
 	}
@@ -614,8 +614,7 @@
 					<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block">
 					
 						<div class="reg-block">
-							<h2 class="margin-bottom-30">회원가입</h2>
-							
+							<h2 class="margin-bottom-20">회원가입</h2>							
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
 								<p>쇼셜계정을 사용하여 손쉽게 회원 가입 하실수 있습니다.</p>
 								<div class="row">
