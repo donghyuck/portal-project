@@ -21,15 +21,6 @@
 					Fax: 070-7614-3113<br><br>
 					Email: <a href="mailto:#">jhlee@podosw.com</a><br>
 				</address>
-
-								<div id="current-user-profile" class="profile-blog">
-									<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src: photoUrl } alt="" />
-									<div class="name-location">
-										<span data-bind="text:name"></span>
-									</div>
-									<div class="clearfix margin-bottom-20"></div>									
-								</div>
-
 			</div>
 	
 			<a href="javascript:void(0);" class="sliding-panel__close">Close</a>
