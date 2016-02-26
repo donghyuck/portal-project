@@ -399,10 +399,7 @@
 								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#"><i class="fa fa-arrows-alt"></i> Fullscreen</a></li>
-									<li><a href="#"><i class="fa fa-unlink"></i> Some Links</a></li>
-									<li><a href="#"><i class="fa fa-list"></i> Main Links</a></li>
-									<li class="divider"></li>
-									<li><a href="#"><i class="fa fa-cloud-download"></i> Download All</a></li>
+									<li><a href="<@spring.url "/logout"/>">로그아웃</a></li>
 								</ul>
 							</div>
 						</div>				
