@@ -378,6 +378,7 @@
 						</div>
 						<!-- ENd Navbar Brand --> 
 						<!-- Header Inner Right -->
+						
 						<div class="header-inner-right">
 							<div id="current-user-profile" class="profile-blog" style="line-height: 94px;">
 								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
@@ -415,26 +416,27 @@
 			<!-- ./END HEADER --> 
 			<!-- START MAIN CONTENT -->
 			
-	<#if action.user.anonymous >		
-	<div class="call-action-v1 bg-color-dark margin-bottom-40">
-        <div class="container">
-            <div class="call-action-v1-box">
-                <div class="call-action-v1-in">
-                    <h3 class="color-light">
-                    서비스 문의는 <span class="color-green">jhlee@podosw.com</span> 메일 또는 <span class="color-green">070-7807-4040</span> 로 전화 주세요.
-                    </h3>
-                    <p class="color-light">
- 					제공되는 역량진단 서비스는 프로토타입 수준입니다. 
- 					역량진단 서비스는 회원 가입후 이용하실수 있습니다. 
-					</p>
-                </div>
-                <div class="call-action-v1-in inner-btn page-scroll">
-                	<a href="<@spring.url "/accounts/signup?ver=1&url=${springMacroRequestContext.getRequestUri()}" />" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">회원가입</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </#if>			
+			<#if action.user.anonymous >		
+			<div class="call-action-v1 bg-color-dark margin-bottom-40">
+		        <div class="container">
+		            <div class="call-action-v1-box">
+		                <div class="call-action-v1-in">
+		                    <h3 class="color-light">
+		                    서비스 문의는 <span class="color-green">jhlee@podosw.com</span> 메일 또는 <span class="color-green">070-7807-4040</span> 로 전화 주세요.
+		                    </h3>
+		                    <p class="color-light">
+		 					제공되는 역량진단 서비스는 프로토타입 수준입니다. 
+		 					역량진단 서비스는 회원 가입후 이용하실수 있습니다. 
+							</p>
+		                </div>
+		                <div class="call-action-v1-in inner-btn page-scroll">
+		                	<a href="<@spring.url "/accounts/login?ver=1&url=${springMacroRequestContext.getRequestUri()}" />" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">회원가입</a>
+		                	<a href="<@spring.url "/accounts/signup?ver=1&url=${springMacroRequestContext.getRequestUri()}" />" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">로그인</a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    </#if>			
 			<div class="container content-md">
 		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview"></ul>
 		    </div>
