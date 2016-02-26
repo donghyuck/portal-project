@@ -158,6 +158,7 @@
 }
 
 /*Promo Background Images*/
+/**
 .promo-bg-img-v1 {
   background: url(../img/bg/img1.jpg) no-repeat;
   background-size: cover;
@@ -178,7 +179,7 @@
   background: url(../img/bg/img6.jpg) no-repeat;
   background-size: cover;
 }
-
+*/
 /*Promo Background Fixed*/
 .promo-bg-fixed {
   background-attachment: fixed;
