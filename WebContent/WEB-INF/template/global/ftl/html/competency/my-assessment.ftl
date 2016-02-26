@@ -308,6 +308,15 @@
 		.promo-bg-fixed p{
 			font-size : 1.2em;
 		}
+		.navbar .my-profile-img:hover .my-profile-view {
+			display:none;
+		}
+		
+		.navbar .my-profile-img:hover .my-profile-view {
+			display : block;	
+		}
+		
+		
 		.modal-content{
 		    border-radius: 6px !important;
 		}
@@ -372,7 +381,6 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-
 						<!-- Navbar Brand -->
 						<div class="navbar-brand">
 							<a href="/">
@@ -383,8 +391,12 @@
 						<!-- ENd Navbar Brand --> 
 						<!-- Header Inner Right -->						
 						<div class="header-inner-right">
-							<div id="current-user-profile" class="profile-blog" style="line-height: 94px;">
+							<div id="current-user-profile" class="profile-blog my-profile-img" style="line-height: 94px;">
 								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
+								<div class="my-profile-view">
+								fdasf
+								
+								</div>
 							</div>
 						</div>				
 						<!-- End Header Inner Right -->
