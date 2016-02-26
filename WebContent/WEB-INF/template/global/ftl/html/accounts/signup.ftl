@@ -350,10 +350,115 @@
 		}
 		
 		
+	.reg-block .email-login {
+		color: rgba(0,0,0,.5);
+		padding-top: 60px;
+		border-top: 1px solid #eee;
+		position: relative;
+	}
+
+	.form-block {
+		padding:15px;
+	    min-width: 380px;
+	    margin: 60px auto;	
+	    float: right;
+		border-radius: 6px!important;
+		border: 1px solid rgba(0,0,0,.2);
+		-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	    box-shadow: 0 5px 10px rgba(0,0,0,.2);		    
+	}
+
+
+	.reg-block .social-login {
+		border : 0 ;
+	}
+
+	@media (min-width: 992px)
+	{
+		.reg-block, .reg-block {
+			min-width : 350px;
+		}
+	
+	}
+	
+	.k-invalid-msg {
+	    font-size: .9em;
+	}
+
+	/**/
+	/* radios and checkboxes */
+	/**/
+
+
+	.sky-form .radio,
+	.sky-form .checkbox {
+		margin-bottom: 4px;
+		padding-left: 27px;
+		font-size: 1.0em;
+		line-height: 27px;
+		color: #999;
+		cursor: pointer;
+		font-weight:200;
+	}
+	.sky-form .radio:last-child,
+	.sky-form .checkbox:last-child {
+		margin-bottom: 0;
+	}
+	.sky-form .radio input,
+	.sky-form .checkbox input {
+		position: absolute;
+		left: -9999px;
+	}
+	.sky-form .radio i,
+	.sky-form .checkbox i {
+		position: absolute;
+		top: 5px;
+		left: 0;
+		display: block;
+		outline: none;
+		border-style: solid;
+		background: #fff;
+	    width: 17px;
+	    height: 17px;
+	    border-width: 1px;
+	}
+	.sky-form .radio i {
+		border-radius: 50%;
+	}
+	.sky-form .radio input + i:after,
+	.sky-form .checkbox input + i:after {
+		position: absolute;
+		opacity: 0;
+		-ms-transition: opacity 0.1s;
+		-moz-transition: opacity 0.1s;
+		-webkit-transition: opacity 0.1s;
+	}
+	.sky-form .radio input + i:after {
+		content: '';
+		top: 4px;
+		left: 4px;
+		width: 5px;
+		height: 5px;
+		color:#999;
+		border-radius: 50%;
+	}
+	.sky-form .checkbox input + i:after {
+		content: '\f00c';
+		top: 2px;
+		left: 0px;
+		width: 15px;
+		height: 15px;
+		color:#999;
+		font: normal 10px FontAwesome;
+		text-align: center;
+	}
+	.sky-form .radio input:checked + i:after,
+	.sky-form .checkbox input:checked + i:after {
+		opacity: 1;
+	}
 		
 		
-		
-		
+		/**
 		.reg-block {
 			width: 480px;
 			padding: 0px;
@@ -412,7 +517,6 @@
 		    border-bottom-right-radius: 6px!important;		
 		}		
 		
-		/*For Mobile Devices*/
 		@media (max-width: 500px) { 
 			.reg-block {
 				width: 100%;
@@ -478,6 +582,8 @@
 			opacity: 0.7;
 		}	
 		
+		*/
+		
 		</style>
 		</#compress>		
 	</head>
@@ -503,6 +609,53 @@
 	
 				</div>
 			</nav>		
+			<div class="container" style="min-height:500px;">			
+				<div class="row">			
+					<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block">
+					
+						<div class="reg-block">
+							<a href="index.html">
+								<img src="assets/img/themes/logo1-default.png" alt="">
+							</a>
+							<h2 class="margin-bottom-30">Create new account</h2>
+		
+							<div class="input-group margin-bottom-20">
+								<span class="input-group-addon rounded-left"><i class="icon-pencil color-green"></i></span>
+								<input type="text" class="form-control rounded-right" placeholder="Your name">
+							</div>
+		
+							<div class="input-group margin-bottom-20">
+								<span class="input-group-addon rounded-left"><i class="icon-user color-green"></i></span>
+								<input type="text" class="form-control rounded-right" placeholder="Username">
+							</div>
+		
+							<div class="input-group margin-bottom-20">
+								<span class="input-group-addon rounded-left"><i class="icon-envelope color-green"></i></span>
+								<input type="email" class="form-control rounded-right" placeholder="Your email">
+							</div>
+		
+							<div class="input-group margin-bottom-30">
+								<span class="input-group-addon rounded-left"><i class="icon-lock color-green"></i></span>
+								<input type="password" class="form-control rounded-right" placeholder="Password">
+							</div>
+		
+							<div class="checkbox margin-bottom-30">
+								<label>
+									<input type="checkbox"> I agree to terms &amp; conditions
+								</label>
+		
+								<label>
+									<input type="checkbox"> Subscribe to our newsletter
+								</label>
+							</div>
+		
+							<button type="submit" class="btn-u btn-block rounded">Create new</button>
+						</div>					
+					
+					</div>
+				</div>
+			</div>		
+								
 			<div class="container" style="min-height:570px;">
 					<div id="signup" class="reg-block animated fadeIn" style="display:none;" data-bind={visible:visible}>	
 						<div class="reg-block-header no-border">
