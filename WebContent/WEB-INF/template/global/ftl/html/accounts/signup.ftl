@@ -652,16 +652,15 @@
 								<input type="password" class="form-control rounded-right" placeholder="Password">
 							</div>
 		
-							<div class="checkbox margin-bottom-30">
-								<label>
-									<input type="checkbox"> I agree to terms &amp; conditions
-								</label>
-		
-								<label>
-									<input type="checkbox"> Subscribe to our newsletter
-								</label>
+							<div class="margin-bottom-30">
+											<label class="checkbox">
+												<input type="checkbox"  id="signupInputAgree" name="signupInputAgree" data-bind="checked:form.agree" required validationMessage="회원가입을 위하여 동의가 필요합니다.">
+												<i></i>
+												<div class="note note-error k-invalid-msg" data-for="signupInputAgree" role="alert" style="display: none;">회원가입을 위하여 동의가 필요합니다.</div>												
+												서비스 약관과 개인정보취급방침 및 개인정보 수집항목•이용목적•보유기간에 동의합니다.
+											</label>
 							</div>		
-							<button type="submit" class="btn-u btn-block rounded">Create new</button>
+							<button type="submit" class="btn-u btn-block rounded">확인</button>
 							</form>
 						</div>					
 					
