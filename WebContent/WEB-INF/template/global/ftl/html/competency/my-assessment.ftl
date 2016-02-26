@@ -305,6 +305,9 @@
 		</script>		
 		<style scoped="scoped">
 		
+		.promo-bg-fixed p{
+			font-size : 1em;
+		}
 		.modal-content{
 		    border-radius: 6px !important;
 		}
