@@ -613,10 +613,10 @@
 				<div class="row">			
 					<div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form-block">
 					
-						<div class="reg-block">
+						<div class="reg-block no-border">
 							<h2 class="margin-bottom-20">회원가입</h2>							
 							<#if WebSiteUtils.isAllowedSocialConnect( action.webSite ) >
-								<p>쇼셜계정을 사용하여 손쉽게 회원 가입 하실수 있습니다.</p>
+								
 								<div class="row">
 									<div class="col-sm-6">
 										<button class="btn btn-block btn-flat btn-outline rounded btn-primary btn-lg" data-bind="{click:connectWith}" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 회원가입</button>
@@ -626,7 +626,8 @@
 									</div>
 								</div>		
 							</#if>			
-		
+							
+							<p>또는 이메일을 통해</p>
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-pencil color-green"></i></span>
