@@ -310,6 +310,10 @@
 		}
 		.navbar .my-profile-img .dropdown-menu {
 			display:none;
+		    top: 60px;
+		    right: 0px;
+		    border-bottom-right-radius: 6px;
+		    border-bottom-left-radius: 6px;			
 		}
 		
 		.navbar .my-profile-img:hover .dropdown-menu {
