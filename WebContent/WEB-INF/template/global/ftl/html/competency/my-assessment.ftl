@@ -308,11 +308,11 @@
 		.promo-bg-fixed p{
 			font-size : 1.2em;
 		}
-		.navbar .my-profile-img .my-profile-view {
+		.navbar .my-profile-img .dropdown-menu {
 			display:none;
 		}
 		
-		.navbar .my-profile-img:hover .my-profile-view {
+		.navbar .my-profile-img:hover .dropdown-menu {
 			display : block;	
 		}
 		
@@ -393,10 +393,13 @@
 						<div class="header-inner-right">
 							<div id="current-user-profile" class="profile-blog my-profile-img" style="line-height: 94px;">
 								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
-								<div class="my-profile-view">
-								fdasf
-								
-								</div>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#"><i class="fa fa-arrows-alt"></i> Fullscreen</a></li>
+									<li><a href="#"><i class="fa fa-unlink"></i> Some Links</a></li>
+									<li><a href="#"><i class="fa fa-list"></i> Main Links</a></li>
+									<li class="divider"></li>
+									<li><a href="#"><i class="fa fa-cloud-download"></i> Download All</a></li>
+								</ul>
 							</div>
 						</div>				
 						<!-- End Header Inner Right -->
