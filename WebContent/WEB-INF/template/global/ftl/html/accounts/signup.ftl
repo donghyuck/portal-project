@@ -359,7 +359,7 @@
 
 	.form-block {
 		padding:15px;
-	    min-width: 420px;
+	    min-width: 430px;
 	    margin: 60px auto;	
 	    float: right;
 		border-radius: 6px!important;
@@ -376,7 +376,7 @@
 	@media (min-width: 992px)
 	{
 		.reg-block, .reg-block {
-			min-width : 390px;
+			min-width : 400px;
 		}
 	
 	}
@@ -627,7 +627,9 @@
 								</div>		
 							</#if>			
 							
-							<p>또는 이메일을 통해</p>
+							<div class="heading heading-v4 margin-top-20">
+                        		<h6>혹은 직접 입력하여 주세요.</h6>
+                    		</div>
 		
 							<div class="input-group margin-bottom-20">
 								<span class="input-group-addon rounded-left"><i class="icon-pencil color-green"></i></span>
