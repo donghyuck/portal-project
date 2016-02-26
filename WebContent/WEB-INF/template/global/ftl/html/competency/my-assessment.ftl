@@ -395,21 +395,12 @@
 					</span>	
 					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20 visible-lg" data-wow-duration="1.5s" data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
 					
-					<p style="color:#f5f5f5;">
-					
-					
-					Every job requires a specific set of knowledge and skills. And this varies depending on the type and complexity of the job. 
-					More than just knowing whether street smarts or book smarts is better, 
-					competency assessment is all about providing a way of building the skills and knowledge people need to perform their current job. 
-					
-					It is also the key element of the succession planning process because it provides a way of developing people for their future roles.
-										
+					<p style="color:#f5f5f5;">					
+					모든 직업은 특정 지식과 기술들이 요구됩니다. 그리고 이것은 작업의 종류와 복잡성에 따라 달라집니다. 
+					역량진단은 단순하게 학습을 통하여 배우는 것이 나은지 경험을 통하여 배우는 것이 더 나은가를 아는 것 이상으로,  
+					수행하기 위하여 요구되는 지식과 기술들을 개발하기 위한 여러가지 방법을 제공합니다.   
+					또한 미래 또는 현재 직무를 수행하기 위하여 무엇을 어떻게 개발해야 하는 가를 알려주기 때문에 성공적인 자기개발계획에 중요한 핵심 요소입니다. 		
 					</p>
-					<!--
-					<div class="animated fadeInUp wow" data-wow-duration="1.2s" data-wow-delay="2s">
-						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x margin-right-10">Learn More</a>
-						<a href="#" class="btn-u btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block rounded-4x">Purchase Now</a>
-					</div>-->
 				</div>
 			</div>
 			<!-- ./END HEADER --> 
