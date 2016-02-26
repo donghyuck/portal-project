@@ -415,8 +415,19 @@
 			<!-- ./END HEADER --> 
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
-		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview">
-		        </ul>
+				<div class="call-action-v1 call-action-v1-boxed bg-color-dark animated fadeInUp margin-bottom-40">
+		            <div class="call-action-v1-box">
+		                <div class="call-action-v1-in">
+		                    <h3 class="color-light">Contact us at <span class="color-green">support@htmlstream.com</span> or give us a call <span class="color-green">+44 (35) 77 3892</span></h3>
+		                    <p class="color-light">Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+		                </div>
+		                <div class="call-action-v1-in inner-btn page-scroll">
+		                    <a href="#portfolio" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">REGISTER TODAY</a>
+		                </div>
+		            </div>
+		        </div>			
+		        
+		        <ul class="list-unstyled row portfolio-box team-v1 no-border" id="my-assessment-plan-listview"></ul>
 		    </div>
 			<!-- ./END MAIN CONTENT -->	 
 	 		<!-- START FOOTER --> 
