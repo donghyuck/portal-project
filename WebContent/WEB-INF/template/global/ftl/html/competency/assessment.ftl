@@ -127,22 +127,21 @@
 						<img class="img-responsive" src="<@spring.url "/download/image/9451/ncs.png"/>" alt="">
 					</div>
 					<div class="col-md-6">
-					<h2 class="title-v2">국가직무능력표준 기반 직무역량진단</h2>
-					
-					<p>국가직무능력표준(이하 NCS)는 산업현장에서 직무를 수행하기 위하여 요구되는 지식∙기술∙태도 등을 국가가 산업부문별수준별로 체계화 한 것입니다.</p>
-					
-					<p>회사는 NCS를 활용하여 직원 개개인의 직무능력을 정확하게 진단할 수 있습니다. </p>
-					<p>채용∙승진이나 적재적소에 인력배치 그리고 재교육 등을 쉽게할 수 있고 결과적으로 직무능력중심의 공정한 인사관리가 가능하게 됩니다.</p>
-					<hr/>
-					<p>개인은 직업에서 요구되는 역량을 본인이 어느 정도 보유하고 있는지 알 수 있습니다.<p>
-					<p><p>
-					<p><p>
-					<p><p>
-					<a href="<@spring.url "/display/competency/my-assessment.html" />" class="btn-u btn-brd btn-u-lg btn-brd-hover btn-u-dark">직업역량진단하기</a>
+						<h2 class="title-v2">국가직무능력표준 기반 직무역량진단</h2>					
+						<p>국가직무능력표준(이하 NCS)는 산업현장에서 직무를 수행하기 위하여 요구되는 지식∙기술∙태도 등을 국가가 산업부문별수준별로 체계화 한 것입니다.</p>
+						
+						<p>회사는 NCS를 활용하여 직원 개개인의 직무능력을 정확하게 진단할 수 있습니다. </p>
+						<p>채용∙승진이나 적재적소에 인력배치 그리고 재교육 등을 쉽게할 수 있고 결과적으로 직무능력중심의 공정한 인사관리가 가능하게 됩니다.</p>
+						<hr/>
+						<p>개인은 직업에서 요구되는 역량을 본인이 어느 정도 보유하고 있는지 알 수 있습니다.<p>
+						<p><p>
+						<p><p>
+						<p><p>
+						<a href="<@spring.url "/display/competency/my-assessment.html" />" class="btn-u btn-brd btn-u-lg btn-brd-hover btn-u-dark">직업역량진단하기</a>
 					</div>
-				</div>
+				</div><!--/end row-->
 			</div>
-			
+			<!--
 			<div class="bg-color-light">
 				<div class="container content-sm">
 					<div class="row">
@@ -162,10 +161,11 @@
 								<li><i class="fa fa-check"></i> Eleifend eget aliquet tortor, quis lacinia dolor</li>
 							</ul>
 							<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-dark">Learn More</a>
-						</div><!--/end row-->
+						</div>
 					</div>
 				</div>
-			</div>			
+			</div>
+			-->			
 			<!-- ./END MAIN CONTENT -->	
 	 		
 	 		<!-- START FOOTER -->
