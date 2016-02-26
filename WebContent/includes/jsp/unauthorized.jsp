@@ -17,12 +17,11 @@
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jgrowl/jquery.jgrowl.min.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/kendo/kendo.web.min.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/kendo/kendo.ko_KR.js',			
-			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/bootstrap/3.1.0/bootstrap.min.js',
-			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jquery.imagesloaded/imagesloaded.min.js',
-			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.modernizr.custom.js',			
-			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.models.js',
-			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.api.js',
-			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.ui.js'],
+			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/bootstrap/3.3.4/bootstrap.min.js',
+			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common.plugins/query.backstretch.min.js', 			
+			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.ui.core.js',						
+			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.ui.data.js'			
+			],
 		complete: function() {
 			var slideshow = $('#slideshow').extFullscreenSlideshow();
 		}		
