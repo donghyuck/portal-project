@@ -415,7 +415,7 @@
 			<!-- ./END HEADER --> 
 			<!-- START MAIN CONTENT -->
 			
-	<#if user.anonymous >		
+	<#if action.user.anonymous >		
 	<div class="call-action-v1 bg-color-dark margin-bottom-40">
         <div class="container">
             <div class="call-action-v1-box">
