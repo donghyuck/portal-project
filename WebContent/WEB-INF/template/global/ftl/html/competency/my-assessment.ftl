@@ -430,8 +430,10 @@
 							</p>
 		                </div>
 		                <div class="call-action-v1-in inner-btn page-scroll">
-		                	<a href="<@spring.url "/accounts/login?ver=1&url=${springMacroRequestContext.getRequestUri()}" />" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">회원가입</a>
-		                	<a href="<@spring.url "/accounts/signup?ver=1&url=${springMacroRequestContext.getRequestUri()}" />" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">로그인</a>
+		                	
+		                	<a href="<@spring.url "/accounts/signup?ver=1&url=${springMacroRequestContext.getRequestUri()}" />" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">회원가입</a>
+		                	<a href="<@spring.url "/accounts/login?ver=1&url=${springMacroRequestContext.getRequestUri()}" />" class="btn-u btn-u-lg btn-brd btn-brd-width-2 btn-brd-hover btn-u-light btn-u-block">로그인</a>
+		                	
 		                </div>
 		            </div>
 		        </div>
