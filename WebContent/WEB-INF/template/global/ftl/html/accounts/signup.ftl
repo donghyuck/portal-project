@@ -269,18 +269,15 @@
 		
 		<style>
 		
-		.btn-login {
+		.navbar-fixed-top .navbar-btn {
 		    border: #fff solid 1px;
 		    color: #fff;
 		    background: rgba(255, 255, 255, 0.3);
 		}
-		
-		a.btn-login:hover{
-			background:#fff;
-			color:#ccc;
-		}
-		
-		
+		.navbar-fixed-top .navbar-text {
+			padding: 5px;
+			color:#fff;
+		}		
 		
 		
 		.wrapper {
@@ -488,11 +485,9 @@
 							<img alt="Brand" src="/download/logo/company/${action.webSite.company.name}">
 						</a>
 					</div>	
-
-
-					<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-3"> 
+					<div class="collapse navbar-collapse pull-right"> 
 						<p class="navbar-text">이미 이용하고 계신가요 ?</p> 
-						<button type="button" class="btn-u btn-brd btn-u-lg btn-login navbar-btn">로그인</button> 
+						<a href="#" class="btn-u btn-brd btn-u-md navbar-btn">로그인</a> 
 					</div>
 	
 				</div>
