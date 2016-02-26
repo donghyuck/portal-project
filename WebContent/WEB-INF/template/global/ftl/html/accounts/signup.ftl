@@ -281,7 +281,6 @@
 		}
 		
 		.navbar-fixed-top .navbar-text {
-			padding: 5px;
 			color:#fff;
 		}		
 		
