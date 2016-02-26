@@ -378,6 +378,13 @@
 						</div>
 						<!-- ENd Navbar Brand --> 
 						<!-- Header Inner Right -->
+						<div class="header-inner-right">
+							<ul class="menu-icons-list">
+								<li class="menu-icons">
+								로그인
+								</li>
+							</ul>
+						</div>						
 						<!-- End Header Inner Right -->
 					</div>
 				</div>
