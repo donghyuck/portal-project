@@ -390,10 +390,10 @@
 				<div class="container valign__middle text-center" data-start="opacity: 1;" data-500="opacity: 0;">
 					<div class="margin-bottom-20">
 					</div>	
-					<span class="promo-text-v1 color-light margin-bottom-10 animated fadeInUp wow visible-md" data-wow-duration="1.5s" data-wow-delay="1s">
+					<span class="promo-text-v1 color-light margin-bottom-10 animated fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="1s">
 						COMPETENCY ASSSSEMENT
 					</span>	
-					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20" data-wow-duration="1.5s " data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
+					<h2 class="promo-text-v2 color-light animated fadeInUp wow margin-bottom-20 visible-lg" data-wow-duration="1.5s" data-wow-delay="1.5s">WE ARE CREATIVE COMPANY</h2>
 					
 					<p style="color:#f5f5f5;">
 					
