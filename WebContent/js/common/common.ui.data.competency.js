@@ -45,7 +45,8 @@
 	        description: { type: "string", editable: true },
 	        level: { type: "number", editable: true, defaultValue: 0  },   
 	        minWorkExperienceYear: { type: "number", editable: true, defaultValue: 0  },   
-	        maxWorkExperienceYear: { type: "number", editable: true, defaultValue: 0  }
+	        maxWorkExperienceYear: { type: "number", editable: true, defaultValue: 0  },
+	        strong : { type: "boolean", editable: true, defaultValue: false  }
 	    },	    
 	    copy : function ( target ){
 	    	target.set("jobLevelId", this.get("jobLevelId"));
@@ -53,6 +54,7 @@
 	    	target.set("name", this.get("name"));
 	    	target.set("description", this.get("description"));
 	    	target.set("level", this.get("level"));
+	    	target.set("strong", this.get("strong"));
 	    	target.set("minWorkExperienceYear", this.get("minWorkExperienceYear"));
 	    	target.set("maxWorkExperienceYear", this.get("maxWorkExperienceYear"));
 	    }    
