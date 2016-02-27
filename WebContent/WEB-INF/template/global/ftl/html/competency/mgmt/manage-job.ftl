@@ -639,6 +639,7 @@
 													<th>설명</th>
 													<th>직무수준</th>
 													<th>직무경험(년)</th>
+													<th>옵션</th>
 												</tr>
 											</thead>
 											<tbody  class="no-border"
@@ -686,6 +687,7 @@
 												data-editable="true"
 												data-columns="[{ 'field': 'name', 'title':'이름'},{ 'field': 'description', 'title':'설명'},{ 'field': 'level', 'title':'직무수준'},
 													{ 'field': 'minWorkExperienceYear', 'title':'최소직무경험'},{ 'field': 'maxWorkExperienceYear', 'title':'최대직무경험'},
+													{ 'field': 'strong', 'title':'옵션'}
 												{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 												data-bind="source:jobLevelDataSource, visible:editable"
 												style="height: 300px"></div>								
@@ -833,6 +835,7 @@
 			<td>#: description #</td>
 			<td>#: level #</td>
 			<td>#: minWorkExperienceYear # ~ #: maxWorkExperienceYear #</td>
+			<td>#: strong #</td>
 		</tr>		
 		</script>
 		<script type="text/x-kendo-tmpl" id="property-view-template">
