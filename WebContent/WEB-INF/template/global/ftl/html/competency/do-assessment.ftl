@@ -295,7 +295,7 @@ yepnope([{
 	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" data-role="navigation" data-offset-top="150">
 			<div class="container">
 				<div class="menu-container page-scroll">
-					<a class="navbar-brand" href="#body">
+					<a class="navbar-brand no-padding" href="#body">
 						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
 					</a>
 				</div>
