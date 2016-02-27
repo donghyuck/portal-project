@@ -91,7 +91,6 @@ yepnope([{
 				console.log(1);
 				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
 			          function() {
-			               console.log(2);
 			               $this.set('visible', true);
 			          }          
 			    );
@@ -130,8 +129,10 @@ yepnope([{
 			var objectId = btn.data('object-id');
 			var objectObjectScore = btn.data('object-score');					
 			var assessmentQuestion = observable.questionDataSource.get(objectId);
-			assessmentQuestion.set('score', objectObjectScore);				
-			common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
+			assessmentQuestion.set('score', objectObjectScore);		
+			
+			if($('form[data-object-id=100]').next().length) 		
+				common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
 			
 		});
 		
@@ -400,7 +401,7 @@ yepnope([{
 
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="my-assessment-template">
-		<form class="ac-custom ac-radio ac-fill" data-object-id="#=questionId#" >
+		<form class="ac-custom ac-radio ac-fill" data-object-id="#=questionId#" data-seq="#=seq#" >
 			<div class="headline"><h3>#= seq  #.</h3>  #: competencyName# > #: essentialElementName # </div>
 			<h2>#: question #</h2>
 			<ul>
