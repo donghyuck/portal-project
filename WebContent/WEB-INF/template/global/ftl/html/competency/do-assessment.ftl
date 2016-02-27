@@ -290,6 +290,12 @@ yepnope([{
 	
 	 	<nav class="one-page-header navbar navbar-default navbar-fixed-top one-page-nav-scrolling one-page-nav__fixed top-nav-collapse assessment-nav" data-role="navigation" data-offset-top="150">
 			<div class="container">
+				<div class="menu-container page-scroll">
+					<a class="navbar-brand" href="#body">
+						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
+					</a>
+				</div>
+				<!--		
 				<div class="row collapse navbar-collapse navbar-ex1-collapse">
 					<div class="col-md-6 no-side-padding">
 						<div class="pull-left">
@@ -308,10 +314,11 @@ yepnope([{
 							</div>
 						</div>
 					</div>
-					<div class="tel-block hidden-3xs">
-						<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
-						070-7807-4040
-					</div>
+					-->
+				<div class="tel-block hidden-3xs">
+					<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
+					070-7807-4040
+				</div>
 			</div>
 			<!-- /.container -->
 		</nav>	
