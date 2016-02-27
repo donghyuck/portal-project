@@ -13,7 +13,8 @@
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css" />',			
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.rtl.css" />',
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.themes.css" />',
-			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.pages.css" />',				
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.pages.css" />',	
+						
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js" />',
 			'<@spring.url "/js/kendo/kendo.web.min.js" />',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',
@@ -267,9 +268,6 @@
 						var $this = this;
 						var newJobLevel = new common.ui.data.competency.JobLevel();
 						newJobLevel.set("jobId", $this.job.get("jobId"));
-						
-						console.log( common.ui.stringify(newJobLevel) );
-						
 						common.ui.grid($('#job-details-tabs-10 .k-grid')).dataSource.add(newJobLevel) ;
 						return false;
 					},
@@ -687,8 +685,8 @@
 												data-editable="true"
 												data-columns="[{ 'field': 'name', 'title':'이름'},{ 'field': 'description', 'title':'설명'},{ 'field': 'level', 'title':'직무수준'},
 													{ 'field': 'minWorkExperienceYear', 'title':'최소직무경험'},{ 'field': 'maxWorkExperienceYear', 'title':'최대직무경험'},
-													{ 'field': 'strong', 'title':'옵션'}
-												{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													{ 'field': 'strong', 'title':'옵션'},
+													{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 												data-bind="source:jobLevelDataSource, visible:editable"
 												style="height: 300px"></div>								
 									</div>	
