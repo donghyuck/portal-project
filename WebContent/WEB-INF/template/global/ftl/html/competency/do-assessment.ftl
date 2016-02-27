@@ -341,7 +341,7 @@ yepnope([{
 			  <!-- Promo Content END -->
   		</section>        	
 		<section class="container g-mb-30">
-		  	<div class="book-section bg-dark rounded no-margin-b">
+		  	<div class="book-section g-bg-default rounded-2x no-margin-b">
 
 							<table class="table">
 				            	<thead>
