@@ -100,6 +100,7 @@ yepnope([{
 			saveOrUpdate : function(){
 				var $this = this;
 				$this.questionDataSource.sync();
+				
 			},
 			questionDataSource : new kendo.data.DataSource({
 				batch: true,
@@ -117,6 +118,9 @@ yepnope([{
 				},			
 				schema: {
 					model: common.ui.data.competency.AssessmentQuestion
+				},
+				sync: function(e) {
+					common.redirect("<@spring.url "/display/assessment/do-assessment.html"/>", {id: renderTo.data("model").assessment.assessmentId}, "POST");
 				}
 			})
 		});
