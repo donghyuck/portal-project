@@ -88,7 +88,6 @@ yepnope([{
 			assessment:source ,
 			questionDataBound : function(e){
 				var $this = this;
-				console.log(1);
 				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
 			          function() {
 			               $this.set('visible', true);
@@ -123,6 +122,7 @@ yepnope([{
 		});
 		renderTo.data("model", observable);	
 		kendo.bind(renderTo, observable );	
+		
 		observable.questionDataSource.read();
 		$(document).on("click","[data-action='answer']", function(e){						
 			var btn = $(this) ;
@@ -131,7 +131,7 @@ yepnope([{
 			var assessmentQuestion = observable.questionDataSource.get(objectId);
 			assessmentQuestion.set('score', objectObjectScore);		
 			
-			if($('form[data-object-id=100]').next().length) 		
+			if($('form[data-object-id=' + objectId + ']').next().length == 1) 		
 				common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
 			
 		});
