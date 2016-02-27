@@ -280,6 +280,10 @@ yepnope([{
 			color:#333!important;
 		}
 		
+		.navbar-brand>img {
+			width:auto;
+			height:55px;
+		}
 	</style>
 </#compress>
 </head>
