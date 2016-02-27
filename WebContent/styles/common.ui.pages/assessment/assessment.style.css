@@ -901,7 +901,7 @@ h4 {
 	Book
 ---*/
 .book-section {
-	background-image: url(../img/book-bg.png);
+	background-image: url(../../../images/bg/book-bg.png);
 	color: #fff;
 	padding: 50px 25px;
 	margin-top: -70px;
