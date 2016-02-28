@@ -145,7 +145,7 @@ yepnope([{
 						$this.questionDataSource.view(),
 						function(index, value){
 							
-							log.console( value.get('questionId') + "=" + value.get('score') );
+							console.log( value.get('questionId') + "=" + value.get('score') );
 							
 						}
 					);
