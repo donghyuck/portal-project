@@ -90,6 +90,7 @@ yepnope([{
 		var renderTo = $('#my-assessment');	
 		if( !renderTo.data("model") ){		
 			var observable =  common.ui.observable({
+				warning : false,
 				visible : false,
 				completable : false,
 				unAnsweredCount : 0,
@@ -163,7 +164,10 @@ yepnope([{
 					source.copy($this.assessment);	
 					$this.competencyDataSource.data( $this.assessment.competencies );	
 					$this.questionDataSource.fetch(function(e){						
-						$this.set('unAnsweredCount', this.total());						
+						$this.set('unAnsweredCount', this.total());			
+						if( this.total() == 0 ){
+							$this.set('warning', true);
+						}			
 					});
 				}		
 			});
@@ -388,6 +392,13 @@ yepnope([{
 		  	<div class="book-section g-bg-default rounded-2x no-margin-b animated fadeIn" data-bind="visible:visible" style="display:none;">
 				<div class="row">
 					<div class="col-sm-6">
+						
+							<div class="alert alert-danger fade in no-border rounded" data-bind="visible:warning" style="display:none;">
+								<strong>죄송합니다!!</strong> 선택하신 <span data-bind="text: assessment.jobLevelName"></span> 는 진단 문항이 준비되어 있지 않습니다. <br>
+								<a href="<@spring.url "/display/competency/my-assessment.html" />" class="btn btn-info btn-flat btn-outline rounded">이전으로 돌아가기</a>										
+							</div>
+								
+						
 							<table class="table no-margin-b">
 						    	<thead>
 						           	<tr>
