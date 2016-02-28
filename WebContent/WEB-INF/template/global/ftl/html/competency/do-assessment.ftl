@@ -349,6 +349,11 @@ yepnope([{
 				<div class="row">
 					<div class="col-sm-6">
 							<table class="table no-margin-b">
+						    	<thead>
+						           	<tr>
+						               	<th colspan="2">기본정보</th>
+						   			</tr>
+						      	</thead>							
 				                <tbody>
 					                <tr>
 				                    	<td> 대상자 </td>
