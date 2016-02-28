@@ -356,7 +356,7 @@ yepnope([{
 						      	</thead>							
 				                <tbody>
 					                <tr>
-				                    	<td> 대상자 </td>
+				                    	<td width="150"> 대상자 </td>
 				                    	<td> <span data-bind="{ text: assessment.candidate.name}"></span> </td>
 				                   	</tr>
 					                <tr>
@@ -391,7 +391,7 @@ yepnope([{
 						<table class="table">
 					    	<thead>
 					           	<tr>
-					               	<th>필요역량</th>
+					               	<th width="150">필요역량</th>
 					               	<th>수준</th>
 					   			</tr>
 					      	</thead>
