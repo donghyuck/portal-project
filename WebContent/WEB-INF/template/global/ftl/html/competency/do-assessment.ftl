@@ -151,8 +151,7 @@ yepnope([{
 						if( value.get('score') > 0 ){
 							totalCount= totalCount - 1;
 						}
-					});	
-					
+					});						
 					console.log( 'un answered count : ' + totalCount ); 
 					$this.set('unAnsweredCount', totalCount );				
 					if( totalCount == 0 ){
