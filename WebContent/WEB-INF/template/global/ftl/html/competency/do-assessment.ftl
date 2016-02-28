@@ -184,7 +184,7 @@ yepnope([{
 						var that = $(value);
 						if( that.data('seq') > seq ){
 							common.ui.scroll.top(that, -20);
-							break;
+							return;
 						}
 					});
 				}else{
