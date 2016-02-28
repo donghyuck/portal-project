@@ -134,7 +134,7 @@ yepnope([{
 						model: common.ui.data.competency.AssessmentQuestion
 					},
 					sync: function(e) {
-						common.redirect("<@spring.url "/display/assessment/do-assessment.html"/>", {id: renderTo.data("model").assessment.assessmentId}, "POST");
+						common.redirect("<@spring.url "/display/assessment/my-assessment-report.html"/>", {id: renderTo.data("model").assessment.assessmentId}, "POST");
 					}
 				}),
 				setSource: function(source){
