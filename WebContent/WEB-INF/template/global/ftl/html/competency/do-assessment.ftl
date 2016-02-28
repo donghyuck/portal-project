@@ -93,7 +93,6 @@ yepnope([{
 				visible : false,
 				completable : false,
 				unAnsweredCount : 0,
-				lastObjectId : 0,
 				assessment: new common.ui.data.competency.Assessment(),
 				formattedStartDate : function(){
 					var $this = this;
@@ -145,33 +144,28 @@ yepnope([{
 				setQuestionAnswer: function( questionId, answer ){
 					var $this = this;
 					var assessmentQuestion = $this.questionDataSource.get(questionId);
-					var totalCount = $this.questionDataSource.total();
-					var lastObjectId = 0;
+					vat totalCount = $this.get'unAnsweredCount')
 					
-					assessmentQuestion.set('score', answer );		
-					$.each(
-						$this.questionDataSource.view(),
-						function(index, value){
-							if( value.get('score') == 0 ){
-								$this.set('lastObjectId', value.get('questionId'));	
-								return ;
-							}else{
-								totalCount = totalCount - 1;
-							}
-							console.log( value.get('questionId') );
+					assessmentQuestion.set('score', answer );	
+					$.each( $this.questionDataSource.view(), function(index, value){
+						if( value.get('score') > 0 ){
+							totalCount= totalCount - 1;
 						}
-					);
-					$this.set('unAnsweredCount', totalCount );
+					});	
+					
+					console.log( 'un answered count : ' + totalCount ); 
+					$this.set('unAnsweredCount', totalCount );				
 					if( totalCount == 0 ){
 						$this.set('completable', true);
 					}
-					
 				},
 				setSource: function(source){
 					var $this = this;
 					source.copy($this.assessment);	
 					$this.competencyDataSource.data( $this.assessment.competencies );	
-					$this.questionDataSource.read();
+					$this.questionDataSource.fetch(function(e){						
+						$this.set('unAnsweredCount', this.total());						
+					});
 				}		
 			});
 			renderTo.data("model", observable);	
