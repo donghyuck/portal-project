@@ -391,10 +391,10 @@ yepnope([{
 					   			</tr>
 					      	</thead>
 							<tbody data-role="listview"
-								class="no-border"
+								class="no-border bg-transparent"
 								data-auto-bind="false"	
 								data-template="my-assessment-competency-template"
-								data-bind="source:competencyDataSource" style="overflow: auto"> 
+								data-bind="source:competencyDataSource" style="overflow: auto; color:#fff;"> 
 							</tbody>		                    
 						</table>	
 					</div>
