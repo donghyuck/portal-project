@@ -183,7 +183,8 @@ yepnope([{
 					$.each( $('form[answered=false]'), function( index, value ){
 						var that = $(value);
 						if( that.data('seq') > seq ){
-							common.ui.scroll.top(that, -20);		
+							common.ui.scroll.top(that, -20);
+							break;
 						}
 					});
 				}else{
