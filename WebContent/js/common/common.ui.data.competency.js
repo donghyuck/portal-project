@@ -437,7 +437,7 @@
 	    id: "assessmentId", // the identifier of the model
 	    fields: {
 	    	assessmentId: { type: "number", defaultValue: 0},
-	    	assessmentPlan: { type: "object", defaultValue:new AssessmentPlan(),parse: function( value ){
+	    	assessmentPlan: { type: "object", defaultValue: new AssessmentPlan(),parse: function( value ){
 	    		console.log( value );
 	    		return new AssessmentPlan( value );
 	    	} },	    	

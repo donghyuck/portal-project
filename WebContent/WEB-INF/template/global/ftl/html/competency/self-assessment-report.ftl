@@ -124,7 +124,7 @@ yepnope([{
 				jobLevelDataSource :new kendo.data.DataSource({
 					data : [],
 					schema: {
-                    	model: common.ui.data.competency.JobLevel
+                    	model: common.ui.data.competency.Competency
                     }
                 }), 
                 competencyDataSource :new kendo.data.DataSource({
@@ -622,8 +622,6 @@ yepnope([{
 								<tr>
 									<td>대상자</td>
 									<td class="no-padding-b profile">
-
-
 										<div class="profile-blog">
 											<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src: candidatePhotoUrl }" alt="" width="120"/>
 											<div class="name-location">
