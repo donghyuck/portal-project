@@ -1,12 +1,14 @@
 		<div class="sliding-panel bg-color-darker">
 			<div class="sliding-panel-header">
 				<div class="profile-blog my-profile-img">
-					<img class="rounded-x" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt="" />
+					<img class="rounded" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt="" />
 					<span data-bind="text:name">방문자</span>
 				</div>	
 				<div class="p-xxs">
-					<a href="<@spring.url "/accounts/login.html?url=${springMacroRequestContext.getRequestUri()}"/>" class="btn btn-xs btn-success btn-flat rounded" data-bind="visible:anonymous" >로그인</a>
-					<a href="<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"/> class="btn btn-xs btn-danger btn-flat rounded" data-bind="invisible:anonymous" >로그아웃</a>
+					<a href="<@spring.url "/accounts/login.html?url=${springMacroRequestContext.getRequestUri()}"/>" 
+						class="btn btn-xs btn-success btn-flat rounded" data-bind="visible:anonymous" >로그인</a>
+					<a href="<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"/>" 
+						class="btn btn-xs btn-danger btn-flat rounded" data-bind="invisible:anonymous" >로그아웃</a>
 				</div>
 			</div>
 			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
