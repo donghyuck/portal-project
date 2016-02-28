@@ -1496,3 +1496,7 @@ h4 {
 		.navbar .my-profile-img:hover .dropdown-menu {
 			display : block;	
 		}
+		
+.sliding-panel-header {
+	padding:10px;
+}		
