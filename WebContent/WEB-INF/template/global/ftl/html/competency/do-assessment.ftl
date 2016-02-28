@@ -12,16 +12,15 @@ yepnope([{
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/one.style.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.css"/>',	
-			
+				'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',		
+				
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
 			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',		
 			
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
 			
 			'css!<@spring.url "/styles/codrops/codrops.svgcheckbox.css"/>',	
-			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',		
-			
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',		
+			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',	
 			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
@@ -304,26 +303,6 @@ yepnope([{
 						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
 					</a>
 				</div>
-				<!--		
-				<div class="row collapse navbar-collapse navbar-ex1-collapse">
-					<div class="col-md-6 no-side-padding">
-						<div class="pull-left">
-							<div class="menu-container">
-								<ul class="nav navbar-nav">
-									<li class="home">
-										<a href="#body">Home</a>
-									</li>
-									<li class="active">
-										<a href="#">역량진단</a>
-									</li>
-									<li class="">
-										<a href="#services">진단결과</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					-->
 				<div class="tel-block hidden-3xs">
 					<i class="icon-flat icon-svg icon-svg-sm business-color-phone"></i>
 					070-7807-4040
@@ -339,7 +318,6 @@ yepnope([{
 						<div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12 page-scroll">
 							<h1 class="g-color-white g-mb-25" data-bind="text:assessment.assessmentPlan.name"></h1>
 							<p class="g-color-white g-mb-40"><span data-bind="text:assessment.assessmentPlan.description"></span></p>
-							<!--<a href="#footer" class="btn-u btn-u-lg g-bg-default-color btn-u-upper rounded">Contact Us</a>-->
 						</div>
 					</div>
 				</div>
@@ -347,7 +325,8 @@ yepnope([{
   		</section>        	
 		<section class="container g-mb-30">
 		  	<div class="book-section g-bg-default rounded-2x no-margin-b">
-
+				<div class="row">
+					<div class="col-sm-6">
 							<table class="table no-margin-b">
 				            	<thead>
 				                	<tr>
@@ -364,13 +343,13 @@ yepnope([{
 				                   	</tr>
 					                <tr>
 				                    	<td> 직무수준 </td>
-				                    	<td> <span data-bind="text: assessment.jobLevelName"></span> </td>
+				                    	<td> <span data-bind="text: assessment.jobLevelName"></span> ( <span data-bind="text: assessment.jobLevel"></span>수준 )</td>
 				                   	</tr>
 					                <tr>
-				                    	<td> 선택직무 </td>
+				                    	<td>진단방법 </td>
 				                    	<td> 
 											<span data-bind="invisible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">자가진단</span>
-				                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단</span>
+				                        	<span data-bind="visible:assessment.assessmentPlan.feedbackEnabled" style="display:none;">다면진단 (360 degree feedback)</span>
 										</td>
 				                   	</tr>	
 					                <tr>
@@ -378,8 +357,10 @@ yepnope([{
 				                    	<td> <span data-bind="text: questionDataSource.total()"></span> </td>
 				                   	</tr>					                   				                   					                   	
 				             	</tbody>
-				             </table>	
-				             					
+				             </table>
+					</div>
+					<div class="col-sm-6"></div>
+				</div>
 		  	</div>
 		  </section>
 		    		
