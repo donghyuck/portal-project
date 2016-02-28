@@ -676,7 +676,7 @@
 		</script>
 		
 		<script type="text/x-kendo-template" id="my-assessment-plan-listview-template">
-		<li class="col-sm-6 col-md-6 col-lg-4">
+		<li class="col-sm-6 col-md-6 col-lg-4 m-b-sm">
         	<div class="team-img"> 	
        			<img class="img-responsive" src="/download/image/9451/ncs.png">
        		</div>
