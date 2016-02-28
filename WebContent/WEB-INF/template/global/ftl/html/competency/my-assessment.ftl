@@ -17,7 +17,7 @@
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.min.css"/>',
 			'css!<@spring.url "/styles/jquery.sliding-panel/jquery.sliding-panel.css"/>',	
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
-			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',
+			'css!<@spring.url "/styles/common.ui.pages/assessment.style.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',				
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',		

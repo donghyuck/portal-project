@@ -15,7 +15,7 @@ yepnope([{
 				'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',		
 				
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
-			'css!<@spring.url "/styles/common.ui.pages/assessment/assessment.style.css"/>',		
+			'css!<@spring.url "/styles/common.ui.pages/assessment.style.css"/>',		
 			
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
 			
