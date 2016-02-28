@@ -91,7 +91,7 @@ yepnope([{
 			assessment:source,
 			formattedStartDate : function(){
 				var $this = this;
-				return kendo.toString( 'g' , new Date($this.asssessment.assessmentPlan.startDate) );				
+				return kendo.toString( 'g' , new Date($this.assessment.assessmentPlan.startDate) );				
 			},
 			questionDataBound : function(e){
 				var $this = this;
