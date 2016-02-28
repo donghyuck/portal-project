@@ -171,19 +171,23 @@ yepnope([{
 			kendo.bind(renderTo, observable );	
 			$(document).on("click","[data-action='answer']", function(e){						
 				var btn = $(this) ;
+				var seq = btn.data('seq');
 				var objectId = btn.data('object-id');
 				var objectObjectScore = btn.data('object-score');	
 				var elem = $('form[data-object-id=' + objectId + ']');
-				
+								
 				observable.setQuestionAnswer( objectId, objectObjectScore);				
-				elem.attr('answered', true);								
-				if(elem.next().length == 1){ 						
-					common.ui.scroll.top(elem.next(), -20);				
+				elem.attr('answered', true);			
+									
+				if( observable.unAnsweredCount  > 0 ){
+					$.each( $('form[answered=false]'), function( index, value ){
+						if( value.data('seq') > seq ){
+							common.ui.scroll.top(value, -20);		
+						}
+					});
 				}else{
-					if(observable.unAnsweredCount > 0){
-						 common.ui.scroll.top($('form[answered=false]').first(), -20);
-					}
-				}	
+					common.ui.scroll.top($('form[answered]').last(), 20);				
+				}
 			});
 		}
 		
@@ -478,7 +482,7 @@ yepnope([{
 			# for (var i = 0; i < rating.length ; i++) { #	
 			# var ratingLevel = rating[i] ; #	
 			<li>
-				<input id="#=uid#-rating-#=ratingLevel.ratingLevelId#" name="#=uid#-rating" type="radio" data-action="answer" data-object-id="#=questionId#" data-object-score="#=ratingLevel.score#" />
+				<input id="#=uid#-rating-#=ratingLevel.ratingLevelId#" name="#=uid#-rating" type="radio" data-action="answer" data-seq="#=seq#" data-object-id="#=questionId#" data-object-score="#=ratingLevel.score#" />
 				<label for="#=uid#-rating-#=ratingLevel.ratingLevelId#">#: ratingLevel.title #</label>
 			</li>
 			# } #
