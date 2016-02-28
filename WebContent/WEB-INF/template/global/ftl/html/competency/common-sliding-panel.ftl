@@ -1,9 +1,11 @@
 		<div class="sliding-panel bg-color-darker">
 			<div class="sliding-panel-header">
-				<div id="current-user-profile" class="profile-blog my-profile-img">
+				<div class="profile-blog my-profile-img">
 					<img class="rounded-x" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt="" />
+					<span>방문자</span>
 				</div>	
 				<div class="btn-group">
+					<a href="\#" class="btn btn-xs btn-success btn-flat rounded">로그인</a>
 					<a href="\#" class="btn btn-xs btn-danger btn-flat rounded">로그아웃</a>
 				</div>
 			</div>
