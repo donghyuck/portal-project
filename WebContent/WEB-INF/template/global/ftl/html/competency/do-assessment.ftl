@@ -148,8 +148,8 @@ yepnope([{
 					
 					assessmentQuestion.set('score', answer );	
 					$.each( $this.questionDataSource.view(), function(index, value){
-						if( value.get('score') > 0 ){
-							totalCount= totalCount - 1;
+						if( value.get('questionId') == questionId && value.get('score') > 0 ){
+							totalCount = totalCount - 1;
 						}
 					});						
 					console.log( 'un answered count : ' + totalCount ); 
