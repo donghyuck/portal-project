@@ -180,13 +180,17 @@ yepnope([{
 				elem.attr('answered', true);			
 									
 				if( observable.unAnsweredCount  > 0 ){
-					$.each( $('form[answered=false]'), function( index, value ){
-						var that = $(value);
-						if( that.data('seq') > seq ){
-							common.ui.scroll.top(that, -20);
-							return false;
-						}
-					});
+					if( elem.next().length == 0 ){
+						common.ui.scroll.top($('form[answered]').first(), -20);	
+					}else{
+						$.each( $('form[answered=false]'), function( index, value ){
+							var that = $(value);
+							if( that.data('seq') > seq ){
+								common.ui.scroll.top(that, -20);
+								return false;
+							}
+						});
+					}
 				}else{
 					common.ui.scroll.top($('form[answered]').last(), 20);				
 				}
