@@ -154,10 +154,11 @@ yepnope([{
 						function(index, value){
 							if( value.get('score') == 0 ){
 								$this.set('lastObjectId', value.get('questionId'));	
-								break;
+								return ;
 							}else{
 								totalCount = totalCount - 1;
 							}
+							console.log( value.get('questionId') );
 						}
 					);
 					$this.set('unAnsweredCount', totalCount );
