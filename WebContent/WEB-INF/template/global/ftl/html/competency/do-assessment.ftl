@@ -49,6 +49,7 @@ yepnope([{
 			<#if RequestParameters['id']?? >
 			var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;	
 			var renderTo = $("#my-assessment .assessment-header .ibox");		
+			
 			common.ui.progress(renderTo, true);
 			common.ui.ajax( '<@spring.url "/data/accounts/get.json?output=json"/>' , {
 				success : function(response){
@@ -58,6 +59,7 @@ yepnope([{
 						success : function(response){
 							var assessment = new common.ui.data.competency.Assessment(response);
 							createMyAssessment( assessment );
+							
 						},
 						complete : function(e){
 							common.ui.progress(renderTo, false);						
@@ -362,7 +364,7 @@ yepnope([{
 			  <!-- Promo Content END -->
   		</section>        	
 		<section class="container g-mb-30">
-		  	<div class="book-section g-bg-default rounded-2x no-margin-b">
+		  	<div class="book-section g-bg-default rounded-2x no-margin-b animated fadeIn" data-bind="visible:visible" style="display:none;">
 				<div class="row">
 					<div class="col-sm-6">
 							<table class="table no-margin-b">
