@@ -5,8 +5,8 @@
 					<span data-bind="text:name">방문자</span>
 				</div>	
 				<div class="p-xxs">
-					<a href="\#" class="btn btn-xs btn-success btn-flat rounded" data-bind="visible:anonymous" >로그인</a>
-					<a href="\#" class="btn btn-xs btn-danger btn-flat rounded" data-bind="invisible:anonymous">로그아웃</a>
+					<a href="<@spring.url "/accounts/login.html?url=${springMacroRequestContext.getRequestUri()}"/>" class="btn btn-xs btn-success btn-flat rounded" data-bind="visible:anonymous" >로그인</a>
+					<a href="<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"/> class="btn btn-xs btn-danger btn-flat rounded" data-bind="invisible:anonymous" >로그아웃</a>
 				</div>
 			</div>
 			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
