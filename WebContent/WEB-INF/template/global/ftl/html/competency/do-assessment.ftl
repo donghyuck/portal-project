@@ -391,7 +391,7 @@ yepnope([{
 						<table class="table">
 					    	<thead>
 					           	<tr>
-					               	<th >필요역량</th>
+					               	<th >진단역량</th>
 					               	<th width="150">수준</th>
 					   			</tr>
 					      	</thead>
