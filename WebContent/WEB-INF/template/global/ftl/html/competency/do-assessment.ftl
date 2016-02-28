@@ -178,7 +178,9 @@ yepnope([{
 				if($('form[data-object-id=' + objectId + ']').next().length == 1){ 		
 					common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
 				}else{
-					
+					if(observable.unAnsweredCount > 0){
+					 $('form[answered=false]').first();
+					}
 				}	
 			});
 		}
