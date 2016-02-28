@@ -341,6 +341,12 @@ yepnope([{
 				                    	<td> 직무수준 </td>
 				                    	<td> <span data-bind="text: assessment.jobLevelName"></span> ( <span data-bind="text: assessment.jobLevel"></span>수준 )</td>
 				                   	</tr>
+									<tr>
+										<td>진단기간</td>
+										<td><span data-bind="{ text: assessment.assessmentPlan.formattedStartDate }" class="text-muted"></span> 
+											~ 
+											<span data-bind="{ text: assessment.assessmentPlan.formattedEndDate }" class="text-muted"></span></td>
+									</tr>				                   	
 					                <tr>
 				                    	<td>진단방법 </td>
 				                    	<td> 
@@ -355,7 +361,10 @@ yepnope([{
 				             	</tbody>
 				             </table>
 					</div>
-					<div class="col-sm-6"></div>
+					<div class="col-sm-6">
+					
+					
+					</div>
 				</div>
 		  	</div>
 		  </section>
