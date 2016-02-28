@@ -391,8 +391,8 @@ yepnope([{
 						<table class="table">
 					    	<thead>
 					           	<tr>
-					               	<th width="150">필요역량</th>
-					               	<th>수준</th>
+					               	<th >필요역량</th>
+					               	<th width="150">수준</th>
 					   			</tr>
 					      	</thead>
 							<tbody data-role="listview"
