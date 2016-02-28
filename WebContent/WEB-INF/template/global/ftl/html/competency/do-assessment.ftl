@@ -440,7 +440,7 @@ yepnope([{
 		 		</div>
 	 		</div>
 		</div><!--/end container-->			
-		<div class="m-t-lg animated fadeIn" data-bind="visible: completable" style="display:none;">					
+		<div class="m-t-lg animated slideInUp" data-bind="visible: completable" style="display:none;">					
 			<button type="button" class="btn btn-primary btn-flat btn-outline btn-block btn-xxl" 
 				data-bind="click:saveOrUpdate">진단 완료</button>
 		</div>
