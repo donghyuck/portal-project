@@ -144,7 +144,7 @@ yepnope([{
 				setQuestionAnswer: function( questionId, answer ){
 					var $this = this;
 					var assessmentQuestion = $this.questionDataSource.get(questionId);
-					var totalCount = $this.get'unAnsweredCount')
+					var totalCount = $this.get'unAnsweredCount');
 					
 					assessmentQuestion.set('score', answer );	
 					$.each( $this.questionDataSource.view(), function(index, value){
