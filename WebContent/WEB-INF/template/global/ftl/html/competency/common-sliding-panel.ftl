@@ -4,9 +4,9 @@
 					<img class="rounded-x" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt="" />
 					<span>방문자</span>
 				</div>	
-				<div class="btn-group">
-					<a href="\#" class="btn btn-xs btn-success btn-flat rounded">로그인</a>
-					<a href="\#" class="btn btn-xs btn-danger btn-flat rounded">로그아웃</a>
+				<div class="p-xxs">
+					<a href="\#" class="btn btn-xs btn-success btn-flat rounded" data-bind="visible:anonymous" >로그인</a>
+					<a href="\#" class="btn btn-xs btn-danger btn-flat rounded" data-bind="invisible:anonymous">로그아웃</a>
 				</div>
 			</div>
 			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
