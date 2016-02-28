@@ -391,7 +391,7 @@ yepnope([{
 		<section class="container g-mb-30">
 		  	<div class="book-section g-bg-default rounded-2x no-margin-b animated fadeIn" data-bind="visible:visible" style="display:none;">
 		  	
-		  								<div class="alert alert-danger animated toda no-border rounded" data-bind="visible:warning" style="display:none;">
+		  								<div class="alert alert-danger animated tada no-border rounded" data-bind="visible:warning" style="display:none;">
 								<strong>죄송합니다 !!!  </strong> 선택하신 <span data-bind="text: assessment.jobLevelName"></span>는 아직 진단 문항이 준비되어 있지 않습니다. <br>
 								<hr class="m-sm"/>
 								<a href="<@spring.url "/display/competency/my-assessment.html" />" class="btn btn-info btn-flat btn-outline rounded">이전으로 돌아가기</a>										
