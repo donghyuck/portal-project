@@ -81,7 +81,7 @@ yepnope([{
 	}
 	
 	function formattedDateString( date ){
-		console.log( date typeof Date );
+		console.log( typeof date === "date" );
 	}
 	
 	function createMyAssessment(source){
