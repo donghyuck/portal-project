@@ -319,10 +319,10 @@
 		.modal-content{
 		    border-radius: 6px !important;
 		}
-		
+		/**
 		.team-v1 li:hover>.team-img:after {
 			background: #fff;
-		}
+		}*/
 		.team-v1 li>.team-img {
 		    min-height: 30px;
 		}
@@ -682,8 +682,9 @@
 		
 		<script type="text/x-kendo-template" id="my-assessment-plan-listview-template">
 		<li class="col-sm-6 col-md-6 col-lg-4">
-        	<!--<div class="team-img"> 	
-       		</div>-->
+        	<div class="team-img"> 	
+       			<img class="img-responsive" src="/download/image/9451/ncs.png">
+       		</div>
             <h3>#: assessmentPlan.name#</h3>
             <h4>#= kendo.toString( new Date(assessmentPlan.startDate), "g") # ~ #: kendo.toString( new Date( assessmentPlan.endDate), "g") #</h4>
             <p>#: assessmentPlan.description#</p>            
