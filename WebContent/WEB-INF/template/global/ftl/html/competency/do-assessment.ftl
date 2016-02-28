@@ -137,6 +137,20 @@ yepnope([{
 						common.redirect("<@spring.url "/display/assessment/my-assessment-report.html"/>", {id: renderTo.data("model").assessment.assessmentId}, "POST");
 					}
 				}),
+				setQuestionAnswer: function( questionId, answer ){
+					var $this = this;
+					var assessmentQuestion = $this.questionDataSource.get(questionId);
+					assessmentQuestion.set('score', answer );		
+					$.each(
+						$this.questionDataSource.view(),
+						function(index, value){
+							
+							log.console( value.get('questionId') + "=" + value.get('score') );
+							
+						}
+					);
+					
+				},
 				setSource: function(source){
 					var $this = this;
 					source.copy($this.assessment);	
@@ -149,11 +163,14 @@ yepnope([{
 			$(document).on("click","[data-action='answer']", function(e){						
 				var btn = $(this) ;
 				var objectId = btn.data('object-id');
-				var objectObjectScore = btn.data('object-score');					
-				var assessmentQuestion = observable.questionDataSource.get(objectId);
-				assessmentQuestion.set('score', objectObjectScore);		
-				if($('form[data-object-id=' + objectId + ']').next().length == 1) 		
+				var objectObjectScore = btn.data('object-score');	
+				observable.setQuestionAnswer( objectId, objectObjectScore);
+				
+				if($('form[data-object-id=' + objectId + ']').next().length == 1){ 		
 					common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
+				}else{
+				
+				}	
 			});
 		}
 		
