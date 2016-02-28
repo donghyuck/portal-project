@@ -73,7 +73,7 @@ yepnope([{
 			});	
 			
 			var currentUser = new common.ui.data.User();	
-			kendo.bind( $("#current-user-profile"), currentUser); 	
+			kendo.bind( $(".sliding-panel"), currentUser); 	
 			
 			$(window).on("resize", function() {
 		      kendo.resize($(".chart-wrapper"));
@@ -550,12 +550,6 @@ yepnope([{
 							</a>
 						</div>
 						<!-- ENd Navbar Brand --> 
-						<div class="header-inner-right">
-							<div id="current-user-profile" class="profile-blog" style="line-height: 94px;">
-								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
-							</div>
-						</div>
-												
 					</div>
 				</div>
 			</div>
