@@ -181,9 +181,9 @@ yepnope([{
 									
 				if( observable.unAnsweredCount  > 0 ){
 					$.each( $('form[answered=false]'), function( index, value ){
-						console.log(value);
-						if( value.data('seq') > seq ){
-							common.ui.scroll.top(value, -20);		
+						var that = $(value);
+						if( that.data('seq') > seq ){
+							common.ui.scroll.top(that, -20);		
 						}
 					});
 				}else{
