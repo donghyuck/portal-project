@@ -331,7 +331,7 @@ yepnope([{
 				                <tbody>
 					                <tr>
 				                    	<td> 대상자 </td>
-				                    	<td> <span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span> </td>
+				                    	<td> <span data-bind="{ text: assessment.candidate.name}"></span> </td>
 				                   	</tr>
 					                <tr>
 				                    	<td> 선택직무 </td>
