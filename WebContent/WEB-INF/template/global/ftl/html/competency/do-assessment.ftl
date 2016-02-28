@@ -88,7 +88,11 @@ yepnope([{
 		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
 			visible : false,
-			assessment:source ,
+			assessment:source,
+			formattedStartDate : function(){
+				var $this = this;
+				return kendo.toString( 'g' , new Date($this.asssessment.assessmentPlan.startDate) );				
+			},
 			questionDataBound : function(e){
 				var $this = this;
 				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
@@ -137,10 +141,8 @@ yepnope([{
 			var objectObjectScore = btn.data('object-score');					
 			var assessmentQuestion = observable.questionDataSource.get(objectId);
 			assessmentQuestion.set('score', objectObjectScore);		
-			
 			if($('form[data-object-id=' + objectId + ']').next().length == 1) 		
 				common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
-			
 		});
 		
 	}		
@@ -349,7 +351,7 @@ yepnope([{
 										<td>진단기간</td>
 										<td><span data-bind="{ text: assessment.assessmentPlan.startDate }"></span> 
 											~ 
-											<span data-bind="{ text: new Date( assessment.assessmentPlan.endDate) }" data-format="g"></span></td>
+											<span data-bind="{ text: formattedStartDate }" data-format="g"></span></td>
 									</tr>				                   	
 					                <tr>
 				                    	<td>진단방법 </td>
