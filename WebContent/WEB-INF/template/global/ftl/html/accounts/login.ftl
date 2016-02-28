@@ -12,6 +12,7 @@
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/dark-red.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/page_signin_signup_v4.css"/>',
+			'css!<@spring.url "/styles/hover-effect/pages/hover-min.css"/>',
 			
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',	
@@ -115,7 +116,7 @@
 			common.ui.ajax("<@spring.url "/connect/list.json"/>", {
 				success: function(response){ 
 					var renderTo2 = renderTo.find('.social-login ul');
-					var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"# } #><a href="\\#" class="icon-svg-btn bg-transparent" data-action="connect" data-provider-id="#= provider #"><i class="icon-flat icon-svg icon-svg-md social-color-#= provider.toLowerCase() #"></i></a></li>') , response.media );
+					var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"# } #><a href="\\#" class="icon-svg-btn bg-transparent hvr-pulse-shrink" data-action="connect" data-provider-id="#= provider #"><i class="icon-flat icon-svg icon-svg-md social-color-#= provider.toLowerCase() #"></i></a></li>') , response.media );
 					renderTo2.html( html );							
 					$("a[data-action='connect']").click(function(e){
 						var $this = $(this);	
