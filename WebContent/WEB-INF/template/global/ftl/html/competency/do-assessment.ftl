@@ -160,9 +160,7 @@ yepnope([{
 							}
 						}
 					);
-					
 					$this.set('unAnsweredCount', totalCount );
-					
 					if( totalCount == 0 ){
 						$this.set('completable', true);
 					}
