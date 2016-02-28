@@ -1,4 +1,13 @@
 		<div class="sliding-panel bg-color-darker">
+			<div class="sliding-panel-header">
+				<div id="current-user-profile" class="profile-blog my-profile-img" style="line-height: 94px;">
+					<img class="rounded-x" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt="/>
+
+				</div>	
+									<div class="btn-group">
+						<a href="\#" class="btn btn-xs btn-danger btn-flat">LOGOUT</a>
+					</div>
+			</div>
 			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
 				<#if action.webSite ?? >
 				<#assign onePageMenu = action.getWebSiteMenu("ONEPAGE_COMPETENCY_MENU") />	
