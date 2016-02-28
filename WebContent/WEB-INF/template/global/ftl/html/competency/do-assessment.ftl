@@ -173,12 +173,12 @@ yepnope([{
 				var btn = $(this) ;
 				var objectId = btn.data('object-id');
 				var objectObjectScore = btn.data('object-score');	
-				observable.setQuestionAnswer( objectId, objectObjectScore);
-				
+				observable.setQuestionAnswer( objectId, objectObjectScore);				
+				$('form[data-object-id=' + objectId + ']').attr('answered');				
 				if($('form[data-object-id=' + objectId + ']').next().length == 1){ 		
 					common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
 				}else{
-				
+					
 				}	
 			});
 		}
