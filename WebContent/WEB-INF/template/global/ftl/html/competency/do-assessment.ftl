@@ -331,7 +331,7 @@ yepnope([{
 	</style>
 </#compress>
 </head>
-<body class="">
+<body class="bg-gray">
 	<div class="page-loader"></div>
 	
  	<div id="my-assessment" class="wrapper"> 	
