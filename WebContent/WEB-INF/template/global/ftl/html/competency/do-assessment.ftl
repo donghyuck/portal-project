@@ -174,7 +174,7 @@ yepnope([{
 				var objectId = btn.data('object-id');
 				var objectObjectScore = btn.data('object-score');	
 				observable.setQuestionAnswer( objectId, objectObjectScore);				
-				$('form[data-object-id=' + objectId + ']').attr('answered');				
+				$('form[data-object-id=' + objectId + ']').attr('answered', true);				
 				if($('form[data-object-id=' + objectId + ']').next().length == 1){ 		
 					common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
 				}else{
