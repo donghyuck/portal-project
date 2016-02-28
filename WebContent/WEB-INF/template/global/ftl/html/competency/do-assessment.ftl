@@ -92,6 +92,7 @@ yepnope([{
 			var observable =  common.ui.observable({
 				visible : false,
 				completable : false,
+				unAnsweredCount : 0,
 				lastObjectId : 0,
 				assessment: new common.ui.data.competency.Assessment(),
 				formattedStartDate : function(){
@@ -159,6 +160,9 @@ yepnope([{
 							}
 						}
 					);
+					
+					$this.set('unAnsweredCount', totalCount );
+					
 					if( totalCount == 0 ){
 						$this.set('completable', true);
 					}
