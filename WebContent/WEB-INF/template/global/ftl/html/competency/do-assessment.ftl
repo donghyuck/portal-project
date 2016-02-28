@@ -80,6 +80,10 @@ yepnope([{
 		return '<@spring.url "/images/common/no-avatar.png"  />';
 	}
 	
+	function formattedDateString( date ){
+		console.log( date typeof Date );
+	}
+	
 	function createMyAssessment(source){
 		var renderTo = $('#my-assessment');	
 		var observable =  common.ui.observable({
@@ -345,7 +349,7 @@ yepnope([{
 										<td>진단기간</td>
 										<td><span data-bind="{ text: assessment.assessmentPlan.startDate }"></span> 
 											~ 
-											<span data-bind="{ text: assessment.assessmentPlan.endDate }" data-format="g"></span></td>
+											<span data-bind="{ text: formattedDateString(assessment.assessmentPlan.endDate) }" data-format="g"></span></td>
 									</tr>				                   	
 					                <tr>
 				                    	<td>진단방법 </td>
