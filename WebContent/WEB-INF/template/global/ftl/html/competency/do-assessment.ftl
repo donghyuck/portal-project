@@ -92,6 +92,7 @@ yepnope([{
 			var observable =  common.ui.observable({
 				visible : false,
 				completable : false,
+				lastObjectId : 0,
 				assessment: new common.ui.data.competency.Assessment(),
 				formattedStartDate : function(){
 					var $this = this;
@@ -143,15 +144,24 @@ yepnope([{
 				setQuestionAnswer: function( questionId, answer ){
 					var $this = this;
 					var assessmentQuestion = $this.questionDataSource.get(questionId);
+					var totalCount = $this.questionDataSource.total();
+					var lastObjectId = 0;
+					
 					assessmentQuestion.set('score', answer );		
 					$.each(
 						$this.questionDataSource.view(),
 						function(index, value){
-							
-							console.log( value.get('questionId') + "=" + value.get('score') );
-							
+							if( value.get('score') == 0 ){
+								$this.set('lastObjectId', value.get('questionId'));	
+								break;
+							}else{
+								totalCount = totalCount - 1;
+							}
 						}
 					);
+					if( totalCount == 0 ){
+						$this.set('completable', true);
+					}
 					
 				},
 				setSource: function(source){
