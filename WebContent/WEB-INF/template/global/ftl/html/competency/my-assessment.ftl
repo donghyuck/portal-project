@@ -58,7 +58,7 @@
 				handleHeader();		
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();	
-				kendo.bind( $("#current-user-profile"), currentUser); 		
+				kendo.bind( $(".sliding-panel"), currentUser); 		
 				createMyAssessmentPlanListView();
 				// END SCRIPT 				
 			}
@@ -383,7 +383,8 @@
 							</a>
 						</div>
 						<!-- ENd Navbar Brand --> 
-						<!-- Header Inner Right -->						
+						<!-- Header Inner Right -->		
+						<!--				
 						<div class="header-inner-right">
 							<div id="current-user-profile" class="profile-blog my-profile-img" style="line-height: 94px;">
 								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
@@ -392,7 +393,8 @@
 									<li><a href="<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"/>">로그아웃</a></li>
 								</ul>
 							</div>
-						</div>				
+						</div>
+						-->				
 						<!-- End Header Inner Right -->
 					</div>
 				</div>
