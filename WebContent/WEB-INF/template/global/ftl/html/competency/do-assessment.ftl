@@ -110,6 +110,12 @@ yepnope([{
 					$this.questionDataSource.sync();
 					
 				},
+				competencyDataSource :new kendo.data.DataSource({
+					data : [],
+					schema: {
+                    	model: common.ui.data.competency.JobLevel
+                    }
+                }),
 				questionDataSource : new kendo.data.DataSource({
 					batch: true,
 					transport: { 
@@ -134,6 +140,7 @@ yepnope([{
 				setSource: function(source){
 					var $this = this;
 					source.copy($this.assessment);	
+					$this.competencyDataSource.data( $this.assessment.competencies );	
 					$this.questionDataSource.read();
 				}		
 			});
@@ -376,8 +383,20 @@ yepnope([{
 				             </table>
 					</div>
 					<div class="col-sm-6">
-					
-					
+						<table class="table">
+					    	<thead>
+					           	<tr>
+					               	<th>필요역량</th>
+					               	<th>수준</th>
+					   			</tr>
+					      	</thead>
+							<tbody data-role="listview"
+								class="no-border"
+								data-auto-bind="false"	
+								data-template="my-assessment-competency-template"
+								data-bind="source:competencyDataSource" style="overflow: auto"> 
+							</tbody>		                    
+						</table>	
 					</div>
 				</div>
 		  	</div>
@@ -404,6 +423,17 @@ yepnope([{
 	
 
 		<!-- START TEMPLATE -->	
+		<script type="text/x-kendo-template" id="my-assessment-competency-template">
+		<tr>
+		    <td>    
+		    	#: name #
+		    </td>
+			<td>
+				#: level # 수준	
+			</td>
+		</tr>			        
+		</script>
+				
 		<script type="text/x-kendo-template" id="my-assessment-template">
 		<form class="ac-custom ac-radio ac-fill" data-object-id="#=questionId#" data-seq="#=seq#" >
 			<div class="headline"><h3>#= seq  #.</h3>  #: competencyName# > #: essentialElementName # </div>
