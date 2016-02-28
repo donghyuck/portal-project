@@ -101,7 +101,12 @@
 					var objectId = btn.data('object-id');
 					var item = dataSource.get(objectId);
 					createResultAssessmentModal(item);					
-				});				
+				});			
+				
+				 $(document).on("click","[data-action='redirect']", function(e){		
+				 	var that = $(this);
+				 	common.redirect( that.data('target') , {id: that.data('object-id')}, "POST");	
+				 });	
 			}
 		}
 		
@@ -639,9 +644,9 @@
 			</td>
 			<td>
 				#if (state == 'ASSESSED') {#
-					<a href="/display/0/my-assessment-report.html?id=#=assessmentId#" class="btn btn-flat btn-success btn-sm rounded">결과보기</a>	
+					<button data-action="redirect" data-target="<@spring.url "/display/competency/my-assessment-report.html" />" data-object-id="#=assessmentId#" class="btn btn-flat btn-success btn-sm rounded">결과보기</button>
 				#}else{#
-					<a href="/display/0/do-assessment.html?id=#=assessmentId#" class="btn btn-flat btn-primary btn-sm rounded">진단완료하기</a>				
+					<button data-action="redirect" data-target="<@spring.url "/display/competency/do-assessment.html" />" data-object-id="#=assessmentId#" class="btn btn-flat btn-primary btn-sm rounded">진단완료하기</button>
 				#}#
 			</td>
 		</tr>			
