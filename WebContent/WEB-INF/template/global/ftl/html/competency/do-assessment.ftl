@@ -86,65 +86,73 @@ yepnope([{
 	
 	function createMyAssessment(source){
 		var renderTo = $('#my-assessment');	
-		var observable =  common.ui.observable({
-			visible : false,
-			assessment:source,
-			formattedStartDate : function(){
-				var $this = this;
-				return kendo.toString( 'g' , new Date($this.assessment.assessmentPlan.startDate) );				
-			},
-			questionDataBound : function(e){
-				var $this = this;
-				$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
-			          function() {
-			               $this.set('visible', true);
-			          }          
-			    );
-			},
-			getCandidatePhotoUrl: function(){
-				return '<@spring.url "/download/profile/"  />' + this.assessment.candidate.username + '?width=150&height=150'; 
-			},
-			saveOrUpdate : function(){
-				var $this = this;
-				$this.questionDataSource.sync();
-				
-			},
-			questionDataSource : new kendo.data.DataSource({
-				batch: true,
-				transport: { 
-					update: { url:'<@spring.url "/data/me/competency/assessment/test/update.json?output=json"/>', contentType:'application/json', type:'post' },
-					read: { url:'<@spring.url "/data/me/competency/assessment/test/list.json?output=json"/>', type:'post' },
-					parameterMap: function (options, operation){
-						if (operation !== "read") {
-							return kendo.stringify(options.models);
-						} 
-						return {
-							assessmentId: observable.assessment.assessmentId
-						};
-					}
-				},			
-				schema: {
-					model: common.ui.data.competency.AssessmentQuestion
+		if( !renderTo.data("model") ){		
+			var observable =  common.ui.observable({
+				visible : false,
+				assessment: new common.ui.data.competency.Assessment(),
+				formattedStartDate : function(){
+					var $this = this;
+					return kendo.toString( 'g' , new Date($this.assessment.assessmentPlan.startDate) );				
 				},
-				sync: function(e) {
-					common.redirect("<@spring.url "/display/assessment/do-assessment.html"/>", {id: renderTo.data("model").assessment.assessmentId}, "POST");
-				}
-			})
-		});
-		renderTo.data("model", observable);	
-		kendo.bind(renderTo, observable );	
+				questionDataBound : function(e){
+					var $this = this;
+					$.getScript('<@spring.url "/js/codrops/codrops.svgcheckbx.min.js"/>', 
+				          function() {
+				               $this.set('visible', true);
+				          }          
+				    );
+				},
+				getCandidatePhotoUrl: function(){
+					return '<@spring.url "/download/profile/"  />' + this.assessment.candidate.username + '?width=150&height=150'; 
+				},
+				saveOrUpdate : function(){
+					var $this = this;
+					$this.questionDataSource.sync();
+					
+				},
+				questionDataSource : new kendo.data.DataSource({
+					batch: true,
+					transport: { 
+						update: { url:'<@spring.url "/data/me/competency/assessment/test/update.json?output=json"/>', contentType:'application/json', type:'post' },
+						read: { url:'<@spring.url "/data/me/competency/assessment/test/list.json?output=json"/>', type:'post' },
+						parameterMap: function (options, operation){
+							if (operation !== "read") {
+								return kendo.stringify(options.models);
+							} 
+							return {
+								assessmentId: observable.assessment.assessmentId
+							};
+						}
+					},			
+					schema: {
+						model: common.ui.data.competency.AssessmentQuestion
+					},
+					sync: function(e) {
+						common.redirect("<@spring.url "/display/assessment/do-assessment.html"/>", {id: renderTo.data("model").assessment.assessmentId}, "POST");
+					}
+				}),
+				setSource: function(source){
+					var $this = this;
+					source.copy($this.assessment);	
+					$this.questionDataSource.read();
+				}		
+			});
+			renderTo.data("model", observable);	
+			kendo.bind(renderTo, observable );	
+			$(document).on("click","[data-action='answer']", function(e){						
+				var btn = $(this) ;
+				var objectId = btn.data('object-id');
+				var objectObjectScore = btn.data('object-score');					
+				var assessmentQuestion = observable.questionDataSource.get(objectId);
+				assessmentQuestion.set('score', objectObjectScore);		
+				if($('form[data-object-id=' + objectId + ']').next().length == 1) 		
+					common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
+			});
+		}
 		
-		observable.questionDataSource.read();
-		$(document).on("click","[data-action='answer']", function(e){						
-			var btn = $(this) ;
-			var objectId = btn.data('object-id');
-			var objectObjectScore = btn.data('object-score');					
-			var assessmentQuestion = observable.questionDataSource.get(objectId);
-			assessmentQuestion.set('score', objectObjectScore);		
-			if($('form[data-object-id=' + objectId + ']').next().length == 1) 		
-				common.ui.scroll.top($('form[data-object-id='+ objectId +']').next(), -20);
-		});
-		
+		if( source ){
+			renderTo.data("model").setSource(source);
+		}
 	}		
 	
 	function getRatingLevels(){
