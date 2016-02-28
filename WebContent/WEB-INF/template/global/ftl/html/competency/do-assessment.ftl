@@ -328,15 +328,11 @@ yepnope([{
 				<div class="row">
 					<div class="col-sm-6">
 							<table class="table no-margin-b">
-				            	<thead>
-				                	<tr>
-				                    	<th>대상자</th>
-				                        <th>
-											<span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span>
-										</th>
-				                    </tr>
-				                </thead>
 				                <tbody>
+					                <tr>
+				                    	<td> 대상자 </td>
+				                    	<td> <span data-bind="{ text: assessment.candidate.name, visible: assessment.candidate.nameVisible }"></span> </td>
+				                   	</tr>
 					                <tr>
 				                    	<td> 선택직무 </td>
 				                    	<td> <span data-bind="text: assessment.job.name"></span> </td>
