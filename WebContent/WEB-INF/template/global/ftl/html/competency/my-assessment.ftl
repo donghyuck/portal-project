@@ -236,12 +236,7 @@
 				});		
 				renderTo.data("model", observable);	
 				kendo.bind(renderTo, observable );		
-				
-				
-				$(document).on("click", "[data-action='redirect']", function(e){
-					alert(1);
-				});
-							
+	
 				$(document).on("click","input[type=radio][data-action='select']", function(e){						
 					var radio = $(this) ;			
 					var objectType  = radio.data("object-type");
