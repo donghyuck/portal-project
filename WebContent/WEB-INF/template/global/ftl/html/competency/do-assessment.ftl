@@ -466,7 +466,7 @@ yepnope([{
 		</script>
 				
 		<script type="text/x-kendo-template" id="my-assessment-template">
-		<form class="ac-custom ac-radio ac-fill" data-object-id="#=questionId#" data-seq="#=seq#" >
+		<form class="ac-custom ac-radio ac-fill" data-object-id="#=questionId#" data-seq="#=seq#" answered="false">
 			<div class="headline"><h3>#= seq  #.</h3>  #: competencyName# > #: essentialElementName # </div>
 			<h2>#: question #</h2>
 			<ul>
