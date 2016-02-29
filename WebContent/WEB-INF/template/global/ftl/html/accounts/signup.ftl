@@ -63,7 +63,7 @@
 			$(".container:first").prepend(template(currentUser));			
 		}
 
-		function creatWelcomeBlock(Form){
+		function createWelcomeBlock(Form){
 			var template = kendo.template($("#welcome-template").html());	
 			$(".container:first").prepend(template(Form));			
 		}
