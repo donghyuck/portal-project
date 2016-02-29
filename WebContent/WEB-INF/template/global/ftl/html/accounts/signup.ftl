@@ -180,7 +180,7 @@
 							error:function(xhr){	
 								if( xhr.status == 500 )
 								{
-									$("#signup-status").html($xhr.responseJSON.error.message);									
+									$("#signup-status").html(xhr.responseJSON.error.message);									
 									$("#signup-status").fadeIn();	
 								}else{
 									common.ui.handleAjaxError(xhr);
