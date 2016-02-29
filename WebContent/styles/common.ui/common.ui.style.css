@@ -1721,7 +1721,8 @@ span.back {
 }
 
 /** fix jGrowl */
-.jGrowl .jGrowl-notification .jGrowl-close }
+
+.jGrowl .jGrowl-notification .jGrowl-close {
 	border: 0;
     background: transparent;
 }
