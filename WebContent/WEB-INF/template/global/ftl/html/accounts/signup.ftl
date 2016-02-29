@@ -62,7 +62,13 @@
 			var template = kendo.template($("#alert-template").html());	
 			$(".container:first").prepend(template(currentUser));			
 		}
+
+		function creatWelcomeBlock(Form){
+			var template = kendo.template($("#welcome-template").html());	
+			$(".container:first").prepend(template(Form));			
+		}
 		
+				
 		function prepareSignUp () {	
 			common.ui.data.user( {
 				success : function ( user ) {				
@@ -168,11 +174,14 @@
 									$("#signup-status").html("죄송합니다. 나중에 나중에 아주 나중에 다시 해보세요.");									
 									$("#signup-status").fadeIn();
 								} else {     
+								
+								
 								<#if action.url??>
-								location.href="<@spring.url "/accounts/login?ver=1&url=${action.url}"/>";
+								//location.href="<@spring.url "/accounts/login?ver=1&url=${action.url}"/>";
 								<#else>
-								location.href="<@spring.url "/accounts/login?ver=1"/>";
+								//location.href="<@spring.url "/accounts/login?ver=1"/>";
 								</#if>
+								
 								}
 							},
 							complete: function(jqXHR, textStatus ){					
@@ -935,7 +944,20 @@
 			<a href="/" class="btn btn-info rounded btn-flat btn-lg">메인으로 이동</a><a href="/logout" class="m-l-sm btn btn-danger rounded btn-flat btn-lg">로그아웃</a>
 		</div>
 	</div>
-    </script>		
+    </script>	
+	<script type="text/x-kendo-template" id="welcome-template">
+	<div class="popover pull-right animated zoomIn">
+			<div class="popover-content text-center">		
+			<h2>회원이되신것을 환영합니다.</h2>
+			<p> 더 나은 서비스를 제공할 수 있도록 최선을 다하겠습니다. 즐거운 하루되세요.</p>
+			<#if action.url??>
+				<a href="<@spring.url "/accounts/login?ver=1&url=${action.url}"/>" class="m-l-sm btn btn-success rounded btn-flat btn-lg">로그인</a>
+			<#else>
+				<a href="<@spring.url "/accounts/login?ver=1"/>" class="m-l-sm btn btn-success rounded btn-flat btn-lg">로그인</a>
+			</#if>						
+		</div>
+	</div>
+    </script>    	
 	<script type="text/x-kendo-template" id="alert2-template">
 	<div class="popover pull-right animated bounceInDown">
 			<div class="popover-content text-center">		
