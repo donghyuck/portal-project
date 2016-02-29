@@ -357,12 +357,15 @@
 								console.log("image loaded");						
 							  	masonryEl.masonry({
 							    	itemSelector : '.item'
-							  	});							
-							  	
+							  	});	
 							  	var msnry = masonryEl.data('masonry');	
-							  	msnry.layout();
+							  	
+							  	
 							  	kendo.ui.progress(renderTo, false);
+							  	
 							  	masonryEl.css('visibility', 'visible');
+							  	
+							  	msnry.layout();
 							});
 						}												
 					}
