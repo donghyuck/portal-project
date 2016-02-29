@@ -176,6 +176,19 @@
 							},
 							complete: function(jqXHR, textStatus ){					
 								kendo.ui.progress(renderTo, false);	
+							},
+							error:function(xhr){								
+								var $xhr = xhr;								
+								if(  $xhr.xhr ){
+								console.log("ooo");
+									$xhr = $xhr.xhr;			
+								}	
+								if( $xhr.status == 500 )
+								{
+									alert($xhr.responseJSON.error.message);
+								}else{
+									common.ui.handleAjaxError(xhr);
+								} 
 							}	
 						});	
 					}
