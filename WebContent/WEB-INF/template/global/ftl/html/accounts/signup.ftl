@@ -153,6 +153,10 @@
 				renderTo.find("form").submit(function(e) {		
 					e.preventDefault();				
 					if( validator.validate() ){
+						
+						if( $("#signup-status").is(":visible") ){
+							$("#signup-status").fadeOut();
+						}
 						kendo.ui.progress(renderTo, true);	
 						common.ui.ajax(
 						"<@spring.url "/data/accounts/register.json?output=json"/>", 
@@ -160,16 +164,15 @@
 							data: common.ui.stringify( observable.form ),
 							contentType : "application/json",
 							success : function( response ) {   
-								console.log( common.ui.stringify(response) );
 								if( response.error ){ 
-																		
-								} else {    							
-									<#if action.url??>
-									location.href="<@spring.url "/accounts/login?ver=1&url=${action.url}"/>";
-									<#else>
-									location.href="<@spring.url "/accounts/login?ver=1"/>";
-									</#if>
-								} 	
+									
+								} else {     
+								<#if action.url??>
+								location.href="<@spring.url "/accounts/login?ver=1&url=${action.url}"/>";
+								<#else>
+								location.href="<@spring.url "/accounts/login?ver=1"/>";
+								</#if>
+								}
 							},
 							complete: function(jqXHR, textStatus ){					
 								kendo.ui.progress(renderTo, false);	
@@ -177,8 +180,8 @@
 							error:function(xhr){	
 								if( xhr.status == 500 )
 								{
-									alert($xhr.responseJSON.error.message);
-									
+									$("#signup-status").html($xhr.responseJSON.error.message);									
+									$("#signup-status").fadeIn();	
 								}else{
 									common.ui.handleAjaxError(xhr);
 								} 
