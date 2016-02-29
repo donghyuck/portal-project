@@ -64,8 +64,14 @@
 		}
 
 		function createWelcomeBlock(Form){
-			var template = kendo.template($("#welcome-template").html());	
-			$(".container:first").prepend(template(Form));			
+			var renderTo = $("#signup");		
+			renderTo.fadeOut({
+				done : function(){
+					var template = kendo.template($("#welcome-template").html());	
+					$(".container:first").prepend(template(Form));				
+				}
+			});
+						
 		}
 		
 				
