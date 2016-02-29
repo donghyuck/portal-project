@@ -8,8 +8,7 @@
                  architecture.ee.web.util.ServletUtils,
                  architecture.ee.web.util.ParamUtils" %><%
                  
-	//String formatString = ParamUtils.getParameter(request, "output", "html");
-	OutputFormat format = ServletUtils.getOutputFormat(request, response);// OutputFormat.stingToOutputFormat(formatString);	
+	OutputFormat format = ServletUtils.getOutputFormat(request, response);
 	Throwable ex = exception;	
 	if( ex == null ){
 		// 스트럿츠1 오류 처리
@@ -30,14 +29,20 @@
 	String exceptionMessage   = "";
 		
 	if( ex != null ){		
+
+		if( ex instanceof org.springframework.web.util.NestedServletException && ex.getCause() != null ){
+			ex = ((org.springframework.web.util.NestedServletException)ex).getCause();			
+		}
+		
 		if( ex  instanceof Codeable ){
 			errorCode = ((Codeable)	ex).getErrorCode();				
 		}
+		
 		exceptionClassName =  ex.getClass().getName();
 		exceptionMessage = ex.getMessage() ;
 		
-		if( ex.getCause() != null && ex.getCause() instanceof UnAuthorizedException  ){
-			exceptionClassName = ex.getCause().getClass().getName();
+		if( ex instanceof UnAuthorizedException ){ /*  || ( ex.getCause() != null && ex.getCause() instanceof UnAuthorizedException ) ){ */
+			//exceptionClassName = ex.getCause().getClass().getName();
 			exceptionMessage = "요청하신 작업에 대한 권한이 없습니다.";
 			response.setStatus(403);
 		} 
