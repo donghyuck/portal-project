@@ -163,6 +163,7 @@
 							data: common.ui.stringify( observable.form ),
 							contentType : "application/json",
 							success : function( response ) {   
+								console.log( common.ui.stringify(response) );
 								if( response.error ){ 
 																		
 								} else {    							
