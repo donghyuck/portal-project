@@ -158,7 +158,7 @@
 					if( validator.validate() ){
 						kendo.ui.progress(renderTo, true);	
 						common.ui.ajax(
-						"<@spring.url "/data/accounts/register.json"/>", 
+						"<@spring.url "/data/accounts/register.json?output=json"/>", 
 						{
 							data: common.ui.stringify( observable.form ),
 							contentType : "application/json",
