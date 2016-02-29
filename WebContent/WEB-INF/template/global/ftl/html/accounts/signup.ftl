@@ -165,7 +165,8 @@
 							contentType : "application/json",
 							success : function( response ) {   
 								if( response.error ){ 
-									
+									$("#signup-status").html("죄송합니다. 나중에 나중에 아주 나중에 다시 해보세요.");									
+									$("#signup-status").fadeIn();
 								} else {     
 								<#if action.url??>
 								location.href="<@spring.url "/accounts/login?ver=1&url=${action.url}"/>";
