@@ -351,8 +351,10 @@
 						if(	isMasonryLayout(observable.page) ){
 							console.log('masonry layout.');
 							var masonryEl = renderTo.find("[data-image-layout=masonry]");
-							kendo.ui.progress(renderTo, true);							
-							masonryEl.imagesLoaded( function(){							
+							kendo.ui.progress(renderTo, true);		
+							console.log("check image loaded");					
+							masonryEl.imagesLoaded( function(){		
+								console.log("image loaded");						
 							  	masonryEl.masonry({
 							    	itemSelector : '.item'
 							  	});							
