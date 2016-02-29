@@ -96,10 +96,8 @@
 					msnry.prepended( elem );
 				});
 				*/
-				
 				renderTo.prepend(elem);
-				msnry.prepended( elem );				
-				
+				msnry.prepended( elem );	
 				msnry.layout();
 			});
 		}		
@@ -255,6 +253,7 @@
 						change: function(e) {
 							var data = this.data();
 							var $btn = $( "button[data-action=more]");
+							
 							var template = kendo.template($('#my-page-listview-item-template').html());		
 							var elem = $(kendo.render(template, data));							
 							elem.imagesLoaded(function(){
@@ -272,6 +271,7 @@
 				});
 				
 				dataSource.fetch();
+				
 				$( "button[data-action=more]").click(function(){
 					var $btn = $(this).button('loading')
 					var page = dataSource.page();
@@ -351,11 +351,14 @@
 						if(	isMasonryLayout(observable.page) ){
 							console.log('masonry layout.');
 							var masonryEl = renderTo.find("[data-image-layout=masonry]");
-							kendo.ui.progress(renderTo, true);
-							masonryEl.imagesLoaded( function(){
+							kendo.ui.progress(renderTo, true);							
+							masonryEl.imagesLoaded( function(){							
 							  	masonryEl.masonry({
 							    	itemSelector : '.item'
-							  	});
+							  	});							
+							  	
+							  	var msnry = masonryEl.data('masonry');	
+							  	msnry.layout();
 							  	kendo.ui.progress(renderTo, false);
 							  	masonryEl.css('visibility', 'visible');
 							});
