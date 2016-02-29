@@ -64,7 +64,7 @@
 		}
 
 		function createWelcomeBlock(Form){
-			var renderTo = $("#signup");		
+			var renderTo = $(".form-block");		
 			renderTo.fadeOut({
 				done : function(){
 					var template = kendo.template($("#welcome-template").html());	
@@ -180,14 +180,12 @@
 									$("#signup-status").html("죄송합니다. 나중에 나중에 아주 나중에 다시 해보세요.");									
 									$("#signup-status").fadeIn();
 								} else {     
-								
-								
+								createWelcomeBlock(observable.form);								
 								<#if action.url??>
 								//location.href="<@spring.url "/accounts/login?ver=1&url=${action.url}"/>";
 								<#else>
 								//location.href="<@spring.url "/accounts/login?ver=1"/>";
-								</#if>
-								
+								</#if>								
 								}
 							},
 							complete: function(jqXHR, textStatus ){					
