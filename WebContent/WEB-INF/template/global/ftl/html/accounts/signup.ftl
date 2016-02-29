@@ -130,9 +130,6 @@
 					form: new SignupForm(),
 					register: function(e){
 						var btn = $(e.target);
-						
-						console.log( btn.html() );
-						
 					} 
 				});
 				
@@ -177,22 +174,18 @@
 							complete: function(jqXHR, textStatus ){					
 								kendo.ui.progress(renderTo, false);	
 							},
-							error:function(xhr){								
-								var $xhr = xhr;								
-								if(  $xhr.xhr ){
-								console.log("ooo");
-									$xhr = $xhr.xhr;			
-								}	
-								if( $xhr.status == 500 )
+							error:function(xhr){	
+								if( xhr.status == 500 )
 								{
 									alert($xhr.responseJSON.error.message);
+									
 								}else{
 									common.ui.handleAjaxError(xhr);
 								} 
 							}	
 						});	
 					}
-					console.log( common.ui.stringify( observable.form ) ) ;
+					//console.log( common.ui.stringify( observable.form ) ) ;
 				});	
 				kendo.bind(renderTo, observable);
 				renderTo.data("model", observable );
@@ -656,7 +649,9 @@
 							<div class="heading heading-v4 margin-top-20">
                         		<h6>혹은 직접 입력하여 주세요.</h6>
                     		</div>
-		
+							
+							<div id="signup-status" class="alert alert-danger rounded-2x no-border" style="display:none;"></div>
+							
 							<div class="input-group margin-bottom-10">
 								<span class="input-group-addon rounded-left"><i class="icon-pencil color-green"></i></span>
 								<input name="name" type="text" class="form-control rounded-right" placeholder="이름"  data-bind="value: form.name" required data-required-msg="이름을 입력하여 주십시오.">
