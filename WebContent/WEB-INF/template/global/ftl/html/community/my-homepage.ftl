@@ -359,12 +359,8 @@
 							    	itemSelector : '.item'
 							  	});	
 							  	var msnry = masonryEl.data('masonry');	
-							  	
-							  	
 							  	kendo.ui.progress(renderTo, false);
-							  	
-							  	masonryEl.css('visibility', 'visible');
-							  	
+							  	masonryEl.css('visibility', 'visible');							  	
 							  	msnry.layout();
 							});
 						}												
@@ -392,8 +388,8 @@
 					}
 				);
 			}else if ( typeof source == 'object' ){
-				renderTo.data("model").setPage(source);
-				renderTo.modal('show');	
+				renderTo.data("model").setPage(source);		
+				renderTo.modal('show');			
 			}
 		}
 		
