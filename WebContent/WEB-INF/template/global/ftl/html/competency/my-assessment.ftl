@@ -235,8 +235,7 @@
 					}
 				});		
 				renderTo.data("model", observable);	
-				kendo.bind(renderTo, observable );		
-	
+				kendo.bind(renderTo, observable );			
 				$(document).on("click","input[type=radio][data-action='select']", function(e){						
 					var radio = $(this) ;			
 					var objectType  = radio.data("object-type");
@@ -298,8 +297,7 @@
 				event.preventDefault();
 			});
 	
-			var $scrollspy = $('body').scrollspy({target: '.one-page-nav-scrolling', offset: $offset+2});
-	
+			var $scrollspy = $('body').scrollspy({target: '.one-page-nav-scrolling', offset: $offset+2});	
 			// Collapse Navbar When It's Clickicked
 			$(window).scroll(function() {
 				$('.navbar-collapse.in').collapse('hide');
@@ -426,7 +424,14 @@
 			</div>
 			<!-- ./END HEADER --> 
 			<!-- START MAIN CONTENT -->
-			
+			<div class="call-action-v2 arrow-up">
+				<div class="container">
+					<h2>Get Unify Template!</h2>
+					<p>All live demo pages are included in the download package with Unify Documentation</p>
+					<a target="_blank" href="https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697" class="btn-u">Purchase Now</a>
+				</div>
+			</div>
+						
 			<#if action.user.anonymous >		
 			<div class="call-action-v1 bg-color-dark margin-bottom-40">
 		        <div class="container">
