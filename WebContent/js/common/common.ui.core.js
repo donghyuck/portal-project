@@ -344,7 +344,8 @@
 			lightbox: false,
 			spmenu: false,
 			morphing: false,
-			dialog:false
+			dialog:false,
+			wow:false
 		},
 		wallpaper : {
 			slideshow : true,
@@ -506,6 +507,9 @@
 					var target ,
 					$this = $(this);					
 				});
+			}
+			if(features.wow){
+				new WOW().init();
 			}
 		} 		
 	});
