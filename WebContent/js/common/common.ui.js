@@ -444,6 +444,7 @@
 				common.ui.lightbox();	
 			}	
 			if( features.wow ){
+				console.log("wow enabled.");
 				common.ui.wow();
 			}
 		} 
