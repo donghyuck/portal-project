@@ -401,7 +401,7 @@
 			</div>
 			<!--=== End Header v6 ===--> 
 			<!-- Promo Block -->
-			<div class="promo-bg-img-v2 fullheight promo-bg-fixed" style="height:350px;">
+			<div class="promo-bg-img-v2 fullheight promo-bg-fixed arrow-up" style="height:350px;">
 				<div class="container valign__middle text-center" data-start="opacity: 1;" data-500="opacity: 0;">
 					<div class="margin-bottom-20">
 					</div>	
