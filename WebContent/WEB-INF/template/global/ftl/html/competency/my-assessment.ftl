@@ -404,8 +404,8 @@
 			<!-- Promo Block -->
 			<div class="promo-bg-img-v2 fullheight promo-bg-fixed arrow-up" style="height:350px;">
 				<div class="container valign__middle text-center" data-start="opacity: 1;" data-500="opacity: 0;">
-					<div class="margin-bottom-40"></div>	
-					<span class="promo-text-v1 color-light margin-bottom-10 flipInX wow" data-wow-duration="1.5s">
+					<div class="margin-bottom-90"></div>	
+					<span class="promo-text-v2 color-light margin-bottom-10 wow flipInX  data-wow-duration="1.5s">
 						역량진단센터
 					</span>	
 				</div>
