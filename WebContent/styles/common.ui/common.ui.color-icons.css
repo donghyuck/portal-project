@@ -314,8 +314,8 @@ i.icon-svg {
 .icon-svg.user-color-worker {
 	background-image: url("/images/common/icons/user/color/Worker.svg");
 }
-.icon-svg.user-color-person-in-a-mirror.svg {
-	background-image: url("/images/common/icons/user/color/PersonInAMirror.svg.svg");
+.icon-svg.user-color-person-in-a-mirror {
+	background-image: url("/images/common/icons/user/color/PersonInAMirror.svg");
 }
 
 /* Sports Color Icons 
