@@ -681,6 +681,8 @@
         	<!--<div class="team-img"> 	
        			<img class="img-responsive" src="/download/image/9451/ncs.png">
        		</div>-->
+       		<i class="icon-flat icon-svg user-color-person-in-a-mirror"></i>
+       		
             <h3>#: assessmentPlan.name#</h3>
             <h4>#= kendo.toString( new Date(assessmentPlan.startDate), "g") # ~ #: kendo.toString( new Date( assessmentPlan.endDate), "g") #</h4>
             <p>#: assessmentPlan.description#</p>            
