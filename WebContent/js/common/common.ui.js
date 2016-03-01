@@ -416,9 +416,7 @@
 				common.ui.landing();
 			}
 			
-			if( features.wow ){
-				common.ui.wow();
-			}
+
 			
 			if(features.spmenu){				
 				$(document).on("click","[data-toggle='spmenu']", function(e){
@@ -445,6 +443,9 @@
 			if(features.lightbox){				
 				common.ui.lightbox();	
 			}	
+			if( features.wow ){
+				common.ui.wow();
+			}
 		} 
 	})
 		/*
