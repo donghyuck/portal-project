@@ -56,6 +56,10 @@ i.icon-svg {
 
 /* Basic Color Icons 
 ------------------------------------*/
+.icon-svg.basic-color-microphone2 {
+	background-image: url("/images/common/icons/basic/color/Microphone2.svg");
+}
+
 .icon-svg.basic-color-home {
 	background-image: url("/images/common/icons/basic/color/Home.svg");
 }
