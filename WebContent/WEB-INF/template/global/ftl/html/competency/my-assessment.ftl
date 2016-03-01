@@ -425,7 +425,7 @@
 			</div>
 			<!-- ./END HEADER --> 
 			<!-- START MAIN CONTENT -->
-			<div class="call-action-v2 p-sm bg-white arrow-up">
+			<div class="call-action-v2 p-md bg-white arrow-up">
 				<div class="container">
 					<h2 class="animated fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="1s">역량진단은 왜 중요할까요?</h2>
 					<div class="animated fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="1s">
