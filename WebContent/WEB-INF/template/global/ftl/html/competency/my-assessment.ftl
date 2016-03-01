@@ -678,9 +678,9 @@
 		
 		<script type="text/x-kendo-template" id="my-assessment-plan-listview-template">
 		<li class="col-sm-6 col-md-6 col-lg-4 m-b-sm">
-        	<div class="team-img"> 	
+        	<!--<div class="team-img"> 	
        			<img class="img-responsive" src="/download/image/9451/ncs.png">
-       		</div>
+       		</div>-->
             <h3>#: assessmentPlan.name#</h3>
             <h4>#= kendo.toString( new Date(assessmentPlan.startDate), "g") # ~ #: kendo.toString( new Date( assessmentPlan.endDate), "g") #</h4>
             <p>#: assessmentPlan.description#</p>            
