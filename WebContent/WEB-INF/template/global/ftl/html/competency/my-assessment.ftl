@@ -414,10 +414,10 @@
 			<!-- START MAIN CONTENT -->
 			<div class="call-action-v2 p-md bg-white arrow-up">
 				<div class="container">
-					<div class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".5s">
+					<div class="wow fadeInDown" data-wow-duration="1.5s" data-wow-delay=".5s" >
 						<i class="icon-flat icon-svg basic-color-microphone2"></i>
-						<h2>역량진단은 왜 중요할까요?</h2>
-					</div>					
+					</div>	
+					<h2 class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".5s">역량진단은 왜 중요할까요?</h2>
 					<div class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".5s">
 						<p>모든 직업은 특정 지식과 기술들이 요구됩니다. 그리고 이것은 작업의 종류와 복잡성에 따라 달라집니다.</p>
 						<p>	
