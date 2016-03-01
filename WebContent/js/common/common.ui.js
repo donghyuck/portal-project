@@ -367,7 +367,8 @@
 				backstretch : false,
 				lightbox: false,
 				spmenu: false,
-				morphing: false
+				morphing: false,
+				wowo:false
 			},
 			worklist: []
 		},
@@ -413,6 +414,10 @@
 			
 			if(features.landing){				
 				common.ui.landing();
+			}
+			
+			if( features.wow ){
+				common.ui.wow();
 			}
 			
 			if(features.spmenu){				
@@ -535,6 +540,10 @@
 		return renderTo;		
 	}
 	
+	common.ui.wow = function(){
+		new WOW().init();		
+	}
+
 	common.ui.animateFadeOut = function (renderTo, always){		  
 		common.ui.animateFade(renderTo, 'out', always);
 	}
@@ -645,21 +654,6 @@
 			}
 		});
 	};
-
-	/*
-	common.ui.on(selector, handlers ){
-		if (typeof selector === 'string')
-			selector = $(selector);				
-		if( defined(handlers)){
-			if (options.handlers instanceof Array){
-				
-				
-			}else{
-								
-			}
-		}		
-	}
-	*/
 
 	common.ui.notification = function(options) {
 		var renderToString = "my-notifications";
