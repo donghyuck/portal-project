@@ -424,21 +424,19 @@
 			</div>
 			<!-- ./END HEADER --> 
 			<!-- START MAIN CONTENT -->
-			<div class="call-action-v2 arrow-up">
+			<div class="call-action-v2 p-sm bg-white arrow-up">
 				<div class="container">
-					<h2>역량진단센터</h2>
+					<h2>역량진단은 왜 중요할까요?</h2>
 					<p>모든 직업은 특정 지식과 기술들이 요구됩니다. 그리고 이것은 작업의 종류와 복잡성에 따라 달라집니다.</p>
 					<p>	
-					<span class="text-border text-border-blue">역량진단</span>은 단순하게 학습을 통하여 배우는 것이 나은지 경험을 통하여 배우는 것이 더 나은가를 아는 것 이상으로,  <br/>
+					역량진단은 단순하게 학습을 통하여 배우는 것이 나은지 경험을 통하여 배우는 것이 더 나은가를 아는 것 이상으로,
 					수행하기 위하여 요구되는 지식과 기술들을 개발하기 위한 여러가지 방법을 제공합니다.   
 					</p>
 					<p>	
 					또한 미래 또는 현재 직무를 수행하기 위하여 무엇을 어떻게 개발해야 하는 가를 알려주기 때문에 성공적인 자기개발계획에 중요한 핵심 요소입니다. 		
 					</p>
-					<a target="_blank" href="https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697" class="btn-u">Purchase Now</a>
 				</div>
-			</div>
-						
+			</div>						
 			<#if action.user.anonymous >		
 			<div class="call-action-v1 bg-color-dark margin-bottom-40">
 		        <div class="container">
