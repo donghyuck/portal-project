@@ -414,7 +414,7 @@
 			<!-- START MAIN CONTENT -->
 			<div class="call-action-v2 p-md bg-white arrow-up">
 				<div class="container">
-					<div class="wow fadeInDown" data-wow-duration="1.5s" data-wow-delay=".5s" >
+					<div class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".5s" >
 						<i class="icon-flat icon-svg basic-color-microphone2"></i>
 					</div>	
 					<h2 class="wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".5s">역량진단은 왜 중요할까요?</h2>
