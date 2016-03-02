@@ -406,7 +406,7 @@
 				<div class="container valign__middle text-center">
 					<div class="margin-bottom-90"></div>	
 					<div class="wow zoomIn" data-wow-delay="5s" style="visibility: hidden;">
-						<span class="promo-text-v2 color-light margin-bottom-10" data-wow-delay="1s">
+						<span class="promo-text-v2 color-light margin-bottom-10" >
 							역량진단센터
 						</span>
 					</div>	
