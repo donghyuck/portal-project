@@ -83,49 +83,6 @@
 			background-position: center center;			
 		}		 
 		
-		.modal-content{
-		    border-radius: 6px !important;
-		}
-		
-		.team-v1 li:hover>.team-img:after {
-			background: #fff;
-		}
-		.team-v1 li>.team-img {
-		    min-height: 30px;
-		}
-		.team-v1 li>.team-img ul{
-			text-align:right;
-		} 
-		
-		.modal-body .k-listview td{
-			vertical-align: middle;
-		}
-		
-		.modal-body .k-listview td .k-radio-label{
-			font-weight: 100;
-		    margin-bottom: 0;
-		    font-size : 1.2em;
-		    line-height: 1.3em;
-		}
-		
-		ul.list-unstyled li .k-radio-label{
-			font-weight: 100;
-		    margin-bottom: 0;
-		    line-height: 1.3em;
-		    font-size : 1.2em;
-		    padding-bottom: 1em;
-		}		
-		
-		.sky-form .radio input+i:after {
-		    top: 6px;
-		    left: 6px;
-		    background-color: #999;
-		}		
-		
-		.sky-form header i.icon-svg {
-		    position: absolute;
-    		left: 12px;
-    	}
 		</style>   	
 		</#compress>
 	</head>
