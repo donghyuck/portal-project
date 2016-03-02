@@ -135,9 +135,14 @@
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />				
 			<div class="promo-bg-img-v2 job-img fullheight promo-bg-fixed bg-dark" style="height:350px;">
-				<div class="job-banner">
-					<#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if>
-					<h2>관심있는 직무에 대하여 알아보세요. 그리고 어떤 회사들이 있는지 살펴보세요.</h2>
+				<div class="container valign__middle text-center">
+					<div class="margin-bottom-100"></div>	
+					<div class="wow fadeIn" data-wow-delay=".3s" data-wow-duration="1.5s" style="visibility: hidden;">
+						<span class="promo-text-v2 color-light margin-bottom-10" >
+							<#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }
+						</span>
+						<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					</div>	
 				</div>
 				<div class="job-img-inputs">
 					<div class="container">
@@ -163,9 +168,6 @@
 			<!--
 				<div class="container valign__middle text-center">
 					<div class="margin-bottom-100"></div>	
-					
-
-										
 					<div class="wow fadeIn" data-wow-delay=".3s" data-wow-duration="1.5s" style="visibility: hidden;">
 						<span class="promo-text-v2 color-light margin-bottom-10" >
 							<#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }
