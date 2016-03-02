@@ -56,6 +56,7 @@ i.icon-svg {
 
 /* Basic Color Icons 
 ------------------------------------*/
+
 .icon-svg.basic-color-microphone2 {
 	background-image: url("/images/common/icons/basic/color/Microphone2.svg");
 }
@@ -237,6 +238,11 @@ i.icon-svg {
 
 /* Business Color Icons 
 ------------------------------------*/
+.icon-svg.business-color-permanent-job {
+	background-image: url("/images/common/icons/business/color/PermanentJob.svg");
+}
+
+
 .icon-svg.business-color-true-false {
 	background-image:
 		url("/images/common/icons/business/color/TrueFalse.svg");
