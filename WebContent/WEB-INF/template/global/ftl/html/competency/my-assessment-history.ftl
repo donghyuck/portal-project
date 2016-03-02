@@ -133,6 +133,9 @@
 				</div>
 			</div>
 			<!-- End Navbar -->	
+			</div>
+			<!--=== End Header v6 ===--> 
+			
 			<!-- Promo Block -->
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />				
