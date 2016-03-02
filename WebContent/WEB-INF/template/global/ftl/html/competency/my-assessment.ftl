@@ -405,7 +405,7 @@
 			<div class="promo-bg-img-v2 fullheight promo-bg-fixed arrow-up bg-dark" style="height:350px;">
 				<div class="container valign__middle text-center">
 					<div class="margin-bottom-90"></div>	
-					<span class="promo-text-v2 color-light margin-bottom-10 wow slideInDown" data-wow-delay="1.5s">
+					<span class="promo-text-v2 color-light margin-bottom-10 wow slideInDown" data-wow-delay="5s">
 						역량진단센터
 					</span>	
 				</div>
