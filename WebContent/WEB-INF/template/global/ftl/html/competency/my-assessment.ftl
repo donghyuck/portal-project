@@ -354,6 +354,14 @@
 		    position: absolute;
     		left: 12px;
     	}
+    	
+    	.call-action-v2 p {
+    		font-size : 1.8em;
+    	}
+    	
+    	.call-action-v2 h2 {
+    		font-size : 2.5em;
+    	}
 		</style>   	
 		</#compress>
 	</head>
