@@ -97,7 +97,7 @@
 		</style>   	
 		</#compress>
 	</head>
-	<body class="header-fixed sliding-panel-ini sliding-panel-flag-right bg-gray">
+	<body class="header-fixed sliding-panel-ini sliding-panel-flag-right">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!--=== Header v6 ===-->
