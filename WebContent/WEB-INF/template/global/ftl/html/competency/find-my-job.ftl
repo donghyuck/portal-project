@@ -165,21 +165,44 @@
 						</div>
 					</div>
 				</div>								
-			<!--
-				<div class="container valign__middle text-center">
-					<div class="margin-bottom-100"></div>	
-					<div class="wow fadeIn" data-wow-delay=".3s" data-wow-duration="1.5s" style="visibility: hidden;">
-						<span class="promo-text-v2 color-light margin-bottom-10" >
-							<#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }
-						</span>
-						<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
-					</div>	
-				</div>
-			-->	
 			</div>
 			</#if>				
 			<!-- ./END HEADER -->			
-			
+			<div class="full-w-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-4">
+							<div class="info-blocks">
+								<i class="fa fa-bell-o icon-info-blocks"></i>
+								<div class="info-blocks-in">
+									<h3>Accounting</h3>
+									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+								</div>
+							</div>
+						</div>
+	
+						<div class="col-md-4 col-sm-4">
+							<div class="info-blocks">
+								<i class="fa fa-laptop icon-info-blocks"></i>
+								<div class="info-blocks-in">
+									<h3>10,000+ jobs</h3>
+									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+								</div>
+							</div>
+						</div>
+	
+						<div class="col-md-4 col-sm-4">
+							<div class="info-blocks">
+								<i class="fa fa-bullhorn icon-info-blocks"></i>
+								<div class="info-blocks-in">
+									<h3>Web Design</h3>
+									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
 		        <div class="headline"><h2>Job Categories</h2></div>
