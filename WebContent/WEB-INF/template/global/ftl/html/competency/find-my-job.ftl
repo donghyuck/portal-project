@@ -101,7 +101,7 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!--=== Header v6 ===-->
-			<div class="header-v6 header-border-bottom header-dark-dropdown header-sticky">
+			<div class="header-v6 header-dark-dropdown header-sticky">
 			<!-- Navbar -->
 			<div class="navbar mega-menu" role="navigation">
 				<div class="container">
