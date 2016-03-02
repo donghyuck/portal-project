@@ -405,7 +405,7 @@
 			<div class="promo-bg-img-v2 fullheight promo-bg-fixed arrow-up bg-dark" style="height:350px;">
 				<div class="container valign__middle text-center">
 					<div class="margin-bottom-90"></div>	
-					<div class="wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1.5s" style="visibility: hidden;">
+					<div class="wow fadeIn" data-wow-delay=".3s" data-wow-duration="1.5s" style="visibility: hidden;">
 						<span class="promo-text-v2 color-light margin-bottom-10" >
 							역량진단센터
 						</span>
