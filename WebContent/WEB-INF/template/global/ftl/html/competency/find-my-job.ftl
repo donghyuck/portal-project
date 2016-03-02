@@ -97,7 +97,7 @@
 		</style>   	
 		</#compress>
 	</head>
-	<body class="header-fixed promo-padding-top sliding-panel-ini sliding-panel-flag-right bg-gray">
+	<body class="header-fixed sliding-panel-ini sliding-panel-flag-right bg-gray">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!--=== Header v6 ===-->
@@ -134,7 +134,7 @@
 			<!-- Promo Block -->
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />				
-			<div class="promo-bg-img-v2 fullheight promo-bg-fixed arrow-up bg-dark" style="height:350px;">
+			<div class="job-img margin-bottom-30 fullheight  bg-dark" style="height:350px;">
 				<div class="container valign__middle text-center">
 					<div class="margin-bottom-100"></div>	
 					
