@@ -89,10 +89,14 @@
 		.promo-bg-fixed p {
 			color:#f5f5f5;
 		}
+		
+		.arrow-up:after {
+			border-bottom: 20px solid #f5f5f5;
+		}
 		</style>   	
 		</#compress>
 	</head>
-	<body class="header-fixed promo-padding-top sliding-panel-ini sliding-panel-flag-right">
+	<body class="header-fixed promo-padding-top sliding-panel-ini sliding-panel-flag-right bg-gray">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!--=== Header v6 ===-->
@@ -117,17 +121,7 @@
 						</div>
 						<!-- ENd Navbar Brand --> 
 						<!-- Header Inner Right -->		
-						<!--				
-						<div class="header-inner-right">
-							<div id="current-user-profile" class="profile-blog my-profile-img" style="line-height: 94px;">
-								<img class="rounded-x" src="<@spring.url "/images/common/anonymous.png"/>" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt=" "="">
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="#"><i class="fa fa-arrows-alt"></i> Fullscreen</a></li>
-									<li><a href="<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"/>">로그아웃</a></li>
-								</ul>
-							</div>
-						</div>
-						-->				
+		
 						<!-- End Header Inner Right -->
 					</div>
 				</div>
