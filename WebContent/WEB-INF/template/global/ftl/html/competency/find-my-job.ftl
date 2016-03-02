@@ -135,12 +135,15 @@
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />				
 			<div class="promo-bg-img-v2 job-img fullheight promo-bg-fixed bg-dark" style="height:350px;">
-				<div class="container valign__middle text-center">
-					<div class="margin-bottom-100"></div>	
-					
 					<div class="job-banner">
 						<h2>Discover the Companies You would love to Work for ...</h2>
 					</div>
+								
+			<!--
+				<div class="container valign__middle text-center">
+					<div class="margin-bottom-100"></div>	
+					
+
 										
 					<div class="wow fadeIn" data-wow-delay=".3s" data-wow-duration="1.5s" style="visibility: hidden;">
 						<span class="promo-text-v2 color-light margin-bottom-10" >
@@ -149,6 +152,7 @@
 						<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					</div>	
 				</div>
+			-->	
 			</div>
 			</#if>				
 			<!-- ./END HEADER -->			
