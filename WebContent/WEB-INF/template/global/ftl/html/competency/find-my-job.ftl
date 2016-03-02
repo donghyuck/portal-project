@@ -135,11 +135,31 @@
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />				
 			<div class="promo-bg-img-v2 job-img fullheight promo-bg-fixed bg-dark" style="height:350px;">
-					<div class="job-banner">
-						<#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if>
-						<h2>관심있는 직무에 대하여 알아보세요. 그리고 어떤 회사들이 있는지 살펴보세요.</h2>
+				<div class="job-banner">
+					<#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if>
+					<h2>관심있는 직무에 대하여 알아보세요. 그리고 어떤 회사들이 있는지 살펴보세요.</h2>
+				</div>
+				<div class="job-img-inputs">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-4 md-margin-bottom-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-tag"></i></span>
+									<input type="text" placeholder="what job you are looking for" class="form-control">
+								</div>
+							</div>
+							<div class="col-sm-4 md-margin-bottom-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+									<input type="text" placeholder="where would you like to work" class="form-control">
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<button type="button" class="btn-u btn-block btn-u-dark"> Search Job</button>
+							</div>
+						</div>
 					</div>
-								
+				</div>								
 			<!--
 				<div class="container valign__middle text-center">
 					<div class="margin-bottom-100"></div>	
