@@ -14,7 +14,8 @@
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-v6.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/default.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.min.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/profile.min.css"/>'
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/pages/page_job.css"/>',
 			'css!<@spring.url "/styles/jquery.sliding-panel/jquery.sliding-panel.css"/>',	
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
 			'css!<@spring.url "/styles/common.ui.pages/assessment.style.css"/>',
@@ -136,6 +137,11 @@
 			<div class="promo-bg-img-v2 fullheight promo-bg-fixed arrow-up bg-dark" style="height:350px;">
 				<div class="container valign__middle text-center">
 					<div class="margin-bottom-100"></div>	
+					
+					<div class="job-banner">
+						<h2>Discover the Companies You would love to Work for ...</h2>
+					</div>
+										
 					<div class="wow fadeIn" data-wow-delay=".3s" data-wow-duration="1.5s" style="visibility: hidden;">
 						<span class="promo-text-v2 color-light margin-bottom-10" >
 							<#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }
