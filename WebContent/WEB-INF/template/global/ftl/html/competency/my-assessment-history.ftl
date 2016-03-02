@@ -73,7 +73,9 @@
 			background-size: cover;
 			background-position: center center;			
 		}		 
-		
+		.promo-bg-fixed p {
+			color:#f5f5f5;
+		}
 		</style>   	
 		</#compress>
 	</head>
