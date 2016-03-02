@@ -134,7 +134,7 @@
 			<!-- Promo Block -->
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />				
-			<div class="job-img margin-bottom-30 fullheight  bg-dark" style="height:350px;">
+			<div class="promo-bg-img-v2 job-img fullheight promo-bg-fixed bg-dark" style="height:350px;">
 				<div class="container valign__middle text-center">
 					<div class="margin-bottom-100"></div>	
 					
