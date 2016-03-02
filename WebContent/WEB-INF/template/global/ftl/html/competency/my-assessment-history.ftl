@@ -41,6 +41,7 @@
 				
 				common.ui.setup({
 					features:{
+						wow:true,
 						wallpaper : true,
 						accounts : {
 							render : false,
@@ -127,19 +128,22 @@
 					</div>
 				</div>
 			</div>
-			<!-- End Navbar -->								
+			<!-- End Navbar -->	
+			<!-- Promo Block -->
 			<#if action.isSetNavigator()  >
-			<#assign navigator = action.getNavigator() />		
-			<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
-				<div class="personalized-controls container text-center p-xl">
-					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
-					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>					
-					<a href="<@spring.url "/display/0/my-home.html"/>"><span class="btn-flat home t-0-r-2"></span></a>
-					<a href="<@spring.url "/display/0/my-driver.html"/>"><span class="btn-flat folder t-0-r-1"></span></a>					
-					<span class="btn-flat settings"></span>
-					</div><!--/end container-->
+			<#assign navigator = action.getNavigator() />				
+			<div class="promo-bg-img-v2 fullheight promo-bg-fixed arrow-up bg-dark" style="height:350px;">
+				<div class="container valign__middle text-center">
+					<div class="margin-bottom-100"></div>	
+					<div class="wow fadeIn" data-wow-delay=".3s" data-wow-duration="1.5s" style="visibility: hidden;">
+						<span class="promo-text-v2 color-light margin-bottom-10" >
+							<#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }
+						</span>
+						<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					</div>	
+				</div>
 			</div>
-			</#if>						
+			</#if>				
 			<!-- ./END HEADER -->			
 			
 			<!-- START MAIN CONTENT -->
