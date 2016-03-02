@@ -51,7 +51,7 @@
 						}						
 					},
 					wallpaper : {
-						renderTo:$(".breadcrumbs-v3")
+						renderTo:$(".promo-bg-img-v2")
 					},	
 					jobs:jobs
 				});	
@@ -68,18 +68,7 @@
 		<style scoped="scoped">	
 				
 		/** Breadcrumbs */
-		.breadcrumbs-v3 {
-			position:relative;
-		}
-
-		.breadcrumbs-v3 p	{
-			color : #fff;
-			font-size: 24px;
-			font-weight: 200;
-			margin-bottom: 0;
-		}	
-		
-		.breadcrumbs-v3.img-v1 {
+		.promo-bg-img-v2 {
 			background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
 			background-size: cover;
 			background-position: center center;			
