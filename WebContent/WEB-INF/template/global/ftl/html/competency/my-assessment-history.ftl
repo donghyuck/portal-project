@@ -56,7 +56,8 @@
 				});	
 						
 				// ACCOUNTS LOAD			
-				var currentUser = new common.ui.data.User();			
+				var currentUser = new common.ui.data.User();	
+				kendo.bind( $(".sliding-panel"), currentUser); 				
 				// END SCRIPT 				
 			}
 		}]);	
