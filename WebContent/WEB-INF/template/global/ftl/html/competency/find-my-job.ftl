@@ -135,8 +135,8 @@
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />				
 			<div class="promo-bg-img-v2 job-img fullheight promo-bg-fixed bg-dark" style="height:350px;">
-					<div class="job-banner">
-						<h2>Discover the Companies You would love to Work for ...</h2>
+					<div class="job-banner rounded">
+						<h2>관심있는 직무에 대하여 알아보세요...</h2>
 					</div>
 								
 			<!--
