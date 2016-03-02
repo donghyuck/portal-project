@@ -15,9 +15,7 @@
 					</#if>	
 					</#list>	
 				</ul>
-				</#if>		
-				
-				
+				</#if>				
 				<i class="icon-flat icon-svg icon-svg-md business-color-online-support"></i>
 				<h4>문의</h4>
 				<address>

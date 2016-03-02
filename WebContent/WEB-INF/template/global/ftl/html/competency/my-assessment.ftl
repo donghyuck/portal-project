@@ -323,8 +323,7 @@
 		.team-v1 li>.team-img ul{
 			text-align:right;
 		} 
-		
-		
+				
 		.modal-body .k-listview td{
 			vertical-align: middle;
 		}
@@ -362,6 +361,7 @@
     	.call-action-v2 h2 {
     		font-size : 2.5em;
     	}
+    	
 		</style>   	
 		</#compress>
 	</head>

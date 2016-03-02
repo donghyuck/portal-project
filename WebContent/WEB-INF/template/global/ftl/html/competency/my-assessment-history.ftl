@@ -55,14 +55,27 @@
 					},	
 					jobs:jobs
 				});	
-						
+				handleHeader();				
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();	
 				kendo.bind( $(".sliding-panel"), currentUser); 				
 				// END SCRIPT 				
 			}
 		}]);	
-		
+		function getCurrentUser () {
+			return common.ui.accounts().token ;
+		}
+		// Fixed Header
+		function handleHeader() {
+			jQuery(window).scroll(function() {
+			  if (jQuery(window).scrollTop() > 100) {
+				jQuery('.header-fixed .header-sticky').addClass('header-fixed-shrink');
+			  } else {
+				jQuery('.header-fixed .header-sticky').removeClass('header-fixed-shrink');
+			  }
+			});
+		}
+						
 		-->
 		</script>		
 		<style scoped="scoped">	
