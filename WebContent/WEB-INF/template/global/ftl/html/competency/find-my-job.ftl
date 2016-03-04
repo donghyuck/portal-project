@@ -272,7 +272,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-4 md-margin-bottom-10">
-								<input id="classified-majority" placeholder="원하는 직무의 대분류를 선택하세요." style="font-size: 2em; color: #bcbcbc;"/>
+								<input id="classified-majority" placeholder="원하는 직무의 대분류를 선택하세요." style="font-size: 1.6em; color: #bcbcbc;"/>
 							</div>
 							<div class="col-sm-4 md-margin-bottom-10">
 								<div class="input-group">
