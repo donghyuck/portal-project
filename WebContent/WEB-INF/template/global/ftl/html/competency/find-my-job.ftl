@@ -78,8 +78,8 @@
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					 
-					valueTemplate: '---<span class="selected-value"></span><span>#:data.name#</span>',
-					 
+					template: '<span class="k-state-default" style=""></span>' +
+                                  '<span class="k-state-default"><h3>#: data.name #</h3><p>#: data.name #</p></span>',					 
 					dataSource: {
 						serverFiltering: true,
 						transport: {
