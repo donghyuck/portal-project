@@ -73,8 +73,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classify-type-dorpdown-list",
-					optionLabel: "대분류",
-					/*autoBind:false,*/
+					optionLabel: "관심있는 분야는 무엇인가요?",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					 
