@@ -141,8 +141,9 @@
 		}               
 		
 		ul.k-list > li.k-item.k-state-selected{
-			color:#fc756f;
-			background:#fff;
+			border: solid 1px #fc756f!important;
+			background: #fc756f!important;
+			color: #fff;
 		}
 		
 		
