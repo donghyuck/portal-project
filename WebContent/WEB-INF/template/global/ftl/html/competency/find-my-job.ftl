@@ -135,6 +135,7 @@
 		/* Select fallback styling */
 		ul.k-list > li.k-item:hover 
 		{
+			border: solid 1px #fc756f!important;
 			background: #fc756f!important;
 			color: #fff;	
 		}                
