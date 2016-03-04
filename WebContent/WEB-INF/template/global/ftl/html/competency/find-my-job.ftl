@@ -133,7 +133,7 @@
 		}
 		
 		/* Select fallback styling */
-		.k-state-hover, .k-state-hover:hover , 
+		ul.k-list > li.k-item:hover 
 		{
 			background: #fc756f!important;
 			color: #fff;	
