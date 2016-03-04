@@ -94,8 +94,8 @@
 						}
 					}				
 				});				
-				getClassifiedMiddleSelector();
-				getClassifiedMinoritySelector();
+				//getClassifiedMiddleSelector();
+				//getClassifiedMinoritySelector();
 			}
 			return renderTo.data('kendoDropDownList');
 		}
