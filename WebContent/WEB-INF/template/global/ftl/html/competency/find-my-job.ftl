@@ -213,10 +213,11 @@
 }
 
 /* Select fallback styling */
-.cd-select {
-	border: 1px solid #ddd;
-}
-
+#classified-majority-list .k-item.k-state-hover, 
+{
+	background: #fc756f;
+	color: #fff;	
+}                
 		
 		</style>   	
 		</#compress>
