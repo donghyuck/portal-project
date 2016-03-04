@@ -73,7 +73,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classify-type-dorpdown-list",
-					optionLabel: "관심있는 직업분야는 무엇인가요?",
+					optionLabel: "1. 관심있는 직업분야는 무엇인가요?",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',					 
 					template: '<i class="icon-flat icon-svg icon-svg-sm basic-color-open-folder"></i>' +
@@ -106,7 +106,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-majority",
-					optionLabel: "해당 직업의 관심분야는 무엇인가요?",
+					optionLabel: "2. 해당 직업의 관심분야는 무엇인가요?",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					dataSource: {
@@ -134,7 +134,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-middle",
-					optionLabel: "조금더 자세하게 알려주세요.",
+					optionLabel: "3. 조금더 자세하게 알려주세요.",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					dataSource: {
