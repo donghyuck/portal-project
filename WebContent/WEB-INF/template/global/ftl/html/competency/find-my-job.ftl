@@ -132,7 +132,7 @@
 			border-bottom: 20px solid #f5f5f5;
 		}
 		
-		/* Select fallback styling */
+		/* kendo listbox styling */
 		ul.k-list > li.k-item:hover 
 		{
 			border: solid 1px #fc756f!important;
