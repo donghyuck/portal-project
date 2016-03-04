@@ -69,7 +69,7 @@
 		}
 		
 		function getClassifiedMajoritySelector(){
-			var renderTo = $("#classified-majority-dorpdown-list");
+			var renderTo = $("#classified-majority");
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classify-type-dorpdown-list",
@@ -273,7 +273,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-4 md-margin-bottom-10">
-								<input id="classified-majority-dorpdown-list" placeholder="원하는 직무의 대분류를 선택하세요."/>
+								<input id="classified-majority" placeholder="원하는 직무의 대분류를 선택하세요."/>
 							</div>
 							<div class="col-sm-4 md-margin-bottom-10">
 								<div class="input-group">
