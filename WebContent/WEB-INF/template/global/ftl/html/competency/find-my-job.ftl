@@ -213,7 +213,7 @@
 }
 
 /* Select fallback styling */
-#classified-majority-list .k-item.k-state-hover, 
+#classified-majority-list li.k-item:hover, 
 {
 	background: #fc756f;
 	color: #fff;	
