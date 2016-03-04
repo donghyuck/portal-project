@@ -160,9 +160,13 @@
 		.k-list-optionlabel {
 			color: #787878;
 			background : #f5f5f5!important;
-			border:0;
+			border: 1px solid #fff;
 		}		
-		
+		.k-list-optionlabel.k-state-hover{
+			color: #787878;
+			background : #f5f5f5!important;
+			border: 1px solid #fff;		
+		}
 		 
 		
 		</style>   	
