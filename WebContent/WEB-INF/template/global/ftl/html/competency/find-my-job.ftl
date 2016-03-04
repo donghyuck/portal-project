@@ -150,7 +150,7 @@
 			color: #fff;
 		}
 		
-		#classified-majority-list .k-list-optionlabel {
+		.k-list-optionlabel {
 			color: #787878;
 			background : #f5f5f5;
 			border: solid 1px #fff;
