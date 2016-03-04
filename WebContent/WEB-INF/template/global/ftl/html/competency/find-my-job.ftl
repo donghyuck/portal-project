@@ -86,7 +86,7 @@
 								type: 'POST'
 							},
 							parameterMap: function (options, operation){
-								return { "codeSetId" :  options.filter.filters[0].value }; 
+								return { "codeSetId" :  1 }; 
 							}
 						},
 						schema: { 
