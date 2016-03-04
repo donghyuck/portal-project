@@ -272,9 +272,8 @@
 							<div class="col-sm-4 md-margin-bottom-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-tag"></i></span>
-									<input type="text" placeholder="what job you are looking for" class="form-control">
 									
-									<input id="classified-majority-dorpdown-list" class="form-control" placeholder="원하는 직무의 대분류를 선택하세요."/>
+									<input id="classified-majority-dorpdown-list" class="" placeholder="원하는 직무의 대분류를 선택하세요."/>
 									
 								</div>
 							</div>
