@@ -106,7 +106,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-majority",
-					optionLabel: "중분류",
+					optionLabel: "좀더 자세하게 말해주세요?",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					dataSource: {
