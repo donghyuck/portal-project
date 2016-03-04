@@ -146,6 +146,11 @@
 			color: #fff;
 		}
 		
+		.k-dorpdown .k-input:hover{
+			color: #fc756f!important;
+			background: #fff!important;					
+		} 
+		
 		
 		.k-dropdown .k-state-focused {
 			color: #fc756f!important;
