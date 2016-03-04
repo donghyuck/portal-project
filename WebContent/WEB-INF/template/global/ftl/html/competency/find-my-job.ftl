@@ -78,7 +78,7 @@
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					 
-					 valueTemplate: '---<span class="selected-value"></span><span>#:data.name#</span>',
+					valueTemplate: '---<span class="selected-value"></span><span>#:data.name#</span>',
 					 
 					dataSource: {
 						serverFiltering: true,
@@ -149,12 +149,7 @@
 			background: #fc756f;
 			color: #fff;
 		}
-		
-		.k-list-optionlabel {
-			color: #787878;
-			background : #f5f5f5!important;
-			border:0;
-		}
+
 		
 		.k-dropdown-wrap.k-state-hover, .k-dropdown-wrap.k-state-focused {
 			color: #fc756f!important;
@@ -162,6 +157,11 @@
 		} 
 		
 		
+		.k-list-optionlabel {
+			color: #787878;
+			background : #f5f5f5!important;
+			border:0;
+		}		
 		
 		 
 		
