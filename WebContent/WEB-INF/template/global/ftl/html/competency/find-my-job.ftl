@@ -132,8 +132,9 @@
 			border-bottom: 20px solid #f5f5f5;
 		}
 		
-.classified-majority-list {
-	font-size:2em;
+#classified-majority {
+	font-size: 2em;
+    color: #bcbcbc;
 }
 
 .cd-dropdown,
