@@ -78,7 +78,7 @@
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					 
-					 valueTemplate: '<span class="selected-value"></span><span>#:data.name#</span>',
+					 valueTemplate: '---<span class="selected-value"></span><span>#:data.name#</span>',
 					 
 					dataSource: {
 						serverFiltering: true,
