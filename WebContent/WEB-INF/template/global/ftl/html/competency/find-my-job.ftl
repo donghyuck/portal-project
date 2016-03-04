@@ -75,8 +75,7 @@
 					cascadeFrom: "classify-type-dorpdown-list",
 					optionLabel: "관심있는 분야는 무엇인가요?",
 					dataTextField: 'name',	
-					dataValueField: 'codeSetId',
-					 
+					dataValueField: 'codeSetId',					 
 					template: '<i class="icon-flat icon-svg icon-svg-sm basic-color-open-folder"></i>' +
                               '<span class="k-state-default">#: data.name #</span>',					 
 					dataSource: {
@@ -96,12 +95,41 @@
 						}
 					}				
 				});				
-				//getClassifiedMiddleSelector();
+				getClassifiedMiddleSelector();
 				//getClassifiedMinoritySelector();
 			}
 			return renderTo.data('kendoDropDownList');
 		}
-				
+
+		function getClassifiedMiddleSelector(){
+			var renderTo = $("#classified-middle");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					cascadeFrom: "classified-majority",
+					optionLabel: "중분류",
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering:true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/data/me/competency/job/category/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+						
 		// Fixed Header
 		function handleHeader() {
 			jQuery(window).scroll(function() {
@@ -234,13 +262,10 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-4 md-margin-bottom-10">
-								<input id="classified-majority" placeholder="원하는 직무의 대분류를 선택하세요." style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
+								<input id="classified-majority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
 							<div class="col-sm-4 md-margin-bottom-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-									<input type="text" placeholder="where would you like to work" style>
-								</div>
+								<input id="classified-middle" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
 							<div class="col-sm-4">
 								<button type="button" class="btn-u btn-block btn-u-dark"> Search Job</button>
