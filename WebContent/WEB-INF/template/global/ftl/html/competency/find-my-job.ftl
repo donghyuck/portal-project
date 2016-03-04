@@ -142,7 +142,7 @@
 		
 		.k-dropdown .k-state-focused {
 			color: #fc756f!important;
-			background: #fff;			
+			background: #fff!important;		
 		
 		}
 		 
