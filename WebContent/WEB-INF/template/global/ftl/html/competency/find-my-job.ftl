@@ -146,10 +146,11 @@
 			color: #fff;
 		}
 		
-		k-dropdown-wrap.k-state-hover, .k-dropdown-wrap.k-state-focused {
+		#classified-majority-list .k-list-optionlabel, k-dropdown-wrap.k-state-hover, .k-dropdown-wrap.k-state-focused {
 			color: #fc756f!important;
 			background: #fff!important;					
 		} 
+		
 		
 		
 		 
