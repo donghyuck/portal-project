@@ -141,7 +141,7 @@
 		}               
 		
 		.k-dorpdown .k-state-hover .k-input {
-			color: #787878;
+			color: #787878!important;
 		}
 		
 		ul.k-list > li.k-item.k-state-selected{
