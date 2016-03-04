@@ -146,7 +146,13 @@
 			color: #fff;
 		}
 		
-		#classified-majority-list .k-list-optionlabel, k-dropdown-wrap.k-state-hover, .k-dropdown-wrap.k-state-focused {
+		#classified-majority-list .k-list-optionlabel{
+			color: #787878;
+			background : #fff;
+			border: solid 1px #fff;
+		}
+		
+		.k-dropdown-wrap.k-state-hover, .k-dropdown-wrap.k-state-focused {
 			color: #fc756f!important;
 			background: #fff!important;					
 		} 
