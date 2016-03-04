@@ -135,28 +135,21 @@
 		/* kendo listbox styling */
 		ul.k-list > li.k-item:hover 
 		{
-			border: solid 1px #fc756f!important;
-			background: #fc756f!important;
+			border: solid 1px #fc756f;
+			background: #fc756f;
 			color: #fff;	
 		}               
 		
 		ul.k-list > li.k-item.k-state-selected{
-			border: solid 1px #fc756f!important;
-			background: #fc756f!important;
+			border: solid 1px #fc756f;
+			background: #fc756f;
 			color: #fff;
 		}
 		
 		.k-dorpdown .k-input:hover{
-			color: #fc756f!important;
-			background: #fff!important;					
+			color: #fc756f;
+			background: #fff;					
 		} 
-		
-		
-		.k-dropdown .k-state-focused {
-			color: #fc756f!important;
-			background: #fff!important;		
-		
-		}
 		
 		
 		 
