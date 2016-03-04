@@ -147,8 +147,8 @@
 		}
 		
 		k-dropdown-wrap.k-state-hover, .k-dropdown-wrap.k-state-focused {
-			color: #fc756f;
-			background: #fff;					
+			color: #fc756f!important;
+			background: #fff!important;					
 		} 
 		
 		
