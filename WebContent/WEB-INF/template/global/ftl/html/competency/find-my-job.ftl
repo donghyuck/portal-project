@@ -66,6 +66,39 @@
 		function getCurrentUser () {
 			return common.ui.accounts().token ;
 		}
+		
+		function getClassifiedMajoritySelector(){
+			var renderTo = $("#classified-majority-dorpdown-list");
+			if( !renderTo.data('kendoDropDownList') ){
+				renderTo.kendoDropDownList({
+					cascadeFrom: "classify-type-dorpdown-list",
+					optionLabel: "대분류",
+					/*autoBind:false,*/
+					dataTextField: 'name',	
+					dataValueField: 'codeSetId',
+					dataSource: {
+						serverFiltering: true,
+						transport: {
+							read: {
+								dataType: 'json',
+								url: '/data/me/competency/job/category/list.json?output=json',
+								type: 'POST'
+							},
+							parameterMap: function (options, operation){
+								return { "codeSetId" :  options.filter.filters[0].value }; 
+							}
+						},
+						schema: { 
+							model : common.ui.data.competency.CodeSet
+						}
+					}				
+				});				
+				getClassifiedMiddleSelector();
+				getClassifiedMinoritySelector();
+			}
+			return renderTo.data('kendoDropDownList');
+		}
+				
 		// Fixed Header
 		function handleHeader() {
 			jQuery(window).scroll(function() {
@@ -151,6 +184,9 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-tag"></i></span>
 									<input type="text" placeholder="what job you are looking for" class="form-control">
+									
+									<input id="classified-majority-dorpdown-list" class="form-control" placeholder="원하는 직무의 대분류를 선택하세요."/>
+									
 								</div>
 							</div>
 							<div class="col-sm-4 md-margin-bottom-10">
