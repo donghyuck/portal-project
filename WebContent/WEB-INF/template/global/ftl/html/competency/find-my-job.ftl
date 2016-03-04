@@ -138,7 +138,14 @@
 			border: solid 1px #fc756f!important;
 			background: #fc756f!important;
 			color: #fff;	
-		}                
+		}               
+		
+		.k-dropdown .k-state-focused {
+			color: #fc756f!important;
+			background: #fff;			
+		
+		}
+		 
 		
 		</style>   	
 		</#compress>
