@@ -152,8 +152,8 @@
 		
 		.k-list-optionlabel {
 			color: #787878;
-			background : #f5f5f5;
-			border: solid 1px #fff;
+			background : #f5f5f5!important;
+			border:0;
 		}
 		
 		.k-dropdown-wrap.k-state-hover, .k-dropdown-wrap.k-state-focused {
