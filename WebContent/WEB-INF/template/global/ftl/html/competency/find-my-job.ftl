@@ -78,7 +78,7 @@
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					 
-					template: '<i class="icon-flat icon-svg icon-svg-md basic-color-open-folder"></i>' +
+					template: '<i class="icon-flat icon-svg icon-svg-sm basic-color-open-folder"></i>' +
                               '<span class="k-state-default">#: data.name #</span>',					 
 					dataSource: {
 						serverFiltering: true,
@@ -177,7 +177,7 @@
 		    vertical-align: middle;
 		    line-height: 32px;
 		    box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
-		    margin-left: 0px;	    
+		    margin-right: 3px;	    
 	    }
 		 
 		
@@ -235,7 +235,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-4 md-margin-bottom-10">
-								<input id="classified-majority" placeholder="원하는 직무의 대분류를 선택하세요." style="font-size: 1.6em; color: #bcbcbc; width:100%"/>
+								<input id="classified-majority" placeholder="원하는 직무의 대분류를 선택하세요." style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
 							<div class="col-sm-4 md-margin-bottom-10">
 								<div class="input-group">
