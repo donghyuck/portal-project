@@ -140,11 +140,19 @@
 			color: #fff;	
 		}               
 		
+		ul.k-list > li.k-item.k-state-selected{
+			color:#fc756f;
+			background:#fff;
+		}
+		
+		
 		.k-dropdown .k-state-focused {
 			color: #fc756f!important;
 			background: #fff!important;		
 		
 		}
+		
+		
 		 
 		
 		</style>   	
