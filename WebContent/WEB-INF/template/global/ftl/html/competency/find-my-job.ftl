@@ -78,7 +78,7 @@
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					 
-					template: '<i class="icon-flat icon-svg icon-svg-md business-color-online-support"></i>' +
+					template: '<i class="icon-flat icon-svg icon-svg-md basic-color-open-folder"></i>' +
                               '<span class="k-state-default">#: data.name #</span>',					 
 					dataSource: {
 						serverFiltering: true,
