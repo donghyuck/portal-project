@@ -146,7 +146,7 @@
 			color: #fff;
 		}
 		
-		.k-dorpdown .k-state-hover, .k-dorpdown .k-state-focus {
+		.k-dorpdown .k-state-hover, .k-dorpdown .k-state-focused {
 			color: #fc756f;
 			background: #fff;					
 		} 
