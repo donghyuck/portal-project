@@ -158,9 +158,9 @@
 		
 		
 		.k-list-optionlabel {
-			color: #787878;
+			color: #787878!important;
 			background : #f5f5f5!important;
-			border: 1px solid #fff;
+			border: 1px solid #fff!important;
 		}		
 		.k-list-optionlabel.k-state-hover{
 			color: #787878;
