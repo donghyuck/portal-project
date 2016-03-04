@@ -132,11 +132,6 @@
 			border-bottom: 20px solid #f5f5f5;
 		}
 		
-		
-span.k-dorpdown:has (> #classified-majority )
-	font-size: 2em;
-    color: #bcbcbc;
-}
 
 .cd-dropdown,
 .cd-select {
@@ -277,12 +272,12 @@ span.k-dorpdown:has (> #classified-majority )
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-4 md-margin-bottom-10">
-								<input id="classified-majority" placeholder="원하는 직무의 대분류를 선택하세요."/>
+								<input id="classified-majority" placeholder="원하는 직무의 대분류를 선택하세요." style="font-size: 2em; color: #bcbcbc;"/>
 							</div>
 							<div class="col-sm-4 md-margin-bottom-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-									<input type="text" placeholder="where would you like to work">
+									<input type="text" placeholder="where would you like to work" style>
 								</div>
 							</div>
 							<div class="col-sm-4">
