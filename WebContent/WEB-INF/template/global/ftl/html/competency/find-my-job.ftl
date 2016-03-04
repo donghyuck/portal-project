@@ -59,7 +59,8 @@
 				handleHeader();				
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();	
-				kendo.bind( $(".sliding-panel"), currentUser); 				
+				kendo.bind( $(".sliding-panel"), currentUser); 		
+				getClassifiedMajoritySelector();		
 				// END SCRIPT 				
 			}
 		}]);	
