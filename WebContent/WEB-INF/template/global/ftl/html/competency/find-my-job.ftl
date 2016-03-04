@@ -132,7 +132,8 @@
 			border-bottom: 20px solid #f5f5f5;
 		}
 		
-#classified-majority {
+		
+span.k-dorpdown:has (> #classified-majority )
 	font-size: 2em;
     color: #bcbcbc;
 }
