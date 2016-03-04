@@ -140,7 +140,7 @@
 			color: #fff;	
 		}               
 		
-		.k-dropdown .k-state-hover .k-input {
+		.k-dropdown .k-state-hover .k-input, .k-dropdown .k-state-hover .k-select {
 			color: #787878!important;
 		}
 		
