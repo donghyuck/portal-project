@@ -140,15 +140,19 @@
 			color: #fff;	
 		}               
 		
+		.k-dorpdown .k-state-hover .k-input {
+			color: #787878;
+		}
+		
 		ul.k-list > li.k-item.k-state-selected{
 			border: solid 1px #fc756f;
 			background: #fc756f;
 			color: #fff;
 		}
 		
-		#classified-majority-list .k-list-optionlabel{
+		#classified-majority-list .k-list-optionlabel {
 			color: #787878;
-			background : #fff;
+			background : #f5f5f5;
 			border: solid 1px #fff;
 		}
 		
