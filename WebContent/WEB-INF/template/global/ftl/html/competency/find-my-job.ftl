@@ -77,6 +77,9 @@
 					/*autoBind:false,*/
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
+					 
+					 valueTemplate: '<span class="selected-value"></span><span>#:data.name#</span>',
+					 
 					dataSource: {
 						serverFiltering: true,
 						transport: {
@@ -275,7 +278,7 @@
 							<div class="col-sm-4 md-margin-bottom-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-									<input type="text" placeholder="where would you like to work" class="form-control">
+									<input type="text" placeholder="where would you like to work">
 								</div>
 							</div>
 							<div class="col-sm-4">
