@@ -79,7 +79,7 @@
 					dataValueField: 'codeSetId',
 					 
 					template: '<span class="k-state-default" style=""></span>' +
-                                  '<span class="k-state-default"><h3>#: data.name #</h3><p>#: data.name #</p></span>',					 
+                                  '<span class="k-state-default">#: data.name #</span>',					 
 					dataSource: {
 						serverFiltering: true,
 						transport: {
