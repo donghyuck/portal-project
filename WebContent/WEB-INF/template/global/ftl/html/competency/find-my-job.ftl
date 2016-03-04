@@ -132,7 +132,9 @@
 			border-bottom: 20px solid #f5f5f5;
 		}
 		
-
+.classified-majority-list {
+	font-size:2em;
+}
 
 .cd-dropdown,
 .cd-select {
