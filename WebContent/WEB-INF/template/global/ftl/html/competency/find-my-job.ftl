@@ -134,7 +134,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-middle",
-					optionLabel: "소분류",
+					optionLabel: "조금더 자세하게 알려주세요.",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					dataSource: {
