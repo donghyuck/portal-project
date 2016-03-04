@@ -133,7 +133,7 @@
 		}
 		
 		/* Select fallback styling */
-		#classified-majority-list .k-state-hover, #classified-majority-list .k-state-hover:hover , 
+		.k-state-hover, .k-state-hover:hover , 
 		{
 			background: #fc756f!important;
 			color: #fff;	
