@@ -187,6 +187,15 @@
 		}
 		
 		/* kendo listbox styling */
+		.k-dropdown [role=listbox] {
+			background:transparent;
+		}
+		
+		.k-dropdown > .k-dropdown-wrap.k-state-default
+		{
+			border-radius : 2px;
+		}
+		
 		ul.k-list > li.k-item:hover 
 		{
 			border: solid 1px #fc756f;
