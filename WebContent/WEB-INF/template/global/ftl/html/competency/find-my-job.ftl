@@ -191,7 +191,7 @@
 			background:transparent;
 		}
 		
-		.k-dropdown > .k-dropdown-wrap.k-state-default
+		.k-dropdown > .k-dropdown-wrap.k-state-default, .k-dropdown > .k-dropdown-wrap.k-state-disabled
 		{
 			border-radius : 2px;
 		}
