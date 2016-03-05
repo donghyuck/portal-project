@@ -188,6 +188,19 @@
 			border-bottom: 20px solid #f5f5f5;
 		}
 		
+		.job-search-btn {
+			background: transparent;
+		    border: 0;
+		    height: 45px;
+		    padding: 0;
+		    margin: 0;
+		    margin-top: -15px;
+		}
+		.job-search-btn > i.icon-svg{
+			width:90px;
+			height:90px;
+		}
+		
 		/* kendo listbox styling */
 		span[role=listbox].k-dropdown {
 			background:transparent;
@@ -310,7 +323,7 @@
 								<input id="classified-minority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
 							<div class="col-sm-3 text-right">
-								<button class="icon-svg-btn bg-transparent hvr-pulse-shrink"><i class="icon-flat icon-svg icon-svg-md basic-color-search"></i></button>
+								<button class="job-search-btn hvr-pulse-shrink"><i class="icon-flat icon-svg icon-svg-md basic-color-search"></i></button>
 							</div>
 						</div>
 					</div>
