@@ -23,7 +23,7 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',		
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',			
-			
+			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',
 			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
@@ -309,10 +309,8 @@
 							<div class="col-sm-3 md-margin-bottom-10">
 								<input id="classified-minority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
-							<div class="col-sm-3">
-								<button type="button" class="btn-u btn-u-lg btn-u-upper">
-								검색
-								</button>
+							<div class="col-sm-3 text-right">
+								<button class="icon-svg-btn bg-transparent hvr-pulse-shrink"><i class="icon-flat icon-svg icon-svg-md basic-color-search"></i></button>
 							</div>
 						</div>
 					</div>
