@@ -194,7 +194,7 @@
 		    height: 45px;
 		    padding: 0;
 		    margin: 0;
-		    margin-top: -15px;
+		 /*   margin-top: -15px;*/
 		}
 		.job-search-btn > i.icon-svg{
 			width:90px;
