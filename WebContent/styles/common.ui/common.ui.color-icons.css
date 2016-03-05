@@ -54,8 +54,20 @@ i.icon-svg {
 	content: "" !important;
 }
 
+
+/* Basic ios9 Icons 
+------------------------------------*/
+.icon-svg.basic-ios9-search {
+	background-image: url("/images/common/icons/basic/ios9/Search.svg");
+}
+
 /* Basic Color Icons 
 ------------------------------------*/
+.icon-svg.basic-color-search {
+	background-image: url("/images/common/icons/basic/color/Search.svg");
+}
+
+
 .icon-svg.basic-color-open-folder {
 	background-image: url("/images/common/icons/basic/color/OpenFolder.svg");
 }
