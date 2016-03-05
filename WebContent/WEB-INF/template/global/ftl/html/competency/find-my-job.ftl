@@ -226,6 +226,7 @@
 			color: #787878!important;
 			background : #f5f5f5!important;
 			border: 1px solid #fff!important;
+			font-size:.8em;
 		}		
 		.k-list-optionlabel.k-state-hover{
 			color: #787878;
