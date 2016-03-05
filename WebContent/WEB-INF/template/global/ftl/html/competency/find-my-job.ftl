@@ -310,8 +310,8 @@
 								<input id="classified-minority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
 							<div class="col-sm-3">
-								<button type="button" class="btn btn-link">
-								<i class="icon-flat icon-svg icon-svg-md basic-ios9-search"></i>
+								<button type="button" class="btn-u btn-u-lg btn-u-upper">
+								검색
 								</button>
 							</div>
 						</div>
