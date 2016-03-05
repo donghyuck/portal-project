@@ -187,7 +187,7 @@
 		}
 		
 		/* kendo listbox styling */
-		.k-dropdown [role=listbox] {
+		span[role=listbox].k-dropdown {
 			background:transparent;
 		}
 		
