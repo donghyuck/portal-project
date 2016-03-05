@@ -309,6 +309,9 @@
 							<div class="col-sm-3">
 								<input id="classified-minority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
+							<div class="col-sm-3">
+								<i class="icon-flat icon-svg icon-svg-md basic-ios9-open-search"></i>
+							</div>
 						</div>
 					</div>
 				</div>								
