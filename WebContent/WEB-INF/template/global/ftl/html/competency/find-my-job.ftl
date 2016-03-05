@@ -299,13 +299,13 @@
 				<div class="job-img-inputs">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-4 md-margin-bottom-10">
+							<div class="col-sm-3 md-margin-bottom-10">
 								<input id="classified-majority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
-							<div class="col-sm-4 md-margin-bottom-10">
+							<div class="col-sm-3 md-margin-bottom-10">
 								<input id="classified-middle" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
-							<div class="col-sm-4">
+							<div class="col-sm-3">
 								<input id="classified-minority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
 							</div>
 						</div>
