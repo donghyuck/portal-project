@@ -311,7 +311,7 @@
 							</div>
 							<div class="col-sm-3">
 								<button type="button" class="btn btn-link">
-								<i class="icon-flat icon-svg icon-svg-md basic-ios9-open-search"></i>
+								<i class="icon-flat icon-svg icon-svg-md basic-ios9-search"></i>
 								</button>
 							</div>
 						</div>
