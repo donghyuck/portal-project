@@ -109,6 +109,8 @@
 					optionLabel: "2. 해당 직업의 관심분야는 무엇인가요?",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
+					template: '<i class="icon-flat icon-svg icon-svg-sm basic-color-open-folder"></i>' +
+                              '<span class="k-state-default">#: data.name #</span>',						
 					dataSource: {
 						serverFiltering:true,
 						transport: {
