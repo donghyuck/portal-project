@@ -519,7 +519,7 @@
 							<li><span class="color-green">Position:</span> Manager / Executive</li>
 							<li><span class="color-green">Required:</span> 5 - years of experience</li>
 						</ul>
-						<a class="btn-u btn-u-sm" href="\\#">View More</a>
+						<a class="btn-u btn-u-sm" href="\\#">더 알아보기 </a>
 					</div>
 		</div>		
 		</script>
