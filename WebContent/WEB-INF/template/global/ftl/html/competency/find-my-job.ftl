@@ -19,6 +19,7 @@
 			'css!<@spring.url "/styles/jquery.sliding-panel/jquery.sliding-panel.css"/>',	
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',	
 			'css!<@spring.url "/styles/common.ui.pages/assessment.style.css"/>',
+			'css!<@spring.url "/styles/common.ui.pages/page_job.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.min.css"/>',				
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',		
@@ -502,7 +503,7 @@
 						</div>
 						<div class="overflow-h">
 							<h3>#: name #</h3>
-							<p>#: description #</p>
+							
 							<div class="star-vote pull-right">
 								<ul class="list-inline">
 									<li><i class="color-green fa fa-star"></i></li>
@@ -513,6 +514,7 @@
 								</ul>
 							</div>
 						</div>
+						<p>#: description #</p>
 						<ul class="list-unstyled">
 							<li><span class="color-green">Position:</span> Manager / Executive</li>
 							<li><span class="color-green">Required:</span> 5 - years of experience</li>
