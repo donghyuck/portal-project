@@ -482,9 +482,9 @@
 						<div class="easy-block-v1-badge rgba-default">Marketing</div>
 						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
-								<li class="rounded-x active" data-target="#carousel-example-generic" data-slide-to="0"></li>
-								<li class="rounded-x" data-target="#carousel-example-generic" data-slide-to="1"></li>
-								<li class="rounded-x" data-target="#carousel-example-generic" data-slide-to="2"></li>
+								<li class="rounded-x active" data-target="\#carousel-example-generic" data-slide-to="0"></li>
+								<li class="rounded-x" data-target="\#carousel-example-generic" data-slide-to="1"></li>
+								<li class="rounded-x" data-target="\#carousel-example-generic" data-slide-to="2"></li>
 							</ol>
 							<div class="carousel-inner">
 								<div class="item active">
@@ -514,7 +514,7 @@
 							<li><span class="color-green">Position:</span> Manager / Executive</li>
 							<li><span class="color-green">Required:</span> 5 - years of experience</li>
 						</ul>
-						<a class="btn-u btn-u-sm" href="#">View More</a>
+						<a class="btn-u btn-u-sm" href="\\#">View More</a>
 					</div>
 		</div>		
 		</script>
