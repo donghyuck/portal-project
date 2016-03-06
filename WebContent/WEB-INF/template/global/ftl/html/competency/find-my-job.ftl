@@ -109,7 +109,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-majority",
-					optionLabel: "2. 해당 직업의 관심분야는 무엇인가요?",
+					optionLabel: "2. 좀더 관심있는 직무분야는 무엇인가요?",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					template: '<i class="icon-flat icon-svg icon-svg-sm basic-color-open-folder"></i>' +
