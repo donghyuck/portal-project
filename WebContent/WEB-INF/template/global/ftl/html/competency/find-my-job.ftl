@@ -479,7 +479,9 @@
 		<script type="text/x-kendo-tmpl" id="job-template">		
 		<div class="col-md-3 col-sm-6 md-margin-bottom-40">
 					<div class="easy-block-v1">
-						<div class="easy-block-v1-badge rgba-default">Marketing</div>
+						
+						<div class="easy-block-v1-badge rgba-default">#: classification.classification #</div>
+						
 						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
 								<li class="rounded-x active" data-target="\#carousel-example-generic" data-slide-to="0"></li>
@@ -500,6 +502,7 @@
 						</div>
 						<div class="overflow-h">
 							<h3>#: name #</h3>
+							<p>#: description #</p>
 							<div class="star-vote pull-right">
 								<ul class="list-inline">
 									<li><i class="color-green fa fa-star"></i></li>
