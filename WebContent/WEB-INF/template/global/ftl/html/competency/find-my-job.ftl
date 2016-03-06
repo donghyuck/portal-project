@@ -198,7 +198,7 @@
 					template: kendo.template($("#job-template").html())
 				});
 				
-				$(".job-search").click(function(e){
+				$(".job-search-btn").click(function(e){
 					console.log("searching...");
 					common.ui.listview(renderTo).dataSource.read();
 				});
