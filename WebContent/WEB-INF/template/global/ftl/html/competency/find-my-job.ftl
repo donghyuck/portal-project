@@ -200,6 +200,7 @@
 				});
 				
 				$(".job-search").click(function(e){
+					console.log("searching...");
 					common.ui.listview(renderTo).dataSource.read();
 				});
 			}
