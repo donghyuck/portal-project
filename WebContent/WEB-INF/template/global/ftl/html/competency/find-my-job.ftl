@@ -414,7 +414,13 @@
 			</div>			
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
-				<div id="job-listview" ></div>
+				<div class="row high-rated margin-bottom-20" >
+					
+					<div id="job-listview" class="no-border">
+					
+					</div>
+					
+				</div>
 			</div>
 			<div class="container content-md">
 		        <div class="headline"><h2>Job Categories</h2></div>
@@ -470,8 +476,47 @@
 		</div>				
 
 		<#include "/html/competency/common-sliding-panel.ftl" >		
-		<script type="text/x-kendo-tmpl" id="job-template">
-		#: name #	
+		<script type="text/x-kendo-tmpl" id="job-template">		
+		<div class="col-md-3 col-sm-6 md-margin-bottom-40">
+					<div class="easy-block-v1">
+						<div class="easy-block-v1-badge rgba-default">Marketing</div>
+						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+								<li class="rounded-x active" data-target="#carousel-example-generic" data-slide-to="0"></li>
+								<li class="rounded-x" data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li class="rounded-x" data-target="#carousel-example-generic" data-slide-to="2"></li>
+							</ol>
+							<div class="carousel-inner">
+								<div class="item active">
+									<img alt="" src="assets/img/main/img3.jpg">
+								</div>
+								<div class="item">
+									<img alt="" src="assets/img/main/img1.jpg">
+								</div>
+								<div class="item">
+									<img alt="" src="assets/img/main/img7.jpg">
+								</div>
+							</div>
+						</div>
+						<div class="overflow-h">
+							<h3>#: name #</h3>
+							<div class="star-vote pull-right">
+								<ul class="list-inline">
+									<li><i class="color-green fa fa-star"></i></li>
+									<li><i class="color-green fa fa-star"></i></li>
+									<li><i class="color-green fa fa-star"></i></li>
+									<li><i class="color-green fa fa-star-half-o"></i></li>
+									<li><i class="color-green fa fa-star-o"></i></li>
+								</ul>
+							</div>
+						</div>
+						<ul class="list-unstyled">
+							<li><span class="color-green">Position:</span> Manager / Executive</li>
+							<li><span class="color-green">Required:</span> 5 - years of experience</li>
+						</ul>
+						<a class="btn-u btn-u-sm" href="#">View More</a>
+					</div>
+		</div>		
 		</script>
 	</body>    
 </html>
