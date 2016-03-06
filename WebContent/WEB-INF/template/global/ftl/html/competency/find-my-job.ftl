@@ -470,7 +470,7 @@
 		</div>				
 
 		<#include "/html/competency/common-sliding-panel.ftl" >		
-		<script type="text/x-kendo-tmpl" id="job-level-view-template">
+		<script type="text/x-kendo-tmpl" id="job-template">
 		#: name #	
 		</script>
 	</body>    
