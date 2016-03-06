@@ -481,7 +481,7 @@
 		<div class="col-md-3 col-sm-6 md-margin-bottom-40">
 					<div class="easy-block-v1">
 						
-						<div class="easy-block-v1-badge rgba-default">#: classification.classification #</div>
+						<div class="easy-block-v1-badge rgba-default">#:classification.classifiedMinorityName #</div>
 						
 						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
