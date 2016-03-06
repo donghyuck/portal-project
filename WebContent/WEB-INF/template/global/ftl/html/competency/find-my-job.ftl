@@ -48,6 +48,8 @@
 							render : false,
 							authenticate : function(e){
 								e.token.copy(currentUser);
+								
+								
 							} 
 						}						
 					},
@@ -61,6 +63,7 @@
 				var currentUser = new common.ui.data.User();	
 				kendo.bind( $(".sliding-panel"), currentUser); 		
 				getClassifiedMajoritySelector();		
+				createJobListView();
 				// END SCRIPT 				
 			}
 		}]);	
@@ -132,7 +135,8 @@
 			return renderTo.data('kendoDropDownList');
 		}
 		function getClassifiedMinoritySelector(){
-			var renderTo = $("#classified-minority");
+		
+			var renderTo = $("#classified-minority");			
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-middle",
@@ -158,7 +162,49 @@
 				});
 			}
 			return renderTo.data('kendoDropDownList');
-		}						
+		}			
+		
+		function createJobListView(){
+			var renderTo = $("#job-listview");
+			if(! common.ui.exists(renderTo) ){				
+				
+				common.ui.listview(renderTo, {
+					autoBind:false,
+					dataSource: {
+						transport: { 
+							read: { url:'/data/me/competency/job/list.json?output=json', type:'post' },
+							parameterMap: function (options, operation){
+								if (operation !== "read") {
+									return kendo.stringify(options);
+								} 
+								return {
+									classifyType:getClassifyTypeSelector().value(),
+									classifiedMajorityId:getClassifiedMajoritySelector().value(),
+									classifiedMiddleId:getClassifiedMiddleSelector().value(),
+									classifiedMinorityId:getClassifiedMinoritySelector().value(),						
+									startIndex:options.skip, 
+									pageSize: options.pageSize 
+								};
+							}
+						},						
+						batch: false, 
+						pageSize: 15,
+						serverPaging: true,
+						schema: {
+							data: "items",
+							total: "totalCount",
+							model: common.ui.data.competency.Competency
+						}
+					},
+					template: kendo.template($("#job-template").html())
+				});
+				
+				$(".job-search").click(function(e){
+					common.ui.listview(renderTo).dataSource.read();
+				});
+			}
+		}	
+					
 		// Fixed Header
 		function handleHeader() {
 			jQuery(window).scroll(function() {
@@ -368,6 +414,9 @@
 			</div>			
 			<!-- START MAIN CONTENT -->
 			<div class="container content-md">
+				<div id="job-listview" ></div>
+			</div>
+			<div class="container content-md">
 		        <div class="headline"><h2>Job Categories</h2></div>
 		        <div class="row job-content margin-bottom-40">
 				<div class="col-md-3 col-sm-3 md-margin-bottom-40">
@@ -421,6 +470,8 @@
 		</div>				
 
 		<#include "/html/competency/common-sliding-panel.ftl" >		
-
+		<script type="text/x-kendo-tmpl" id="job-level-view-template">
+		#: name #	
+		</script>
 	</body>    
 </html>
