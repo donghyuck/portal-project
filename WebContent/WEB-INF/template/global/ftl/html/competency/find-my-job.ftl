@@ -79,7 +79,8 @@
 					cascadeFrom: "classify-type-dorpdown-list",
 					optionLabel: "1. 관심있는 직업분야는 무엇인가요?",
 					dataTextField: 'name',	
-					dataValueField: 'codeSetId',					 
+					dataValueField: 'codeSetId',		
+					height: 500,			 
 					template: '<i class="icon-flat icon-svg icon-svg-sm basic-color-open-folder"></i>' +
                               '<span class="k-state-default">#: data.name #</span>',					 
 					dataSource: {
@@ -113,6 +114,7 @@
 					optionLabel: "2. 좀더 관심있는 직무분야는 무엇인가요?",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
+					height: 500,
 					template: '<i class="icon-flat icon-svg icon-svg-sm basic-color-open-folder"></i>' +
                               '<span class="k-state-default">#: data.name #</span>',						
 					dataSource: {
@@ -144,6 +146,7 @@
 					optionLabel: "3. 조금더 자세하게 알려주세요.",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
+					height: 500,
 					dataSource: {
 						serverFiltering:true,
 						transport: {
