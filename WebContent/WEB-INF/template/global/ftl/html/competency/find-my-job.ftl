@@ -486,7 +486,7 @@
 						
 						<div class="easy-block-v1-badge rgba-default">#:classification.classifiedMinorityName #</div>
 						
-						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<div id="carousel-#= uid #" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
 								<li class="rounded-x active" data-target="\#carousel-example-generic" data-slide-to="0"></li>
 								<li class="rounded-x" data-target="\#carousel-example-generic" data-slide-to="1"></li>
