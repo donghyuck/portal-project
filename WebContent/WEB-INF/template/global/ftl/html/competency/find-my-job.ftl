@@ -366,16 +366,22 @@
 				<div class="job-img-inputs">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-3 md-margin-bottom-10">
-								<input id="classified-majority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
+							<div class="col-sm-11 md-margin-bottom-10" >
+								<div class="row">
+								
+									<div class="col-sm-4 md-margin-bottom-10">
+										<input id="classified-majority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
+									</div>
+									<div class="col-sm-4 md-margin-bottom-10">
+										<input id="classified-middle" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
+									</div>
+									<div class="col-sm-4 md-margin-bottom-10">
+										<input id="classified-minority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
+									</div>
+																	
+								</div>
 							</div>
-							<div class="col-sm-3 md-margin-bottom-10">
-								<input id="classified-middle" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
-							</div>
-							<div class="col-sm-3 md-margin-bottom-10">
-								<input id="classified-minority" style="font-size: 1.4em; color: #bcbcbc; width:100%"/>
-							</div>
-							<div class="col-sm-3 text-right">
+							<div class="col-sm-1 text-right" >
 								<button class="job-search-btn hvr-pulse-shrink"><i class="icon-flat icon-svg icon-svg-md basic-color-search"></i></button>
 							</div>
 						</div>
