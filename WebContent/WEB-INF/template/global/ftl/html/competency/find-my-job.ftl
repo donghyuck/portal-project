@@ -196,6 +196,9 @@
 							model: common.ui.data.competency.Competency
 						}
 					},
+					dataBound: function(){		
+                		renderTo.removeClass("k-widget k-listview");                	
+                	}
 					template: kendo.template($("#job-template").html())
 				});
 				
