@@ -494,7 +494,7 @@
 							</ol>
 							<div class="carousel-inner">
 								<div class="item active">
-									<img alt="" src="<@ spring.url "/images/common/icons/business/office/Worker.svg" />">
+									<img alt="" src="<@spring.url "/images/common/icons/business/office/Worker.svg" />">
 								</div>
 								<div class="item">
 									<img alt="" src="assets/img/main/img1.jpg">
