@@ -553,8 +553,7 @@
 						</div>
 						#if( description != null ){# 
 						<p>#: description #</p>
-						#}#
-						
+						#}#						
 						#if( jobLevels.length > 0 ){ #						
 						<table class="table" style="font-size:.9em;">
 							<thead>
@@ -572,8 +571,8 @@
 								# } #
 							</tbody>
 						</table>
-						# } #
 						<a class="btn-u btn-u-sm" href="\\#">더 알아보기 </a>
+						# } #						
 					</div>
 		</div>		
 		</script>
