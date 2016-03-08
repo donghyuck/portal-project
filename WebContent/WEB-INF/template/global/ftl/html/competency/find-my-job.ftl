@@ -526,6 +526,11 @@
 						#}else{# 
 						<img src="<@spring.url "/images/common/icons/business/office/Worker.svg" />">
 						#}#
+						
+						
+						
+						
+						
 						<div class="overflow-h">
 							<h3>#: name #</h3>			
 							#: classification.classifiedMajorityId #			
