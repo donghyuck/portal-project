@@ -555,6 +555,26 @@
 						<p>#: description #</p>
 						#}#
 						
+						#if( jobLevels.length > 0 ){ #						
+						<table class="table">
+							<thead>
+								<tr>
+									<th>레벨</th>
+									<th>직급</th>
+									<th class="hidden-sm">경력</th>
+								</tr>
+							</thead>
+							<tbody>
+								# for (var i = 0; i < jobLevels.length ; i++) { #	
+								<tr>
+									<td>jobLevels[i].leve;</td>
+									<td> #: jobLevels[i].name #</td>
+									<td>#: jobLevels[i].minWorkExperienceYear # ~ #: jobLevels[i].maxWorkExperienceYear #</td>
+								</tr>
+								# } #
+							</tbody>
+						</table>
+						# } #
 						<ul class="list-unstyled">
 						# for (var i = 0; i < jobLevels.length ; i++) { #							
 							<li><span class="color-green">직위:</span> #: jobLevels[i].name #</li>
