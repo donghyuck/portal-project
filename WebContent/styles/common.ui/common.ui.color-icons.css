@@ -253,6 +253,13 @@ i.icon-svg {
 
 /* Business Color Icons 
 ------------------------------------*/
+
+.icon-svg.business-color-construction-worker {
+	background-image: url("/images/common/icons/business/color/ConstructionWorker.svg");
+}
+
+
+
 .icon-svg.business-color-permanent-job {
 	background-image: url("/images/common/icons/business/color/PermanentJob.svg");
 }
