@@ -558,7 +558,7 @@
 						<ul class="list-unstyled">
 						# for (var i = 0; i < jobLevels.length ; i++) { #							
 							<li><span class="color-green">직위:</span> #: jobLevels[i].name #</li>
-							<li><span class="color-green">경력:</span> jobLevels[i].minWorkExperienceYear ~ jobLevels[i].maxWorkExperienceYear </li>						
+							<li><span class="color-green">경력:</span> #: jobLevels[i].minWorkExperienceYear # ~ #: jobLevels[i].maxWorkExperienceYear # </li>						
 						# } #
 						</ul>
 						<a class="btn-u btn-u-sm" href="\\#">더 알아보기 </a>
