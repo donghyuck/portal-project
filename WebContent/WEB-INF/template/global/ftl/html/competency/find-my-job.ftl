@@ -521,7 +521,7 @@
 						<div class="easy-block-v1-badge rgba-default">#:classification.classifiedMinorityName #</div>
 						#if( classification.classifiedMajorityId == 202 ){#
 						<img src="<@spring.url "/images/common/icons/business/color/ConstructionWorker.svg" />">
-						#else if( classification.classifiedMajorityId == 107 ){#
+						#}else if( classification.classifiedMajorityId == 107 ){#
 						<img src="<@spring.url "/images/common/icons/clothing/color/VeganClothing.svg" />">
 						#}else{# 
 						<img src="<@spring.url "/images/common/icons/business/office/Worker.svg" />">
