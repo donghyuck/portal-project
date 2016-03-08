@@ -556,10 +556,9 @@
 						#}#
 						
 						#if( jobLevels.length > 0 ){ #						
-						<table class="table">
+						<table class="table" style="font-size:.9em;">
 							<thead>
 								<tr>
-									<th>레벨</th>
 									<th>직급</th>
 									<th class="hidden-sm">경력</th>
 								</tr>
@@ -567,7 +566,6 @@
 							<tbody>
 								# for (var i = 0; i < jobLevels.length ; i++) { #	
 								<tr>
-									<td>#: jobLevels[i].level #</td>
 									<td> #: jobLevels[i].name #</td>
 									<td>#: jobLevels[i].minWorkExperienceYear # ~ #: jobLevels[i].maxWorkExperienceYear #</td>
 								</tr>
