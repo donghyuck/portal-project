@@ -552,7 +552,7 @@
 							</div>
 						</div>
 						#if( description != null ){# 
-						<p class="p-b-sm">#: description #</p>
+						<p class="m-b-sm">#: description #</p>
 						#}#						
 						#if( jobLevels.length > 0 ){ #						
 						<table class="table" style="font-size:.9em;">
