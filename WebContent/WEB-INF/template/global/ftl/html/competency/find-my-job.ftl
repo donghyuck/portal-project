@@ -540,8 +540,7 @@
 							</div>
 						</div>-->
 						<div class="overflow-h">
-							<h3>#: name #</h3>
-							
+							<h3>#: name #</h3>							
 							<div class="star-vote pull-right">
 								<ul class="list-inline">
 									<li><i class="color-green fa fa-star"></i></li>
@@ -552,7 +551,9 @@
 								</ul>
 							</div>
 						</div>
+						#if( description != null ){# 
 						<p>#: description #</p>
+						#}#
 						<ul class="list-unstyled">
 							<li><span class="color-green">Position:</span> Manager / Executive</li>
 							<li><span class="color-green">Required:</span> 5 - years of experience</li>
