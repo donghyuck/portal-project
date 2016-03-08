@@ -519,7 +519,11 @@
 					<div class="easy-block-v1 #if(jobLevels.length == 0){ # grayscale #}#" >
 						
 						<div class="easy-block-v1-badge rgba-default">#:classification.classifiedMinorityName #</div>
-						<img alt="" src="<@spring.url "/images/common/icons/business/office/Worker.svg" />">
+						#if( classification.classifiedMajorityId == 202 ){#
+						<img src="<@spring.url "/images/common/icons/business/color/ConstructionWorker.svg" />">
+						#}else{# 
+						<img src="<@spring.url "/images/common/icons/business/office/Worker.svg" />">
+						#}#
 						<!--
 						<div id="carousel-#= uid #" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
