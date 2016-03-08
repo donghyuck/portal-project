@@ -32,7 +32,9 @@
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
 			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
-			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', ,
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>',
+			'<@spring.url "/js/jquery.masonry/masonry.pkgd.min.js"/>',		
+			'<@spring.url "/js/imagesloaded/imagesloaded.pkgd.min.js"/>',	
 			'<@spring.url "/js/wow/wow.min.js"/>', , 
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
@@ -169,8 +171,18 @@
 		
 		function createJobListView(){
 			var renderTo = $("#job-listview");
-			if(! common.ui.exists(renderTo) ){				
-				
+			if( !renderTo.data('masonry')){			
+				renderTo.masonry({	
+					columnWidth: '.item',
+					//gutter: 10,
+					itemSelector: '.item',
+					isResizable:true,
+					transitionDuration: 0
+				});
+			}	
+			
+			if(! common.ui.exists(renderTo) ){		
+				var msnry = renderTo.data('masonry');	
 				common.ui.listview(renderTo, {
 					autoBind:false,
 					dataSource: {
@@ -199,11 +211,16 @@
 						}
 					},
 					dataBound: function(){		
-                		renderTo.removeClass("k-widget k-listview");                	
+						var elem = 	this.element.children();	
+						elem.imagesLoaded(function(){
+							console.log("image loaded...");
+							masonry.appended(elem);
+							masonry.layout();
+						});               		           	
                 	},
 					template: kendo.template($("#job-template").html())
 				});
-				
+				renderTo.removeClass("k-widget k-listview");
 				$(".job-search-btn").click(function(e){
 					console.log("searching...");
 					common.ui.listview(renderTo).dataSource.read();
@@ -489,7 +506,7 @@
 
 		<#include "/html/competency/common-sliding-panel.ftl" >		
 		<script type="text/x-kendo-tmpl" id="job-template">		
-		<div class="col-md-3 col-sm-6 md-margin-bottom-40">
+		<div class="item col-md-3 col-sm-6 md-margin-bottom-40" style="display:none;" data-object-id="#=jobId#"  >
 					<div class="easy-block-v1">
 						
 						<div class="easy-block-v1-badge rgba-default">#:classification.classifiedMinorityName #</div>
