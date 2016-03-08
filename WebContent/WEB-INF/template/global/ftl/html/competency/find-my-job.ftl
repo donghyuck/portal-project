@@ -540,7 +540,8 @@
 							</div>
 						</div>-->
 						<div class="overflow-h">
-							<h3>#: name #</h3>							
+							<h3>#: name #</h3>			
+							#: classification.classifiedMajorityId "				
 							<div class="star-vote pull-right">
 								<ul class="list-inline">
 									<li><i class="color-green fa fa-star"></i></li>
