@@ -554,9 +554,12 @@
 						#if( description != null ){# 
 						<p>#: description #</p>
 						#}#
+						
 						<ul class="list-unstyled">
-							<li><span class="color-green">Position:</span> Manager / Executive</li>
-							<li><span class="color-green">Required:</span> 5 - years of experience</li>
+						# for (var i = 0; i < jobLevels.length ; i++) { #							
+							<li><span class="color-green">직위:</span> #: jobLevels[i].name #</li>
+							<li><span class="color-green">경력:</span> jobLevels[i].minWorkExperienceYear ~ jobLevels[i].maxWorkExperienceYear </li>						
+						# } #
 						</ul>
 						<a class="btn-u btn-u-sm" href="\\#">더 알아보기 </a>
 					</div>
