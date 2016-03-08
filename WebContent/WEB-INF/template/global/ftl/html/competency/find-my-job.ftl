@@ -526,25 +526,6 @@
 						#}else{# 
 						<img src="<@spring.url "/images/common/icons/business/office/Worker.svg" />">
 						#}#
-						<!--
-						<div id="carousel-#= uid #" class="carousel slide" data-ride="carousel">
-							<ol class="carousel-indicators">
-								<li class="rounded-x active" data-target="\#carousel-#= uid #" data-slide-to="0"></li>
-								<li class="rounded-x" data-target="\#carousel-#= uid #" data-slide-to="1"></li>
-								<li class="rounded-x" data-target="\#carousel-#= uid #" data-slide-to="2"></li>
-							</ol>
-							<div class="carousel-inner">
-								<div class="item active">
-									
-								</div>
-								<div class="item">
-									<img alt="" src="assets/img/main/img1.jpg">
-								</div>
-								<div class="item">
-									<img alt="" src="assets/img/main/img7.jpg">
-								</div>
-							</div>
-						</div>-->
 						<div class="overflow-h">
 							<h3>#: name #</h3>			
 							#: classification.classifiedMajorityId #			
