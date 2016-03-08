@@ -182,7 +182,7 @@
 			}	
 			
 			if(! common.ui.exists(renderTo) ){		
-				var msnry = renderTo.data('masonry');	
+				var masonry = renderTo.data('masonry');				
 				common.ui.listview(renderTo, {
 					autoBind:false,
 					dataSource: {
