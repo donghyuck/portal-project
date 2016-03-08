@@ -516,7 +516,7 @@
 		<#include "/html/competency/common-sliding-panel.ftl" >		
 		<script type="text/x-kendo-tmpl" id="job-template">		
 		<div class="item col-md-3 col-sm-6 margin-bottom-10 md-margin-bottom-20" style="display:none;" data-object-id="#=jobId#"  >
-					<div class="easy-block-v1">
+					<div class="easy-block-v1 #if(jobLevels.length == 0){ # grayscale #}#" >
 						
 						<div class="easy-block-v1-badge rgba-default">#:classification.classifiedMinorityName #</div>
 						<img alt="" src="<@spring.url "/images/common/icons/business/office/Worker.svg" />">
@@ -552,7 +552,7 @@
 							</div>
 						</div>
 						#if( description != null ){# 
-						<p class="m-b-sm">#: description #</p>
+						<p class=padding-xs-vr text-muted">#: description #</p>
 						#}#						
 						#if( jobLevels.length > 0 ){ #						
 						<table class="table" style="font-size:.9em;">
