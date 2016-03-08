@@ -567,7 +567,7 @@
 							<tbody>
 								# for (var i = 0; i < jobLevels.length ; i++) { #	
 								<tr>
-									<td>jobLevels[i].leve;</td>
+									<td>#: jobLevels[i].leveㅣ#</td>
 									<td> #: jobLevels[i].name #</td>
 									<td>#: jobLevels[i].minWorkExperienceYear # ~ #: jobLevels[i].maxWorkExperienceYear #</td>
 								</tr>
