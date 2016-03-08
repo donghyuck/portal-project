@@ -270,6 +270,13 @@
 			height:90px;
 		}
 		
+		
+		.easy-block-v1{
+			background-color:#fff;
+			-webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+	    	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+	    	border-radius: 6px!important;
+		}
 		/* kendo listbox styling */
 		span[role=listbox].k-dropdown {
 			background:transparent;
@@ -506,7 +513,7 @@
 
 		<#include "/html/competency/common-sliding-panel.ftl" >		
 		<script type="text/x-kendo-tmpl" id="job-template">		
-		<div class="item col-md-3 col-sm-6 md-margin-bottom-40" style="display:none;" data-object-id="#=jobId#"  >
+		<div class="item col-md-3 col-sm-6 margin-bottom-10 md-margin-bottom-20" style="display:none;" data-object-id="#=jobId#"  >
 					<div class="easy-block-v1">
 						
 						<div class="easy-block-v1-badge rgba-default">#:classification.classifiedMinorityName #</div>
