@@ -560,25 +560,19 @@
 							<thead>
 								<tr>
 									<th>직급</th>
-									<th class="hidden-sm">경력</th>
+									<th class="hidden-sm text-center">경력</th>
 								</tr>
 							</thead>
 							<tbody>
 								# for (var i = 0; i < jobLevels.length ; i++) { #	
 								<tr>
 									<td> #: jobLevels[i].name #</td>
-									<td>#: jobLevels[i].minWorkExperienceYear # ~ #: jobLevels[i].maxWorkExperienceYear #</td>
+									<td class="hidden-sm text-center" >#: jobLevels[i].minWorkExperienceYear # ~ #: jobLevels[i].maxWorkExperienceYear #</td>
 								</tr>
 								# } #
 							</tbody>
 						</table>
 						# } #
-						<ul class="list-unstyled">
-						# for (var i = 0; i < jobLevels.length ; i++) { #							
-							<li><span class="color-green">직위:</span> #: jobLevels[i].name #</li>
-							<li><span class="color-green">경력:</span> #: jobLevels[i].minWorkExperienceYear # ~ #: jobLevels[i].maxWorkExperienceYear # </li>						
-						# } #
-						</ul>
 						<a class="btn-u btn-u-sm" href="\\#">더 알아보기 </a>
 					</div>
 		</div>		
