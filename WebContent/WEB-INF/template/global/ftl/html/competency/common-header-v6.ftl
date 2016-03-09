@@ -47,14 +47,13 @@
 						
 						<#if action.webSite ?? >
 							<#assign selected_menu = action.getNavigator() />	
-								${ selected_menu.name }
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
 							<div class="menu-container">
 								<ul class="nav navbar-nav">						
 							<#assign pageMenu = action.getWebSiteMenu("ONEPAGE_COMPETENCY_MENU") />	
 							<#list pageMenu.components as item >
 							<#if WebSiteUtils.isUserAccessAllowed(item) >
-								<li><a href="${item.page}">${item.title} ${item.name}</a></li>	
+								<li class="${ selected_menu.name == item.naem ? "active" : ""}" ><a href="${item.page}">${item.title} ${item.name}</a></li>	
 							</#if>
 							</#list>							
 								</ul>
