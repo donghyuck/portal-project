@@ -38,6 +38,7 @@
 						</div>
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<#if action.webSite ?? >
+							<#assign current_menu = action.getNavigator() />		
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
 							<div class="menu-container">
 								<ul class="nav navbar-nav">						
