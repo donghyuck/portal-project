@@ -4,7 +4,15 @@
 				<div class="navbar mega-menu navbar-responsive-collapse" role="navigation">
 					<div class="container">
 						<div class="menu-container">
+							<!--
 							<button type="button" class="navbar-toggle sliding-panel__btn">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							-->
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
