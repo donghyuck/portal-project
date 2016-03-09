@@ -1,9 +1,20 @@
 			<!--=== Header v6 ===-->
 			<div class="header-v6 header-border-bottom header-dark-dropdown header-sticky">
 				<!-- Navbar -->
-				<div class="navbar mega-menu" role="navigation">
+				<div class="navbar mega-menu navbar-responsive-collapse" role="navigation">
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
+
+					<ul class="nav navbar-nav">
+						<!-- Home -->
+						<li class="">
+							<a href="javascript:void(0);">
+								Home
+							</a>
+						</li>		
+								
+					</ul>
+											
 						<div class="menu-container">
 							<button type="button" class="navbar-toggle sliding-panel__btn">
 								<span class="sr-only">Toggle navigation</span>
