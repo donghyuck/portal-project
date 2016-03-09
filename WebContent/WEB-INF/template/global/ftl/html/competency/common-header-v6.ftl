@@ -36,21 +36,19 @@
 							</div>
 							<!-- End Header Inner Right -->
 						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-					
+						<!-- Collect the nav links, forms, and other content for toggling -->					
 						<#if action.webSite ?? >
-							<#assign selected_menu = action.getNavigator() />	
+						<#assign selected_menu = action.getNavigator() />	
+						<#assign pageMenu = action.getWebSiteMenu("ONEPAGE_COMPETENCY_MENU") />	
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
 							<div class="menu-container">
-								<ul class="nav navbar-nav pull-left">						
-							<#assign pageMenu = action.getWebSiteMenu("ONEPAGE_COMPETENCY_MENU") />	
+								<ul class="nav navbar-nav pull-left">	
 							<#list pageMenu.components as item >
 							<#if WebSiteUtils.isUserAccessAllowed(item) >
 								<li class="<#if (selected_menu.name == item.name)>active</#if>" ><a href="${item.page}">${item.title}</a></li>	
 							</#if>
 							</#list>							
-								</ul>								
- 								
+								</ul>	
  								<div class="right clearfix">
 									<ul class="nav navbar-nav pull-right right-navbar-nav">								
 										<li class="dropdown">
@@ -65,12 +63,10 @@
 											</ul>
 										</li>
 									</ul> <!-- / .navbar-nav -->
-								</div>	
-															
+								</div>					
 							</div>							
 						</div>		
-						</#if>
-						
+						</#if>						
 					</div>
 				</div>
 				<!-- End Navbar -->		
