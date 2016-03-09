@@ -37,6 +37,14 @@
 							<!-- End Header Inner Right -->
 						</div>
 						<!-- Collect the nav links, forms, and other content for toggling -->
+						<#if action.isSetNavigator()  >
+							<#assign pageMenu = action.getNavigator() />
+							${ pageMenu.name }
+						<#else>	
+							
+						</#if>
+						
+						
 						<#if action.webSite ?? >
 							<#assign selected_menu = action.getNavigator() />	
 								${ selected_menu.name }
