@@ -54,8 +54,8 @@
 									<ul class="nav navbar-nav pull-right right-navbar-nav">								
 										<li class="dropdown">
 											<a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown" aria-expanded="false">
-												<img src="/download/profile/system?width=100&height=150">
-												<span>운영자</span>
+												<img src="<@spring.url "/images/common/icons/basic/ios9/LoginAsUser.svg"/>">
+												<span>로그인</span>
 											</a>
 											<ul class="dropdown-menu">
 												<li><a href="#"><span class="label label-warning pull-right">New</span> 프로파일</a></li>
