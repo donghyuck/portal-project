@@ -53,7 +53,7 @@
 								<div class="right clearfix">
 									<ul class="nav navbar-nav pull-right right-navbar-nav">								
 										<li class="dropdown">
-											<a href="<@spring.url "/accounts/login.html?url=${springMacroRequestContext.getRequestUri()}"/>" class="btn btn-link user-menu">
+											<a href="<@spring.url "/accounts/login.html?url=${springMacroRequestContext.getRequestUri()}"/>" class="btn-link user-menu">
 												<img src="<@spring.url "/images/common/icons/basic/ios9/Key.svg"/>">
 												<span>로그인</span>
 											</a>
