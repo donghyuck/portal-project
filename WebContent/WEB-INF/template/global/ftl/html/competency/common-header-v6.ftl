@@ -54,7 +54,7 @@
 									<ul class="nav navbar-nav pull-right right-navbar-nav">								
 										<li class="dropdown">
 											<a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown" aria-expanded="false">
-												<img src="<@spring.url "/images/common/icons/basic/office/LoginAsUser.svg"/>">
+												<img src="<@spring.url "/images/common/icons/basic/ios9/Key.svg"/>">
 												<span>로그인</span>
 											</a>
 											<ul class="dropdown-menu">
