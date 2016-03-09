@@ -37,14 +37,7 @@
 							<!-- End Header Inner Right -->
 						</div>
 						<!-- Collect the nav links, forms, and other content for toggling -->
-						<#if action.isSetNavigator()  >
-							<#assign pageMenu = action.getNavigator() />
-							${ pageMenu.name }
-						<#else>	
-							
-						</#if>
-						
-						
+					
 						<#if action.webSite ?? >
 							<#assign selected_menu = action.getNavigator() />	
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
@@ -53,7 +46,7 @@
 							<#assign pageMenu = action.getWebSiteMenu("ONEPAGE_COMPETENCY_MENU") />	
 							<#list pageMenu.components as item >
 							<#if WebSiteUtils.isUserAccessAllowed(item) >
-								<li class="<#if (selected_menu.name == item.name)>active</#if>" ><a href="${item.page}">${item.title} ${item.name}</a></li>	
+								<li class="<#if (selected_menu.name == item.name)>active</#if>" ><a href="${item.page}">${item.title}</a></li>	
 							</#if>
 							</#list>							
 								</ul>
