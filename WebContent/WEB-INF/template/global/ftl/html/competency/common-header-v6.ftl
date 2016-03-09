@@ -42,15 +42,31 @@
 							<#assign selected_menu = action.getNavigator() />	
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
 							<div class="menu-container">
-								<ul class="nav navbar-nav">						
+								<ul class="nav navbar-nav pull-left">						
 							<#assign pageMenu = action.getWebSiteMenu("ONEPAGE_COMPETENCY_MENU") />	
 							<#list pageMenu.components as item >
 							<#if WebSiteUtils.isUserAccessAllowed(item) >
 								<li class="<#if (selected_menu.name == item.name)>active</#if>" ><a href="${item.page}">${item.title}</a></li>	
 							</#if>
 							</#list>							
-								</ul>
+								</ul>								
+ 								<div class="right clearfix">
+									<ul class="nav navbar-nav pull-right right-navbar-nav">								
+										<li class="dropdown">
+											<a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown" aria-expanded="false">
+												<img src="/download/profile/system?width=100&amp;height=150">
+												<span>운영자</span>
+											</a>
+											<ul class="dropdown-menu">
+												<li><a href="#"><span class="label label-warning pull-right">New</span> 프로파일</a></li>
+												<li class="divider"></li>
+												<li><a href="<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"><i class="dropdown-icon fa fa-power-off"></i> 로그아웃</a></li>
+											</ul>
+										</li>
+									</ul> <!-- / .navbar-nav -->
+								</div>								
 							</div>
+							
 						</div>		
 						</#if>
 						
