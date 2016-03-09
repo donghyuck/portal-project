@@ -46,7 +46,7 @@
 							<#assign pageMenu = action.getWebSiteMenu("ONEPAGE_COMPETENCY_MENU") />	
 							<#list pageMenu.components as item >
 							<#if WebSiteUtils.isUserAccessAllowed(item) >
-								<li><a href="${item.page}">${item.title}</a></li>	
+								<li><a href="${item.page}">${item.title} ${item.name}</a></li>	
 							</#if>
 							</#list>							
 								</ul>
