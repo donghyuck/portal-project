@@ -61,7 +61,7 @@
 												<li><a href="#"><span class="label label-warning pull-right">New</span> 프로파일</a></li>
 												<li class="divider"></li>
 												<li>
-													<a href="#" >
+													<a href="<@spring.url "/accounts/logout.html?url=" >
 													<i class="dropdown-icon fa fa-power-off"></i> 로그아웃</a>
 												</li>
 											</ul>
