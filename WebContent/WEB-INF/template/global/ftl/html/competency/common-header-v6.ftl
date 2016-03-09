@@ -28,7 +28,7 @@
 						</div>
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						
-<div class="navbar-collapse navbar-responsive-collapse collapse in" aria-expanded="true">
+<div class="navbar-collapse navbar-responsive-collapse collapse" aria-expanded="true">
 						<div class="menu-container">
 							<ul class="nav navbar-nav">
 								<!-- Home -->
