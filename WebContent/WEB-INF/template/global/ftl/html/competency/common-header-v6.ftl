@@ -1,7 +1,7 @@
 			<!--=== Header v6 ===-->
-			<div class="header-v6 header-border-bottom header-dark-dropdown header-sticky">
+			<div class="header-v6 header-sticky">
 				<!-- Navbar -->
-				<div class="navbar mega-menu navbar-responsive-collapse" role="navigation">
+				<div class="navbar mega-menu" role="navigation">
 					<div class="container">
 						<div class="menu-container">
 							<!--
@@ -25,10 +25,19 @@
 									<img class="shrink-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
 								</a>
 							</div>
+							<!-- ENd Navbar Brand -->
+							<!-- Header Inner Right -->
+							<div class="header-inner-right">
+						
+							</div>
+							<!-- End Header Inner Right -->
 						</div>
+						
+						
+						
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						
-<div class="navbar-collapse navbar-responsive-collapse collapse" aria-expanded="true">
+					<div class="collapse navbar-collapse navbar-responsive-collapse">
 						<div class="menu-container">
 							<ul class="nav navbar-nav">
 								<!-- Home -->
