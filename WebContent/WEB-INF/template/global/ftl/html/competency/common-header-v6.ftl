@@ -49,21 +49,7 @@
 							</#if>
 							</#list>							
 								</ul>	
- 								<div class="right clearfix">
-									<ul class="nav navbar-nav pull-right right-navbar-nav">								
-										<li class="dropdown">
-											<a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown" aria-expanded="false">
-												<img src="/download/profile/system?width=100&amp;height=150">
-												<span>운영자</span>
-											</a>
-											<ul class="dropdown-menu">
-												<li><a href="#"><span class="label label-warning pull-right">New</span> 프로파일</a></li>
-												<li class="divider"></li>
-												<li><a href="<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"><i class="dropdown-icon fa fa-power-off"></i> 로그아웃</a></li>
-											</ul>
-										</li>
-									</ul> <!-- / .navbar-nav -->
-								</div>					
+ 								
 							</div>							
 						</div>		
 						</#if>						
