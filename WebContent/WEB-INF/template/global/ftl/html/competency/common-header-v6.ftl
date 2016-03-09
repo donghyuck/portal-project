@@ -50,6 +50,7 @@
 							</#if>
 							</#list>							
 								</ul>								
+ 								
  								<div class="right clearfix">
 									<ul class="nav navbar-nav pull-right right-navbar-nav">								
 										<li class="dropdown">
@@ -64,9 +65,9 @@
 											</ul>
 										</li>
 									</ul> <!-- / .navbar-nav -->
-								</div>								
-							</div>
-							
+								</div>	
+															
+							</div>							
 						</div>		
 						</#if>
 						
