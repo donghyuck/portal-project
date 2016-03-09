@@ -56,7 +56,7 @@
 					},	
 					jobs:jobs
 				});	
-				handleHeader2();		
+				handleHeader();		
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();	
 				kendo.bind( $(".sliding-panel"), currentUser); 		
