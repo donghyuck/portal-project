@@ -62,13 +62,12 @@
 												<li class="divider"></li>
 												<li>
 													<a href="<@spring.url "/accounts/logout.html?url=${ springMacroRequestContext.getRequestUri()}" />
-													<i class="dropdown-icon fa fa-power-off"></i> 로그아웃</a>
+													로그아웃</a>
 												</li>
 											</ul>
 										</li>
 									</ul> <!-- / .navbar-nav -->
-								</div>					 								
- 								
+								</div>	
 							</div>							
 						</div>		
 						</#if>						

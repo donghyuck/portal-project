@@ -620,10 +620,7 @@
 							
 				$("#image-source-list input[type=radio][name=image-source]").on("change", function () {				
 					var u_btn = $('#my-photos button[data-action=upload]');
-					
-										
-					console.log("target:" + getMyDriverPhotoSource()  );
-										
+					console.log("target:" + getMyDriverPhotoSource()  );										
 					if(getMyDriverPhotoSource() == 30 || getMyDriverPhotoSource() == 1 ){
 						if(getCurrentUser().hasRole('ROLE_ADMIN') || getCurrentUser().hasRole('ROLE_SYSTEM') ){
 							if(u_btn.is(":hidden"))
