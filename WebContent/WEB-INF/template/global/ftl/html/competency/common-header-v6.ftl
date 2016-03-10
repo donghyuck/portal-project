@@ -33,7 +33,7 @@
 							<!-- Header Inner Right -->
 							<div class="header-inner-right accounts-user-profile">
 								<ul class="menu-icons-list">
-									<li class="menu-icons">
+									<li class="menu-icons no-padding">
 										<a href="/accounts/login.html?url=/display/competency/my-assessment.html" class="btn-link user-menu" data-bind="visible:anonymous" style="display:none" >
 										<img src="/images/common/icons/basic/ios9/Key.svg"><span class="label label-success rounded">로그인</span>
 										</a>	
