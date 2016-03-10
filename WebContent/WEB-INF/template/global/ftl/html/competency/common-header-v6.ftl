@@ -55,7 +55,7 @@
 							</#if>
 							</#list>							
 								</ul>	
- 								
+ 								<!--
 								<div class="right clearfix">
 									<ul class="nav navbar-nav pull-right right-navbar-nav">								
 										<li class="dropdown">
@@ -63,17 +63,18 @@
 												<img src="<@spring.url "/images/common/icons/basic/ios9/Key.svg"/>">
 												<span>로그인</span>
 											</a>
-											<!--<ul class="dropdown-menu">
+											<ul class="dropdown-menu">
 												<li><a href="#"><span class="label label-warning pull-right">New</span> 프로파일</a></li>
 												<li class="divider"></li>
 												<li>
 													<a href="<@spring.url "/accounts/logout.html?url=${ springMacroRequestContext.getRequestUri()}" />">
 													로그아웃</a>
 												</li>
-											</ul>-->
+											</ul>
 										</li>
-									</ul> <!-- / .navbar-nav -->
+									</ul>
 								</div>	
+								-->
 							</div>							
 						</div>		
 						</#if>						
