@@ -430,7 +430,7 @@
 				</div>
 			</div>
 			<div class="container content-md">
-		        <div class="headline"><h2>직무체계</h2></div>
+		        <div class="headline"><h2>직무</h2></div>
 		        <div class="row job-content">
 					<div class="col-sm-12">
 							<table class="table">
