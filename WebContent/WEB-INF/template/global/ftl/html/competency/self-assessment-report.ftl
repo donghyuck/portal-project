@@ -526,7 +526,7 @@ yepnope([{
 </head>
 <body class="header-fixed promo-padding-top sliding-panel-ini sliding-panel-flag-right">
 	<div class="page-loader"></div>
- 	<div class="wrapper"> 	
+ 	<div class="wrapper bg-color-white"> 	
 		<!-- START HEADER -->	
 		<#include "/html/competency/common-header-v6.ftl" >		
 			<!-- Promo Block -->
