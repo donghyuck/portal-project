@@ -7,20 +7,14 @@
 			</div>
 			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
 				<div class="profile-blog">
-									<img class="rounded-x" src="assets/img/testimonials/img1.jpg" alt="">
-									<div class="name-location">
-										<strong>Mikel Andrews</strong>
-										<span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
-									</div>
-									<div class="clearfix margin-bottom-20"></div>
-									<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
-									<hr>
-									<ul class="list-inline share-list">
-										<li><i class="fa fa-bell"></i><a href="#">12 Notifications</a></li>
-										<li><i class="fa fa-group"></i><a href="#">54 Followers</a></li>
-										<li><i class="fa fa-share"></i><a href="#">Share</a></li>
-									</ul>
-								</div>
+					<img class="rounded-x" src="/images/common/anonymous.png" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt="">
+					<div class="name-location">
+					<strong data-bind="text:name"></strong>
+					<span data-bind="text:email"><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
+					</div>
+					<div class="clearfix margin-bottom-20"></div>
+					<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>								
+					</div>
 												
 									
 				<div class="p-xxs">
