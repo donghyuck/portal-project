@@ -35,8 +35,7 @@
 								<ul class="menu-icons-list">
 									<li class="menu-icons">
 										<a href="/accounts/login.html?url=/display/competency/my-assessment.html" class="btn-link user-menu">
-										<img src="/images/common/icons/basic/ios9/Key.svg">
-										<span>로그인</span>
+										<img src="/images/common/icons/basic/ios9/Key.svg"><span>로그인</span>
 										</a>
 									</li>
 								</ul>						
