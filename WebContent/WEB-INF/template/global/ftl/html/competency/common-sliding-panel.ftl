@@ -1,25 +1,27 @@
-		<div class="sliding-panel accounts-user-profile">
+		<div class="sliding-panel bg-color-darker accounts-user-profile">
 			<div class="sliding-panel-header">
 				<div class="profile-blog my-profile-img">
 					<img class="rounded" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt="" />
 					<span data-bind="text:name">방문자</span>
 				</div>	
 			</div>
-			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen profile">
-				<div class="profile-body">
-						<div class="profile-bio">
-							<div class="row">
-								<div class="col-md-5">
-									<img class="img-responsive md-margin-bottom-10" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src:photoUrl}" >
-									<a class="btn-u btn-u-sm" href="#">변경</a>
+			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
+				<div class="profile-blog">
+									<img class="rounded-x" src="assets/img/testimonials/img1.jpg" alt="">
+									<div class="name-location">
+										<strong>Mikel Andrews</strong>
+										<span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
+									</div>
+									<div class="clearfix margin-bottom-20"></div>
+									<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
+									<hr>
+									<ul class="list-inline share-list">
+										<li><i class="fa fa-bell"></i><a href="#">12 Notifications</a></li>
+										<li><i class="fa fa-group"></i><a href="#">54 Followers</a></li>
+										<li><i class="fa fa-share"></i><a href="#">Share</a></li>
+									</ul>
 								</div>
-								<div class="col-md-7">
-									<h2 data-bind="text:name"></h2>
-									<span data-bind="text:email"></span>
-								</div>
-							</div>
-						</div><!--/end row-->
-					</div>
+												
 									
 				<div class="p-xxs">
 					<a href="<@spring.url "/accounts/login.html?url=${springMacroRequestContext.getRequestUri()}"/>" 
