@@ -1511,6 +1511,13 @@ h4 {
     padding: 0;
 }
 
+.sliding-panel-inner .profile-blog img {
+	width:94px;
+	height:94px;
+	margin-right:10px;
+}
+
+
 
 /** menu user */
 ul.nav .user-menu>img , li.menu-icons>a.user-menu>img {
