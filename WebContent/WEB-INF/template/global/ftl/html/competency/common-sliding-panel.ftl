@@ -7,9 +7,12 @@
 			</div>-->
 			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen profile">
 				<div class="profile-blog">
-					<img class="rounded-x" src="/images/common/anonymous.png" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt="">
+					<div class="profile-image-wrapper">
+						<img src="/images/common/anonymous.png" data-bind="attr:{src:photoUrl}, invisible:anonymous" />
+						<a href="#">변경</a>
+					</div>
 					<div class="name-location">
-					<strong data-bind="text:name"></strong>
+					<span data-bind="text:name"></span>
 					<span data-bind="text:email"><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
 					</div>
 					<div class="clearfix margin-bottom-20"></div>

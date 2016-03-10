@@ -1518,6 +1518,37 @@ h4 {
 	margin-right:10px;
 }
 
+.sliding-panel-inner .profile-image-wrapper {
+	
+    float: left;
+    position: relative;
+    width: 94px;
+    height: 94px;
+    padding: 0;
+    cursor: default;
+    overflow: hidden;
+    margin-right: 10px;
+    border-radius: 50%;
+    	
+}
+
+.sliding-panel-inner .profile-image-wrapper > a {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    text-decoration: none;
+    width: 94px;
+    height: 30px;
+    size: .9em;	
+}
+
+.sliding-panel-inner .profile-image-wrapper > a:hover{
+	background: rgba(0, 0, 0, 0.8);
+}
+
 
 
 /** menu user */
