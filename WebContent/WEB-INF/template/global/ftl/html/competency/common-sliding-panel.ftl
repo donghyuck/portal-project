@@ -16,18 +16,11 @@
 					<span data-bind="text:email"><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
 					</div>
 					<div class="clearfix margin-bottom-20"></div>
-					<p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>								
-					</div>
-												
-									
-				<div class="p-xxs">
-					<a href="<@spring.url "/accounts/login.html?url=${springMacroRequestContext.getRequestUri()}"/>" 
-						class="btn btn-xs btn-success btn-flat rounded" data-bind="visible:anonymous" >로그인</a>
+					<p>
 					<a href="<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"/>" 
 						class="btn btn-xs btn-danger btn-flat rounded" data-bind="invisible:anonymous" >로그아웃</a>
-				</div>
-								
-				
+					</p>								
+					</div>
 				<i class="icon-flat icon-svg icon-svg-md business-color-online-support"></i>
 				<h4>문의</h4>
 				<address>
