@@ -430,49 +430,182 @@
 				</div>
 			</div>
 			<div class="container content-md">
-		        <div class="headline"><h2>Job Categories</h2></div>
-		        <div class="row job-content margin-bottom-40">
-				<div class="col-md-3 col-sm-3 md-margin-bottom-40">
-					<h3 class="heading-md"><strong>Accounting &amp; Finance</strong></h3>
-					<ul class="list-unstyled categories">
-						<li><a href="#">Accounting</a> <small class="hex">(342 jobs)</small></li>
-						<li><a href="#">Admin &amp; Clerical</a> <small class="hex">(143 jobs)</small></li>
-						<li><a href="#">Banking &amp; Finance</a> <small class="hex">(66 jobs)</small></li>
-						<li><a href="#">Contract &amp; Freelance</a> <small class="hex">(12 jobs)</small></li>
-						<li><a href="#">Business Development</a> <small class="hex">(212 jobs)</small></li>
-					</ul>
+		        <div class="headline"><h2>국가직무능력표준분류체계</h2></div>
+		        <div class="row job-content">
+					<div class="col-sm-12">
+							<table class="table">
+								<caption>국가직무능력표준 분류체계</caption>
+								<colgroup>
+									<col width="35%">
+									<col>
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">대분류</th>
+										<th scope="col">중분류</th>
+										<th scope="col">소분류</th>
+										<th scope="col">세분류</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<th scope="row">계</th>
+										<td>80개</td>
+										<td>238개</td>
+										<td>887개</td>
+									</tr>
+								</tfoot>
+								<tbody>
+									<tr>
+										<th scope="row">01. 사업관리</th>
+										<td>1</td>
+										<td>2</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">02. 경영·회계·사무</th>
+										<td>4</td>
+										<td>11</td>
+										<td>27</td>
+									</tr>
+									<tr>
+										<th scope="row">03. 금융·보험</th>
+										<td>2</td>
+										<td>9</td>
+										<td>35</td>
+									</tr>
+									<tr>
+										<th scope="row">04. 교육·자연·사회과학</th>
+										<td>3</td>
+										<td>5</td>
+										<td>13</td>
+									</tr>
+									<tr>
+										<th scope="row">05. 법률·경찰·소방·교도·국방</th>
+										<td>2</td>
+										<td>4</td>
+										<td>15</td>
+									</tr>
+									<tr>
+										<th scope="row">06. 보건·의료</th>
+										<td>2</td>
+										<td>7</td>
+										<td>34</td>
+									</tr>
+									<tr>
+										<th scope="row">07. 사회복지·종교</th>
+										<td>3</td>
+										<td>6</td>
+										<td>16</td>
+									</tr>
+									<tr>
+										<th scope="row">08. 문화·예술·디자인·방송</th>
+										<td>3</td>
+										<td>9</td>
+										<td>63</td>
+									</tr>
+									<tr>
+										<th scope="row">09. 운전·운송</th>
+										<td>4</td>
+										<td>7</td>
+										<td>26</td>
+									</tr>
+									<tr>
+										<th scope="row">10. 영업판매</th>
+										<td>3</td>
+										<td>7</td>
+										<td>17</td>
+									</tr>
+									<tr>
+										<th scope="row">11. 경비·청소</th>
+										<td>2</td>
+										<td>3</td>
+										<td>6</td>
+									</tr>
+									<tr>
+										<th scope="row">12. 이용·숙박·여행·오락·스포츠</th>
+										<td>4</td>
+										<td>12</td>
+										<td>42</td>
+									</tr>
+									<tr>
+										<th scope="row">13. 음식서비스</th>
+										<td>1</td>
+										<td>3</td>
+										<td>9</td>
+									</tr>
+									<tr>
+										<th scope="row">14. 건설</th>
+										<td>8</td>
+										<td>26</td>
+										<td>109</td>
+									</tr>
+									<tr>
+										<th scope="row">15. 기계</th>
+										<td>10</td>
+										<td>29</td>
+										<td>115</td>
+									</tr>
+									<tr>
+										<th scope="row">16. 재료</th>
+										<td>2</td>
+										<td>7</td>
+										<td>34</td>
+									</tr>
+									<tr>
+										<th scope="row">17. 화학</th>
+										<td>4</td>
+										<td>11</td>
+										<td>32</td>
+									</tr>
+									<tr>
+										<th scope="row">18 섬유·의복</th>
+										<td>2</td>
+										<td>7</td>
+										<td>23</td>
+									</tr>
+									<tr>
+										<th scope="row">19. 전기·전자</th>
+										<td>3</td>
+										<td>24</td>
+										<td>72</td>
+									</tr>
+									<tr>
+										<th scope="row">20. 정보통신</th>
+										<td>3</td>
+										<td>11</td>
+										<td>58</td>
+									</tr>
+									<tr>
+										<th scope="row">21. 식품가공</th>
+										<td>2</td>
+										<td>4</td>
+										<td>20</td>
+									</tr>
+									<tr>
+										<th scope="row">22. 인쇄·목재·가구·공예</th>
+										<td>2</td>
+										<td>4</td>
+										<td>23</td>
+									</tr>
+									<tr>
+										<th scope="row">23. 환경·에너지·안전</th>
+										<td>6</td>
+										<td>18</td>
+										<td>49</td>
+									</tr>
+									<tr>
+										<th scope="row">24. 농림어업</th>
+										<td>4</td>
+										<td>12</td>
+										<td>44</td>
+									</tr>
+								</tbody>
+							</table>				
+					</div>
 				</div>
-				<div class="col-md-3 col-sm-3 md-margin-bottom-40">
-					<h3 class="heading-md"><strong>Medicla &amp; Health</strong></h3>
-					<ul class="list-unstyled categories">
-						<li><a href="#">Nurse</a> <small class="hex">(546 jobs)</small></li>
-						<li><a href="#">Health Care</a> <small class="hex">(82 jobs)</small></li>
-						<li><a href="#">General Labor</a> <small class="hex">(11 jobs)</small></li>
-						<li><a href="#">Pharmaceutical</a> <small class="hex">(109 jobs)</small></li>
-						<li><a href="#">Human Resources</a> <small class="hex">(401 jobs)</small></li>
-					</ul>
-				</div>
-				<div class="col-md-3 col-sm-3 md-margin-bottom-40">
-					<h3 class="heading-md"><strong>Web Development</strong></h3>
-					<ul class="list-unstyled categories">
-						<li><a href="#">Ecommerce</a> <small class="hex">(958 jobs)</small></li>
-						<li><a href="#">Web Design</a> <small class="hex">(576 jobs)</small></li>
-						<li><a href="#">Web Programming</a> <small class="hex">(543 jobs)</small></li>
-						<li><a href="#">Other - Web Development</a> <small class="hex">(67 jobs)</small></li>
-						<li><a href="#">Website Project Management</a> <small class="hex">(45 jobs)</small></li>
-					</ul>
-				</div>
-				<div class="col-md-3 col-sm-3">
-					<h3 class="heading-md"><strong>Sales &amp; Marketing</strong></h3>
-					<ul class="list-unstyled categories">
-						<li><a href="#">Advertising</a> <small class="hex">(123 jobs)</small></li>
-						<li><a href="#">Email Marketing</a> <small class="hex">(544 jobs)</small></li>
-						<li><a href="#">Telemarketing &amp; Telesales</a> <small class="hex">(564 jobs)</small></li>
-						<li><a href="#">Market Research &amp; Surveys</a> <small class="hex">(345 jobs)</small></li>
-						<li><a href="#">SEM - Search Engine Marketing</a> <small class="hex">(32 jobs)</small></li>
-					</ul>
-				</div>
-			</div>
 		    </div>
 
 			<!-- ./END MAIN CONTENT -->	
