@@ -111,7 +111,7 @@
 			if( !renderTo.data('kendoDropDownList') ){
 				renderTo.kendoDropDownList({
 					cascadeFrom: "classified-majority",
-					optionLabel: "2. 좀더 관심있는 직무분야는 무엇인가요?",
+					optionLabel: "2. 좀더 관심있는 분야는 무엇인가요?",
 					dataTextField: 'name',	
 					dataValueField: 'codeSetId',
 					height: 500,
@@ -401,8 +401,8 @@
 							<div class="info-blocks">
 								<i class="fa fa-laptop icon-info-blocks"></i>
 								<div class="info-blocks-in">
-									<h3>10,000+ jobs</h3>
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+									<h3>직무자가진단</h3>
+									<p>채크리스트를 통한 자가 직무역량진단 도구 제공</p>
 								</div>
 							</div>
 						</div>
