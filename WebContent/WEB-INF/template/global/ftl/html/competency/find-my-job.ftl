@@ -411,8 +411,8 @@
 							<div class="info-blocks">
 								<i class="fa fa-bullhorn icon-info-blocks"></i>
 								<div class="info-blocks-in">
-									<h3>Web Design</h3>
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+									<h3>진단결과리포트</h3>
+									<p>선택한 직무가 요구하는 여러 지식과 기술들을 개발하기 위한 여러가지 방법을 제공</p>
 								</div>
 							</div>
 						</div>
