@@ -178,6 +178,7 @@
 	common.ui.data.User = kendo.data.Model.define( {
 		    id: "userId", // the identifier of the model
 		    fields: {
+		    	visible:{type:'boolean', defaultValue:false},
 		    	companyId: {  type: "number", defaultValue: 0 },
 		    	userId: { type: "number", editable: false, defaultValue: 0  },
 		        username: { type: "string", defaultValue: "anonymous" },
