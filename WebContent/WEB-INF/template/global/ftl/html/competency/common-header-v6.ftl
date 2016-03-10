@@ -37,10 +37,19 @@
 										<a href="/accounts/login.html?url=/display/competency/my-assessment.html" class="btn-link user-menu" data-bind="visible:anonymous" style="display:none" >
 										<img src="/images/common/icons/basic/ios9/Key.svg"><span class="label label-success rounded">로그인</span>
 										</a>	
+										
+										
+										
+										<a href="#" data-bind="invisible:anonymous" class="btn-link user-menu sliding-panel__btn" style="display:none" >
+										<img class="rounded" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}" alt="" />
+										</a>
+										
+										<!--
 										<a href="#" data-bind="invisible:anonymous" class="btn-link user-menu" style="display:none" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" 
 											data-content="<a herf='#' class='btn btn-xs btn-success btn-flat rounded'>프로필</a><hr/><a href='<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"/>' class='btn btn-xs btn-danger btn-flat rounded'>로그아웃</a>">
 											<img class="rounded" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}" alt="" />
 										</a>
+										-->
 									</li>
 								</ul>						
 							</div>
