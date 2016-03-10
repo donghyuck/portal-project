@@ -34,9 +34,12 @@
 							<div class="header-inner-right accounts-user-profile">
 								<ul class="menu-icons-list">
 									<li class="menu-icons">
-										<a href="/accounts/login.html?url=/display/competency/my-assessment.html" class="btn-link user-menu" data-bind="visible:anonymous" >
+										<a href="/accounts/login.html?url=/display/competency/my-assessment.html" class="btn-link user-menu" data-bind="visible:anonymous" style="display:none" >
 										<img src="/images/common/icons/basic/ios9/Key.svg"><span class="label label-success rounded">로그인</span>
 										</a>	
+										<a href="#" data-bind="invisible:anonymous" style="display:none">
+											<img class="rounded" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}" alt="" />
+										</a>
 									</li>
 								</ul>						
 							</div>
