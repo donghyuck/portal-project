@@ -430,11 +430,11 @@
 				</div>
 			</div>
 			<div class="container content-md">
-		        <div class="headline"><h2>국가직무능력표준분류체계</h2></div>
+		        <div class="headline"><h2>직무체계</h2></div>
 		        <div class="row job-content">
 					<div class="col-sm-12">
 							<table class="table">
-								<caption>국가직무능력표준 분류체계</caption>
+								<caption>국가직무능력표준 분류체계에 따른 전체 887 직무</caption>
 								<colgroup>
 									<col width="35%">
 									<col>
@@ -446,7 +446,7 @@
 										<th scope="col">대분류</th>
 										<th scope="col">중분류</th>
 										<th scope="col">소분류</th>
-										<th scope="col">세분류</th>
+										<th scope="col">직무</th>
 									</tr>
 								</thead>
 								<tfoot>
