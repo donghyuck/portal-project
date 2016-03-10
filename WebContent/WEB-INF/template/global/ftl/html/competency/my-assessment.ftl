@@ -46,8 +46,8 @@
 						accounts : {
 							render : false,
 							authenticate : function(e){
-							console.log( kendo.stringify(e.token) );
-								e.token.copy(currentUser);								
+								e.token.copy(currentUser);
+								currentUser.set('visible',true);								
 							} 
 						}						
 					},
@@ -58,11 +58,9 @@
 				});	
 				handleHeader();		
 				// ACCOUNTS LOAD			
-				var currentUser = new common.ui.data.User();	
-				
+				var currentUser = new common.ui.data.User();
 				kendo.bind( $(".accounts-user-profile"), currentUser); 		
-				$('[data-toggle="popover"]').popover();
-				
+				$('[data-toggle="popover"]').popover();				
 				createMyAssessmentPlanListView();
 				// END SCRIPT 				
 			}

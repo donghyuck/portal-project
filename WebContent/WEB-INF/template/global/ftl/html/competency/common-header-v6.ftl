@@ -19,7 +19,7 @@
 							</div>
 							<!-- ENd Navbar Brand -->
 							<!-- Header Inner Right -->
-							<div class="header-inner-right accounts-user-profile">
+							<div class="header-inner-right accounts-user-profile" data-bind="visible:visible">
 								<ul class="menu-icons-list">
 									<li class="menu-icons no-padding">
 										<a href="/accounts/login.html?url=/display/competency/my-assessment.html" class="btn-link user-menu" data-bind="visible:anonymous" style="display:none" >
