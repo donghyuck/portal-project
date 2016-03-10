@@ -47,6 +47,7 @@ yepnope([{
 						render : false,
 						authenticate : function(e){
 							e.token.copy(currentUser);
+							currentUser.set('visible',true);	
 							<#if RequestParameters['id']?? >
 							var	assessmentId = ${ TextUtils.parseLong( RequestParameters['id'] ) } ;
 							var renderTo = $("#my-assessment");		
@@ -73,8 +74,7 @@ yepnope([{
 			});	
 			
 			var currentUser = new common.ui.data.User();	
-			kendo.bind( $(".sliding-panel"), currentUser); 	
-			
+			kendo.bind( $(".accounts-user-profile"), currentUser);				
 			$(window).on("resize", function() {
 		      kendo.resize($(".chart-wrapper"));
 		    });			    
@@ -528,34 +528,7 @@ yepnope([{
 	<div class="page-loader"></div>
  	<div class="wrapper"> 	
 		<!-- START HEADER -->	
-			<!--=== Header v6 ===-->
-			<div class="header-v6 header-border-bottom header-dark-dropdown header-sticky">
-			<!-- Navbar -->
-			<div class="navbar mega-menu" role="navigation">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="menu-container">
-						<button type="button" class="navbar-toggle sliding-panel__btn">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-
-						<!-- Navbar Brand -->
-						<div class="navbar-brand">
-							<a href="/">
-								<img class="default-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
-								<img class="shrink-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
-							</a>
-						</div>
-						<!-- ENd Navbar Brand --> 
-					</div>
-				</div>
-			</div>
-			<!-- End Navbar -->
-			</div>
-			<!--=== End Header v6 ===--> 
+		<#include "/html/competency/common-header-v6.ftl" >		
 			<!-- Promo Block -->
 			<div class="promo-bg-img-v2 fullheight promo-bg-fixed" style="height:350px;" >
 				<div class="container valign__middle text-center" data-start="opacity: 1;" data-500="opacity: 0;">
