@@ -6,7 +6,21 @@
 				</div>	
 			</div>
 			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
-				
+				<div class="profile-body">
+						<div class="profile-bio">
+							<div class="row">
+								<div class="col-md-5">
+									<img class="img-responsive md-margin-bottom-10" src="<@spring.url "/images/common/anonymous.png"/>" data-bind="attr:{src:photoUrl}" >
+									<a class="btn-u btn-u-sm" href="#">변경</a>
+								</div>
+								<div class="col-md-7">
+									<h2 data-bind="text:name"></h2>
+									<span data-bind="text:email"></span>
+								</div>
+							</div>
+						</div><!--/end row-->
+					</div>
+									
 				<div class="p-xxs">
 					<a href="<@spring.url "/accounts/login.html?url=${springMacroRequestContext.getRequestUri()}"/>" 
 						class="btn btn-xs btn-success btn-flat rounded" data-bind="visible:anonymous" >로그인</a>
