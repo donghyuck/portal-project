@@ -37,7 +37,9 @@
 										<a href="/accounts/login.html?url=/display/competency/my-assessment.html" class="btn-link user-menu" data-bind="visible:anonymous" style="display:none" >
 										<img src="/images/common/icons/basic/ios9/Key.svg"><span class="label label-success rounded">로그인</span>
 										</a>	
-										<a href="#" data-bind="invisible:anonymous" class="btn-link user-menu" style="display:none">
+										<a href="#" data-bind="invisible:anonymous" class="btn-link user-menu" style="display:none" 
+											role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"
+											>
 											<img class="rounded" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}" alt="" />
 										</a>
 									</li>
