@@ -1,4 +1,4 @@
-		<div class="sliding-panel bg-color-darker accounts-user-profile">
+		<div class="sliding-panel accounts-user-profile">
 			<div class="sliding-panel-header">
 				<div class="profile-blog my-profile-img">
 					<img class="rounded" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}, invisible:anonymous" alt="" />
