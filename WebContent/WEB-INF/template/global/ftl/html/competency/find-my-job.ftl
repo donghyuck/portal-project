@@ -625,12 +625,20 @@
 						<img src="<@spring.url "/images/common/icons/business/color/ConstructionWorker.svg" />">
 						#}else if( classification.classifiedMajorityId == 107 ){#
 						<img src="<@spring.url "/images/common/icons/clothing/color/VeganClothing.svg" />">
+						#}else if( classification.classifiedMajorityId == 22 ){#
+							#if( classification.classifiedMajorityId == 22 ){#
+							
+							#}else{#
+							
+							#}#
+						<img src="<@spring.url "/images/common/icons/clothing/color/VeganClothing.svg" />">
+						
 						#}else{# 
 						<img src="<@spring.url "/images/common/icons/business/office/Worker.svg" />">
 						#}#
 						<div class="overflow-h">
 							<h3>#: name #</h3>			
-							#: classification.classifiedMajorityId #			
+							#: classification.classifiedMajorityId #	- #: classification.classifiedMiddleId #	- #: classification.classifiedMinorityId #			
 							<div class="star-vote pull-right">
 								<ul class="list-inline">
 									<li><i class="color-green fa fa-star"></i></li>
