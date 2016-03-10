@@ -626,13 +626,13 @@
 						#}else if( classification.classifiedMajorityId == 107 ){#
 						<img src="<@spring.url "/images/common/icons/clothing/color/VeganClothing.svg" />">
 						#}else if( classification.classifiedMajorityId == 22 ){#
-							#if( classification.classifiedMajorityId == 22 ){#
-							
+							#if( classification.classifiedMiddleId == 29 ){#
+							<img src="<@spring.url "/images/common/icons/transport/color/WaterTransportation.svg" />">
+							#}else if( classification.classifiedMiddleId == 23 ){#
+							<img src="<@spring.url "/images/common/icons/user/color/AirPilotHat.svg" />">
 							#}else{#
-							
-							#}#
-						<img src="<@spring.url "/images/common/icons/clothing/color/VeganClothing.svg" />">
-						
+							<img src="<@spring.url "/images/common/icons/transport/color/Train.svg" />">
+							#}#						
 						#}else{# 
 						<img src="<@spring.url "/images/common/icons/business/office/Worker.svg" />">
 						#}#
