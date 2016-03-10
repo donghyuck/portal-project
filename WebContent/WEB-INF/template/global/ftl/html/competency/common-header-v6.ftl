@@ -4,14 +4,6 @@
 				<div class="navbar mega-menu" role="navigation">
 					<div class="container">
 						<div class="menu-container">
-							<!--
-							<button type="button" class="navbar-toggle sliding-panel__btn">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							-->
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
@@ -21,10 +13,6 @@
 							<!-- Navbar Brand -->
 							<div class="navbar-brand">
 								<a href="/">
-								<!--
-									<img class="default-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
-									<img class="shrink-logo" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" alt="Logo">
-								-->	
 									<img class="default-logo" src="<@spring.url '/download/logo/company/podosoftware'/>" alt="Logo">
 									<img class="shrink-logo" src="<@spring.url '/download/logo/company/podosoftware'/>" alt="Logo">
 								</a>
@@ -38,14 +26,8 @@
 										<img src="/images/common/icons/basic/ios9/Key.svg"><span class="label label-success rounded">로그인</span>
 										</a>										
 										<a href="#" data-bind="invisible:anonymous" class="btn-link user-menu sliding-panel__btn" style="display:none" >
-										<img class="rounded" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}" alt="" />
+										<img src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}" alt="" />
 										</a>
-										<!--
-										<a href="#" data-bind="invisible:anonymous" class="btn-link user-menu" style="display:none" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" 
-											data-content="<a herf='#' class='btn btn-xs btn-success btn-flat rounded'>프로필</a><hr/><a href='<@spring.url "/accounts/logout.html?url=${springMacroRequestContext.getRequestUri()}"/>' class='btn btn-xs btn-danger btn-flat rounded'>로그아웃</a>">
-											<img class="rounded" src="/images/common/anonymous.png" width="42" height="42" data-bind="attr:{src:photoUrl}" alt="" />
-										</a>
-										-->
 									</li>
 								</ul>						
 							</div>
