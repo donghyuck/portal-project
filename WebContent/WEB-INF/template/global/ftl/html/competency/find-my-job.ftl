@@ -446,7 +446,7 @@
 										<th scope="col">대분류</th>
 										<th scope="col">중분류</th>
 										<th scope="col">소분류</th>
-										<th scope="col">직무</th>
+										<th scope="col">직무(세분류)</th>
 									</tr>
 								</thead>
 								<tfoot>
