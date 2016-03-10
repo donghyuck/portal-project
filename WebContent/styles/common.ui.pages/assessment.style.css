@@ -1501,6 +1501,13 @@ h4 {
 	padding:10px;
 }		
 
+.sliding-panel-inner {
+	padding: 40px 5px;	
+}
+
+.sliding-panel-inner .profile-blog {
+	background:#transparent;	
+}
 /** menu user */
 ul.nav .user-menu>img , li.menu-icons>a.user-menu>img {
 	border-radius: 25px;
