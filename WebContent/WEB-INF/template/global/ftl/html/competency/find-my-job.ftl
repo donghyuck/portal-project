@@ -401,8 +401,8 @@
 							<div class="info-blocks">
 								<i class="fa fa-laptop icon-info-blocks"></i>
 								<div class="info-blocks-in">
-									<h3>직무자가진단</h3>
-									<p>채크리스트를 통한 자가 직무역량진단 도구 제공</p>
+									<h3>역량진단</h3>
+									<p>채크리스트를 통한 자가직무역량진단 도구</p>
 								</div>
 							</div>
 						</div>
