@@ -59,7 +59,7 @@
 				handleHeader();		
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();	
-				kendo.bind( $(".sliding-panel"), currentUser); 		
+				kendo.bind( $(".accounts-user-profile"), currentUser); 		
 				createMyAssessmentPlanListView();
 				// END SCRIPT 				
 			}
