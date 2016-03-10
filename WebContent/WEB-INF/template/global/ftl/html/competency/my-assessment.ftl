@@ -59,7 +59,10 @@
 				handleHeader();		
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();	
+				
 				kendo.bind( $(".accounts-user-profile"), currentUser); 		
+				$('[data-toggle="popover"]').popover();
+				
 				createMyAssessmentPlanListView();
 				// END SCRIPT 				
 			}
