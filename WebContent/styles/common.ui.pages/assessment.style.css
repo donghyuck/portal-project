@@ -1502,7 +1502,7 @@ h4 {
 }		
 
 /** menu user */
-ul.nav .user-menu>img {
+ul.nav .user-menu>img , li.menu-icons>a.user-menu>img {
 	border-radius: 25px;
 	display: inline-block;
 	height: 31px;
@@ -1513,6 +1513,10 @@ ul.nav .user-menu>img {
 ul.nav .user-menu>span {
 	display: inline-block;
 	margin-left: 7px
+}
+
+li.menu-icons>a.user-menu{ 
+	display : block ;	
 }
 
 @media (min-width: 992px){
