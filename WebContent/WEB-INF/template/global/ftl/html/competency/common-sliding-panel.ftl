@@ -5,7 +5,7 @@
 					<span data-bind="text:name">방문자</span>
 				</div>	
 			</div>
-			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen">
+			<div class="sliding-panel-inner sliding-panel-scrollable fullscreen profile">
 				<div class="profile-body">
 						<div class="profile-bio">
 							<div class="row">
