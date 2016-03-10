@@ -1517,6 +1517,9 @@ ul.nav .user-menu>span , li.menu-icons>a.user-menu>span{
 
 li.menu-icons>a.user-menu{ 
 	display : block ;	
+	padding: 20px;
+	line-height: 54px;		
+	border : 0 ;
 }
 
 @media (min-width: 992px){
