@@ -391,8 +391,8 @@
 							<div class="info-blocks">
 								<i class="fa fa-bell-o icon-info-blocks"></i>
 								<div class="info-blocks-in">
-									<h3>Accounting</h3>
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+									<h3>직무</h3>
+									<p>한국표준직업분류, 한국표준산업분류등을 참고 대분류(24) > 중분류(80) > 소분류(238) 순으로 구성된 전체 887개 직무</p>
 								</div>
 							</div>
 						</div>
