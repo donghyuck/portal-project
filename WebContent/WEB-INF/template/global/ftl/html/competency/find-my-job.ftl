@@ -391,8 +391,8 @@
 							<div class="info-blocks">
 								<i class="fa fa-bell-o icon-info-blocks"></i>
 								<div class="info-blocks-in">
-									<h3>직무</h3>
-									<p>한국표준직업분류, 한국표준산업분류등을 참고 대분류(24) > 중분류(80) > 소분류(238) 순으로 구성된 전체 887개 직무</p>
+									<h3>NCS 직무</h3>
+									<p>한국표준직업분류, 한국표준산업분류등을 참고 대분류(24) > 중분류(80) > 소분류(238) 순으로 구성된 전체 887개 직무에 대하여 알아 볼수 있습니다.</p>
 								</div>
 							</div>
 						</div>
@@ -401,8 +401,8 @@
 							<div class="info-blocks">
 								<i class="fa fa-laptop icon-info-blocks"></i>
 								<div class="info-blocks-in">
-									<h3>역량진단</h3>
-									<p>채크리스트를 통한 자가직무역량진단 도구</p>
+									<h3>자가직무역량진단</h3>
+									<p>희망하는 직무에 필요한 능력은 무엇이고 어떻게 그 능력(지식, 기술, 태도 등)을 개발할 수 있는지를 확인할 수 있습니다.</p>
 								</div>
 							</div>
 						</div>
