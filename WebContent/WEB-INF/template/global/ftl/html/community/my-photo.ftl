@@ -49,6 +49,7 @@
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
+								$('article').show();
 							} 
 						}		
 					},
@@ -67,6 +68,16 @@
 		</script>		
 		<style scoped="scoped">
 			
+		ul.nav > li > a .icon-svg {	
+			    display: inline-block!important;
+			    border-radius: 50%!important;
+			    background-size: 48px 48px;
+			    background-position: center center;
+			    vertical-align: middle;
+			    line-height: 32px;
+			    box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);
+			    margin-left: 0px;
+    	}
 			
 		</style>   	
 		</#compress>
@@ -92,7 +103,8 @@
 				<div class="container content">		
 				
 					<ul class="nav nav-pills">
-					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="tab" aria-expanded="false">사진</a></li>
+					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="tab" aria-expanded="false">
+					  <i class="icon-flat icon-svg icon-svg-sm basic-color-stack-of-photos"></i> 사진</a></li>
 					  <li role="presentation"><a href="#album-tabpanel" aria-controls="album-tabpanel" role="tab" data-toggle="tab" aria-expanded="false">앨범</a></li>
 					</ul>
 					<div class="tab-content">
