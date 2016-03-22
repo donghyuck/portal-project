@@ -80,7 +80,7 @@
 			    
     	}
     	
-    	ul.nav-pills > li.active > .icon-svg {     	
+    	ul.nav-pills > li.active > a .icon-svg {     	
 		 	-moz-filter: none;
 		    -o-filter: none;
 		    -webkit-filter: none;
