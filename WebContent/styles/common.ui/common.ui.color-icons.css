@@ -63,6 +63,11 @@ i.icon-svg {
 
 /* Basic Color Icons 
 ------------------------------------*/
+.icon-svg.basic-color-stack-of-photos {
+	background-image: url("/images/common/icons/basic/color/StackOfPhotos.svg");
+}
+
+
 .icon-svg.basic-color-search {
 	background-image: url("/images/common/icons/basic/color/Search.svg");
 }
