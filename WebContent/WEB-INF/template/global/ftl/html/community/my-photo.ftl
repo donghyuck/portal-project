@@ -90,6 +90,15 @@
 			</#if>	
 			<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">		
 				<div class="container content">		
+				
+					<ul class="nav nav-pills">
+					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="tab" aria-expanded="false">사진</a></li>
+					  <li role="presentation"><a href="#album-tabpanel" aria-controls="album-tabpanel" role="tab" data-toggle="tab" aria-expanded="false">앨범</a></li>
+					</ul>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 사진 	</div>
+						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 </div>
+					</div>
 				</div><!--/end container-->
 			</article>
 			<!-- ./END MAIN CONTENT -->	
