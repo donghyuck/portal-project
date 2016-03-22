@@ -68,8 +68,11 @@
 		</script>		
 		<style scoped="scoped">
 		ul.nav-pills > li > a {
-			border : 0;
-			border-radius : 4px;
+			border : 0!important;
+			padding : 10px 20px;
+			border-radius : 8px;
+			font-weight: 200;
+    		font-size: 1.1em;
 		}
 			
 		ul.nav-pills > li > a .icon-svg {	
