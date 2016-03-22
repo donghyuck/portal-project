@@ -67,6 +67,10 @@
 		-->
 		</script>		
 		<style scoped="scoped">
+		ul.nav-pills > li > a {
+			border : 0;
+			border-radius : 4px;
+		}
 			
 		ul.nav-pills > li > a .icon-svg {	
 			    display: inline-block!important;
