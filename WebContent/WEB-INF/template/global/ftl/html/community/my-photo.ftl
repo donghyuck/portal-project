@@ -204,13 +204,10 @@
 	<!-- START TEMPLATE -->
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
-	<div class="img-wrapper">			
-		#if (contentType.match("^image") ) {#
-		<img src="<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>" alt="#:name# 이미지" />
-		# }	#
+	<div class="img-wrapper" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>');">			
 		<div class="img-description">
 			<h3>#:name#</h3>
-			<p>#:formattedModifiedDate#</p>
+			<p>#= formattedModifiedDate#</p>
 		</div>
 	</div>
 	</script>		
