@@ -210,7 +210,7 @@
 		# }	#
 		<div class="img-description">
 			<h3>#:name#</h3>
-			<p>#:foramttedModifiedDate#</p>
+			<p>#:formattedModifiedDate#</p>
 		</div>
 	</div>
 	</script>		
