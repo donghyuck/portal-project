@@ -199,22 +199,6 @@
 * image broswer .. (side menu)
 */
 
-.image-listview .image-bg {
-	
-    background-position: top left;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    -webkit-transition: -webkit-transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);
-    -webkit-transition: transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);
-    transition: transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);	
-}
-
 .image-listview.k-listview,.file-listview.k-listview {
 	width: 100%;
 	padding: 0px;
@@ -330,6 +314,23 @@
 	animation-fill-mode: both;
 	-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
+}
+
+
+.image-listview .image-bg {
+	height:240px; 
+    background-position: top left;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: -webkit-transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);
+    -webkit-transition: transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);
+    transition: transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);	
 }
 
 @media ( max-width : 768px) {
