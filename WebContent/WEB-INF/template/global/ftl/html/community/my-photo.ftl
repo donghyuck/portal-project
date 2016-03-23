@@ -16,9 +16,7 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',
-			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
-			
-			
+			'css!<@spring.url "/styles/common.ui.pages/personalized.style.css"/>',
 						
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
@@ -110,7 +108,7 @@
 					dataBound : function(e){
 					},
 					navigatable: false,
-					template: kendo.template($("#photo-list-view-template").html())
+					template: kendo.template($("#my-photo-listview-template").html())
 				});		
 			
 			}
@@ -189,7 +187,7 @@
 					</ul>
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 사진 	
-							<div id="my-photo-listview" class="no-border"></div>						
+							<div id="my-photo-listview" class="no-border image-listview"></div>						
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 
 						
@@ -204,7 +202,18 @@
 		</div>			
 		
 	<!-- START TEMPLATE -->
-	<#include "/html/common/common-homepage-templates.ftl" >	
+	<#include "/html/common/common-homepage-templates.ftl" >
+	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
+	<div class="img-wrapper">			
+		#if (contentType.match("^image") ) {#
+		<img src="<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>" alt="#:name# 이미지" />
+		# }	
+		<div class="img-description">
+			<h3>#:name#</h3>
+			<p>#:size# 바이트</p>
+		</div>
+	</div>
+	</script>		
 	<!-- ./END TEMPLATE -->
 	</body>    
 </html>
