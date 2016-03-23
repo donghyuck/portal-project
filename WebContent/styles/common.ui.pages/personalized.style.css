@@ -343,15 +343,8 @@
 	filter: grayscale(0);
 }
 
-.image-listview .image-bg.k-state-selected {
-	opacity : 1;
-	background-color: rgba(0, 0, 0, 0.6);
-}
-.image-listview .image-bg:hover {
-	opacity : 1;
-}
 
-.image-listview .image-bg.k-state-selected:after {
+.image-listview-v2 .k-state-selected:after {
 	content: "\f058";
 	font-size : 18px;	
 	top: 10px;

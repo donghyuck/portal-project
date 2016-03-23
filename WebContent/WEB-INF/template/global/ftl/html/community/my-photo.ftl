@@ -187,7 +187,7 @@
 					</ul>
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 사진 	
-							<div id="my-photo-listview" class="no-border no-gutter image-listview"></div>						
+							<div id="my-photo-listview" class="no-border no-gutter image-listview-v2"></div>						
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 
 						
