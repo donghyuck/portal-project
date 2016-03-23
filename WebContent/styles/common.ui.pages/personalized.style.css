@@ -343,7 +343,7 @@
     transition: all 0.5s ease-in-out; */
     
 }
-.image-listview-v2 img:hover{
+.image-listview-v2 .image-bg:hover, .image-listview-v2 img:hover{
 	filter: grayscale(0);
     -webkit-filter: grayscale(0);
 }
