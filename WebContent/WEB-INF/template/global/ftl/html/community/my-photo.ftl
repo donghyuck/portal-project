@@ -50,7 +50,7 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								$('article').show();
-								createMyPhotoTabs()
+								createMyTabs()
 							} 
 						}		
 					},
@@ -60,18 +60,17 @@
 					jobs:jobs
 				});				
 				// ACCOUNTS LOAD	
-				var currentUser = new common.ui.data.User();			
+				var currentUser = new common.ui.data.User();
 							
 				// END SCRIPT 				
 			}
 		}]);	
 		
-		function createMyPhotoTabs(){
-			var renderTo = $('#my-photo-tab');
+		function createMyTabs(){
+			var renderTo = $('#my-tab');
 			renderTo.on( 'show.bs.tab', function (e) {
 				//	e.preventDefault();		
-				var show_bs_tab = $(e.target);
-				
+				var show_bs_tab = $(e.target);				
 				console.log( show_bs_tab.data('action') );
 									
 			});	
@@ -131,7 +130,7 @@
 			<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">		
 				<div class="container content">		
 				
-					<ul id="my-photo-tab" class="nav nav-pills">
+					<ul id="my-tab" class="nav nav-pills">
 					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="pill" aria-expanded="false" data-action="photo">
 					  	<i class="icon-flat icon-svg icon-svg-sm basic-color-picture grayscale"></i> 사진</a>
 					  </li>
