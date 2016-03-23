@@ -318,7 +318,7 @@
 
 
 .image-listview .image-bg {
-	opacity:.8;
+	opacity:.9;
     background-position: top left;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -339,16 +339,8 @@
 	opacity : 1;
 	background-color: rgba(0, 0, 0, 0.6);
 }
-.image-listview .image-bg:hover:after {
-	content: "\f058";
-	font-size : 18px;	
-	top: 10px;
-	right: 15px;
-	position: absolute;
-	font-weight: normal;
-	display: inline-block;
-	font-family: FontAwesome;
-	color: #ccc;	
+.image-listview .image-bg:hover {
+	opacity : 1;
 }
 
 .image-listview .image-bg.k-state-selected:after {
