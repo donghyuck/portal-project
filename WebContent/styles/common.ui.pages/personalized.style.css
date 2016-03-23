@@ -339,6 +339,18 @@
 	opacity : 1;
 	background-color: rgba(0, 0, 0, 0.6);
 }
+.image-listview .image-bg:hover:after {
+	content: "\f058";
+	font-size : 18px;	
+	top: 10px;
+	right: 15px;
+	position: absolute;
+	font-weight: normal;
+	display: inline-block;
+	font-family: FontAwesome;
+	color: #f5f5f5;	
+}
+
 .image-listview .image-bg.k-state-selected:after {
 	content: "\f058";
 	font-size : 18px;	
