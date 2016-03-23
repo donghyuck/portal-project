@@ -93,7 +93,7 @@
 									return { startIndex: options.skip, pageSize: options.pageSize }
 								}
 							},
-							pageSize: 28,
+							pageSize: 30,
 							schema: {
 								model: common.ui.data.Image,
 								data : "images",
@@ -204,8 +204,8 @@
 	<!-- START TEMPLATE -->
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
-	<div class="col-sm-2 col-xs-4 image-bg no-padding" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>');">		
-		<span></span>	
+	<div class="col-sm-2 col-xs-4">		
+		<img src="<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>" alt="#:name#" />
 	</div>
 	</script>		
 	<!-- ./END TEMPLATE -->
