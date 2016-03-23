@@ -207,7 +207,7 @@
 	<div class="img-wrapper">			
 		#if (contentType.match("^image") ) {#
 		<img src="<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>" alt="#:name# 이미지" />
-		# }	
+		# }	#
 		<div class="img-description">
 			<h3>#:name#</h3>
 			<p>#:size# 바이트</p>
