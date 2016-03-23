@@ -204,8 +204,8 @@
 	<!-- START TEMPLATE -->
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
-	<div class="col-sm-2 col-xs-4 img-bg" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>');">		
-		<span></span>	
+	<div class="col-sm-2 col-xs-4" >		
+		<span class="image-bg" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>');"></span>	
 	</div>
 	</script>		
 	<!-- ./END TEMPLATE -->
