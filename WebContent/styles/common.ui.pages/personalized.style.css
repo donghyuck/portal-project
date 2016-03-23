@@ -318,6 +318,7 @@
 
 
 .image-listview .image-bg {
+	opacity:.8;
     background-position: top left;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -335,6 +336,7 @@
 }
 
 .image-listview .image-bg.k-state-selected {
+	opacity : 1;
 	background-color: rgba(0, 0, 0, 0.6);
 }
 .image-listview .image-bg.k-state-selected:after {
