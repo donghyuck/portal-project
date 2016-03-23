@@ -187,7 +187,7 @@
 					</ul>
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 사진 	
-							<div id="my-photo-listview" class="no-border no-gutter row image-listview-v2"></div>						
+							<div id="my-photo-listview" class="no-border no-gutter image-listview-v2"></div>						
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 
 						
@@ -204,9 +204,8 @@
 	<!-- START TEMPLATE -->
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
-	<div class="col-sm-2 col-xs-4">		
+	<div class="col-sm-2 col-xs-4" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>')" >		
 		<span>
-			<img class="img-responsive" src="<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>" alt="#:name#">
 		</span>
 	</div>
 	</script>		
