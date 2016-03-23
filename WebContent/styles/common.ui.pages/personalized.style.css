@@ -344,6 +344,7 @@
     
 }
 .image-listview-v2 .image-bg:hover, .image-listview-v2 img:hover{
+	border : 0;
 	filter: grayscale(0);
     -webkit-filter: grayscale(0);
 }
