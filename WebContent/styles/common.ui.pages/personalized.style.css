@@ -317,6 +317,18 @@
 }
 
 
+.image-listview-v2 .image-bg {	
+	background-position: top left;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;	
+}
+
 .image-listview-v2 img
 {
     display: block;
