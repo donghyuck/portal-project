@@ -339,6 +339,9 @@
     transition: all 0.5s ease-in-out; */
     
 }
+.image-listview-v2 img:hover{
+	filter: grayscale(0);
+}
 
 .image-listview .image-bg.k-state-selected {
 	opacity : 1;
