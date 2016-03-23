@@ -351,7 +351,7 @@
 	color: #fff;	
 }
 
-.image-listview k-state-selected > span {
+.image-listview .k-state-selected > span {
 	display: block;
 	width:100%;
 	height:100%;
