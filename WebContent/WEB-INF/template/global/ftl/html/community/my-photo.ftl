@@ -72,7 +72,7 @@
 				//	e.preventDefault();		
 				var show_bs_tab = $(e.target);
 				
-				console.log( show_bs_tab.html() );
+				console.log( show_bs_tab.data('action') );
 									
 			});	
 			renderTo.find('a:first').tab('show') ;
@@ -132,10 +132,10 @@
 				<div class="container content">		
 				
 					<ul id="my-photo-tab" class="nav nav-pills">
-					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="pill" aria-expanded="false">
+					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="pill" aria-expanded="false" data-action="photo">
 					  	<i class="icon-flat icon-svg icon-svg-sm basic-color-picture grayscale"></i> 사진</a>
 					  </li>
-					  <li role="presentation"><a href="#album-tabpanel" aria-controls="album-tabpanel" role="tab" data-toggle="pill" aria-expanded="false">
+					  <li role="presentation"><a href="#album-tabpanel" aria-controls="album-tabpanel" role="tab" data-toggle="pill" aria-expanded="false" data-action="album">
 					  	<i class="icon-flat icon-svg icon-svg-sm basic-color-stack-of-photos grayscale"></i> 앨범</a>
 					  </li>					  
 					  <li role="presentation" class="dropdown pull-right">
