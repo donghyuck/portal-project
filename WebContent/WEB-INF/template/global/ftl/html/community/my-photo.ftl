@@ -101,7 +101,7 @@
 							}
 						}
 					),
-					selectable: multiple,//"single",
+					selectable: "multiple",//"single",
 					change: function(e) {
 						var data = this.dataSource.view() ;
 					},
