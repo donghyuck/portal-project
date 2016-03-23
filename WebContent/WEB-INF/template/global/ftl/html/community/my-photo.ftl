@@ -84,7 +84,7 @@
 		function createPhotoListView( currentUser ){		
 			var renderTo = $('#my-photo-listview');
 			if( !common.ui.exists(renderTo) ){
-				common.ui.listview(	renderTo, {
+				var listview = common.ui.listview(renderTo, {
 					dataSource : common.ui.datasource(
 						'<@spring.url "/data/me/photo/images/list.json?output=json" />',
 						{
@@ -110,6 +110,9 @@
 					navigatable: false,
 					template: kendo.template($("#my-photo-listview-template").html())
 				});		
+				
+				common.ui.pager( $("#my-photo-listview-pager"), { buttonCount : 9, pageSizes: true, dataSource : listview.dataSource });
+				
 				renderTo.removeClass('k-widget');
 			}
 		}
@@ -187,7 +190,8 @@
 					</ul>
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 사진 	
-							<div id="my-photo-listview" class="no-border no-gutter image-listview-v2"></div>						
+							<div id="my-photo-listview" class="no-border no-gutter image-listview-v2"></div>			
+							<div id="photo-list-pager" class="my-photo-listview-pager bg-flat-gray"></div>			
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 
 						
