@@ -151,11 +151,7 @@
 		    filter: none;
 		    filter: none;   	
     	}
-@media (min-width: 992px){
-.image-listview .img-wrapper, .file-listview .file-wrapper {
-    width: 14.28%;
-}	
-}		
+			
 		</style>   	
 		</#compress>
 	</head>
@@ -194,7 +190,7 @@
 					</ul>
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 	
-							<div id="my-photo-listview" class="no-border no-gutter image-listview"></div>			
+							<div id="my-photo-listview" class="no-border no-gutter image-listview-v2"></div>			
 							<div id="my-photo-listview-pager" class="image-listview-pager bg-transparent p-sm"></div>			
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 
@@ -212,12 +208,9 @@
 	<!-- START TEMPLATE -->
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
-	<div class="img-wrapper">			
-		#if (contentType.match("^image") ) {#
-		<img src="<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>" alt="#:name# 이미지" />
-		# } else { #			
-		<img src="http://placehold.it/146x146&amp;text=[file]"></a>
-		# } #	
+	<div class="col-sm-2 col-xs-4 image-bg" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>')" >		
+		<span>
+		</span>
 	</div>
 	</script>		
 	<!-- ./END TEMPLATE -->
