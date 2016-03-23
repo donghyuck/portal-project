@@ -318,7 +318,6 @@
 
 
 .image-listview .image-bg {
-	height:240px; 
     background-position: top left;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -331,6 +330,12 @@
     -webkit-transition: -webkit-transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);
     -webkit-transition: transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);
     transition: transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);	
+}
+
+
+@media (min-width: 992px)
+.image-listview .image-bg{
+    width: 14.28%;
 }
 
 @media ( max-width : 768px) {
