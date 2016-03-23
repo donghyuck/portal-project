@@ -84,7 +84,7 @@
 		}		
 		
 		function createPhotoListView( currentUser ){		
-			var renderTo = $('#photo-list-view');
+			var renderTo = $('#my-photo-listview');
 			if( !common.ui.exists(renderTo) ){
 				common.ui.listview(	renderTo, {
 					dataSource : common.ui.datasource(
