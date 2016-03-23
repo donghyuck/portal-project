@@ -151,7 +151,11 @@
 		    filter: none;
 		    filter: none;   	
     	}
-			
+@media (min-width: 992px){
+.image-listview .img-wrapper, .file-listview .file-wrapper {
+    width: 14.28%;
+}	
+}		
 		</style>   	
 		</#compress>
 	</head>
