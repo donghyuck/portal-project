@@ -111,7 +111,7 @@
 					template: kendo.template($("#my-photo-listview-template").html())
 				});		
 				
-				common.ui.pager( $("#my-photo-listview-pager"), { buttonCount : 9, pageSizes: true, dataSource : listview.dataSource });
+				common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: true, dataSource : listview.dataSource });
 				
 				renderTo.removeClass('k-widget');
 			}
@@ -191,7 +191,7 @@
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 	
 							<div id="my-photo-listview" class="no-border no-gutter image-listview-v2"></div>			
-							<div id="my-photo-listview-pager" class="image-listview-pager bg-flat-gray p-sm"></div>			
+							<div id="my-photo-listview-pager" class="image-listview-pager bg-transparent p-sm"></div>			
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 
 						
