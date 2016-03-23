@@ -210,7 +210,7 @@
 		# }	#
 		<div class="img-description">
 			<h3>#:name#</h3>
-			<p>#:size# 바이트</p>
+			<p>#:foramttedModifiedDate#</p>
 		</div>
 	</div>
 	</script>		
