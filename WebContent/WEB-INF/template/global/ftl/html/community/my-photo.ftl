@@ -50,7 +50,7 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								$('article').show();
-								createMyTabs()
+								createMyPhotoTabs()
 							} 
 						}		
 					},
@@ -59,23 +59,67 @@
 					},
 					jobs:jobs
 				});				
+				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();
+				createPhotoListView(currentUser);			
+							
 							
 				// END SCRIPT 				
 			}
 		}]);	
 		
-		function createMyTabs(){
-			var renderTo = $('#my-tab');
+		function createMyPhotoTabs(){
+			var renderTo = $('#my-photo-tabs');
 			renderTo.on( 'show.bs.tab', function (e) {
 				//	e.preventDefault();		
 				var show_bs_tab = $(e.target);				
-				console.log( show_bs_tab.data('action') );
-									
+				if( show_bs_tab.data('action') == 'photo'){
+					createPhotoListView();
+				}else if (show_bs_tab.data('action') == 'album'){
+					createAlbumListView();
+				}									
 			});	
 			renderTo.find('a:first').tab('show') ;
 		}		
+		
+		function createPhotoListView( currentUser ){		
+			var renderTo = $('#photo-list-view');
+			if( !common.ui.exists(renderTo) ){
+				common.ui.listview(	renderTo, {
+					dataSource : common.ui.datasource(
+						'<@spring.url "/data/me/photo/images/list.json?output=json" />',
+						{
+							transport : {
+								parameterMap :  function (options, operation){
+									return { startIndex: options.skip, pageSize: options.pageSize }
+								}
+							},
+							pageSize: 28,
+							schema: {
+								model: common.ui.data.Image,
+								data : "images",
+								total : "totalCount"
+							}
+						}
+					),
+					selectable: false,//"single",
+					change: function(e) {
+						var data = this.dataSource.view() ;
+					},
+					dataBound : function(e){
+					},
+					navigatable: false,
+					template: kendo.template($("#photo-list-view-template").html())
+				});		
+			
+			}
+		}
+		
+		function createAlbumListView( currentUser ){		
+				
+		}
+		
 		-->
 		</script>		
 		<style scoped="scoped">
@@ -129,8 +173,7 @@
 			</#if>	
 			<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">		
 				<div class="container content">		
-				
-					<ul id="my-tab" class="nav nav-pills">
+					<ul id="my-photo-tabs" class="nav nav-pills">
 					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="pill" aria-expanded="false" data-action="photo">
 					  	<i class="icon-flat icon-svg icon-svg-sm basic-color-picture grayscale"></i> 사진</a>
 					  </li>
@@ -145,8 +188,12 @@
 					  
 					</ul>
 					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 사진 	</div>
-						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 </div>
+						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 사진 	
+							<div id="my-photo-listview" class="no-border"></div>						
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 
+						
+						</div>
 					</div>
 				</div><!--/end container-->
 			</article>
