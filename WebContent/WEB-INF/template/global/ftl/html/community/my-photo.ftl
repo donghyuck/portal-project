@@ -50,7 +50,7 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								$('article').show();
-								createMyPhotoTabs();
+								createMyPhotoTabs()
 							} 
 						}		
 					},
@@ -75,7 +75,7 @@
 				console.log( show_bs_tab.html() );
 									
 			});	
-			renderTo.tab('show') ;
+			renderTo.find('a:first').tab('show') ;
 		}		
 		-->
 		</script>		
