@@ -351,7 +351,7 @@
     height: 150px;	
 }
 
-.image-listview-v2 .image-bg:hover, .image-listview-v2 img:hover{
+.image-listview-v2 .image-bg:hover, .image-listview-v2 img:hover, .image-listview-v2 .k-state-selected {
 	border : 0;
 	filter: grayscale(0);
     -webkit-filter: grayscale(0);
