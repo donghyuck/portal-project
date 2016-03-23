@@ -331,7 +331,7 @@
     transition: transform .2s cubic-bezier(0.52,0.3,0.12,1),opacity .2s cubic-bezier(0.4,0.0,1,1);	
     display: block;
     max-width: 100%;
-    height: auto;
+    height: 150px;
 }
 
 .image-listview .image-bg.k-state-selected {
@@ -340,7 +340,17 @@
 .image-listview .image-bg.k-state-selected:after {
 	content: "\f058";
 	font-size : 18px;	
+	top: 10px;
+	right: 15px;
+	position: absolute;
+	font-weight: normal;
+	display: inline-block;
+	font-family: FontAwesome;
+	color: #fff;	
 }
+
+
+
 
 /**
 * pdf view 
