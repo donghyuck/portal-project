@@ -50,6 +50,7 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								$('article').show();
+								createMyPhotoTabs();
 							} 
 						}		
 					},
@@ -64,6 +65,18 @@
 				// END SCRIPT 				
 			}
 		}]);	
+		
+		function createMyPhotoTabs(){
+			var renderTo = $('#my-photo-tab');
+			renderTo.on( 'show.bs.tab', function (e) {
+				//	e.preventDefault();		
+				var show_bs_tab = $(e.target);
+				
+				console.log( show_bs_tab.html() );
+									
+			});	
+			renderTo.tab('show') ;
+		}		
 		-->
 		</script>		
 		<style scoped="scoped">
@@ -118,12 +131,13 @@
 			<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">		
 				<div class="container content">		
 				
-					<ul class="nav nav-pills">
-					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="tab" aria-expanded="false">
-					  <i class="icon-flat icon-svg icon-svg-sm basic-color-picture grayscale"></i> 사진</a></li>
-					  <li role="presentation"><a href="#album-tabpanel" aria-controls="album-tabpanel" role="tab" data-toggle="tab" aria-expanded="false">
-					  <i class="icon-flat icon-svg icon-svg-sm basic-color-stack-of-photos grayscale"></i> 앨범</a></li>
-					  
+					<ul id="my-photo-tab" class="nav nav-pills">
+					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="pill" aria-expanded="false">
+					  	<i class="icon-flat icon-svg icon-svg-sm basic-color-picture grayscale"></i> 사진</a>
+					  </li>
+					  <li role="presentation"><a href="#album-tabpanel" aria-controls="album-tabpanel" role="tab" data-toggle="pill" aria-expanded="false">
+					  	<i class="icon-flat icon-svg icon-svg-sm basic-color-stack-of-photos grayscale"></i> 앨범</a>
+					  </li>					  
 					  <li role="presentation" class="dropdown pull-right">
 					  	<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="upload" data-toggle="modal" data-target="#my-photo-upload-modal">
 					  		<i class="icon-flat icon-svg basic-color-add-image icon-svg-md"></i>
