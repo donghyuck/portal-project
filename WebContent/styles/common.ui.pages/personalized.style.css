@@ -332,9 +332,10 @@
 }
 
 
-@media (min-width: 992px)
-.image-listview .image-bg{
-    width: 14.28%;
+@media (min-width: 992px){
+	.image-listview .image-bg{
+    	width: 14.28%;
+	}
 }
 
 @media ( max-width : 768px) {
