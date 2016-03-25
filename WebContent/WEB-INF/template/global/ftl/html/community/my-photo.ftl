@@ -149,7 +149,7 @@
 						var $this = this;
 						if( $this.hasPrevious ){
 							var index = $this.image.index - 1;
-							var data = common.ui.listview($('#my-photo-list-view')).dataSource.view();					
+							var data = common.ui.listview($('#my-photo-listview')).dataSource.view();					
 							var item = data[index];				
 							item.set("index", index );
 							createPhotoViewModal(item);		
@@ -159,7 +159,7 @@
 						var $this = this;						
 						if( $this.hasNext ){
 							var index = $this.image.index + 1;
-							var data = common.ui.listview($('#my-photo-list-view')).dataSource.view();					
+							var data = common.ui.listview($('#my-photo-listview')).dataSource.view();					
 							var item = data[index];		
 							item.set("index", index );
 							createPhotoViewModal(item);					
@@ -181,7 +181,7 @@
 					},					
 					setPagination: function(){
 						var $this = this;
-						var pageSize = common.ui.listview($('#my-photo-list-view')).dataSource.view().length;	
+						var pageSize = common.ui.listview($('#my-photo-listview')).dataSource.view().length;	
 						var pager = common.ui.pager( $("#photo-list-pager") );
 						var page = pager.page();
 						var totalPages = pager.totalPages();		
