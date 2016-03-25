@@ -112,23 +112,139 @@
 					template: kendo.template($("#my-photo-listview-template").html())
 				});		
 				
-				common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: [30, 60, 90, "전체"] , dataSource : listview.dataSource });
-				
-				renderTo.removeClass('k-widget');
-				
-				renderTo.on("click", ".image-bg", function(e){
-				
+				common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: [30, 60, 90, "전체"] , dataSource : listview.dataSource });				
+				renderTo.removeClass('k-widget');				
+				renderTo.on("click", ".image-bg", function(e){				
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview(renderTo).dataSource.view();					
 					var item = data[index];
 					item.set("index", index );
 					console.log( item ) ;
-					
-				});	
-				
-				
+					createPhotoViewModal(item);
+				});					
 			}
 		}
+		
+
+		function createPhotoViewModal(image){		
+			var renderTo = $("#my-image-view-modal");	
+			if( !renderTo.data('bs.modal') ){		
+				//var photoListView = 	
+				var observable =  common.ui.observable({ 
+					image : new common.ui.data.Image(),
+					resize : function(){
+						var $img = renderTo.find("img.mfp-img");
+						var $window = $(window);
+						$img.css("max-height", $window.height() - 10 );	
+						$img.css("max-width", $window.height() - 10 );					
+					},
+					page:0,
+					pageSize:0,
+					hasPreviousPage: false,
+					hasNextPage: false,
+					hasPrevious: false,
+					hasNext: false,
+					hasSource : false,
+					previous : function(){
+						var $this = this;
+						if( $this.hasPrevious ){
+							var index = $this.image.index - 1;
+							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
+							var item = data[index];				
+							item.set("index", index );
+							createPhotoViewModal(item);		
+						}
+					},
+					next : function(){
+						var $this = this;						
+						if( $this.hasNext ){
+							var index = $this.image.index + 1;
+							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
+							var item = data[index];		
+							item.set("index", index );
+							createPhotoViewModal(item);					
+						}
+					},
+					previousPage : function(){
+						var $this = this;
+						if( $this.hasPreviousPage ){							
+							var pager = common.ui.pager( $("#photo-list-pager") );
+							pager.page($this.page -1);
+						}
+					},
+					nextPage : function(){
+						var $this = this;						
+						if( $this.hasNextPage ){
+							var pager = common.ui.pager( $("#photo-list-pager") );
+							pager.page($this.page +1);			
+						}
+					},					
+					setPagination: function(){
+						var $this = this;
+						var pageSize = common.ui.listview($('#photo-list-view')).dataSource.view().length;	
+						var pager = common.ui.pager( $("#photo-list-pager") );
+						var page = pager.page();
+						var totalPages = pager.totalPages();		
+						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
+							$this.set("hasPrevious", true); 
+						else 
+							$this.set("hasPrevious", false); 							
+						if( ($this.image.index + 1 )< pageSize && (pageSize - this.image.index ) > 0 )
+							$this.set("hasNext", true); 
+						else 
+							$this.set("hasNext", false); 	
+						$this.set("hasPreviousPage", page > 1 );				
+						$this.set("hasNextPage", totalPages > page  );		
+						$this.set("page", page );			
+						$this.set("pageSize", pageSize );																	
+					},
+					comment: function(){
+						createPhotoCommentary(this.image);
+						return false;
+					},
+					editable : false,
+					edit: function(){
+						var $this = this;
+						createPhotoPostModal($this.image);
+					},
+					close: function(){
+						var $this = this;						
+						renderTo.find(".white-popup-block").fadeOut();
+						$('body').css('overflow', 'auto');				
+					},
+					setImage: function(image){
+						console.log(kendo.stringify(image));
+						var $this = this;			
+						$this.resize();
+						image.copy($this.image);
+						$this.set("hasSource",areThereSources($this.image) );
+						$this.setPagination();
+						
+						var $loading = renderTo.find(".mfp-preloader");
+						var $largeImg = renderTo.find(".mfp-content");		
+						$largeImg.hide();				
+						$loading.show();							
+						$("<img/>" ).load( function() {
+							var $img = $(this);							
+							if( $img.attr( 'src' ) === $this.image.imageUrl ) {		
+								$loading.hide();
+								$largeImg.fadeIn("slow");		
+							}
+						}).attr( 'src', $this.image.imageUrl );
+					}
+				});
+				observable.resize();				
+				$(window).resize(function(){
+					observable.resize();
+				});				
+				common.ui.bootstrap.enableStackingModal(renderTo);
+				common.ui.bind(renderTo, observable );				
+				renderTo.data("model", observable);	
+			}			
+			renderTo.data("model").setImage(image);
+			renderTo.modal('show');				
+		}			
+		
 		
 		function createAlbumListView( currentUser ){		
 				
@@ -217,7 +333,33 @@
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>			
-		
+		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="mfp-container mfp-s-ready mfp-image-holder">
+				<span class="btn-flat-icon chat" data-bind="click: comment"></span>		
+				<span class="btn-flat-icon pencil" data-bind="click: edit"></span>			
+				<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
+				<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
+				<span class="btn-flat-icon close" aria-hidden="true" data-dismiss="modal" ></span>		
+					<div class="mfp-content">	
+						<div class="mfp-figure">
+							<figure>
+								<img class="mfp-img" style="display: block;" data-bind="attr:{src:image.imageUrl}, click: next">
+								<figcaption>
+									<div class="mfp-bottom-bar">
+										<div class="mfp-title" data-bind="text: image.name"></div>
+										<div class="mfp-counter"><span data-bind="text:image.index"></span>/<span data-bind="text:pageSize"></span></div>
+									</div>
+								</figcaption>
+							</figure>
+						</div>
+					</div>	
+					
+					<div class="mfp-preloader" style="display: none;"></div>
+					<button title="Previous (Left arrow key)" type="button" class="btn-flat-icon left mfp-arrow mfp-prevent-close" data-bind="visible: hasPrevious, click: previous"></button>
+					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>		
+			</div>
+		</div>
+				
 	<!-- START TEMPLATE -->
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
