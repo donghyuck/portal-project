@@ -182,7 +182,7 @@
 					setPagination: function(){
 						var $this = this;
 						var pageSize = common.ui.listview($('#my-photo-listview')).dataSource.view().length;	
-						var pager = common.ui.pager( $("#photo-list-pager") );
+						var pager = common.ui.pager( $("#my-photo-listview-pager") );
 						var page = pager.page();
 						var totalPages = pager.totalPages();		
 						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
