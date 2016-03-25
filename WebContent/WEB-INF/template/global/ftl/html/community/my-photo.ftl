@@ -111,7 +111,7 @@
 					template: kendo.template($("#my-photo-listview-template").html())
 				});		
 				
-				common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: true, dataSource : listview.dataSource });
+				common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: [30, 60, 90, "전체"] , dataSource : listview.dataSource });
 				
 				renderTo.removeClass('k-widget');
 			}
