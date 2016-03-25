@@ -104,6 +104,7 @@
 					selectable: "multiple",//"single",
 					change: function(e) {
 						var data = this.dataSource.view() ;
+						
 					},
 					dataBound : function(e){
 					},
@@ -114,6 +115,18 @@
 				common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: [30, 60, 90, "전체"] , dataSource : listview.dataSource });
 				
 				renderTo.removeClass('k-widget');
+				
+				renderTo.on("click", ".image-bg", function(e){
+				
+					var index = $(this).closest("[data-uid]").index();
+					var data = common.ui.listview(renderTo).dataSource.view();					
+					var item = data[index];
+					item.set("index", index );
+					console.log( item ) ;
+					
+				});	
+				
+				
 			}
 		}
 		
