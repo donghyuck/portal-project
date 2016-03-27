@@ -115,7 +115,8 @@
 				common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: [30, 60, 90, "전체"] , dataSource : listview.dataSource });				
 				renderTo.removeClass('k-widget');			
 				renderTo.on("click", ".image-view", function(e){		
-					e.stopPropagation();
+					//e.stopPropagation();
+					e.preventDefault() ;
 				});
 				/*	
 				renderTo.on("click", ".image-bg", function(e){				
