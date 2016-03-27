@@ -363,7 +363,7 @@
 */
 
 
-.k-state-selected > span.image-select:hover {
+.k-selectable > span.image-select:hover {
 	content: "\f058";
 	font-size : 18px;	
 	top: 10px;
