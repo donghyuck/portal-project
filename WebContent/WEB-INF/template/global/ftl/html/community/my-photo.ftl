@@ -315,7 +315,11 @@
 					  		<i class="icon-flat icon-svg basic-color-add-image icon-svg-md"></i>
 					  	</button>  
 					  </li>
-					  
+					  <li role="presentation" class="dropdown pull-right">
+					  	<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="create-album" data-toggle="modal" data-target="#my-album-create-modal">
+					  		<i class="icon-flat icon-svg basic-color-stack-of-photos icon-svg-md"></i>
+					  	</button>  
+					  </li>					  
 					</ul>
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane fade" id="photo-tabpanel"> 	
