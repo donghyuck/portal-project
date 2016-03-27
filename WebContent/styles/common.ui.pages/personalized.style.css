@@ -343,7 +343,7 @@
 }
 
 
-.image-listview-v2.k-selectable .image-bg:hover {
+.image-listview-v2.k-selectable .image-bg:hover:after {
 	content: "\f058";
 	font-size : 18px;	
 	top: 10px;
