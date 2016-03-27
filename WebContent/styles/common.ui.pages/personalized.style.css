@@ -366,7 +366,7 @@
 	
 }
 
-.k-selectable .image-select:hover {
+.k-selectable .image-select:hover:after {
 	content: "\f058";
 	font-size : 18px;	
 	top: 10px;
