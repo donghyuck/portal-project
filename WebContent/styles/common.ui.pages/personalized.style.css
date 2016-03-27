@@ -3252,14 +3252,19 @@ img[data-toggle=lightbox]:hover{
 			
 .modal .mfp-container .btn-flat-icon.right2 {
 	top:auto;
-	right:0px;	
+	right:60px;	
 	bottom:0px;		
 }
 
 .modal .mfp-container .btn-flat-icon.settings {
-	top:0;
-	left:0px;
-	background-color: transparent;				
+	top:0px;
+	right:60px;
+	background-color: transparent;			
+    background-image: url("/images/common/icons/basic/color/Settings.svg");
+    background-size : 45px;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);	
 }	
 
 .modal .mfp-container .btn-flat-icon.pencil {
