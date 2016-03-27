@@ -342,6 +342,19 @@
     transition: all 0.5s ease-in-out;    
 }
 
+
+.image-listview-v2.k-selectable .image-bg:hover {
+	content: "\f058";
+	font-size : 18px;	
+	top: 10px;
+	right: 15px;
+	position: absolute;
+	font-weight: normal;
+	display: inline-block;
+	font-family: FontAwesome;
+	color: #f5f5f5;
+}
+/*
 .k-selectable .image-select {
     display: block;
     position: absolute;
@@ -375,7 +388,7 @@
 	color: #fff;
 }
 
-
+*/
 
 
 /**
