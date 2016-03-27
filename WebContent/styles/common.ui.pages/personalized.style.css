@@ -3256,50 +3256,60 @@ img[data-toggle=lightbox]:hover{
 	bottom:0px;		
 }
 
-.modal .mfp-container .btn-flat-icon.settings {
+.modal .mfp-container .btn-flat-svg {
+	position: absolute;
+	background-color: transparent;	
+    top: 0;
+    right: 0px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    content: "";
+    display: block;
+    opacity: .7; 	
+    background-size : 45px;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);	    
+}
+
+.modal .mfp-container .btn-flat-svg:hover{
+	  opacity: 1; 	
+}   
+
+.modal .mfp-container .btn-flat-svg.settings {
 	top:0px;
 	right:60px;
-	background-color: transparent;			
     background-image: url("/images/common/icons/basic/color/Settings.svg");
-    background-size : 45px;
-	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0);	
 }	
 
-.modal .mfp-container .btn-flat-icon.pencil {
-	top:60px;
-	right:0px;
-	background-color: transparent;					
-}
 
-.modal .mfp-container .btn-flat-icon.pencil {
-	top:60px;
-	right:0px;
-	background-color: transparent;					
-}
-
-.modal .mfp-container .btn-flat-icon.comment {
+.modal .mfp-container .btn-flat-svg.comment {
 	top:120px;
-	right:0px;
-	background-color: transparent;			
+	right:0px;		
     background-image: url("/images/common/icons/basic/color/Comment.svg");
-    background-size : 45px;
-	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0);
 }
 
-.modal .mfp-container .btn-flat-icon.edit {
+.modal .mfp-container .btn-flat-svg.edit {
+	top:60px;
+	right:0px;		
+    background-image: url("/images/common/icons/basic/color/EditImage.svg");
+}			
+
+
+.modal .mfp-container .btn-flat-icon.pencil {
 	top:60px;
 	right:0px;
-	background-color: transparent;			
-    background-image: url("/images/common/icons/basic/color/EditImage.svg");
-    background-size : 45px;
-	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0);
-}						
+	background-color: transparent;					
+}
+
+.modal .mfp-container .btn-flat-icon.pencil {
+	top:60px;
+	right:0px;
+	background-color: transparent;					
+}
+			
 						
 .modal .mfp-container .mfp-preloader {
 	top: 0;

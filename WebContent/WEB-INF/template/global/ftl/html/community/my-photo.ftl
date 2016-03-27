@@ -285,6 +285,9 @@
 		    filter: none;   	
     	}
 			
+		.mfp-container{
+			background:#999;
+		}	
 		</style>   	
 		</#compress>
 	</head>
@@ -343,9 +346,9 @@
 		</div>			
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="mfp-container mfp-s-ready mfp-image-holder">
-				<span class="btn-flat-icon settings" data-bind="click: setting"></span>	
-				<span class="btn-flat-icon comment" data-bind="click: comment"></span>		
-				<span class="btn-flat-icon edit" data-bind="click: edit"></span>			
+				<span class="btn-flat-svg settings" data-bind="click: setting"></span>	
+				<span class="btn-flat-svg comment" data-bind="click: comment"></span>		
+				<span class="btn-flat-svg edit" data-bind="click: edit"></span>			
 				<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 				<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
 				<span class="btn-flat-icon close" aria-hidden="true" data-dismiss="modal" ></span>		
