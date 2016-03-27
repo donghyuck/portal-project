@@ -362,8 +362,11 @@
 }
 */
 
+.k-selectable span.image-select {
+	
+}
 
-.k-selectable span.image-select:hover {
+.k-selectable .image-select:hover {
 	content: "\f058";
 	font-size : 18px;	
 	top: 10px;
@@ -375,7 +378,7 @@
 	color: #f5f5f5;
 }
 
-.k-state-selected > span.image-select:after{
+.k-state-selected .image-select:after{
 	content: "\f058";
 	font-size : 18px;	
 	top: 10px;
