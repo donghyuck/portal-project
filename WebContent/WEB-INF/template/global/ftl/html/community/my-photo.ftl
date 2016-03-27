@@ -371,7 +371,7 @@
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
 	<div class="col-sm-2 col-xs-4 image-bg" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>')" >		
 		<span class="image-select"></span>
-		<span class="image-view"></span>
+		<i class="image-view icon-flat icon-svg icon-svg-sm basic-color-stack-of-photos"></i>
 	</div>
 	</script>		
 	<!-- ./END TEMPLATE -->
