@@ -286,7 +286,7 @@
     	}
 			
 		.mfp-container{
-			background:#999;
+			background:#222;
 		}	
 		</style>   	
 		</#compress>

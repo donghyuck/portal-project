@@ -3269,6 +3269,7 @@ img[data-toggle=lightbox]:hover{
     display: block;
     opacity: .7; 	
     background-size : 45px;
+    background-repeat:no-repeat;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);	    
