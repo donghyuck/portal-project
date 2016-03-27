@@ -101,7 +101,7 @@
 							}
 						}
 					),
-					selectable: "multiple",//"single",
+					selectable: false,//"multiple",//"single",
 					change: function(e) {
 						var data = this.dataSource.view() ;
 						
@@ -114,11 +114,12 @@
 				
 				common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: [30, 60, 90, "전체"] , dataSource : listview.dataSource });				
 				renderTo.removeClass('k-widget');			
+				/*
 				renderTo.on("click", ".image-view", function(e){		
 					//e.stopPropagation();
 					e.preventDefault() ;
 				});
-				/*	
+				*/
 				renderTo.on("click", ".image-bg", function(e){				
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview(renderTo).dataSource.view();					
@@ -126,8 +127,7 @@
 					item.set("index", index );
 					console.log( item ) ;
 					createPhotoViewModal(item);
-				});
-				*/					
+				});				
 			}
 		}
 		
@@ -374,8 +374,8 @@
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
 	<div class="col-sm-2 col-xs-4 image-bg" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>')" >		
-		<span class="image-select"></span>
-		<i class="image-view icon-flat icon-svg icon-svg-sm basic-color-stack-of-photos"></i>
+		<!--<span class="image-select"></span>
+		<i class="image-view icon-flat icon-svg icon-svg-sm basic-color-stack-of-photos"></i>-->
 	</div>
 	</script>		
 	<!-- ./END TEMPLATE -->
