@@ -61,7 +61,7 @@
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();
 				createPhotoListView(currentUser);			
-							
+				common.ui.bootstrap.enableModalStack();			
 							
 				// END SCRIPT 				
 			}
