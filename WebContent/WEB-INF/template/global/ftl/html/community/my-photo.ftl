@@ -103,8 +103,7 @@
 					),
 					selectable: false,//"multiple",//"single",
 					change: function(e) {
-						var data = this.dataSource.view() ;
-						
+						var data = this.dataSource.view() ;						
 					},
 					dataBound : function(e){
 					},
@@ -114,18 +113,11 @@
 				
 				common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: [30, 60, 90, "전체"] , dataSource : listview.dataSource });				
 				renderTo.removeClass('k-widget');			
-				/*
-				renderTo.on("click", ".image-view", function(e){		
-					//e.stopPropagation();
-					e.preventDefault() ;
-				});
-				*/
 				renderTo.on("click", ".image-bg", function(e){				
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview(renderTo).dataSource.view();					
 					var item = data[index];
 					item.set("index", index );
-					console.log( item ) ;
 					createPhotoViewModal(item);
 				});				
 			}
@@ -249,7 +241,89 @@
 			renderTo.modal('show');				
 		}			
 		
+		<!-- ============================== -->
+		<!-- Commentary						-->
+		<!-- ============================== -->		
+		function createPhotoCommentary(source){
+			var renderTo = $("#my-photo-commentary");				
+			if( !renderTo.data("model") ){		
+				//if( !common.ui.exists(renderTo) ){		
+				var listview = common.ui.listview($("#my-photo-commentary-listview"), {
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/data/comments/list.json?output=json"/>', type: 'POST' }
+						},
+						schema: {
+							total: "totalCount",
+							data: "comments",
+							model: common.ui.data.Comment
+						},
+						selectable: false,
+						batch: false,
+						serverPaging: false,
+						serverFiltering: false,
+						serverSorting: false
+					},
+					template: kendo.template($("#my-photo-commentary-listview-template").html()),
+					autoBind: false
+				});	
+						
+				var observable =  common.ui.observable({
+					image : new common.ui.data.Image(),
+					coverPhotoUrl : "",
+					hasSource : false,
+					commentBody : "",
+					comment : function(e){
+						var $this = this;
+						btn = $(e.target);						
+						btn.button('loading');							
+						var myComment = new common.ui.data.Comment({objectType:16, objectId:$this.image.imageId, body:$this.get("commentBody")}); 	
+						common.ui.ajax(
+							'<@spring.url "/data/comments/update.json?output=json"/>',
+							{
+								data : kendo.stringify(myComment) ,
+								contentType : "application/json",
+								success : function(response){
+									listview.dataSource.read({objectType: 16, objectId: $this.image.imageId });
+									//$(".poll a[data-action=comment][data-object-id="+ $this.image.imageId +"] span.comment-page-count").html( response.count  );
+								},
+								complete : function(e){
+									$this.set("commentBody", "");
+									btn.button('reset');
+								}							
+						});	
+						return false;						
+					},
+					setSource : function(source){
+						var $this = this;
+						if( source instanceof common.ui.data.Image ){
+							console.log("it's image.");
+							source.copy($this.image);
+							$this.set("hasSource",areThereSources($this.image) );
+							listview.dataSource.read({objectType:16, objectId: $this.image.imageId });	
+						}	
+					}				
+				});
+				renderTo.data("model", observable);			
+				common.ui.bind( renderTo, observable );				
+				$('.close[data-commentary-close]').click(function(){	
+					if(!$("body").hasClass('modal-open')){
+						$("body").css("overflow", "auto");
+					}					
+					renderTo.hide();
+				});				
+			}	
+			
+			if(renderTo.is(":hidden")){
+				renderTo.data("model").setSource( source ) ;			
+				if(!$("body").hasClass('modal-open')){
+					$("body").css("overflow", "hidden");
+				}			
+				renderTo.show();
+			}				
+		}		
 		
+				
 		function createAlbumListView( currentUser ){		
 				
 		}
@@ -347,7 +421,7 @@
 		
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="mfp-container mfp-s-ready mfp-image-holder">
-				<span class="btn-flat-svg metamorphose" data-bind="click: edit"></span>	
+				<span class="btn-flat-svg edit" data-bind="click: edit"></span>	
 				<span class="btn-flat-svg share" data-bind="click: share"></span>		
 				<span class="btn-flat-svg comment" data-bind="click: comment"></span>	
 					
@@ -372,9 +446,61 @@
 					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>		
 			</div>
 		</div>
-				
+
+		<div id="my-photo-commentary" class="modal" style="background: rgba(0,0,0,0.4);">
+			<div class="commentary commentary-drawer">
+				<span class="btn-flat-icon close" data-commentary-close></span>
+				<div class="commentary-content">
+					<div class="ibox">
+						<div class="ibox-content no-border">
+							<div class="page-credits bg-white">
+								<div class="credit-item">
+									<div class="credit-img user">
+										<img data-bind="attr:{src:image.imageThumbnailUrl} style="margin-right:10px;" class="img-cicle">
+									</div>
+									<div class="credit-name"> <span data-bind="text:image.name ">악당</span>  </div>
+									<div class="credit-title"><span data-bind="text:image.formattedSize"></span> bytes </div>
+								</div>							
+							</div>
+							<div class="shadow-wrapper" style="max-width:350px;">
+								<div class="box-shadow shadow-effect-2 ">
+									<img data-bind="attr:{ src:image.imageUrl }" class="img-responsive"></img>
+								</div>	
+							</div>
+						</div>
+					</div>				
+				</div>				
+				<div class="ibox-content no-border bg-gray">							
+					<div id="my-photo-commentary-listview" class="comments"></div>
+				</div>	
+				<div class="commentary-footer">
+					<div class="separator-2"></div>
+							<div class="sky-form no-border">
+									<label class="textarea">
+										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
+									</label>
+									<div class="text-right">
+										<button class="btn btn-flat btn-info btn-outline btn-xl rounded" data-bind="click:comment">게시하기</button>
+									</div>
+					</div>					
+				</div>
+			</div>	
+		</div>
+						
 	<!-- START TEMPLATE -->
 	<#include "/html/common/common-homepage-templates.ftl" >
+	<script id="my-photo-commentary-listview-template" type="text/x-kendo-template">
+		<div class="comment" >
+			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
+			<div class="content">
+				<span class="author">#if ( name == null ){# 손님 #}else{# #: name # #}#</span>
+				<span class="comment-date">#: formattedCreationDate() #</span>
+				<span class="linked-text">
+					#: body #
+				</span>
+			</div>		
+		</div>	
+	</script>	
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
 	<div class="col-sm-2 col-xs-4 image-bg" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>')" >		
 		<!--<span class="image-select"></span>
