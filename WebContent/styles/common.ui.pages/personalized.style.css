@@ -3266,11 +3266,11 @@ img[data-toggle=lightbox]:hover{
     height: 60px;
     text-align: center;
     content: "";
-    display: block;
     opacity: .7; 	
     background-size : 45px;
     background-repeat:no-repeat;
-	-webkit-font-smoothing: antialiased;
+	background-position: center;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);	    
 }
@@ -3295,7 +3295,7 @@ img[data-toggle=lightbox]:hover{
 .modal .mfp-container .btn-flat-svg.comment {
 	top:120px;
 	right:0px;		
-    background-image: url("/images/common/icons/basic/ios9/VoicePresentation.svg");
+    background-image: url("/images/common/icons/basic/color/Comment.svg");
 }
 
 .modal .mfp-container .btn-flat-svg.metamorphose {
