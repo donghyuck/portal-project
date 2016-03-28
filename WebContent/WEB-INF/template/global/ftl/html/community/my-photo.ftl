@@ -506,6 +506,7 @@
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">	
 					<div class="modal-header">
+						공유
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>		
 					<div class="modal-body">
