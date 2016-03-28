@@ -123,7 +123,6 @@
 			}
 		}
 		
-
 		function createPhotoViewModal(image){		
 			var renderTo = $("#my-image-view-modal");	
 			if( !renderTo.data('bs.modal') ){		
@@ -237,7 +236,9 @@
 				$(window).resize(function(){
 					observable.resize();
 				});				
-				common.ui.bootstrap.enableStackingModal(renderTo);
+				
+				//common.ui.bootstrap.enableStackingModal(renderTo);
+				
 				common.ui.bind(renderTo, observable );				
 				renderTo.data("model", observable);	
 			}			
@@ -249,8 +250,15 @@
 		function createPhotoShareModal(image){
 			var renderTo = $("#my-image-share-modal");		
 			if( !renderTo.data('bs.modal') ){		
-			
-			
+				var observable =  common.ui.observable({
+					image : new common.ui.data.Image(),
+					setImage: function(image){
+						var $this = this;			
+						image.copy($this.image);
+					}
+				});	
+				common.ui.bind(renderTo, observable );
+				renderTo.data("model", observable);	
 			}
 			renderTo.data("model").setImage(image);
 			renderTo.modal('show');	
