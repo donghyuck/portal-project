@@ -60,7 +60,10 @@
 				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();
-				createPhotoListView(currentUser);
+				createPhotoListView(currentUser);			
+				
+					
+							
 				// END SCRIPT 				
 			}
 		}]);	
