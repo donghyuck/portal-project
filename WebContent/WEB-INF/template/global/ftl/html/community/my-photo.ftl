@@ -60,9 +60,7 @@
 				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();
-				createPhotoListView(currentUser);			
-				common.ui.bootstrap.enableModalStack();			
-							
+				createPhotoListView(currentUser);
 				// END SCRIPT 				
 			}
 		}]);	
@@ -236,9 +234,6 @@
 				$(window).resize(function(){
 					observable.resize();
 				});				
-				
-				//common.ui.bootstrap.enableStackingModal(renderTo);
-				
 				common.ui.bind(renderTo, observable );				
 				renderTo.data("model", observable);	
 			}			
