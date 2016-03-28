@@ -691,7 +691,6 @@
  */
 .commentary {
 	z-index: 1000;
-	/*padding: 26px;*/
 	padding:0;
 	background: #fff;
 	overflow-y: scroll;
@@ -713,7 +712,6 @@
 	padding: 50px 30px;
 	position: relative;
 	text-align: left;
-	
 	-webkit-animation-duration: .4s;
 	-moz-animation-duration: .4s;
 	-ms-animation-duration: .4s;
@@ -740,8 +738,6 @@
 
 .commentary .close {
 	position: absolute;
-	/*top: 15px;
-	left: 15px;*/
 	top:5px;
 	left:5px;
 	line-height: 50px;
@@ -812,6 +808,9 @@
 	display: block;
 	text-align: left;
 }
+
+
+
 
 /**
  * Panel
