@@ -347,7 +347,7 @@
 		
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="mfp-container mfp-s-ready mfp-image-holder">
-				<span class="btn-flat-svg edit" data-bind="click: edit"></span>	
+				<span class="btn-flat-svg metamorphose" data-bind="click: edit"></span>	
 				<span class="btn-flat-svg share" data-bind="click: share"></span>		
 				<span class="btn-flat-svg comment" data-bind="click: comment"></span>	
 					

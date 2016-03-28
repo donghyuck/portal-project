@@ -3295,12 +3295,18 @@ img[data-toggle=lightbox]:hover{
 .modal .mfp-container .btn-flat-svg.comment {
 	top:120px;
 	right:0px;		
-    background-image: url("/images/common/icons/basic/color/Comment.svg");
+    background-image: url("/images/common/icons/basic/ios9/VoicePresentation.svg");
+}
+
+.modal .mfp-container .btn-flat-svg.metamorphose {
+	top:0px;
+	right:60px;		
+    background-image: url("/images/common/icons/basic/color/Metamorphose.svg");
 }
 
 .modal .mfp-container .btn-flat-svg.edit {
-	top:60px;
-	right:0px;		
+	top:0px;
+	right:60px;		
     background-image: url("/images/common/icons/basic/color/EditImage.svg");
 }			
 
