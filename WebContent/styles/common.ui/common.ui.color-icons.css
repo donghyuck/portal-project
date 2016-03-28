@@ -63,6 +63,16 @@ i.icon-svg {
 
 /* Basic Color Icons 
 ------------------------------------*/
+.icon-svg.basic-color-api-settings {
+	background-image: url("/images/common/icons/basic/color/APISettings.svg");
+}
+.icon-svg.basic-color-edit-property {
+	background-image: url("/images/common/icons/basic/color/EditProperty.svg");
+}
+.icon-svg.basic-color-metamorphose {
+	background-image: url("/images/common/icons/basic/color/Metamorphose.svg");
+}
+
 .icon-svg.basic-color-edit-image {
 	background-image: url("/images/common/icons/basic/color/EditImage.svg");
 }

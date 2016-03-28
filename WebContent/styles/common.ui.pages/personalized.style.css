@@ -3285,6 +3285,12 @@ img[data-toggle=lightbox]:hover{
     background-image: url("/images/common/icons/basic/color/Settings.svg");
 }	
 
+.modal .mfp-container .btn-flat-svg.share {
+	top:60px;
+	right:0px;
+    background-image: url("/images/common/icons/basic/color/Share.svg");
+}	
+
 
 .modal .mfp-container .btn-flat-svg.comment {
 	top:120px;
@@ -3297,6 +3303,12 @@ img[data-toggle=lightbox]:hover{
 	right:0px;		
     background-image: url("/images/common/icons/basic/color/EditImage.svg");
 }			
+
+.modal .mfp-container .btn-flat-svg.property {
+	top:60px;
+	right:0px;		
+    background-image: url("/images/common/icons/basic/color/EditProperty.svg");
+}	
 
 
 .modal .mfp-container .btn-flat-icon.pencil {
