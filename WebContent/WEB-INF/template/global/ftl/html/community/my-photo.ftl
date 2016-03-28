@@ -200,6 +200,10 @@
 						createPhotoCommentary(this.image);
 						return false;
 					},
+					share: function(){
+						createPhotoShareModal(this.image);
+						return false;
+					},					
 					editable : false,
 					edit: function(){
 						var $this = this;
@@ -240,6 +244,18 @@
 			renderTo.data("model").setImage(image);
 			renderTo.modal('show');				
 		}			
+		
+		
+		function createPhotoShareModal(image){
+			var renderTo = $("#my-image-share-modal");		
+			if( !renderTo.data('bs.modal') ){		
+			
+			
+			}
+			renderTo.data("model").setImage(image);
+			renderTo.modal('show');	
+		} 
+		
 		
 		<!-- ============================== -->
 		<!-- Commentary						-->
@@ -462,11 +478,6 @@
 									<div class="credit-title"><span data-bind="text:image.formattedSize"></span> bytes </div>
 								</div>							
 							</div>
-							<div class="shadow-wrapper" style="max-width:350px;">
-								<div class="box-shadow shadow-effect-2 ">
-									<img data-bind="attr:{ src:image.imageUrl }" class="img-responsive"></img>
-								</div>	
-							</div>
 						</div>
 					</div>				
 				</div>				
@@ -475,18 +486,31 @@
 				</div>	
 				<div class="commentary-footer">
 					<div class="separator-2"></div>
-							<div class="sky-form no-border">
-									<label class="textarea">
-										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
-									</label>
-									<div class="text-right">
-										<button class="btn btn-flat btn-info btn-outline btn-xl rounded" data-bind="click:comment">게시하기</button>
-									</div>
+					<div class="sky-form no-border">
+						<label class="textarea">
+							<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
+						</label>
+						<div class="text-right">
+							<button class="btn btn-flat btn-info btn-outline btn-xl rounded" data-bind="click:comment">게시하기</button>
+						</div>
 					</div>					
 				</div>
 			</div>	
 		</div>
-						
+
+		<div id="my-image-share-modal" role="dialog" class="modal" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">	
+					<div class="modal-header">
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>		
+					<div class="modal-body">
+					
+					</div>		
+				</div>
+			</div>	
+		</div>
+								
 	<!-- START TEMPLATE -->
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<script id="my-photo-commentary-listview-template" type="text/x-kendo-template">
