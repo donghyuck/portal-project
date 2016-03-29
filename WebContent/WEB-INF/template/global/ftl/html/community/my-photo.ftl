@@ -103,6 +103,20 @@
 						var data = this.dataSource.view() ;						
 					},
 					dataBound : function(e){
+							var renderTo = $("#my-image-view-modal");	
+							if( renderTo.data('bs.modal') && renderTo.is(":visible")){
+								var listview_pager = common.ui.pager( $("#my-photo-listview-pager") );
+								var data = this.dataSource.view();				
+								if( renderTo.data("model").page > listview_pager.page() ){
+									var item = data[renderTo.data("model").pageSize - 1];
+									item.set("index", renderTo.data("model").pageSize -1 );
+									createPhotoViewModal(item);
+								}else{
+									var item = data[0];
+									item.set("index", 0 );
+									createPhotoViewModal(item);
+								}
+							}					
 					},
 					navigatable: false,
 					template: kendo.template($("#my-photo-listview-template").html())
