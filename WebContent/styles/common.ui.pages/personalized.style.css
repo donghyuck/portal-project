@@ -698,7 +698,7 @@
 	-webkit-overflow-scrolling: touch;
 }
 
-.commentary .commentary-drawer {
+.commentary.commentary-drawer {
 	position: fixed;
 	height: 100%;
 	width:100%;
@@ -729,7 +729,7 @@
     padding: 15px;
 }
 
-.commentary .commentary-drawer .commentary-content {
+.commentary.commentary-drawer .commentary-content {
 	-webkit-animation-name: slide-left-fade-in;
 	-moz-animation-name: slide-left-fade-in;
 	-ms-animation-name: slide-left-fade-in;
@@ -760,7 +760,7 @@
 }
 
 @media ( min-width : 768px) {
-	.commentary .commentary-drawer {
+	.commentary.commentary-drawer {
 		width: 750px;
 	}
 }
