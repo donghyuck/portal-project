@@ -3320,6 +3320,9 @@ img[data-toggle=lightbox]:hover{
 	background-size: 45px;    
 }
 
+.modal .mfp-container .close:hover{
+	opacity: 1; 		
+} 
 
 .modal .my-image-post-form {
     z-index: 1047;
