@@ -729,7 +729,7 @@
     padding: 15px;
 }
 
-.commentary.commentary-drawer .commentary-content {
+.in > .commentary.commentary-drawer .commentary-content {
 	-webkit-animation-name: slide-left-fade-in;
 	-moz-animation-name: slide-left-fade-in;
 	-ms-animation-name: slide-left-fade-in;
