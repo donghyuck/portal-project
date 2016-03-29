@@ -522,7 +522,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>		
 					<div class="modal-body">
-					
+						<input type="checkbox" data-class="switcher-primary switcher-lg" data-bind="checked: shared"/>					
 					</div>		
 				</div>
 			</div>	
