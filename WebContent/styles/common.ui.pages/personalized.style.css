@@ -705,14 +705,10 @@
 	top: 0;
 	right: 0;
 	opacity : 0;
-	-webkit-animation-duration: .4s;
-	-moz-animation-duration: .4s;
-	-ms-animation-duration: .4s;
-	animation-duration: .4s;
-	-webkit-animation-iteration-count: 1;
-	-moz-animation-iteration-count: 1;
-	-ms-animation-iteration-count: 1;
-	animation-iteration-count: 1;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 .commentary .commentary-content {
@@ -729,12 +725,15 @@
     padding: 15px;
 }
 
+.out > .commentary.commentary-drawer {
+    -webkit-animation-name: fadeOutRight;
+    animation-name: fadeOutRight;
+	opacity : 1;
+}
+
 .in > .commentary.commentary-drawer {
-	-webkit-animation-name: slide-left-fade-in;
-	-moz-animation-name: slide-left-fade-in;
-	-ms-animation-name: slide-left-fade-in;
-	animation-name: slide-left-fade-in;
-	padding-top: 0;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
 	opacity : 1;
 }
 
