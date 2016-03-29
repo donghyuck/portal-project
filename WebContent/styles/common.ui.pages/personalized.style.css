@@ -708,13 +708,6 @@
 }
 
 
-/*
-.modal.fade[data-effect="slide"]:not(.in)  {
-	-webkit-transform: translate3d(25%, 0, 0);
-    transform: translate3d(25%, 0, 0);
-}
-*/
-
 .modal[data-effect="slide"] .commentary-drawer {
     -webkit-animation-duration: .3s;
     animation-duration: .3s;
@@ -3203,17 +3196,15 @@ img[data-toggle=lightbox]:hover{
 }
 
 /** ------------------------------------------------- */
-/** Magnific Popup                                    */
+/** Magnific Popup with bootstrap modal               */
 /** ------------------------------------------------- */
 .dialog__content .mfp-container .close {
 	right: 0;
 	width: 60px;
 	height: 60px;
+	
 }
 
-/** ------------------------------------------------- */
-/** Image, File Modal                                 */
-/** ------------------------------------------------- */
 .modal .mfp-container .btn-flat-icon.mfp-arrow {
 	background-color:transparent!important;
 }
@@ -3331,11 +3322,8 @@ img[data-toggle=lightbox]:hover{
     right: 0;
     width: 60px;
     height: 60px;
-}
-
-.modal .mfp-container .btn-flat-icon.close {
-    background: url(/images/common/white-cross.png) no-repeat center rgba(0, 0, 0, 0.8);
-    background-size: 30px;
+	background: url('/images/common/icons/basic/ios9/Delete.svg') no-repeat center rgba(0, 0, 0, 0.8);
+	background-size: 30px;    
 }
 
 .modal .my-image-post-form {
