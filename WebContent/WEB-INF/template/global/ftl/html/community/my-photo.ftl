@@ -344,7 +344,8 @@
 			/*		if(!$("body").hasClass('modal-open')){
 						$("body").css("overflow", "auto");
 					}					
-			*/		renderTo.hide();
+			*/		
+					renderTo.modal('hide');
 				});
 			}	
 			
@@ -355,7 +356,8 @@
 					$("body").css("overflow", "hidden");
 				}
 				*/			
-				renderTo.show();
+				//renderTo.show();
+				renderTo.modal('show');
 			}				
 		}		
 		
