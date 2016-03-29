@@ -293,6 +293,18 @@
 					coverPhotoUrl : "",
 					hasSource : false,
 					commentBody : "",
+					dataSource : common.ui.datasource( '<@spring.url "/data/comments/list.json?output=json"/>',{
+						schema: {
+							total: "totalCount",
+							data: "comments",
+							model: common.ui.data.Comment
+						},
+						selectable: false,
+						batch: false,
+						serverPaging: false,
+						serverFiltering: false,
+						serverSorting: false					
+					}),
 					comment : function(e){
 						var $this = this;
 						btn = $(e.target);						
@@ -325,20 +337,24 @@
 					}				
 				});
 				renderTo.data("model", observable);			
-				common.ui.bind( renderTo, observable );				
+				common.ui.bind( renderTo, observable );		
+					
+					
 				$('.close[data-commentary-close]').click(function(){	
-					if(!$("body").hasClass('modal-open')){
+			/*		if(!$("body").hasClass('modal-open')){
 						$("body").css("overflow", "auto");
 					}					
-					renderTo.hide();
-				});				
+			*/		renderTo.hide();
+				});
 			}	
 			
 			if(renderTo.is(":hidden")){
 				renderTo.data("model").setSource( source ) ;			
+				/*
 				if(!$("body").hasClass('modal-open')){
 					$("body").css("overflow", "hidden");
-				}			
+				}
+				*/			
 				renderTo.show();
 			}				
 		}		
@@ -486,7 +502,12 @@
 					</div>				
 				</div>				
 				<div class="ibox-content no-border bg-gray">							
-					<div id="my-photo-commentary-listview" class="comments"></div>
+					<div class="comments"
+						 data-role="listview"
+		                 data-auto-bind="false"
+		                 data-template="my-photo-commentary-listview-template"
+		                 data-bind="source: dataSource"
+		                 style="height: 300px; overflow: auto"></div>		
 				</div>	
 				<div class="commentary-footer">
 					<div class="separator-2"></div>
