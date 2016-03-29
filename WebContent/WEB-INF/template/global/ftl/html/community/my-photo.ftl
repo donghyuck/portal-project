@@ -17,7 +17,8 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',
 			'css!<@spring.url "/styles/common.ui.pages/personalized.style.css"/>',
-			'css!<@spring.url "/styles/common.ui.plugins/animate.min.css"/>',			
+			'css!<@spring.url "/styles/common.ui.plugins/animate.min.css"/>',	
+			'css!<@spring.url "/styles/common.ui.plugins/switchery.min.css"/>',			
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',
@@ -523,7 +524,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>		
 					<div class="modal-body">
-						<input type="checkbox" data-class="switcher-primary switcher-lg" data-bind="checked: shared"/>					
+						<input type="checkbox" class="js-switch" data-bind="checked: shared"/>					
 					</div>		
 				</div>
 			</div>	
