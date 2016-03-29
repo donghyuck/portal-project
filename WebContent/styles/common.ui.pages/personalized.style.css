@@ -704,7 +704,8 @@
 	width:100%;
 	top: 0;
 	right: 0;
-	opacity : 0;
+    -webkit-animation-name: fadeOutRight;
+    animation-name: fadeOutRight;	
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
@@ -723,12 +724,6 @@
 	position:relative;
 	    bottom: 0;
     padding: 15px;
-}
-
-.out > .commentary.commentary-drawer {
-    -webkit-animation-name: fadeOutRight;
-    animation-name: fadeOutRight;
-	opacity : 1;
 }
 
 .in > .commentary.commentary-drawer {
