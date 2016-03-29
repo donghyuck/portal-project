@@ -260,10 +260,12 @@
 		function createPhotoShareModal(image){
 			var renderTo = $("#my-image-share-modal");		
 			if( !renderTo.data('model') ){		
+				
+				var switchery = new Switchery(renderTo.find('.js-switch')[0]);
+				
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
 					shared : false,
-					switchery : new Switchery(renderTo.find('.js-switch')[0]),
 					setImage: function(image){
 						var $this = this;			
 						image.copy($this.image);
