@@ -265,27 +265,6 @@
 		function createPhotoCommentary(source){
 			var renderTo = $("#my-photo-commentary");				
 			if( !renderTo.data("model") ){		
-				//if( !common.ui.exists(renderTo) ){		
-				var listview = common.ui.listview($("#my-photo-commentary-listview"), {
-					dataSource: {
-						transport: { 
-							read: { url:'<@spring.url "/data/comments/list.json?output=json"/>', type: 'POST' }
-						},
-						schema: {
-							total: "totalCount",
-							data: "comments",
-							model: common.ui.data.Comment
-						},
-						selectable: false,
-						batch: false,
-						serverPaging: false,
-						serverFiltering: false,
-						serverSorting: false
-					},
-					template: kendo.template($("#my-photo-commentary-listview-template").html()),
-					autoBind: false
-				});	
-						
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
 					coverPhotoUrl : "",
@@ -349,12 +328,6 @@
 			
 			if(renderTo.is(":hidden")){
 				renderTo.data("model").setSource( source ) ;			
-				/*
-				if(!$("body").hasClass('modal-open')){
-					$("body").css("overflow", "hidden");
-				}
-				*/			
-				//renderTo.show();
 				renderTo.modal('show');
 			}				
 		}		
@@ -483,7 +456,7 @@
 			</div>
 		</div>
 
-		<div id="my-photo-commentary" class="modal" style="background: rgba(0,0,0,0.4);" data-effect="slide">
+		<div id="my-photo-commentary" class="modal fade" style="background: rgba(0,0,0,0.4);" data-effect="slide">
 			<div class="commentary commentary-drawer">
 				<span class="btn-flat-icon close" data-commentary-close></span>
 				<div class="commentary-content">
