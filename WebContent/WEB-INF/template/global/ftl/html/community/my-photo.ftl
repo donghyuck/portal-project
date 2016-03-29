@@ -267,7 +267,7 @@
 					setImage: function(image){
 						var $this = this;			
 						image.copy($this.image);
-						
+						/*
 						common.ui.data.image.streams($this.image.imageId, function(data){	
 							if( data.length > 0 ){
 								$this.set('shared', true );
@@ -275,6 +275,7 @@
 								$this.set('shared', false );
 							}
 						});
+						*/
 					}
 				});	
 				common.ui.bind(renderTo, observable );
