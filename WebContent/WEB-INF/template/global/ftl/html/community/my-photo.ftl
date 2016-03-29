@@ -259,17 +259,14 @@
 		
 		function createPhotoShareModal(image){
 			var renderTo = $("#my-image-share-modal");		
-			if( !renderTo.data('model') ){		
-				
+			if( !renderTo.data('model') ){						
 				var switchery = new Switchery(renderTo.find('.js-switch')[0]);
-				
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
 					shared : false,
 					setImage: function(image){
 						var $this = this;			
 						image.copy($this.image);
-						/*
 						common.ui.data.image.streams($this.image.imageId, function(data){	
 							if( data.length > 0 ){
 								$this.set('shared', true );
@@ -277,7 +274,6 @@
 								$this.set('shared', false );
 							}
 						});
-						*/
 					}
 				});	
 				common.ui.bind(renderTo, observable );
