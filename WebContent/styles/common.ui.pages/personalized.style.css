@@ -689,6 +689,15 @@
 /**
  * Commentary 
  */
+ 
+ 
+.model[data-effect=slide] .commentary.commentary-drawer {
+    -webkit-animation-name: fadeOutRight;
+    animation-name: fadeOutRight;
+	opacity : 1;	
+}
+ 
+ 
 .commentary {
 	z-index: 1000;
 	padding:0;
