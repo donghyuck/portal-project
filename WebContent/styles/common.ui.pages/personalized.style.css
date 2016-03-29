@@ -704,15 +704,7 @@
 	width:100%;
 	top: 0;
 	right: 0;
-}
-
-.commentary .commentary-content {
-	max-width: 690px;
-	margin: 0 auto;
-	padding: 50px 30px;
-	position: relative;
-	text-align: left;
-	
+	opacity : 0;
 	-webkit-animation-duration: .4s;
 	-moz-animation-duration: .4s;
 	-ms-animation-duration: .4s;
@@ -723,18 +715,27 @@
 	animation-iteration-count: 1;
 }
 
+.commentary .commentary-content {
+	max-width: 690px;
+	margin: 0 auto;
+	padding: 50px 30px;
+	position: relative;
+	text-align: left;
+}
+
 .commentary .commentary-footer{
 	position:relative;
 	    bottom: 0;
     padding: 15px;
 }
 
-.in > .commentary.commentary-drawer .commentary-content {
+.in > .commentary.commentary-drawer {
 	-webkit-animation-name: slide-left-fade-in;
 	-moz-animation-name: slide-left-fade-in;
 	-ms-animation-name: slide-left-fade-in;
 	animation-name: slide-left-fade-in;
 	padding-top: 0;
+	opacity : 1;
 }
 
 .commentary .close {
