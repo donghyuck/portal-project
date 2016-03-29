@@ -418,7 +418,7 @@
 				</div><!--/end container-->
 			</div>
 			</#if>	
-			<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">		
+			<article class="bg-white animated fadeIn" style="min-height:200px; display:none;">		
 				<div class="container content">		
 					<ul id="my-photo-tabs" class="nav nav-pills">
 					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="pill" aria-expanded="false" data-action="photo">
