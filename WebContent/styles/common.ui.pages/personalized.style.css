@@ -3253,15 +3253,15 @@ img[data-toggle=lightbox]:hover{
 }	
 
 .modal .mfp-container .btn-flat-svg.share {
-	top:60px;
-	right:0px;
+	top:0px;
+	right:60px;
     background-image: url("/images/common/icons/basic/color/Share.svg");
 }	
 
 
 .modal .mfp-container .btn-flat-svg.comment {
-	top:120px;
-	right:0px;		
+	top:0px;
+	right:120px;		
     background-image: url("/images/common/icons/basic/color/Comment.svg");
 }
 
@@ -3273,7 +3273,7 @@ img[data-toggle=lightbox]:hover{
 
 .modal .mfp-container .btn-flat-svg.edit {
 	top:0px;
-	right:60px;		
+	right:180px;		
     background-image: url("/images/common/icons/basic/color/EditImage.svg");
 }			
 
@@ -3316,7 +3316,7 @@ img[data-toggle=lightbox]:hover{
     right: 0;
     width: 60px;
     height: 60px;
-	background: url('/images/common/icons/basic/ios9/Delete2.svg') no-repeat center rgba(0, 0, 0, 0.8);
+	background: url('/images/common/icons/basic/ios9/Delete2.svg') no-repeat center ;
 	background-size: 45px;    
 }
 
