@@ -455,7 +455,6 @@
 					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>		
 			</div>
 		</div>
-
 		<div id="my-photo-commentary" class="modal fade" style="background: rgba(0,0,0,0.4);" data-effect="slide">
 			<div class="commentary commentary-drawer">			
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>				
