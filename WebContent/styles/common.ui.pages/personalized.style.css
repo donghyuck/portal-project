@@ -704,10 +704,8 @@
 	width:100%;
 	top: 0;
 	right: 0;
-    -webkit-animation-name: fadeOutRight;
-    animation-name: fadeOutRight;	
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -722,7 +720,7 @@
 
 .commentary .commentary-footer{
 	position:relative;
-	    bottom: 0;
+	bottom: 0;
     padding: 15px;
 }
 
