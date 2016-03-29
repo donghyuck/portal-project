@@ -316,7 +316,7 @@
 								data : kendo.stringify(myComment) ,
 								contentType : "application/json",
 								success : function(response){
-									listview.dataSource.read({objectType: 16, objectId: $this.image.imageId });
+									$this.dataSource.read({objectType: 16, objectId: $this.image.imageId });
 									//$(".poll a[data-action=comment][data-object-id="+ $this.image.imageId +"] span.comment-page-count").html( response.count  );
 								},
 								complete : function(e){
@@ -332,7 +332,7 @@
 							console.log("it's image.");
 							source.copy($this.image);
 							$this.set("hasSource",areThereSources($this.image) );
-							listview.dataSource.read({objectType:16, objectId: $this.image.imageId });	
+							$this.dataSource.read({objectType:16, objectId: $this.image.imageId });	
 						}	
 					}				
 				});
