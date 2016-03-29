@@ -259,7 +259,7 @@
 		
 		function createPhotoShareModal(image){
 			var renderTo = $("#my-image-share-modal");		
-			if( !renderTo.data('bs.modal') ){		
+			if( !renderTo.data('model') ){		
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
 					shared : false,
