@@ -483,7 +483,7 @@
 			</div>
 		</div>
 
-		<div id="my-photo-commentary" class="modal" style="background: rgba(0,0,0,0.4);">
+		<div id="my-photo-commentary" class="modal" style="background: rgba(0,0,0,0.4);" data-effect="slide">
 			<div class="commentary commentary-drawer">
 				<span class="btn-flat-icon close" data-commentary-close></span>
 				<div class="commentary-content">
