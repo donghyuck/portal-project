@@ -797,6 +797,8 @@
 
 .commentary  .comments  .comment>.content  .author {
 	cursor: pointer;
+	font-size: 11px;
+	color: #888888;	
 }
 
 .commentary  .comments  .comment>.content  .comment-date {
