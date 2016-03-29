@@ -267,7 +267,8 @@
 					setImage: function(image){
 						var $this = this;			
 						image.copy($this.image);
-						common.ui.data.image.streams(targetImage.imageId, function(data){	
+						
+						common.ui.data.image.streams($this.image.imageId, function(data){	
 							if( data.length > 0 ){
 								$this.set('shared', true );
 							}else{
