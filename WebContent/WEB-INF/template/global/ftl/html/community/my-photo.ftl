@@ -262,9 +262,18 @@
 			if( !renderTo.data('bs.modal') ){		
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
+					shared : false,
+					switchery : new Switchery(renderTo.find('.js-switch')[0]),
 					setImage: function(image){
 						var $this = this;			
 						image.copy($this.image);
+						common.ui.data.image.streams(targetImage.imageId, function(data){	
+							if( data.length > 0 ){
+								$this.set('shared', true );
+							}else{
+								$this.set('shared', false );
+							}
+						});
 					}
 				});	
 				common.ui.bind(renderTo, observable );
