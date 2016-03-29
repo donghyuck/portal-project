@@ -535,7 +535,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>		
 					<div class="modal-body">
-						<input type="checkbox" class="js-switch" data-bind="checked: shared"/>					
+						<input type="checkbox" class="js-switch" data-bind="checked: shared"/>			
 					</div>		
 				</div>
 			</div>	
