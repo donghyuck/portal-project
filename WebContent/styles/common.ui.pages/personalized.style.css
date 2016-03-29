@@ -705,10 +705,6 @@
 	width:100%;
 	top: 0;
 	right: 0;
-    -webkit-animation-duration: .4s;
-    animation-duration: .4s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
 }
 
 .commentary .commentary-content {
@@ -725,11 +721,25 @@
     padding: 15px;
 }
 
-.in > .commentary.commentary-drawer {
-    -webkit-animation-name: fadeInRight;
-    animation-name: fadeInRight;
-	opacity : 1;
+.modal.fade[data-effect="slide"]:not(.in) {
+	-webkit-transform: translate3d(25%, 0, 0);
+    transform: translate3d(25%, 0, 0);
 }
+
+.modal[data-effect="slide"] {
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;	
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;	
+} 
+
+.modal[data-effect="slide"]:not(.in){
+    -webkit-animation-name: slideOutRight;
+    animation-name: slideOutRight;	
+} 
+
 
 .commentary .close {
 	position: absolute;
@@ -2439,6 +2449,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     opacity: 1;
 }
 
+/*
 .modal.fade[data-effect="slide"]:not(.in) .modal-dialog{
 	-webkit-transform: translate3d(25%, 0, 0);
     transform: translate3d(25%, 0, 0);
@@ -2457,6 +2468,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
     -webkit-animation-name: slideOutRight;
     animation-name: slideOutRight;	
 } 
+*/
 
 /** ------------------------------------------------- */
 /** masorny                                           */
