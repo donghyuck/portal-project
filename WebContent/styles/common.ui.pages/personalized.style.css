@@ -3312,11 +3312,12 @@ img[data-toggle=lightbox]:hover{
 }
 
 .modal .mfp-container .close {
+	position:absolute;
     right: 0;
     width: 60px;
     height: 60px;
 	background: url('/images/common/icons/basic/ios9/Delete2.svg') no-repeat center rgba(0, 0, 0, 0.8);
-	background-size: 30px;    
+	background-size: 45px;    
 }
 
 
