@@ -495,7 +495,7 @@
 			</div>	
 		</div>
 
-		<div id="my-image-share-modal" role="dialog" class="modal fase" data-backdrop="static" data-effect="zoom">
+		<div id="my-image-share-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">	
 					<div class="modal-header">
