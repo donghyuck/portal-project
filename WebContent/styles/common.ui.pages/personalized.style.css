@@ -3198,13 +3198,6 @@ img[data-toggle=lightbox]:hover{
 /** ------------------------------------------------- */
 /** Magnific Popup with bootstrap modal               */
 /** ------------------------------------------------- */
-.dialog__content .mfp-container .close {
-	right: 0;
-	width: 60px;
-	height: 60px;
-	
-}
-
 .modal .mfp-container .btn-flat-icon.mfp-arrow {
 	background-color:transparent!important;
 }
