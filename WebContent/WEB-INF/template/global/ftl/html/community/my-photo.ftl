@@ -507,6 +507,7 @@
 			<div class="commentary commentary-drawer">			
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>				
 				<div class="commentary-content">
+					<!--
 					<div class="ibox">
 						<div class="ibox-content no-border">
 							<div class="page-credits bg-white">
@@ -519,16 +520,15 @@
 								</div>							
 							</div>
 						</div>
-					</div>				
-				</div>				
-				<div class="ibox-content no-border bg-gray">							
+					</div>	
+					-->	
 					<div class="comments"
 						 data-role="listview"
 		                 data-auto-bind="false"
 		                 data-template="my-photo-commentary-listview-template"
 		                 data-bind="source: dataSource"
-		                 style="height: 300px; overflow: auto"></div>		
-				</div>	
+		                 style="height: 300px; overflow: auto"></div>								
+				</div>
 				<div class="commentary-footer">
 					<div class="separator-2"></div>
 					<div class="sky-form no-border">
@@ -570,8 +570,10 @@
 		<div class="comment" >
 			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
 			<div class="content">
+				<h6>
 				<span class="author">#if ( name == null ){# 손님 #}else{# #: name # #}#</span>
 				<span class="comment-date">#: formattedCreationDate() #</span>
+				</h6>
 				<span class="linked-text">
 					#: body #
 				</span>
