@@ -263,7 +263,7 @@
 				var switchery = new Switchery(renderTo.find('.js-switch')[0]);
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
-					shared : false,
+					isShared : false,
 					share : function(){
 						var $this = this;		
 						console.log($this.shared);
@@ -277,9 +277,10 @@
 							if( data.length > 0 ){
 								isShared = true;
 							}
-							if( isShared != $this.shared ){
+							if( isShared != $this.isShared ){
 								renderTo.find('.js-switch')[0].click();
 							}
+							console.log( $this.isShared  + '>'+ isShared  );
 							switchery.enable();
 						});
 					}
@@ -289,8 +290,7 @@
 			}
 			renderTo.data("model").setImage(image);
 			renderTo.modal('show');	
-		} 
-		
+		}		
 		
 		<!-- ============================== -->
 		<!-- Commentary						-->
@@ -541,7 +541,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>		
 					<div class="modal-body">
-						<input type="checkbox" class="js-switch" data-bind="checked:shared, click:share"/>			
+						<input type="checkbox" class="js-switch" data-bind="checked:isShared, click:share"/>			
 					</div>		
 				</div>
 			</div>	
