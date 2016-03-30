@@ -276,12 +276,12 @@
 							var isShared = false;							
 							if( data.length > 0 ){
 								isShared = true;
-							}
+							}							
+							switchery.enable();
 							if( isShared != $this.isShared ){
 								renderTo.find('.js-switch')[0].click();
 							}
-							console.log( $this.isShared  + '>'+ isShared  );
-							switchery.enable();
+							console.log( $this.isShared  + '>'+ isShared  );							
 						});
 					}
 				});	
