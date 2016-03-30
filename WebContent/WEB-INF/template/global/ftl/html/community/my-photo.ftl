@@ -268,12 +268,20 @@
 					onChange : function(){
 						var $this = this;		
 						console.log( "update:" + $this.editable +  ", value=" + $this.isShared);
+						if( $this.editable ){
+							if($this.isShared){
+								common.ui.data.image.unshare($this.image.imageId);	
+							}else{
+								common.ui.data.image.share($this.image.imageId);
+							}
+						}
 					},
 					setImage: function(image){
 						var $this = this;			
 						image.copy($this.image);
 						$this.set('editable', false);
 						switchery.disable();
+						
 						common.ui.data.image.streams($this.image.imageId, function(data){	
 							var isShared = false;							
 							if( data.length > 0 ){
@@ -551,7 +559,10 @@
 						  		<input type="checkbox" class="js-switch" data-bind="checked:isShared, events:{change:onChange}"/>	
 							</div>  
 						</div>			
-					</div>		
+					</div>
+					 <div class="modal-footer">
+				        <button type="button" class="btn btn-flat btn-outline btn-default" data-dismiss="modal">닫기</button>
+				      </div>		
 				</div>
 			</div>	
 		</div>
