@@ -559,10 +559,7 @@
 						  		<input type="checkbox" class="js-switch" data-bind="checked:isShared, events:{change:onChange}"/>	
 							</div>  
 						</div>			
-					</div>
-					 <div class="modal-footer">
-				        <button type="button" class="btn btn-flat btn-outline btn-default" data-dismiss="modal">닫기</button>
-				      </div>		
+					</div>		
 				</div>
 			</div>	
 		</div>
