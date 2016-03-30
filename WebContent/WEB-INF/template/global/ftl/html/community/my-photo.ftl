@@ -267,11 +267,12 @@
 					editable : false,
 					onChange : function(){
 						var $this = this;		
-						console.log( "current:" + $this.isShared);
+						console.log( "update:" + $this.editable +  ", value=" + $this.isShared);
 					},
 					setImage: function(image){
 						var $this = this;			
 						image.copy($this.image);
+						$this.set('editable', false);
 						switchery.disable();
 						common.ui.data.image.streams($this.image.imageId, function(data){	
 							var isShared = false;							
@@ -282,7 +283,7 @@
 							if( isShared != $this.isShared ){
 								renderTo.find('.js-switch')[0].click();
 							}
-							console.log( $this.isShared  + '>'+ isShared  );							
+							$this.set('editable', true);						
 						});
 					}
 				});	
