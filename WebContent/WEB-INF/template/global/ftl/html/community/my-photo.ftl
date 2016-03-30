@@ -259,11 +259,12 @@
 		
 		function createPhotoShareModal(image){
 			var renderTo = $("#my-image-share-modal");		
-			if( !renderTo.data('model') ){						
+			if( !renderTo.data('bs.modal') ){				
 				var switchery = new Switchery(renderTo.find('.js-switch')[0]);
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
 					isShared : false,
+					editable : false,
 					onChange : function(){
 						var $this = this;		
 						console.log( "current:" + $this.isShared);
@@ -541,7 +542,14 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>		
 					<div class="modal-body">
-						<input type="checkbox" class="js-switch" data-bind="checked:isShared, events:{change:onChange}"/>			
+						<div class="row">
+						  	<div class="col-xs-6">
+						  		<h6 class="text-primary">모두에게 공유합니다</h6>
+						 	</div>
+						  	<div class="col-xs-6 text-right">
+						  		<input type="checkbox" class="js-switch" data-bind="checked:isShared, events:{change:onChange}"/>	
+							</div>  
+						</div>			
 					</div>		
 				</div>
 			</div>	
