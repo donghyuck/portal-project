@@ -271,12 +271,16 @@
 					setImage: function(image){
 						var $this = this;			
 						image.copy($this.image);
+						switchery.disable();
 						common.ui.data.image.streams($this.image.imageId, function(data){	
+							var isShared = false;							
 							if( data.length > 0 ){
-								$this.set('shared', true );
-							}else{
-								$this.set('shared', false );
+								isShared = true;
 							}
+							if( isShared != $this.shared ){
+								renderTo.find('.js-switch')[0].click();
+							}
+							switchery.enable();
 						});
 					}
 				});	
