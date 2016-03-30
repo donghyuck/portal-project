@@ -264,7 +264,7 @@
 				var observable =  common.ui.observable({
 					image : new common.ui.data.Image(),
 					isShared : false,
-					share : function(){
+					onChange : function(){
 						var $this = this;		
 						console.log( "current:" + $this.isShared);
 					},
@@ -541,7 +541,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>		
 					<div class="modal-body">
-						<input type="checkbox" class="js-switch" data-bind="checked:isShared, events:{click:share}"/>			
+						<input type="checkbox" class="js-switch" data-bind="checked:isShared, events:{change:onChange}"/>			
 					</div>		
 				</div>
 			</div>	
