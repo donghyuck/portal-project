@@ -266,7 +266,7 @@
 					isShared : false,
 					share : function(){
 						var $this = this;		
-						console.log($this.shared);
+						console.log( "current:" + $this.isShared);
 					},
 					setImage: function(image){
 						var $this = this;			
