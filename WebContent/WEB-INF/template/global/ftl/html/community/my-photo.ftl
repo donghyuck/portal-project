@@ -507,6 +507,15 @@
 			<div class="commentary commentary-drawer">			
 				<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>				
 				<div class="commentary-content">
+					<div class="sky-form no-border">
+						<label class="textarea">
+							<textarea rows="4" name="comment" placeholder="저작권 등 다른 사람의 권리를 침해하거나 명예를 훼손하는 게시물은 이용약관 및 관련 법률에 의해 제재를 받을 수 있습니다. 건전한 토론문화와 양질의 댓글 문화를 위해, 타인에게 불쾌감을 주는 욕설 또는 특정 계층/민족, 종교 등을 비하하는 단어들은 표시가 제한됩니다." data-bind="value:commentBody"></textarea>
+						</label>
+						<div class="text-right">
+							<button class="btn btn-flat btn-info btn-outline btn-xl rounded" data-bind="click:comment">게시하기</button>
+						</div>
+					</div>	
+					<div class="separator-2"></div>
 					<!--
 					<div class="ibox">
 						<div class="ibox-content no-border">
@@ -528,17 +537,6 @@
 		                 data-template="my-photo-commentary-listview-template"
 		                 data-bind="source: dataSource"
 		                 style="height: 300px; overflow: auto"></div>								
-				</div>
-				<div class="commentary-footer">
-					<div class="separator-2"></div>
-					<div class="sky-form no-border">
-						<label class="textarea">
-							<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
-						</label>
-						<div class="text-right">
-							<button class="btn btn-flat btn-info btn-outline btn-xl rounded" data-bind="click:comment">게시하기</button>
-						</div>
-					</div>					
 				</div>
 			</div>	
 		</div>
@@ -569,7 +567,7 @@
 	<script id="my-photo-commentary-listview-template" type="text/x-kendo-template">
 		<div class="comment" >
 			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
-			<div class="content">
+			<div class="content text-xs">
 				<h6>
 				<span class="author">#if ( name == null ){# 손님 #}else{# #: name # #}#</span>
 				<span class="comment-date">#: formattedCreationDate() #</span>
