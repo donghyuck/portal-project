@@ -146,7 +146,9 @@
 
 		function createPhotoUploadModal(){
 			var renderTo = $("#my-photo-upload-modal");
+			
 			if( !renderTo.data('bs.modal')){
+				console.log("create upload modal");
 				var model = common.ui.observable({
 						data : {
 							sourceUrl : '', 
