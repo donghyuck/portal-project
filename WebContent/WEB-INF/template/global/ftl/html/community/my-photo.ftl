@@ -184,7 +184,7 @@
 								var btn = $(e.target);
 								btn.button('loading');		
 								common.ui.ajax(
-									options.url || '/data/me/photo/images/upload_by_url.json?output=json', 
+									'<@spring.url "/data/me/photo/images/upload_by_url.json?output=json" />', 
 									{
 										data: kendo.stringify(options.data),
 										contentType : "application/json",
