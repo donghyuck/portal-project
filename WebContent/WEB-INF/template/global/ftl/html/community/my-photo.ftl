@@ -72,9 +72,9 @@
 				//	e.preventDefault();		
 				var show_bs_tab = $(e.target);	
 				console.log(">>" + show_bs_tab );			
-				if( show_bs_tab.data('action') == 'photo'){
+				if( show_bs_tab.data('action') == 'view-photo'){
 					createPhotoListView();
-				}else if (show_bs_tab.data('action') == 'album'){
+				}else if (show_bs_tab.data('action') == 'view-album'){
 					createAlbumListView();
 				}									
 			});	
@@ -505,14 +505,14 @@
 			<article class="bg-white animated fadeIn" style="min-height:200px; display:none;">		
 				<div class="container content">		
 					<ul id="my-photo-tabs" class="nav nav-pills">
-					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="pill" aria-expanded="false" data-action="photo">
+					  <li role="presentation"><a href="#photo-tabpanel" aria-controls="photo-tabpanel" role="tab" data-toggle="pill" aria-expanded="false" data-action="view-photo">
 					  	<i class="icon-flat icon-svg icon-svg-sm basic-color-picture grayscale"></i> 사진</a>
 					  </li>
-					  <li role="presentation"><a href="#album-tabpanel" aria-controls="album-tabpanel" role="tab" data-toggle="pill" aria-expanded="false" data-action="album">
+					  <li role="presentation"><a href="#album-tabpanel" aria-controls="album-tabpanel" role="tab" data-toggle="pill" aria-expanded="false" data-action="view-album">
 					  	<i class="icon-flat icon-svg icon-svg-sm basic-color-stack-of-photos grayscale"></i> 앨범</a>
 					  </li>					  
 					  <li role="presentation" class="dropdown pull-right">
-					  	<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="upload" data-toggle="modal" data-target="#my-photo-upload-modal">
+					  	<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="upload-photo" data-toggle="modal" data-target="#my-photo-upload-modal">
 					  		<i class="icon-flat icon-svg basic-color-add-image icon-svg-md"></i>
 					  	</button>  
 					  </li>
