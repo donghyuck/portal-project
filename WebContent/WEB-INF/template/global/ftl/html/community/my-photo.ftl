@@ -193,7 +193,7 @@
 											if( !response.error ){ 
 												getPhotoListView().dataSource.read();		
 											}
-										},
+										}
 									}
 								).always( function () {
 									btn.button('reset');										
