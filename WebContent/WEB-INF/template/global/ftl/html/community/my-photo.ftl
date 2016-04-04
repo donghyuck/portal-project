@@ -149,7 +149,7 @@
 			if( !renderTo.data('bs.modal')){
 				console.log("create upload modal");
 				var model = common.ui.observable({
-					invisible : currentUser.anonymous 
+					invisible : currentUser.anonymous ,
 						data : {
 							sourceUrl : '', 
 							imageUrl : ''
