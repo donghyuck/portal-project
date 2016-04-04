@@ -181,13 +181,12 @@
 								}											
 							}				
 							if( !hasError ){
-								$this = this;
 								var btn = $(e.target);
 								btn.button('loading');		
 								common.ui.ajax(
 									'<@spring.url "/data/me/photo/images/upload_by_url.json?output=json" />', 
 									{
-										data: $this.data,
+										data: common.ui.stringify($this.data),
 										contentType : "application/json",
 										success : function(response){
 											if( !response.error ){ 
