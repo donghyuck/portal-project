@@ -76,6 +76,8 @@
 					createPhotoListView();
 				}else if (show_bs_tab.data('action') == 'view-album'){
 					createAlbumListView();
+				}else if (show_bs_tab.data('action') == 'view-album'){
+					createPhotoUploadModal();
 				}									
 			});	
 			renderTo.find('a:first').tab('show') ;			
@@ -147,8 +149,6 @@
 			if( !renderTo.data('bs.modal')){
 				var model = common.ui.observable({
 						data : {
-							objectType : 2,
-							objectId : 0,
 							sourceUrl : '', 
 							imageUrl : ''
 						},
