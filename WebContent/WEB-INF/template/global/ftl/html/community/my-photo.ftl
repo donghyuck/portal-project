@@ -76,7 +76,7 @@
 					createPhotoListView();
 				}else if (show_bs_tab.data('action') == 'view-album'){
 					createAlbumListView();
-				}else if (show_bs_tab.data('action') == 'view-album'){
+				}else if (show_bs_tab.data('action') == 'upload-photo'){
 					createPhotoUploadModal();
 				}									
 			});	
