@@ -70,16 +70,22 @@
 			var renderTo = $('#my-photo-tabs');
 			renderTo.on( 'show.bs.tab', function (e) {
 				//	e.preventDefault();		
-				var show_bs_tab = $(e.target);				
+				var show_bs_tab = $(e.target);	
+				console.log(">>" + show_bs_tab );			
 				if( show_bs_tab.data('action') == 'photo'){
 					createPhotoListView();
 				}else if (show_bs_tab.data('action') == 'album'){
 					createAlbumListView();
 				}									
 			});	
-			renderTo.find('a:first').tab('show') ;
+			renderTo.find('a:first').tab('show') ;			
 		}		
 		
+		
+		
+		function getPhotoListView(){
+			return common.ui.listview(renderTo);
+		}
 		function createPhotoListView( currentUser ){		
 			var renderTo = $('#my-photo-listview');
 			if( !common.ui.exists(renderTo) ){
@@ -133,6 +139,73 @@
 					item.set("index", index );
 					createPhotoViewModal(item);
 				});				
+			}
+		}
+
+		function createPhotoUploadModal(){
+			var renderTo = $("#my-photo-upload-modal");
+			if( !renderTo.data('bs.modal')){
+				var model = common.ui.observable({
+						data : {
+							objectType : 2,
+							objectId : 0,
+							sourceUrl : '', 
+							imageUrl : ''
+						},
+						reset: function(e){
+							this.data.sourceUrl = '';
+							this.data.imageUrl = '';							
+							renderTo.find(".sky-form input").val('');							
+						},	
+						upload: function(e) {
+							$this = this;
+							e.preventDefault();	
+							var hasError = false;											
+							renderTo.find('.sky-form .input.state-error').removeClass("state-error");								
+							if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.valid("url", this.data.sourceUrl) ){
+								renderTo.find('.sky-form .input').eq(0).addClass("state-error");			
+								hasError = true;					
+							}else{
+								if( renderTo.find('.sky-form .input').eq(0).hasClass("state-error") ){
+									renderTo.find('.sky-form .input').eq(0).removeClass("state-error");
+								}											
+							}					
+							if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.valid("url", this.data.imageUrl)  ){
+								renderTo.find('.sky-form .input').eq(1).addClass("state-error");
+								hasError = true;		
+							}else{
+								if( renderTo.find('.sky-form .input').eq(1).hasClass("state-error") ){
+									renderTo.find('.sky-form .input').eq(1).removeClass("state-error");
+								}											
+							}				
+							if( !hasError ){
+								var btn = $(e.target);
+								btn.button('loading');			
+								this.data.objectType = 2;
+								common.ui.data.image.uploadByUrl( {
+									data : this.data ,
+									success : function(response){
+										getPhotoListView().dataSource.read();		
+									},
+									always : function(){
+										btn.button('reset');										
+										$this.reset();
+									}
+								});		
+							}				
+						}										
+					});		
+					kendo.bind(renderTo, model);	
+					if( !common.ui.exists($("#photo-files")) ){
+						common.ui.upload($("#photo-files"),{
+							async: {
+								saveUrl:  '<@spring.url "/data/me/photo/images/update_with_media.json?output=json" />'
+							},
+							success : function(e) {	
+								getPhotoListView().dataSource.read();								
+							}		
+						});		
+					}
 			}
 		}
 		
@@ -258,7 +331,7 @@
 		
 		
 		function createPhotoShareModal(image){
-			var renderTo = $("#my-image-share-modal");		
+			var renderTo = $("#my-photo-share-modal");		
 			if( !renderTo.data('bs.modal') ){				
 				var switchery = new Switchery(renderTo.find('.js-switch')[0]);
 				var observable =  common.ui.observable({
@@ -359,12 +432,7 @@
 				renderTo.data("model", observable);			
 				common.ui.bind( renderTo, observable );		
 					
-					
 				$('.close[data-commentary-close]').click(function(){	
-			/*		if(!$("body").hasClass('modal-open')){
-						$("body").css("overflow", "auto");
-					}					
-			*/		
 					renderTo.modal('hide');
 				});
 			}	
@@ -472,8 +540,7 @@
 		</div>			
 		
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
-			<div class="mfp-container mfp-s-ready mfp-image-holder">
-			
+			<div class="mfp-container mfp-s-ready mfp-image-holder">			
 				<span class="btn-flat-svg edit" data-bind="click: edit"></span>	
 				<span class="btn-flat-svg share" data-bind="click: share"></span>		
 				<span class="btn-flat-svg comment" data-bind="click: comment"></span>	
@@ -525,7 +592,7 @@
 			</div>	
 		</div>
 
-		<div id="my-image-share-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+		<div id="my-photo-share-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="modal-dialog modal-sm">
 				<div class="modal-content">	
 					<div class="modal-header">
@@ -545,7 +612,47 @@
 				</div>
 			</div>	
 		</div>
-								
+
+		<div id="my-photo-upload-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content my-page-view-form">	
+					<div class="modal-header">
+						<h2><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 </h2>
+						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+					</div>
+					<div class="modal-body p-xs">
+							<form class="sky-form no-border">
+								<fieldset>
+									<div class="row">
+										<div class="col-sm-6">
+											<h4><i class="fa fa-upload"></i> 업로드 </h4> 
+											<p>아래의 사진 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</p>
+											<div id="my-photo-upload">	
+												<input name="uploadPhotos" id="photo-files" type="file" />					
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<h4><i class="fa fa-upload"></i> URL 업로드 </h4> 
+											<p>사진이 존재하는 URL 을 직접 입력하여 주세요.</p>
+											<label class="label">출처</label>
+											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url" placeholder="출처 URL"  data-bind="value: data.sourceUrl"></label>
+											<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
+											
+											<label class="label">사진</label>
+											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url2" placeholder="사진 URL"  data-bind="value: data.imageUrl"></label>
+											<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
+											<section class="text-right">
+											<button type="submit" class="btn btn-info btn-flat btn-outline rounded" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
+											</section>
+										</div>
+									</div>
+								</fieldset>	
+							</form>
+					</div>
+				</div>
+			</div>
+		</div>
+										
 	<!-- START TEMPLATE -->
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<script id="my-photo-commentary-listview-template" type="text/x-kendo-template">
