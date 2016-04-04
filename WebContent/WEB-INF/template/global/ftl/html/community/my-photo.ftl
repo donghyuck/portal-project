@@ -60,7 +60,8 @@
 				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();
-				createPhotoListView(currentUser);			
+				createPhotoListView(currentUser);	
+				createPhotoUploadModal(currentUser);		
 				common.ui.bootstrap.enableModalStack();								
 				// END SCRIPT 				
 			}
@@ -76,9 +77,7 @@
 					createPhotoListView();
 				}else if (show_bs_tab.data('action') == 'view-album'){
 					createAlbumListView();
-				}else if (show_bs_tab.data('action') == 'upload-photo'){
-					createPhotoUploadModal();
-				}									
+				}								
 			});	
 			renderTo.find('a:first').tab('show') ;			
 		}		
@@ -144,12 +143,13 @@
 			}
 		}
 
-		function createPhotoUploadModal(){
+		function createPhotoUploadModal(currentUser){
 			var renderTo = $("#my-photo-upload-modal");
 			
 			if( !renderTo.data('bs.modal')){
 				console.log("create upload modal");
 				var model = common.ui.observable({
+					invisible : currentUser.anonymous 
 						data : {
 							sourceUrl : '', 
 							imageUrl : ''
