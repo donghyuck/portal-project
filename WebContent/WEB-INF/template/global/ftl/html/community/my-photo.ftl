@@ -189,9 +189,7 @@
 										data: common.ui.stringify($this.data),
 										contentType : "application/json",
 										success : function(response){
-											if( !response.error ){ 
-												getPhotoListView().dataSource.read();		
-											}
+											getPhotoListView().dataSource.read();
 										}
 									}
 								).always( function () {
