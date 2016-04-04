@@ -181,12 +181,13 @@
 								}											
 							}				
 							if( !hasError ){
+								$this = this;
 								var btn = $(e.target);
 								btn.button('loading');		
 								common.ui.ajax(
 									'<@spring.url "/data/me/photo/images/upload_by_url.json?output=json" />', 
 									{
-										data: kendo.stringify(options.data),
+										data: $this.data,
 										contentType : "application/json",
 										success : function(response){
 											if( !response.error ){ 
