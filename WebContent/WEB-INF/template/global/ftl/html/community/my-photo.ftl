@@ -48,7 +48,8 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								$('article').show();
-								createMyPhotoTabs()
+								//createMyPhotoTabs()
+								$('#my-photo-tabs a:eq(1)').tab('show') ;
 							} 
 						}		
 					},
@@ -60,8 +61,9 @@
 				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();
+				createAlbumListView(currentUser);	
 				createPhotoListView(currentUser);	
-				createPhotoUploadModal(currentUser);		
+				//createPhotoUploadModal(currentUser);
 				common.ui.bootstrap.enableModalStack();								
 				// END SCRIPT 				
 			}
@@ -69,6 +71,7 @@
 		
 		function createMyPhotoTabs(){
 			var renderTo = $('#my-photo-tabs');
+			/*
 			renderTo.on( 'show.bs.tab', function (e) {
 				//	e.preventDefault();		
 				var show_bs_tab = $(e.target);	
@@ -78,11 +81,10 @@
 				}else if (show_bs_tab.data('action') == 'view-album'){
 					createAlbumListView();
 				}								
-			});	
+			});
+			*/	
 			renderTo.find('a:eq(1)').tab('show') ;			
-		}		
-		
-		
+		}
 		
 		function getPhotoListView(){
 			return common.ui.listview(renderTo);
@@ -139,7 +141,8 @@
 					var item = data[index];
 					item.set("index", index );
 					createPhotoViewModal(item);
-				});				
+				});						
+				createPhotoUploadModal(currentUser);
 			}
 		}
 
@@ -452,10 +455,10 @@
 		<!-- ============================== -->				
 				
 		function createAlbumListView( currentUser ){		
-				
-				
 			var renderTo = $('#my-album-listview');
 			if( !common.ui.exists(renderTo) ){
+			
+			
 				var listview = common.ui.listview(renderTo, {
 					dataSource : common.ui.datasource(
 						'<@spring.url "/data/me/photo/album/list.json?output=json" />',
@@ -484,11 +487,26 @@
 					template: kendo.template($("#my-album-listview-template").html())
 				});	
 				//common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: [30, 60, 90, "전체"] , dataSource : listview.dataSource });				
-				renderTo.removeClass('k-widget');			
-		
+				renderTo.removeClass('k-widget');	
 			}				
-				
-				
+		}
+		
+		function createAlbumViewModal(album){	
+			var renderTo = $("#my-album-view-modal");	
+			if( !renderTo.data('bs.modal') ){		
+				//var photoListView = 	
+				var observable =  common.ui.observable({ 
+					album : new common.ui.data.Album(),
+					setAlbum: function(album){
+						var $this = this;
+						album.copy($this.album);
+					}
+				});		
+				common.ui.bind(renderTo, observable );				
+				renderTo.data("model", observable);	
+			}			
+			renderTo.data("model").setAlbum(album);
+			renderTo.modal('show');	
 		}
 		
 		-->
@@ -560,7 +578,7 @@
 					  	</button>  
 					  </li>
 					  <li role="presentation" class="dropdown pull-right">
-					  	<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="create-album" data-toggle="modal" data-target="#my-album-create-modal">
+					  	<button class="btn-link btn-block hvr-pulse-shrink" type="button" data-action="create-album" data-toggle="modal" data-target="#my-album-view-modal">
 					  		<i class="icon-flat icon-svg basic-color-stack-of-photos icon-svg-md"></i>
 					  	</button>  
 					  </li>					  
@@ -581,6 +599,13 @@
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>			
+		
+		<div id="my-album-view-modal" role="dialog" class="modal" data-backdrop="static" >
+		
+		
+		
+		</div>
+		
 		
 		<div id="my-image-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom">
 			<div class="mfp-container mfp-s-ready mfp-image-holder">			
