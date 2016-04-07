@@ -79,7 +79,7 @@
 					createAlbumListView();
 				}								
 			});	
-			renderTo.find('a:first').tab('show') ;			
+			renderTo.find('a:eq(1)').tab('show') ;			
 		}		
 		
 		
@@ -109,7 +109,7 @@
 					),
 					selectable: false,//"multiple",//"single",
 					change: function(e) {
-						var data = this.dataSource.view() ;						
+						var data = this.dataSource.view();						
 					},
 					dataBound : function(e){
 							var renderTo = $("#my-image-view-modal");	
