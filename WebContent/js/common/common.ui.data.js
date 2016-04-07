@@ -47,7 +47,31 @@
 		    }
 		});
 
-
+	common.ui.data.Album = kendo.data.Model.define( {
+		id: "albumId", // the identifier of the model
+		fields: {
+			albumId: { type: "number", editable: false, defaultValue: 0  },   
+			name: { type: "number", editable: true },    	
+			description: { type: "number", editable: true },    	
+			collaborate: { type: "boolean", editable: true , defaultValue: false},
+			shared: { type: "boolean", editable: true , defaultValue: false},
+	        modifiedDate: { type: "date"},
+	        creationDate: { type: "date" }        
+	    },
+	    copy : function ( target ){
+	    	target.albumId = this.get("albumId");
+	    	target.set("name" , this.get("name"));
+	    	target.set("description" ,this.get("description"));
+	    	target.set("collaborate", this.get("collaborate"));
+	    	target.set("shared", this.get("shared"));
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties") );	    	
+	    	target.set("creationDate", this.get("creationDate"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));    	
+	    }	
+	});
+	
+	
 	function imageUrl ( image , width , height ){	
 		if( image.imageId > 0 ){
 			var _photoUrl = "/download/image/" + image.imageId + "/" + image.name ;	
