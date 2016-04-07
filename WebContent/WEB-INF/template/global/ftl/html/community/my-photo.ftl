@@ -582,7 +582,7 @@
 			<!-- ./END FOOTER -->					
 		</div>			
 		
-		<div id="my-album-view-modal" role="dialog" class="modal" data-backdrop="static" >
+		<div id="my-album-view-modal" role="dialog" class="modal fade" data-backdrop="static" data-effect="zoom" >
 			<div class="photo-album">
 			
 			
