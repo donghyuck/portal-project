@@ -447,8 +447,47 @@
 			}				
 		}		
 		
+		<!-- ============================== -->
+		<!-- Album						-->
+		<!-- ============================== -->				
 				
 		function createAlbumListView( currentUser ){		
+				
+				
+			var renderTo = $('#my-album-listview');
+			if( !common.ui.exists(renderTo) ){
+				var listview = common.ui.listview(renderTo, {
+					dataSource : common.ui.datasource(
+						'<@spring.url "/data/me/photo/album/list.json?output=json" />',
+						{
+							transport : {
+								parameterMap :  function (options, operation){
+									return { startIndex: options.skip, pageSize: options.pageSize }
+								}
+							},
+							pageSize: 30,
+							schema: {
+								model: common.ui.data.Album,
+								data : "items",
+								total : "totalCount"
+							}
+						}
+					),
+					selectable: false,//"multiple",//"single",
+					change: function(e) {
+						var data = this.dataSource.view();						
+					},
+					dataBound : function(e){
+								
+					},
+					navigatable: false,
+					template: kendo.template($("#my-album-listview-template").html())
+				});	
+				//common.ui.pager( $("#my-photo-listview-pager"), { refresh:false, buttonCount : 9, pageSizes: [30, 60, 90, "전체"] , dataSource : listview.dataSource });				
+				renderTo.removeClass('k-widget');			
+		
+			}				
+				
 				
 		}
 		
@@ -532,7 +571,7 @@
 							<div id="my-photo-listview-pager" class="image-listview-pager text-muted p-sm"></div>			
 						</div>
 						<div role="tabpanel" class="tab-pane fade" id="album-tabpanel">	앨범 
-						
+							<div id="my-album-listview" class="no-border no-gutter album-listview-v2"></div>	
 						</div>
 					</div>
 				</div><!--/end container-->
@@ -672,6 +711,10 @@
 				</span>
 			</div>		
 		</div>	
+	</script>	
+	<script type="text/x-kendo-tmpl" id="my-album-listview-template">
+		hello	
+	</div>
 	</script>	
 	<script type="text/x-kendo-tmpl" id="my-photo-listview-template">
 	<div class="col-sm-2 col-xs-4 image-bg" style="background-image: url('<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>')" >		
