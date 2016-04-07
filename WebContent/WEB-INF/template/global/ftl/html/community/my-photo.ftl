@@ -584,7 +584,7 @@
 		
 		<div id="my-album-view-modal" role="dialog" class="modal" data-backdrop="static" >
 		
-		
+			<span class="close" aria-hidden="true" data-dismiss="modal"></span>
 		
 		</div>
 		
