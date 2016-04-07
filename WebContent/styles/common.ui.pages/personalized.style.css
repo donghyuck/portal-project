@@ -3346,3 +3346,14 @@ img[data-toggle=lightbox]:hover{
 	height: 50px;
 	background-position: -115px -585px;
 }
+
+
+/** photo album modal **/
+.modal .photo-album .close {
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: url('/images/common/icons/basic/ios9/Delete2.svg') no-repeat center;
+    background-size: 40px;	
+}
