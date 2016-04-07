@@ -3375,10 +3375,9 @@ img[data-toggle=lightbox]:hover{
     border: none;
     border-bottom: 2px solid rgba(0,0,0,0.2);
     background-color: transparent;
-    color: #fffed8;
+    color: 000;
     text-overflow: ellipsis;
-    font-weight: bold;
-    font-size: 1.5em;
+    font-size: 2em;
     border-radius: 0;
 }
 
