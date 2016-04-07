@@ -48,7 +48,6 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								$('article').show();
-								//createMyPhotoTabs()
 								$('#my-photo-tabs a:eq(1)').tab('show') ;
 							} 
 						}		
@@ -68,23 +67,6 @@
 				// END SCRIPT 				
 			}
 		}]);	
-		
-		function createMyPhotoTabs(){
-			var renderTo = $('#my-photo-tabs');
-			/*
-			renderTo.on( 'show.bs.tab', function (e) {
-				//	e.preventDefault();		
-				var show_bs_tab = $(e.target);	
-				console.log(">>" + show_bs_tab );			
-				if( show_bs_tab.data('action') == 'view-photo'){
-					createPhotoListView();
-				}else if (show_bs_tab.data('action') == 'view-album'){
-					createAlbumListView();
-				}								
-			});
-			*/	
-			renderTo.find('a:eq(1)').tab('show') ;			
-		}
 		
 		function getPhotoListView(){
 			return common.ui.listview(renderTo);
@@ -208,7 +190,7 @@
 							async: {
 								saveUrl:  '<@spring.url "/data/me/photo/images/update_with_media.json?output=json" />'
 							},
-							success : function(e) {	
+							complete : function(e) {	
 								getPhotoListView().dataSource.read();								
 							}		
 						});		
