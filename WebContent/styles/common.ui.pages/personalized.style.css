@@ -3366,3 +3366,19 @@ img[data-toggle=lightbox]:hover{
     background-size: 40px;	
     opacity : .9;
 }
+
+.fs-fields input {
+    display: block;
+    margin: 0;
+    padding: 0 0 0.15em;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    background-color: transparent;
+    color: #fffed8;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-radius: 0;
+}
+

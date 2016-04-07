@@ -586,10 +586,13 @@
 			<div class="photo-album">
 			
 			
-			<span class="close" aria-hidden="true" data-dismiss="modal"></span>
-		
-		
-		
+				<span class="close" aria-hidden="true" data-dismiss="modal"></span>
+			
+				<div class="fs-fields">
+					<input class="fs-anim-lower" type="text" placeholder=앨범 이름을 적어 주세요." required="">
+				</div>	
+				
+				
 			</div>
 		</div>
 		
