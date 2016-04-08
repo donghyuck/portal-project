@@ -1,5 +1,4 @@
 @CHARSET "UTF-8";
-@CHARSET "UTF-8";
 /**
 * main 
 */
@@ -3359,12 +3358,12 @@ img[data-toggle=lightbox]:hover{
 }    
 .modal .photo-album .close {
     position: absolute;
-    right: 0;
-    width: 60px;
-    height: 60px;
+    right: 10px;
+    width: 40px;
+    height: 50px;
     background: url('/images/common/icons/basic/ios9/Delete.svg') no-repeat center;
     background-size: 40px;	
-    opacity : .9;
+    opacity : 1;
 }
 
 .fs-fields input {
