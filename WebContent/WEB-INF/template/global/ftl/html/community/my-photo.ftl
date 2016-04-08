@@ -590,75 +590,16 @@
 						<fieldset>
 							<section>
 								<label for="file" class="input">
-									<input type="text" id="file" placeholder="앨범 이름을 만들어 주세요.">
+									<input type="text" id="file" placeholder="앨범 이름을 만들어 주세요." data-bind="value:album.name">
 								</label>
 							</section>
 
 							<section>
 								<label class="textarea">
-									<textarea rows="3" name="info" placeholder="무엇에 대한 앨범인가요."></textarea>
+									<textarea rows="3" name="info" placeholder="무엇에 대한 앨범인가요." data-bind="value:album.description"></textarea>
 								</label>
 							</section>
 						</fieldset>
-
-						<fieldset>
-							<section>
-								<div class="inline-group">
-									<label class="radio"><input type="radio" name="radio-inline" checked=""><i class="rounded-x"></i>Visa</label>
-									<label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>MasterCard</label>
-									<label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>PayPal</label>
-								</div>
-							</section>
-
-							<section>
-								<label class="input">
-									<input type="text" name="name" placeholder="Name on card">
-								</label>
-							</section>
-
-							<div class="row">
-								<section class="col col-10">
-									<label class="input">
-										<input type="text" name="card" id="card" placeholder="Card number">
-									</label>
-								</section>
-								<section class="col col-2">
-									<label class="input">
-										<input type="text" name="cvv" id="cvv" placeholder="CVV2">
-									</label>
-								</section>
-							</div>
-
-							<div class="row">
-								<label class="label col col-4">Expiration date</label>
-								<section class="col col-5">
-									<label class="select">
-										<select name="month">
-											<option value="0" selected="" disabled="">Month</option>
-											<option value="1">January</option>
-											<option value="1">February</option>
-											<option value="3">March</option>
-											<option value="4">April</option>
-											<option value="5">May</option>
-											<option value="6">June</option>
-											<option value="7">July</option>
-											<option value="8">August</option>
-											<option value="9">September</option>
-											<option value="10">October</option>
-											<option value="11">November</option>
-											<option value="12">December</option>
-										</select>
-										<i></i>
-									</label>
-								</section>
-								<section class="col col-3">
-									<label class="input">
-										<input type="text" name="year" id="year" placeholder="Year">
-									</label>
-								</section>
-							</div>
-						</fieldset>
-
 						<footer>
 							<button type="submit" class="btn-u">Continue</button>
 						</footer>
