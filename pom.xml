@@ -11,7 +11,7 @@
 		<javac.target.version>1.6</javac.target.version>
 		<project.javadoc.docEncoding>UTF-8</project.javadoc.docEncoding>
 		<project.build.version>1.0.0.RELEASE</project.build.version>
-		<project.architecture.version>2.0.0.RELEASE</project.architecture.version>
+		<project.architecture.version>2.0.1.RELEASE</project.architecture.version>
 		<project.dependency.moskito.version>2.5.0</project.dependency.moskito.version>			
 	</properties>
 
