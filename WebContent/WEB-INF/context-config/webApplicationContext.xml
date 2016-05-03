@@ -15,6 +15,9 @@
        Application Context        
 	]]></description>	
 	<!-- 기본 유틸리티 컨텍스트  -->
+	<import resource="classpath:context/databaseSubsystemContext.xml"/>		
+	<import resource="classpath:context/daoSubsystemContext.xml"/>	
+	
 	<import resource="classpath:context/i18nSubsystemContext.xml"/>
 	<import resource="classpath:context/freemarkerSubsystemContext.xml"/>
 	<import resource="classpath:context/transactionSubsystemContext.xml"/>
