@@ -136,7 +136,7 @@
 		<dependency>
 			<groupId>architecture.bootstrap</groupId>
 			<artifactId>architecture-bootstrap</artifactId>
-			<version>1.0.3.RELEASE</version>
+			<version>${project.architecture.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>net.anotheria</groupId>
