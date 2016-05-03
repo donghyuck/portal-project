@@ -151,7 +151,7 @@
 		<dependency>
 			<groupId>com.podosoftware</groupId>
 			<artifactId>competency-assessment</artifactId>
-			<version>0.0.1-BETA</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 	</dependencies>
 		
