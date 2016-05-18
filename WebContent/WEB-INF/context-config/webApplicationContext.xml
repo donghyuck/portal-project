@@ -14,19 +14,33 @@
 	<description><![CDATA[
        Application Context        
 	]]></description>	
-	<!-- 기본 유틸리티 컨텍스트  -->
-	<import resource="classpath:context/databaseSubsystemContext.xml"/>		
-	<import resource="classpath:context/daoSubsystemContext.xml"/>	
+	<!-- COMMON  -->
 	
+	<!-- EE  -->
+	<import resource="classpath:context/adminSubsystemContext.xml"/>	
+	
+	<import resource="classpath:context/databaseSubsystemContext.xml"/>		
+	<import resource="classpath:context/daoSubsystemContext.xml"/>		
 	<import resource="classpath:context/i18nSubsystemContext.xml"/>
-	<import resource="classpath:context/freemarkerSubsystemContext.xml"/>
-	<import resource="classpath:context/transactionSubsystemContext.xml"/>
-	<import resource="classpath:context/oracleSubsystemContext.xml"/>
 	<import resource="classpath:context/utilSubsystemContext.xml"/>	
+	
+	<!-- WEB  -->
+	<import resource="classpath:context/freemarkerSubsystemContext.xml"/>
+	<import resource="classpath:context/webSubsystemContext.xml"/>
+	
+	<!-- <import resource="classpath:context/transactionSubsystemContext.xml"/> -->
+	<!-- <import resource="classpath:context/oracleSubsystemContext.xml"/> -->
+	
+	
+	<!-- USER  -->
 	<import resource="classpath:context/userSubsystemContext.xml"/>		
 	<import resource="classpath:context/securitySubsystemContext.xml"/>
 	<!-- <import resource="classpath:context/struts2SubsystemContext.xml"/> -->
-	<import resource="classpath:context/webSubsystemContext.xml"/>
+	
+	<!-- COMMUNITY  -->
 	<import resource="classpath:context/communitySubsystemContext.xml"/>
-	<import resource="classpath:context/competencySubsystemContext.xml"/>		
+	
+	<!-- ASSESSMENT  -->
+	<import resource="classpath:context/competencySubsystemContext.xml"/>	
+		
 </beans>
