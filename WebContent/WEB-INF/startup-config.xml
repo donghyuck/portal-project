@@ -24,7 +24,9 @@ bnNlPg==</file>
 		<html>
 			<page>
 				<main>homepage</main>
+				<secure-main>/html/system/main</secure-main>
 			</page>
+			
 			<customize>
 				<enabled>true</enabled>
 				<source>
@@ -32,6 +34,7 @@ bnNlPg==</file>
 				</source>
 			</customize>
 		</html>
+		
 		<render>
 			<freemarker>
 				<debug>true</debug>
