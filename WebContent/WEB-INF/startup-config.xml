@@ -24,7 +24,9 @@ bnNlPg==</file>
 		<html>
 			<page>
 				<main>homepage</main>
-				<secure-main>/html/system/main</secure-main>
+				<secure>
+					<main>/html/system/main</main>
+				</secure>
 			</page>
 			
 			<customize>
