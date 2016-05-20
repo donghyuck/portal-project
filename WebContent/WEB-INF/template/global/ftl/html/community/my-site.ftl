@@ -86,6 +86,9 @@
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();		
 				
+				createSiteGrid();
+				
+				
 				/*	
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");
 				*/
