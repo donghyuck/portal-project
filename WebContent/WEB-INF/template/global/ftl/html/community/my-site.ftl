@@ -1314,15 +1314,13 @@
 	<!-- START TEMPLATE -->			
     <script type="text/x-kendo-template" id="my-site-listview-template">
 	<div class="row clients-page">
-		<div class="col-md-2">
+		<div class="col-sm-2">
 			<img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
 		</div>
-		<div class="col-md-10">
+		<div class="col-sm-10">
 			<h3>#: displayName #</h3>
 			<ul class="list-inline">
-				<li><i class="fa fa-map-marker color-green"></i> USA</li>
 				<li><i class="fa fa-globe color-green"></i> #: url #</li>
-				<li><i class="fa fa-briefcase color-green"></i> Web Design &amp; Development</li>
 			</ul>
 			<p>#: description #</p>
 		</div>
