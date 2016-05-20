@@ -78,7 +78,7 @@
 						}						
 					},
 					wallpaper : {
-						renderTo:$(".interactive-slider-v2")
+						renderTo:$(".breadcrumbs-v3")
 					},	
 					jobs:jobs
 				});		
@@ -906,7 +906,7 @@
 			<!-- START MAIN CONTENT -->
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />		
-			<div class="interactive-slider-v2 bg-dark arrow-up">
+			<div class="breadcrumbs-v3 img-v1  bg-dark arrow-up">
 				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if>	${ navigator.title }</h1>					
