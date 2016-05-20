@@ -1315,16 +1315,16 @@
     <script type="text/x-kendo-template" id="my-site-listview-template">
 	<div class="row clients-page">
 		<div class="col-md-2">
-			<img src="assets/img/clients2/baderbrau.png" class="img-responsive hover-effect" alt="">
+			<img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
 		</div>
 		<div class="col-md-10">
-			<h3>Cisco Systems, Inc</h3>
+			<h3>#: displayName #</h3>
 			<ul class="list-inline">
 				<li><i class="fa fa-map-marker color-green"></i> USA</li>
 				<li><i class="fa fa-globe color-green"></i> <a class="linked" href="\\#">http://www.example.com</a></li>
 				<li><i class="fa fa-briefcase color-green"></i> Web Design &amp; Development</li>
 			</ul>
-			<p>Olerano ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna edetquam lacus. Fusce condimentum eleifend enim a sint occaecati feugiat..</p>
+			<p>#: description #</p>
 		</div>
 	</div>
     </script>
