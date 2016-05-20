@@ -141,6 +141,7 @@
 						}
 					},
 					template: kendo.template($("#my-site-listview-template").html()),
+					selectable: "row",
 					dataBound:function(){
 						renderTo.removeClass("k-widget");     
 					},
