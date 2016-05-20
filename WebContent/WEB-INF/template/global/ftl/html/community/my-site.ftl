@@ -142,6 +142,7 @@
 					},
 					template: kendo.template($("#my-site-listview-template").html())
 				});	
+				renderTo.removeClass("k-widget");                
 			}	
 		}		
 
