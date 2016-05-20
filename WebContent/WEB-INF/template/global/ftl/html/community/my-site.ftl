@@ -183,8 +183,7 @@
 						console.log(2);
 						break;						
 					}					
-				});
-											
+				});											
 			}			
 			renderTo.data("model").setSource( source );			
 			if (!renderTo.is(":visible")) 
