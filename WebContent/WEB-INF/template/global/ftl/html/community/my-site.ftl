@@ -160,6 +160,7 @@
 		<!-- WEB SITE DETAILS				-->
 		<!-- ============================== -->
 		function createSiteDetails(source){
+		console.log(common.ui.stringify(source));
 			var renderTo = $("#my-site-details");
 			if(!renderTo.data("model")){
 				console.log("create data");
