@@ -122,7 +122,7 @@
 		}]);	
 		
 		<!-- ============================== -->
-		<!-- WEB SITE LISTVIEW					-->
+		<!-- WEB SITE LISTVIEW				-->
 		<!-- ============================== -->
 		function createSiteListView(){
 			var renderTo = $("#my-site-listview");
@@ -149,18 +149,34 @@
 						var that = this,
 						data = that.dataSource.view(),
 	                    selected = $.map(that.select(), function(item) {
-	                    	return data[$(item).index()].name;
+	                    	return data[$(item).index()];
 	                  	});		
-	                  	console.log( selected );			
+	                  	createSiteDetails( selected );			
 					}
 				});					           
 			}	
 		}		
-
-
-    						
 		<!-- ============================== -->
-		<!-- MENU														-->
+		<!-- WEB SITE DETAILS				-->
+		<!-- ============================== -->
+		function createSiteDetails(source){
+			var renderTo = $("#my-site-details");
+			if(!renderTo.data("model")){
+				console.log("create data");
+				var observable =  common.ui.observable({
+					site : new common.ui.data.WebSite(),
+					setSource : function(source){
+						source.copy(this.site);						
+					}	
+				});	
+				renderTo.data("model", observable);
+			}			
+			renderTo.data("model").setSource( source );			
+			if (!renderTo.is(":visible")) 
+				renderTo.fadeIn(); 		
+		}    						
+		<!-- ============================== -->
+		<!-- MENU							-->
 		<!-- ============================== -->
 		function openMenuEditor(){
 			var renderTo = $("#my-site-menu-editor");
@@ -965,7 +981,25 @@
 			</div>
 			</#if>	
 			<div class="container content" style="min-height:450px;">		
-				<div id="my-site-listview"></div>									
+				<div id="my-site-listview" class="margin-bottom-30"></div>	
+				<div id="my-site-details" style="display:none;">
+					<div class="tab-v1">
+						<ul class="nav nav-tabs">
+							<li><a href="#my-site-page" data-toggle="tab" class="m-l-sm rounded-top">웹 페이지</a></li>
+							<li><a href="#my-site-announce" data-toggle="tab" class="rounded-top">공지 & 이벤트</a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane fade" id="my-site-page">
+								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
+							</div>	
+							<div class="tab-pane fade" id="my-site-announce">
+								<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
+							</div>								
+						</div>
+					</div>						
+				</div>								
+				
+				
 						<div class="tab-v1">
 							<ul class="nav nav-tabs">
 								<li><a href="#website-page" data-toggle="tab" class="m-l-sm rounded-top">웹 페이지</a></li>
