@@ -166,10 +166,11 @@
 				var observable =  common.ui.observable({
 					site : new common.ui.data.WebSite(),
 					setSource : function(source){
-						source.copy(this.site);						
+						source.copy(this.site);
+						renderTo.find(".nav-tabs a[data-toggle=tab]:first").tab('show');
 					}	
 				});	
-				renderTo.data("model", observable);
+				renderTo.data("model", observable);				
 			}			
 			renderTo.data("model").setSource( source );			
 			if (!renderTo.is(":visible")) 
