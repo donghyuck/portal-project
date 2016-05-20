@@ -140,9 +140,11 @@
 							model: common.ui.data.WebSite
 						}
 					},
-					template: kendo.template($("#my-site-listview-template").html())
-				});	
-				renderTo.removeClass("k-widget");                
+					template: kendo.template($("#my-site-listview-template").html()),
+					dataBound:function(){
+						renderTo.removeClass("k-widget");     
+					}
+				});					           
 			}	
 		}		
 
