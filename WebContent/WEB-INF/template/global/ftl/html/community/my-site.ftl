@@ -143,6 +143,14 @@
 					template: kendo.template($("#my-site-listview-template").html()),
 					dataBound:function(){
 						renderTo.removeClass("k-widget");     
+					},
+					change : function (){
+						var that = this,
+						data = that.dataSource.view(),
+	                    selected = $.map(that.select(), function(item) {
+	                    	return data[$(item).index()].name;
+	                  	});		
+	                  	console.log( selected );			
 					}
 				});					           
 			}	
