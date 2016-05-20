@@ -841,7 +841,7 @@
 		<style scoped="scoped">			
 
 
-		.my-website.k-state-selecte {
+		.my-website.k-state-selected {
 		    color: #fff;
 		    background-color: #f5f5f5;
 		    border:0;
