@@ -1318,7 +1318,7 @@
 			<h3>Cisco Systems, Inc</h3>
 			<ul class="list-inline">
 				<li><i class="fa fa-map-marker color-green"></i> USA</li>
-				<li><i class="fa fa-globe color-green"></i> <a class="linked" href="#">http://www.example.com</a></li>
+				<li><i class="fa fa-globe color-green"></i> <a class="linked" href="\\#">http://www.example.com</a></li>
 				<li><i class="fa fa-briefcase color-green"></i> Web Design &amp; Development</li>
 			</ul>
 			<p>Olerano ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna edetquam lacus. Fusce condimentum eleifend enim a sint occaecati feugiat..</p>
