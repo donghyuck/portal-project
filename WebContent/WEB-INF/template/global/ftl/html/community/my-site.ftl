@@ -116,7 +116,45 @@
 				**/		
 				// END SCRIPT 				
 			}
-		}]);			
+		}]);	
+		
+		<!-- ============================== -->
+		<!-- WEB SITE GRID					-->
+		<!-- ============================== -->
+		function createSiteGrid(){
+			var renderTo = $("#my-site-grid");
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/website/list.json?output=json "/>', type:'post' }
+						},						
+						batch: false, 
+						pageSize: 15,
+						schema: {
+							data: "items",
+							total: "totalCount",
+							model: common.ui.data.WebSite
+						}
+					},
+					columns: [
+						{ title: "사이트", field: "displayName"},
+						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-info btn-selectable" data-action="update" data-object-id="#= webSiteId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
+					],
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-md btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 사이트 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" >새로고침</button></div>'),
+					resizable: true,
+					editable : false,
+					selectable : "row",
+					scrollable: false,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {	
+					}
+				});	
+			}	
+		}		
+						
 		<!-- ============================== -->
 		<!-- MENU														-->
 		<!-- ============================== -->
@@ -913,8 +951,8 @@
 				</div><!--/end container-->
 			</div>
 			</#if>	
-
-			<div class="container content" style="min-height:450px;">											
+			<div class="container content" style="min-height:450px;">		
+				<div id="my-site-grid"></div>									
 						<div class="tab-v1">
 							<ul class="nav nav-tabs">
 								<li><a href="#website-page" data-toggle="tab" class="m-l-sm rounded-top">웹 페이지</a></li>
