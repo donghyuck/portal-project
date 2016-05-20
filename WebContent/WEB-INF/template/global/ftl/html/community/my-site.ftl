@@ -57,6 +57,7 @@
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
+								/*
 								alert( currentUser.hasRole('ROLE_ADMIN') || currentUser.hasRole('ROLE_SYSTEM') );
 								if( !currentUser.anonymous ){		
 									$("#announce-selector label.btn").last().removeClass("disabled");									 
@@ -72,17 +73,22 @@
 										console.log( common.ui.stringify( data ) );
 									}
 								});
+								*/
 							} 
 						}						
 					},
 					wallpaper : {
-						renderTo:$(".breadcrumbs-v3")
+						renderTo:$(".interactive-slider-v2")
 					},	
 					jobs:jobs
-				});				
+				});		
+						
 				// ACCOUNTS LOAD			
-				var currentUser = new common.ui.data.User();			
+				var currentUser = new common.ui.data.User();		
+				
+				/*	
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");
+				*/
 				/**
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					handlers :{
@@ -94,7 +100,7 @@
 						}
 					}
 				});
-				**/				
+						
 				$(".wrapper>.container.content:first .nav-tabs a[data-toggle=tab]").on('show.bs.tab', function (e) {
 					e.target // newly activated tab
 					e.relatedTarget // previous active tab					
@@ -107,7 +113,7 @@
 				});
 				
 				$(".wrapper>.container.content:first .nav-tabs a[data-toggle=tab]:first").tab('show');
-				
+				**/		
 				// END SCRIPT 				
 			}
 		}]);			
@@ -900,12 +906,11 @@
 			<!-- START MAIN CONTENT -->
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />		
-			<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
+			<div class="interactive-slider-v2 bg-dark arrow-up">
 				<div class="personalized-controls container text-center p-xl">
-					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
-					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>
-					<span class="btn-flat settings"></span>
-					</div><!--/end container-->
+					<p class="text-quote">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if>	${ navigator.title }</h1>					
+				</div><!--/end container-->
 			</div>
 			</#if>	
 
