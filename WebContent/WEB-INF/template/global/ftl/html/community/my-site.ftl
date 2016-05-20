@@ -148,7 +148,7 @@
 					change : function (){
 						var data = this.dataSource.view() ;
 						var index = this.select().index();
-						var item = data[current_index];	
+						var item = data[index];	
 	                  	createSiteDetails( item );			
 					}
 				});					           
