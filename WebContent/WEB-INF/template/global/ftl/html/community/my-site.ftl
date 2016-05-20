@@ -146,10 +146,10 @@
 						renderTo.removeClass("k-widget");     
 					},
 					change : function (){
-						var that = this,
-						data = that.dataSource.view(),
-	                    selected = data[that.select() ];
-	                  	createSiteDetails( selected );			
+						var data = this.dataSource.view() ;
+						var index = this.select().index();
+						var item = data[current_index];	
+	                  	createSiteDetails( item );			
 					}
 				});					           
 			}	
