@@ -1321,7 +1321,7 @@
 			<h3>#: displayName #</h3>
 			<ul class="list-inline">
 				<li><i class="fa fa-map-marker color-green"></i> USA</li>
-				<li><i class="fa fa-globe color-green"></i> <a class="linked" href="\\#">http://www.example.com</a></li>
+				<li><i class="fa fa-globe color-green"></i> #: url #</li>
 				<li><i class="fa fa-briefcase color-green"></i> Web Design &amp; Development</li>
 			</ul>
 			<p>#: description #</p>
