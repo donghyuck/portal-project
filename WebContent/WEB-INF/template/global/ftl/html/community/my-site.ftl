@@ -188,7 +188,9 @@
 			renderTo.data("model").setSource( source );			
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 		
-		}    						
+		}    	
+		
+							
 		<!-- ============================== -->
 		<!-- MENU							-->
 		<!-- ============================== -->
