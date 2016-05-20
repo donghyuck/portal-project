@@ -148,9 +148,7 @@
 					change : function (){
 						var that = this,
 						data = that.dataSource.view(),
-	                    selected = $.map(that.select(), function(item) {
-	                    	return data[$(item).index()];
-	                  	});		
+	                    selected = data[that.select() ];
 	                  	createSiteDetails( selected );			
 					}
 				});					           
