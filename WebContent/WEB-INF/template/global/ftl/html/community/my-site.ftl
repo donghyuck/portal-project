@@ -86,7 +86,7 @@
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();		
 				
-				createSiteGrid();
+				createSiteListView();
 				
 				
 				/*	
@@ -122,12 +122,12 @@
 		}]);	
 		
 		<!-- ============================== -->
-		<!-- WEB SITE GRID					-->
+		<!-- WEB SITE LISTVIEW					-->
 		<!-- ============================== -->
-		function createSiteGrid(){
-			var renderTo = $("#my-site-grid");
+		function createSiteListView(){
+			var renderTo = $("#my-site-listview");
 			if(! common.ui.exists(renderTo) ){
-				common.ui.grid(renderTo, {
+				common.ui.listview(renderTo, {
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/list.json?output=json "/>', type:'post' }
@@ -140,22 +140,13 @@
 							model: common.ui.data.WebSite
 						}
 					},
-					columns: [
-						{ title: "사이트", field: "displayName"}
-					],
-					resizable: true,
-					editable : false,
-					selectable : "row",
-					scrollable: false,
-					height: 300,
-					change: function(e) {
-					},
-					dataBound: function(e) {	
-					}
+					template: kendo.template($("#my-site-listview-template").html())
 				});	
 			}	
 		}		
-						
+
+
+    						
 		<!-- ============================== -->
 		<!-- MENU														-->
 		<!-- ============================== -->
@@ -953,7 +944,7 @@
 			</div>
 			</#if>	
 			<div class="container content" style="min-height:450px;">		
-				<div id="my-site-grid"></div>									
+				<div id="my-site-listview"></div>									
 						<div class="tab-v1">
 							<ul class="nav nav-tabs">
 								<li><a href="#website-page" data-toggle="tab" class="m-l-sm rounded-top">웹 페이지</a></li>
@@ -1317,7 +1308,12 @@
 			</div>		
 		</div>
 												
-	<!-- START TEMPLATE -->				
+	<!-- START TEMPLATE -->			
+    <script type="text/x-kendo-template" id="my-site-listview-template">
+        <div class="product">
+        </div>
+    </script>
+    		
 	<script id="webpage-title-template" type="text/x-kendo-template">
 		#: title #</span>
 		<div class="btn-group btn-group-xs pull-right">
