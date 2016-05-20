@@ -170,7 +170,22 @@
 						renderTo.find(".nav-tabs a[data-toggle=tab]:first").tab('show');
 					}	
 				});	
-				renderTo.data("model", observable);				
+				renderTo.data("model", observable);	
+				
+				renderTo.find(".nav-tabs a[data-toggle=tab]").on('show.bs.tab', function (e) {
+					e.target // newly activated tab
+					e.relatedTarget // previous active tab		
+					switch ($(e.target).attr('href'))
+					{
+						case '#my-site-page' :
+						console.log(1);
+						break;
+						case '#my-site-announce' :
+						console.log(2);
+						break;						
+					}					
+				});
+											
 			}			
 			renderTo.data("model").setSource( source );			
 			if (!renderTo.is(":visible")) 
