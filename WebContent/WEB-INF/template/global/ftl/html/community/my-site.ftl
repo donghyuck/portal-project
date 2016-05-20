@@ -840,6 +840,14 @@
 		</script>		
 		<style scoped="scoped">			
 
+
+		.my-website.k-state-selecte {
+		    color: #fff;
+		    background-color: #f5f5f5;
+		    border:0;
+		}
+		
+
 		.dialog__content {
 			width : 100%;
 			max-width: none;				
@@ -936,6 +944,7 @@
 		  font-weight: 200;
 		  margin-bottom: 0;
 		}			
+		
 		</style>   	
 		</#compress>
 	</head>
@@ -1322,7 +1331,7 @@
 												
 	<!-- START TEMPLATE -->			
     <script type="text/x-kendo-template" id="my-site-listview-template">
-	<div class="row clients-page">
+	<div class="row my-website">
 		<div class="col-sm-2">
 			<img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
 		</div>
