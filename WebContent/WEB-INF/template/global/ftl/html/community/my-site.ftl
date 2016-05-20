@@ -6,42 +6,49 @@
 		<#compress>		
 		<script type="text/javascript">
 		<!--
-		var jobs = [];	
-				
+		var jobs = [];					
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
-			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/skins/dark.css"/>',
-			'css!<@spring.url "/styles/bootstrap.common/color-icons.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-default.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/dark-red.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
+
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',				
-			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
-			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
+
+			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',			
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
-			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
-			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',	
+						
+			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
+			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',		
+				
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
-			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',					
+			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',			
+			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',		
+			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
-			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
-			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
+			
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
-			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',	
+
 			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
-			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 					
-			'<@spring.url "/js/pdfobject/pdfobject.js"/>',			
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 
+
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>',
-			'<@spring.url "/js/common.pages/common.personalized.js"/>',
+			'<@spring.url "/js/common.pages/common.personalized.js"/>'
+			
 			'<@spring.url "/js/ace/ace.js"/>',
 			'<@spring.url "/js/common.pages/common.code-editor.js"/>'
+			
 			],			
 			complete: function() {		
 				
