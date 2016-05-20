@@ -177,7 +177,7 @@
 					switch ($(e.target).attr('href'))
 					{
 						case '#my-site-page' :
-						console.log(1);
+						createWebPageGrid( observable.get('site') );
 						break;
 						case '#my-site-announce' :
 						console.log(2);
@@ -189,8 +189,47 @@
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 		
 		}    	
-		
-							
+
+		function createPageGrid(site){
+			
+		}
+				
+		function createWebPageGrid(site){
+			var renderTo = $("#my-site-web-page-grid");			
+			if(! common.ui.exists(renderTo) ){			
+				common.ui.grid(renderTo, {
+					autoBind : false,
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/website/pages/list.json?output=json" />', type:'get' }
+						},						
+						batch: false, 
+						pageSize: 15,
+						schema: {
+							data: "items",
+							total: "totalCount",
+							model: common.ui.data.WebPage
+						}
+					},
+					columns: [
+						{ title: "페이지", field: "name"},
+						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-info  btn-selectable" data-action="update" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
+					],
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },	
+					resizable: true,
+					editable : false,
+					selectable : "row",
+					scrollable: true,
+					height: 500,
+					change: function(e) {
+					},
+					dataBound: function(e) {
+					}	
+				});				
+			}
+			common.ui.grid(renderTo).read( {siteId: site.webSiteId} );
+		}
+									
 		<!-- ============================== -->
 		<!-- MENU							-->
 		<!-- ============================== -->
