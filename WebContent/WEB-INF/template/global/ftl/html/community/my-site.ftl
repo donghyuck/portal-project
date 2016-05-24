@@ -1435,7 +1435,7 @@
     	<div class="row">
         	<div class="col-md-9">
                 <div class="forum-icon">
-                    <i class="fa fa-bolt"></i>
+                    <img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
                 </div>
                 <a href="forum_post.html" class="forum-item-title">#: displayName #</a>
                 <div class="forum-sub-title">#: description #</div>
