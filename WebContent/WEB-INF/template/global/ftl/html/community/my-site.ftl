@@ -1431,22 +1431,7 @@
 												
 	<!-- START TEMPLATE -->			
     <script type="text/x-kendo-template" id="my-site-listview-template">
-	<div class="row team-v7 no-gutter equal-height-columns">
-				<div class="col-md-6 col-md-push-6 team-arrow-left">
-					<div class="dp-table">
-						<div class="equal-height-column dp-table-cell team-v7-in" style="height: 385px;">
-							<span class="team-v7-name">#: displayName #</span>
-							<span class="team-v7-position">#: url #</span>
-							<p>#: description #</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-md-pull-6 team-v7-img">
-					<img class="img-responsive full-width equal-height-column" src="<@spring.url "/download/logo/site/#= name #"/>" alt="" style="height: 385px;">
-				</div>
-	</div>
-			 <!--   
-	<div class="row my-website team-v7 no-gutter">
+	<div class="row my-website team-v7">
 		<div class="col-sm-2 ">
 			<img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
 		</div>	
@@ -1457,7 +1442,7 @@
 			</ul>
 			<p>#: description #</p>			
 		</div>
-	</div>-->
+	</div>
     </script>
     		
 	<script id="webpage-title-template" type="text/x-kendo-template">
