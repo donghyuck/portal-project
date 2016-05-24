@@ -1055,7 +1055,7 @@
 			</div>
 			</#if>	
 			<div class="container content" style="min-height:450px;">		
-				<div id="my-site-listview" class="margin-bottom-30" style="min-height:100px;"></div>	
+				<div id="my-site-listview" class="margin-bottom-30 no-border" style="min-height:100px;"></div>	
 				<div id="my-site-details" style="display:none;">
 					<div class="tab-v1">
 						<ul class="nav nav-tabs">
