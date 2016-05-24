@@ -239,7 +239,7 @@
 					}	
 				});				
 			}
-			common.ui.grid(renderTo).dataSource.read( {siteId: site.webSiteId} );
+			//common.ui.grid(renderTo).dataSource.read( {siteId: site.webSiteId} );
 		}
 									
 		<!-- ============================== -->
