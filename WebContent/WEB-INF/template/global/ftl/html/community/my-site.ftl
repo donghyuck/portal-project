@@ -921,14 +921,14 @@
 		-->
 		</script>		
 		<style scoped="scoped">			
-
-
-		.my-website.k-state-selected {
-		    color: #fff;
-		    background-color: #f5f5f5;
-		    border:0;
+		
+		.forum-item.k-state-selected {
+			background-color: #fff;
 		}
 		
+		.forum-item.k-state-selected .forum-item-title {
+		    color: #1ab394;
+		}
 
 		.dialog__content {
 			width : 100%;
