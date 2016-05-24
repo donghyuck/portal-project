@@ -1066,6 +1066,7 @@
 						<div class="tab-content">
 							<div class="tab-pane fade" id="my-site-page">
 								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
+								<div id="my-site-web-page-grid" />
 							</div>	
 							<div class="tab-pane fade" id="my-site-announce">
 								<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
