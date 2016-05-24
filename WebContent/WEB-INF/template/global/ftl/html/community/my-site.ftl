@@ -924,6 +924,7 @@
 		
 		.forum-item.k-state-selected {
 			background-color: #fff;
+			color:#333;
 		}
 		
 		.forum-item.k-state-selected .forum-item-title {
