@@ -57,6 +57,7 @@
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
+								getSiteListView().dataSource.read();
 								/*
 								alert( currentUser.hasRole('ROLE_ADMIN') || currentUser.hasRole('ROLE_SYSTEM') );
 								if( !currentUser.anonymous ){		
@@ -124,6 +125,15 @@
 		<!-- ============================== -->
 		<!-- WEB SITE LISTVIEW				-->
 		<!-- ============================== -->
+		
+		function getSiteListView(){
+			var renderTo = $("#my-site-listview");
+			if(! common.ui.exists(renderTo) ){
+				createSiteListView();
+			}
+			return common.ui.listview(renderTo);
+		}
+		
 		function createSiteListView(){
 			var renderTo = $("#my-site-listview");
 			if(! common.ui.exists(renderTo) ){
