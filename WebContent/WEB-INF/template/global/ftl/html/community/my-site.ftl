@@ -930,7 +930,14 @@
 		.forum-item.k-state-selected .forum-item-title {
 		    color: #1ab394;
 		}
-
+		
+		.forum-img {
+		    float: left;
+		    width: 40px;
+		    margin-right: 10px;
+		    text-align: center;
+		}
+		
 		.dialog__content {
 			width : 100%;
 			max-width: none;				
@@ -1435,8 +1442,8 @@
 	<div class="forum-item">
     	<div class="row">
         	<div class="col-md-9">
-                <div class="forum-icon">
-                    <img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
+                <div class="forum-img">
+                    <img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive" alt="">
                 </div>
                <!-- <a href="forum_post.html" class="forum-item-title">#: displayName #</a>-->
                 <h4 class="forum-item-title">#: displayName #</h4>
