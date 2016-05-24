@@ -1431,6 +1431,35 @@
 												
 	<!-- START TEMPLATE -->			
     <script type="text/x-kendo-template" id="my-site-listview-template">
+	<div class="forum-item">
+    	<div class="row">
+        	<div class="col-md-9">
+                <div class="forum-icon">
+                    <i class="fa fa-bolt"></i>
+                </div>
+                <a href="forum_post.html" class="forum-item-title">#: displayName #</a>
+                <div class="forum-sub-title">#: description #</div>
+            </div>
+            <div class="col-md-1 forum-info">
+            	<span class="views-number">0</span>
+            	<div><small>Views</small></div>
+            </div>
+            <div class="col-md-1 forum-info">
+            	<span class="views-number">0</span>
+                <div>
+                   	<small>Topics</small>
+                </div>
+           	</div>
+       		<div class="col-md-1 forum-info">
+       			<span class="views-number">0</span>
+           		<div>
+            		<small>Posts</small>
+        		</div>
+        	</div>
+        </div><!-- /.row -->
+	</div><!-- /.forum-item -->
+                               
+    <!--
 	<div class="row my-website team-v7">
 		<div class="col-sm-2 ">
 			<img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
@@ -1443,6 +1472,7 @@
 			<p>#: description #</p>			
 		</div>
 	</div>
+	-->
     </script>
     		
 	<script id="webpage-title-template" type="text/x-kendo-template">
