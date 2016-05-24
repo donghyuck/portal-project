@@ -1438,7 +1438,8 @@
                 <div class="forum-icon">
                     <img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
                 </div>
-                <a href="forum_post.html" class="forum-item-title">#: displayName #</a>
+               <!-- <a href="forum_post.html" class="forum-item-title">#: displayName #</a>-->
+                <h4 class="forum-item-title">#: displayName #</h4>
                 <div class="forum-sub-title">#: description #</div>
             </div>
             <div class="col-md-1 forum-info">
