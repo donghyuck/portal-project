@@ -238,7 +238,7 @@
 					}	
 				});				
 			}
-			common.ui.grid(renderTo).read( {siteId: site.webSiteId} );
+			common.ui.grid(renderTo).dataSource.read( {siteId: site.webSiteId} );
 		}
 									
 		<!-- ============================== -->
