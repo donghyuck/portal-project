@@ -128,6 +128,7 @@
 			var renderTo = $("#my-site-listview");
 			if(! common.ui.exists(renderTo) ){
 				common.ui.listview(renderTo, {
+					autoBind:false,
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/list.json?output=json "/>', type:'post' }
@@ -1421,15 +1422,15 @@
 	<!-- START TEMPLATE -->			
     <script type="text/x-kendo-template" id="my-site-listview-template">
 	<div class="row my-website team-v7 no-gutter">
-		<div class="col-sm-2 team-arrow-right">
-			<img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
-		</div>
-		<div class="col-sm-10 team-v7-in">
+		<div class="col-sm-10 team-arrow-right">		
 			<h3>#: displayName #</h3>
 			<ul class="list-inline">
 				<li><i class="fa fa-globe color-green"></i> #: url #</li>
 			</ul>
-			<p>#: description #</p>
+			<p>#: description #</p>			
+		</div>
+		<div class="col-sm-2 team-v7-in">
+			<img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
 		</div>
 	</div>
     </script>
