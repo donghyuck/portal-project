@@ -169,8 +169,8 @@
 		<!-- WEB SITE DETAILS				-->
 		<!-- ============================== -->
 		function createSiteDetails(source){
-			console.log( source );
-			console.log(common.ui.stringify(source));
+			//console.log( source );
+			//console.log(common.ui.stringify(source));
 			var renderTo = $("#my-site-details");			
 			if(!renderTo.data("model")){
 				console.log("create data");
@@ -188,7 +188,7 @@
 					switch ($(e.target).attr('href'))
 					{
 						case '#my-site-page' :
-						createWebPageGrid( observable.get('site') );
+						createWebPageGrid( observable.site );
 						break;
 						case '#my-site-announce' :
 						console.log(2);
@@ -206,7 +206,8 @@
 		}
 				
 		function createWebPageGrid(site){
-			var renderTo = $("#my-site-web-page-grid");			
+			var renderTo = $("#my-site-web-page-grid");	
+			console.log(site);		
 			if(! common.ui.exists(renderTo) ){			
 				common.ui.grid(renderTo, {
 					autoBind : false,
