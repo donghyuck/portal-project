@@ -36,6 +36,44 @@
 	    }    
 	});
 	
+
+	var WebPage =  kendo.data.Model.define({
+		id : "webPageId",
+		fields: { 
+			webPageId: { type: "number", defaultValue: 0 },	
+			webSiteId: { type: "number", defaultValue: 0 },	
+			name: { type: "string", defaultValue: "" },
+			displayName: { type: "string", defaultValue: "." },
+			contentType: { type: "string", defaultValue: "text/html;charset=UTF-8" },
+			description: { type: "string" },
+			template: { type: "string" },
+			locale: { type: "string" },
+			enabled : { type: "boolean", defaultValue: false },
+			creationDate: { type: "date"},
+			modifiedDate: { type: "date"}
+		},
+	    formattedCreationDate: function(){
+	    	return kendo.toString(this.get("creationDate"), "g");
+	    },
+	    formattedModifiedDate : function(){
+	    	return kendo.toString(this.get("modifiedDate"), "g");
+	    },	    
+	    copy: function ( target ){
+	    	target.webPageId = this.get("webPageId");
+	    	target.set("webSiteId",this.get("webSiteId") );
+	    	target.set("name",this.get("name") );
+	    	target.set("displayName",this.get("displayName") );
+	    	target.set("contentType",this.get("contentType") );
+	    	target.set("description",this.get("description") );
+	    	target.set("template",this.get("template") );
+	    	target.set("locale",this.get("locale") );
+	    	target.set("enabled", this.get("enabled"));
+	    	target.set("creationDate",this.get("creationDate") );
+	    	target.set("modifiedDate",this.get("modifiedDate") );
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    }
+	});
 	
 	
 	var Accumulator = kendo.data.Model.define( {
@@ -93,6 +131,7 @@
 	extend( common.ui.data, {
 		CodeSet : CodeSet,
 		EditableCompany : EditableCompany,
+		WebPage : WebPage,
 		stats : {
 			Accumulator: Accumulator,
 			Database : Database			
