@@ -200,7 +200,7 @@
 		
 		function getSelectedSite(){
 			var renderTo = $("#my-site-details");
-			retrun renderTo.data("model").site;
+			return renderTo.data("model").get('site');
 		} 
 				   	
 
