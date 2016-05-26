@@ -43,6 +43,7 @@
 
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.data.admin.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>',
 			'<@spring.url "/js/common.pages/common.personalized.js"/>',
 			
