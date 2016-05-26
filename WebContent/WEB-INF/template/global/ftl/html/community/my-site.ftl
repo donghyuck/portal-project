@@ -1097,13 +1097,103 @@
 								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
 								<div id="my-site-web-page-grid"></div>	
 								<div id="my-site-web-page-view" style="display:none;">
-									<div class="panel panel-transparent">
-										<div class="panel-heading">1</div>
-										<div class="tab-content">
-										
-										
-										</div>
-									</div>
+									<div class="ibox product-detail">
+                        <div class="ibox-content">
+
+                            <div class="row">
+                                <div class="col-md-5">
+
+
+
+
+                                    <div class="product-images slick-initialized slick-slider" role="toolbar"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
+
+                                        <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 1645px; transform: translate3d(-329px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 329px;">
+                                            <div class="image-imitation">
+                                                [IMAGE 3]
+                                            </div>
+                                        </div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" role="option" aria-describedby="slick-slide00" style="width: 329px;">
+                                            <div class="image-imitation">
+                                                [IMAGE 1]
+                                            </div>
+                                        </div><div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 329px;">
+                                            <div class="image-imitation">
+                                                [IMAGE 2]
+                                            </div>
+                                        </div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 329px;">
+                                            <div class="image-imitation">
+                                                [IMAGE 3]
+                                            </div>
+                                        </div><div class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 329px;">
+                                            <div class="image-imitation">
+                                                [IMAGE 1]
+                                            </div>
+                                        </div></div></div>
+                                        
+                                        
+
+
+                                    <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button><ul class="slick-dots" style="display: block;" role="tablist"><li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00"><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">1</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01"><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">2</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation02" id="slick-slide02"><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">3</button></li></ul></div>
+
+                                </div>
+                                <div class="col-md-7">
+
+                                    <h2 class="font-bold m-b-xs">
+                                        Desktop publishing software
+                                    </h2>
+                                    <small>Many desktop publishing packages and web page editors now.</small>
+                                    <div class="m-t-md">
+                                        <h2 class="product-main-price">$406,602 <small class="text-muted">Exclude Tax</small> </h2>
+                                    </div>
+                                    <hr>
+
+                                    <h4>Product description</h4>
+
+                                    <div class="small text-muted">
+                                        It is a long established fact that a reader will be distracted by the readable
+                                        content of a page when looking at its layout. The point of using Lorem Ipsum is
+
+                                        <br>
+                                        <br>
+                                        There are many variations of passages of Lorem Ipsum available, but the majority
+                                        have suffered alteration in some form, by injected humour, or randomised words
+                                        which don't look even slightly believable.
+                                    </div>
+                                    <dl class="small m-t-md">
+                                        <dt>Description lists</dt>
+                                        <dd>A description list is perfect for defining terms.</dd>
+                                        <dt>Euismod</dt>
+                                        <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                        <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                        <dt>Malesuada porta</dt>
+                                        <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                    </dl>
+                                    <hr>
+
+                                    <div>
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</button>
+                                            <button class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist </button>
+                                            <button class="btn btn-white btn-sm"><i class="fa fa-envelope"></i> Contact with author </button>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="ibox-footer">
+                            <span class="pull-right">
+                                Full stock - <i class="fa fa-clock-o"></i> 14.04.2016 10:04 pm
+                            </span>
+                            The generated Lorem Ipsum is therefore always free
+                        </div>
+                    </div>
+                    
+                    
+                    
 								</div>
 							</div><!-- /.tab-pane -->	
 							<div class="tab-pane fade" id="my-site-announce">
