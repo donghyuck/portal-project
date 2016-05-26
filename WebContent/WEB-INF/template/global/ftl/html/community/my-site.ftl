@@ -1130,7 +1130,8 @@
 								<div id="my-site-web-page-grid"></div>	
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox product-detail">
-									
+										<span class="back" style="position:relative;" data-bind="click:close"></span>
+										
 									
                         <div class="ibox-content">
 							
