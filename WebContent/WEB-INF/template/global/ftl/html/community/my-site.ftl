@@ -227,7 +227,7 @@
 					},
 					columns: [
 						{ title: "페이지", field: "name"},
-						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="update" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
+						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="edit" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },	
 					resizable: true,
