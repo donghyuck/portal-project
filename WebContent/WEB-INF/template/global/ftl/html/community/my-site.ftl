@@ -941,11 +941,18 @@
 		}
 		
 		.k-grid-content .k-state-selected {
-		    background-color: #5ac8fa;
-    		border-color: #5ac8fa;
+		    color: #fff;
+		    background-color: #428bca;
+		    border-color: #428bca;		
     	}
 		
-		
+		.k-grid tr[aria-selected="false"] > td > a.k-button {
+			display : none; 
+		}
+						
+		.k-grid tr[aria-selected="true"] > td > a.k-button {
+			display : inline; 
+		}
 		
 		
 		
