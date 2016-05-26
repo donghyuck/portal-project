@@ -255,7 +255,7 @@
 			if(!renderTo.data("model")){
 				console.log("create data");
 				var observable =  common.ui.observable({
-					page : new common.ui.data.WebPage();
+					page : new common.ui.data.WebPage(),
 					setSource : function(source){
 						source.copy(this.page);						
 					},
