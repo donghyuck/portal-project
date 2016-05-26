@@ -185,7 +185,7 @@
 					switch ($(e.target).attr('href'))
 					{
 						case '#my-site-page' :
-						createWebPageGrid( observable.site );
+						createWebPageGrid();
 						break;
 						case '#my-site-announce' :
 						console.log(2);
@@ -197,15 +197,19 @@
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 		
 		} 
+		
+		function getSelectedSite(){
+			var renderTo = $("#my-site-details");
+			retrun renderTo.data("model").site;
+		} 
 				   	
 
 		function createPageGrid(site){
 			
 		}
 				
-		function createWebPageGrid(site){
+		function createWebPageGrid(){
 			var renderTo = $("#my-site-web-page-grid");	
-			console.log(site);		
 			if(! common.ui.exists(renderTo) ){			
 				common.ui.grid(renderTo, {
 					autoBind : false,
@@ -236,7 +240,7 @@
 					}	
 				});				
 			}
-			common.ui.grid(renderTo).dataSource.read( {siteId: site.webSiteId} );
+			common.ui.grid(renderTo).dataSource.read( {siteId: getSelectedSite().webSiteId} );
 		}
 									
 		<!-- ============================== -->
