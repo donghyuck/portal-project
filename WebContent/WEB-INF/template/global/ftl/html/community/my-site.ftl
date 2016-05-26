@@ -946,15 +946,13 @@
 		    border-color: #428bca;		
     	}
 		
-		.k-grid tr[aria-selected="false"] > td > a.k-button {
-			display : none; 
-		}
-						
-		.k-grid tr[aria-selected="true"] > td > a.k-button {
-			display : inline; 
-		}
+		.k-grid .k-selectable td > .btn-selectable, .k-grid .k-selectable tr[aria-selected="false"] > td .btn-selectable, .k-grid .k-selectable td > a.btn-selectable, .k-grid .k-selectable tr[aria-selected="false"] > td a.btn-selectable{
+			opacity: 0;
+		}			
 		
-		
+		.k-grid  .k-selectable tr[aria-selected="true"] > td > .btn-selectable , .k-grid .k-selectable tr[aria-selected="true"] > td  a.btn-selectable {
+			opacity: 1;
+		}		
 		
 		.dialog__content {
 			width : 100%;
