@@ -252,7 +252,24 @@
 		
 		function createWebPageEditor( source ){
 			var renderTo = $("#my-site-web-page-view");
-		
+			if(!renderTo.data("model")){
+				console.log("create data");
+				var observable =  common.ui.observable({
+					page : new common.ui.data.WebPage();
+					setSource : function(source){
+						source.copy(this.page);						
+					},
+					close:function(){
+						renderTo.fadeOut(function(e){ 
+							$("#my-site-web-page-grid").fadeIn();
+						});
+					}	
+				});	
+				renderTo.data("model", observable);		
+				common.ui.bind( renderTo, observable );
+			}
+			
+			renderTo.data("model").setSource( source );	
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 	
 		}
@@ -1112,8 +1129,12 @@
 								<div id="my-site-web-page-grid"></div>	
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox product-detail">
+									
+									
                         <div class="ibox-content">
-
+							
+							
+							<button data-bind="click:close"> < </button>
                             <div class="row">
                                 <div class="col-md-5">
 
