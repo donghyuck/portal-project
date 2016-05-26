@@ -947,11 +947,21 @@
     	}
 		
 		.k-grid .k-selectable td > .btn-selectable, .k-grid .k-selectable tr[aria-selected="false"] > td .btn-selectable, .k-grid .k-selectable td > a.btn-selectable, .k-grid .k-selectable tr[aria-selected="false"] > td a.btn-selectable{
+			cursor: not-allowed;
+			pointer-events: none;
 			opacity: 0;
+			filter: alpha(opacity=65);
+			-webkit-box-shadow: none;
+			box-shadow: none;
 		}			
 		
 		.k-grid  .k-selectable tr[aria-selected="true"] > td > .btn-selectable , .k-grid .k-selectable tr[aria-selected="true"] > td  a.btn-selectable {
+			cursor: pointer;
+			pointer-events: auto;
 			opacity: 1;
+			filter: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
 		}		
 		
 		.dialog__content {
