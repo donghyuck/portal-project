@@ -242,7 +242,7 @@
 				renderTo.on("click","[data-action=edit]", function(e){	
 					var $this = $(this);	
 					var objectId = $this.data("object-id");		
-					renderTo.fadeOut( "slow", function(e){ 
+					renderTo.fadeOut(function(e){ 
 						createWebPageEditor( common.ui.grid(renderTo).dataSource.get(objectId) );
 					});					
 				});		
@@ -251,8 +251,10 @@
 		}
 		
 		function createWebPageEditor( source ){
+			var rendoerTo = $("#my-site-web-page-view");
 		
-		
+			if (!renderTo.is(":visible")) 
+				renderTo.fadeIn(); 	
 		}
 									
 		<!-- ============================== -->
