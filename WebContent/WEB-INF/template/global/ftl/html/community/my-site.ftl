@@ -238,9 +238,21 @@
 					},
 					dataBound: function(e) {
 					}	
-				});				
+				});	
+				renderTo.on("click","[data-action=edit]", function(e){	
+					var $this = $(this);	
+					var objectId = $this.data("object-id");		
+					renderTo.fadeOut( "slow", function(e){ 
+						createWebPageEditor( common.ui.grid(renderTo).dataSource.get(objectId) );
+					});					
+				});		
 			}
 			common.ui.grid(renderTo).dataSource.read( {siteId: getSelectedSite().webSiteId} );
+		}
+		
+		function createWebPageEditor( source ){
+		
+		
 		}
 									
 		<!-- ============================== -->
