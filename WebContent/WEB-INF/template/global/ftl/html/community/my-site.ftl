@@ -940,6 +940,15 @@
 		    text-align: center;
 		}
 		
+		.k-grid-content .k-state-selected {
+		    background-color: #5ac8fa;
+    		border-color: #5ac8fa;
+    	}
+		
+		
+		
+		
+		
 		.dialog__content {
 			width : 100%;
 			max-width: none;				
