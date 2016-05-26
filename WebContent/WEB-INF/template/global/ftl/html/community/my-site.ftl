@@ -124,8 +124,7 @@
 		
 		<!-- ============================== -->
 		<!-- WEB SITE LISTVIEW				-->
-		<!-- ============================== -->
-		
+		<!-- ============================== -->		
 		function getSiteListView(){
 			var renderTo = $("#my-site-listview");
 			if(! common.ui.exists(renderTo) ){
@@ -169,8 +168,6 @@
 		<!-- WEB SITE DETAILS				-->
 		<!-- ============================== -->
 		function createSiteDetails(source){
-			//console.log( source );
-			//console.log(common.ui.stringify(source));
 			var renderTo = $("#my-site-details");			
 			if(!renderTo.data("model")){
 				console.log("create data");
@@ -199,7 +196,8 @@
 			renderTo.data("model").setSource( source );			
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 		
-		}    	
+		} 
+				   	
 
 		function createPageGrid(site){
 			
