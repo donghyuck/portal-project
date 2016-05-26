@@ -251,7 +251,7 @@
 		}
 		
 		function createWebPageEditor( source ){
-			var rendoerTo = $("#my-site-web-page-view");
+			var renderTo = $("#my-site-web-page-view");
 		
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 	
