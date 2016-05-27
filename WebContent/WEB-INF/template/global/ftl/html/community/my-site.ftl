@@ -229,7 +229,7 @@
 						{ title: "페이지", field: "name"},
 						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="edit" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 페이지 추가 </button></div>'),
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 페이지 추가 </button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },	
 					resizable: true,
 					editable : false,
@@ -1138,7 +1138,7 @@
 						<div class="tab-content">
 							<div class="tab-pane fade" id="my-site-page">
 								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
-								<div id="my-site-web-page-grid"></div>	
+								<div id="my-site-web-page-grid" clsass="no-border"></div>	
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox product-detail">
 										<span class="back" style="position:relative;" data-bind="click:close"></span>
