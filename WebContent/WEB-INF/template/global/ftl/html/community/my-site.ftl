@@ -1147,13 +1147,14 @@
 
 							<form class="form-horizontal">
                                 <p>Sign in today for more expirience.</p>
-                                <div class="form-group"><label class="col-lg-2 control-label">Email</label>
-
-                                    <div class="col-lg-10"><input type="email" placeholder="Email" class="form-control"> <span class="help-block m-b-none">Example block-level help text here.</span>
+                                <div class="form-group"><label class="col-lg-2 control-label">파일명</label>
+                                    <div class="col-lg-10">
+                                    	<input type="text" class="form-control" id="input-page-name" data-bind="value:page.name">
+                                    	<p class="help-block small text-danger">중복되지 않는 파일명을 입력하세요.</p>
                                     </div>
                                 </div>
-                                <div class="form-group"><label class="col-lg-2 control-label">Password</label>
-
+                                <div class="form-group">
+                                	<label class="col-lg-2 control-label">Password</label>
                                     <div class="col-lg-10"><input type="password" placeholder="Password" class="form-control"></div>
                                 </div>
                                 <div class="form-group">
