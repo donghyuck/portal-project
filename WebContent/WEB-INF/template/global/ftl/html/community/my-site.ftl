@@ -1152,7 +1152,7 @@
                             <li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true"> This is tab</a></li>
                             <li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">This is second tab</a></li>
                         </ul>
-                        <div class="tab-content">
+                        <div class="tab-content no-padding-t">
                             <div id="tab-1" class="tab-pane active">
                                 <div class="panel-body">
                                     <strong>Lorem ipsum dolor sit amet, consectetuer adipiscing</strong>
