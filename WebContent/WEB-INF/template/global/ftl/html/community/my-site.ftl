@@ -1182,13 +1182,23 @@
 												<div class="form-group no-margin-hr">
 													<label class="control-label" for="input-page-template">콘텐츠 템플릿</label>
 													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">				
-													<p class="help-block small">템플릿 경로를 입력하거나 템플릿 선택을 클릭하여 선택하세요 </p>										
+													<p class="help-block small">템플릿 경로를 입력하거나 템플릿 선택을 클릭하여 선택하세요 </p>	
+													            									
 													<div class="p-xs">														
 														<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
-														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿 여부</label>													
-													</div>																				
+														<label class="k-checkbox-label" for="input-page-customized">커스텀 템플릿 여부</label>													
+													</div>		
+																															
 												</div>																								
 											</div>
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
+													<label class="control-label" for="input-page-contentType">콘텐츠 타입</label>
+													<input type="text" class="form-control" id="input-page-contentType" data-bind="value:page.contentType">
+													<p class="help-block small">콘텐츠 타입을 입력하세요.</p>												
+												</div>
+											</div>
+																						
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">		
 													<label class="control-label" for="input-page-locale">국가</label>
