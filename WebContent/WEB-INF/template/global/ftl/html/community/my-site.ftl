@@ -1171,7 +1171,7 @@
 											</div>
 										</div>											
 										<div class="row">
-											<div class="col-sm-12">
+											<div class="col-sm-8">
 												<div class="form-group no-margin-hr">
 													<label class="control-label" for="input-page-template">콘텐츠 템플릿</label>
 													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">				
@@ -1181,6 +1181,9 @@
 														<label class="k-checkbox-label text-normal" for="input-page-customized">커스텀 템플릿 사용</label>													
 													</div>																	
 												</div>																								
+											</div>
+											<div class="col-sm-4">
+												<button class="btn btn-flat btn-sm" type="button" ><i class="fa fa-file-code-o"></i> 템플릿 선택</button>
 											</div>
 										</div>
 										<div class="row">
