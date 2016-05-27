@@ -1174,15 +1174,10 @@
                                                                 
                                                                 
                                 <div class="form-group">
-                                	<label class="col-lg-2 control-label">Password</label>
+                                	<label class="col-lg-2 control-label">페이지 요약</label>
                                     <div class="col-lg-10">
-
-									<textarea class="form-control" rows="4" 
-									
-										data-bind="{value: page.description}" placeholder="페이지 요약"></textarea>
-									
-									<p class="help-block small text-danger">간략하게 페이지를 요약 기술하세요.</p>
-
+										<textarea class="form-control" rows="4" data-bind="{value: page.description}" placeholder="페이지 요약"></textarea>									
+										<p class="help-block small text-danger">간략하게 페이지를 요약 기술하세요.</p>
 									</div>
                                 </div>
                                 <div class="form-group">
