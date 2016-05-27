@@ -1145,6 +1145,30 @@
 					                    <div class="ibox-content">
 							
 
+							<form class="form-horizontal">
+                                <p>Sign in today for more expirience.</p>
+                                <div class="form-group"><label class="col-lg-2 control-label">Email</label>
+
+                                    <div class="col-lg-10"><input type="email" placeholder="Email" class="form-control"> <span class="help-block m-b-none">Example block-level help text here.</span>
+                                    </div>
+                                </div>
+                                <div class="form-group"><label class="col-lg-2 control-label">Password</label>
+
+                                    <div class="col-lg-10"><input type="password" placeholder="Password" class="form-control"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <div class="i-checks"><label> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div><i></i> Remember me </label></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <button class="btn btn-sm btn-white" type="submit">Sign in</button>
+                                    </div>
+                                </div>
+                            </form>
+                            
+
 			<div class="row">
                 <div class="col-lg-6 m-b-md">
                     <div class="tabs-container">
