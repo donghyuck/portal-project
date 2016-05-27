@@ -1163,7 +1163,7 @@
 								</section>
 								<section class="col col-6">
 									<label class="label">로케일
-										<button class="btn btn-success btn-flat pull-right btn-xs rounded" type="button"><i class="fa fa-file-code-o"></i> 검색</button>
+										<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right"><span class="btn-label icon fa fa fa-flag"></span> 검색</button>
 									</label>
 									<label class="input">
 										<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
@@ -1171,21 +1171,15 @@
 									<div class="note">로케일 코드 값을 입력하세요. 예) en, ko_KR.</div>
 								</section>
 							</div>		
-							<div class="row">
-								<section class="col col-8">
-									<label class="label">템플릿									
-										<button class="btn btn-success btn-flat pull-right btn-xs rounded" type="button"><i class="fa fa-file-code-o"></i> 검색</button>
-									</label>	
-									<label class="input">
-										<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
-									</label>
-									<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>							
-								</section>	
-								<section class="col col-8">
-									<label class="label">메뉴</label>
-									<button class="btn btn-success btn-flat pull-right btn-xs rounded" type="button"><i class="fa fa-file-code-o"></i> 검색</button>
-								</section>
-							</div>								
+							<section>
+								<label class="label">템플릿									
+									<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right"><span class="btn-label icon fa fa-file-code-o"></span> 검색</button>									
+								</label>	
+								<label class="input">
+									<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
+								</label>
+								<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>							
+							</section>								
 						</fieldset>
 						<fieldset>
 							<section>
