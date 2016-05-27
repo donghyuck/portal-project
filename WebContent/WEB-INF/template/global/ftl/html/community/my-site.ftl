@@ -1142,16 +1142,10 @@
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox product-detail">
 										<span class="back" style="position:relative;" data-bind="click:close"></span>
-										
-									
-                        <div class="ibox-content">
+					                    <div class="ibox-content">
 							
-							
-							<button data-bind="click:close"> < </button>
-                            <div class="row">
+							<div class="row">
                                 <div class="col-md-5">
-
-
                                     <div class="product-images slick-initialized slick-slider" role="toolbar"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
 
                                         <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 1645px; transform: translate3d(-329px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 329px;">
