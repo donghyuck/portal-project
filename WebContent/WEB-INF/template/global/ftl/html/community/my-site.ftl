@@ -86,8 +86,7 @@
 				});		
 						
 				// ACCOUNTS LOAD			
-				var currentUser = new common.ui.data.User();		
-				
+				var currentUser = new common.ui.data.User();
 				createSiteListView();
 				
 				
@@ -230,6 +229,7 @@
 						{ title: "페이지", field: "name"},
 						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="edit" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 페이지 추가 </button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },	
 					resizable: true,
 					editable : false,
@@ -240,12 +240,19 @@
 					dataBound: function(e) {
 					}	
 				});	
-				renderTo.on("click","[data-action=edit]", function(e){	
+				renderTo.on("click","[data-action=edit],[data-action=create]", function(e){	
 					var $this = $(this);	
 					var objectId = $this.data("object-id");		
+					if( objectId > 0){
 					renderTo.fadeOut(function(e){ 
 						createWebPageEditor( common.ui.grid(renderTo).dataSource.get(objectId) );
 					});					
+					}else{
+						var newWebPage = new common.ui.data.WebPage();
+						newWebPage.set("webSiteId", getSelectedSite().webSiteId);
+						newWebPage.set("properties", {});
+						createWebPageEditor( newWebPage );
+					}
 				});		
 			}
 			common.ui.grid(renderTo).dataSource.read( {siteId: getSelectedSite().webSiteId} );
