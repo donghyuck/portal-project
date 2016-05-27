@@ -1173,7 +1173,7 @@
 							</div>		
 							<section>
 								<label class="label">템플릿									
-									<button class="btn btn-success btn-flat pull-right btn-xs" type="button"><i class="fa fa-file-code-o"></i> 검색</button>
+									<button class="btn btn-success btn-flat pull-right btn-xs rounded" type="button"><i class="fa fa-file-code-o"></i> 검색</button>
 								</label>	
 								<label class="input">
 									<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
