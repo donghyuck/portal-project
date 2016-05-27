@@ -1149,10 +1149,30 @@
                                 <p>Sign in today for more expirience.</p>
                                 <div class="form-group"><label class="col-lg-2 control-label">파일명</label>
                                     <div class="col-lg-10">
-                                    	<input type="text" class="form-control" id="input-page-name" data-bind="value:page.name">
+                                    	<input type="text" class="form-control" data-bind="value:page.name">
                                     	<p class="help-block small text-danger">중복되지 않는 파일명을 입력하세요.</p>
                                     </div>
                                 </div>
+                                <div class="form-group"><label class="col-lg-2 control-label">콘텐츠 타입</label>
+                                    <div class="col-lg-10">
+                                    	<input type="text" class="form-control" data-bind="value:page.contentType">
+                                    	<p class="help-block small text-danger">콘텐츠 타입을 입력하세요.</p>
+                                    </div>
+                                </div>
+                                <div class="form-group"><label class="col-lg-2 control-label">페이지 타이틀</label>
+                                    <div class="col-lg-10">
+                                    	<input type="text" class="form-control" data-bind="value:page.displayName">
+                                    	<p class="help-block small text-danger">페이지 타이틀을 입력하세요.</p>
+                                    </div>
+                                </div>
+                                <div class="form-group"><label class="col-lg-2 control-label">페이지 템픞릿</label>
+                                    <div class="col-lg-10">
+                                    	<input type="text" class="form-control" data-bind="value:page.template">
+                                    	<p class="help-block small text-danger">템플릿 경로를 입력하거나 템플릿 선택을 클릭하여 선택하세요</p>
+                                    </div>
+                                </div>
+                                                                
+                                                                
                                 <div class="form-group">
                                 	<label class="col-lg-2 control-label">Password</label>
                                     <div class="col-lg-10"><input type="password" placeholder="Password" class="form-control"></div>
