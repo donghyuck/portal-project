@@ -1171,17 +1171,15 @@
 									<div class="note">로케일 코드 값을 입력하세요. 예) en, ko_KR.</div>
 								</section>
 							</div>		
-							<div class="row">
-								<section class="col col-6">
-									<label class="label">템플릿</label>	
-									<label class="input">
-										<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
-									</label>							
-								</section>
-								<section class="col col-6">
-									<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>
-								</section>
-							</div>									
+							<section>
+								<label class="label">템플릿									
+									<button class="btn btn-success btn-flat pull-right btn-xs" type="button"><i class="fa fa-file-code-o"></i> 검색</button>
+								</label>	
+								<label class="input">
+									<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
+								</label>
+								<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>							
+							</section>								
 						</fieldset>
 						<fieldset>
 							<section>
