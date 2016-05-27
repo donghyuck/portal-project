@@ -248,7 +248,7 @@
 					if( objectId > 0){
 						newWebPage = common.ui.grid(renderTo).dataSource.get(objectId);
 					}else{
-						ewWebPage = new common.ui.data.WebPage();
+						newWebPage = new common.ui.data.WebPage();
 						newWebPage.set("webSiteId", getSelectedSite().webSiteId);
 						newWebPage.set("properties", {});
 					}	
