@@ -243,16 +243,20 @@
 				renderTo.on("click","[data-action=edit],[data-action=create]", function(e){	
 					var $this = $(this);	
 					var objectId = $this.data("object-id");		
+					var newWebPage ;	
+									
 					if( objectId > 0){
-					renderTo.fadeOut(function(e){ 
-						createWebPageEditor( common.ui.grid(renderTo).dataSource.get(objectId) );
-					});					
+						newWebPage = common.ui.grid(renderTo).dataSource.get(objectId);
 					}else{
-						var newWebPage = new common.ui.data.WebPage();
+						ewWebPage = new common.ui.data.WebPage();
 						newWebPage.set("webSiteId", getSelectedSite().webSiteId);
 						newWebPage.set("properties", {});
+					}	
+					
+					renderTo.fadeOut(function(e){ 
 						createWebPageEditor( newWebPage );
-					}
+					});					
+					
 				});		
 			}
 			common.ui.grid(renderTo).dataSource.read( {siteId: getSelectedSite().webSiteId} );
