@@ -1145,52 +1145,58 @@
 					                    <div class="ibox-content">
 							
 
-							<form class="form-horizontal">
-                                <p>Sign in today for more expirience.</p>
-                                <div class="form-group"><label class="col-lg-2 control-label">파일명</label>
-                                    <div class="col-lg-10">
-                                    	<input type="text" class="form-control" data-bind="value:page.name">
-                                    	<p class="help-block small text-danger">중복되지 않는 파일명을 입력하세요.</p>
-                                    </div>
-                                </div>
-                                <div class="form-group"><label class="col-lg-2 control-label">콘텐츠 타입</label>
-                                    <div class="col-lg-10">
-                                    	<input type="text" class="form-control" data-bind="value:page.contentType">
-                                    	<p class="help-block small text-danger">콘텐츠 타입을 입력하세요.</p>
-                                    </div>
-                                </div>
-                                <div class="form-group"><label class="col-lg-2 control-label">페이지 타이틀</label>
-                                    <div class="col-lg-10">
-                                    	<input type="text" class="form-control" data-bind="value:page.displayName">
-                                    	<p class="help-block small text-danger">페이지 타이틀을 입력하세요.</p>
-                                    </div>
-                                </div>
-                                <div class="form-group"><label class="col-lg-2 control-label">페이지 템픞릿</label>
-                                    <div class="col-lg-10">
-                                    	<input type="text" class="form-control" data-bind="value:page.template">
-                                    	<p class="help-block small text-danger">템플릿 경로를 입력하거나 템플릿 선택을 클릭하여 선택하세요</p>
-                                    </div>
-                                </div>
-                                                                
-                                                                
-                                <div class="form-group">
-                                	<label class="col-lg-2 control-label">페이지 요약</label>
-                                    <div class="col-lg-10">
-										<textarea class="form-control" rows="4" data-bind="{value: page.description}" placeholder="페이지 요약"></textarea>									
-										<p class="help-block small text-danger">간략하게 페이지를 요약 기술하세요.</p>
-									</div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-lg-offset-2 col-lg-10">
-                                        <div class="i-checks"><label> <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div><i></i> Remember me </label></div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-sm btn-white" type="submit">Sign in</button>
-                                    </div>
-                                </div>
-                            </form>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
+													<label class="control-label" for="input-page-name">파일</label>
+													<input type="text" class="form-control" id="input-page-name" data-bind="value:page.name">
+													<p class="help-block small">중복되지 않는 파일명을 입력하세요.</p>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
+													<label class="control-label" for="input-page-contentType">콘텐츠 타입</label>
+													<input type="text" class="form-control" id="input-page-contentType" data-bind="value:page.contentType">
+													<p class="help-block small">콘텐츠 타입을 입력하세요.</p>												
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
+													<label class="control-label" for="input-page-displayName">타이틀</label>
+													<input type="text" class="form-control" id="input-page-displayName" data-bind="value:page.displayName">
+													<p class="help-block small">페이지 타이틀을 입력하세요.</p>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">			
+													<label class="control-label" for="input-page-description">요약</label>
+													<input type="text" class="form-control" id="input-page-description" data-bind="value: page.description">
+													<p class="help-block small">간략하게 페이지를 기술하세요.</p>																					
+												</div>
+											</div>
+										</div>												
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
+													<label class="control-label" for="input-page-template">콘텐츠 템플릿</label>
+													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">				
+													<p class="help-block small">템플릿 경로를 입력하거나 템플릿 선택을 클릭하여 선택하세요 </p>										
+													<div class="p-xs">														
+														<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
+														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿 여부</label>													
+													</div>																				
+												</div>																								
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">		
+													<label class="control-label" for="input-page-locale">국가</label>
+													<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
+													<p class="help-block small">로케일 코드 값을 입력하세요 예)en, ko_KR </p>																						
+												</div>
+											</div>
+										</div>	
                             
 
 			<div class="row">
