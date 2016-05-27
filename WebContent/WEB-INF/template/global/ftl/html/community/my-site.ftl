@@ -1162,7 +1162,9 @@
 									<div class="note">콘텐츠 타입을 입력하세요. 예) text/html;charset=UTF-8</div>
 								</section>
 								<section class="col col-6">
-									<label class="label">로케일</label>
+									<label class="label">로케일
+										<button class="btn btn-success btn-flat pull-right btn-xs rounded" type="button"><i class="fa fa-file-code-o"></i> 검색</button>
+									</label>
 									<label class="input">
 										<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
 									</label>
