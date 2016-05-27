@@ -1152,25 +1152,37 @@
 							<section>
 								<label class="label">파일명</label>
 								<label class="input">
-									<input type="text" class="form-control" id="input-page-name" data-bind="value:page.name" placeholder="파일명">
+									<input type="text" class="form-control" id="input-page-name" data-bind="value:page.name" placeholder="파일명을 입력하여 주세요.">
 								</label>
 							</section>
 							<div class="row">
 								<section class="col col-6">
+									<label class="label">콘텐츠 타입</label>
 									<label class="input">
 										<input type="text" class="form-control" id="input-page-contentType" data-bind="value:page.contentType">
 									</label>
 									<div class="note">콘텐츠 타입을 입력하세요. 예) text/html;charset=UTF-8</div>
 								</section>
 								<section class="col col-6">
+									<label class="label">로케일</label>
 									<label class="input">
 										<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
 									</label>
 									<div class="note">로케일 코드 값을 입력하세요. 예) en, ko_KR.</div>
 								</section>
+							</div>		
+							<div class="row">
+								<section class="col col-6">
+									<label class="label">템플릿</label>	
+									<label class="input">
+										<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
+									</label>							
+								</section>
+								<section class="col col-6">
+									<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>
+								</section>
 							</div>									
 						</fieldset>
-
 						<fieldset>
 							<section>
 								<label class="label">Select</label>
