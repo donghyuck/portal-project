@@ -1281,7 +1281,7 @@
 													</div>		
 													<section>
 														<label class="label">템플릿									
-															<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right"><span class="btn-label icon fa fa-file-code-o"></span> 검색</button>									
+															<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openTemplateFinder" ><span class="btn-label icon fa fa-file-code-o"></span> 검색</button>									
 														</label>	
 														<label class="input">
 															<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
