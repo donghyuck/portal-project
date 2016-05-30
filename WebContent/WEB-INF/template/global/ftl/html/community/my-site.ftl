@@ -297,8 +297,9 @@
 		<!-- ============================== -->
 		function createTemplateFinderModal(){		
 			var renderTo= $("#my-template-select-modal");
-			if( !common.ui.exists( renderTo.find(".template-tree"))){				
-				var treeview = renderTo.find(".template-tree").kendoTreeView({
+			var treeRenderTo = renderTo.find(".template-tree");
+			if( !common.ui.exists( treeRenderTo ) ){				
+				var treeview = treeRenderTo.kendoTreeView({
 					dataSource: new kendo.data.HierarchicalDataSource({						
 						transport: {
 							read: {
@@ -318,7 +319,8 @@
 					dataTextField: "name",
 					change: function(e) {				
 					}
-				}).data('kendoTreeView');						
+				}).data('kendoTreeView');		
+								
 				renderTo.find("[data-action=select]").click(function(e){
 					var selectedCells = treeview.select();			
 					var selectedCell = treeview.dataItem( selectedCells );
@@ -332,32 +334,7 @@
 				});				
 			}
 			
-			/*
-			if( $(renderToString).length === 0 ){			
-				$("#main-wrapper").append( kendo.template($('#my-template-select-modal-template').html()) );				
-				var renderTo = $(renderToString);
-				var rendetTo2 = renderTo.find(".template-tree");
-				renderTo.modal({
-					backdrop: 'static',
-					show : false
-				});			
-				
-				//kendo.bind( renderTo, observable );				
-				createTemplateTree(rendetTo2, observable);				
-				renderTo.find("[data-action=select]").click(function(e){
-					var item = getSelectedTreeItem(rendetTo2) ;
-					if( item.directory ){
-						alert("파일을 선택하여 주십시오.");
-						return;
-					}else{
-						observable.page.set("template", item.path) ;
-					}		
-					renderTo.modal('hide');				
-				});
-			}
-			
-			$(renderToString).find(".template-tree").data("kendoTreeView").select($());
-			*/
+			treeRenderTo.data("kendoTreeView").select($());
 			renderTo.modal('show');	
 		}
 		
