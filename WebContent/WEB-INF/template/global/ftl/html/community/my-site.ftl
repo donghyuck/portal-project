@@ -274,6 +274,9 @@
 					setSource : function(source){
 						source.copy(this.page);						
 					},
+					openTemplateFinder: function(e){
+						createTemplateFinderModal();					
+					},
 					close:function(){
 						renderTo.fadeOut(function(e){ 
 							$("#my-site-web-page-grid").fadeIn();
@@ -292,11 +295,10 @@
 		<!-- ============================== -->
 		<!-- TEMPLATE MODAL					-->
 		<!-- ============================== -->
-		function createTemplateSelectModal(observable){
-		
+		function createTemplateFinderModal(){		
 			var renderTo= $("#my-template-select-modal");
 			if( !common.ui.exists( renderTo.find(".template-tree"))){				
-				var treeview = renderTo.kendoTreeView({
+				var treeview = renderTo.find(".template-tree").kendoTreeView({
 					dataSource: new kendo.data.HierarchicalDataSource({						
 						transport: {
 							read: {
