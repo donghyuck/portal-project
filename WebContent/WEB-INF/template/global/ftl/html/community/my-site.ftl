@@ -1468,15 +1468,15 @@
 			<div class="modal-dialog"  role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 						<h4 class="modal-title" id="my-template-select-modal-label" >템플릿 파일을 선택합니다.</h4>
 					</div>					
 					<div class="modal-body">
 						<div class="template-tree"></div>
 					</div>
 					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat btn-sm" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
-						<button type="button" class="btn btn-default btn-flat btn-sm" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary btn-flat" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
 					</div>					
 				</div>
 			</div>	
