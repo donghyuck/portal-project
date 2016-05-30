@@ -1142,67 +1142,65 @@
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox product-detail">
 										<span class="back" style="position:relative;" data-bind="click:close"></span>
-					                    <div class="ibox-content">
-					
-					
-					<form action="#" class="sky-form">
-						<fieldset class="bg-gray">						
-							<section>
-								<label class="label">파일명</label>
-								<label class="input">
-									<input type="text" class="form-control" id="input-page-name" data-bind="value:page.name" placeholder="파일명을 입력하여 주세요.">
-								</label>
-							</section>
-							<div class="row">
-								<section class="col col-6">
-									<label class="label">콘텐츠 타입</label>
-									<label class="input">
-										<input type="text" class="form-control" id="input-page-contentType" data-bind="value:page.contentType">
-									</label>
-									<div class="note">콘텐츠 타입을 입력하세요. 예) text/html;charset=UTF-8</div>
-								</section>
-								<section class="col col-6">
-									<label class="label">로케일
-										<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right"><span class="btn-label icon fa fa fa-flag"></span> 검색</button>
-									</label>
-									<label class="input">
-										<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
-									</label>
-									<div class="note">로케일 코드 값을 입력하세요. 예) en, ko_KR.</div>
-								</section>
-							</div>		
-							<section>
-								<label class="label">템플릿									
-									<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right"><span class="btn-label icon fa fa-file-code-o"></span> 검색</button>									
-								</label>	
-								<label class="input">
-									<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
-								</label>
-								<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>							
-							</section>								
-						</fieldset>
-						<fieldset>
-							<section>
-								<label class="label">타이틀</label>
-								<label class="input">
-									<input type="text" class="form-control" data-bind="value:page.displayName" >
-								</label>
-							</section>						
-							<section>
-								<label class="label">페이지 요약</label>
-								<label class="textarea">
-									<textarea rows="3" data-bind="value: page.description"></textarea>
-								</label>
-								<div class="note">간략하게 페이지를 기술하세요.</div>
-							</section>
-						</fieldset>
-
-						<footer>
-							<button type="submit" class="btn-u">Submit</button>
-							<button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
-						</footer>
-					</form>
-							
+					                    <div class="ibox-content">					
+											<!-- sky-form -->	
+											<form action="#" class="sky-form">
+												<fieldset class="bg-gray">						
+													<section>
+														<label class="label">파일명</label>
+														<label class="input">
+															<input type="text" class="form-control" id="input-page-name" data-bind="value:page.name" placeholder="파일명을 입력하여 주세요.">
+														</label>
+													</section>
+													<div class="row">
+														<section class="col col-6">
+															<label class="label">콘텐츠 타입</label>
+															<label class="input">
+																<input type="text" class="form-control" id="input-page-contentType" data-bind="value:page.contentType">
+															</label>
+															<div class="note">콘텐츠 타입을 입력하세요. 예) text/html;charset=UTF-8</div>
+														</section>
+														<section class="col col-6">
+															<label class="label">로케일
+																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right"><span class="btn-label icon fa fa fa-flag"></span> 검색</button>
+															</label>
+															<label class="input">
+																<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
+															</label>
+															<div class="note">로케일 코드 값을 입력하세요. 예) en, ko_KR.</div>
+														</section>
+													</div>		
+													<section>
+														<label class="label">템플릿									
+															<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right"><span class="btn-label icon fa fa-file-code-o"></span> 검색</button>									
+														</label>	
+														<label class="input">
+															<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
+														</label>
+														<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>							
+													</section>								
+												</fieldset>
+												<fieldset>
+													<section>
+														<label class="label">타이틀</label>
+														<label class="input">
+															<input type="text" class="form-control" data-bind="value:page.displayName" >
+														</label>
+													</section>						
+													<section>
+														<label class="label">페이지 요약</label>
+														<label class="textarea">
+															<textarea rows="3" data-bind="value: page.description"></textarea>
+														</label>
+														<div class="note">간략하게 페이지를 기술하세요.</div>
+													</section>
+												</fieldset>
+												<footer class="text-right">
+													<button type="submit" class="btn-u">저장</button>
+													<!-- <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button> -->
+												</footer>
+											</form>
+											<!-- /.sky-form -->
 									
                             
 
