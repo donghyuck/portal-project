@@ -1256,23 +1256,23 @@
 											<form action="#" class="sky-form">
 												<fieldset class="bg-gray">						
 													<section>
-														<label class="label">파일명</label>
+														<h2 class="label">파일명</h2>
 														<label class="input">
 															<input type="text" class="form-control" id="input-page-name" data-bind="value:page.name" placeholder="파일명을 입력하여 주세요.">
 														</label>
 													</section>
 													<div class="row">
 														<section class="col col-6">
-															<label class="label">콘텐츠 타입</label>
+															<h2 class="label">콘텐츠 타입</h2>
 															<label class="input">
 																<input type="text" class="form-control" id="input-page-contentType" data-bind="value:page.contentType">
 															</label>
 															<div class="note">콘텐츠 타입을 입력하세요. 예) text/html;charset=UTF-8</div>
 														</section>
 														<section class="col col-6">
-															<label class="label">로케일
+															<h2 class="label">로케일
 																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right disabled"><span class="btn-label icon fa fa fa-flag"></span> 검색</button>
-															</label>
+															</h2>
 															<label class="input">
 																<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
 															</label>
@@ -1280,9 +1280,9 @@
 														</section>
 													</div>		
 													<section>
-														<label class="label">템플릿									
+														<h2 class="label">템플릿									
 															<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openTemplateFinder" ><span class="btn-label icon fa fa-file-code-o"></span> 검색</button>									
-														</label>	
+														</h2>	
 														<label class="input">
 															<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
 														</label>
@@ -1291,13 +1291,13 @@
 												</fieldset>
 												<fieldset>
 													<section>
-														<label class="label">타이틀</label>
+														<h2 class="label">타이틀</h2>
 														<label class="input">
 															<input type="text" class="form-control" data-bind="value:page.displayName" >
 														</label>
 													</section>						
 													<section>
-														<label class="label">페이지 요약</label>
+														<h2 class="label">페이지 요약</h2>
 														<label class="textarea">
 															<textarea rows="3" data-bind="value: page.description"></textarea>
 														</label>
