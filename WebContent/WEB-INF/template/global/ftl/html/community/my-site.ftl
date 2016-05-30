@@ -344,8 +344,9 @@
 		<!-- ============================== -->
 		<!-- TEMPLATE EDITOR		        -->
 		<!-- ============================== -->		
-		functjion createTemplateEditor(){			
+		function createTemplateEditor(){			
 			var renderTo = $("#my-site-web-page-view");
+			
 			renderTo.(".page-detail").fadeOut( function(e){			
 				renderTo.(".page-editor").fadeIn();
 			});			
