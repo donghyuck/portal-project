@@ -270,6 +270,14 @@ i.icon-svg {
 	background-image: url("/images/common/icons/basic/color/Siren.svg");
 }
 
+.icon-svg.basic-color-pencil-tip {
+	background-image: url("/images/common/icons/basic/color/PencilTip.svg");
+}
+
+.icon-svg.basic-color-source-code {
+	background-image: url("/images/common/icons/basic/color/SourceCode.svg");
+}
+
 /* Business Color Icons 
 ------------------------------------*/
 
