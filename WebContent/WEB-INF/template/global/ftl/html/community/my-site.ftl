@@ -280,6 +280,9 @@
 					openTemplateEditor:function(e){
 						createTemplateEditor();		
 					},
+					closeTemplateEditor:function(e){
+						createTemplateEditor();		
+					},
 					close:function(){
 						renderTo.fadeOut(function(e){ 
 							$("#my-site-web-page-grid").fadeIn();
@@ -299,7 +302,7 @@
 		<!-- TEMPLATE FINDER MODAL			-->
 		<!-- ============================== -->
 		function createTemplateFinderModal(){		
-			var renderTo= $("#my-template-select-modal");
+			var renderTo= $("#my-template-finder-modal");
 			var treeRenderTo = renderTo.find(".template-tree");
 			if( !common.ui.exists( treeRenderTo ) ){				
 				var treeview = treeRenderTo.kendoTreeView({
@@ -345,11 +348,16 @@
 		<!-- TEMPLATE EDITOR		        -->
 		<!-- ============================== -->		
 		function createTemplateEditor(){			
-			var renderTo = $("#my-site-web-page-view");
-			
-			renderTo.find(".page-detail").fadeOut( function(e){			
-				renderTo.find(".page-editor").fadeIn();
-			});			
+			var renderTo = $("#my-site-web-page-view");			
+			if( renderTo.find(".page-editor").is(":visible") ){
+				renderTo.find(".page-editor").fadeOut( function(e){			
+					renderTo.find(".page-detail").fadeIn();
+				});				
+			}else{			
+				renderTo.find(".page-detail").fadeOut( function(e){			
+					renderTo.find(".page-editor").fadeIn();
+				});				
+			}	
 		}
 		
 		
@@ -1226,7 +1234,7 @@
 								<div id="my-site-web-page-grid" class="no-border"></div>	
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox page-editor" style="display:none;">
-										<span class="back" style="position:relative;" data-bind="click:close"></span>
+										<span class="x-close" style="position:relative;" data-bind="click:closeTemplateEditor"></span>
 										 <div class="ibox-content no-padding">		
 										 fdsaf
 										 
@@ -1486,12 +1494,12 @@
 			<!-- ./END FOOTER -->				
 		</div>	
 		
-		<div id="my-template-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-template-select-modal-label">
+		<div id="my-template-finder-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-template-finder-modal-label">
 			<div class="modal-dialog"  role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-						<h4 class="modal-title" id="my-template-select-modal-label" >템플릿 파일을 선택합니다.</h4>
+						<h4 class="modal-title" id="my-template-finder-modal-label" >템플릿 파일을 선택합니다.</h4>
 					</div>					
 					<div class="modal-body">
 						<div class="template-tree"></div>
