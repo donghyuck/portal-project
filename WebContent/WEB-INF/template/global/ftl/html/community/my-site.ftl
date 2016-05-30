@@ -1116,7 +1116,7 @@
 			position:relative;
 		}
 		
-		.page-detail .icon-svg-btn, .page-editor .icon-svg-btn { {
+		.page-detail .icon-svg-btn, .page-editor .icon-svg-btn {
 		    position: absolute;
 		    top: 0;
 		    right: 0;		
