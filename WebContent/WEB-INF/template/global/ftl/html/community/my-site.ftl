@@ -294,7 +294,44 @@
 		<!-- ============================== -->
 		function createTemplateSelectModal(observable){
 		
-			var renderToString= "#my-template-select-modal";
+			var renderTo= $("#my-template-select-modal");
+			if( common.ui.exists(renderTo.find(".template-tree")){
+				
+				var treeview = renderTo.kendoTreeView({
+					dataSource: new kendo.data.HierarchicalDataSource({						
+						transport: {
+							read: {
+								url : '<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>',
+								dataType: "json"
+							}
+						},
+						schema: {		
+							model: {
+								id: "path",
+								hasChildren: "directory"
+							}
+						},
+						filter: { field: "path", operator: "doesnotcontain", value: ".svn" }	
+					}),
+					template: kendo.template($("#treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {				
+					}
+				}).data('kendoTreeView');		
+				
+				renderTo.find("[data-action=select]").click(function(e){
+					var selectedCells = treeview.select();			
+					var selectedCell = treeview.dataItem( selectedCells );
+					if( selectedCell.directory ){
+						alert("파일을 선택하여 주십시오.");
+						return;
+					}else{
+						//observable.page.set("template", item.path) ;
+					}		
+					renderTo.modal('hide');				
+				});				
+			}
+			
 			/*
 			if( $(renderToString).length === 0 ){			
 				$("#main-wrapper").append( kendo.template($('#my-template-select-modal-template').html()) );				
@@ -321,7 +358,7 @@
 			
 			$(renderToString).find(".template-tree").data("kendoTreeView").select($());
 			*/
-			$(renderToString).modal('show');	
+			renderTo.modal('show');	
 		}
 		
 		function createTemplateTree(renderTo, observable){		
