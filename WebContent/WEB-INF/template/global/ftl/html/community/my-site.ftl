@@ -347,8 +347,8 @@
 		function createTemplateEditor(){			
 			var renderTo = $("#my-site-web-page-view");
 			
-			renderTo.(".page-detail").fadeOut( function(e){			
-				renderTo.(".page-editor").fadeIn();
+			renderTo.find(".page-detail").fadeOut( function(e){			
+				renderTo.find(".page-editor").fadeIn();
 			});			
 		}
 		
