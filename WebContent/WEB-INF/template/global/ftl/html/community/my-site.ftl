@@ -324,7 +324,7 @@
 						alert("파일을 선택하여 주십시오.");
 						return;
 					}else{
-						//observable.page.set("template", item.path) ;
+						$("#my-site-web-page-view").data('model').page.set("template", selectedCell.path) ;
 					}		
 					renderTo.modal('hide');				
 				});				
