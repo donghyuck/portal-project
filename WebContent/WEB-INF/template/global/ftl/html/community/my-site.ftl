@@ -1464,12 +1464,12 @@
 			<!-- ./END FOOTER -->				
 		</div>	
 		
-		<div id="my-template-select-modal">
-			<div class="modal-dialog">	
+		<div id="my-template-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-template-select-modal-label">
+			<div class="modal-dialog"  role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">템플릿 파일을 선택합니다.</h4>
+						<h4 class="modal-title" id="my-template-select-modal-label" >템플릿 파일을 선택합니다.</h4>
 					</div>					
 					<div class="modal-body">
 						<div class="template-tree"></div>
