@@ -1225,7 +1225,7 @@
 								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
 								<div id="my-site-web-page-grid" class="no-border"></div>	
 								<div id="my-site-web-page-view" style="display:none;">
-									<div class="ibox page-editor style="display:none;"">
+									<div class="ibox page-editor style="display:none;">
 										<span class="back" style="position:relative;" data-bind="click:close"></span>
 										 <div class="ibox-content no-padding">		
 										 fdsaf
