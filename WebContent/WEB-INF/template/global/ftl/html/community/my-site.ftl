@@ -1094,7 +1094,7 @@
 		}		
 		
 		
-		.k-listview .k-state-selected
+		.k-treeview .k-state-selected
 		{
 			background : #F5F5F5;
 			color: #585f69;
