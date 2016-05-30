@@ -1233,6 +1233,8 @@
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox product-detail">
 										<span class="back" style="position:relative;" data-bind="click:close"></span>
+										<i class="icon-flat icon-svg basic-color-source-code"></i>
+										
 					                    <div class="ibox-content no-padding">					
 											<!-- sky-form -->	
 											<form action="#" class="sky-form">
