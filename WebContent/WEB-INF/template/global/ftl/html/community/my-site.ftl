@@ -262,6 +262,9 @@
 			common.ui.grid(renderTo).dataSource.read( {siteId: getSelectedSite().webSiteId} );
 		}
 		
+		<!-- ============================== -->
+		<!-- WEB PAGE EDITOR				-->
+		<!-- ============================== -->		
 		function createWebPageEditor( source ){
 			var renderTo = $("#my-site-web-page-view");
 			if(!renderTo.data("model")){
@@ -285,7 +288,71 @@
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 	
 		}
-									
+
+		<!-- ============================== -->
+		<!-- TEMPLATE MODAL					-->
+		<!-- ============================== -->
+		function createTemplateSelectModal(observable){
+			var renderToString= "#my-template-select-modal";
+			if( $(renderToString).length === 0 ){			
+				$("#main-wrapper").append( kendo.template($('#my-template-select-modal-template').html()) );				
+				var renderTo = $(renderToString);
+				var rendetTo2 = renderTo.find(".template-tree");
+				renderTo.modal({
+					backdrop: 'static',
+					show : false
+				});			
+				
+				//kendo.bind( renderTo, observable );				
+				createTemplateTree(rendetTo2, observable);				
+				renderTo.find("[data-action=select]").click(function(e){
+					var item = getSelectedTreeItem(rendetTo2) ;
+					if( item.directory ){
+						alert("파일을 선택하여 주십시오.");
+						return;
+					}else{
+						observable.page.set("template", item.path) ;
+					}		
+					renderTo.modal('hide');				
+				});
+			}
+			$(renderToString).find(".template-tree").data("kendoTreeView").select($());
+			$(renderToString).modal('show');	
+		}
+		
+		function createTemplateTree(renderTo, observable){		
+			if( !common.ui.exists(renderTo) ){					
+				renderTo.kendoTreeView({
+					dataSource: new kendo.data.HierarchicalDataSource({						
+						transport: {
+							read: {
+								url : '<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>',
+								dataType: "json"
+							}
+						},
+						schema: {		
+							model: {
+								id: "path",
+								hasChildren: "directory"
+							}
+						},
+						filter: { field: "path", operator: "doesnotcontain", value: ".svn" }	
+					}),
+					template: kendo.template($("#treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {				
+					}
+				});				
+			}
+		}		
+			
+		function getSelectedTreeItem( renderTo ){			
+			var tree = renderTo.data('kendoTreeView');			
+			var selectedCells = tree.select();			
+			var selectedCell = tree.dataItem( selectedCells );   
+			return selectedCell ;
+		}
+															
 		<!-- ============================== -->
 		<!-- MENU							-->
 		<!-- ============================== -->
@@ -375,9 +442,10 @@
 			if( !dialogFx.isOpen ){							
 				dialogFx.open();
 			}			
-		}				
+		}	
+					
 		<!-- ============================== -->
-		<!-- TEMPLATE												-->
+		<!-- TEMPLATE				        -->
 		<!-- ============================== -->		
 		function openTemplateEditor(){
 			var renderTo = $("#my-site-template-editor");
@@ -1162,7 +1230,7 @@
 														</section>
 														<section class="col col-6">
 															<label class="label">로케일
-																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right"><span class="btn-label icon fa fa fa-flag"></span> 검색</button>
+																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right disabled"><span class="btn-label icon fa fa fa-flag"></span> 검색</button>
 															</label>
 															<label class="input">
 																<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
@@ -1392,6 +1460,8 @@
 			<!-- ./END FOOTER -->				
 		</div>	
 		
+		<div id="my-template-select-modal"></div>
+		
 		<div id="my-site-menu-editor" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">			
@@ -1525,7 +1595,27 @@
 			<a href="\\#" onclick="doPagePreview(); return false;" class="btn btn-info btn-sm">미리보기</a>
 		</div>	
 	</script>
-	
+
+	<script id="my-template-select-modal-template" type="text/kendo-ui-template">
+	<div id="my-template-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+		<div class="modal-dialog">	
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">템플릿 선택</h4>
+				</div>					
+				<div class="modal-body">
+					<div class="template-tree"></div>
+				</div>
+				<div class="modal-footer">					
+					<button type="button" class="btn btn-primary btn-flat btn-sm" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
+					<button type="button" class="btn btn-default btn-flat btn-sm" data-dismiss="modal">닫기</button>
+				</div>					
+			</div>
+		</div>
+	</div>
+	</script>	
+			
 	<script id="treeview-template" type="text/kendo-ui-template">
 	#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
 		#: item.name # 
