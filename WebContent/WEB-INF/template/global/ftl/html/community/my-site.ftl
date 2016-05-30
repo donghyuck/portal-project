@@ -295,8 +295,7 @@
 		function createTemplateSelectModal(observable){
 		
 			var renderTo= $("#my-template-select-modal");
-			if( common.ui.exists(renderTo.find(".template-tree")){
-				
+			if( common.ui.exists( renderTo.find(".template-tree"))){				
 				var treeview = renderTo.kendoTreeView({
 					dataSource: new kendo.data.HierarchicalDataSource({						
 						transport: {
@@ -317,8 +316,7 @@
 					dataTextField: "name",
 					change: function(e) {				
 					}
-				}).data('kendoTreeView');		
-				
+				}).data('kendoTreeView');						
 				renderTo.find("[data-action=select]").click(function(e){
 					var selectedCells = treeview.select();			
 					var selectedCell = treeview.dataItem( selectedCells );
