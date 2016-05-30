@@ -277,6 +277,9 @@
 					openTemplateFinder: function(e){
 						createTemplateFinderModal();					
 					},
+					openTemplateEditor:function(e){
+						createTemplateEditor();		
+					},
 					close:function(){
 						renderTo.fadeOut(function(e){ 
 							$("#my-site-web-page-grid").fadeIn();
@@ -293,7 +296,7 @@
 		}
 
 		<!-- ============================== -->
-		<!-- TEMPLATE MODAL					-->
+		<!-- TEMPLATE FINDER MODAL			-->
 		<!-- ============================== -->
 		function createTemplateFinderModal(){		
 			var renderTo= $("#my-template-select-modal");
@@ -337,135 +340,19 @@
 			treeRenderTo.data("kendoTreeView").select($());
 			renderTo.modal('show');	
 		}
-		
-		function createTemplateTree(renderTo, observable){		
-			if( !common.ui.exists(renderTo) ){					
-				renderTo.kendoTreeView({
-					dataSource: new kendo.data.HierarchicalDataSource({						
-						transport: {
-							read: {
-								url : '<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>',
-								dataType: "json"
-							}
-						},
-						schema: {		
-							model: {
-								id: "path",
-								hasChildren: "directory"
-							}
-						},
-						filter: { field: "path", operator: "doesnotcontain", value: ".svn" }	
-					}),
-					template: kendo.template($("#treeview-template").html()),
-					dataTextField: "name",
-					change: function(e) {				
-					}
-				});				
-			}
-		}		
-			
-		function getSelectedTreeItem( renderTo ){			
-			var tree = renderTo.data('kendoTreeView');			
-			var selectedCells = tree.select();			
-			var selectedCell = tree.dataItem( selectedCells );   
-			return selectedCell ;
-		}
-															
+
 		<!-- ============================== -->
-		<!-- MENU							-->
-		<!-- ============================== -->
-		function openMenuEditor(){
-			var renderTo = $("#my-site-menu-editor");
-			if( ! common.ui.exists(renderTo) ){
-				var observable =  common.ui.observable({
-					website : new common.ui.data.WebSite(),
-					updateMenuData : function(e){			
-						var $this = this;
-						var btn = $(e.target);						
-						btn.button('loading');						
-						$this.website.menu.menuData = ace.edit("menueditor").getValue();
-						common.ui.ajax(
-							'<@spring.url "/secure/data/menu/update.json?output=json" />' , 
-							{
-								data : kendo.stringify( $this.website.menu ),
-								contentType : "application/json",
-								success : function(response){},
-								fail: function(){								
-									common.ui.notification({
-										hide:function(e){
-											btn.button('reset');
-										}
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									$this.refresh();
-									btn.button('reset');
-								}
-							}
-						);												
-					},
-					useWrapMode : false,
-					useWrap : function(e){
-						ace.edit("menueditor").getSession().setUseWrapMode(this.useWrapMode);
-					},
-					refresh : function(){
-						var $this = this;
-						common.ui.ajax(
-							'<@spring.url "/secure/data/website/get.json?output=json" />' , 
-							{
-								data : {
-									refresh : true,
-								},
-								success : function(response){					
-									var website = new common.ui.data.WebSite(response);
-									website.copy($this.website);
-								}
-							}
-						);						
-					}
-				});				
-				var editor = ace.edit("menueditor");		
-				editor.setTheme("ace/theme/monokai");
-				editor.getSession().setMode("ace/mode/xml");	
-				observable.bind("change", function(e){		
-					var sender = e.sender ;
-					if( e.field.match('^website.menu')){
-					 	editor.setValue( sender.website.menu.menuData );	
-					}
-				});	
-				common.ui.dialog( renderTo , {
-					data : observable,
-					"open":function(e){		
-						$("body").css("overflow-y", "hidden");						
-						renderTo.find(".dialog__content").css("overflow-y", "auto");					
-					},
-					"close":function(e){			
-						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
-						$("body").css("overflow-y", "auto");		
-					}
-				});
-				common.ui.bind(renderTo, observable );	
-				observable.refresh();			
-			}			
-			var dialogFx = common.ui.dialog( renderTo );		
-			if( !dialogFx.isOpen ){							
-				dialogFx.open();
-			}			
-		}	
-					
-		<!-- ============================== -->
-		<!-- TEMPLATE				        -->
+		<!-- TEMPLATE EDITOR		        -->
 		<!-- ============================== -->		
-		function openTemplateEditor(){
+		functjion createTemplateEditor(){			
+			var renderTo = $("#my-site-web-page-view");
+			renderTo.(".page-detail").fadeOut( function(e){			
+				renderTo.(".page-editor").fadeIn();
+			});			
+		}
+		
+		
+		function openTemplateEditor2(){
 			var renderTo = $("#my-site-template-editor");
 			if( ! common.ui.exists(renderTo) ){
 				var observable =  common.ui.observable({
@@ -617,7 +504,98 @@
 			var dialogFx = common.ui.dialog( renderTo );		
 			dialogFx.data().setFile(file);	
 		}
-		
+																				
+		<!-- ============================== -->
+		<!-- MENU							-->
+		<!-- ============================== -->
+		function openMenuEditor(){
+			var renderTo = $("#my-site-menu-editor");
+			if( ! common.ui.exists(renderTo) ){
+				var observable =  common.ui.observable({
+					website : new common.ui.data.WebSite(),
+					updateMenuData : function(e){			
+						var $this = this;
+						var btn = $(e.target);						
+						btn.button('loading');						
+						$this.website.menu.menuData = ace.edit("menueditor").getValue();
+						common.ui.ajax(
+							'<@spring.url "/secure/data/menu/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.website.menu ),
+								contentType : "application/json",
+								success : function(response){},
+								fail: function(){								
+									common.ui.notification({
+										hide:function(e){
+											btn.button('reset');
+										}
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									$this.refresh();
+									btn.button('reset');
+								}
+							}
+						);												
+					},
+					useWrapMode : false,
+					useWrap : function(e){
+						ace.edit("menueditor").getSession().setUseWrapMode(this.useWrapMode);
+					},
+					refresh : function(){
+						var $this = this;
+						common.ui.ajax(
+							'<@spring.url "/secure/data/website/get.json?output=json" />' , 
+							{
+								data : {
+									refresh : true,
+								},
+								success : function(response){					
+									var website = new common.ui.data.WebSite(response);
+									website.copy($this.website);
+								}
+							}
+						);						
+					}
+				});				
+				var editor = ace.edit("menueditor");		
+				editor.setTheme("ace/theme/monokai");
+				editor.getSession().setMode("ace/mode/xml");	
+				observable.bind("change", function(e){		
+					var sender = e.sender ;
+					if( e.field.match('^website.menu')){
+					 	editor.setValue( sender.website.menu.menuData );	
+					}
+				});	
+				common.ui.dialog( renderTo , {
+					data : observable,
+					"open":function(e){		
+						$("body").css("overflow-y", "hidden");						
+						renderTo.find(".dialog__content").css("overflow-y", "auto");					
+					},
+					"close":function(e){			
+						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
+						$("body").css("overflow-y", "auto");		
+					}
+				});
+				common.ui.bind(renderTo, observable );	
+				observable.refresh();			
+			}			
+			var dialogFx = common.ui.dialog( renderTo );		
+			if( !dialogFx.isOpen ){							
+				dialogFx.open();
+			}			
+		}	
+					
 
 		<!-- ============================== -->
 		<!-- Page														-->
@@ -1246,10 +1224,17 @@
 								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
 								<div id="my-site-web-page-grid" class="no-border"></div>	
 								<div id="my-site-web-page-view" style="display:none;">
+									<div class="ibox .page-editor">
+										<span class="back" style="position:relative;" data-bind="click:close"></span>
+										 <div class="ibox-content no-padding">		
+										 fdsaf
+										 
+										 
+										 </div>
+									</div>
 									<div class="ibox page-detail">
 										<span class="back" style="position:relative;" data-bind="click:close"></span>
-										<i class="icon-svg-btn no-padding icon-svg icon-svg-md basic-color-source-code"></i>
-										
+										<i class="icon-svg-btn no-padding icon-svg icon-svg-md basic-color-source-code" data-bind="click:openTemplateEditor" ></i>
 					                    <div class="ibox-content no-padding">					
 											<!-- sky-form -->	
 											<form action="#" class="sky-form">
