@@ -1101,6 +1101,21 @@
 		}	
 				
 		
+		.page-detail {
+			position:relative;
+		}
+		
+		.page-detail .icon-svg-btn {
+		    position: absolute;
+		    top: 0;
+		    right: 0;		
+		}
+			
+			
+			
+			
+			
+				
 		
 		.dialog__content {
 			width : 100%;
@@ -1231,9 +1246,9 @@
 								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
 								<div id="my-site-web-page-grid" class="no-border"></div>	
 								<div id="my-site-web-page-view" style="display:none;">
-									<div class="ibox product-detail">
+									<div class="ibox page-detail">
 										<span class="back" style="position:relative;" data-bind="click:close"></span>
-										<i class="icon-flat icon-svg basic-color-source-code"></i>
+										<i class="icon-svg-btn no-padding icon-svg icon-svg-md basic-color-source-code"></i>
 										
 					                    <div class="ibox-content no-padding">					
 											<!-- sky-form -->	
