@@ -271,17 +271,19 @@
 				console.log("create data");
 				var observable =  common.ui.observable({
 					page : new common.ui.data.WebPage(),
+					fileContent : "",
 					setSource : function(source){
-						source.copy(this.page);						
+						source.copy(this.page);			
+						this.set('fileContent', "");			
 					},
 					openTemplateFinder: function(e){
 						createTemplateFinderModal();					
 					},
 					openTemplateEditor:function(e){
-						createTemplateEditor();		
+						createTemplateEditor(this);		
 					},
 					closeTemplateEditor:function(e){
-						createTemplateEditor();		
+						createTemplateEditor(this);		
 					},
 					close:function(){
 						renderTo.fadeOut(function(e){ 
@@ -347,17 +349,39 @@
 		<!-- ============================== -->
 		<!-- TEMPLATE EDITOR		        -->
 		<!-- ============================== -->		
-		function createTemplateEditor(){			
+		function createTemplateEditor(source){			
 			var renderTo = $("#my-site-web-page-view");			
 			if( renderTo.find(".page-editor").is(":visible") ){
 				renderTo.find(".page-editor").fadeOut( function(e){			
 					renderTo.find(".page-detail").fadeIn();
 				});				
 			}else{			
+				createTemplateSourceEditor($("#template-source-editor"), source);
 				renderTo.find(".page-detail").fadeOut( function(e){			
 					renderTo.find(".page-editor").fadeIn();
 				});				
 			}	
+		}		
+		
+		function createTemplateSourceEditor(renderTo, data){
+			if( renderTo.contents().length == 0 ){			
+				var editor = ace.edit(renderTo.attr("id"));		
+				editor.getSession().setMode("ace/mode/ftl");
+				editor.getSession().setUseWrapMode(true);		
+				
+				ace.edit(renderTo.attr("id")).setValue( data.get("fileContent") );								
+				if( !data.get("fileContent") && data.page.template  ){
+					common.ui.ajax(
+					"<@spring.url "/secure/data/mgmt/template/get.json?output=json" />" , 
+					{
+						data : { path:  common.endsWith( data.page.template, ".ftl") ? data.page.template :  data.page.template + ".ftl" , customized: data.customized },
+						success : function(response){
+							data.set("fileContent", response.fileContent )
+							ace.edit(renderTo.attr("id")).setValue( data.get("fileContent") );			
+						}
+					}); 				
+				}							
+			}		
 		}
 		
 		
@@ -1236,8 +1260,8 @@
 									<div class="ibox page-editor" style="display:none;">
 										<span class="x-close" style="position:relative;" data-bind="click:closeTemplateEditor"></span>
 										 <div class="ibox-content no-padding">		
-										 fdsaf
 										 
+										 	<div id="template-source-editor"></div>
 										 
 										 </div>
 									</div>
