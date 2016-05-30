@@ -293,7 +293,9 @@
 		<!-- TEMPLATE MODAL					-->
 		<!-- ============================== -->
 		function createTemplateSelectModal(observable){
+		
 			var renderToString= "#my-template-select-modal";
+			/*
 			if( $(renderToString).length === 0 ){			
 				$("#main-wrapper").append( kendo.template($('#my-template-select-modal-template').html()) );				
 				var renderTo = $(renderToString);
@@ -316,7 +318,9 @@
 					renderTo.modal('hide');				
 				});
 			}
+			
 			$(renderToString).find(".template-tree").data("kendoTreeView").select($());
+			*/
 			$(renderToString).modal('show');	
 		}
 		
