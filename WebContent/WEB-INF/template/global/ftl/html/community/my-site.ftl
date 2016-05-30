@@ -1259,10 +1259,9 @@
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox page-editor" style="display:none;">
 										<span class="x-close" style="position:relative;" data-bind="click:closeTemplateEditor"></span>
-										 <div class="ibox-content no-padding">		
-										 
-										 	<div id="template-source-editor"></div>
-										 
+										<i class="icon-svg-btn no-padding icon-svg icon-svg-md basic-color-open-in-broswer" data-bind="click:openInBroswer" ></i>
+										<div class="ibox-content no-padding">		
+										 	<div id="template-source-editor"></div>										 
 										 </div>
 									</div>
 									<div class="ibox page-detail">
