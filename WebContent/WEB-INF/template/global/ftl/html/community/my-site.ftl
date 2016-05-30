@@ -500,7 +500,7 @@
 			return selectedCell ;
 		}		
 				
-		function createTemplateEditor(file){
+		function createTemplateEditor3(file){
 			var renderTo = $("#my-site-template-editor");
 			var dialogFx = common.ui.dialog( renderTo );		
 			dialogFx.data().setFile(file);	
