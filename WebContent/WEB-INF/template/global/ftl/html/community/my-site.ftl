@@ -1112,18 +1112,20 @@
 		}	
 				
 		
-		.page-detail {
+		.page-detail, .page-editor {
 			position:relative;
 		}
 		
-		.page-detail .icon-svg-btn {
+		.page-detail .icon-svg-btn, .page-editor .icon-svg-btn { {
 		    position: absolute;
 		    top: 0;
 		    right: 0;		
 		}
-			
-			
-			
+		
+		.ace_editor{
+			min-height: 500px;			
+		}
+					
 			
 			
 				
@@ -1208,10 +1210,7 @@
 			height:530px;
 		}
 		
-		
-		.ace_editor{
-			min-height: 500px;			
-		}
+
 		
 		#my-notice-listview.k-listview .k-state-selected
 		{
