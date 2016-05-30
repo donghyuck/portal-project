@@ -1094,7 +1094,12 @@
 		}		
 		
 		
-		
+		.k-listview .k-state-selected
+		{
+			background : #F5F5F5;
+			color: #585f69;
+		}	
+				
 		
 		
 		.dialog__content {
@@ -1489,7 +1494,7 @@
 						<div class="template-tree"></div>
 					</div>
 					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
+						<button type="button" class="btn btn-primary btn-flat" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'> 선택</button>					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
 					</div>					
 				</div>
