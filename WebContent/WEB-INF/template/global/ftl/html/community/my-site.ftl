@@ -1538,7 +1538,7 @@
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->				
 		</div>	
-		
+		<div id="preview-window"/>
 		<div id="my-template-finder-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-template-finder-modal-label">
 			<div class="modal-dialog"  role="document">
 				<div class="modal-content">
