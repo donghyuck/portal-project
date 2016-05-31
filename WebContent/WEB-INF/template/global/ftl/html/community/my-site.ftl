@@ -40,7 +40,7 @@
 			'<@spring.url "/js/bootstrap/3.3.5/bootstrap.min.js"/>',
 			
 			'<@spring.url "/js/common.ui.plugins/jquery.slimscroll.min.js"/>', 		
-			'<@spring.url "/js/common.ui.plugins/query.backstretch.min.js"/>', 
+			'<@spring.url "/js/common.ui.plugins/jquery.backstretch.min.js"/>', 
 			'<@spring.url "/js/common.ui.plugins/switchery.min.js"/>', 
 
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
