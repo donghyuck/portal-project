@@ -271,7 +271,8 @@
 		function createWebPageEditor( source ){
 			var renderTo = $("#my-site-web-page-view");
 			if(!renderTo.data("model")){
-				var switchery = new Switchery(renderTo.find("input[name='enabled-switcher']")[0]);
+				var switcheryRenderTo = renderTo.find("input[name='enabled-switcher']")[0];
+				var switchery = new Switchery(switcheryRenderTo);
 				var observable =  common.ui.observable({
 					page : new common.ui.data.WebPage(),
 					fileContent : "",
@@ -279,19 +280,22 @@
 					editable:false,
 					onChange : function(){ 
 						var $this = this;
+						console.log( "update:" + $this.page.enabled );
 					},
 					setSource : function(source){
 						var $this = this;
 						source.copy($this.page);				
+						
 						$this.set("editable", $this.page.webPageId > 0 ? true : false );		
 						if( !$this.editable ){
 							$this.page.set("template", "");				
 						}						
-						switchery.disable();
-						switchery.enable();						
 						$this.set("fileContent", "");
 						$this.set("enabled", true);		
-													
+						
+						if( switcheryRenderTo.checked != $this.page.enabled ){
+							switcheryRenderTo.click();
+						}							
 					},
 					openTemplateFinder: function(e){
 						createTemplateFinderModal();					
