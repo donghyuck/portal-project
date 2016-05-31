@@ -1126,7 +1126,7 @@
 			min-height: 500px;			
 		}
 					
-		.page-detail, .page-editor .page-editor-title {
+		.page-editor > .page-editor-title {
 		    position: absolute;
 		    top: 0;
 		    left: 65px;
