@@ -285,6 +285,22 @@
 					closeTemplateEditor:function(e){
 						createTemplateEditor(this);		
 					},
+					openInBroswer:function(e){
+						var $that = this;
+						if($("#preview-window").data("kendoWindow")){
+							$("#preview-window").data("kendoWindow").distory();
+						}
+						$("#preview-window").kendoWindow({
+							position : {
+								top: 50, left: 50
+							},
+							iframe: true,
+							width: "700px",
+							height: "80%",
+							title: data.page.title ,
+							content: "<@spring.url '/display/'/>" + $that.page.name
+						});
+					},
 					close:function(){
 						renderTo.fadeOut(function(e){ 
 							$("#my-site-web-page-grid").fadeIn();
@@ -327,8 +343,7 @@
 					dataTextField: "name",
 					change: function(e) {				
 					}
-				}).data('kendoTreeView');		
-								
+				}).data('kendoTreeView');	
 				renderTo.find("[data-action=select]").click(function(e){
 					var selectedCells = treeview.select();			
 					var selectedCell = treeview.dataItem( selectedCells );
@@ -340,8 +355,7 @@
 					}		
 					renderTo.modal('hide');				
 				});				
-			}
-			
+			}			
 			treeRenderTo.data("kendoTreeView").select($());
 			renderTo.modal('show');	
 		}
