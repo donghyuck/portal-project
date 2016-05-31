@@ -298,10 +298,7 @@
 							width: "700px",
 							height: "80%",
 							title: $that.page.title ,
-							content: "<@spring.url '/display/'/>" + $that.page.name,
-							close:function(e){
-								this.destory();
-							}
+							content: "<@spring.url '/display/'/>" + $that.page.name
 						});
 					},
 					close:function(){
