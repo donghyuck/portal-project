@@ -297,7 +297,7 @@
 							iframe: true,
 							width: "700px",
 							height: "80%",
-							title: data.page.title ,
+							title: $that.page.title ,
 							content: "<@spring.url '/display/'/>" + $that.page.name
 						});
 					},
