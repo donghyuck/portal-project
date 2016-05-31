@@ -281,7 +281,8 @@
 						var $this = this;
 					},
 					setSource : function(source){
-						source.copy(this.page);				
+						var $this = this;
+						source.copy($this.page);				
 						$this.set("editable", $this.page.webPageId > 0 ? true : false );		
 						if( !$this.editable ){
 							$this.page.set("template", "");				
@@ -293,8 +294,8 @@
 						//	switcher.switcher('off');
 						}
 						
-						this.set("fileContent", "");
-						this.set("enabled", true);		
+						$this.set("fileContent", "");
+						$this.set("enabled", true);		
 													
 					},
 					openTemplateFinder: function(e){
