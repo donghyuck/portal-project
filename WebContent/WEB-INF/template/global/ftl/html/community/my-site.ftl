@@ -288,7 +288,7 @@
 					openInBroswer:function(e){
 						var $that = this;
 						if($("#preview-window").data("kendoWindow")){
-							$("#preview-window").data("kendoWindow").distory();
+							$("#preview-window").data("kendoWindow").destroy()
 						}
 						$("#preview-window").kendoWindow({
 							position : {
