@@ -17,6 +17,7 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
 
+			'css!<@spring.url "/styles/common.ui.plugins/switchery.min.css"/>',		
 			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',			
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
