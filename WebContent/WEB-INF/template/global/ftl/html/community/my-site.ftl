@@ -292,9 +292,9 @@
 						}						
 						$this.set("fileContent", "");
 						$this.set("enabled", true);		
-						
-						switchery.disable();
-						switchery.enable();												
+						if( switcheryRenderTo.checked != $this.page.enabled ){
+							switcheryRenderTo.click();
+						}													
 					},
 					openTemplateFinder: function(e){
 						createTemplateFinderModal();					
