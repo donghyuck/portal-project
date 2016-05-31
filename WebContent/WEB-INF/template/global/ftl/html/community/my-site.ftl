@@ -1126,6 +1126,14 @@
 			min-height: 500px;			
 		}
 					
+		.page-detail, .page-editor .page-editor-title {
+		    position: absolute;
+		    top: 0;
+		    left: 65px;
+		    font-size: 1.2em;
+		    line-height: 50px;		
+		}
+					
 			
 			
 				
@@ -1259,8 +1267,8 @@
 									<div class="ibox page-editor" style="display:none;">
 										<span class="x-close" style="position:relative;" data-bind="click:closeTemplateEditor"></span>
 										<i class="icon-svg-btn no-padding icon-svg icon-svg-md basic-color-open-in-broswer" data-bind="click:openInBroswer" ></i>
-										<div class="ibox-content no-padding">	
-											<span data-bind="text: page.template"></span>		
+										<div class="page-editor-title" ><span data-bind="text: page.template"></span></div>
+										<div class="ibox-content no-padding">														
 										 	<div id="template-source-editor"></div>										 
 										 </div>
 									</div>
