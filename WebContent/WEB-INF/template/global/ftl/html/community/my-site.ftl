@@ -268,13 +268,32 @@
 		function createWebPageEditor( source ){
 			var renderTo = $("#my-site-web-page-view");
 			if(!renderTo.data("model")){
-				console.log("create data");
+				
+				var switcher = renderTo.find("input[name='enabled-switcher']");
+				
+				if( switcher.length > 0 ){
+					switcher.switcher();					
+				}
+				
 				var observable =  common.ui.observable({
 					page : new common.ui.data.WebPage(),
 					fileContent : "",
+					enabled:false,
+					editable:false,
 					setSource : function(source){
-						source.copy(this.page);			
-						this.set('fileContent', "");			
+						source.copy(this.page);				
+						$this.set("editable", $this.page.webPageId > 0 ? true : false );		
+						if( !$this.editable ){
+							$this.page.set("template", "");				
+						}						
+						if( $this.page.enabled ){
+							switcher.switcher('on');
+						}else{
+							switcher.switcher('off');
+						}
+						this.set("fileContent", "");
+						this.set("enabled", true);		
+													
 					},
 					openTemplateFinder: function(e){
 						createTemplateFinderModal();					
@@ -1342,6 +1361,11 @@
 														</label>
 														<div class="note">간략하게 페이지를 기술하세요.</div>
 													</section>
+													<section>
+														<h2 class="label">페이지 사용 여부</h2>
+														<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" checked="checked">
+														<div class="note">간략하게 페이지를 기술하세요.</div>
+													</section>													
 												</fieldset>
 												<footer class="text-right">
 													<button type="submit" class="btn-u">저장</button>
