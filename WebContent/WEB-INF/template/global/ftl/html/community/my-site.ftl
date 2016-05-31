@@ -292,6 +292,7 @@
 						}						
 						$this.set("fileContent", "");
 						$this.set("enabled", true);		
+						switchery.bindClick();
 						if( switcheryRenderTo.checked != $this.page.enabled ){
 							switcheryRenderTo.click();
 						}													
