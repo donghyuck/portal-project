@@ -37,9 +37,11 @@
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',	
 
-			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
-			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
-			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 
+			'<@spring.url "/js/bootstrap/3.3.5/bootstrap.min.js"/>',
+			
+			'<@spring.url "/js/common.ui.plugins/jquery.slimscroll.min.js"/>', 		
+			'<@spring.url "/js/common.ui.plugins/query.backstretch.min.js"/>', 
+			'<@spring.url "/js/common.ui.plugins/switchery.min.js"/>', 
 
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
@@ -268,29 +270,28 @@
 		function createWebPageEditor( source ){
 			var renderTo = $("#my-site-web-page-view");
 			if(!renderTo.data("model")){
-				
-				var switcher = renderTo.find("input[name='enabled-switcher']");
-				
-				if( switcher.length > 0 ){
-					switcher.switcher();					
-				}
-				
+				var switchery = new Switchery(renderTo.find("input[name='enabled-switcher']")[0]);
 				var observable =  common.ui.observable({
 					page : new common.ui.data.WebPage(),
 					fileContent : "",
 					enabled:false,
 					editable:false,
+					onChange : function(){ 
+						var $this = this;
+					},
 					setSource : function(source){
 						source.copy(this.page);				
 						$this.set("editable", $this.page.webPageId > 0 ? true : false );		
 						if( !$this.editable ){
 							$this.page.set("template", "");				
 						}						
+						
 						if( $this.page.enabled ){
-							switcher.switcher('on');
+						//	switcher.switcher('on');
 						}else{
-							switcher.switcher('off');
+						//	switcher.switcher('off');
 						}
+						
 						this.set("fileContent", "");
 						this.set("enabled", true);		
 													
@@ -1363,7 +1364,9 @@
 													</section>
 													<section>
 														<h2 class="label">페이지 사용 여부</h2>
-														<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" checked="checked">
+														<input type="checkbox" name="enabled-switcher" 
+															data-class="switcher-primary" role="switcher" 
+															data-bind="checked:page.enabled, events:{change:onChange}" >
 														<div class="note">간략하게 페이지를 기술하세요.</div>
 													</section>													
 												</fieldset>
