@@ -287,13 +287,8 @@
 						if( !$this.editable ){
 							$this.page.set("template", "");				
 						}						
-						
-						if( $this.page.enabled ){
-						//	switcher.switcher('on');
-						}else{
-						//	switcher.switcher('off');
-						}
-						
+						switchery.disable();
+						switchery.enable();						
 						$this.set("fileContent", "");
 						$this.set("enabled", true);		
 													
