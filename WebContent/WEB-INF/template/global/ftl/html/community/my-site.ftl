@@ -293,9 +293,8 @@
 						$this.set("fileContent", "");
 						$this.set("enabled", true);		
 						
-						if( switcheryRenderTo.checked != $this.page.enabled ){
-							switcheryRenderTo.click();
-						}							
+						switchery.disable();
+						switchery.enable();												
 					},
 					openTemplateFinder: function(e){
 						createTemplateFinderModal();					
