@@ -280,7 +280,7 @@
 					editable:false,
 					onChange : function(){ 
 						var $this = this;
-						console.log( "update:" + $this.page.enabled );
+						//console.log( "update:" + $this.page.enabled );
 					},
 					setSource : function(source){
 						var $this = this;
@@ -314,10 +314,10 @@
 						}
 						$("#preview-window").kendoWindow({
 							position : {
-								top: 50, left: 50
+								top: 50, right: 50
 							},
 							iframe: true,
-							width: "700px",
+							width: "80%",
 							height: "80%",
 							title: $that.page.title ,
 							content: "<@spring.url '/display/'/>" + $that.page.name
@@ -327,6 +327,34 @@
 						renderTo.fadeOut(function(e){ 
 							$("#my-site-web-page-grid").fadeIn();
 						});
+					},
+					saveOrUpdate : function(e){ 
+						var $this = this;
+						console.log( kendo.stringify( $this.page ) );
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/website/page/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.page ),
+								contentType : "application/json",
+								success : function(response){},
+								fail: function(){								
+									common.ui.notification({
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									common.ui.grid($('#my-site-web-page-grid')).dataSource.read( {siteId: getSelectedSite().webSiteId} );								
+									$this.close();
+								}
+							}					
 					}	
 				});	
 				renderTo.data("model", observable);		
@@ -1372,7 +1400,7 @@
 													</section>													
 												</fieldset>
 												<footer class="text-right">
-													<button type="submit" class="btn-u">저장</button>
+													<button type="submit" class="btn-u" data-bind="click:saveOrUpdate">저장</button>
 													<!-- <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button> -->
 												</footer>
 											</form>
