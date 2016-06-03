@@ -23,7 +23,7 @@
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
 						
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
-			'css!<@spring.url "/styles/jquery.toastr/2.2.1/toastr.min.css"/>',
+			'css!<@spring.url "/styles/jquery.toastr/2.1.1/toastr.min.css"/>',
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
 			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',		
 				
@@ -33,7 +33,7 @@
 			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
-			'<@spring.url "/js/jquery.toastr/2.2.1/toastr.min.js"/>',
+			'<@spring.url "/js/jquery.toastr/2.1.1/toastr.min.js"/>',
 			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
 			
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
