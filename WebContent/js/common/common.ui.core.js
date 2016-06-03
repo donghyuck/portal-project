@@ -943,19 +943,19 @@
 		stacking : "down",
 		templates : [{
 			type : "warning",
-			template : '<div class="notification-warning"><#if(title){<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
+			template : '<div class="notification-warning">#if(title){#<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
 		},
 		{
 			type : "error",
-			template : '<div class="notification-error"><#if(title){<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
+			template : '<div class="notification-error">#if(title){#<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
 		},
 		{
 			type : "info",
-			template : '<div class="notification-info"><#if(title){<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
+			template : '<div class="notification-info">#if(title){#<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
 		}, 
 		{
 			type : "success",
-			template : '<div class="notification-success"><#if(title){<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
+			template : '<div class="notification-success">#if(title){#<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
 		} ]		
 	};
 	
