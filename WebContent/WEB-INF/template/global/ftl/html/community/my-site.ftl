@@ -356,7 +356,8 @@
 									$this.close();
 								}
 							}
-						);						
+						);	
+						return false;					
 					}	
 				});	
 				renderTo.data("model", observable);		
