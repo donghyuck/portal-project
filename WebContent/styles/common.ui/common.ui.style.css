@@ -1487,7 +1487,8 @@ article>h3.title:after {
 	position: relative;
     pointer-events: auto;
     overflow: hidden;
-    margin: 0 0 6px;
+   /* margin: 0 0 6px;*/
+   	margin:0;
     padding: 15px 15px 15px 50px;
 	background-position: 10px center;
     background-repeat: no-repeat;
