@@ -341,7 +341,7 @@
 									
 								},
 								fail: function(){								
-									common.ui.notification().show({	message: "웹 페이지 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"error");	
+									common.ui.notification().show({	message: "웹 페이지 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
 								},
 								requestStart : function(){
 									kendo.ui.progress(renderTo, true);
