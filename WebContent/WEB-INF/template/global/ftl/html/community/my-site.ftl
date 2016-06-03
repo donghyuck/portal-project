@@ -254,8 +254,7 @@
 						newWebPage = new common.ui.data.WebPage();
 						newWebPage.set("webSiteId", getSelectedSite().webSiteId);
 						newWebPage.set("properties", {});
-					}	
-					
+					}					
 					renderTo.fadeOut(function(e){ 
 						createWebPageEditor( newWebPage );
 					});					
@@ -280,7 +279,6 @@
 					editable:false,
 					onChange : function(){ 
 						var $this = this;
-						//console.log( "update:" + $this.page.enabled );
 					},
 					setSource : function(source){
 						var $this = this;
@@ -334,7 +332,7 @@
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/website/page/update.json?output=json" />' , 
 							{
-								data : kendo.stringify( $this.page ),
+								data : common.ui.stringify( $this.page ),
 								contentType : "application/json",
 								success : function(response){},
 								fail: function(){								
