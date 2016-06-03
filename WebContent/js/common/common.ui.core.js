@@ -936,21 +936,26 @@
 		return  defined( element.data("role") );
 	} 
 
+	
 	var DEFAULT_NOTIFICATION_SETTING = {
-		autoHideAfter : 5000,
+		autoHideAfter : 3000,
 		position : {	pinned : true, top : 10, right : 10 },	
 		stacking : "down",
 		templates : [{
-			type : "mail",
-			template : '<div class="notification-mail"><img src="/images/common/notification/error-info.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
+			type : "warning",
+			template : '<div class="notification-warning"><#if(title){<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
 		},
 		{
 			type : "error",
-			template : '<div class="notification-error rounded"><img src="/images/common/icons/basic/color/Error.svg" width="50" /><h3>#= title #</h3><p>#= message #</p></div>'
+			template : '<div class="notification-error"><#if(title){<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
 		},
 		{
+			type : "info",
+			template : '<div class="notification-info"><#if(title){<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
+		}, 
+		{
 			type : "success",
-			template : '<div class="notification-success"><img src="/images/common/icons/basic/color/Ok.svg" width="50" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
+			template : '<div class="notification-success"><#if(title){<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
 		} ]		
 	};
 	
