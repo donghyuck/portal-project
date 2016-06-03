@@ -349,14 +349,14 @@
 									kendo.ui.progress(renderTo, false);
 								},
 								complete : function(e){
-								/**	common.ui.grid(
-										$('#my-site-web-page-grid')
-									).dataSource.read( 
+									common.ui.grid( $('#my-site-web-page-grid') ).dataSource.read( 
 										{ siteId: getSelectedSite().webSiteId } 
-									);		**/						
+									);		
+												
 									$this.close();
 								}
-							}					
+							}
+						);						
 					}	
 				});	
 				renderTo.data("model", observable);		
