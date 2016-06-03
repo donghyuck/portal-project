@@ -336,13 +336,12 @@
 							{
 								data : common.ui.stringify( $this.page ),
 								contentType : "application/json",
-								success : function(response){},
+								success : function(response){
+									common.ui.notification().show({ message: "웹 페이지가 저장되었습니다."	},"success");	
+									
+								},
 								fail: function(){								
-									common.ui.notification({
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
+									common.ui.notification().show({	message: "웹 페이지 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"error");	
 								},
 								requestStart : function(){
 									kendo.ui.progress(renderTo, true);
@@ -353,8 +352,7 @@
 								complete : function(e){
 									common.ui.grid( $('#my-site-web-page-grid') ).dataSource.read( 
 										{ siteId: getSelectedSite().webSiteId } 
-									);		
-												
+									);														
 									$this.close();
 								}
 							}
