@@ -1497,14 +1497,16 @@ article>h3.title:after {
     padding: 15px 15px 15px 50px;
 	background-position: 10px center;
     background-repeat: no-repeat;
-    background-image: url("/images/common/icons/basic/color/Ok.svg");
+   
     background-size: 32px 32px;
 }
 
 .notification-success {	
+	 background-image: url("/images/common/icons/basic/color/Ok.svg");
 	color: #3c763d;
 }
 .notification-info {	
+	background-image: url("/images/common/icons/basic/color/Info.svg");	
 	color : #31708f;
 }
 .notification-warning {	
@@ -1512,7 +1514,7 @@ article>h3.title:after {
 	color : #8a6d3b;
 }
 .notification-error {
-	background-image: url("/images/common/icons/basic/ios9/Error.svg");	
+	background-image: url("/images/common/icons/basic/color/Error.svg");	
 	color: #a94442;
 }
 
