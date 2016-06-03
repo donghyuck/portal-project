@@ -218,7 +218,7 @@
 					autoBind : false,
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/website/pages/list.json?output=json" />', type:'get' }
+							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'get' }
 						},						
 						batch: false, 
 						pageSize: 15,
