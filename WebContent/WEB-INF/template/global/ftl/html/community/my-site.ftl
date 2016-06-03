@@ -1403,7 +1403,7 @@
 													</section>													
 												</fieldset>
 												<footer class="text-right">
-													<button type="submit" class="btn-u" data-bind="click:saveOrUpdate">저장</button>
+													<button type="submit" class="btn btn-flat btn-primary" data-bind="click:saveOrUpdate">저장</button>
 													<!-- <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button> -->
 												</footer>
 											</form>
