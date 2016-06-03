@@ -337,11 +337,11 @@
 								data : common.ui.stringify( $this.page ),
 								contentType : "application/json",
 								success : function(response){
-									common.ui.notification().show({ message: "웹 페이지가 저장되었습니다."	},"success");	
+									common.ui.notification().show({ title:null, message: "웹 페이지가 저장되었습니다."	},"success");	
 									
 								},
 								fail: function(){								
-									common.ui.notification().show({	message: "웹 페이지 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
+									common.ui.notification().show({	title:null, message: "웹 페이지 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
 								},
 								requestStart : function(){
 									kendo.ui.progress(renderTo, true);
