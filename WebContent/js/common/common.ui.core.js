@@ -946,25 +946,27 @@
 		},
 		{
 			type : "error",
-			template : '<div class="notification-error rounded"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+			template : '<div class="notification-error rounded"><img src="/images/common/icons/basic/color/Error.svg" width="50" /><h3>#= title #</h3><p>#= message #</p></div>'
 		},
 		{
 			type : "success",
-			template : '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
+			template : '<div class="notification-success"><img src="/images/common/icons/basic/color/Ok.svg" width="50" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
 		} ]		
 	};
 	
 	function notification (options) {
 		options = options || {};
-		var uid = guid();
-		var renderToString = "#" + uid ;
+		//var uid = guid();
+		//var renderToString = "#" + uid ;
+		var renderToString = "notification";
 		if ($(renderToString).length == 0) {
 			$('body').append(	'<span id="' + uid + '" style="display:none;"></span>');
 		}
+		
 		var settings = extend(true, {}, DEFAULT_NOTIFICATION_SETTING , options ); 
 		var renderTo = $(renderToString) ;
 		if (!renderTo.data("kendoNotification")) {
-			renderTo	.kendoNotification(settings);
+			renderTo.kendoNotification(settings);
 		}
 		return renderTo.data("kendoNotification");
 	};
