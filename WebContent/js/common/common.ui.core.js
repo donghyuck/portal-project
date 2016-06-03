@@ -941,6 +941,7 @@
 		autoHideAfter : 3000,
 		position : {	pinned : true, top : 10, right : 10 },	
 		stacking : "down",
+		width : 300,
 		templates : [{
 			type : "warning",
 			template : '<div class="notification-warning">#if(title){#<div class="notification-title">#= title #</div>#}#<div class="notification-mesage">#= message #</div></div>'
