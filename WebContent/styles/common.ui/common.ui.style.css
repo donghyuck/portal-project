@@ -1489,7 +1489,19 @@ article>h3.title:after {
     overflow: hidden;
     margin: 0 0 6px;
     padding: 15px 15px 15px 50px;
+	background-position: 10px center;
+    background-repeat: no-repeat;
+    background-image: url("/images/common/icons/basic/color/Ok.svg");
+    background-size: 32px 32px;
 }
+
+.notification-warning {	
+	background-image: url("/images/common/icons/basic/color/Siren.svg");	
+}
+.notification-error {
+	background-image: url("/images/common/icons/basic/color/Error.svg");	
+}
+
 
 /*Panel 
 ------------------------------------*/
