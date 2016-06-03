@@ -1483,6 +1483,11 @@ article>h3.title:after {
 ------------------------------------*/
 /* Error template */
 
+.k-notification {
+	border : 0 ;
+	border-radius: 5px;	
+}
+
 .notification-info, .notification-success, .notification-warning, .notification-error {
 	position: relative;
     pointer-events: auto;
@@ -1496,11 +1501,19 @@ article>h3.title:after {
     background-size: 32px 32px;
 }
 
+.notification-success {	
+	color: #3c763d;
+}
+.notification-info {	
+	color : #31708f;
+}
 .notification-warning {	
 	background-image: url("/images/common/icons/basic/color/Siren.svg");	
+	color : #8a6d3b;
 }
 .notification-error {
 	background-image: url("/images/common/icons/basic/color/Error.svg");	
+	color: #a94442;
 }
 
 
