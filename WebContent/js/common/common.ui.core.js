@@ -958,9 +958,9 @@
 		options = options || {};
 		//var uid = guid();
 		//var renderToString = "#" + uid ;
-		var renderToString = "notification";
+		var renderToString = "#notification";
 		if ($(renderToString).length == 0) {
-			$('body').append(	'<span id="' + uid + '" style="display:none;"></span>');
+			$('body').append(	'<span id="notification" style="display:none;"></span>');
 		}
 		
 		var settings = extend(true, {}, DEFAULT_NOTIFICATION_SETTING , options ); 
