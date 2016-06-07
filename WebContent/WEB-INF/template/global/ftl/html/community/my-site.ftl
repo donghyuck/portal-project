@@ -229,7 +229,7 @@
 									startIndex: options.skip, 
 									pageSize: options.pageSize,  
 									siteId: getSelectedSite().webSiteId,
-									filter: options.filter||[] 
+									filter: options.filter
 							}
 						},						
 						batch: false, 
