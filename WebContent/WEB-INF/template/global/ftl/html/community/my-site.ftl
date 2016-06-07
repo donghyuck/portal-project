@@ -224,12 +224,15 @@
 							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'post' },
 							parameterMap: function (options, type){
 							//console.log( common.ui.stringify(options) );
-								return { 
+							//	return { 
 									startIndex: options.skip, 
 									pageSize: options.pageSize,  
 									siteId: getSelectedSite().webSiteId,
 									filter: options.filter||[] 
-								}
+							//	}
+							//	
+								options.objectId = getSelectedSite().webSiteId ;
+								return common.ui.stringify( options );
 							}
 						},						
 						batch: false, 
@@ -283,7 +286,8 @@
 					
 				});		
 			}
-			common.ui.grid(renderTo).dataSource.read( {siteId: getSelectedSite().webSiteId} );
+			common.ui.grid(renderTo).dataSource.read();
+			//common.ui.grid(renderTo).dataSource.read( {siteId: getSelectedSite().webSiteId} );
 		}
 		
 		<!-- ============================== -->
