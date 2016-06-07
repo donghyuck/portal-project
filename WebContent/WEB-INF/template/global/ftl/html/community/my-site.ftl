@@ -222,9 +222,7 @@
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'post' },
 							parameterMap: function (options, type){
-							
-							console.log( common.ui.stringify(options) );
-								
+							//console.log( common.ui.stringify(options) );
 								return { 
 									startIndex: options.skip, 
 									pageSize: options.pageSize,  
@@ -249,7 +247,8 @@
 					columns: [{ title: "페이지", field: "name", 
 						filterable: {
                         	cell: {
-                            	showOperators: true
+                            	showOperators: false,
+                            	operator: "contains"
                          	}
                         }},
 						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="edit" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
