@@ -220,7 +220,17 @@
 					autoBind : false,
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'get' }
+							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'post' },
+							parameterMap: function (options, type){
+							
+							console.log( common.ui.stringify(options) );
+								
+								return { 
+									startIndex: options.skip, 
+									pageSize: options.pageSize,  
+									siteId: getSelectedSite().webSiteId,
+									filter: options.filter||[] 
+							}
 						},						
 						batch: false, 
 						pageSize: 15,
