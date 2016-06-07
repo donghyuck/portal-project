@@ -235,6 +235,7 @@
 						},						
 						batch: false, 
 						pageSize: 15,
+						serverPaging: true,
 						serverFiltering: true,
 						schema: {
 							data: "items",
