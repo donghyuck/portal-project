@@ -221,7 +221,7 @@
 					autoBind : false,
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'post' },
+							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'POST' ,contentType : 'application/json' },
 							parameterMap: function (options, type){
 							//console.log( common.ui.stringify(options) );
 							//	return { 
