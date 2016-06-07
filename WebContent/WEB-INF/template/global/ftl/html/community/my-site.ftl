@@ -225,10 +225,10 @@
 							parameterMap: function (options, type){
 							//console.log( common.ui.stringify(options) );
 							//	return { 
-									startIndex: options.skip, 
-									pageSize: options.pageSize,  
-									siteId: getSelectedSite().webSiteId,
-									filter: options.filter||[] 
+							//		startIndex: options.skip, 
+							//		pageSize: options.pageSize,  
+							//		siteId: getSelectedSite().webSiteId,
+							//		filter: options.filter||[] 
 							//	}
 							//	
 								options.objectId = getSelectedSite().webSiteId ;
