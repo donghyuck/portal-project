@@ -153,7 +153,8 @@
 							data: "items",
 							total: "totalCount",
 							model: common.ui.data.WebSite
-						}
+						},
+						error:common.ui.handleAjaxError
 					},
 					template: kendo.template($("#my-site-listview-template").html()),
 					selectable: "row",
