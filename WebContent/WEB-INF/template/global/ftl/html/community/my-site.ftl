@@ -308,7 +308,7 @@
 							$this.page.set("template", "");				
 						}						
 						$this.set("fileContent", "");
-						$this.set("enabled", true);
+						$this.set("enabled", $this.page.enabled );
 								
 						switchery.bindClick();
 						/*if( switcheryRenderTo.checked != $this.page.enabled ){
@@ -1418,7 +1418,7 @@
 														<h2 class="label">페이지 사용 여부</h2>
 														<input type="checkbox" name="enabled-switcher" 
 															data-class="switcher-primary" role="switcher" 
-															data-bind="checked:page.enabled, events:{change:onChange}" >
+															data-bind="checked:enabled, events:{change:onChange}" >
 														<div class="note">간략하게 페이지를 기술하세요.</div>
 													</section>													
 												</fieldset>
