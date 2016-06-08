@@ -381,7 +381,7 @@
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
 			}
-			
+			console.log( common.ui.stringify( source ) );
 			renderTo.data("model").setSource( source );	
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 	
