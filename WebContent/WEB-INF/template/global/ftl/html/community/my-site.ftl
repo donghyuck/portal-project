@@ -299,14 +299,17 @@
 					},
 					setSource : function(source){
 						var $this = this;
-						source.copy($this.page);				
+						source.copy($this.page);	
 						
+						console.log("source:" + common.ui.stringify(source) );
+						console.log("new:" + common.ui.stringify($this.page) );
 						$this.set("editable", $this.page.webPageId > 0 ? true : false );		
 						if( !$this.editable ){
 							$this.page.set("template", "");				
 						}						
 						$this.set("fileContent", "");
-						$this.set("enabled", true);		
+						$this.set("enabled", true);
+								
 						switchery.bindClick();
 						/*if( switcheryRenderTo.checked != $this.page.enabled ){
 							switcheryRenderTo.click();
