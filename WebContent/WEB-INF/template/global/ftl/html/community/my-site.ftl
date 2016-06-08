@@ -245,6 +245,7 @@
 							model: common.ui.data.WebPage
 						}
 					},
+					filterable : true,
 					/*filterable: {
                     	mode: "row"
                     },*/
