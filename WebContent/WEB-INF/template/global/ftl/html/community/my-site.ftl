@@ -1196,6 +1196,9 @@
 			box-shadow: none;
 		}		
 		
+		.k-grid .filtercell .k-button-icon {
+			padding-bottom: 3px;
+		}
 		
 		.k-treeview .k-state-selected
 		{
