@@ -253,7 +253,7 @@
 							operators : {
 								contains: "Equal to"
 							}
-						} /*{
+						}} /*{
                         	cell: {
                         		enabled: true,
                         		showOperators: false,
