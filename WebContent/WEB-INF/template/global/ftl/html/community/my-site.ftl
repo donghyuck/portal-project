@@ -1196,7 +1196,7 @@
 			box-shadow: none;
 		}		
 		
-		.k-grid .filtercell .k-button-icon {
+		.k-grid .k-filtercell .k-button-icon {
 			padding-bottom: 3px;
 		}
 		
