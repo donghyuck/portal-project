@@ -251,6 +251,7 @@
 					columns: [{ title: "페이지", field: "name", 
 						filterable: {
                         	cell: {
+                        		enabled: true,
                         		showOperators: false,
                             	operator: "contains"
                          	}
