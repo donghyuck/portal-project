@@ -223,14 +223,6 @@
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'POST' ,contentType : 'application/json' },
 							parameterMap: function (options, type){
-							//console.log( common.ui.stringify(options) );
-							//	return { 
-							//		startIndex: options.skip, 
-							//		pageSize: options.pageSize,  
-							//		siteId: getSelectedSite().webSiteId,
-							//		filter: options.filter||[] 
-							//	}
-							//	
 								options.objectId = getSelectedSite().webSiteId ;
 								return common.ui.stringify( options );
 							}
@@ -283,12 +275,10 @@
 					}					
 					renderTo.fadeOut(function(e){ 
 						createWebPageEditor( newWebPage );
-					});					
-					
+					});	
 				});		
 			}
 			common.ui.grid(renderTo).dataSource.read();
-			//common.ui.grid(renderTo).dataSource.read( {siteId: getSelectedSite().webSiteId} );
 		}
 		
 		<!-- ============================== -->
@@ -318,9 +308,9 @@
 						$this.set("fileContent", "");
 						$this.set("enabled", true);		
 						switchery.bindClick();
-						if( switcheryRenderTo.checked != $this.page.enabled ){
+						/*if( switcheryRenderTo.checked != $this.page.enabled ){
 							switcheryRenderTo.click();
-						}													
+						}*/													
 					},
 					openTemplateFinder: function(e){
 						createTemplateFinderModal();					
@@ -475,8 +465,7 @@
 				}							
 			}		
 		}
-		
-		
+				
 		function openTemplateEditor2(){
 			var renderTo = $("#my-site-template-editor");
 			if( ! common.ui.exists(renderTo) ){
