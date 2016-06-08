@@ -245,9 +245,9 @@
 							model: common.ui.data.WebPage
 						}
 					},
-					filterable: {
+					/*filterable: {
                     	mode: "row"
-                    },
+                    },*/
 					columns: [{ title: "페이지", field: "name", 
 						filterable: {
 							operators : {
