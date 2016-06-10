@@ -1415,7 +1415,7 @@
 														<div class="note">간략하게 페이지를 기술하세요.</div>
 													</section>
 													<section>
-														<h2 class="label">페이지 사용 여부</h2>
+														<h2 class="label">페이지 사용 여부 <span data-bind="text: enabled"/>/ <span data-bind="text: page.enabled"/></h2>
 														<input type="checkbox" name="enabled-switcher" 
 															data-class="switcher-primary" role="switcher" 
 															data-bind="checked:enabled, events:{change:onChange}" >
