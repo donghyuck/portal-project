@@ -295,6 +295,7 @@
 					editable:false,
 					onChange : function(){ 
 						var $this = this;
+						
 					},
 					setSource : function(source){
 						var $that = this;
@@ -311,11 +312,9 @@
 							$that.page.set("template", "");				
 						}						
 						$that.set("fileContent", "");
-						
-						
-						
-								
+						switcheryRenderTo.checked = $that.page.enabled;		
 						switchery.bindClick();
+						
 						/*if( switcheryRenderTo.checked != $this.page.enabled ){
 							switcheryRenderTo.click();
 						}*/													
@@ -1423,7 +1422,7 @@
 														<h2 class="label">페이지 사용 여부 <span data-bind="text:enabled"></span> / <span data-bind="text:page.enabled"></span></h2>
 														<input type="checkbox" name="enabled-switcher" 
 															data-class="switcher-primary" role="switcher" 
-															data-bind="checked:page.enabled" >
+															data-bind="events:{change:onChange}" >
 														<div class="note">간략하게 페이지를 기술하세요.</div>
 													</section>													
 												</fieldset>
