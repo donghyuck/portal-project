@@ -299,19 +299,21 @@
 					setSource : function(source){
 						var $this = this;
 						source.copy($this.page);	
+						$this.set("enabled", $this.page.enabled );
+						$this.set("editable", $this.page.webPageId > 0 ? true : false );
 						
 						console.log("source:" + common.ui.stringify(source) );
 						console.log("new:" + common.ui.stringify($this.page) );
-						console.log( source.enabled + "/" + $this.page.enabled ); 
+						console.log( source.enabled + "/" + $this.page.enabled + "/" + $this.get('enabled')); 
 						
-						$this.set("editable", $this.page.webPageId > 0 ? true : false );		
+								
 						if( !$this.editable ){
 							$this.page.set("template", "");				
 						}						
 						$this.set("fileContent", "");
 						
 						
-						$this.set("enabled", $this.page.enabled );
+						
 								
 						switchery.bindClick();
 						/*if( switcheryRenderTo.checked != $this.page.enabled ){
