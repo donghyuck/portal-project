@@ -289,7 +289,7 @@
 				var switcheryRenderTo = renderTo.find("input[name='enabled-switcher']")[0];
 				var switchery = new Switchery(switcheryRenderTo);
 				var observable =  common.ui.observable({
-					page : new common.ui.data.WebPage(),
+					page: new common.ui.data.WebPage(),
 					fileContent : "",
 					enabled:false,
 					editable:false,
@@ -297,20 +297,20 @@
 						var $this = this;
 					},
 					setSource : function(source){
-						var $this = this;
-						source.copy($this.page);	
-						$this.set('enabled', $this.page.enabled );
-						$this.set("editable", $this.page.webPageId > 0 ? true : false );
+						var $that = this;
+						source.copy($that.page);	
+						$that.set('enabled', $that.page.enabled );
+						$that.set("editable", $that.page.webPageId > 0 ? true : false );
 						
 						console.log("source:" + common.ui.stringify(source) );
-						console.log("new:" + common.ui.stringify($this.page) );
-						console.log( source.enabled + "/" + $this.page.enabled + "/" + $this.get('enabled')); 
+						console.log("new:" + common.ui.stringify($that.page) );
+						console.log( source.enabled + "/" + $that.page.enabled + "/" + $that.get('enabled')); 
 						
 								
-						if( !$this.editable ){
-							$this.page.set("template", "");				
+						if( !$that.editable ){
+							$that.page.set("template", "");				
 						}						
-						$this.set("fileContent", "");
+						$that.set("fileContent", "");
 						
 						
 						
