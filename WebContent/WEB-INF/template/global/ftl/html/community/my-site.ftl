@@ -295,7 +295,7 @@
 					editable:false,
 					onChange : function(){ 
 						var $this = this;
-						
+						console.log(switcheryRenderTo.checked);
 					},
 					setSource : function(source){
 						var $that = this;
