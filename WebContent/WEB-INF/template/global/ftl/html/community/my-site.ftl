@@ -302,11 +302,15 @@
 						
 						console.log("source:" + common.ui.stringify(source) );
 						console.log("new:" + common.ui.stringify($this.page) );
+						console.log( source.enabled + "/" + $this.page.enabled ); 
+						
 						$this.set("editable", $this.page.webPageId > 0 ? true : false );		
 						if( !$this.editable ){
 							$this.page.set("template", "");				
 						}						
 						$this.set("fileContent", "");
+						
+						
 						$this.set("enabled", $this.page.enabled );
 								
 						switchery.bindClick();
