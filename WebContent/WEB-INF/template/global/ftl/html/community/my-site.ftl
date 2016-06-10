@@ -294,35 +294,20 @@
 					editable:false,
 					onChange : function(){ 
 						var $this = this;
+						console.log($this.page.enabled);
 					},
 					setSource : function(source){
 						var $that = this;
 						source.copy($that.page);	
-						$that.set("editable", $that.page.webPageId > 0 ? true : false );
-						
+						$that.set("editable", $that.page.webPageId > 0 ? true : false );						
 						console.log("source:" + common.ui.stringify(source) );
 						console.log("new:" + common.ui.stringify($that.page) );
 						console.log( source.enabled + "/" + $that.page.enabled ); 
-						
-								
 						if( !$that.editable ){
 							$that.page.set("template", "");				
 						}						
 						$that.set("fileContent", "");
-						
-						
 						switchery.setPosition();
-						
-						//var switchery = new Switchery(switcheryRenderTo);
-						
-						//console.log( switchery.markedAsSwitched() );
-						
-						//switcheryRenderTo.checked = $that.page.enabled;		
-						//switchery.bindClick();
-						
-						/*if( switcheryRenderTo.checked != $this.page.enabled ){
-							switcheryRenderTo.click();
-						}*/													
 					},
 					openTemplateFinder: function(e){
 						createTemplateFinderModal();					
@@ -1424,11 +1409,10 @@
 														<div class="note">간략하게 페이지를 기술하세요.</div>
 													</section>
 													<section>
-														<h2 class="label">페이지 사용 여부 <span data-bind="text:page.enabled"></span></h2>
+														<h2 class="label">페이지 사용 여부</h2>
 														<input type="checkbox" name="enabled-switcher" 
 															data-class="switcher-primary" role="switcher" 
-															data-bind="checked:page.enabled" >
-														<div class="note">간략하게 페이지를 기술하세요.</div>
+															data-bind="checked:page.enabled" >														
 													</section>													
 												</fieldset>
 												<footer class="text-right">
