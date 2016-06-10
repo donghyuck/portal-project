@@ -313,7 +313,7 @@
 						}						
 						$that.set("fileContent", "");
 						switcheryRenderTo.checked = $that.page.enabled;		
-						switchery.bindClick();
+						//switchery.bindClick();
 						
 						/*if( switcheryRenderTo.checked != $this.page.enabled ){
 							switcheryRenderTo.click();
