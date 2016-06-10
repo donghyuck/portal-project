@@ -264,8 +264,7 @@
 				renderTo.on("click","[data-action=edit],[data-action=create]", function(e){	
 					var $this = $(this);	
 					var objectId = $this.data("object-id");		
-					var newWebPage ;	
-									
+					var newWebPage ;
 					if( objectId > 0){
 						newWebPage = common.ui.grid(renderTo).dataSource.get(objectId);
 					}else{
@@ -381,7 +380,7 @@
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
 			}
-			console.log( common.ui.stringify( source ) );
+			
 			renderTo.data("model").setSource( source );	
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 	
