@@ -287,7 +287,7 @@
 			var renderTo = $("#my-site-web-page-view");
 			if(!renderTo.data("model")){
 				var switcheryRenderTo = renderTo.find("input[name='enabled-switcher']")[0];
-				var switchery = new Switchery(switcheryRenderTo);
+				//var switchery = new Switchery(switcheryRenderTo);
 				var observable =  common.ui.observable({
 					page: new common.ui.data.WebPage(),
 					fileContent : "",
@@ -310,7 +310,9 @@
 						}						
 						$that.set("fileContent", "");
 						
-						console.log( switchery.markedAsSwitched() );
+						var switchery = new Switchery(switcheryRenderTo);
+						
+						//console.log( switchery.markedAsSwitched() );
 						
 						//switcheryRenderTo.checked = $that.page.enabled;		
 						//switchery.bindClick();
