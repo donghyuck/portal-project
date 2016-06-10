@@ -299,7 +299,7 @@
 					setSource : function(source){
 						var $this = this;
 						source.copy($this.page);	
-						$this.set("enabled", $this.page.enabled );
+						$this.set('enabled', $this.page.enabled );
 						$this.set("editable", $this.page.webPageId > 0 ? true : false );
 						
 						console.log("source:" + common.ui.stringify(source) );
