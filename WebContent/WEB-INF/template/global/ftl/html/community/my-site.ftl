@@ -1415,6 +1415,7 @@
 															data-bind="checked:page.enabled, events:{change:onChange}" >														
 													</section>													
 												</fieldset>
+												마지막 수정일 : <span data-bind="text:page.formattedModifiedDate"></span>
 												<footer class="text-right">
 													<button type="submit" class="btn btn-flat btn-primary" data-bind="click:saveOrUpdate">저 장</button>
 													<button type="button" class="btn btn-flat btn-default btn-outline" data-bind="click:close">취 소</button>
