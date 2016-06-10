@@ -40,17 +40,17 @@
 	var WebPage =  kendo.data.Model.define({
 		id : "webPageId",
 		fields: { 
-			webPageId: { type: "number", defaultValue: 0 },	
-			webSiteId: { type: "number", defaultValue: 0 },	
-			name: { type: "string", defaultValue: "" },
-			displayName: { type: "string", defaultValue: "." },
-			contentType: { type: "string", defaultValue: "text/html;charset=UTF-8" },
-			description: { type: "string" },
-			template: { type: "string" },
-			locale: { type: "string" },
-			enabled : { type: "boolean", defaultValue: false },
-			creationDate: { type: "date"},
-			modifiedDate: { type: "date"}
+			webPageId: { type:"number", defaultValue:0 },	
+			webSiteId: { type:"number", defaultValue:0 },	
+			name: { type: "string", defaultValue:"" },
+			displayName: { type:"string", defaultValue:"." },
+			contentType: { type:"string", defaultValue:"text/html;charset=UTF-8" },
+			description: { type:"string" },
+			template: { type:"string" },
+			locale: { type:"string" },
+			enabled : { type:"boolean", defaultValue:false, editable:true },
+			creationDate: { type:"date"},
+			modifiedDate: { type:"date"}
 		},
 	    formattedCreationDate: function(){
 	    	return kendo.toString(this.get("creationDate"), "g");
