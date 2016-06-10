@@ -1436,7 +1436,6 @@
 												data-bind="source:propertyDataSource"
 												style="height: 200px"></div>
 												
-												
 												<div class="text-right note padding-sm">
 												마지막 수정일 : <span data-bind="text:page.formattedModifiedDate">
 												</span>
