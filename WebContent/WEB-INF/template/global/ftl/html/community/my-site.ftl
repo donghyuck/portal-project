@@ -296,10 +296,19 @@
 						var $this = this;
 						console.log($this.page.enabled);
 					},
+					propertyDataSource :new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
 					setSource : function(source){
 						var $that = this;
 						source.copy($that.page);	
-						$that.set("editable", $that.page.webPageId > 0 ? true : false );						
+						$that.set("editable", $that.page.webPageId > 0 ? true : false );	
+						$that.propertyDataSource.data($that.page.properties);	
+											
 						console.log("source:" + common.ui.stringify(source) );
 						console.log("new:" + common.ui.stringify($that.page) );
 						console.log( source.enabled + "/" + $that.page.enabled ); 
@@ -1415,8 +1424,22 @@
 															data-bind="checked:page.enabled, events:{change:onChange}" >														
 													</section>													
 												</fieldset>
+												
+												<div data-role="grid"
+												class="no-border"
+												data-scrollable="true"
+												data-editable="false"
+												data-toolbar="['create', 'cancel']"
+												data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},
+													   		{ 'field': 'value', 'title':'값' },
+													    	{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+												data-bind="source:propertyDataSource"
+												style="height: 200px"></div>
+												
+												
 												<div class="text-right note padding-sm">
-												마지막 수정일 : <span data-bind="text:page.formattedModifiedDate"></span>
+												마지막 수정일 : <span data-bind="text:page.formattedModifiedDate">
+												</span>
 												</div>
 												<footer class="text-right">
 													<button type="submit" class="btn btn-flat btn-primary" data-bind="click:saveOrUpdate">저 장</button>

@@ -49,6 +49,7 @@
 			template: { type:"string" },
 			locale: { type:"string" },
 			enabled : { type:"boolean", defaultValue:false, editable:true },
+			properties : { type: "object", editable: true, defaultValue:[]},  
 			creationDate: { type:"date"},
 			modifiedDate: { type:"date"}
 		},
