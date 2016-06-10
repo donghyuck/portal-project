@@ -291,28 +291,28 @@
 				var observable =  common.ui.observable({
 					page: new common.ui.data.WebPage(),
 					fileContent : "",
-					enabled:false,
 					editable:false,
 					onChange : function(){ 
 						var $this = this;
-						console.log(switcheryRenderTo.checked);
 					},
 					setSource : function(source){
 						var $that = this;
 						source.copy($that.page);	
-						$that.set('enabled', $that.page.enabled );
 						$that.set("editable", $that.page.webPageId > 0 ? true : false );
 						
 						console.log("source:" + common.ui.stringify(source) );
 						console.log("new:" + common.ui.stringify($that.page) );
-						console.log( source.enabled + "/" + $that.page.enabled + "/" + $that.get('enabled')); 
+						console.log( source.enabled + "/" + $that.page.enabled ); 
 						
 								
 						if( !$that.editable ){
 							$that.page.set("template", "");				
 						}						
 						$that.set("fileContent", "");
-						switcheryRenderTo.checked = $that.page.enabled;		
+						
+						console.log( switchery.markedAsSwitched() );
+						
+						//switcheryRenderTo.checked = $that.page.enabled;		
 						//switchery.bindClick();
 						
 						/*if( switcheryRenderTo.checked != $this.page.enabled ){
@@ -1419,10 +1419,10 @@
 														<div class="note">간략하게 페이지를 기술하세요.</div>
 													</section>
 													<section>
-														<h2 class="label">페이지 사용 여부 <span data-bind="text:enabled"></span> / <span data-bind="text:page.enabled"></span></h2>
+														<h2 class="label">페이지 사용 여부 <span data-bind="text:page.enabled"></span></h2>
 														<input type="checkbox" name="enabled-switcher" 
 															data-class="switcher-primary" role="switcher" 
-															data-bind="events:{change:onChange}" >
+															data-bind="checked:page.enabled" >
 														<div class="note">간략하게 페이지를 기술하세요.</div>
 													</section>													
 												</fieldset>
