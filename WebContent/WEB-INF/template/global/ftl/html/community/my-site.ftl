@@ -1412,7 +1412,7 @@
 														<h2 class="label">페이지 사용 여부</h2>
 														<input type="checkbox" name="enabled-switcher" 
 															data-class="switcher-primary" role="switcher" 
-															data-bind="checked:page.enabled" >														
+															data-bind="checked:page.enabled, events:{change:onChange}" >														
 													</section>													
 												</fieldset>
 												<footer class="text-right">
