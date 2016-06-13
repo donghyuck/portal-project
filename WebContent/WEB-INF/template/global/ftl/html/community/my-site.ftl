@@ -1451,12 +1451,7 @@
 															<div class="note">로케일 코드 값을 입력하세요. 예) en, ko_KR.</div>
 														</section>
 													</div>		
-													<div class="row">
-														<section class="col col-6">
-															<h2 class="label">매뉴									
-																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
-															</h2>												
-														</section>
+													<div class="row">														
 														<section class="col col-6">
 															<h2 class="label">템플릿									
 																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openTemplateFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
@@ -1465,6 +1460,11 @@
 																<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
 															</label>
 															<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>							
+														</section>
+														<section class="col col-6">
+															<h2 class="label">매뉴									
+																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
+															</h2>												
 														</section>
 													</div>								
 												</fieldset>
@@ -1493,7 +1493,7 @@
 															data-toggle="collapse" 
 															href="#my-site-web-page-view-options" aria-expanded="false" aria-controls=""my-site-web-page-view-options"> 고급옵션 </a>	
 															
-														<div class="collapse" id="collapseExample">
+														<div class="collapse" id="my-site-web-page-view-options">
 														  <div data-role="grid"
 															class="no-border"
 														    data-scrollable="true"
