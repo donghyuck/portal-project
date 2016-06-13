@@ -782,23 +782,7 @@
 			</div>
 		</div> <!-- / #main-wrapper -->
 		<div id="preview-window"></div>
-		<div id="my-template-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
-			<div class="modal-dialog">	
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">템플릿 선택</h4>
-					</div>					
-					<div class="modal-body">
-						<div class="template-tree"></div>
-					</div>
-					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat btn-sm" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
-						<button type="button" class="btn btn-default btn-flat btn-sm" data-dismiss="modal">닫기</button>
-					</div>					
-				</div>
-			</div>
-		</div>
+		<script id="my-menu-select-modal-template" type="text/kendo-ui-template">
 		<div id="my-menu-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
 			<div class="modal-dialog">	
 				<div class="modal-content">
@@ -817,7 +801,25 @@
 			</div>
 		</div>
         </script>			
-	
+		<script id="my-template-select-modal-template" type="text/kendo-ui-template">
+		<div id="my-template-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog">	
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">템플릿 선택</h4>
+					</div>					
+					<div class="modal-body">
+						<div class="template-tree"></div>
+					</div>
+					<div class="modal-footer">					
+						<button type="button" class="btn btn-primary btn-flat btn-sm" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
+						<button type="button" class="btn btn-default btn-flat btn-sm" data-dismiss="modal">닫기</button>
+					</div>					
+				</div>
+			</div>
+		</div>
+		</script>	
 		<script id="menu-treeview-template" type="text/kendo-ui-template">
 			#if(item.progenitor){#
 			<i class="fa fa-bars"></i>	 #: item.title # <span class="text-muted">#:item.name#</span>		

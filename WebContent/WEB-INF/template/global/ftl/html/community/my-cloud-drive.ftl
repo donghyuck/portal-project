@@ -67,7 +67,8 @@
 						renderTo:$(".interactive-slider-v2")
 					},
 					jobs:jobs
-				});				
+				});	
+							
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
 																															

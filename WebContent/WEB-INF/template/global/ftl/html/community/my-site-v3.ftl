@@ -937,7 +937,8 @@
 									
 									<div id="my-page-view" style="display:none;">	
 										<span class="hidden-lg  m-t-sm" ></span>				
-										<span class="back"></span>
+										<span class="back" style="position:relative;"></span>
+										
 										<form action="" class="sky-form" novalidate="novalidate">
 											<header class="text-right"><span class="badge badge-dark rounded" data-bind="text:page.pageState"></span></header>
 											<fieldset>											
