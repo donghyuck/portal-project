@@ -1390,10 +1390,7 @@
 														<section class="col col-6">
 															<h2 class="label">매뉴									
 																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
-															</h2>	
-															<label class="input">
-																<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
-															</label>												
+															</h2>												
 														</section>
 														<section class="col col-6">
 															<h2 class="label">템플릿									
