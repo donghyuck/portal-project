@@ -248,7 +248,7 @@
                             	operator: "contains"
                          	}
                         }},
-                        { title: "사용여부", field: "enabled",  width:80 }
+                        { title: "사용여부", field: "enabled",  width:80 },
 						{ title: "", width:80, filterable:{ cell: { enabled: false } }, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="edit" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 페이지 추가 </button></div>'),
