@@ -1497,6 +1497,9 @@
 														  <h2 class="label">매뉴									
 																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
 														  </h2>
+														  <h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">메뉴 설정</h6>
+														  
+														  <h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">속성</h6>
 														  <div data-role="grid"
 															class="no-border"
 														    data-scrollable="true"
