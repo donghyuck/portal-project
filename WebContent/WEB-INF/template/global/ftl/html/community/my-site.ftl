@@ -1494,6 +1494,9 @@
 															href="#my-site-web-page-view-options" aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급옵션 </a>	
 															
 														<div class="collapse" id="my-site-web-page-view-options">
+														  <h2 class="label">매뉴									
+																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
+														  </h2>
 														  <div data-role="grid"
 															class="no-border"
 														    data-scrollable="true"
