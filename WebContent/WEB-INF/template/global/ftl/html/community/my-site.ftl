@@ -241,7 +241,7 @@
                     	mode: "row"
                     },
 					columns: [{ title: "페이지", field: "name", 
-						template : ' #:name # #if(enabled){# <i class="fa fa-toggle-on" aria-hidden="true"></i> #}else{# <i class="fa fa-toggle-off" aria-hidden="true"></i> #}#',
+						template : ' #:name # #if(enabled){# <i class="fa fa-toggle-on text-green" aria-hidden="true"></i> #}else{# <i class="fa fa-toggle-off" aria-hidden="true"></i> #}#',
 						filterable: {
 							cell: {
                         		enabled: true,
