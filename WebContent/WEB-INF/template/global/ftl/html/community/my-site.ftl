@@ -311,6 +311,9 @@
 						$that.set("fileContent", "");
 						switchery.setPosition();
 					},
+					openMenuFinder: function(e){
+						createMenuFinderModal(this);					
+					},
 					openTemplateFinder: function(e){
 						createTemplateFinderModal();					
 					},
@@ -384,7 +387,7 @@
 		}
 
 		<!-- ============================== -->
-		<!-- TEMPLATE FINDER MODAL			-->
+		<!-- TEMPLATE, MENU FINDER MODAL			-->
 		<!-- ============================== -->
 		function createTemplateFinderModal(){		
 			var renderTo= $("#my-template-finder-modal");
@@ -426,6 +429,53 @@
 			treeRenderTo.data("kendoTreeView").select($());
 			renderTo.modal('show');	
 		}
+
+
+		function createMenuFinderModal(observable){		
+			var renderTo= $("#my-menu-finder-modal");
+			var treeRenderTo = renderTo.find(".menu-tree");
+			if( !common.ui.exists( treeRenderTo ) ){				
+				var treeview = treeRenderTo.kendoTreeView({
+					dataSource: new kendo.data.HierarchicalDataSource({						
+						transport: {
+							read: {
+								url : '<@spring.url "/secure/data/mgmt/website/navigator/items/list.json?output=json"/>',
+								dataType: "json"
+							}
+						},
+						schema: {		
+							model: {
+								id: "name",
+								hasChildren: "child"
+							}
+						}	
+					}),
+					template: kendo.template($("#treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {				
+					}
+				}).data('kendoTreeView');	
+				renderTo.find("[data-action=select]").click(function(e){
+					var selectedCells = treeview.select();			
+					var selectedCell = treeview.dataItem( selectedCells );
+					if(  selectedCell.progenitor  ){
+						alert("메뉴 아이템을 선택하여 주십시오.");
+						return;
+					}else{						
+						observable.page.properties["page.menu.name"] = item.menu ;
+						observable.page.properties["navigator.selected.name"] = item.name ;
+					}		
+					renderTo.modal('hide');				
+				});				
+			}			
+			treeRenderTo.data("kendoTreeView").select($());
+			renderTo.modal('show');	
+		}
+
+
+
+
+
 
 		<!-- ============================== -->
 		<!-- TEMPLATE EDITOR		        -->
@@ -1474,7 +1524,24 @@
 				</div>
 			</div>	
 		</div>
-		
+		<div id="my-menu-finder-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-menu-finder-modal-label">
+			<div class="modal-dialog"  role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+						<h4 class="modal-title" id="my-menu-finder-modal-label" >메뉴를 선택합니다.</h4>
+					</div>					
+					<div class="modal-body">
+						<div class="menu-tree"></div>
+					</div>
+					<div class="modal-footer">					
+						<button type="button" class="btn btn-primary btn-flat" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'> 선택</button>					
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+					</div>					
+				</div>
+			</div>	
+		</div>
+				
 		<div id="my-site-menu-editor" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">			
