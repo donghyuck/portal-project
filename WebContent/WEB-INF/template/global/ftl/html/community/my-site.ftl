@@ -309,8 +309,8 @@
 						source.copy($that.page);	
 						$that.set("editable", $that.page.webPageId > 0 ? true : false );	
 											
-						$this.propertyDataSource.read();				
-						$this.propertyDataSource.data($this.page.properties);	
+						$that.propertyDataSource.read();				
+						$that.propertyDataSource.data($that.page.properties);	
 											
 						console.log("source:" + common.ui.stringify(source) );
 						console.log("new:" + common.ui.stringify($that.page) );
