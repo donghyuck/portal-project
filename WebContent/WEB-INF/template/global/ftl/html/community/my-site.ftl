@@ -293,6 +293,13 @@
 					page: new common.ui.data.WebPage(),
 					fileContent : "",
 					editable:false,
+					propertyDataSource :new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
 					onChange : function(){ 
 						var $this = this;
 						console.log($this.page.enabled);
@@ -301,6 +308,9 @@
 						var $that = this;
 						source.copy($that.page);	
 						$that.set("editable", $that.page.webPageId > 0 ? true : false );	
+											
+						$this.propertyDataSource.read();				
+						$this.propertyDataSource.data($this.page.properties);	
 											
 						console.log("source:" + common.ui.stringify(source) );
 						console.log("new:" + common.ui.stringify($that.page) );
@@ -1480,7 +1490,15 @@
 													</section>													
 												</fieldset>
 		
-												
+												<div data-role="grid"
+														class="no-border"
+													    data-scrollable="true"
+													    data-editable="true"
+													    data-toolbar="['create', 'cancel']"
+													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+													    data-bind="source:propertyDataSource, visible:editable"
+													    style="height: 300px"></div>
+													    
 												<div class="text-right note padding-sm">
 												마지막 수정일 : <span data-bind="text:page.formattedModifiedDate">
 												</span>
