@@ -1489,12 +1489,12 @@
 													<div class="collapse" id="my-site-web-page-view-options">
 													<section>
 														  <h2 class="label">매뉴설정</h2>	
-														  <div class="note">검색 버튼을 클릭하여 관련 메뉴를 선택하여 주세요.</div>
+														  <div class="note m-b-md">검색 버튼을 클릭하여 관련 메뉴를 선택하여 주세요.</div>
 														  <button type="button" class="btn btn-xs btn-labeled btn-success rounded" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>	
 													</section>
 													<section>	  													  
 														  <h2 class="label">속성</h2>
-														  <div class="note">고급 사용자가 아니면 직접 수정하지 마세요.</div>
+														  <div class="note m-b-md">고급 사용자가 아니면 직접 수정하지 마세요.</div>
 														  <div data-role="grid"
 															class="no-border"
 														    data-scrollable="true"
