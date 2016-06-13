@@ -1461,11 +1461,7 @@
 															</label>
 															<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>							
 														</section>
-														<section class="col col-6">
-															<h2 class="label">매뉴									
-																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
-															</h2>												
-														</section>
+														<section class="col col-6"></section>
 													</div>								
 												</fieldset>
 												<fieldset>
@@ -1487,13 +1483,16 @@
 														<input type="checkbox" name="enabled-switcher" 
 															data-class="switcher-primary" role="switcher" 
 															data-bind="checked:page.enabled, events:{change:onChange}" >														
-													</section>		
+													</section>	
+												</fieldset>		
+												<fieldset>	
+													<div class="collapse" id="my-site-web-page-view-options">
 													<section>
-														<div class="collapse" id="my-site-web-page-view-options">
 														  <h2 class="label">매뉴설정</h2>	
 														  <div class="note">검색 버튼을 클릭하여 관련 메뉴를 선택하여 주세요.</div>
 														  <button type="button" class="btn btn-xs btn-labeled btn-success rounded" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>	
-														  													  
+													</section>
+													<section>	  													  
 														  <h2 class="label">속성</h2>
 														  <div class="note">고급 사용자가 아니면 직접 수정하지 마세요.</div>
 														  <div data-role="grid"
@@ -1503,24 +1502,16 @@
 														    data-toolbar="['create', 'cancel']"
 														    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 														    data-bind="source:propertyDataSource, visible:editable"
-														    style="min-height:300px"></div>
-														</div>		
-															
-														<hr/>
-														
-														<a class="btn btn-outline rounded" role="button" 
+														    style="min-height:300px"></div>																								
+													</section>	
+													</div>
+													<a class="btn btn-outline rounded" role="button" 
 															data-toggle="collapse" 
-															href="#my-site-web-page-view-options" aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급설정 </a>												
-													</section>
-																								
-												</fieldset>
-		
-												
-													    
-												<div class="text-right note padding-sm">
-												마지막 수정일 : <span data-bind="text:page.formattedModifiedDate">
-												</span>
-												</div>
+															href="#my-site-web-page-view-options" aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급설정 </a>
+													<div class="text-right note padding-sm">													
+														마지막 수정일 : <span data-bind="text:page.formattedModifiedDate"></span>
+													</div>							
+												</fieldset>												
 												<footer class="text-right">
 													<button type="submit" class="btn btn-flat btn-primary" data-bind="click:saveOrUpdate">저 장</button>
 													<button type="button" class="btn btn-flat btn-default btn-outline" data-bind="click:close">취 소</button>
