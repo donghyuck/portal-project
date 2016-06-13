@@ -1489,9 +1489,9 @@
 															data-bind="checked:page.enabled, events:{change:onChange}" >														
 													</section>		
 													<section>
-														<a class="btn btn-primary" role="button" 
+														<button class="btn btn-outline" role="button" 
 															data-toggle="collapse" 
-															href="#my-site-web-page-view-options" aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급옵션 </a>	
+															data-target="#my-site-web-page-view-options" aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급옵션 </a>	
 															
 														<div class="collapse" id="my-site-web-page-view-options">
 														  <div data-role="grid"
