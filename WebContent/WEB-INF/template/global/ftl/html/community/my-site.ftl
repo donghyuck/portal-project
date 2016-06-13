@@ -1378,7 +1378,7 @@
 														</section>
 														<section class="col col-6">
 															<h2 class="label">로케일
-																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right disabled"><span class="btn-label icon fa fa fa-flag"></span> 검색</button>
+																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right disabled"><span class="btn-label icon fa fa fa-search"></span> 검색</button>
 															</h2>
 															<label class="input">
 																<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
@@ -1388,7 +1388,7 @@
 													</div>		
 													<section>
 														<h2 class="label">템플릿									
-															<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openTemplateFinder" ><span class="btn-label icon fa fa-file-code-o"></span> 검색</button>									
+															<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openTemplateFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
 														</h2>	
 														<label class="input">
 															<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
