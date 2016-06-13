@@ -397,8 +397,18 @@
 					dataSource: new kendo.data.HierarchicalDataSource({						
 						transport: {
 							read: {
-								url : '<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>',
+								url : '<@spring.url "/secure/data/mgmt/website/navigator/items/list.json?output=json"/>',
 								dataType: "json"
+							},
+							parameterMap: function (options, type){
+								//options.siteId = getSelectedSite().webSiteId ;
+								if( options.name )
+								{
+									var item = treeRenderTo.data("kendoTreeView").dataSource.get( options.name );
+									return {siteId: getSelectedSite().webSiteId, menu:item.menu, item:item.name, progenitor: item.progenitor  };
+								}else{
+									return {siteId: getSelectedSite().webSiteId };
+								}
 							}
 						},
 						schema: {		
@@ -439,7 +449,7 @@
 					dataSource: new kendo.data.HierarchicalDataSource({						
 						transport: {
 							read: {
-								url : '<@spring.url "/secure/data/mgmt/website/navigator/items/list.json?output=json"/>',
+								url : '<@spring.url "/secure/data/mgmt/navigator/items/list.json?output=json"/>',
 								dataType: "json"
 							}
 						},
