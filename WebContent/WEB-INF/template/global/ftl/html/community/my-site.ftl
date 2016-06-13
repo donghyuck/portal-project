@@ -1489,7 +1489,6 @@
 															data-bind="checked:page.enabled, events:{change:onChange}" >														
 													</section>		
 													<section>
-														
 															
 														<div class="collapse" id="my-site-web-page-view-options">
 														  <h2 class="label">매뉴									
