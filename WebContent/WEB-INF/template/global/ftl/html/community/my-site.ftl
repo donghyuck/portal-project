@@ -1489,17 +1489,14 @@
 															data-bind="checked:page.enabled, events:{change:onChange}" >														
 													</section>		
 													<section>
-														<a class="btn btn-outline rounded" role="button" 
-															data-toggle="collapse" 
-															href="#my-site-web-page-view-options" aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급옵션 </a>	
+														
 															
 														<div class="collapse" id="my-site-web-page-view-options">
 														  <h2 class="label">매뉴									
-																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
+																<button type="button" class="btn btn-xs btn-labeled btn-success rounded" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
 														  </h2>
-														  <h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">메뉴 설정</h6>
 														  
-														  <h6 class="text-light-gray text-semibold text-xs" style="margin: 10px 0 5px 0;">속성</h6>
+														  <h2 class="label">속성</h2>
 														  <div data-role="grid"
 															class="no-border"
 														    data-scrollable="true"
@@ -1508,7 +1505,11 @@
 														    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 														    data-bind="source:propertyDataSource, visible:editable"
 														    style="min-height:300px"></div>
-														</div>														
+														</div>			
+														<hr/>
+														<a class="btn btn-outline rounded" role="button" 
+															data-toggle="collapse" 
+															href="#my-site-web-page-view-options" aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급설정 </a>												
 													</section>
 																								
 												</fieldset>
