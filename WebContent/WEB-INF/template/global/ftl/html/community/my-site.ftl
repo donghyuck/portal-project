@@ -1487,17 +1487,27 @@
 														<input type="checkbox" name="enabled-switcher" 
 															data-class="switcher-primary" role="switcher" 
 															data-bind="checked:page.enabled, events:{change:onChange}" >														
-													</section>													
+													</section>		
+													<section>
+														<a class="btn btn-primary" role="button" 
+															data-toggle="collapse" 
+															href="#my-site-web-page-view-options" aria-expanded="false" aria-controls=""my-site-web-page-view-options"> 고급옵션 </a>	
+															
+														<div class="collapse" id="collapseExample">
+														  <div data-role="grid"
+															class="no-border"
+														    data-scrollable="true"
+														    data-editable="true"
+														    data-toolbar="['create', 'cancel']"
+														    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+														    data-bind="source:propertyDataSource, visible:editable"
+														    style="min-height:300px"></div>
+														</div>														
+													</section>
+																								
 												</fieldset>
 		
-												<div data-role="grid"
-														class="no-border"
-													    data-scrollable="true"
-													    data-editable="true"
-													    data-toolbar="['create', 'cancel']"
-													    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
-													    data-bind="source:propertyDataSource, visible:editable"
-													    style="height: 300px"></div>
+												
 													    
 												<div class="text-right note padding-sm">
 												마지막 수정일 : <span data-bind="text:page.formattedModifiedDate">
