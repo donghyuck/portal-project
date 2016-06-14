@@ -262,6 +262,12 @@
 					dataBound: function(e) {
 					}	
 				});	
+				
+				$("#my-site-page .search-block-v2 input").change(function(e){
+					var $this = $(this);
+					console.log($this.val());	
+				});
+				
 				renderTo.on("click","[data-action=edit],[data-action=create]", function(e){	
 					var $this = $(this);	
 					var objectId = $this.data("object-id");		
