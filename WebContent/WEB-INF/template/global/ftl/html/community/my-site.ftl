@@ -252,7 +252,7 @@
 					},
 					dataBound: function(e) {
 						var $this = this;
-						if( $("#my-site-page .search-block-v2 input").length > 0 ){
+						if( $("#my-site-page .search-block-v2 input").val().length > 0 ){
 							common.ui.notification().show({ title:null, message:  $this.dataSource.total() + "건이 조회되었습니다."	},"success");	
 						}
 					}	
