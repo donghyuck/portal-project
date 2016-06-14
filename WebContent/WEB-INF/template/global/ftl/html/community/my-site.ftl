@@ -217,7 +217,7 @@
 		function createWebPageGrid(){
 			var renderTo = $("#my-site-web-page-grid");	
 			if(! common.ui.exists(renderTo) ){			
-				common.ui.grid(renderTo, {
+				var grid = common.ui.grid(renderTo, {
 					autoBind : false,
 					dataSource: {
 						transport: { 
@@ -237,19 +237,17 @@
 							model: common.ui.data.WebPage
 						}
 					},
-					filterable: {
-                    	mode: "row"
-                    },
+					filterable: false,
 					columns: [{ title: "페이지", field: "name", 
 						template : ' #:name # #if(enabled){# <i class="fa fa-toggle-on text-green" aria-hidden="true"></i> #}else{# <i class="fa fa-toggle-off" aria-hidden="true"></i> #}#',
-						filterable: {
+						/*filterable: {
 							cell: {
                         		enabled: true,
                         		showOperators: false,
                             	operator: "contains"
                          	}
-                        }},
-						{ title: "", width:80, filterable:{ cell: { enabled: false } }, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="edit" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
+                        }},*/
+						{ title: "", width:80, /*filterable:{ cell: { enabled: false } },*/ template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="edit" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 페이지 추가 </button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },	
@@ -262,10 +260,16 @@
 					dataBound: function(e) {
 					}	
 				});	
-				
+
+				// searching 				
 				$("#my-site-page .search-block-v2 input").change(function(e){
-					var $this = $(this);
+					var $this = $(this);					
 					console.log($this.val());	
+					if( $this.val().langth == 0 ){
+						common.ui.grid(renderTo).dataSource.filter([]);
+					}else{
+						common.ui.grid(renderTo).dataSource.filter({ field: "name", operator: "contains", value: $this.val()}) ; 
+					}
 				});
 				
 				renderTo.on("click","[data-action=edit],[data-action=create]", function(e){	
