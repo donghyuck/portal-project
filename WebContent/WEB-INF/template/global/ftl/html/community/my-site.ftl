@@ -396,6 +396,10 @@
 				});	
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
+				
+				$("#my-site-web-page-view-options-btn").on('show.bs.collapse', function () {
+					console.log($(this).text());
+				});
 			}
 			
 			renderTo.data("model").setSource( source );	
@@ -1526,9 +1530,12 @@
 														    style="min-height:300px"></div>																								
 													</section>	
 													</div>
-													<a class="btn btn-outline rounded" role="button" 
-															data-toggle="collapse" 
-															href="#my-site-web-page-view-options" aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급설정 </a>
+													<a id="my-site-web-page-view-options-btn"
+														class="btn btn-outline rounded" 
+														role="button" 
+														data-toggle="collapse" 
+														href="#my-site-web-page-view-options" 
+														aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급설정 </a>
 													<div class="text-right note padding-sm">													
 														마지막 수정일 : <span data-bind="text:page.formattedModifiedDate"></span>
 													</div>							
