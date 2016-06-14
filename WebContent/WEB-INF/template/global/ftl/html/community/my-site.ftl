@@ -1530,8 +1530,7 @@
 														    style="min-height:300px"></div>																								
 													</section>	
 													</div>
-													<a id="my-site-web-page-view-options-btn"
-														class="btn btn-outline rounded" 
+													<a id="my-site-web-page-view-options-btn" class="btn btn-outline rounded" 
 														role="button" 
 														data-toggle="collapse" 
 														href="#my-site-web-page-view-options" 
