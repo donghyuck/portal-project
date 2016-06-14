@@ -259,7 +259,7 @@
 				});	
 
 				// searching 				
-				$("#my-site-page .search-block-v2 input").change(function(e){
+				$("#my-site-web-page-list .search-block-v2 input").change(function(e){
 					var $this = $(this);					
 					console.log($this.val());	
 					if( $this.val().langth == 0 ){
@@ -280,7 +280,7 @@
 						newWebPage.set("webSiteId", getSelectedSite().webSiteId);
 						newWebPage.set("properties", {});
 					}					
-					renderTo.fadeOut(function(e){ 
+					$('#my-site-web-page-list').fadeOut(function(e){ 
 						createWebPageEditor( newWebPage );
 					});	
 				});		
@@ -359,7 +359,7 @@
 					},
 					close:function(){
 						renderTo.fadeOut(function(e){ 
-							$("#my-site-web-page-grid").fadeIn();
+							$("#my-site-web-page-list").fadeIn();
 						});
 					},
 					saveOrUpdate : function(e){ 
@@ -1417,7 +1417,8 @@
 						<div class="tab-content">
 							<div class="tab-pane fade" id="my-site-page">
 								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>
-								<div class="search-block-v2">
+								
+								<div id="my-site-web-page-list" class="search-block-v2">
 									<div class="container">
 										<div class="col-md-6 col-md-offset-3">
 											<!--<h2>웹페이지를 검색합니다.</h2>-->
@@ -1429,8 +1430,8 @@
 											</div>
 										</div>
 									</div>
-								</div>	
-								<div id="my-site-web-page-grid" class="no-border"></div>	
+									<div id="my-site-web-page-grid" class="no-border"></div>
+								</div>									
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox page-editor" style="display:none;">
 										<span class="x-close" style="position:relative;" data-bind="click:closeTemplateEditor"></span>
