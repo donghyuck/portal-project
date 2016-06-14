@@ -1412,7 +1412,7 @@
 						</ul>
 						<div class="tab-content">
 							<div class="tab-pane fade" id="my-site-page">
-								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>	
+								<!--<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>-->	
 								<div class="search-block-v2">
 									<div class="container">
 										<div class="col-md-6 col-md-offset-3">
