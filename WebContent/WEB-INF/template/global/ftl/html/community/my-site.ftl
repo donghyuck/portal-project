@@ -397,7 +397,7 @@
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
 				
-				$("#my-site-web-page-view-options-btn").on('show.bs.collapse', function () {
+				$("#my-site-web-page-view-options").on('show.bs.collapse', function () {
 					console.log($(this).html());
 				});
 			}
