@@ -88,41 +88,13 @@
 						renderTo:$(".breadcrumbs-v3")
 					},	
 					jobs:jobs
-				});		
-						
+				});								
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();
 				createSiteListView();
-				
-				
 				/*	
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");
 				*/
-				/**
-				common.ui.buttonGroup($("#personalized-buttons"), {
-					handlers :{
-						"open-menu-editor" : function(e){
-							openMenuEditor();
-						},
-						"open-template-editor" : function(e){
-							openTemplateEditor();
-						}
-					}
-				});
-						
-				$(".wrapper>.container.content:first .nav-tabs a[data-toggle=tab]").on('show.bs.tab', function (e) {
-					e.target // newly activated tab
-					e.relatedTarget // previous active tab					
-					var renderTo = $(e.target);					
-					if( renderTo.attr('href') == '#website-page' ){			
-						createPageSection();
-					}else if ( renderTo.attr('href') == "#website-notice"){
-						createNoticeSection();	
-					}							
-				});
-				
-				$(".wrapper>.container.content:first .nav-tabs a[data-toggle=tab]:first").tab('show');
-				**/		
 				// END SCRIPT 				
 			}
 		}]);	
