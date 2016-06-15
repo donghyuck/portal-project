@@ -218,7 +218,7 @@
 			var renderTo = $("#my-site-web-page-grid");	
 			if(! common.ui.exists(renderTo) ){			
 				var grid = common.ui.grid(renderTo, {
-					autoBind : false,
+					autoBind : true,
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'POST' ,contentType : 'application/json' },
@@ -285,7 +285,7 @@
 					});	
 				});		
 			}
-			common.ui.grid(renderTo).dataSource.read();
+			//common.ui.grid(renderTo).dataSource.read();
 		}
 		
 		<!-- ============================== -->
