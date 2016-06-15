@@ -257,7 +257,6 @@
 					});	
 				});		
 			}
-			//common.ui.grid(renderTo).dataSource.read();
 		}
 		
 		<!-- ============================== -->
@@ -268,6 +267,8 @@
 			if(!renderTo.data("model")){
 				var switcheryRenderTo = renderTo.find("input[name='enabled-switcher']")[0];
 				var switchery = new Switchery(switcheryRenderTo);
+				var collapseOptions = $('#my-site-web-page-view-options') ;
+				
 				var observable =  common.ui.observable({
 					page: new common.ui.data.WebPage(),
 					fileContent : "",
@@ -291,9 +292,8 @@
 						$that.propertyDataSource.read();				
 						$that.propertyDataSource.data($that.page.properties);	
 											
-						console.log("source:" + common.ui.stringify(source) );
-						console.log("new:" + common.ui.stringify($that.page) );
-						console.log( source.enabled + "/" + $that.page.enabled ); 
+						collapseOptions.collapse('hide')
+						
 						if( !$that.editable ){
 							$that.page.set("template", "");				
 						}						
@@ -369,9 +369,12 @@
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
 				
-				$("#my-site-web-page-view-options").on('show.bs.collapse', function () {
-					console.log($(this).html());
+				collapseOptions.on('shown.bs.collapse', function () {
+					$('#my-site-web-page-view-options-btn').text("고급설정 숨기기 .. ");
 				});
+				collapseOptions.on('hidden.bs.collapse', function () {
+					$('#my-site-web-page-view-options-btn').text("고급설정 보기 .. ");
+				});				
 			}
 			
 			renderTo.data("model").setSource( source );	
@@ -380,7 +383,7 @@
 		}
 
 		<!-- ============================== -->
-		<!-- TEMPLATE, MENU FINDER MODAL			-->
+		<!-- TEMPLATE, MENU FINDER MODAL    -->
 		<!-- ============================== -->
 		function createTemplateFinderModal(){		
 			var renderTo= $("#my-template-finder-modal");
@@ -1506,7 +1509,7 @@
 														role="button" 
 														data-toggle="collapse" 
 														href="#my-site-web-page-view-options" 
-														aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급설정 </a>
+														aria-expanded="false" aria-controls="my-site-web-page-view-options"> 고급설정 보기 .. </a>
 													<div class="text-right note padding-sm">													
 														마지막 수정일 : <span data-bind="text:page.formattedModifiedDate"></span>
 													</div>							
