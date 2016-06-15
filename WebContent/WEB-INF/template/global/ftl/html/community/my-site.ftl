@@ -259,7 +259,7 @@
 				});	
 
 				// searching 				
-				$("#my-site-web-page-list .search-block-v2 input").change(function(e){
+				$("#my-site-web-page-list.search-block-v2 input").change(function(e){
 					var $this = $(this);					
 					console.log($this.val());	
 					if( $this.val().langth == 0 ){
