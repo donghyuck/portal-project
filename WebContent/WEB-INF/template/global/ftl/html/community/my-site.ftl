@@ -1129,7 +1129,7 @@
 										<div class="col-md-6 col-md-offset-3">
 											<input data-role="datepicker" data-bind="value: startDate"/>		
 											<input data-role="datepicker" data-bind="value: endDate"/>	
-									
+								
 											<div class="input-group input-group-lg">
 												<input type="text" class="form-control" placeholder="이름으로 웹 페이지를 검색합니다.">
 												<span class="input-group-btn">
