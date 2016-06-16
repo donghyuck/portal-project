@@ -537,7 +537,7 @@
 				var grid = common.ui.grid( renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/data/mgmt/website/announce/list.json"/>', type: 'POST', contentType : 'application/json'  },
+							read: { url:'<@spring.url "/secure/data/mgmt/website/announce/list.json"/>', type: 'POST', contentType : 'application/json'  },
 							parameterMap: function (options, type){
 								options.objectId = getSelectedSite().webSiteId ;
 								options.startDate = observable.startDate.toJSON();
