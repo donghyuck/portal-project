@@ -528,10 +528,11 @@
 		function createAnnouncementGrid(){
 			var renderTo = $("#my-site-announcement-grid");
 			if( !common.ui.exists(renderTo)){
+				var now = new Date();
 				var observable = new common.ui.observable({ 
 					announce : new common.ui.data.Announce(),
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
-					endDate : new Date()					
+					endDate : now					
 				});				
 				var grid = common.ui.grid( renderTo, {
 					dataSource: {
