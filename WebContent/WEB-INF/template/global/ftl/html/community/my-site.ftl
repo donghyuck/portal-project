@@ -168,7 +168,8 @@
 						case '#my-site-page' :
 						createWebPageGrid();
 						break;
-						case '#my-site-announce' :
+						case '#my-site-announcement' :
+						createAnnouncementGrid();
 						break;						
 					}	
 					return;				
@@ -183,12 +184,10 @@
 			var renderTo = $("#my-site-details");
 			return renderTo.data("model").get('site');
 		} 
-				   	
 
-		function createPageGrid(site){
-			
-		}
-				
+		<!-- ============================== -->
+		<!-- WEB PAGE						-->
+		<!-- ============================== -->				   	
 		function createWebPageGrid(){
 			var renderTo = $("#my-site-web-page-grid");	
 			if(! common.ui.exists(renderTo) ){			
@@ -196,7 +195,7 @@
 					autoBind : true,
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'POST' ,contentType : 'application/json' },
+							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'POST', contentType : 'application/json' },
 							parameterMap: function (options, type){
 								options.objectId = getSelectedSite().webSiteId ;
 								return common.ui.stringify( options );
@@ -517,478 +516,69 @@
 					}); 				
 				}							
 			}		
-		}
-				
-		function openTemplateEditor2(){
-			var renderTo = $("#my-site-template-editor");
-			if( ! common.ui.exists(renderTo) ){
-				var observable =  common.ui.observable({
-					file : new common.ui.data.FileInfo(),
-					content : "",
-					visible : false,
-					supportCustomized : false,
-					supportUpdate : false,
-					supportSvn : true,
-					openFileUpdateModal : function(){
-						alert("준비중입니다");
-						return false;
-					},
-					openFileCopyModal : function(e){
-						alert("준비중입니다");
-						return false;
-					},
-					useWrapMode : false,
-					useWrap : function(e){
-						ace.edit("templateeditor").getSession().setUseWrapMode(this.useWrapMode);
-					},					
-					setFile : function( fileToUse ) {	
-						$this = this;
-						$this.file.path = fileToUse.get("path");
-						$this.file.set("customized", fileToUse.get("customized") );
-						$this.file.set("absolutePath", fileToUse.get("absolutePath") );
-						$this.file.set("name", fileToUse.get("name"));
-						$this.file.set("size", fileToUse.get("size") );
-						$this.file.set("directory", fileToUse.get("directory"));
-						$this.file.set("lastModifiedDate", fileToUse.get("lastModifiedDate") );						
-						if( !$this.file.customized && !$this.file.directory ) {
-							$this.set("supportCustomized", true); 
-						}else{
-							$this.set("supportCustomized", false); 
-						}				    	
-						if( $this.file.path.indexOf( ".svn" ) != -1 ) {
-							$this.set("supportSvn", false); 
-						}else{
-							$this.set("supportSvn", true); 
-						}						
-						if(!$this.file.directory){
-							common.ui.ajax(
-							'<@spring.url "/secure/data/template/get.json?output=json" />' , 
-							{
-								data : { path:  $this.file.path , customized: $this.file.customized },
-								success : function(response){
-									ace.edit("templateeditor").setValue( response.fileContent );	
-								}
-							}); 
-				    	}
-				    	$this.set("visible", true);		    					    			
-					}, 
-					createCustomizedTemplate : function(e){
-						e.preventDefault();						
-						$this = $(e.target);
-						$this.button("loading");
-						var input1 =  $("#file-copy-modal-input-sites").val();
-						var input2 =  $("#file-copy-modal-input-target").val();						
-						if( input1.length == 0 || input2.length == 0 ){
-							if( !$("#file-copy-modal .tab-content").hasClass("has-error") ){
-								$("#file-copy-modal .tab-content").addClass("has-error");
-							}	
-						}else{
-							if( $("#file-copy-modal .tab-content").hasClass("has-error") ){
-								$("#file-copy-modal .tab-content").removeClass("has-error");
-							}						
-						}						
-						$this.button("reset");																		
-						return false;
-					}
+		}		
+
+		<!-- ============================== -->
+		<!-- Page							-->
+		<!-- ============================== -->
+		
+		<!-- ============================== -->
+		<!-- Notice							-->
+		<!-- ============================== -->
+		function createAnnouncementGrid(){
+			var renderTo = $("#my-site-announcement-grid");
+			if( !common.ui.exists(renderTo)){
+				var observable = new common.ui.observable({ 
+					announce : new common.ui.data.Announce(),
+					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
+					endDate : new Date()					
 				});				
-				
-				var editor = ace.edit("templateeditor");		
-				editor.getSession().setMode("ace/mode/ftl");
-				editor.getSession().setUseWrapMode(true);	
-								
-				common.ui.dialog( renderTo , {
-					data : observable,
-					"open":function(e){		
-						$("body").css("overflow-y", "hidden");						
-						renderTo.find(".dialog__content").css("overflow-y", "auto");					
-					},
-					"close":function(e){			
-						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
-						$("body").css("overflow-y", "auto");		
-					}
-				});				
-				$('#template-tree-tabs').on( 'show.bs.tab', function (e) {		
-					var target = $(e.target);
-					switch( target.attr('href') ){
-						case "#template-tree-view" :
-							createTemplateTree($("#template-tree-view"), false);
-							break;
-						case  '#custom-template-tree-view' :
-							createTemplateTree($("#custom-template-tree-view"), true);
-							break;
-					}					
-				});												
-				common.ui.bind(renderTo, observable );		
-			}			
-			var dialogFx = common.ui.dialog( renderTo );		
-			if( !dialogFx.isOpen ){	
-				$('#template-tree-tabs a:first').tab('show');						
-				dialogFx.open();
-			}			
-		}
-				
-		function createTemplateTree(renderTo, customized){
-			if( !renderTo.data('kendoTreeView') ){					
-				renderTo.kendoTreeView({
+				var grid = common.ui.grid( renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url: '<@spring.url "/secure/data/template/list.json?output=json"/>' , type: 'POST' },
-							parameterMap: function ( options, operation){			
-								options.customized = customized;
-								return options ;
+							read: { url:'<@spring.url "/data/mgmt/website/announce/list.json"/>', type: 'POST', contentType : 'application/json'  },
+							parameterMap: function (options, type){
+								options.objectId = getSelectedSite().webSiteId ;
+								options.startDate = observable.startDate.toJSON();
+								options.endDate = observable.endDate.toJSON();
+								return common.ui.stringify( options );
 							}
-						},
-						schema: {		
-							model: {
-								id : "path",
-								hasChildren: "directory"
-							}
-						},
-						filter:[
-							{field: "name", operator : "neq", value:".svn" }
-						],
-						error: common.ui.handleAjaxError					
-					},
-					template: kendo.template($("#treeview-template").html()),
-					dataTextField: "name",
-					change: function(e) {
-						var file = getSelectedTemplateFile(renderTo);
-						createTemplateEditor(file);
-					}
-				});
-			}
-		}
-		
-		function getSelectedTemplateFile( renderTo ){			
-			var tree = renderTo.data('kendoTreeView');			
-			var selectedCells = tree.select();			
-			var selectedCell = tree.dataItem( selectedCells );   
-			return selectedCell ;
-		}		
-				
-		function createTemplateEditor3(file){
-			var renderTo = $("#my-site-template-editor");
-			var dialogFx = common.ui.dialog( renderTo );		
-			dialogFx.data().setFile(file);	
-		}
-																				
-		<!-- ============================== -->
-		<!-- MENU							-->
-		<!-- ============================== -->
-		function openMenuEditor(){
-			var renderTo = $("#my-site-menu-editor");
-			if( ! common.ui.exists(renderTo) ){
-				var observable =  common.ui.observable({
-					website : new common.ui.data.WebSite(),
-					updateMenuData : function(e){			
-						var $this = this;
-						var btn = $(e.target);						
-						btn.button('loading');						
-						$this.website.menu.menuData = ace.edit("menueditor").getValue();
-						common.ui.ajax(
-							'<@spring.url "/secure/data/menu/update.json?output=json" />' , 
-							{
-								data : kendo.stringify( $this.website.menu ),
-								contentType : "application/json",
-								success : function(response){},
-								fail: function(){								
-									common.ui.notification({
-										hide:function(e){
-											btn.button('reset');
-										}
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									$this.refresh();
-									btn.button('reset');
-								}
-							}
-						);												
-					},
-					useWrapMode : false,
-					useWrap : function(e){
-						ace.edit("menueditor").getSession().setUseWrapMode(this.useWrapMode);
-					},
-					refresh : function(){
-						var $this = this;
-						common.ui.ajax(
-							'<@spring.url "/secure/data/website/get.json?output=json" />' , 
-							{
-								data : {
-									refresh : true,
-								},
-								success : function(response){					
-									var website = new common.ui.data.WebSite(response);
-									website.copy($this.website);
-								}
-							}
-						);						
-					}
-				});				
-				var editor = ace.edit("menueditor");		
-				editor.setTheme("ace/theme/monokai");
-				editor.getSession().setMode("ace/mode/xml");	
-				observable.bind("change", function(e){		
-					var sender = e.sender ;
-					if( e.field.match('^website.menu')){
-					 	editor.setValue( sender.website.menu.menuData );	
-					}
-				});	
-				common.ui.dialog( renderTo , {
-					data : observable,
-					"open":function(e){		
-						$("body").css("overflow-y", "hidden");						
-						renderTo.find(".dialog__content").css("overflow-y", "auto");					
-					},
-					"close":function(e){			
-						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
-						$("body").css("overflow-y", "auto");		
-					}
-				});
-				common.ui.bind(renderTo, observable );	
-				observable.refresh();			
-			}			
-			var dialogFx = common.ui.dialog( renderTo );		
-			if( !dialogFx.isOpen ){							
-				dialogFx.open();
-			}			
-		}	
-					
-
-		<!-- ============================== -->
-		<!-- Page														-->
-		<!-- ============================== -->
-		
-		function getMyPageSource(){
-			return $("#page-source-list input[type=radio][name=page-source]:checked").val();			
-		}
-				
-		function createPageSection(){
-			var renderTo = $("#my-page-grid");
-			common.ui.grid( renderTo, {
-				dataSource: {
-					serverFiltering: false,
-					transport: { 
-						read: { url:'/data/pages/list.json?output=json', type: 'POST' },
-						parameterMap: function (options, type){
-							return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageSource() }
-						}
-					},
-					schema: {
-						total: "totalCount",
-						data: "pages",
-						model: common.ui.data.Page
-					},
-					error:common.ui.handleAjaxError,
-					batch: false,
-					pageSize: 15,
-					serverPaging: true,
-					serverFiltering: false,
-					serverSorting: false
-				},
-				columns: [
-					{ field: "pageId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
-					{ field: "name", title: "이름", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}}, 
-					{ field: "title", title: "제목", width: 350 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template: $('#webpage-title-template').html() }, 
-					{ field: "versionId", title: "버전", width: 80, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
-					{ field: "pageState", title: "상태", width: 120, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template: '#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else{# <span class="label label-danger">#: pageState #</span> #}#'},
-					{ field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template:'#if ( user.nameVisible ) {# #: user.name # #} else{ # #: user.username # #}#' },
-					{ field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
-					{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],
-				filterable: true,
-				sortable: true,
-				resizable: true,
-				pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-				selectable: 'row',
-				height: '100%',
-				change: function(e) {                    
-					var selectedCells = this.select();                 
-					if( selectedCells.length > 0){ 
-						var selectedCell = this.dataItem( selectedCells ); 
- 					} 						
-				},
-				dataBound: function(e){		
-					$("button.btn-page-control-group").attr("disabled", "disabled");
-				}			
-			} );		
-				
-			$("#page-source-list input[type=radio][name=page-source]").on("change", function () {
-					common.ui.grid(renderTo).dataSource.read();	
-			});				
-			
-			$("button[data-action=page-create]").click(function(e){
-				createNewPage();
-			});
-			
-			$("#my-page-view span.back").click(function(e){
-				$("#my-page-view").fadeOut(function(e){
-					$("#my-page-list").fadeIn();
-				});			
-			});
-		}
-
-		function createNewPage(){
-			var page = new common.ui.data.Page();
-			page.objectType = getMyPageSource();
-			page.bodyContent = { bodyText: "" };
-			createPageEditor(page);
-			$("#my-page-list").fadeOut(function(e){
-				$("#my-page-view").fadeIn();
-			});
-		}
-		
-		function doPageEdit(){
-			var renderTo = $("#my-page-grid");
-			var grid = common.ui.grid( renderTo );
-			var selectedCells = grid.select();
-			if( selectedCells.length > 0){ 
-				var selectedCell = grid.dataItem( selectedCells ); 
-				createPageEditor(selectedCell);
-			}
-			$("#my-page-list").fadeOut(function(e){
-				$("#my-page-view").fadeIn();
-			});
-		}
-		
-		function getPageEditorSource(){
-			var renderTo = $("#my-page-view");
-			return renderTo.data("model");		
-		}
-
-		function createPageEditor(source){
-			var renderTo = $("#my-page-view");
-			$("#sky-form label.state-error").removeClass("state-error");
-			
-			if( !renderTo.data("model")){
-				var model =  common.ui.observable({ 
-					page : new common.ui.data.Page(),
-					stateSource : [
-						{name: "" , value: "INCOMPLETE"},
-						{name: "승인" , value: "APPROVAL"},
-						{name: "게시" , value: "PUBLISHED"},
-						{name: "거절" , value: "REJECTED"},
-						{name: "보관" , value: "ARCHIVED"},
-						{name: "삭제" , value: "DELETED"}
-					],
-					properties : new kendo.data.DataSource({
-						transport: { 
-							read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
-							create: { url:'/data/pages/properties/update.json?output=json', type:'post' },
-							update: { url:'/data/pages/properties/update.json?output=json', type:'post'  },
-							destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
-					 		parameterMap: function (options, operation){			
-						 		if (operation !== "read" && options.models) {
-						 			return { pageId: model.page.pageId, items: kendo.stringify(options.models)};
-								} 
-								return { pageId: model.page.pageId }
-							}
-						},	
-						batch: true, 
+						},					
 						schema: {
-							model: common.ui.data.Property
+							total: "totalCount",
+							data: "items",
+							model: common.ui.data.Announce
 						},
-						error:common.ui.handleAjaxError
-					}),
-					isVisible : true,
-					close:function(e){
-						$("#my-page-view span.back").click();
-						common.ui.scroll.top($(".personalized-section").first());
+						batch: false,
+						pageSize: 15,
+						serverPaging: true,
+						serverFiltering: true,
+						serverSorting: true
 					},
-					update : function(e){
-						var $this = this, 
-						btn = $(e.target);						
-						btn.button('loading');
+					columns: [
+						{ field: "announceId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
+						{ field: "subject", title: "제목", width: 350, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}},					
+						{ field: "subject", title: "소스", width: 80, headerAttributes: { "class": "table-header-cell", style: "text-align: center"},	template: '# if (objectType == 30) { # <span class="badge badge-blue">웹사이트</span>	# }else{ # <span class="badge badge-red">회사</span># } #	' },					
+						{ field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template:'<img width="25" height="25" class="img-circle no-margin" src="#: authorPhotoUrl() #" style="margin-right:10px;"> #if ( user.nameVisible ) {# #: user.name # #} else{ # #: user.username # #}#' },
+						{ field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+						{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],
+					filterable: true,
+					sortable: true,
+					resizable: true,
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+					selectable: 'row',
+					height: '100%',
+					change: function(e) {                    
+										
+					},
+					dataBound: function(e){		
 						
-						if( $this.page.title.length == 0 ){
-							if(!$("label[for=title]").hasClass("state-error"))
-								$("label[for=title]").addClass("state-error");							
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"입력 오류", message: "제목을 입력하세요."	},
-								"error"
-							);
-							return false;
-						}						
-						else{
-							if($("label[for=title]").hasClass("state-error"))
-								$("label[for=title]").removeClass("state-error");
-						}
-												
-						if($this.page.summary.length == 0 ){
-							if(!$("label[for=summary]").hasClass("state-error"))
-								$("label[for=summary]").addClass("state-error");
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"입력 오류", message: "페이지 요약 정보를 입력하세요."	},
-								"error"
-							);	
-							return false;	
-						}
-						else{
-							if($("label[for=summary]").hasClass("state-error"))
-								$("label[for=summary]").removeClass("state-error");
-						}
-						common.ui.ajax(
-							'<@spring.url "/data/pages/update.json?output=json"/>',
-							{
-								data : kendo.stringify($this.page) ,
-								contentType : "application/json",
-								success : function(response){
-									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
-									$("#my-page-grid").data('kendoGrid').dataSource.read();
-									$this.close();									
-								},
-								fail: function(){								
-									common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									btn.button('reset');
-								}							
-						});												
-						return false;
-					}
-				});				
-				source.copy( model.page );
-				renderTo.data("model", model);
-				kendo.bind(renderTo, model );				
-				var bodyEditor =  $("#page-editor-body" );
-				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : true } );				
-			}else{
-				source.copy( renderTo.data("model").page );				
-				if(renderTo.data("model").page.pageId > 0 )
-					renderTo.data("model").properties.read();
-			}				
-			if(renderTo.data("model").page.pageId > 0) {
-				renderTo.data("model").set("isAllowToFileAndProps", true);
-			} else {
-				renderTo.data("model").set("isAllowToFileAndProps", false);
-			}							
+					}			
+				} );					
+				common.ui.bind($("#my-site-announcement-list"), observable );				
+			}
 		}
 		
-		<!-- ============================== -->
-		<!-- Notice														-->
-		<!-- ============================== -->
 		function createNoticeSection(){			
 			var renderTo = $("#my-notice-grid");
 			if( !common.ui.exists(renderTo)){
@@ -1394,12 +984,11 @@
 					<div class="tab-v1">
 						<ul class="nav nav-tabs">
 							<li><a href="#my-site-page" data-toggle="tab" class="m-l-sm rounded-top">웹 페이지</a></li>
-							<li><a href="#my-site-announce" data-toggle="tab" class="rounded-top">공지 & 이벤트</a></li>
+							<li><a href="#my-site-announcement" data-toggle="tab" class="rounded-top">공지 & 이벤트</a></li>
 						</ul>
 						<div class="tab-content">
 							<div class="tab-pane fade" id="my-site-page">
-								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>
-								
+								<h4><small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>								
 								<div id="my-site-web-page-list" class="search-block-v2">
 									<div class="container">
 										<div class="col-md-6 col-md-offset-3">
@@ -1531,9 +1120,25 @@
 				                    </div>
 								</div>
 							</div><!-- /.tab-pane -->	
-							<div class="tab-pane fade" id="my-site-announce">
-								<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
+							
+							<div class="tab-pane fade" id="my-site-announcement">
+								<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>								
+								<div id="my-site-announcement-list" class="search-block-v2">
+									<div class="container">
+										<div class="col-md-6 col-md-offset-3">
+											<div class="input-group input-group-lg">
+												<input type="text" class="form-control" placeholder="이름으로 웹 페이지를 검색합니다.">
+												<span class="input-group-btn">
+													<button type="button" class="btn btn-lg"><i class="fa fa-search"></i></button>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div id="my-site-announcement-grid" class="no-border"></div>
+								</div>	
+								
 							</div><!-- /.tab-pane -->
+							
 						</div><!-- /.tab-content -->
 					</div><!-- /.tab-v1 -->						
 				</div>	
