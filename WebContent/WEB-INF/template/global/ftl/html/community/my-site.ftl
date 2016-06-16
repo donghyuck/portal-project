@@ -1120,16 +1120,14 @@
 				                        </div>
 				                    </div>
 								</div>
-							</div><!-- /.tab-pane -->	
-							
+							</div><!-- /.tab-pane -->								
 							<div class="tab-pane fade" id="my-site-announcement">
 								<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>								
 								<div id="my-site-announcement-list" class="search-block-v2">
-									<div class="container">
-										
+									<div class="container">										
 										<div class="col-md-6 col-md-offset-3">
-										<input data-role="datepicker" data-bind="value: startDate"/>		
-									<input data-role="datepicker" data-bind="value: endDate"/>	
+											<input data-role="datepicker" data-bind="value: startDate"/>		
+											<input data-role="datepicker" data-bind="value: endDate"/>	
 									
 											<div class="input-group input-group-lg">
 												<input type="text" class="form-control" placeholder="이름으로 웹 페이지를 검색합니다.">
