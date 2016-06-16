@@ -57,6 +57,10 @@
 			],			
 			complete: function() {		
 				
+				
+				<#if RequestParameters['id']?? >
+					var	webSiteId = ${ TextUtils.parseLong( RequestParameters['siteId'] ) } ;
+				</#if>				
 				common.ui.setup({
 					features:{
 						wallpaper : false,
