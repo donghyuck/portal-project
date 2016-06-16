@@ -56,8 +56,7 @@
 			'<@spring.url "/js/common.pages/common.code-editor.js"/>'			
 			],			
 			complete: function() {		
-				
-				
+								
 				<#if RequestParameters['id']?? >
 					var	webSiteId = ${ TextUtils.parseLong( RequestParameters['siteId'] ) } ;
 				</#if>				
