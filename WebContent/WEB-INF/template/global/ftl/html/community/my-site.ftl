@@ -1125,8 +1125,12 @@
 							<div class="tab-pane fade" id="my-site-announcement">
 								<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>								
 								<div id="my-site-announcement-list" class="search-block-v2">
-									<div class="container">
+									
+										
 										<div class="col-md-6 col-md-offset-3">
+										<input data-role="datepicker" data-bind="value: startDate"/>		
+									<input data-role="datepicker" data-bind="value: endDate"/>	
+									
 											<div class="input-group input-group-lg">
 												<input type="text" class="form-control" placeholder="이름으로 웹 페이지를 검색합니다.">
 												<span class="input-group-btn">
@@ -1183,85 +1187,7 @@
 					</div>					
 				</div>
 			</div>	
-		</div>
-				
-		<div id="my-site-menu-editor" class="dialog" data-feature="dialog" data-dialog-animate="">
-			<div class="dialog__overlay"></div>
-			<div class="dialog__content">			
-				<span class="btn-flat close" data-dialog-close></span>						
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-									<div class="sky-form">
-										<header><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</header>
-										<fieldset class="padding-sm">
-											<div class="row">
-												<div class="col-md-9"></div>
-												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
-											</div>
-										</fieldset>
-										<div id="menueditor"></div>
-										<footer class="text-right">
-											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
-											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
-										</footer>
-									</div>	
-						</div>
-					</div>					
-				</div>				
-			</div>
-		</div>		
-		<div id="my-site-template-editor" class="dialog" data-feature="dialog" data-dialog-animate="">
-			<div class="dialog__overlay"></div>
-			<div class="dialog__content">			
-				<span class="btn-flat close" data-dialog-close></span>		
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="sky-form">
-								<header>템플릿</header>						
-								<fieldset class="padding-sm">
-									<div class="tab-v1 p-xxs">								
-										<ul class="nav nav-tabs" id="template-tree-tabs">
-											<li><a href="#template-tree-view" data-toggle="tab">기본</a></li>
-											<li><a href="#custom-template-tree-view" data-toggle="tab">사용자 정의</a></li>
-										</ul>	
-										<div class="tab-content" style="min-height:300px;">
-											<div class="tab-pane fade" id="template-tree-view"></div>
-											<div class="tab-pane fade" id="custom-template-tree-view"></div>
-										</div>
-									</div>										
-								</fieldset>
-							</div>									
-						</div><!-- ./col-sm-4 -->						
-						<div class="col-sm-8">
-							<div class="sky-form animated fadeIn" data-bind="visible: visible" style="display:none;">
-								<fieldset>	
-									<section>
-										<div class="headline">
-											<h3 class="padding-sm-hr"><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span></h3>
-											<div class="pull-right text-muted">
-												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-											</div>
-										</div>
-									</section>								
-									<div class="row">
-										<section class="col-md-6">
-											<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label>
-										</section>
-										<section class="col-md-6 text-right">
-											<button class="btn btn-success btn-sm" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
-											<button class="btn btn-danger btn-sm" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 사용자 정의 템플릿 만들기</button>
-										</section>
-									</div>																		
-								</fieldset>	
-								<div id="templateeditor" class="panel-body bordered no-border-hr no-border-b" data-bind="invisible: file.directory" style="display:none;"></div>											
-							</div>
-						</div><!-- ./col-sm-8 -->									
-					</div>					
-				</div>				
-			</div>		
-		</div>
+		</div>				
 												
 	<!-- START TEMPLATE -->			
     <script type="text/x-kendo-template" id="my-site-listview-template">
@@ -1293,21 +1219,6 @@
         	</div>
         </div><!-- /.row -->
 	</div><!-- /.forum-item -->
-                               
-    <!--
-	<div class="row my-website team-v7">
-		<div class="col-sm-2 ">
-			<img src="<@spring.url "/download/logo/site/#= name #"/>" class="img-responsive hover-effect" alt="">
-		</div>	
-		<div class="col-sm-10 team-v7-in">		
-			<h3>#: displayName #</h3>
-			<ul class="list-inline">
-				<li><i class="fa fa-globe color-green"></i> #: url #</li>
-			</ul>
-			<p>#: description #</p>			
-		</div>
-	</div>
-	-->
     </script>
     		
 	<script id="webpage-title-template" type="text/x-kendo-template">
