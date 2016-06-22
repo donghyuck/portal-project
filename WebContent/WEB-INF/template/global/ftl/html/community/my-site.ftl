@@ -17,8 +17,10 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
 
+
+			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',		
 			'css!<@spring.url "/styles/common.ui.plugins/switchery.min.css"/>',		
-			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',			
+				
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
 						
@@ -532,7 +534,10 @@
 				var observable = new common.ui.observable({ 
 					announce : new common.ui.data.Announce(),
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
-					endDate : now					
+					endDate : now,
+					search : function(e){
+						common.ui.grid( renderTo ).dataSource.read();
+					}					
 				});				
 				var grid = common.ui.grid( renderTo, {
 					dataSource: {
@@ -1127,15 +1132,14 @@
 								<div id="my-site-announcement-list" class="search-block-v2">
 									<div class="container">										
 										<div class="col-md-6 col-md-offset-3">
-											<input data-role="datepicker" data-bind="value: startDate"/>		
-											<input data-role="datepicker" data-bind="value: endDate"/>	
-								
-											<div class="input-group input-group-lg">
-												<input type="text" class="form-control" placeholder="이름으로 웹 페이지를 검색합니다.">
-												<span class="input-group-btn">
-													<button type="button" class="btn btn-lg"><i class="fa fa-search"></i></button>
-												</span>
-											</div>
+										
+											<input data-role="datepicker" data-bind="value: startDate" class="input-lg" />	 
+											<span> ~ </span>	
+											<input data-role="datepicker" data-bind="value: endDate" class="input-lg"/>	
+											
+											
+											<button type="button" class="btn btn-lg" data-bind="click:search"><i class="fa fa-search"></i></button>
+											
 										</div>
 									</div>
 									<div id="my-site-announcement-grid" class="no-border"></div>
