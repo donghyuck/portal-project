@@ -535,8 +535,11 @@
 					announce : new common.ui.data.Announce(),
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
-					search : function(e){
-						common.ui.grid( renderTo ).dataSource.read();
+					startChange : function(e){
+						console.log( kendo.stringify( e ) );
+					},
+					endChange:function(e){
+						
 					}					
 				});				
 				var grid = common.ui.grid( renderTo, {
@@ -1134,12 +1137,12 @@
 										<div class="col-md-8 col-md-offset-2">
 											<div class="period-wrapper">
 											<label for="announceStartDate" class="select-period">시작일</label>
-											<input name="announceStartDate" data-role="datepicker" data-bind="value: startDate" class="input-lg" />	 
+											<input name="announceStartDate" data-role="datepicker" data-bind="value: startDate, events:{change:startChange}" class="input-lg" />	 
 											</div>
 											<span> ~ </span>	
 											<div class="period-wrapper">
 											<label for="announceEndDate" class="select-period">종료일</label>
-											<input name="announceEndDate" data-role="datepicker" data-bind="value: endDate" class="input-lg"/>	
+											<input name="announceEndDate" data-role="datepicker" data-bind="value: endDate, events:{change:endChange}" class="input-lg"/>	
 											</div>
 										</div>
 									</div>
