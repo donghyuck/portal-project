@@ -536,7 +536,7 @@
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
 					startChange : function(e){
-						console.log( kendo.stringify( e ) );
+						console.log( e );
 					},
 					endChange:function(e){
 						
