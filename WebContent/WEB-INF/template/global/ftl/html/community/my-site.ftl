@@ -1132,14 +1132,15 @@
 								<div id="my-site-announcement-list" class="search-block-v2">
 									<div class="container">										
 										<div class="col-md-6 col-md-offset-3">
-										
-											<input data-role="datepicker" data-bind="value: startDate" class="input-lg" />	 
+											<div class="period-wrapper">
+											<label for="announceStartDate" class="select-period">시작일</label>
+											<input name="announceStartDate" data-role="datepicker" data-bind="value: startDate" class="input-lg" />	 
+											</div>
 											<span> ~ </span>	
-											<input data-role="datepicker" data-bind="value: endDate" class="input-lg"/>	
-											
-											
-											<button type="button" class="btn btn-lg" data-bind="click:search"><i class="fa fa-search"></i></button>
-											
+											<div class="period-wrapper">
+											<label for="announceEndDate" class="select-period">종료일</label>
+											<input name="announceEndDate" data-role="datepicker" data-bind="value: endDate" class="input-lg"/>	
+											</div>
 										</div>
 									</div>
 									<div id="my-site-announcement-grid" class="no-border"></div>

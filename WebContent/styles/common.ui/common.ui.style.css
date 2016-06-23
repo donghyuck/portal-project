@@ -1755,3 +1755,9 @@ span.x-close {
 	border: 0;
     background: transparent;
 }
+
+
+/** fix kendo ui */
+.period-wrapper {
+	display: inline-block;
+}
