@@ -538,12 +538,14 @@
 					startChange : function(e){
 						var $that = this;
 						$("#announcement-start-date").data("kendoDatePicker").max($that.endDate);
-						$("#announcement-end-date").data("kendoDatePicker").min($that.startDate);						
+						$("#announcement-end-date").data("kendoDatePicker").min($that.startDate);	
+						common.ui.grid( renderTo ).dataSource.read();					
 					},
 					endChange:function(e){
 						var $that = this;
 						$("#announcement-start-date").data("kendoDatePicker").max($that.endDate);
-						$("#announcement-end-date").data("kendoDatePicker").min($that.startDate);	
+						$("#announcement-end-date").data("kendoDatePicker").min($that.startDate);							
+						common.ui.grid( renderTo ).dataSource.read();
 					}					
 				});				
 				var grid = common.ui.grid( renderTo, {
