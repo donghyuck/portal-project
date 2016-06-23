@@ -1131,7 +1131,7 @@
 								<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>								
 								<div id="my-site-announcement-list" class="search-block-v2">
 									<div class="container">										
-										<div class="col-md-6 col-md-offset-3">
+										<div class="col-md-8 col-md-offset-2">
 											<div class="period-wrapper">
 											<label for="announceStartDate" class="select-period">시작일</label>
 											<input name="announceStartDate" data-role="datepicker" data-bind="value: startDate" class="input-lg" />	 
