@@ -536,10 +536,14 @@
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
 					startChange : function(e){
-						console.log( e );
+						var $that = this;
+						$("#announcement-start-date").data("kendoDatePicker").max($that.endDate);
+						$("#announcement-end-date").data("kendoDatePicker").min($that.startDate);						
 					},
 					endChange:function(e){
-						
+						var $that = this;
+						$("#announcement-start-date").data("kendoDatePicker").max($that.endDate);
+						$("#announcement-end-date").data("kendoDatePicker").min($that.startDate);	
 					}					
 				});				
 				var grid = common.ui.grid( renderTo, {
@@ -1136,13 +1140,13 @@
 									<div class="container">										
 										<div class="col-md-8 col-md-offset-2">
 											<div class="period-wrapper">
-											<label for="announceStartDate" class="select-period">시작일</label>
-											<input name="announceStartDate" data-role="datepicker" data-bind="value: startDate, events:{change:startChange}" class="input-lg" />	 
+											<label for="announcement-start-date" class="select-period">시작일</label>
+											<input id="announcement-start-date" name="startDate" data-role="datepicker" data-bind="value: startDate, events:{change:startChange}" class="input-lg" />	 
 											</div>
 											<span> ~ </span>	
 											<div class="period-wrapper">
-											<label for="announceEndDate" class="select-period">종료일</label>
-											<input name="announceEndDate" data-role="datepicker" data-bind="value: endDate, events:{change:endChange}" class="input-lg"/>	
+											<label for="announcement-end-date" class="select-period">종료일</label>
+											<input id="announcement-end-date" name="endDate" data-role="datepicker" data-bind="value: endDate, events:{change:endChange}" class="input-lg"/>	
 											</div>
 										</div>
 									</div>
