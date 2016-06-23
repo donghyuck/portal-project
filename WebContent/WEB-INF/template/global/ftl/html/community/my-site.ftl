@@ -1143,12 +1143,12 @@
 										<div class="col-md-8 col-md-offset-2">
 											<div class="period-wrapper">
 											<label for="announcement-start-date" class="select-period">시작일</label>
-											<input id="announcement-start-date" name="startDate" data-role="datepicker" data-bind="value: startDate, events:{change:startChange}" class="input-lg" />	 
+											<input id="announcement-start-date" name="startDate" data-role="datepicker" data-bind="value: startDate, events:{change:startChange}" class="text-md" />	 
 											</div>
 											<span> ~ </span>	
 											<div class="period-wrapper">
 											<label for="announcement-end-date" class="select-period">종료일</label>
-											<input id="announcement-end-date" name="endDate" data-role="datepicker" data-bind="value: endDate, events:{change:endChange}" class="input-lg"/>	
+											<input id="announcement-end-date" name="endDate" data-role="datepicker" data-bind="value: endDate, events:{change:endChange}" class="text-md"/>	
 											</div>
 										</div>
 									</div>
