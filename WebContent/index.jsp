@@ -1,7 +1,7 @@
 <%
     if (request != null)
     {
-        response.sendRedirect(request.getContextPath() + "/main.do");
+        response.sendRedirect(request.getContextPath() + "/display/main.html");
         return;
     }
 %>
@@ -10,6 +10,6 @@
 		<title>Go to System</title>
 	</head>
 	<body>
-		<strong><a href="<%= request.getContextPath() %>/main.do">Click here!</a></strong> to go to System.
+		<strong><a href="<%= request.getContextPath() %>/display/main.html">Click here!</a></strong> to go to System.
     </body>
 </html>
