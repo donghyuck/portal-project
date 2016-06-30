@@ -519,13 +519,9 @@
 				}							
 			}		
 		}		
-
-		<!-- ============================== -->
-		<!-- Page							-->
-		<!-- ============================== -->
 		
 		<!-- ============================== -->
-		<!-- Notice							-->
+		<!-- Announcement					-->
 		<!-- ============================== -->
 		function createAnnouncementGrid(){
 			var renderTo = $("#my-site-announcement-grid");
@@ -591,9 +587,165 @@
 						
 					}			
 				} );					
-				common.ui.bind($("#my-site-announcement-list"), observable );				
+				
+				common.ui.bind($("#my-site-announcement-list"), observable );		
+
+				renderTo.on("click","[data-action=edit],[data-action=create]", function(e){	
+					var $this = $(this);	
+					var objectId = $this.data("object-id");		
+					var newAnnounce ;
+					if( objectId > 0){
+						newAnnounce = common.ui.grid(renderTo).dataSource.get(objectId);
+					}else{
+						newAnnounce = new common.ui.data.Announce();
+						//newWebPage.set("webSiteId", getSelectedSite().webSiteId);
+						newAnnounce.set("properties", {});
+					}					
+					$('#my-site-announcement-list').fadeOut(function(e){ 
+						createAnnouncementEditor( newAnnounce );
+					});	
+				});		
+										
 			}
 		}
+		
+		
+		function createAnnouncementEditor( source ){
+			var renderTo = $("#my-site-announcement-view");
+			if(!renderTo.data("model")){
+				var observable =  common.ui.observable({ 
+					announce : new common.ui.data.Announce(),
+					editable:false,
+					propertyDataSource :new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
+					setSource : function(source){
+						var $that = this;
+						source.copy($that.announce);	
+						$that.set("editable", $that.announce.announceId > 0 ? true : false );	
+											
+						$that.propertyDataSource.read();				
+						$that.propertyDataSource.data($that.announce.properties);	
+											
+						//collapseOptions.collapse('hide')
+						
+						if( !$that.editable ){
+						//	$that.page.set("template", "");				
+						}						
+						//$that.set("fileContent", "");
+						//switchery.setPosition();
+					},
+					close:function(){
+						renderTo.fadeOut(function(e){ 
+							$('#my-site-announcement-list').fadeIn();
+						});
+					}
+				});	
+				renderTo.data("model", observable);		
+				common.ui.bind( renderTo, observable );
+			}
+			renderTo.data("model").setSource( source );	
+			if (!renderTo.is(":visible")) 
+				renderTo.fadeIn(); 				
+		}	
+		
+		function createNoticeEditorSection(source){
+			var renderTo = $("#my-notice-edit");		
+			if( !renderTo.data("model")){
+				var model =  common.ui.observable({ 
+					notice : new common.ui.data.Announce(),
+					new: true,
+					visible : true,
+					update : function(e){						
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');
+						
+						if( $this.notice.subject.length == 0 || $this.notice.body.length == 0 ){
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},
+								"error"
+							);
+							return ;
+						}
+						if( $this.notice.startDate >= $this.notice.endDate  ){
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	},
+								"error"
+							);							
+							return ;
+						}
+						common.ui.ajax(
+							'<@spring.url "/data/announce/update.json"/>',
+							{
+								data : kendo.stringify( $this.notice ),
+								contentType : "application/json",
+								success : function(response){									
+									common.ui.grid($("#my-notice-grid")).dataSource.read();
+									$this.close();
+								},
+								fail: function(){								
+									common.ui.notification({
+										hide:function(e){
+											btn.button('reset');
+										}
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									btn.button('reset');
+								}
+							});	
+					},
+					close : function(e){
+						renderTo.fadeOut("slow", function(e){
+							$("#my-notice-view").fadeIn();
+						});
+					},	
+				});	
+				kendo.bind( renderTo, model);
+				renderTo.data("model", model);	
+				var bodyEditor =  $("#notice-editor-body" );
+				createEditor( "notice-editor" , bodyEditor, { modal : false , appendTo: $("#my-notice-editor-code"), tab: $("#my-notice-editor-tabs"), useWrapMode : true } );
+			}	
+			
+			if( source ){
+				source.copy( renderTo.data("model").notice );				
+				if( source.announceId === 0 ){
+					renderTo.data("model").set("notice.objectType", common.ui.buttonGroup($("#notice-source-list")).value); 
+					renderTo.data("model").set("new", false); 
+				}else{
+					renderTo.data("model").set("new", false); 					
+				} 
+			}
+			
+			$("#my-notice-view").fadeOut( "slow", function(e){
+				renderTo.fadeIn();
+			} );
+		}		
+
+		
+		
 		
 		function createNoticeSection(){			
 			var renderTo = $("#my-notice-grid");
@@ -709,97 +861,6 @@
 			}		
 		}
 		
-		function createNoticeEditorSection(source){
-			var renderTo = $("#my-notice-edit");		
-			if( !renderTo.data("model")){
-				var model =  common.ui.observable({ 
-					notice : new common.ui.data.Announce(),
-					new: true,
-					visible : true,
-					update : function(e){						
-						var $this = this, 
-						btn = $(e.target);						
-						btn.button('loading');
-						
-						if( $this.notice.subject.length == 0 || $this.notice.body.length == 0 ){
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},
-								"error"
-							);
-							return ;
-						}
-						if( $this.notice.startDate >= $this.notice.endDate  ){
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	},
-								"error"
-							);							
-							return ;
-						}
-						common.ui.ajax(
-							'<@spring.url "/data/announce/update.json"/>',
-							{
-								data : kendo.stringify( $this.notice ),
-								contentType : "application/json",
-								success : function(response){									
-									common.ui.grid($("#my-notice-grid")).dataSource.read();
-									$this.close();
-								},
-								fail: function(){								
-									common.ui.notification({
-										hide:function(e){
-											btn.button('reset');
-										}
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									btn.button('reset');
-								}
-							});	
-					},
-					close : function(e){
-						renderTo.fadeOut("slow", function(e){
-							$("#my-notice-view").fadeIn();
-						});
-					},	
-				});	
-				kendo.bind( renderTo, model);
-				renderTo.data("model", model);	
-				var bodyEditor =  $("#notice-editor-body" );
-				createEditor( "notice-editor" , bodyEditor, { modal : false , appendTo: $("#my-notice-editor-code"), tab: $("#my-notice-editor-tabs"), useWrapMode : true } );
-			}	
-			
-			if( source ){
-				source.copy( renderTo.data("model").notice );				
-				if( source.announceId === 0 ){
-					renderTo.data("model").set("notice.objectType", common.ui.buttonGroup($("#notice-source-list")).value); 
-					renderTo.data("model").set("new", false); 
-				}else{
-					renderTo.data("model").set("new", false); 					
-				} 
-			}
-			
-			$("#my-notice-view").fadeOut( "slow", function(e){
-				renderTo.fadeIn();
-			} );
-		}		
-
 		-->
 		</script>		
 		<style scoped="scoped">			
@@ -1155,7 +1216,58 @@
 									</div>
 									<div id="my-site-announcement-grid" class="no-border"></div>
 								</div>	
-								
+								<div id="my-site-announcement-view" style="display:none;">
+									<div class="ibox announcement-detail">
+										<span class="back" style="position:relative;" data-bind="click:close"></span>
+										<div class="ibox-content no-padding">					
+											<!-- sky-form -->	
+											<form action="#" class="sky-form">
+												<fieldset>
+													<section>
+														<h2 class="label">제목</h2>
+														<label class="input">
+															<input type="text" class="form-control" data-bind="value:announce.subject" >
+														</label>
+													</section>		
+												</fieldset>		
+												<fieldset>	
+													<div class="collapse" id="my-site-announcement-view-options">
+													<section>	  													  
+														  <h2 class="label">속성</h2>
+														  <div class="note m-b-md">고급 사용자가 아니면 직접 수정하지 마세요.</div>
+														  <div data-role="grid"
+															class="no-border"
+														    data-scrollable="true"
+														    data-editable="true"
+														    data-toolbar="['create', 'cancel']"
+														    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
+														    data-bind="source:propertyDataSource, visible:editable"
+														    style="min-height:300px"></div>																								
+													</section>	
+													</div>
+													<a id="my-site-announcement-view-options-btn" class="btn btn-outline rounded" 
+														role="button" 
+														data-toggle="collapse" 
+														href="#my-site-announcement-view-options" 
+														aria-expanded="false" aria-controls="my-site-announcement-view-options"> 고급설정 보기 .. </a>
+													<div class="text-right note padding-sm">													
+														마지막 수정일 : <span data-bind="text: announce.formattedModifiedDate"></span>
+													</div>							
+												</fieldset>												
+												<footer class="text-right">
+													<button type="submit" class="btn btn-flat btn-primary" data-bind="click:saveOrUpdate">저 장</button>
+													<button type="button" class="btn btn-flat btn-default btn-outline" data-bind="click:close">취 소</button>
+												</footer>
+											</form>
+											<!-- /.sky-form -->
+				                        </div>
+				                        
+				                        <div class="ibox-footer">
+				                            <span class="pull-right">
+				                            </span>
+				                        </div>
+				                    </div>
+								</div>
 							</div><!-- /.tab-pane -->
 							
 						</div><!-- /.tab-content -->
