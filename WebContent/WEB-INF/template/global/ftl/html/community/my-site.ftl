@@ -214,7 +214,7 @@
 						}
 					},
 					filterable: false,
-					columns: [{ title: "페이지", field: "name", template : ' #:name # #if(enabled){# <i class="fa fa-toggle-on text-green" aria-hidden="true"></i> #}else{# <i class="fa fa-toggle-off" aria-hidden="true"></i> #}#'},
+					columns: [{ title: "페이지", field: "name"},
 						{ title: "상태", width:40, headerAttributes:{ style:"text-align:center"}, attributes:{ class:"text-center" } , template: '#if(enabled){# <i class="fa fa-toggle-on text-green" aria-hidden="true"></i> #}else{# <i class="fa fa-toggle-off" aria-hidden="true"></i> #}#' },
 						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="edit" data-object-id="#= webPageId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
