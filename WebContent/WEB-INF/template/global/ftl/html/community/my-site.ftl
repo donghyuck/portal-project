@@ -1080,7 +1080,7 @@
 											</div>
 										</div>
 									</div>
-									<div id="my-site-web-page-grid" class="no-border"></div>
+									<div id="my-site-web-page-grid" class=" m-t-md"></div>
 								</div>									
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox page-editor" style="display:none;">
@@ -1216,7 +1216,7 @@
 											</div>
 										</div>
 									</div>
-									<div id="my-site-announcement-grid" class="no-border"></div>
+									<div id="my-site-announcement-grid" class="m-t-md"></div>
 								</div>	
 								<div id="my-site-announcement-view" style="display:none;">
 									<div class="ibox announcement-detail">
