@@ -938,7 +938,9 @@
 		    line-height: 50px;		
 		}
 					
-			
+		.period-wrapper . k-datepicker  > span.k-state-default {
+	height:37px;
+		}	
 			
 				
 		
