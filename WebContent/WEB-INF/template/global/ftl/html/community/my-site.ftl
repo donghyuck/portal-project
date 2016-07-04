@@ -939,7 +939,7 @@
 		}
 					
 		.k-datepicker.text-md  > span.k-state-default {
-			height:37px;
+			height:36px;
 		}	
 			
 				
