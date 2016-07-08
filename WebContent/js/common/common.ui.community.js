@@ -125,6 +125,7 @@
 				target.set("properties", this.get("properties"));
 			target.announceId = this.get("announceId");
 			target.set("objectType", this.get("objectType"));
+			target.set("objectId", this.get("objectId"));
 			target.set("subject", this.get("subject"));
 			target.set("body", this.get("body"));
 			target.set("startDate", this.get("startDate"));
