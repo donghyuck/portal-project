@@ -254,7 +254,7 @@
 					}else{
 						newWebPage = new common.ui.data.WebPage();
 						newWebPage.set("webSiteId", getSelectedSite().webSiteId);
-						newWebPage.set("properties", {});
+						newWebPage.set("properties", []);
 					}					
 					$('#my-site-web-page-list').fadeOut(function(e){ 
 						createWebPageEditor( newWebPage );
@@ -588,8 +588,7 @@
 					}			
 				} );					
 				
-				common.ui.bind($("#my-site-announcement-list"), observable );		
-
+				common.ui.bind($("#my-site-announcement-list"), observable );
 				renderTo.on("click","[data-action=edit],[data-action=create]", function(e){	
 					var $this = $(this);	
 					var objectId = $this.data("object-id");		
@@ -598,8 +597,9 @@
 						newAnnounce = common.ui.grid(renderTo).dataSource.get(objectId);
 					}else{
 						newAnnounce = new common.ui.data.Announce();
-						//newWebPage.set("webSiteId", getSelectedSite().webSiteId);
-						newAnnounce.set("properties", {});
+						newAnnounce.set("objectType", 30);
+						newAnnounce.set("objectId", getSelectedSite().webSiteId);
+						newAnnounce.set("properties", []);
 					}					
 					$('#my-site-announcement-list').fadeOut(function(e){ 
 						createAnnouncementEditor( newAnnounce );
@@ -612,6 +612,7 @@
 		
 		function createAnnouncementEditor( source ){
 			var renderTo = $("#my-site-announcement-view");
+			var collapseOptions = $('#my-site-announcement-view-options');
 			if(!renderTo.data("model")){
 				var observable =  common.ui.observable({ 
 					announce : new common.ui.data.Announce(),
@@ -626,6 +627,7 @@
 					setSource : function(source){
 						var $that = this;
 						source.copy($that.announce);	
+						
 						$that.set("editable", $that.announce.announceId > 0 ? true : false );	
 											
 						$that.propertyDataSource.read();				
@@ -638,6 +640,8 @@
 						}						
 						//$that.set("fileContent", "");
 						//switchery.setPosition();
+						
+						console.log( common.ui.stringify($that.announce) );
 					},
 					close:function(){
 						renderTo.fadeOut(function(e){ 
@@ -647,11 +651,21 @@
 				});	
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
+				
+				collapseOptions.on('shown.bs.collapse', function () {
+					$('#my-site-announcement-view-options-btn').text("고급설정 숨기기 .. ");
+				});
+				collapseOptions.on('hidden.bs.collapse', function () {
+					$('#my-site-announcement-view-options-btn').text("고급설정 보기 .. ");
+				});	
 			}
 			renderTo.data("model").setSource( source );	
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 				
 		}	
+		
+		
+		
 		
 		function createNoticeEditorSection(source){
 			var renderTo = $("#my-notice-edit");		
@@ -1224,13 +1238,33 @@
 										<div class="ibox-content no-padding">					
 											<!-- sky-form -->	
 											<form action="#" class="sky-form">
-												<fieldset>
+												<fieldset class="bg-gray">
 													<section>
 														<h2 class="label">제목</h2>
 														<label class="input">
-															<input type="text" class="form-control" data-bind="value:announce.subject" >
+															<input type="text" class="form-control" data-bind="value:announce.subject" placeholder="제목" >
 														</label>
 													</section>		
+													<section>
+														<label class="label">공지 기간</label>
+														<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
+														<div class="note"><i class="fa fa-info text-danger"></i> 지정된 기간 동안만 이벤트 및 공지가 보여집니다.</div>
+													</section>	
+													<section>
+													
+													<textarea data-role="editor"
+								                      data-tools="['bold',
+								                                   'italic',
+								                                   'underline',
+								                                   'strikethrough',
+								                                   'justifyLeft',
+								                                   'justifyCenter',
+								                                   'justifyRight',
+								                                   'justifyFull']"
+								                      data-bind="value:announce.body"
+								                      style="height: 200px;"></textarea>
+													
+													</section>
 												</fieldset>		
 												<fieldset>	
 													<div class="collapse" id="my-site-announcement-view-options">
