@@ -42,5 +42,6 @@
 	
 	<!-- ASSESSMENT  -->
 	<import resource="classpath:context/competencySubsystemContext.xml"/>	
-		
+	
+	<import resource="servicesSubsystemContext.xml"/>	
 </beans>

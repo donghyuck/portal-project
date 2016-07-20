@@ -25,14 +25,10 @@ public interface ListService {
 
 	public List<Board> getBoardList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults);
 
-	public void write(Board board);
+	public void write(Board board, DataSourceRequest request);
 
 	public void delete(Board board);
 
 	public void updateReadCount(Board board);
-
-	public int countNoticeList(DataSourceRequest request);
-
-	public List<Board> getNoticeList(DataSourceRequest request, int startIndex, int maxResults);
 
 }

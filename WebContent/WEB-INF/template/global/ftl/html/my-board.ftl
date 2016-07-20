@@ -60,7 +60,9 @@
                                 	type:'POST', 
                                 	contentType : 'application/json'
                                 },
-                                parameterMap: function (options, type){								
+                                parameterMap: function (options, type){	
+                                	options.boardCode = 'B001';
+                                	options.boardName = 'free';							
 									return common.ui.stringify( options );
 								}
                             },
@@ -93,10 +95,10 @@
                     });
                     
                     renderTo.on('click' , '[data-action=view]' , function(e){
-                    	var $this = $(this);	
+                    	var $this = $(this);
                    		var objectId = $this.data("object-id");	
                    		var item = common.ui.grid(renderTo).dataSource.get(objectId);
-                   		//console.log(common.ui.stringify(item));
+                   		console.log(common.ui.stringify(item));
                    		renderTo.fadeOut(function(e){
                    			writeBoard(item);
                    		});
@@ -128,11 +130,13 @@
                             type: "POST",
                             transport: {
                                 read: {
-                                	url: "<@spring.url "/data/podo/board/noticeListView.json?output=json" />",
+                                	url: "<@spring.url "/data/podo/board/listView.json?output=json" />",
                                 	type:'POST', 
                                 	contentType : 'application/json'
                                 },
-                                parameterMap: function (options, type){								
+                                parameterMap: function (options, type){	
+                                	options.boardCode = 'B002';		
+                                	options.boardName = 'notice';						
 									return common.ui.stringify( options );
 								}
                             },
@@ -153,7 +157,7 @@
                         },
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 100 },
-                        	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo#' data-action='view'>#= title #</a>" },
+                        	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo #' data-action='view'>#= title #</a>" },
                         	{ title: "작성자", field: "writer", width: 150 },
                         	{ title: "작성일", field: "writeDate", width: 150, format:"{0:yyyy/MM/dd}" },
                         	{ title: "조회수", field: "readCount", width: 100 }
@@ -162,20 +166,51 @@
 							var $this = this;
 						}
                     });
+                    
+                    noticeRenderTo.on('click' , '[data-action=view]' , function(e){
+                    	var $this = $(this);	
+                   		var objectId = $this.data("object-id");	
+                   		var item = common.ui.grid(noticeRenderTo).dataSource.get(objectId);
+                   		console.log(objectId);
+                   		console.log(common.ui.stringify(item));
+                   		noticeRenderTo.fadeOut(function(e){
+                   			writeNotice(item);
+                   		});
+                    	
+                    });
+                    
+                    $('#notice_write').on('click' , '[data-action=create], [data-action=update]' , function(e){
+                    	var $this = $(this);
+                    	var objectId = $this.data("object-id");	
+						var newNotice ;
+						if( objectId > 0){
+							newNotice = common.ui.grid(noticeRenderTo).dataSource.get(objectId);
+						}else{
+							newNotice = new common.ui.data.community.Board();
+						}
+	                   	noticeRenderTo.fadeOut(function(e){
+                   			$('#notice-write-form').fadeIn();
+                   			console.log(common.ui.stringify(newNotice));
+                   			writeNotice(newNotice);
+                   		});
+                    	
+                    });
                    
                    
  			 <!----- QnA 게시판 그리드 ------>
                		var qnaRenderTo = $('#qna-list-grid');
-                    var qnaGrid = noticeRenderTo.kendoGrid({
+                    var qnaGrid = qnaRenderTo.kendoGrid({
                         dataSource: {
                             type: "POST",
                             transport: {
                                 read: {
-                                	url: "<@spring.url "/data/podo/board/qnaListView.json?output=json" />",
+                                	url: "<@spring.url "/data/podo/board/listView.json?output=json" />",
                                 	type:'POST', 
                                 	contentType : 'application/json'
                                 },
-                                parameterMap: function (options, type){								
+                                parameterMap: function (options, type){
+                                	options.boardCode = 'B003';				
+                                	options.boardName = 'qna';					
 									return common.ui.stringify( options );
 								}
                             },
@@ -195,21 +230,53 @@
     						refresh: true
                         },
                         columns: [
-                        	{ title: "글번호", field: "boardNo", width: 100 },
-                        	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo#' data-action='view'>#= title #</a>" },
-                        	{ title: "작성자", field: "writer", width: 150 },
-                        	{ title: "작성일", field: "writeDate", width: 150, format:"{0:yyyy/MM/dd}" },
-                        	{ title: "조회수", field: "readCount", width: 100 }
+                        	{ title: "글번호", field: "boardNo", width: 80 },
+                        	{ title: "분류", field: "category", width: 130 },
+                        	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo #' data-action='view'>#= title #</a>" },
+                        	{ title: "작성자", field: "writer", width: 120 },
+                        	{ title: "작성일", field: "writeDate", width: 120, format:"{0:yyyy/MM/dd}" },
+                        	{ title: "조회수", field: "readCount", width: 80 }
                         ],
                         dataBound: function(e) {
 							var $this = this;
 						}
+                    });
+                    
+                     qnaRenderTo.on('click' , '[data-action=view]' , function(e){
+                    	var $this = $(this);	
+                   		var objectId = $this.data("object-id");	
+                   		var item = common.ui.grid(qnaRenderTo).dataSource.get(objectId);
+                   		console.log(objectId);
+                   		console.log(common.ui.stringify(item));
+                   		qnaRenderTo.fadeOut(function(e){
+                   			writeQna(item);
+                   		});
+                    	
+                    });
+                    
+                    $('#qna_write').on('click' , '[data-action=create], [data-action=update]' , function(e){
+                    	var $this = $(this);
+                    	var objectId = $this.data("object-id");	
+						var newQna ;
+						if( objectId > 0){
+							newNotice = common.ui.grid(qnaRenderTo).dataSource.get(objectId);
+						}else{
+							newQna = new common.ui.data.community.Board();
+						}
+	                   	qnaRenderTo.fadeOut(function(e){
+                   			$('#qna-write-form').fadeIn();
+                   			console.log(common.ui.stringify(newQna));
+                   			writeQna(newQna);
+                   		});
+                    	
                     });
                                        
 			}
 			
 		}]);
 		
+		
+	<!---- 자유게시판 쓰기/수정/삭제 폼 ---->	
 		function writeBoard(source){
 			
 			var renderTo = $('#board-write-form');
@@ -296,16 +363,206 @@
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
 			}
-			
 			renderTo.data("model").setSource( source );	
-			
 				if(!renderTo.is(':visible'))
 			{
 				renderTo.fadeIn();
 			}		
 		}
 		
+	<!---- 공지게시판 쓰기/수정/삭제 폼 ---->		
+		function writeNotice(source){
+			
+			var renderTo = $('#notice-write-form');
+			if(!renderTo.data("model")){
+				var observable =  common.ui.observable({
+					notice : new common.ui.data.community.Board(),
+					editable : false,
+					propertyDataSource : new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
+					edit:function(){
+						this.set('editable', true);
+					},
+					saveOrUpdate: function(e){
+						var $this = this;
+						console.log( kendo.stringify( $this.notice) );
+						common.ui.ajax(
+							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.notice ),
+								contentType : "application/json",
+								success : function(response){
+									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
+									
+								},
+								fail: function(){								
+									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									common.ui.grid( $('#notice-list-grid') ).dataSource.read();														
+									$this.close();
+								}
+							}
+						);	
+						return false;	
+					},
+					setSource : function(source){
+						var $this = this;
+						//console.log($this.notice);
+						source.copy($this.notice);
+						$this.set('editable', ($this.notice.boardNo > 0 ? false : true ));
+						common.ui.ajax(
+							'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
+							{
+								data : kendo.stringify( $this.notice ),
+								contentType : "application/json",
+								success : function(response){	
+								},
+								fail: function(){								
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+								}
+							});	
+					},
+					create : function(e){
+						var empty = new common.ui.data.community.Board();
+						createNoticeEditor(empty);
+					},
+					update : function(e){
+						e.stopPropagation();
+						createNoticeEditor(this.notice);
+					},
+					close : function(){
+						renderTo.fadeOut(function(e){ 
+							$("#notice-list-grid").fadeIn();
+						});
+					}
+				});			
+				renderTo.data("model", observable);		
+				common.ui.bind( renderTo, observable );
+			}
+			renderTo.data("model").setSource(source);	
+				if(!renderTo.is(':visible'))
+			{
+				renderTo.fadeIn();
+			}		
+		}
 		
+
+	<!---- QnA게시판 쓰기/수정/삭제 폼 ---->		
+		function writeQna(source){
+			
+			var renderTo = $('#qna-write-form');
+			if(!renderTo.data("model")){
+				var observable =  common.ui.observable({
+					qna : new common.ui.data.community.Board(),
+					editable : false,
+					propertyDataSource : new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
+					edit:function(){
+						this.set('editable', true);
+					},
+					saveOrUpdate: function(e){
+						var $this = this;
+						console.log( kendo.stringify( $this.qna) );
+						common.ui.ajax(
+							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.qna ),
+								contentType : "application/json",
+								success : function(response){
+									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
+									
+								},
+								fail: function(){								
+									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									common.ui.grid( $('#qna-list-grid') ).dataSource.read();														
+									$this.close();
+								}
+							}
+						);	
+						return false;	
+					},
+					setSource : function(source){
+						var $this = this;
+						source.copy($this.qna);
+						$this.set('editable', ($this.qna.boardNo > 0 ? false : true ));
+						common.ui.ajax(
+							'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
+							{
+								data : kendo.stringify( $this.qna ),
+								contentType : "application/json",
+								success : function(response){	
+								},
+								fail: function(){								
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+								}
+							});	
+					},
+					create : function(e){
+						var empty = new common.ui.data.community.Board();
+						createNoticeEditor(empty);
+					},
+					update : function(e){
+						e.stopPropagation();
+						createNoticeEditor(this.qna);
+					},
+					close : function(){
+						renderTo.fadeOut(function(e){ 
+							$("#qna-list-grid").fadeIn();
+						});
+					}
+				});			
+				renderTo.data("model", observable);		
+				common.ui.bind( renderTo, observable );
+			}
+			renderTo.data("model").setSource(source);	
+				if(!renderTo.is(':visible'))
+			{
+				renderTo.fadeIn();
+			}		
+		}
+
+
+
+
 		function createBoardEditor(source){
 			var renderTo = $("board-write-form");
 			if( !renderTo.data("model")){
@@ -351,20 +608,66 @@
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);	
 			}
-			if( source ){
-				source.copy( renderTo.data("model").board );				
-				if( source.boardNo === 0 ){
-					renderTo.data("model").set("new", false); 
-				}else{
-					renderTo.data("model").set("new", false); 					
-				} 
-			}
 			$("#board-detail-view").fadeOut( "slow", function(e){
 				renderTo.fadeIn();
 			});
 		}
 		
 		
+		
+		function createNoticeEditor(source){
+			var renderTo = $("notice-write-form");
+			if( !renderTo.data("model")){
+				var model = common.ui.observable({
+					notice : new common.ui.data.community.Board(),
+					new : true,
+					visible : true,
+					saveOrUpdate: function(e){
+						var $this = this;
+						console.log( kendo.stringify( $this.notice) );
+						common.ui.ajax(
+							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.notice ),
+								contentType : "application/json",
+								success : function(response){
+									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
+									
+								},
+								fail: function(){								
+									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									common.ui.grid( $('#notice-list-grid') ).dataSource.read();														
+									$this.close();
+								}
+							}
+						);	
+						return false;	
+					},
+					close : function(){
+						renderTo.fadeOut(function(e){ 
+							$("#notice-list-grid").fadeIn();
+						});
+					}
+				});
+				kendo.bind( renderTo, model);
+				renderTo.data("model", model);	
+			}
+			$("#notice-list-grid").fadeOut( "slow", function(e){
+				renderTo.fadeIn();
+			});
+		}
+		
+		
+		
+   /*		
 		function createBoardDetailView(source){
 			var renderTo = $('#board-detail-view');
 			//console.log(common.ui.stringify(source));
@@ -434,58 +737,58 @@
 			}
 			
 		}
+	*/
+	
 			
 		</script>
 		<style>
-			#board-list-grid th {
+			#board-list-grid td,
+			#notice-list-grid td,
+			#qna-list-grid td {
 				text-align: center;
-				font-weight: bold;
-				font-size: 16px;
-				background: pink;
 				height: 30px;
 				line-height: 30px;
 			}
-			#board-list-grid td {
+			#board-list-grid th,
+			#notice-list-grid th,
+			#qna-list-grid th {
 				text-align: center;
-				background: #FBEFF2;
+				font-weight: bold;
+				font-size: 16px;
 				height: 30px;
+				line-height: 30px;
 			}
-			#board-list-grid  td:nth-child(1000000n+2) {
+			#board-list-grid th { background: pink; }
+			#board-list-grid td { background: #FBEFF2; }
+			#board-list-grid td:nth-child(1000000n+2), 
+			#notice-list-grid td:nth-child(1000000n+2), 
+			#qna-list-grid td:nth-child(1000000n+3) {
 				text-align: left;
 				padding-left: 15px;
 			}
 			#notice-list-grid th {
-				text-align: center;
-				font-weight: bold;
-				font-size: 16px;
 				background: #2E64FE;
-				height: 30px;
-				line-height: 30px;
 				color: white;
 			}
 			#notice-list-grid td {
 				color: #2E2E2E;
-				text-align: center;
 				background: #CED8F6;
-				height: 30px;
 			}
-			#notice-list-grid  td:nth-child(1000000n+2) {
-				text-align: left;
-				padding-left: 15px;
+			#qna-list-grid th {
+				background: #31B404;
+				color: white;
+			}
+			#qna-list-grid td {
+				color: #2E2E2E;
+				background: #CEF6CE;
 			}
 			#tb_detailView {
 				width: 100%;
 				border-top: 2px solid #F7819F;
 			}
-			#tb_detailView td {
-				border-bottom: 1px solid lightgray;
-			}
-			#tb_detailView input {
-				border: none;
-			}
-			#lastTd {
-				border: 1px solid lightgray;
-			}
+			#tb_detailView td {	border-bottom: 1px solid lightgray;	}
+			#tb_detailView input { border: none; }
+			#lastTd { border: 1px solid lightgray; }
 			#tb_writeForm {
 				width: 100%;
 				border-top: 3px solid #F7819F;
@@ -493,9 +796,23 @@
 				padding: 0;
 				margin: 0;
 			}
-			#tb_writeForm td {
-				border-right: 1px solid lightgray;
+			#tb_noticeForm {
+				width: 100%;
+				border-top: 3px solid #0404B4;
+				border-bottom: 1px solid lightgray;
+				padding: 0;
+				margin: 0;
 			}
+			#tb_qnaForm {
+				width: 100%;
+				border-top: 3px solid #298A08;
+				border-bottom: 1px solid lightgray;
+				padding: 0;
+				margin: 0;
+			}
+			#tb_writeForm td, 
+			#tb_noticeForm td, 
+			#tb_qnaForm td { border-right: 1px solid lightgray;	}
 			.input_title {
 				height: 50px; 
 				width: 188px;
@@ -507,19 +824,33 @@
 				margin: 0;
 				border: none;
 			}
-			#title {
-				width: 942px;
-				height: 28px;
-				margin-left: 10px;
-				font-size: 15px;
+			.notice_title {
+				height: 50px; 
+				width: 188px;
+				background: #2E64FE;
+				text-align: center;
+				font-size: 17px;
+				color: white;
+				padding: 0;
+				margin: 0;
+				border: none;
+			}
+			.qna_title {
+				height: 50px; 
+				width: 188px;
+				background: #04B404;
+				text-align: center;
+				font-size: 17px;
+				color: white;
+				padding: 0;
+				margin: 0;
+				border: none;
 			}
 			.formTd {
 				height: 50px;
 				border: 1px solid lightgray;
 			}
-			.formTd input {
-				border: none;
-			}
+			.formTd input {	border: none; }
 			.formInput {
 			 border: none; 
 			 width: 100%; 
@@ -627,17 +958,146 @@
 						<span style="color: #2E2EFE; font-size:30px; font-weight:bold">공지게시판</span>&nbsp;&nbsp;&nbsp;<span style="color: gray">공지사항을 알려드립니다.</span>
 						<div>
 							<div id="notice-list-grid">
-								<button class="btn btn-primary" style="float: right; border-radius: 5px" data-action="create">글쓰기</button>
+								<div id="notice_write"><button class="btn btn-primary" style="float: right; border-radius: 5px" data-action="create">글쓰기</button></div>
 							</div>
 						</div>
+						<div id="notice-write-form" style="display: none;">
+							<form id="noticeForm" action="#">
+								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
+								<table id="tb_noticeForm">
+						            <tr>
+						                <td class="notice_title" >
+						                	제목
+						                </td>
+						                <td colspan="5">
+						                	<span data-bind="text:notice.title, invisible:editable" class="formInput"></span>
+						                	<input type="text" class="formInput" data-bind="value: notice.title, visible:editable" required/>
+						                </td>
+						            </tr>
+						            <tr>
+						            	<td class="notice_title" >
+						                	작성자
+						                </td>
+				                        <td class="formTd">
+				                            <input type="text" class="formInput" data-bind="value: notice.writer" readonly/>
+				                        </td>
+				                        <td class="notice_title" >
+						                	작성일
+						                </td>
+				                        <td class="formTd">
+				                            <input type="text" class="formInput" data-bind="value: notice.formattedWriteDate" readonly/>
+				                        </td>
+				                        <td class="notice_title" >
+						                	조회수
+						                </td>
+				                        <td class="formTd"> 
+				                            <input type="text" class="formInput" data-bind="value: notice.readCount" readonly size="4"/>
+				                        </td>
+				                    </tr>
+						            <tr>
+						                <td colspan="6" id="lastTd" >
+						                	<div data-bind="text:notice.content, invisible:editable" style="height:300px; padding: 5px"></div>
+						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" required data-bind="value:notice.content, visible:editable"></textarea>
+						                </td>
+						            </tr>
+						             <tr>
+						                <td class="notice_title">
+						                	첨부파일
+						                </td>
+						                <td colspan="5">
+						                	<span data-bind="text:notice.image, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
+						                	<input type="file" data-bind="value: board.image, visible:editable"/>
+						                </td>
+						            </tr>
+								</table><br/>
+								<button type="button" class="btn btn-danger" style="float: left; border-radius: 5px" data-bind="click:delete , invisible:editable">삭제</button>
+								<button type="button" class="btn btn-primary" style="float: left; border-radius: 5px" data-bind="click:edit , invisible:editable">수정</button>
+								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate, visible:editable">확인</button>
+								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, visible:editable">취소</button>
+								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, invisible:editable">목록</button>
+						    </form>
+						 </div>
 					</div>
 					<div class="tab-pane fade" id="qnaBoard">
 						<span style="color: #04B404; font-size:30px; font-weight:bold">QnA게시판</span>&nbsp;&nbsp;&nbsp;<span style="color: gray">궁금한 점을 물어보세요.</span>
 						<div>
 							<div id="qna-list-grid">
-								<button class="btn btn-success" style="float: right; border-radius: 5px" data-action="create">글쓰기</button>
+								<div id="qna_write"><button class="btn btn-success" style="float: right; border-radius: 5px" data-action="create">글쓰기</button></div>
 							</div>
 						</div>
+						<div id="qna-write-form" style="display: none;">
+							<form id="qnaForm" action="#">
+								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
+								<table id="tb_qnaForm">
+									<tr>
+										<td class="qna_title">
+											유형
+										</td>
+										<td colspan="5" style="padding-left: 10px">
+											<span data-bind="text:qna.category, invisible:editable" class="formInput"></span>
+											<select name="category" style="font-size:14px" data-bind="qna.category, visible:editable" required>
+												<option value="">유형을 선택하세요.</option>
+												<option value="수업">수업</option>
+												<option value="학적">학적</option>
+												<option value="유학/연수/교류">유학/연수/교류</option>
+												<option value="교직">교직</option>
+												<option value="장학/융자">장학/융자</option>
+												<option value="기타">기타</option>
+											</select>
+										</td>
+									</tr>
+						            <tr>
+						                <td class="qna_title">
+						                	제목
+						                </td>
+						                <td colspan="5" style="border-top:1px solid lightgray">
+						                	<span data-bind="text:qna.title, invisible:editable" class="formInput"></span>
+						                	<input type="text" class="formInput" data-bind="value: qna.title, visible:editable" required/>
+						                </td>
+						            </tr>
+						            <tr>
+						            	<td class="qna_title" >
+						                	작성자
+						                </td>
+				                        <td class="formTd">
+				                            <input type="text" class="formInput" data-bind="value: qna.writer" readonly/>
+				                        </td>
+				                        <td class="qna_title" >
+						                	작성일
+						                </td>
+				                        <td class="formTd">
+				                            <input type="text" class="formInput" data-bind="value: qna.formattedWriteDate" readonly/>
+				                        </td>
+				                        <td class="qna_title" >
+						                	조회수
+						                </td>
+				                        <td class="formTd"> 
+				                            <input type="text" class="formInput" data-bind="value: qna.readCount" readonly size="4"/>
+				                        </td>
+				                    </tr>
+						            <tr>
+						                <td colspan="6" id="lastTd" >
+						                	<div data-bind="text:qna.content, invisible:editable" style="height:300px; padding: 5px"></div>
+						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" required data-bind="value:qna.content, visible:editable"></textarea>
+						                </td>
+						            </tr>
+						             <tr>
+						                <td class="qna_title">
+						                	첨부파일
+						                </td>
+						                <td colspan="5">
+						                	<span data-bind="text:qna.image, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
+						                	<input type="file" class="formInput" data-bind="value: qna.image, visible:editable"/>
+						                </td>
+						            </tr>
+								</table><br/>
+								<button type="button" class="btn btn-danger" style="float: left; border-radius: 5px" data-bind="click:delete , invisible:editable">삭제</button>
+								<button type="button" class="btn btn-primary" style="float: left; border-radius: 5px" data-bind="click:edit , invisible:editable">수정</button>
+								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate, visible:editable">확인</button>
+								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, visible:editable">취소</button>
+								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, invisible:editable">목록</button>
+						    </form>
+						 </div>
 					</div>
 				</div>
 			</div>

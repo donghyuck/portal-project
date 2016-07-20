@@ -34,15 +34,7 @@ public class ListServiceImpl implements ListService {
 	public void setMemberCache(Cache memberCache) {
 		this.memberCache = memberCache;
 	}
-	
-	/*public Cache getBoardCache() {
-		return boardCache;
-	}
 
-	public void setBoardCache(Cache boardCache) {
-		this.boardCache = boardCache;
-	}
-*/
 	@Override
 	public List<Member> getMemberList() {
 		return listDao.getMemberList();
@@ -107,40 +99,17 @@ public class ListServiceImpl implements ListService {
 			if( memberCache.get(board_no) != null ){
 				board = (Board) memberCache.get(board_no).getObjectValue();			
 			} else {
-				board = listDao.getBoardListByNo(board_no);
+				board = listDao.getBoardListByNo(dataSourceRequest, board_no);
 				memberCache.put(new Element(board_no, board));
 			}
 			list.add(board);
 		}		
 		return list;
 	}
-	
-	@Override
-	public int countNoticeList(DataSourceRequest request) {
-		return listDao.countNoticeList(request);
-	}
 
 	@Override
-	public List<Board> getNoticeList(DataSourceRequest request, int startIndex, int maxResults) {
-		List<Long> nos = listDao.getNoticeNo(request, startIndex, maxResults);
-		List<Board> list = new ArrayList<Board>(nos.size());
-		for(Long notice_no : nos){
-			Board notice;
-			notice = new Board();
-			if( memberCache.get(notice_no) != null ){
-				notice = (Board) memberCache.get(notice_no).getObjectValue();			
-			} else {
-				notice = listDao.getNoticeListByNo(notice_no);
-				memberCache.put(new Element(notice_no, notice));
-			}
-			list.add(notice);
-		}		
-		return list;
-	}
-
-	@Override
-	public void write(Board board) {
-		listDao.write(board);
+	public void write(Board board, DataSourceRequest request) {
+		listDao.write(board, request);
 	}
 	
 	@Override

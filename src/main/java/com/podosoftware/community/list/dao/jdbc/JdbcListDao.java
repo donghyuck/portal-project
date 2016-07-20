@@ -143,7 +143,7 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 
 	@Override
 	public Integer countBoardList(DataSourceRequest dataSourceRequest) {
-		return getExtendedJdbcTemplate().queryForObject(getBoundSql("PORTAL_CUSTOM.COUNT_BOARD").getSql(), Integer.class);
+		return getExtendedJdbcTemplate().queryForObject(getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.COUNT_BOARD", dataSourceRequest.getData()).getSql(), Integer.class);
 	}
 
 	@Override
@@ -154,26 +154,45 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 
 	@Override
 	public List<Long> getBoardNo(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
-		return getExtendedJdbcTemplate().queryScrollable(getBoundSql("PORTAL_CUSTOM.SELECT_BOARD_NO").getSql(), 
+		return getExtendedJdbcTemplate().queryScrollable(getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.SELECT_BOARD_NO", dataSourceRequest.getData()).getSql(), 
 				startIndex, maxResults, new Object[] { }, new int[] { }, Long.class);
 	}
 
 	@Override
-	public Board getBoardListByNo(Long no) {
-		return getExtendedJdbcTemplate().queryForObject(getBoundSql("PORTAL_CUSTOM.SELECT_BOARD_BY_NO").getSql(), 
+	public Board getBoardListByNo(DataSourceRequest dataSourceRequest, Long no) {
+		return getExtendedJdbcTemplate().queryForObject(getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.SELECT_BOARD_BY_NO", dataSourceRequest.getData()).getSql(), 
 				boardRowMapper, new SqlParameterValue(Types.NUMERIC, no));
 	}
 
 	@Override
-	public void write(Board board) {
-		long nextId = getNextId("PODO_BOARD");
-		board.setBoardNo(nextId);
+	public void write(Board board, DataSourceRequest request) {
+		if((request.getData()).get("boardName").equals("free")) {
+			long nextId = getNextId("PODO_FREE_BOARD");
+			board.setBoardNo(nextId);
+			
+		} else if((request.getData()).get("boardName").equals("notice")) {
+			long nextId = getNextId("PODO_NOTICE_BOARD");
+			board.setBoardNo(nextId);
+
+		} else if((request.getData()).get("boardName").equals("qna")) {
+			long nextId = getNextId("PODO_QNA_BOARD");
+			board.setBoardNo(nextId);
+			
+		}
 		getExtendedJdbcTemplate().update(this.getBoundSql("PORTAL_CUSTOM.INSERT_BOARD").getSql(), 
 				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
 				new SqlParameterValue(Types.VARCHAR, board.getTitle()),
 				new SqlParameterValue(Types.VARCHAR, board.getContent()),
 				new SqlParameterValue(Types.VARCHAR, board.getImage())
 			);
+		
+		/*if((request.getData()).get("boardName").equals("qna")) {
+			getExtendedJdbcTemplate().update(getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.INSERT_QNA_BOARD", request.getData()).getSql(),
+					new SqlParameterValue(Types.VARCHAR, qna.getType()),
+					new SqlParameterValue(Types.VARCHAR, qna.getCategory()),
+					new SqlParameterValue(Types.VARCHAR, board.getBoardNo())
+					);
+		}*/
 	}
 	
 	@Override
@@ -192,20 +211,4 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 				);
 	}
 
-	@Override
-	public int countNoticeList(DataSourceRequest request) {
-		return getExtendedJdbcTemplate().queryForObject(getBoundSql("PORTAL_CUSTOM.COUNT_NOTICE").getSql(), Integer.class);
-	}
-
-	@Override
-	public List<Long> getNoticeNo(DataSourceRequest request, int startIndex, int maxResults) {
-		return getExtendedJdbcTemplate().queryScrollable(getBoundSql("PORTAL_CUSTOM.SELECT_NOTICE_NO").getSql(), 
-				startIndex, maxResults, new Object[] { }, new int[] { }, Long.class);
-	}
-	
-	@Override
-	public Board getNoticeListByNo(Long no) {
-		return getExtendedJdbcTemplate().queryForObject(getBoundSql("PORTAL_CUSTOM.SELECT_NOTICE_BY_NO").getSql(), 
-				boardRowMapper, new SqlParameterValue(Types.NUMERIC, no));
-	}
 }

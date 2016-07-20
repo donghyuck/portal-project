@@ -131,10 +131,9 @@ public class PodoCommunityDataController {
 	@RequestMapping(value = "/board/listView.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public ItemList getBoardList(@RequestBody DataSourceRequest dataSourceRequest) throws Exception {
-		
-		//Board board = listService.getBoardListByNo(dataSourceRequest.getObjectId());
 		int total = 0;
 		List<Board> items;
+		//log.debug(dataSourceRequest.getData());
 		
 		total = listService.countBoardList(dataSourceRequest);
 		items = listService.getBoardList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
@@ -142,23 +141,10 @@ public class PodoCommunityDataController {
 		return new ItemList(items, total);
 	}
 	
-	@RequestMapping(value = "/board/noticeListView.json", method = { RequestMethod.POST, RequestMethod.GET })
-	@ResponseBody
-	public ItemList getNoticeList(@RequestBody DataSourceRequest request) throws Exception {
-		int total = 0;
-		List<Board> items;
-		
-		total = listService.countNoticeList(request);
-		items = listService.getNoticeList(request, request.getSkip(), request.getPageSize());
-		
-		return new ItemList(items, total);
-	}
-	
-	
 	@RequestMapping(value = "/board/write.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public Board write(@RequestBody Board board, NativeWebRequest request) throws Exception {
-		listService.write(board);
+	public Board write(@RequestBody Board board, DataSourceRequest request) throws Exception {
+		listService.write(board, request);
 		return board;
 	}
 	

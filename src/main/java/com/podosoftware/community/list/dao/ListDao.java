@@ -34,17 +34,12 @@ public interface ListDao {
 
 	public List<Long> getBoardNo(DataSourceRequest dataSourceRequest, int startIndex, int maxResults);
 
-	public Board getBoardListByNo(Long no);
+	public Board getBoardListByNo(DataSourceRequest dataSourceRequest, Long no);
 
-	public void write(Board board);
+	public void write(Board board, DataSourceRequest request);
 
 	public void delete(Board board);
 	
 	public void updateReadCount(Board board);
 
-	public int countNoticeList(DataSourceRequest request);
-
-	public List<Long> getNoticeNo(DataSourceRequest request, int startIndex, int maxResults);
-
-	public Board getNoticeListByNo(Long no);
 }
