@@ -36,7 +36,7 @@
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
-								console.log( common.ui.stringify(currentUser ));
+								console.log(common.ui.stringify(currentUser));
 							} 
 						}						
 					},
