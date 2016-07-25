@@ -3,6 +3,7 @@ package com.podosoftware.community.list.dao;
 import java.util.List;
 
 import com.podosoftware.community.board.domain.Board;
+import com.podosoftware.community.board.domain.QnaBoard;
 import com.podosoftware.community.list.domain.Member;
 
 import architecture.ee.web.model.DataSourceRequest;
@@ -30,7 +31,7 @@ public interface ListDao {
 
 	public Integer countBoardList(DataSourceRequest dataSourceRequest);
 
-	public List<Long> getBoardList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults);
+	//public List<Long> getBoardList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults);
 
 	public List<Long> getBoardNo(DataSourceRequest dataSourceRequest, int startIndex, int maxResults);
 
@@ -41,5 +42,7 @@ public interface ListDao {
 	public void delete(Board board);
 	
 	public void updateReadCount(Board board);
+
+	public QnaBoard getQnaListByNo(Long no);
 
 }

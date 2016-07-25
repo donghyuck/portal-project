@@ -619,10 +619,50 @@
 	    } 
 	});
 	
+	var QnaBoard = kendo.data.Model.define({
+		id: 'boardNo',
+	    fields: {
+	    	boardCode: { type: "string" },
+	    	boardName: { type: "string" },
+	        boardNo: { type: "number", defaultValue:0 },
+	        writer: { type: "string", defaultValue:"관리자" },
+	        title: { type: "string" },
+	        content: { type: "string" },
+	        readCount: { type: "number" },
+	        image: { type: "string" },
+	        writeDate: { type: "date" },
+	        writingRef: { type: "number" },
+	        writingSeq: { type: "number" },
+	        writingLevel: { type: "number" },
+	        type: { type: "string" },
+	        category: { type: "string" }
+	    },
+	    formattedWriteDate : function() {
+			return kendo.toString(this.get("writeDate"), "yyyy/MM/dd");
+		},
+	    copy : function ( target ){
+	    	target.set("boardCode", this.get("boardCode"));
+	    	target.set("boardName", this.get("boardName"));
+	    	target.set("boardNo", this.get("boardNo"));
+	    	target.set("writer", this.get("writer"));
+	    	target.set("title", this.get("title"));	
+	    	target.set("content", this.get("content"));
+	    	target.set("readCount", this.get("readCount"));
+	    	target.set("image", this.get("image"));
+	    	target.set("writeDate", this.get("writeDate"));
+	    	target.set("writingRef", this.get("writingRef"));
+	    	target.set("writingSeq", this.get("writingSeq"));
+	    	target.set("writingLevel", this.get("writingLevel"));
+	    	target.set("type", this.get("type"));
+	    	target.set("category", this.get("category"));
+	    } 
+	});
+	
 	var extend = $.extend;
 	extend( common.ui.data, {
 		community:{
-			Board : Board
+			Board : Board,
+			QnaBoard : QnaBoard
 		}  
 	});
 })(jQuery);

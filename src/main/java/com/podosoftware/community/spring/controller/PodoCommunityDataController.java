@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.NativeWebRequest;
 
 import com.podosoftware.community.board.domain.Board;
+import com.podosoftware.community.board.domain.QnaBoard;
 import com.podosoftware.community.list.domain.Member;
 import com.podosoftware.community.list.service.ListService;
 
@@ -28,7 +29,6 @@ import architecture.ee.exception.NotFoundException;
 import architecture.ee.web.model.DataSourceRequest;
 import architecture.ee.web.model.DataSourceRequest.FilterDescriptor;
 import architecture.ee.web.model.ItemList;
-import architecture.ee.web.ws.Result;
 
 @Controller("podo-community-data-controller")
 @RequestMapping("/data/podo")
@@ -134,10 +134,21 @@ public class PodoCommunityDataController {
 		int total = 0;
 		List<Board> items;
 		//log.debug(dataSourceRequest.getData());
+		//log.debug((dataSourceRequest.getData()).get("boardName").equals("notice"));
 		
 		total = listService.countBoardList(dataSourceRequest);
 		items = listService.getBoardList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
-
+		return new ItemList(items, total);
+	}
+	
+	@RequestMapping(value = "/board/qnaListView.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@ResponseBody
+	public ItemList getQnaBoardList(@RequestBody DataSourceRequest dataSourceRequest) throws Exception {
+		int total = 0;
+		List<QnaBoard> items;
+		
+		total = listService.countBoardList(dataSourceRequest);
+		items = listService.getQnaList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
 		return new ItemList(items, total);
 	}
 	

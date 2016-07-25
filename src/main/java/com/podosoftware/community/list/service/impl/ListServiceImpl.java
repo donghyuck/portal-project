@@ -3,19 +3,24 @@ package com.podosoftware.community.list.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.podosoftware.community.board.domain.Board;
+import com.podosoftware.community.board.domain.QnaBoard;
 import com.podosoftware.community.list.dao.ListDao;
 import com.podosoftware.community.list.domain.Member;
 import com.podosoftware.community.list.service.ListService;
+import com.podosoftware.community.spring.controller.PodoCommunityDataController;
 
 import architecture.ee.web.model.DataSourceRequest;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.Element;
 
 public class ListServiceImpl implements ListService {
+	private Log log = LogFactory.getLog(PodoCommunityDataController.class);
 	
 	private ListDao listDao;
 	
@@ -63,7 +68,7 @@ public class ListServiceImpl implements ListService {
 		for(Long id : ids ){
 			Member member ;
 			if( memberCache.get(id) != null ){ //cache가 들어있으면
-				member = (Member)memberCache.get(id).getObjectValue(); //가져오고				
+				member = (Member) memberCache.get(id).getObjectValue(); //가져오고				
 			}else{ //cache가 비어있으면
 				member = listDao.getMemberById(id); //db통신해서 넣어준다.
 				memberCache.put(new Element(id, member));
@@ -120,6 +125,25 @@ public class ListServiceImpl implements ListService {
 	@Override
 	public void updateReadCount(Board board) {
 		listDao.updateReadCount(board);
+	}
+
+	@Override
+	public List<QnaBoard> getQnaList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
+		List<Long> qnaNos = listDao.getBoardNo(dataSourceRequest, startIndex, maxResults);
+		List<QnaBoard> qnaList = new ArrayList<QnaBoard>(qnaNos.size());
+		
+		for(Long qna_no : qnaNos) {
+			QnaBoard qna;
+			qna = new QnaBoard();
+			if(memberCache.get(qna_no) != null) {
+				qna = (QnaBoard) memberCache.get(qna_no).getObjectValue();
+			} else {
+				qna = listDao.getQnaListByNo(qna_no);
+				memberCache.put(new Element(qna_no, qna));
+			}
+			qnaList.add(qna);
+		}
+		return qnaList;
 	}
 
 }

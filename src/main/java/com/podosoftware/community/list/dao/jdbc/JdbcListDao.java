@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.stereotype.Repository;
 
 import com.podosoftware.community.board.domain.Board;
+import com.podosoftware.community.board.domain.QnaBoard;
 import com.podosoftware.community.list.dao.ListDao;
 import com.podosoftware.community.list.domain.Member;
 
@@ -23,6 +24,7 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 	
 	private static MemberListRowMapper rowMapper = new MemberListRowMapper();
 	private static BoardRowMapper boardRowMapper = new BoardRowMapper();
+	private static QnaBoardRowMapper qnaBoardRowMapper = new QnaBoardRowMapper();
 	
 	@Override
 	public List<Member> getMemberList() {		
@@ -71,6 +73,29 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 			b.setWritingSeq(rs.getLong("writing_seq"));
 			b.setWritingLevel(rs.getInt("writing_level"));
 			return b;
+		}
+	}
+
+	static class QnaBoardRowMapper implements RowMapper<QnaBoard> {
+		
+		@Override
+		public QnaBoard mapRow(ResultSet rs, int rowNum) throws SQLException {
+			QnaBoard q = new QnaBoard();
+			q.setBoardCode(rs.getString("board_code"));
+			q.setBoardName(rs.getString("board_name"));
+			q.setBoardNo(rs.getLong("board_no"));
+			q.setContent(rs.getString("content"));
+			q.setImage(rs.getString("image"));
+			q.setTitle(rs.getString("title"));
+			q.setReadCount(rs.getInt("read_count"));
+			q.setWriteDate(rs.getDate("write_date"));
+			q.setWriter(rs.getString("writer"));
+			q.setWritingRef(rs.getLong("writing_ref"));
+			q.setWritingSeq(rs.getLong("writing_seq"));
+			q.setWritingLevel(rs.getInt("writing_level"));
+			q.setType(rs.getString("type"));
+			q.setCategory(rs.getString("category"));
+			return q;
 		}
 	}
 
@@ -146,11 +171,11 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 		return getExtendedJdbcTemplate().queryForObject(getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.COUNT_BOARD", dataSourceRequest.getData()).getSql(), Integer.class);
 	}
 
-	@Override
+	/*@Override
 	public List<Long> getBoardList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
 		return getExtendedJdbcTemplate().queryScrollable(this.getBoundSql("PORTAL_CUSTOM.GET_BOARD_LIST").getSql(),
 				startIndex, maxResults, new Object[] { }, new int[] { }, Long.class);
-	}
+	}*/
 
 	@Override
 	public List<Long> getBoardNo(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
@@ -163,42 +188,51 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 		return getExtendedJdbcTemplate().queryForObject(getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.SELECT_BOARD_BY_NO", dataSourceRequest.getData()).getSql(), 
 				boardRowMapper, new SqlParameterValue(Types.NUMERIC, no));
 	}
-
+	
+	@Override
+	public QnaBoard getQnaListByNo(Long no) {
+		return getExtendedJdbcTemplate().queryForObject(getBoundSql("PORTAL_CUSTOM.SELECT_QNA_BOARD_BY_NO").getSql(), 
+				qnaBoardRowMapper, new SqlParameterValue(Types.NUMERIC, no));
+	}
+	
 	@Override
 	public void write(Board board, DataSourceRequest request) {
-		if((request.getData()).get("boardName").equals("free")) {
-			long nextId = getNextId("PODO_FREE_BOARD");
-			board.setBoardNo(nextId);
-			
-		} else if((request.getData()).get("boardName").equals("notice")) {
-			long nextId = getNextId("PODO_NOTICE_BOARD");
-			board.setBoardNo(nextId);
-
-		} else if((request.getData()).get("boardName").equals("qna")) {
-			long nextId = getNextId("PODO_QNA_BOARD");
-			board.setBoardNo(nextId);
-			
+		if(board.getBoardNo() == 0) { // 새 글쓰기이면,
+			if(board.getBoardCode().equals("B001")) { // 글번호 시퀀스 
+				long nextId = getNextId("PODO_FREE_BOARD");
+				board.setBoardNo(nextId);
+			} else if(board.getBoardCode().equals("B002")) {
+				long nextId = getNextId("PODO_NOTICE_BOARD");
+				board.setBoardNo(nextId);
+			} else if(board.getBoardCode().equals("B003")) {
+				long nextId = getNextId("PODO_QNA_BOARD");
+				board.setBoardNo(nextId);
+			}
+			getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.INSERT_BOARD").getSql(),
+					new SqlParameterValue(Types.VARCHAR, board.getBoardName()),
+					new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
+					new SqlParameterValue(Types.VARCHAR, board.getTitle()),
+					new SqlParameterValue(Types.VARCHAR, board.getContent()),
+					new SqlParameterValue(Types.VARCHAR, board.getImage()),
+					new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
+					new SqlParameterValue(Types.VARCHAR, board.getBoardCode())
+				);
+		} else { // 수정하기이면,
+			getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.UPDATE_BOARD").getSql(), 
+					new SqlParameterValue(Types.VARCHAR, board.getTitle()),
+					new SqlParameterValue(Types.VARCHAR, board.getContent()),
+					new SqlParameterValue(Types.VARCHAR, board.getImage()),
+					new SqlParameterValue(Types.VARCHAR, board.getBoardCode()),
+					new SqlParameterValue(Types.NUMERIC, board.getBoardNo())
+				);
 		}
-		getExtendedJdbcTemplate().update(this.getBoundSql("PORTAL_CUSTOM.INSERT_BOARD").getSql(), 
-				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
-				new SqlParameterValue(Types.VARCHAR, board.getTitle()),
-				new SqlParameterValue(Types.VARCHAR, board.getContent()),
-				new SqlParameterValue(Types.VARCHAR, board.getImage())
-			);
-		
-		/*if((request.getData()).get("boardName").equals("qna")) {
-			getExtendedJdbcTemplate().update(getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.INSERT_QNA_BOARD", request.getData()).getSql(),
-					new SqlParameterValue(Types.VARCHAR, qna.getType()),
-					new SqlParameterValue(Types.VARCHAR, qna.getCategory()),
-					new SqlParameterValue(Types.VARCHAR, board.getBoardNo())
-					);
-		}*/
+	
 	}
 	
 	@Override
 	public void delete(Board board) {
 		getExtendedJdbcTemplate().update(this.getBoundSql("PORTAL_CUSTOM.DELETE_BOARD").getSql(), 
-				new SqlParameterValue(Types.VARCHAR, board.getBoardName()),
+				new SqlParameterValue(Types.VARCHAR, board.getBoardCode()),
 				new SqlParameterValue(Types.NUMERIC, board.getBoardNo())
 			);
 	}
@@ -210,5 +244,6 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 					new SqlParameterValue(Types.NUMERIC, board.getBoardNo())
 				);
 	}
+
 
 }

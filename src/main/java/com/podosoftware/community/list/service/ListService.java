@@ -3,6 +3,7 @@ package com.podosoftware.community.list.service;
 import java.util.List;
 
 import com.podosoftware.community.board.domain.Board;
+import com.podosoftware.community.board.domain.QnaBoard;
 import com.podosoftware.community.list.domain.Member;
 
 import architecture.ee.web.model.DataSourceRequest;
@@ -30,5 +31,7 @@ public interface ListService {
 	public void delete(Board board);
 
 	public void updateReadCount(Board board);
+
+	public List<QnaBoard> getQnaList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults);
 
 }

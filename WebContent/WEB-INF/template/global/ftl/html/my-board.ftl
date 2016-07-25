@@ -37,7 +37,6 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								console.log( common.ui.stringify(currentUser ));
-								
 							} 
 						}						
 					},
@@ -48,6 +47,7 @@
 				});	
 				var currentUser = new common.ui.data.User();
 				console.log( common.ui.stringify(currentUser));	
+				$(".tab-v1").find(".nav-tabs a[data-toggle=tab]:first").tab('show');
 				
 				<!----- 자유 게시판 그리드 ------>
 					var renderTo = $("#board-list-grid");
@@ -94,7 +94,7 @@
 						}
                     });
                     
-                    renderTo.on('click' , '[data-action=view]' , function(e){
+                    renderTo.on('click', '[data-action=view]', function(e){
                     	var $this = $(this);
                    		var objectId = $this.data("object-id");	
                    		var item = common.ui.grid(renderTo).dataSource.get(objectId);
@@ -105,7 +105,7 @@
                     	
                     });
                     
-                    $('#btn_write').on('click' , '[data-action=create], [data-action=update]' , function(e){
+                    $('#btn_write').on('click', '[data-action=create]', function(e){
                     	var $this = $(this);
                     	var objectId = $this.data("object-id");	
 						var newBoard ;
@@ -113,6 +113,8 @@
 							newBoard = common.ui.grid(renderTo).dataSource.get(objectId);
 						}else{
 							newBoard = new common.ui.data.community.Board();
+							newBoard.boardCode = 'B001';
+							newBoard.boardName = 'free';
 						}
 	                   	renderTo.fadeOut(function(e){
                    			$('#board-write-form').fadeIn();
@@ -179,7 +181,7 @@
                     	
                     });
                     
-                    $('#notice_write').on('click' , '[data-action=create], [data-action=update]' , function(e){
+                    $('#notice_write').on('click', '[data-action=create]', function(e){
                     	var $this = $(this);
                     	var objectId = $this.data("object-id");	
 						var newNotice ;
@@ -187,6 +189,8 @@
 							newNotice = common.ui.grid(noticeRenderTo).dataSource.get(objectId);
 						}else{
 							newNotice = new common.ui.data.community.Board();
+							newNotice.boardCode = 'B002';
+							newNotice.boardName = 'notice';
 						}
 	                   	noticeRenderTo.fadeOut(function(e){
                    			$('#notice-write-form').fadeIn();
@@ -254,7 +258,7 @@
                     	
                     });
                     
-                    $('#qna_write').on('click' , '[data-action=create], [data-action=update]' , function(e){
+                    $('#qna_write').on('click', '[data-action=create]', function(e){
                     	var $this = $(this);
                     	var objectId = $this.data("object-id");	
 						var newQna ;
@@ -262,6 +266,8 @@
 							newNotice = common.ui.grid(qnaRenderTo).dataSource.get(objectId);
 						}else{
 							newQna = new common.ui.data.community.Board();
+							newQna.boardCode = 'B003';
+							newQna.boardName = 'qna';
 						}
 	                   	qnaRenderTo.fadeOut(function(e){
                    			$('#qna-write-form').fadeIn();
@@ -291,20 +297,19 @@
                             model: common.ui.data.Property
                         }
 					}),
-					edit:function(){
+					edit : function(){
 						this.set('editable', true);
 					},
-					saveOrUpdate: function(e){
+					saveOrUpdate : function(e){
 						var $this = this;
-						console.log( kendo.stringify( $this.board) );
+						console.log(kendo.stringify($this.board));
 						common.ui.ajax(
 							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
 								success : function(response){
-									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
-									
+									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");
 								},
 								fail: function(){								
 									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
@@ -316,23 +321,51 @@
 									kendo.ui.progress(renderTo, false);
 								},
 								complete : function(e){
-									common.ui.grid( $('#board-list-grid') ).dataSource.read();														
+									common.ui.grid($('#board-list-grid')).dataSource.read();
+									common.ui.grid($('#board-list-grid')).refresh();
 									$this.close();
 								}
-							}
-						);	
-						return false;	
+							});	
+							return false;
+					},
+					delete : function(source){
+						var $this = this;
+						console.log(kendo.stringify($this.board));
+						common.ui.ajax(
+							'<@spring.url "/data/podo/board/delete.json?output=json" />',
+							{
+								data : kendo.stringify( $this.board ),
+								contentType : "application/json",
+								success : function(response){		
+									common.ui.notification().show({ title:null, message: "글이 삭제되었습니다." },"success");							
+								},
+								fail: function(){								
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									common.ui.grid($('#board-list-grid')).dataSource.read();
+									common.ui.grid($('#board-list-grid')).refresh();
+									$this.close();
+								}
+							});	
 					},
 					setSource : function(source){
 						var $this = this;
 						source.copy($this.board);
-						$this.set('editable', ($this.board.boardNo > 0 ? false: true ));
-						common.ui.ajax(
+						$this.set('editable', ($this.board.boardNo > 0 ? false : true ));
+						if($this.board.boardNo > 0) {
+							common.ui.ajax(
 							'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
 							{
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
-								success : function(response){	
+								success : function(response){
+									common.ui.grid($('#board-list-grid')).refresh();
 								},
 								fail: function(){								
 								},
@@ -345,14 +378,7 @@
 								complete : function(e){
 								}
 							});	
-					},
-					create : function(e){
-						var empty = new common.ui.data.community.Board();
-						createBoardEditor(empty);
-					},
-					update : function(e){
-						e.stopPropagation();
-						createBoardEditor(this.board);
+						}
 					},
 					close : function(){
 						renderTo.fadeOut(function(e){ 
@@ -363,7 +389,7 @@
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
 			}
-			renderTo.data("model").setSource( source );	
+			renderTo.data("model").setSource(source);	
 				if(!renderTo.is(':visible'))
 			{
 				renderTo.fadeIn();
@@ -390,15 +416,14 @@
 					},
 					saveOrUpdate: function(e){
 						var $this = this;
-						console.log( kendo.stringify( $this.notice) );
+						console.log(kendo.stringify($this.notice));
 						common.ui.ajax(
 							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
 							{
-								data : kendo.stringify( $this.notice ),
+								data : kendo.stringify($this.notice),
 								contentType : "application/json",
 								success : function(response){
 									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
-									
 								},
 								fail: function(){								
 									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
@@ -410,7 +435,8 @@
 									kendo.ui.progress(renderTo, false);
 								},
 								complete : function(e){
-									common.ui.grid( $('#notice-list-grid') ).dataSource.read();														
+									common.ui.grid($('#notice-list-grid')).dataSource.read();
+									common.ui.grid($('#notice-list-grid')).refresh();											
 									$this.close();
 								}
 							}
@@ -422,12 +448,40 @@
 						//console.log($this.notice);
 						source.copy($this.notice);
 						$this.set('editable', ($this.notice.boardNo > 0 ? false : true ));
+						if($this.notice.boardNo > 0) {
+							common.ui.ajax(
+								'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
+								{
+									data : kendo.stringify( $this.notice ),
+									contentType : "application/json",
+									success : function(response){
+										common.ui.grid($('#notice-list-grid')).refresh();
+									},
+									fail: function(){								
+									},
+									requestStart : function(){
+										kendo.ui.progress(renderTo, true);
+									},
+									requestEnd : function(){
+										kendo.ui.progress(renderTo, false);
+									},
+									complete : function(e){
+									}
+								});	
+						}
+					},
+					delete: function(source){
+						var $this = this;
+						console.log(kendo.stringify($this.board));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
+							'<@spring.url "/data/podo/board/delete.json?output=json" />',
 							{
 								data : kendo.stringify( $this.notice ),
 								contentType : "application/json",
 								success : function(response){	
+									common.ui.notification().show({ title:null, message: "글이 삭제되었습니다." },"success");								
+									common.ui.grid($('#notice-list-grid')).dataSource.read();	
+									common.ui.grid($('#notice-list-grid')).refresh();
 								},
 								fail: function(){								
 								},
@@ -438,20 +492,16 @@
 									kendo.ui.progress(renderTo, false);
 								},
 								complete : function(e){
+									common.ui.grid($('#notice-list-grid')).dataSource.read();
+									common.ui.grid($('#notice-list-grid')).refresh();														
+									$this.close();
 								}
 							});	
-					},
-					create : function(e){
-						var empty = new common.ui.data.community.Board();
-						createNoticeEditor(empty);
-					},
-					update : function(e){
-						e.stopPropagation();
-						createNoticeEditor(this.notice);
 					},
 					close : function(){
 						renderTo.fadeOut(function(e){ 
 							$("#notice-list-grid").fadeIn();
+							common.ui.grid($('#notice-list-grid')).dataSource.read();
 						});
 					}
 				});			
@@ -494,7 +544,8 @@
 								contentType : "application/json",
 								success : function(response){
 									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
-									
+									common.ui.grid($('#qna-list-grid')).dataSource.read();	
+									common.ui.grid($('#qna-list-grid')).refresh();
 								},
 								fail: function(){								
 									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
@@ -506,7 +557,8 @@
 									kendo.ui.progress(renderTo, false);
 								},
 								complete : function(e){
-									common.ui.grid( $('#qna-list-grid') ).dataSource.read();														
+									common.ui.grid($('#qna-list-grid')).dataSource.read();	
+									common.ui.grid($('#qna-list-grid')).refresh();														
 									$this.close();
 								}
 							}
@@ -517,12 +569,40 @@
 						var $this = this;
 						source.copy($this.qna);
 						$this.set('editable', ($this.qna.boardNo > 0 ? false : true ));
+						if($this.qna.boardNo > 0) {
+							common.ui.ajax(
+								'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
+								{
+									data : kendo.stringify( $this.qna ),
+									contentType : "application/json",
+									success : function(response){	
+									},
+									fail: function(){								
+									},
+									requestStart : function(){
+										kendo.ui.progress(renderTo, true);
+									},
+									requestEnd : function(){
+										kendo.ui.progress(renderTo, false);
+									},
+									complete : function(e){
+										common.ui.grid($('#qna-list-grid')).refresh();
+									}
+								});	
+						}
+					},
+					delete: function(source){
+						var $this = this;
+						console.log(kendo.stringify($this.qna));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
+							'<@spring.url "/data/podo/board/delete.json?output=json" />',
 							{
 								data : kendo.stringify( $this.qna ),
 								contentType : "application/json",
-								success : function(response){	
+								success : function(response){
+									common.ui.notification().show({ title:null, message: "글이 삭제되었습니다." },"success");									
+									common.ui.grid($('#qna-list-grid')).dataSource.read();	
+									common.ui.grid($('#qna-list-grid')).refresh();
 								},
 								fail: function(){								
 								},
@@ -533,20 +613,16 @@
 									kendo.ui.progress(renderTo, false);
 								},
 								complete : function(e){
+									common.ui.grid($('#qna-list-grid')).dataSource.read();	
+									common.ui.grid($('#qna-list-grid')).refresh();					
+									$this.close();
 								}
 							});	
-					},
-					create : function(e){
-						var empty = new common.ui.data.community.Board();
-						createNoticeEditor(empty);
-					},
-					update : function(e){
-						e.stopPropagation();
-						createNoticeEditor(this.qna);
 					},
 					close : function(){
 						renderTo.fadeOut(function(e){ 
 							$("#qna-list-grid").fadeIn();
+							common.ui.grid($('#qna-list-grid')).dataSource.read();
 						});
 					}
 				});			
@@ -560,186 +636,6 @@
 			}		
 		}
 
-
-
-
-		function createBoardEditor(source){
-			var renderTo = $("board-write-form");
-			if( !renderTo.data("model")){
-				var model = common.ui.observable({
-					board : new common.ui.data.community.Board(),
-					new : true,
-					visible : true,
-					saveOrUpdate: function(e){
-						var $this = this;
-						console.log( kendo.stringify( $this.board) );
-						common.ui.ajax(
-							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
-							{
-								data : kendo.stringify( $this.board ),
-								contentType : "application/json",
-								success : function(response){
-									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
-									
-								},
-								fail: function(){								
-									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									common.ui.grid( $('#board-list-grid') ).dataSource.read();														
-									$this.close();
-								}
-							}
-						);	
-						return false;	
-					},
-					close : function(){
-						renderTo.fadeOut(function(e){ 
-							$("#board-list-grid").fadeIn();
-						});
-					}
-				});
-				kendo.bind( renderTo, model);
-				renderTo.data("model", model);	
-			}
-			$("#board-detail-view").fadeOut( "slow", function(e){
-				renderTo.fadeIn();
-			});
-		}
-		
-		
-		
-		function createNoticeEditor(source){
-			var renderTo = $("notice-write-form");
-			if( !renderTo.data("model")){
-				var model = common.ui.observable({
-					notice : new common.ui.data.community.Board(),
-					new : true,
-					visible : true,
-					saveOrUpdate: function(e){
-						var $this = this;
-						console.log( kendo.stringify( $this.notice) );
-						common.ui.ajax(
-							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
-							{
-								data : kendo.stringify( $this.notice ),
-								contentType : "application/json",
-								success : function(response){
-									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
-									
-								},
-								fail: function(){								
-									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									common.ui.grid( $('#notice-list-grid') ).dataSource.read();														
-									$this.close();
-								}
-							}
-						);	
-						return false;	
-					},
-					close : function(){
-						renderTo.fadeOut(function(e){ 
-							$("#notice-list-grid").fadeIn();
-						});
-					}
-				});
-				kendo.bind( renderTo, model);
-				renderTo.data("model", model);	
-			}
-			$("#notice-list-grid").fadeOut( "slow", function(e){
-				renderTo.fadeIn();
-			});
-		}
-		
-		
-		
-   /*		
-		function createBoardDetailView(source){
-			var renderTo = $('#board-detail-view');
-			//console.log(common.ui.stringify(source));
-			if(!renderTo.data("model")){
-				var observable =  common.ui.observable({
-					board : new common.ui.data.community.Board(),
-					setSource : function(source){
-						var $this = this;
-						source.copy($this.board);
-						common.ui.ajax(
-							'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
-							{
-								data : kendo.stringify( $this.board ),
-								contentType : "application/json",
-								success : function(response){	
-									common.ui.grid($('#board-list-grid')).dataSource.read();						
-								},
-								fail: function(){								
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-								}
-							});	
-					},
-					delete: function(){
-						var $this = this;
-						source.copy($this.board);
-						common.ui.ajax(
-							'<@spring.url "/data/podo/board/delete.json?output=json" />',
-							{
-								data : kendo.stringify( $this.board ),
-								contentType : "application/json",
-								success : function(response){									
-								},
-								fail: function(){								
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-								}
-							});	
-					},
-					close: function(){
-						renderTo.fadeOut(function(e){ 
-							$("#board-list-grid").fadeIn();
-						});
-					}
-						
-				});			
-				renderTo.data("model", observable);		
-				common.ui.bind( renderTo, observable );
-			}
-		
-			renderTo.data("model").setSource( source );	
-			if(!renderTo.is(':visible'))
-			{
-				renderTo.fadeIn();
-			}
-			
-		}
-	*/
-	
-			
 		</script>
 		<style>
 			#board-list-grid td,
@@ -766,6 +662,7 @@
 				text-align: left;
 				padding-left: 15px;
 			}
+			.bottom { border-bottom: 1px solid lightgray; }
 			#notice-list-grid th {
 				background: #2E64FE;
 				color: white;
@@ -782,37 +679,25 @@
 				color: #2E2E2E;
 				background: #CEF6CE;
 			}
-			#tb_detailView {
-				width: 100%;
-				border-top: 2px solid #F7819F;
-			}
-			#tb_detailView td {	border-bottom: 1px solid lightgray;	}
-			#tb_detailView input { border: none; }
 			#lastTd { border: 1px solid lightgray; }
 			#tb_writeForm {
 				width: 100%;
 				border-top: 3px solid #F7819F;
-				border-bottom: 1px solid lightgray;
 				padding: 0;
 				margin: 0;
 			}
 			#tb_noticeForm {
 				width: 100%;
 				border-top: 3px solid #0404B4;
-				border-bottom: 1px solid lightgray;
 				padding: 0;
 				margin: 0;
 			}
 			#tb_qnaForm {
 				width: 100%;
 				border-top: 3px solid #298A08;
-				border-bottom: 1px solid lightgray;
 				padding: 0;
 				margin: 0;
 			}
-			#tb_writeForm td, 
-			#tb_noticeForm td, 
-			#tb_qnaForm td { border-right: 1px solid lightgray;	}
 			.input_title {
 				height: 50px; 
 				width: 188px;
@@ -850,7 +735,6 @@
 				height: 50px;
 				border: 1px solid lightgray;
 			}
-			.formTd input {	border: none; }
 			.formInput {
 			 border: none; 
 			 width: 100%; 
@@ -883,8 +767,8 @@
 			<div class="container content" style="min-height:450px;">
 				<div class="tab-v1">
 					<ul class="nav nav-tabs" style="margin-bottom: 50px;">
+						<li><a href="#freeBoard" data-toggle="tab" tab="show" class="m-l-sm rounded-top">자유게시판</a></li>
 						<li><a href="#noticeBoard" data-toggle="tab" class="m-l-sm rounded-top">공지게시판</a></li>
-						<li><a href="#freeBoard" data-toggle="tab" class="m-l-sm rounded-top">자유게시판</a></li>
 						<li><a href="#qnaBoard" data-toggle="tab" class="m-l-sm rounded-top">QnA게시판</a></li>
 					</ul>
 					<div class="tab-content">
@@ -902,11 +786,11 @@
 								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
 								<table id="tb_writeForm">
 						            <tr>
-						                <td class="input_title" >
+						                <td class="input_title bottom" >
 						                	제목
 						                </td>
-						                <td colspan="5">
-						                	<span data-bind="text:board.title, invisible:editable" class="formInput"></span>
+						                <td colspan="5" class="bottom">
+						                	<span data-bind="text:board.title, invisible:editable" class="formInput bottom"></span>
 						                	<input type="text" class="formInput" data-bind="value: board.title, visible:editable" required/>
 						                </td>
 						            </tr>
@@ -937,10 +821,10 @@
 						                </td>
 						            </tr>
 						             <tr>
-						                <td class="input_title">
+						                <td class="input_title bottom">
 						                	첨부파일
 						                </td>
-						                <td colspan="5">
+						                <td colspan="5" class="bottom">
 						                	<span data-bind="text:board.image, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
 						                	<input type="file" data-bind="value: board.image, visible:editable"/>
 						                </td>
@@ -966,10 +850,10 @@
 								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
 								<table id="tb_noticeForm">
 						            <tr>
-						                <td class="notice_title" >
+						                <td class="notice_title bottom" >
 						                	제목
 						                </td>
-						                <td colspan="5">
+						                <td colspan="5" class="bottom">
 						                	<span data-bind="text:notice.title, invisible:editable" class="formInput"></span>
 						                	<input type="text" class="formInput" data-bind="value: notice.title, visible:editable" required/>
 						                </td>
@@ -1001,10 +885,10 @@
 						                </td>
 						            </tr>
 						             <tr>
-						                <td class="notice_title">
+						                <td class="notice_title bottom">
 						                	첨부파일
 						                </td>
-						                <td colspan="5">
+						                <td colspan="5" class="bottom">
 						                	<span data-bind="text:notice.image, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
 						                	<input type="file" data-bind="value: board.image, visible:editable"/>
 						                </td>
@@ -1047,10 +931,10 @@
 										</td>
 									</tr>
 						            <tr>
-						                <td class="qna_title">
+						                <td class="qna_title bottom">
 						                	제목
 						                </td>
-						                <td colspan="5" style="border-top:1px solid lightgray">
+						                <td colspan="5" style="border-top:1px solid lightgray" class="bottom">
 						                	<span data-bind="text:qna.title, invisible:editable" class="formInput"></span>
 						                	<input type="text" class="formInput" data-bind="value: qna.title, visible:editable" required/>
 						                </td>
@@ -1082,10 +966,10 @@
 						                </td>
 						            </tr>
 						             <tr>
-						                <td class="qna_title">
+						                <td class="qna_title bottom">
 						                	첨부파일
 						                </td>
-						                <td colspan="5">
+						                <td colspan="5" class="bottom">
 						                	<span data-bind="text:qna.image, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
 						                	<input type="file" class="formInput" data-bind="value: qna.image, visible:editable"/>
 						                </td>

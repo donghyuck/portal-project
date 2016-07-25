@@ -109,6 +109,9 @@
     	<#if boardCode??>    
     	WHERE board_code = '${boardCode}' 
     	</#if>
+    	<#if boardName??>
+    	AND board_name = '${boardName}'
+    	</#if>
     ]]></dynamic></sql-query>
      
      <sql-query name="SELECT_BOARD_NO"
@@ -117,6 +120,9 @@
     ]]><dynamic><![CDATA[	
     	<#if boardCode??>    
     	WHERE board_code = '${boardCode}' 
+    	</#if>
+    	<#if boardName??>
+    	AND board_name = '${boardName}'
     	</#if>
     ]]></dynamic><![CDATA[		
     	ORDER BY writing_ref DESC, writing_seq, writing_level ASC
@@ -129,26 +135,49 @@
     	<#if boardCode??>    
     	WHERE board_code = '${boardCode}' 
     	</#if>
+    	<#if boardName??>
+    	AND board_name = '${boardName}'
+    	</#if>
     ]]></dynamic><![CDATA[
     	AND board_no = ?
     ]]></sql-query>
     
 	<sql-query name="INSERT_BOARD"
-    	description="게시판 글등록"><![CDATA[		
-		INSERT INTO board VALUES
-			(?, ?, '관리자', ?, ?, 0, ?, SYSDATE, ?, ?, ?, ?)
-     ]]></sql-query>
+    	description="게시판 새글 등록">	
+		INSERT INTO board( 
+			board_name, 
+			board_no, 
+			writer, 
+			title, 
+			content, 
+			read_count, 
+			image, 
+			write_date, 
+			writing_ref, 
+			writing_seq, 
+			writing_level,
+			board_code)
+		VALUES (?, ?, '관리자', ?, ?, 0, ? , SYSDATE, ?, 0, 0, ?)
+    </sql-query>
      
      <sql-query name="UPDATE_BOARD"
-    	description="게시판 수정."><![CDATA[		
-		UPDATE board SET
-			(?, ?, ?, ?, ?, ?, ?, SYSDATE, ?, ?, ?, ?)
+    	description="게시판 글수정."><![CDATA[		
+		UPDATE board 
+		SET
+			title = ?,
+			content = ?,
+			image = ?,
+			write_date = SYSDATE
+		WHERE
+			board_code = ?
+		AND
+			board_no = ? 
      ]]></sql-query>
      
      <sql-query name="DELETE_BOARD"
     	description="게시글 삭제"><![CDATA[		
 		DELETE FROM board WHERE 
-			board_name = ? AND board_no = ? 
+			board_code = ? AND board_no = ? 
      ]]></sql-query>
     
     <sql-query name="UPDATE_READ_COUNT"
@@ -159,21 +188,19 @@
 			board_code = ? AND
 			board_no = ?
      ]]></sql-query>
-     
-     <sql-query name="COUNT_NOTICE"
-    	description="게시판 글의 갯수를 가져온다."><![CDATA[
-    	SELECT count(board_no) FROM BOARD WHERE board_code = 'B002' AND board_name = 'notice'
-     ]]></sql-query>
-     
-     <sql-query name="SELECT_NOTICE_NO"
-    	description="게시판 번호를 가져온다."><![CDATA[
-    	SELECT board_no FROM BOARD WHERE board_code = 'B002' AND board_name = 'notice' ORDER BY writing_ref DESC, writing_seq, writing_level ASC
-     ]]></sql-query>
     
-     <sql-query name="SELECT_NOTICE_BY_NO"
-		description="게시판 번호로 정보를 가져온다."><![CDATA[
-		SELECT * FROM board WHERE board_code = 'B002' AND board_name = 'notice' AND board_no = ?
-    ]]></sql-query>
+     <sql-query name="SELECT_QNA_BOARD_BY_NO"
+		description="qna게시판 번호로 정보를 가져온다.">
+		SELECT 
+			  b.board_code, b.board_name, b.board_no, 
+       	 	  b.title, b.writer, b.content, b.write_date,
+       		  b.read_count, b.image, b.writing_ref,
+       		  b.writing_seq, b.writing_level, q.type, q.category
+		FROM  board b, board_qna q
+		WHERE b.board_no = q.board_no
+		AND   b.board_code = q.board_code
+		AND   b.board_no = ?
+   	</sql-query>
      
      
 </sqlset>
