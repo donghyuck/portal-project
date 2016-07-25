@@ -50,6 +50,7 @@
 				$(".tab-v1").find(".nav-tabs a[data-toggle=tab]:first").tab('show');
 				
 				<!----- 자유 게시판 그리드 ------>
+				
 					var renderTo = $("#board-list-grid");
  					var listGrid = renderTo.kendoGrid({
                         dataSource: {
