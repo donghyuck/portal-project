@@ -177,6 +177,7 @@
      <sql-query name="DELETE_BOARD"
     	description="게시글 삭제"><![CDATA[		
 		DELETE FROM board WHERE 
+		
 			board_code = ? AND board_no = ? 
      ]]></sql-query>
     
