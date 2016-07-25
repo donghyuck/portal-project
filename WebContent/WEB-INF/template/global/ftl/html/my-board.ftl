@@ -50,7 +50,7 @@
 				$(".tab-v1").find(".nav-tabs a[data-toggle=tab]:first").tab('show');
 				
 				<!----- 자유 게시판 그리드 ------>
-				
+				<!-- toolbar 사용하여 버튼을 그리드 상단에 넣을 수 있습니다. -->
 					var renderTo = $("#board-list-grid");
  					var listGrid = renderTo.kendoGrid({
                         dataSource: {
@@ -83,6 +83,7 @@
                        		pageSize: 10,
     						refresh: true
                         },
+                    	toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 100 },
                         	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo#' data-action='view'>#= title #</a>" },
@@ -104,9 +105,8 @@
                    			writeBoard(item);
                    		});
                     	
-                    });
-                    
-                    $('#btn_write').on('click', '[data-action=create]', function(e){
+                    });                    
+                    renderTo.on('click', '[data-action=create]', function(e){
                     	var $this = $(this);
                     	var objectId = $this.data("object-id");	
 						var newBoard ;
@@ -121,8 +121,7 @@
                    			$('#board-write-form').fadeIn();
                    			console.log(common.ui.stringify(newBoard));
                    			writeBoard(newBoard);
-                   		});
-                    	
+                   		});                    	
                     });
                     
                     
@@ -158,6 +157,7 @@
                        		pageSize: 10,
     						refresh: true
                         },
+                        toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 100 },
                         	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo #' data-action='view'>#= title #</a>" },
@@ -182,7 +182,7 @@
                     	
                     });
                     
-                    $('#notice_write').on('click', '[data-action=create]', function(e){
+                    noticeRenderTo.on('click', '[data-action=create]', function(e){
                     	var $this = $(this);
                     	var objectId = $this.data("object-id");	
 						var newNotice ;
@@ -234,6 +234,7 @@
                        		pageSize: 10,
     						refresh: true
                         },
+                        toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 80 },
                         	{ title: "분류", field: "category", width: 130 },
@@ -259,7 +260,7 @@
                     	
                     });
                     
-                    $('#qna_write').on('click', '[data-action=create]', function(e){
+                    qnaRenderTo.on('click', '[data-action=create]', function(e){
                     	var $this = $(this);
                     	var objectId = $this.data("object-id");	
 						var newQna ;
@@ -776,11 +777,7 @@
 						<div class="tab-pane fade" id="freeBoard">
 							<span style="color: #FE2E64; font-size:30px; font-weight:bold">자유게시판</span>&nbsp;&nbsp;&nbsp;<span style="color: gray">이곳은 누구나 글을 작성하실 수 있습니다.</span>
 							<div id="board-list">
-								<div id="board-list-grid">
-									<div id="btn_write">
-										<button type="button" class="btn btn-danger" style="float: right; border-radius: 5px" data-action="create">글쓰기</button>
-									</div>
-								</div>
+								<div id="board-list-grid"></div>
 							</div>
 							<div id="board-write-form" style="display: none;">
 							<form id="writeForm" action="#">
@@ -842,9 +839,7 @@
 					<div class="tab-pane fade" id="noticeBoard">
 						<span style="color: #2E2EFE; font-size:30px; font-weight:bold">공지게시판</span>&nbsp;&nbsp;&nbsp;<span style="color: gray">공지사항을 알려드립니다.</span>
 						<div>
-							<div id="notice-list-grid">
-								<div id="notice_write"><button class="btn btn-primary" style="float: right; border-radius: 5px" data-action="create">글쓰기</button></div>
-							</div>
+							<div id="notice-list-grid"></div>
 						</div>
 						<div id="notice-write-form" style="display: none;">
 							<form id="noticeForm" action="#">
@@ -906,9 +901,7 @@
 					<div class="tab-pane fade" id="qnaBoard">
 						<span style="color: #04B404; font-size:30px; font-weight:bold">QnA게시판</span>&nbsp;&nbsp;&nbsp;<span style="color: gray">궁금한 점을 물어보세요.</span>
 						<div>
-							<div id="qna-list-grid">
-								<div id="qna_write"><button class="btn btn-success" style="float: right; border-radius: 5px" data-action="create">글쓰기</button></div>
-							</div>
+							<div id="qna-list-grid"></div>
 						</div>
 						<div id="qna-write-form" style="display: none;">
 							<form id="qnaForm" action="#">

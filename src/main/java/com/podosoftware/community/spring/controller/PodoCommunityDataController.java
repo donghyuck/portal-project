@@ -29,6 +29,7 @@ import architecture.ee.exception.NotFoundException;
 import architecture.ee.web.model.DataSourceRequest;
 import architecture.ee.web.model.DataSourceRequest.FilterDescriptor;
 import architecture.ee.web.model.ItemList;
+import architecture.ee.web.ws.Result;
 
 @Controller("podo-community-data-controller")
 @RequestMapping("/data/podo")
@@ -165,10 +166,15 @@ public class PodoCommunityDataController {
 		listService.delete(board);
 	}
 	
+	/**
+	 *  AJAX 통신은 특성상 반듯이 데이터가 있어야 합니다.
+	 */
+	
 	@RequestMapping(value = "/board/updateReadCount.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public void updateReadCount(@RequestBody Board board) throws Exception {
+	public Result updateReadCount(@RequestBody Board board) throws Exception {
 		listService.updateReadCount(board);
+		return Result.newResult();
 	}
 	
 	
