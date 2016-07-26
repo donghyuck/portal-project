@@ -1,5 +1,6 @@
 package com.podosoftware.community.spring.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -134,8 +135,6 @@ public class PodoCommunityDataController {
 	public ItemList getBoardList(@RequestBody DataSourceRequest dataSourceRequest) throws Exception {
 		int total = 0;
 		List<Board> items;
-		//log.debug(dataSourceRequest.getData());
-		//log.debug((dataSourceRequest.getData()).get("boardName").equals("notice"));
 		
 		total = listService.countBoardList(dataSourceRequest);
 		items = listService.getBoardList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
@@ -155,15 +154,16 @@ public class PodoCommunityDataController {
 	
 	@RequestMapping(value = "/board/write.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public Board write(@RequestBody Board board, DataSourceRequest request) throws Exception {
-		listService.write(board, request);
+	public Board write(@RequestBody Board board) throws Exception {
+		listService.write(board);
 		return board;
 	}
 	
 	@RequestMapping(value = "/board/delete.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public void delete(@RequestBody Board board) throws Exception {
+	public Result delete(@RequestBody Board board) throws Exception {
 		listService.delete(board);
+		return Result.newResult();
 	}
 	
 	/**
@@ -174,6 +174,20 @@ public class PodoCommunityDataController {
 	@ResponseBody
 	public Result updateReadCount(@RequestBody Board board) throws Exception {
 		listService.updateReadCount(board);
+		return Result.newResult();
+	}
+	
+	@RequestMapping(value = "/board/qna/write.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@ResponseBody
+	public QnaBoard qnaWrite(@RequestBody QnaBoard qna) throws Exception {
+		listService.qnaWrite(qna);
+		return qna;
+	}
+	
+	@RequestMapping(value = "/board/updateQnaReadCount.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@ResponseBody
+	public Result updateQnaReadCount(@RequestBody QnaBoard qna) throws Exception {
+		listService.updateQnaReadCount(qna);
 		return Result.newResult();
 	}
 	

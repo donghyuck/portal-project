@@ -26,12 +26,16 @@ public interface ListService {
 
 	public List<Board> getBoardList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults);
 
-	public void write(Board board, DataSourceRequest request);
+	public void write(Board board);
 
 	public void delete(Board board);
 
 	public void updateReadCount(Board board);
+	
+	public void updateQnaReadCount(QnaBoard qna);
 
 	public List<QnaBoard> getQnaList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults);
+
+	public void qnaWrite(QnaBoard qna);
 
 }

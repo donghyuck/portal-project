@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.stereotype.Repository;
@@ -190,43 +191,45 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 	}
 	
 	@Override
-	public QnaBoard getQnaListByNo(Long no) {
-		return getExtendedJdbcTemplate().queryForObject(getBoundSql("PORTAL_CUSTOM.SELECT_QNA_BOARD_BY_NO").getSql(), 
-				qnaBoardRowMapper, new SqlParameterValue(Types.NUMERIC, no));
+	public QnaBoard getQnaListByNo(DataSourceRequest dataSourceRequest, Long no) {
+		try {
+			return getExtendedJdbcTemplate().queryForObject(getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.SELECT_QNA_BOARD_BY_NO", dataSourceRequest.getData()).getSql(),
+					qnaBoardRowMapper, new SqlParameterValue(Types.NUMERIC, no));
+		} catch(EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 	
 	@Override
-	public void write(Board board, DataSourceRequest request) {
-		if(board.getBoardNo() == 0) { // 새 글쓰기이면,
-			if(board.getBoardCode().equals("B001")) { // 글번호 시퀀스 
-				long nextId = getNextId("PODO_FREE_BOARD");
-				board.setBoardNo(nextId);
-			} else if(board.getBoardCode().equals("B002")) {
-				long nextId = getNextId("PODO_NOTICE_BOARD");
-				board.setBoardNo(nextId);
-			} else if(board.getBoardCode().equals("B003")) {
-				long nextId = getNextId("PODO_QNA_BOARD");
-				board.setBoardNo(nextId);
-			}
-			getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.INSERT_BOARD").getSql(),
-					new SqlParameterValue(Types.VARCHAR, board.getBoardName()),
-					new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
-					new SqlParameterValue(Types.VARCHAR, board.getTitle()),
-					new SqlParameterValue(Types.VARCHAR, board.getContent()),
-					new SqlParameterValue(Types.VARCHAR, board.getImage()),
-					new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
-					new SqlParameterValue(Types.VARCHAR, board.getBoardCode())
-				);
-		} else { // 수정하기이면,
-			getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.UPDATE_BOARD").getSql(), 
-					new SqlParameterValue(Types.VARCHAR, board.getTitle()),
-					new SqlParameterValue(Types.VARCHAR, board.getContent()),
-					new SqlParameterValue(Types.VARCHAR, board.getImage()),
-					new SqlParameterValue(Types.VARCHAR, board.getBoardCode()),
-					new SqlParameterValue(Types.NUMERIC, board.getBoardNo())
-				);
-		}
+	public void createBoard(Board board) {
+		if(board.getBoardCode().equals("B001")) { // 글번호 시퀀스 
+			long nextId = getNextId("PODO_FREE_BOARD");
+			board.setBoardNo(nextId);
+		} else if(board.getBoardCode().equals("B002")) {
+			long nextId = getNextId("PODO_NOTICE_BOARD");
+			board.setBoardNo(nextId);
+		} 
+		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.INSERT_BOARD").getSql(),
+				new SqlParameterValue(Types.VARCHAR, board.getBoardName()),
+				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
+				new SqlParameterValue(Types.VARCHAR, board.getWriter()),
+				new SqlParameterValue(Types.VARCHAR, board.getTitle()),
+				new SqlParameterValue(Types.VARCHAR, board.getContent()),
+				new SqlParameterValue(Types.VARCHAR, board.getImage()),
+				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
+				new SqlParameterValue(Types.VARCHAR, board.getBoardCode())
+			);
+	}
 	
+	@Override
+	public void updateBoard(Board board) {
+		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.UPDATE_BOARD").getSql(), 
+				new SqlParameterValue(Types.VARCHAR, board.getTitle()),
+				new SqlParameterValue(Types.VARCHAR, board.getContent()),
+				new SqlParameterValue(Types.VARCHAR, board.getImage()),
+				new SqlParameterValue(Types.VARCHAR, board.getBoardCode()),
+				new SqlParameterValue(Types.NUMERIC, board.getBoardNo())
+			);
 	}
 	
 	@Override
@@ -243,6 +246,57 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 					new SqlParameterValue(Types.VARCHAR, board.getBoardCode()),
 					new SqlParameterValue(Types.NUMERIC, board.getBoardNo())
 				);
+	}
+	
+	@Override
+	public void updateQnaReadCount(QnaBoard qna) {
+		getExtendedJdbcTemplate().update(this.getBoundSql("PORTAL_CUSTOM.UPDATE_READ_COUNT").getSql(),
+					new SqlParameterValue(Types.VARCHAR, qna.getBoardCode()),
+					new SqlParameterValue(Types.NUMERIC, qna.getBoardNo())
+				);
+	}
+
+	@Override
+	public void createQnaBoard(QnaBoard qna) {
+		long nextId = getNextId("PODO_QNA_BOARD");
+		qna.setBoardNo(nextId);
+		
+		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.INSERT_BOARD").getSql(),
+				new SqlParameterValue(Types.VARCHAR, qna.getBoardName()),
+				new SqlParameterValue(Types.NUMERIC, qna.getBoardNo()),
+				new SqlParameterValue(Types.VARCHAR, qna.getWriter()),
+				new SqlParameterValue(Types.VARCHAR, qna.getTitle()),
+				new SqlParameterValue(Types.VARCHAR, qna.getContent()),
+				new SqlParameterValue(Types.VARCHAR, qna.getImage()),
+				new SqlParameterValue(Types.NUMERIC, qna.getBoardNo()),
+				new SqlParameterValue(Types.VARCHAR, qna.getBoardCode())
+			);
+		
+		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.INSERT_QNA_BOARD").getSql(),
+				new SqlParameterValue(Types.VARCHAR, qna.getType()),
+				new SqlParameterValue(Types.VARCHAR, qna.getCategory()),
+				new SqlParameterValue(Types.VARCHAR, qna.getBoardCode()),
+				new SqlParameterValue(Types.NUMERIC, qna.getBoardNo())
+			);
+		
+	}
+
+	@Override
+	public void updateQnaBoard(QnaBoard qna) {
+		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.UPDATE_BOARD").getSql(), 
+				new SqlParameterValue(Types.VARCHAR, qna.getTitle()),
+				new SqlParameterValue(Types.VARCHAR, qna.getContent()),
+				new SqlParameterValue(Types.VARCHAR, qna.getImage()),
+				new SqlParameterValue(Types.VARCHAR, qna.getBoardCode()),
+				new SqlParameterValue(Types.NUMERIC, qna.getBoardNo())
+			);
+		
+		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.UPDATE_QNA_BOARD").getSql(), 
+				new SqlParameterValue(Types.VARCHAR, qna.getCategory()),
+				new SqlParameterValue(Types.VARCHAR, qna.getBoardCode()),
+				new SqlParameterValue(Types.NUMERIC, qna.getBoardNo())
+			);
+		
 	}
 
 

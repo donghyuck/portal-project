@@ -78,7 +78,7 @@
                         },
                         //selectable: "row",
                         autoBind:true,
-                        height: 515,
+                        height: 545,
                         pageable: {
                        		pageSize: 10,
     						refresh: true
@@ -152,12 +152,12 @@
                             pageSize: 10
                         },
                         autoBind:true,
-                        height: 515,
+                        height: 545,
                         pageable: {
                        		pageSize: 10,
     						refresh: true
                         },
-                        toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
+                        toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-primary rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 100 },
                         	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo #' data-action='view'>#= title #</a>" },
@@ -209,7 +209,7 @@
                             type: "POST",
                             transport: {
                                 read: {
-                                	url: "<@spring.url "/data/podo/board/listView.json?output=json" />",
+                                	url: "<@spring.url "/data/podo/board/qnaListView.json?output=json" />",
                                 	type:'POST', 
                                 	contentType : 'application/json'
                                 },
@@ -220,7 +220,7 @@
 								}
                             },
                             schema: {
-                                model: common.ui.data.community.Board,
+                                model: common.ui.data.community.QnaBoard,
                                 data: "items",
                                 total: "totalCount"
                             },
@@ -229,12 +229,12 @@
                             pageSize: 10
                         },
                         autoBind:true,
-                        height: 515,
+                        height: 545,
                         pageable: {
                        		pageSize: 10,
     						refresh: true
                         },
-                        toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
+                        toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-success rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 80 },
                         	{ title: "분류", field: "category", width: 130 },
@@ -267,7 +267,7 @@
 						if( objectId > 0){
 							newNotice = common.ui.grid(qnaRenderTo).dataSource.get(objectId);
 						}else{
-							newQna = new common.ui.data.community.Board();
+							newQna = new common.ui.data.community.QnaBoard();
 							newQna.boardCode = 'B003';
 							newQna.boardName = 'qna';
 						}
@@ -286,7 +286,7 @@
 		
 	<!---- 자유게시판 쓰기/수정/삭제 폼 ---->	
 		function writeBoard(source){
-			
+			var now = new Date();
 			var renderTo = $('#board-write-form');
 			if(!renderTo.data("model")){
 				var observable =  common.ui.observable({
@@ -301,6 +301,9 @@
 					}),
 					edit : function(){
 						this.set('editable', true);
+					},
+					reply : function(){
+						this.set('editable', false);
 					},
 					saveOrUpdate : function(e){
 						var $this = this;
@@ -416,6 +419,9 @@
 					edit:function(){
 						this.set('editable', true);
 					},
+					reply:function(){
+						this.set('writable', true);
+					},
 					saveOrUpdate: function(e){
 						var $this = this;
 						console.log(kendo.stringify($this.notice));
@@ -520,11 +526,14 @@
 
 	<!---- QnA게시판 쓰기/수정/삭제 폼 ---->		
 		function writeQna(source){
-			
+			var data = ["수업", "학적", "유학/연수/교류", "교직", "장학/융자", "학생생활상담", "기타"];
+			$("#dropdownlist").kendoDropDownList({
+				dataSource: data
+			});
 			var renderTo = $('#qna-write-form');
 			if(!renderTo.data("model")){
 				var observable =  common.ui.observable({
-					qna : new common.ui.data.community.Board(),
+					qna : new common.ui.data.community.QnaBoard(),
 					editable : false,
 					propertyDataSource : new kendo.data.DataSource({
 						batch: true,
@@ -536,11 +545,14 @@
 					edit:function(){
 						this.set('editable', true);
 					},
+					reply:function(){
+						this.set('writable', true);
+					},
 					saveOrUpdate: function(e){
 						var $this = this;
 						console.log( kendo.stringify( $this.qna) );
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
+							'<@spring.url "/data/podo/board/qna/write.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.qna ),
 								contentType : "application/json",
@@ -573,11 +585,12 @@
 						$this.set('editable', ($this.qna.boardNo > 0 ? false : true ));
 						if($this.qna.boardNo > 0) {
 							common.ui.ajax(
-								'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
+								'<@spring.url "/data/podo/board/updateQnaReadCount.json?output=json" />',
 								{
 									data : kendo.stringify( $this.qna ),
 									contentType : "application/json",
 									success : function(response){	
+										common.ui.grid($('#qna-list-grid')).refresh();
 									},
 									fail: function(){								
 									},
@@ -588,7 +601,6 @@
 										kendo.ui.progress(renderTo, false);
 									},
 									complete : function(e){
-										common.ui.grid($('#qna-list-grid')).refresh();
 									}
 								});	
 						}
@@ -685,18 +697,21 @@
 			#tb_writeForm {
 				width: 100%;
 				border-top: 3px solid #F7819F;
+				border-right: 1px solid lightgray;
 				padding: 0;
 				margin: 0;
 			}
 			#tb_noticeForm {
 				width: 100%;
 				border-top: 3px solid #0404B4;
+				border-right: 1px solid lightgray;
 				padding: 0;
 				margin: 0;
 			}
 			#tb_qnaForm {
 				width: 100%;
 				border-top: 3px solid #298A08;
+				border-right: 1px solid lightgray;
 				padding: 0;
 				margin: 0;
 			}
@@ -797,24 +812,24 @@
 						                	작성자
 						                </td>
 				                        <td class="formTd">
-				                            <input type="text" class="formInput" data-bind="value: board.writer" readonly/>
+				                            <input type="text" class="formInput" data-bind="value: board.writer, invisible:writable" readonly/>
 				                        </td>
 				                        <td class="input_title" >
 						                	작성일
 						                </td>
 				                        <td class="formTd">
-				                            <input type="text" class="formInput" data-bind="value: board.formattedWriteDate" readonly/>
+				                            <input type="text" class="formInput" data-bind="value: board.formattedWriteDate, invisible:writable" readonly/>
 				                        </td>
 				                        <td class="input_title" >
 						                	조회수
 						                </td>
 				                        <td class="formTd"> 
-				                            <input type="text" class="formInput" data-bind="value: board.readCount" readonly size="4"/>
+				                            <input type="text" class="formInput" data-bind="value: board.readCount, invisible:writable" readonly size="4"/>
 				                        </td>
 				                    </tr>
 						            <tr>
 						                <td colspan="6" id="lastTd" >
-						                	<div data-bind="text:board.content, invisible:editable" style="height:300px; padding: 5px"></div>
+						                	<div data-bind="text:board.content, invisible:editable, writable" style="height:300px; padding: 5px"></div>
 						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" required data-bind="value:board.content, visible:editable"></textarea>
 						                </td>
 						            </tr>
@@ -830,6 +845,7 @@
 								</table><br/>
 								<button type="button" class="btn btn-danger" style="float: left; border-radius: 5px" data-bind="click:delete , invisible:editable">삭제</button>
 								<button type="button" class="btn btn-primary" style="float: left; border-radius: 5px" data-bind="click:edit , invisible:editable">수정</button>
+								<button type="button" class="btn btn-success" style="float: left; border-radius: 5px" data-bind="click:reply , invisible:editable">답글</button>
 								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate, visible:editable">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, visible:editable">취소</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, invisible:editable">목록</button>
@@ -892,6 +908,7 @@
 								</table><br/>
 								<button type="button" class="btn btn-danger" style="float: left; border-radius: 5px" data-bind="click:delete , invisible:editable">삭제</button>
 								<button type="button" class="btn btn-primary" style="float: left; border-radius: 5px" data-bind="click:edit , invisible:editable">수정</button>
+								<button type="button" class="btn btn-success" style="float: left; border-radius: 5px" data-bind="click:reply , invisible:editable">답글</button>
 								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate, visible:editable">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, visible:editable">취소</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, invisible:editable">목록</button>
@@ -913,15 +930,7 @@
 										</td>
 										<td colspan="5" style="padding-left: 10px">
 											<span data-bind="text:qna.category, invisible:editable" class="formInput"></span>
-											<select name="category" style="font-size:14px" data-bind="qna.category, visible:editable" required>
-												<option value="">유형을 선택하세요.</option>
-												<option value="수업">수업</option>
-												<option value="학적">학적</option>
-												<option value="유학/연수/교류">유학/연수/교류</option>
-												<option value="교직">교직</option>
-												<option value="장학/융자">장학/융자</option>
-												<option value="기타">기타</option>
-											</select>
+											<input id="dropdownlist" data-bind="value:qna.category, visible: editable" required />
 										</td>
 									</tr>
 						            <tr>
@@ -971,6 +980,7 @@
 								</table><br/>
 								<button type="button" class="btn btn-danger" style="float: left; border-radius: 5px" data-bind="click:delete , invisible:editable">삭제</button>
 								<button type="button" class="btn btn-primary" style="float: left; border-radius: 5px" data-bind="click:edit , invisible:editable">수정</button>
+								<button type="button" class="btn btn-success" style="float: left; border-radius: 5px" data-bind="click:reply , invisible:editable">답글</button>
 								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate, visible:editable">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, visible:editable">취소</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, invisible:editable">목록</button>

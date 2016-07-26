@@ -37,12 +37,20 @@ public interface ListDao {
 
 	public Board getBoardListByNo(DataSourceRequest dataSourceRequest, Long no);
 
-	public void write(Board board, DataSourceRequest request);
+	public QnaBoard getQnaListByNo(DataSourceRequest dataSourceRequest, Long no);
+	
+	public void createBoard(Board board);
+	
+	public void updateBoard(Board board);
 
 	public void delete(Board board);
 	
 	public void updateReadCount(Board board);
+	
+	public void updateQnaReadCount(QnaBoard qna);
 
-	public QnaBoard getQnaListByNo(Long no);
+	public void createQnaBoard(QnaBoard qna);
+
+	public void updateQnaBoard(QnaBoard qna);
 
 }

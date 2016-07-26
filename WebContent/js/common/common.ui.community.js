@@ -625,7 +625,7 @@
 	    	boardCode: { type: "string" },
 	    	boardName: { type: "string" },
 	        boardNo: { type: "number", defaultValue:0 },
-	        writer: { type: "string", defaultValue:"관리자" },
+	        writer: { type: "string", defaultValue:"학생1" },
 	        title: { type: "string" },
 	        content: { type: "string" },
 	        readCount: { type: "number" },
@@ -634,7 +634,7 @@
 	        writingRef: { type: "number" },
 	        writingSeq: { type: "number" },
 	        writingLevel: { type: "number" },
-	        type: { type: "string" },
+	        type: { type: "string", defaultValue:"질문" },
 	        category: { type: "string" }
 	    },
 	    formattedWriteDate : function() {

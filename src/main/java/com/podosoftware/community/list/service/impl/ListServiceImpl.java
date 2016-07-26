@@ -113,18 +113,42 @@ public class ListServiceImpl implements ListService {
 	}
 
 	@Override
-	public void write(Board board, DataSourceRequest request) {
-		listDao.write(board, request);
+	public void write(Board board) {
+		boolean isNewBoard = board.getBoardNo() <= 0L;
+		
+		if(isNewBoard) {
+			listDao.createBoard(board);
+		} else {
+			listDao.updateBoard(board);
+		}
+		
+		if(memberCache != null) {
+			memberCache.remove(board.getBoardNo());
+		}
 	}
 	
 	@Override
 	public void delete(Board board) {
+		if(memberCache.get(board.getBoardNo()) != null) {
+			memberCache.remove(board.getBoardNo());
+		}
 		listDao.delete(board);
 	}
 
 	@Override
 	public void updateReadCount(Board board) {
+		if(memberCache.get(board.getBoardNo()) != null) {
+			memberCache.remove(board.getBoardNo());
+		}
 		listDao.updateReadCount(board);
+	}
+	
+	@Override
+	public void updateQnaReadCount(QnaBoard qna) {
+		if(memberCache.get(qna.getBoardNo()) != null) {
+			memberCache.remove(qna.getBoardNo());
+		}
+		listDao.updateQnaReadCount(qna);
 	}
 
 	@Override
@@ -138,12 +162,27 @@ public class ListServiceImpl implements ListService {
 			if(memberCache.get(qna_no) != null) {
 				qna = (QnaBoard) memberCache.get(qna_no).getObjectValue();
 			} else {
-				qna = listDao.getQnaListByNo(qna_no);
+				qna = listDao.getQnaListByNo(dataSourceRequest, qna_no);
 				memberCache.put(new Element(qna_no, qna));
 			}
 			qnaList.add(qna);
 		}
 		return qnaList;
+	}
+
+	@Override
+	public void qnaWrite(QnaBoard qna) {
+		boolean isNewQna = qna.getBoardNo() <= 0L;
+		
+		if(isNewQna) {
+			listDao.createQnaBoard(qna);
+		} else {
+			listDao.updateQnaBoard(qna);
+		}
+		
+		if(memberCache != null) {
+			memberCache.remove(qna.getBoardNo());
+		}
 	}
 
 }
