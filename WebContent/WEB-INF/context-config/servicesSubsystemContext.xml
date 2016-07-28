@@ -13,16 +13,22 @@
 			
 			
 	<bean id="memberCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean" p:cacheName="memberCache"
-	 p:maxElementsInMemory="5000"  p:diskPersistent="false" p:overflowToDisk="false"  p:timeToIdle="300"  p:timeToLive="600" p:eternal="false"  p:diskExpiryThreadIntervalSeconds="0" p:statisticsEnabled="true" />
+	 p:maxElementsInMemory="5000"  p:diskPersistent="false" p:overflowToDisk="false"  p:timeToIdle="300"  
+	 p:timeToLive="600" p:eternal="false"  p:diskExpiryThreadIntervalSeconds="0" p:statisticsEnabled="true" />
 	 
-	<!-- <bean id="boardCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean" p:cacheName="boardCache"
-	 p:maxElementsInMemory="5000"  p:diskPersistent="false" p:overflowToDisk="false"  p:timeToIdle="300"  p:timeToLive="600" p:eternal="false"  p:diskExpiryThreadIntervalSeconds="0" p:statisticsEnabled="true" /> -->
+	<bean id="boardCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean" p:cacheName="boardCache"
+	 p:maxElementsInMemory="5000"  p:diskPersistent="false" p:overflowToDisk="false"  p:timeToIdle="300"  
+	 p:timeToLive="600" p:eternal="false"  p:diskExpiryThreadIntervalSeconds="0" p:statisticsEnabled="true" />
 			
 	<bean id="listDao" class="com.podosoftware.community.list.dao.jdbc.JdbcListDao" parent="jdbcDaoSupport"  />
 	
 	<bean id="listService" class="com.podosoftware.community.list.service.impl.ListServiceImpl"  
-		p:memberCache-ref="memberCache"
+		p:boardCache-ref="boardCache"
 		p:listDao-ref="listDao"  />
+		
+	<bean id="memberService" class="com.podosoftware.community.board.service.impl.MemberServiceImpl"  
+		p:memberCache-ref="memberCache"
+		p:listDao-ref="listDao"  />		
 		
 	<!-- <bean id="boardDao" class="com.podosoftware.community.board.dao.jdbc.JdbcBoardDao" parent="jdbcDaoSupport"  />
 		
