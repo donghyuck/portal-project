@@ -77,17 +77,17 @@
                             type: "POST",
                             transport: {
                                 read: {
-                                	url: "<@spring.url "/data/podo/list/find.json?output=json" />",
+                                	url: "<@spring.url "/data/podo/member/list/find.json?output=json" />",
                                 	type:'POST', 
                                 	contentType : 'application/json'
                                 },
                                 update: {
-                                	url: "<@spring.url "/data/podo/list/update.json?output=json" />",
+                                	url: "<@spring.url "/data/podo/member/list/update.json?output=json" />",
                                 	type:'POST', 
                                 	contentType : 'application/json'
                                 },  
                                 create: {
-                                	url: "<@spring.url "/data/podo/list/create.json?output=json" />",
+                                	url: "<@spring.url "/data/podo/member/list/create.json?output=json" />",
                                 	type: 'POST',
                                 	contentType: 'application/json'                             		
                                 },
