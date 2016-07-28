@@ -303,7 +303,7 @@ public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
 	public void createReply(Board board) {
 		
 	}
-
+ 
 	@Override
 	public long getNextBoardNo(Board board) {
 		return getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.GET_NEXT_BOARD_NO").getSql(), 
