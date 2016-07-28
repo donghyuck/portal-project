@@ -29,18 +29,18 @@
 
 	<sql-query name="SELECT_PODO_MEMBER"
 		description="번들 이름에 해당하는 전체 택스트를 조회한다.">
-		SELECT * FROM podo_member
+		SELECT * FROM tb_podo_member
     </sql-query>
     
     <sql-query name="SEARCH_PODO_MEMBER"
     	description="이름으로 멤버를 검색한다.">
-		SELECT * FROM podo_member WHERE name LIKE '%' || ? || '%'
+		SELECT * FROM tb_podo_member WHERE name LIKE '%' || ? || '%'
 		
     </sql-query>
 
     <sql-query name="FIND_PODO_MEMBER"
     	description="멤버를 검색한다.">		
-		SELECT * FROM podo_member
+		SELECT * FROM tb_podo_member
 		<dynamic><![CDATA[
 		<#if FILTER.filters?? && (FILTER.filters?size >0 )  >
 		WHERE
@@ -57,7 +57,7 @@
     
     <sql-query name="COUNT_PODO_MEMBER"
     	description="멤버를 검색한다.">		
-		SELECT count(id) FROM podo_member
+		SELECT count(id) FROM tb_podo_member
 		<dynamic><![CDATA[
 		<#if FILTER.filters?? && (FILTER.filters?size >0 )  >
 		WHERE
@@ -75,7 +75,7 @@
     
     <sql-query name="UPDATE_PODO_MEMBER"
 		description="번들 이름에 해당하는 텍스트를 업데이트한다."><![CDATA[
-		UPDATE podo_member 
+		UPDATE tb_podo_member 
 		SET
 			name = ?,
 			phone = ?,
@@ -87,24 +87,24 @@
     
     <sql-query name="CREATE_PODO_MEMBER"
 		description="번들 이름에 해당하는 회원을 추가한다."><![CDATA[
-		INSERT INTO podo_member VALUES(?, ?, ?, ?, ?)
+		INSERT INTO tb_podo_member VALUES(?, ?, ?, ?, ?)
     ]]></sql-query>
     
     <sql-query name="SELECT_PODO_MEMBER_IDS"
 		description="회원 id만 가져온다."><![CDATA[
-		SELECT id FROM podo_member
+		SELECT id FROM tb_podo_member
     ]]></sql-query>
     
     <sql-query name="SELECT_PODO_MEMBER_BY_ID"
 		description="회원 id로 정보를 가져온다."><![CDATA[
-		SELECT * FROM podo_member WHERE id = ?
+		SELECT * FROM tb_podo_member WHERE id = ?
     ]]></sql-query>
     
     
 <!-- 게시판쿼리  -->    
     <sql-query name="COUNT_BOARD"
     	description="게시판 글의 갯수를 가져온다."><![CDATA[
-    	SELECT count(board_no) FROM BOARD
+    	SELECT count(board_no) FROM TB_BOARD
     ]]><dynamic><![CDATA[	
     	<#if boardCode??>    
     	WHERE board_code = '${boardCode}' 
@@ -116,7 +116,7 @@
      
      <sql-query name="SELECT_BOARD_NO"
     	description="게시판 번호를 가져온다."><![CDATA[
-    	SELECT board_no FROM BOARD  
+    	SELECT board_no FROM TB_BOARD  
     ]]><dynamic><![CDATA[	
     	<#if boardCode??>    
     	WHERE board_code = '${boardCode}' 
@@ -130,7 +130,7 @@
     
      <sql-query name="SELECT_BOARD_BY_NO"
 		description="게시판 번호로 정보를 가져온다."><![CDATA[
-		SELECT * FROM board 
+		SELECT * FROM TB_BOARD 
 	]]><dynamic><![CDATA[
     	<#if boardCode??>    
     	WHERE board_code = '${boardCode}' 
@@ -145,7 +145,7 @@
     
 	<sql-query name="INSERT_BOARD"
     	description="게시판 새글 등록">	
-		INSERT INTO board( 
+		INSERT INTO TB_BOARD( 
 			board_name, 
 			board_no, 
 			writer, 
@@ -163,7 +163,7 @@
      
      <sql-query name="UPDATE_BOARD"
     	description="게시판 글수정."><![CDATA[		
-		UPDATE board 
+		UPDATE TB_BOARD 
 		SET
 			title = ?,
 			content = ?,
@@ -177,14 +177,13 @@
      
      <sql-query name="DELETE_BOARD"
     	description="게시글 삭제"><![CDATA[		
-		DELETE FROM board WHERE 
-		
+		DELETE FROM TB_BOARD WHERE 
 			board_code = ? AND board_no = ? 
      ]]></sql-query>
     
     <sql-query name="UPDATE_READ_COUNT"
     	description="조회수 1증가"><![CDATA[		
-		UPDATE board SET
+		UPDATE TB_BOARD SET
 			read_count = read_count + 1
 		WHERE
 			board_code = ? AND
@@ -198,7 +197,7 @@
        	 	  b.title, b.writer, b.content, b.write_date,
        		  b.read_count, b.image, b.writing_ref,
        		  b.writing_seq, b.writing_level, q.type, q.category
-		FROM  board b, board_qna q
+		FROM  TB_BOARD b, TB_BOARD_QNA q
 		WHERE b.board_no = q.board_no
 		AND   b.board_code = q.board_code
 		AND   b.board_no = ?
@@ -212,7 +211,7 @@
     
     <sql-query name="INSERT_QNA_BOARD"
     	description="qna게시판 새글 등록">	
-		INSERT INTO BOARD_QNA( 
+		INSERT INTO TB_BOARD_QNA( 
 			type,
 			category,
 			board_code,
@@ -222,7 +221,7 @@
     
      <sql-query name="UPDATE_QNA_BOARD"
     	description="게시판 글수정."><![CDATA[		
-		UPDATE board_qna 
+		UPDATE TB_BOARD_QNA 
 		SET
 			category = ?
 		WHERE
