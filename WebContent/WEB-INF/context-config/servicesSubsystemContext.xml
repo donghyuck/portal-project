@@ -20,19 +20,14 @@
 	 p:maxElementsInMemory="5000"  p:diskPersistent="false" p:overflowToDisk="false"  p:timeToIdle="300"  
 	 p:timeToLive="600" p:eternal="false"  p:diskExpiryThreadIntervalSeconds="0" p:statisticsEnabled="true" />
 			
-	<bean id="listDao" class="com.podosoftware.community.list.dao.jdbc.JdbcListDao" parent="jdbcDaoSupport"  />
+	<bean id="BoardDao" class="com.podosoftware.community.board.dao.jdbc.JdbcBoardDao" parent="jdbcDaoSupport"  />
 	
-	<bean id="listService" class="com.podosoftware.community.list.service.impl.ListServiceImpl"  
+	<bean id="BbsService" class="com.podosoftware.community.board.bbs.service.impl.BbsServiceImpl"  
 		p:boardCache-ref="boardCache"
-		p:listDao-ref="listDao"  />
+		p:listDao-ref="BoardDao"  />
 		
-	<bean id="memberService" class="com.podosoftware.community.board.service.impl.MemberServiceImpl"  
+	<bean id="memberService" class="com.podosoftware.community.board.member.service.impl.MemberServiceImpl"  
 		p:memberCache-ref="memberCache"
-		p:listDao-ref="listDao"  />		
+		p:listDao-ref="BoardDao"  />		
 		
-	<!-- <bean id="boardDao" class="com.podosoftware.community.board.dao.jdbc.JdbcBoardDao" parent="jdbcDaoSupport"  />
-		
-	<bean id="boardService" class="com.podosoftware.community.board.service.impl.BoardServiceImpl"  
-		p:boardDao-ref="boardDao"  /> -->
-
 </beans>	
