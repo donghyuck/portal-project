@@ -1,7 +1,5 @@
 package com.podosoftware.community.board.model;
 
-import java.sql.Date;
-
 public class DefaultQnaBoard extends DefaultBoard implements QnaBoard {
 
 	private String type;

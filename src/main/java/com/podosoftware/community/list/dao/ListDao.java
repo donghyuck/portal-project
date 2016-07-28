@@ -3,8 +3,8 @@ package com.podosoftware.community.list.dao;
 import java.util.List;
 
 import com.podosoftware.community.board.model.Board;
+import com.podosoftware.community.board.model.Member;
 import com.podosoftware.community.board.model.QnaBoard;
-import com.podosoftware.community.list.domain.Member;
 
 import architecture.ee.web.model.DataSourceRequest;
 

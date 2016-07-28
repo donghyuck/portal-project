@@ -1,4 +1,4 @@
-package com.podosoftware.community.list.domain;
+package com.podosoftware.community.board.model;
 
 public class Member {
 	private long id;

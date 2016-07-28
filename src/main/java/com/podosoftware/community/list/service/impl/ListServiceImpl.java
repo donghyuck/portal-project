@@ -13,84 +13,31 @@ import com.podosoftware.community.board.model.DefaultBoard;
 import com.podosoftware.community.board.model.DefaultQnaBoard;
 import com.podosoftware.community.board.model.QnaBoard;
 import com.podosoftware.community.list.dao.ListDao;
-import com.podosoftware.community.list.domain.Member;
 import com.podosoftware.community.list.service.ListService;
-
-import com.podosoftware.community.spring.controller.PodoCommunityDataController;
 
 import architecture.ee.web.model.DataSourceRequest;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.Element;
 
 public class ListServiceImpl implements ListService {
-	private Log log = LogFactory.getLog(PodoCommunityDataController.class);
+	
+	private Log log = LogFactory.getLog(ListServiceImpl.class);
 	
 	private ListDao listDao;
 	
-	private Cache memberCache;
+	private Cache boardCache;
 	
-	//private Cache boardCache;
 	
+	
+	public void setBoardCache(Cache boardCache) {
+		this.boardCache = boardCache;
+	}
+
+
 	public void setlistDao(ListDao listDao) {
 		this.listDao = listDao;
 	}
 	
-	public Cache getMemberCache() {
-		return memberCache;
-	}
-
-	public void setMemberCache(Cache memberCache) {
-		this.memberCache = memberCache;
-	}
-
-	@Override
-	public List<Member> getMemberList() {
-		return listDao.getMemberList();
-	}
-	
-	@Override
-	public List<Member> getMemberList(String search) {
-		return listDao.getSearchMemberList(search);
-	}
-
-	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
-	public void updateMemberInfo(Member member)  {
-		
-		if(memberCache.get(member.getId()) != null) {
-			memberCache.remove(member.getId());
-		}
-		
-		listDao.updateMemberInfo(member);
-	}
-
-	@Override
-	public List<Member> findMemberList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
-		
-		List<Long> ids = listDao.findMemberIDs(dataSourceRequest, startIndex, maxResults);
-		List<Member> list = new ArrayList<Member>(ids.size());
-		for(Long id : ids ){
-			Member member ;
-			if( memberCache.get(id) != null ){ //cache가 들어있으면
-				member = (Member) memberCache.get(id).getObjectValue(); //가져오고				
-			}else{ //cache가 비어있으면
-				member = listDao.getMemberById(id); //db통신해서 넣어준다.
-				memberCache.put(new Element(id, member));
-			}
-			list.add(member);
-		}		
-		return list; //listDao.findMemberList(dataSourceRequest, startIndex, maxResults);
-	}
-
-	@Override
-	public Integer countMemberList(DataSourceRequest dataSourceRequest) {
-		
-		return listDao.countMemberList(dataSourceRequest);
-	}
-
-	@Override
-	public void createMember(Member member) {
-		listDao.createMember(member);
-	}
 
 	@Override
 	public Integer countBoardList(DataSourceRequest dataSourceRequest) {
@@ -103,11 +50,11 @@ public class ListServiceImpl implements ListService {
 		List<Board> list = new ArrayList<Board>(nos.size());
 		for(Long board_no : nos){
 			Board board = new DefaultBoard();
-			if( memberCache.get(board_no) != null ){
-				board = (DefaultBoard) memberCache.get(board_no).getObjectValue();			
+			if( boardCache.get(board_no) != null ){
+				board = (DefaultBoard) boardCache.get(board_no).getObjectValue();			
 			} else {
 				board = listDao.getBoardListByNo(dataSourceRequest, board_no);
-				memberCache.put(new Element(board_no, board));
+				boardCache.put(new Element(board_no, board));
 			}
 			list.add(board);
 		}		
@@ -124,31 +71,31 @@ public class ListServiceImpl implements ListService {
 			listDao.updateBoard(board);
 		}
 		
-		if(memberCache != null) {
-			memberCache.remove(board.getBoardNo());
+		if(boardCache != null) {
+			boardCache.remove(board.getBoardNo());
 		}
 	}
 	
 	@Override
 	public void delete(Board board) {
-		if(memberCache.get(board.getBoardNo()) != null) {
-			memberCache.remove(board.getBoardNo());
+		if(boardCache.get(board.getBoardNo()) != null) {
+			boardCache.remove(board.getBoardNo());
 		}
 		listDao.delete(board);
 	}
 
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
 	public void updateReadCount(Board board) {
-		if(memberCache.get(board.getBoardNo()) != null) {
-			memberCache.remove(board.getBoardNo());
+		if(boardCache.get(board.getBoardNo()) != null) {
+			boardCache.remove(board.getBoardNo());
 		}
 		listDao.updateReadCount(board);
 	}
 	
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
 	public void updateQnaReadCount(QnaBoard qna) {
-		if(memberCache.get(qna.getBoardNo()) != null) {
-			memberCache.remove(qna.getBoardNo());
+		if(boardCache.get(qna.getBoardNo()) != null) {
+			boardCache.remove(qna.getBoardNo());
 		}
 		listDao.updateQnaReadCount(qna);
 	}
@@ -160,11 +107,11 @@ public class ListServiceImpl implements ListService {
 		
 		for(Long qna_no : qnaNos) {
 			QnaBoard qna = new DefaultQnaBoard();
-			if(memberCache.get(qna_no) != null) {
-				qna = (DefaultQnaBoard) memberCache.get(qna_no).getObjectValue();
+			if(boardCache.get(qna_no) != null) {
+				qna = (DefaultQnaBoard) boardCache.get(qna_no).getObjectValue();
 			} else {
 				qna = listDao.getQnaListByNo(dataSourceRequest, qna_no);
-				memberCache.put(new Element(qna_no, qna));
+				boardCache.put(new Element(qna_no, qna));
 			}
 			qnaList.add(qna);
 		}
@@ -180,8 +127,8 @@ public class ListServiceImpl implements ListService {
 		} else {
 			listDao.updateQnaBoard(qna);
 		}		
-		if(memberCache != null) {
-			memberCache.remove(qna.getBoardNo());
+		if(boardCache != null) {
+			boardCache.remove(qna.getBoardNo());
 		}
 	}
 

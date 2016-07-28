@@ -20,8 +20,9 @@ import org.springframework.web.context.request.NativeWebRequest;
 import com.podosoftware.community.board.model.Board;
 import com.podosoftware.community.board.model.DefaultBoard;
 import com.podosoftware.community.board.model.DefaultQnaBoard;
+import com.podosoftware.community.board.model.Member;
 import com.podosoftware.community.board.model.QnaBoard;
-import com.podosoftware.community.list.domain.Member;
+import com.podosoftware.community.board.service.MemberService;
 import com.podosoftware.community.list.service.ListService;
 
 import architecture.common.user.SecurityHelper;
@@ -43,19 +44,31 @@ public class PodoCommunityDataController {
 	@Qualifier("listService")
 	private ListService listService;
 	
-	/*@Inject
-	@Qualifier("boardService")
-	private BoardService boardService;
-	*/
+	
+	@Inject
+	@Qualifier("memberService")
+	private MemberService memberService;
+
+	
+	
 	public void setListService(ListService listService) {
 		this.listService = listService;
 	}
+	
+		
+	
+	public MemberService getMemberService() {
+		return memberService;
+	}
 
-	/*public void setBoardService(BoardService boardService) {
-		this.boardService = boardService;
-	}*/
-	
-	
+
+
+	public void setMemberService(MemberService memberService) {
+		this.memberService = memberService;
+	}
+
+
+
 	@RequestMapping(value = "/hello.json", method = { RequestMethod.POST, RequestMethod.GET })
     @ResponseBody
     public Map hello(NativeWebRequest request) throws NotFoundException {
@@ -72,9 +85,9 @@ public class PodoCommunityDataController {
 	public List<Member> getMemberList(@RequestParam(value = "search", required = false) String search, NativeWebRequest request) throws Exception {
 		
 		if(StringUtils.isNotEmpty(search)){
-			return listService.getMemberList(search);
+			return memberService.getMemberList(search);
 		}else{
-			return listService.getMemberList();
+			return memberService.getMemberList();
 		}
 		
 	}
@@ -89,11 +102,11 @@ public class PodoCommunityDataController {
 			for( FilterDescriptor fd : dataSourceRequest.getFilter().getFilters()){
 				if( StringUtils.equals(fd.getField(),"name"))
 				{
-					return listService.getMemberList(fd.getValue().toString());
+					return memberService.getMemberList(fd.getValue().toString());
 				}
 			}
 		}		
-		return listService.getMemberList();
+		return memberService.getMemberList();
 	}
 	
 	@RequestMapping(value = "/list/find.json", method = { RequestMethod.POST, RequestMethod.GET })
@@ -104,8 +117,8 @@ public class PodoCommunityDataController {
 		int total = 0;
 		List<Member> items;
 		
-		total = listService.countMemberList(dataSourceRequest);
-		items = listService.findMemberList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
+		total = memberService.countMemberList(dataSourceRequest);
+		items = memberService.findMemberList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
 
 		return new ItemList(items, total);
 	}
@@ -117,7 +130,7 @@ public class PodoCommunityDataController {
 			@RequestBody Member member,
 			NativeWebRequest request) throws Exception {
 		
-		listService.updateMemberInfo(member);
+		memberService.updateMemberInfo(member);
 		return member;
 	}
 	
@@ -127,7 +140,7 @@ public class PodoCommunityDataController {
 			@RequestBody Member member,
 			NativeWebRequest request) throws Exception {
 		
-		listService.createMember(member);
+		memberService.createMember(member);
 		return member;
 	}
 

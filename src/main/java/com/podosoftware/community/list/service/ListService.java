@@ -5,23 +5,11 @@ import java.util.List;
 import com.podosoftware.community.board.model.Board;
 import com.podosoftware.community.board.model.DefaultQnaBoard;
 import com.podosoftware.community.board.model.QnaBoard;
-import com.podosoftware.community.list.domain.Member;
 
 import architecture.ee.web.model.DataSourceRequest;
 
 public interface ListService {
 
-	public List<Member> getMemberList();
-
-	public List<Member> getMemberList(String search);
-	
-	public Integer countMemberList(DataSourceRequest dataSourceRequest);
-	
-	public List<Member> findMemberList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults);
-
-	public void updateMemberInfo(Member member);
-
-	public void createMember(Member member);
 
 	public Integer countBoardList(DataSourceRequest dataSourceRequest);
 
