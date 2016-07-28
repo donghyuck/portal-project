@@ -57,7 +57,7 @@
                             type: "POST",
                             transport: {
                                 read: {
-                                	url: "<@spring.url "/data/podo/board/listView.json?output=json" />",
+                                	url: "<@spring.url "/data/podo/board/free/list.json?output=json" />",
                                 	type:'POST', 
                                 	contentType : 'application/json'
                                 },
@@ -133,7 +133,7 @@
                             type: "POST",
                             transport: {
                                 read: {
-                                	url: "<@spring.url "/data/podo/board/listView.json?output=json" />",
+                                	url: "<@spring.url "/data/podo/board/notice/list.json?output=json" />",
                                 	type:'POST', 
                                 	contentType : 'application/json'
                                 },
@@ -212,7 +212,7 @@
                             type: "POST",
                             transport: {
                                 read: {
-                                	url: "<@spring.url "/data/podo/board/qnaListView.json?output=json" />",
+                                	url: "<@spring.url "/data/podo/board/qna/list.json?output=json" />",
                                 	type:'POST', 
                                 	contentType : 'application/json'
                                 },
@@ -330,7 +330,7 @@
 						var $this = this;
 						console.log(kendo.stringify($this.board));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
+							'<@spring.url "/data/podo/board/free/write.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
@@ -360,7 +360,7 @@
 						conf = confirm("이 글을 정말 삭제하시겠습니까?");
 						if(conf) {
 							common.ui.ajax(
-							'<@spring.url "/data/podo/board/delete.json?output=json" />',
+							'<@spring.url "/data/podo/board/free/delete.json?output=json" />',
 							{
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
@@ -415,7 +415,7 @@
 						$this.set('editable', ($this.board.boardNo > 0 ? false : true ));
 						if($this.board.boardNo > 0) {
 							common.ui.ajax(
-							'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
+							'<@spring.url "/data/podo/board/free/updateReadCount.json?output=json" />',
 							{
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
@@ -492,7 +492,7 @@
 						var $this = this;
 						console.log(kendo.stringify($this.notice));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/write.json?output=json" />' , 
+							'<@spring.url "/data/podo/board/notice/write.json?output=json" />' , 
 							{
 								data : kendo.stringify($this.notice),
 								contentType : "application/json",
@@ -524,7 +524,7 @@
 						$this.set('editable', ($this.notice.boardNo > 0 ? false : true ));
 						if($this.notice.boardNo > 0) {
 							common.ui.ajax(
-								'<@spring.url "/data/podo/board/updateReadCount.json?output=json" />',
+								'<@spring.url "/data/podo/board/notice/updateReadCount.json?output=json" />',
 								{
 									data : kendo.stringify( $this.notice ),
 									contentType : "application/json",
@@ -550,7 +550,7 @@
 						conf = confirm("이 글을 정말 삭제하시겠습니까?");
 						if(conf){
 							common.ui.ajax(
-							'<@spring.url "/data/podo/board/delete.json?output=json" />',
+							'<@spring.url "/data/podo/board/notice/delete.json?output=json" />',
 							{
 								data : kendo.stringify( $this.notice ),
 								contentType : "application/json",
@@ -669,7 +669,7 @@
 						$this.set('editable', ($this.qna.boardNo > 0 ? false : true ));
 						if($this.qna.boardNo > 0) {
 							common.ui.ajax(
-								'<@spring.url "/data/podo/board/updateQnaReadCount.json?output=json" />',
+								'<@spring.url "/data/podo/board/qna/updateReadCount.json?output=json" />',
 								{
 									data : kendo.stringify( $this.qna ),
 									contentType : "application/json",
@@ -695,7 +695,7 @@
 						conf = confirm("이 글을 정말 삭제하시겠습니까?");
 						if(conf){
 							common.ui.ajax(
-							'<@spring.url "/data/podo/board/delete.json?output=json" />',
+							'<@spring.url "/data/podo/board/qna/delete.json?output=json" />',
 							{
 								data : kendo.stringify( $this.qna ),
 								contentType : "application/json",
