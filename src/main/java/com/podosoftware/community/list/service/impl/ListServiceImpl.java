@@ -8,11 +8,14 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.podosoftware.community.board.domain.Board;
-import com.podosoftware.community.board.domain.QnaBoard;
+import com.podosoftware.community.board.model.Board;
+import com.podosoftware.community.board.model.DefaultBoard;
+import com.podosoftware.community.board.model.DefaultQnaBoard;
+import com.podosoftware.community.board.model.QnaBoard;
 import com.podosoftware.community.list.dao.ListDao;
 import com.podosoftware.community.list.domain.Member;
 import com.podosoftware.community.list.service.ListService;
+
 import com.podosoftware.community.spring.controller.PodoCommunityDataController;
 
 import architecture.ee.web.model.DataSourceRequest;
@@ -99,10 +102,9 @@ public class ListServiceImpl implements ListService {
 		List<Long> nos = listDao.getBoardNo(dataSourceRequest, startIndex, maxResults);
 		List<Board> list = new ArrayList<Board>(nos.size());
 		for(Long board_no : nos){
-			Board board;
-			board = new Board();
+			Board board = new DefaultBoard();
 			if( memberCache.get(board_no) != null ){
-				board = (Board) memberCache.get(board_no).getObjectValue();			
+				board = (DefaultBoard) memberCache.get(board_no).getObjectValue();			
 			} else {
 				board = listDao.getBoardListByNo(dataSourceRequest, board_no);
 				memberCache.put(new Element(board_no, board));
@@ -135,7 +137,7 @@ public class ListServiceImpl implements ListService {
 		listDao.delete(board);
 	}
 
-	@Override
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
 	public void updateReadCount(Board board) {
 		if(memberCache.get(board.getBoardNo()) != null) {
 			memberCache.remove(board.getBoardNo());
@@ -143,7 +145,7 @@ public class ListServiceImpl implements ListService {
 		listDao.updateReadCount(board);
 	}
 	
-	@Override
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
 	public void updateQnaReadCount(QnaBoard qna) {
 		if(memberCache.get(qna.getBoardNo()) != null) {
 			memberCache.remove(qna.getBoardNo());
@@ -157,10 +159,9 @@ public class ListServiceImpl implements ListService {
 		List<QnaBoard> qnaList = new ArrayList<QnaBoard>(qnaNos.size());
 		
 		for(Long qna_no : qnaNos) {
-			QnaBoard qna;
-			qna = new QnaBoard();
+			QnaBoard qna = new DefaultQnaBoard();
 			if(memberCache.get(qna_no) != null) {
-				qna = (QnaBoard) memberCache.get(qna_no).getObjectValue();
+				qna = (DefaultQnaBoard) memberCache.get(qna_no).getObjectValue();
 			} else {
 				qna = listDao.getQnaListByNo(dataSourceRequest, qna_no);
 				memberCache.put(new Element(qna_no, qna));
@@ -170,16 +171,15 @@ public class ListServiceImpl implements ListService {
 		return qnaList;
 	}
 
-	@Override
-	public void qnaWrite(QnaBoard qna) {
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
+	public void qnaWrite(DefaultQnaBoard qna) {
 		boolean isNewQna = qna.getBoardNo() <= 0L;
 		
 		if(isNewQna) {
 			listDao.createQnaBoard(qna);
 		} else {
 			listDao.updateQnaBoard(qna);
-		}
-		
+		}		
 		if(memberCache != null) {
 			memberCache.remove(qna.getBoardNo());
 		}

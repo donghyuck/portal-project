@@ -2,8 +2,8 @@ package com.podosoftware.community.list.dao;
 
 import java.util.List;
 
-import com.podosoftware.community.board.domain.Board;
-import com.podosoftware.community.board.domain.QnaBoard;
+import com.podosoftware.community.board.model.Board;
+import com.podosoftware.community.board.model.QnaBoard;
 import com.podosoftware.community.list.domain.Member;
 
 import architecture.ee.web.model.DataSourceRequest;
@@ -49,10 +49,14 @@ public interface ListDao {
 	
 	public void updateQnaReadCount(QnaBoard qna);
 
+	
 	public void createQnaBoard(QnaBoard qna);
 
+	
 	public void updateQnaBoard(QnaBoard qna);
 
+	
+	
 	public void createReply(Board board);
 
 	public long getNextBoardNo(Board board);

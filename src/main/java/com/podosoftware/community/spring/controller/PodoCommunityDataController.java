@@ -1,6 +1,5 @@
 package com.podosoftware.community.spring.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.NativeWebRequest;
 
-import com.podosoftware.community.board.domain.Board;
-import com.podosoftware.community.board.domain.QnaBoard;
+import com.podosoftware.community.board.model.Board;
+import com.podosoftware.community.board.model.DefaultBoard;
+import com.podosoftware.community.board.model.DefaultQnaBoard;
+import com.podosoftware.community.board.model.QnaBoard;
 import com.podosoftware.community.list.domain.Member;
 import com.podosoftware.community.list.service.ListService;
 
@@ -154,14 +155,14 @@ public class PodoCommunityDataController {
 	
 	@RequestMapping(value = "/board/write.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public Board write(@RequestBody Board board) throws Exception {
+	public Board write(@RequestBody DefaultBoard board) throws Exception {
 		listService.write(board);
 		return board;
 	}
 	
 	@RequestMapping(value = "/board/delete.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public Result delete(@RequestBody Board board) throws Exception {
+	public Result delete(@RequestBody DefaultBoard board) throws Exception {
 		listService.delete(board);
 		return Result.newResult();
 	}
@@ -172,42 +173,42 @@ public class PodoCommunityDataController {
 	
 	@RequestMapping(value = "/board/updateReadCount.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public Result updateReadCount(@RequestBody Board board) throws Exception {
+	public Result updateReadCount(@RequestBody DefaultBoard board) throws Exception {
 		listService.updateReadCount(board);
 		return Result.newResult();
 	}
 	
 	@RequestMapping(value = "/board/qna/write.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public QnaBoard qnaWrite(@RequestBody QnaBoard qna) throws Exception {
+	public QnaBoard qnaWrite(@RequestBody DefaultQnaBoard qna) throws Exception {
 		listService.qnaWrite(qna);
 		return qna;
 	}
 	
 	@RequestMapping(value = "/board/updateQnaReadCount.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public Result updateQnaReadCount(@RequestBody QnaBoard qna) throws Exception {
+	public Result updateQnaReadCount(@RequestBody DefaultQnaBoard qna) throws Exception {
 		listService.updateQnaReadCount(qna);
 		return Result.newResult();
 	}
 	
 	@RequestMapping(value = "/board/writeReply.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public Board writeReply(@RequestBody Board board) throws Exception {
+	public Board writeReply(@RequestBody DefaultBoard board) throws Exception {
 		listService.writeReply(board);
 		return board;
 	}
 	
 	@RequestMapping(value = "/board/nextBoard.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public Board getNextBoard(@RequestBody Board board) throws Exception {
+	public Board getNextBoard(@RequestBody DefaultBoard board) throws Exception {
 		listService.getNextBoard(board);
 		return board;
 	}
 	
 	@RequestMapping(value = "/board/preBoard.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
-	public Board getPreBoard(@RequestBody Board board) throws Exception {
+	public Board getPreBoard(@RequestBody DefaultBoard board) throws Exception {
 		listService.getPreBoard(board);
 		return board;
 	}
