@@ -191,5 +191,25 @@ public class PodoCommunityDataController {
 		return Result.newResult();
 	}
 	
+	@RequestMapping(value = "/board/writeReply.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@ResponseBody
+	public Board writeReply(@RequestBody Board board) throws Exception {
+		listService.writeReply(board);
+		return board;
+	}
+	
+	@RequestMapping(value = "/board/nextBoard.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@ResponseBody
+	public Board getNextBoard(@RequestBody Board board) throws Exception {
+		listService.getNextBoard(board);
+		return board;
+	}
+	
+	@RequestMapping(value = "/board/preBoard.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@ResponseBody
+	public Board getPreBoard(@RequestBody Board board) throws Exception {
+		listService.getPreBoard(board);
+		return board;
+	}
 	
 }

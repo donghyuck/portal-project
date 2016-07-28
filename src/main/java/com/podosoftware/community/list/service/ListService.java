@@ -38,4 +38,10 @@ public interface ListService {
 
 	public void qnaWrite(QnaBoard qna);
 
+	public void writeReply(Board board);
+
+	public void getNextBoard(Board board);
+
+	public void getPreBoard(Board board);
+
 }

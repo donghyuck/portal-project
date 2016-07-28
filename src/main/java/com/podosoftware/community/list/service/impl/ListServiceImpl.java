@@ -185,4 +185,19 @@ public class ListServiceImpl implements ListService {
 		}
 	}
 
+	@Override
+	public void writeReply(Board board) {
+		listDao.createReply(board);
+	}
+
+	@Override
+	public void getNextBoard(Board board) {
+		long nextBoardNo = listDao.getNextBoardNo(board);
+	}
+
+	@Override
+	public void getPreBoard(Board board) {
+		
+	}
+
 }

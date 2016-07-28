@@ -53,4 +53,8 @@ public interface ListDao {
 
 	public void updateQnaBoard(QnaBoard qna);
 
+	public void createReply(Board board);
+
+	public long getNextBoardNo(Board board);
+
 }
