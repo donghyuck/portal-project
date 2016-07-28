@@ -1,4 +1,4 @@
-package com.podosoftware.community.list.dao;
+package com.podosoftware.community.board.dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import com.podosoftware.community.board.model.QnaBoard;
 import architecture.ee.web.model.DataSourceRequest;
 
 
-public interface ListDao {
+public interface BoardDao {
 
 	public List<Member> getMemberList();
 

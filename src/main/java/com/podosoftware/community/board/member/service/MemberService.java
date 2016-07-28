@@ -1,4 +1,4 @@
-package com.podosoftware.community.board.service;
+package com.podosoftware.community.board.member.service;
 
 import java.util.List;
 

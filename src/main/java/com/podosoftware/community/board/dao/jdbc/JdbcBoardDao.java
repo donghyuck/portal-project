@@ -1,4 +1,4 @@
-package com.podosoftware.community.list.dao.jdbc;
+package com.podosoftware.community.board.dao.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,18 +12,18 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.stereotype.Repository;
 
+import com.podosoftware.community.board.dao.BoardDao;
 import com.podosoftware.community.board.model.Board;
 import com.podosoftware.community.board.model.DefaultBoard;
 import com.podosoftware.community.board.model.DefaultQnaBoard;
 import com.podosoftware.community.board.model.Member;
 import com.podosoftware.community.board.model.QnaBoard;
-import com.podosoftware.community.list.dao.ListDao;
 
 import architecture.ee.spring.jdbc.support.ExtendedJdbcDaoSupport;
 import architecture.ee.web.model.DataSourceRequest;
 
 @Repository
-public class JdbcListDao extends ExtendedJdbcDaoSupport implements ListDao {
+public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 
 	private static MemberListRowMapper rowMapper = new MemberListRowMapper();
 	private static BoardRowMapper boardRowMapper = new BoardRowMapper();

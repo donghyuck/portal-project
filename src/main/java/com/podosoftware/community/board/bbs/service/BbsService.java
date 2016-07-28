@@ -1,4 +1,4 @@
-package com.podosoftware.community.list.service;
+package com.podosoftware.community.board.bbs.service;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import com.podosoftware.community.board.model.QnaBoard;
 
 import architecture.ee.web.model.DataSourceRequest;
 
-public interface ListService {
+public interface BbsService {
 
 
 	public Integer countBoardList(DataSourceRequest dataSourceRequest);

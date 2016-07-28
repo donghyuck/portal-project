@@ -1,4 +1,4 @@
-package com.podosoftware.community.list.service.impl;
+package com.podosoftware.community.board.bbs.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,22 +8,22 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.podosoftware.community.board.bbs.service.BbsService;
+import com.podosoftware.community.board.dao.BoardDao;
 import com.podosoftware.community.board.model.Board;
 import com.podosoftware.community.board.model.DefaultBoard;
 import com.podosoftware.community.board.model.DefaultQnaBoard;
 import com.podosoftware.community.board.model.QnaBoard;
-import com.podosoftware.community.list.dao.ListDao;
-import com.podosoftware.community.list.service.ListService;
 
 import architecture.ee.web.model.DataSourceRequest;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.Element;
 
-public class ListServiceImpl implements ListService {
+public class BbsServiceImpl implements BbsService {
 	
-	private Log log = LogFactory.getLog(ListServiceImpl.class);
+	private Log log = LogFactory.getLog(BbsServiceImpl.class);
 	
-	private ListDao listDao;
+	private BoardDao listDao;
 	
 	private Cache boardCache;
 	
@@ -34,7 +34,7 @@ public class ListServiceImpl implements ListService {
 	}
 
 
-	public void setlistDao(ListDao listDao) {
+	public void setlistDao(BoardDao listDao) {
 		this.listDao = listDao;
 	}
 	

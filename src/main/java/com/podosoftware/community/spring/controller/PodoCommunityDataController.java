@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.NativeWebRequest;
 
+import com.podosoftware.community.board.bbs.service.BbsService;
+import com.podosoftware.community.board.member.service.MemberService;
 import com.podosoftware.community.board.model.Board;
 import com.podosoftware.community.board.model.DefaultBoard;
 import com.podosoftware.community.board.model.DefaultQnaBoard;
 import com.podosoftware.community.board.model.Member;
 import com.podosoftware.community.board.model.QnaBoard;
-import com.podosoftware.community.board.service.MemberService;
-import com.podosoftware.community.list.service.ListService;
 
 import architecture.common.user.SecurityHelper;
 import architecture.common.user.User;
@@ -42,7 +42,7 @@ public class PodoCommunityDataController {
 	
 	@Inject
 	@Qualifier("listService")
-	private ListService listService;
+	private BbsService listService;
 	
 	
 	@Inject
@@ -51,7 +51,7 @@ public class PodoCommunityDataController {
 
 	
 	
-	public void setListService(ListService listService) {
+	public void setListService(BbsService listService) {
 		this.listService = listService;
 	}
 	

@@ -1,4 +1,4 @@
-package com.podosoftware.community.board.service.impl;
+package com.podosoftware.community.board.member.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,9 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.podosoftware.community.board.dao.BoardDao;
+import com.podosoftware.community.board.member.service.MemberService;
 import com.podosoftware.community.board.model.Member;
-import com.podosoftware.community.board.service.MemberService;
-import com.podosoftware.community.list.dao.ListDao;
 
 import architecture.ee.web.model.DataSourceRequest;
 import net.sf.ehcache.Cache;
@@ -20,17 +20,17 @@ public class MemberServiceImpl implements MemberService {
 
 	private Log log = LogFactory.getLog(MemberServiceImpl.class);
 	
-	private ListDao listDao;
+	private BoardDao listDao;
 	
 	private Cache memberCache;
 	
 	
 
-	public ListDao getListDao() {
+	public BoardDao getListDao() {
 		return listDao;
 	}
 
-	public void setListDao(ListDao listDao) {
+	public void setListDao(BoardDao listDao) {
 		this.listDao = listDao;
 	}
 
