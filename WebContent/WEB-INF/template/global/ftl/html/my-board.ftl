@@ -986,8 +986,20 @@
 				                    </tr>
 						            <tr>
 						                <td colspan="6" id="lastTd" >
-						                	<div data-bind="text:board.content, invisible:editable, writable" style="height:350px; padding: 5px; white-space:pre; overflow:auto;"></div>
-						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" required data-bind="value:board.content, visible:editable"></textarea>
+						                	
+						                	<div data-bind="html:board.content, invisible:editable, writable" style="height:350px; padding: 5px; white-space:pre; overflow:auto;"></div>
+						                	
+						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" 
+						                		data-role="editor"
+							                    data-tools="['bold',
+							                                   'italic',
+							                                   'underline',
+							                                   'strikethrough',
+							                                   'justifyLeft',
+							                                   'justifyCenter',
+							                                   'justifyRight',
+							                                   'justifyFull']"                                   
+						                		data-bind="value:board.content, visible:editable"></textarea>
 						                </td>
 						            </tr>
 						             <tr>
