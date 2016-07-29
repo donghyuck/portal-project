@@ -12,20 +12,36 @@
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/headers/header-default.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-colors/dark-red.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/1.9.1/theme-skins/dark.css"/>',
+
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',
-
 			
+			'css!<@spring.url "/styles/common.ui/common.ui.color-icons.css"/>',			
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',						
+			
+			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
+						
+			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
+			'css!<@spring.url "/styles/hover-effect/hover-min.css"/>',			
+			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
+			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',			
+			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',		
+						
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
-			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',	
-			'<@spring.url "/js/bootstrap/3.3.5/bootstrap.min.js"/>',
-			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
+			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 					
+			'<@spring.url "/js/pdfobject/pdfobject.js"/>',	
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
-			'<@spring.url "/js/common/common.ui.community.js"/>'
+			'<@spring.url "/js/common/common.ui.community.js"/>',
+			'<@spring.url "/js/common.pages/common.personalized.js"/>'
 					
 			],			
 			complete: function() {		
@@ -305,20 +321,16 @@
 						this.set('editable', true);
 					},
 					reply : function(e){
-						var $this = this;
+						var $this = $(this);
                     	var objectId = $this.data("object-id");	
-						var newBoardReply;
-						
-						newBoardReply = new common.ui.data.community.Board();
-						newBoardReply.boardCode = 'B001';
-						newBoardReply.boardName = 'free';
-						newBoardReply.writingRef = objectId;
-						console.log(common.ui.stringify($this.data("object-id")));
-						
-						/*if($this.board.writingSeq > 0) {
-							newBoardReply.writingSeq = $this.board.writingSeq + 1;
-						}*/
-						
+						var newBoardReply ;
+						if( objectId > 0){
+							newBoardReply = common.ui.grid($('#board-list-grid')).dataSource.get(objectId);
+						}else{
+							newBoardReply = new common.ui.data.community.Board();
+							newBoardReply.boardCode = 'B002';
+							newBoardReply.boardName = 'notice';
+						}
 	                   	$('#board-write-form').fadeOut(function(e){
                    			$('#board-reply-form').fadeIn();
                    			console.log(common.ui.stringify(newBoardReply));
@@ -383,31 +395,50 @@
 							});	
 						}
 					},
-					nextBoard : function(source){
+					page:0,
+					pageSize:0,
+					hasPreviousPage: false,
+					hasNextPage: false,
+					hasPrevious: false,
+					hasNext: false,
+					preView : function(){
 						var $this = this;
-						console.log(kendo.stringify($this.board));
-						common.ui.ajax(
-							'<@spring.url "/data/podo/board/nextBoard.json?output=json" />',
-							{
-								data : kendo.stringify( $this.board ),
-								contentType : "application/json",
-								success : function(response){
-									var item = common.ui.grid(renderTo).dataSource.get(objectId);
-									renderTo.fadeOut(function(e){
-                   						writeBoard(item);
-                   					});		
-								},
-								fail: function(){								
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-								}
-							});	
+						if( $this.hasPrevious ){
+							var index = $this.board.index - 1;
+							var data = $('#board-write-form').dataSource.view();					
+							var item = data[index];				
+							item.set("index", index );
+							writeBoard(item);		
+						}
+					},
+					nextView : function(){
+						var $this = this;						
+						if( $this.hasNext ){
+							var index = $this.board.index + 1;
+							var data = $('#board-write-form').dataSource.view();					
+							var item = data[index];		
+							item.set("index", index );
+							writeBoard(item);					
+						}
+					},
+					setPagination: function(){
+						var $this = this;
+						var pageSize = $('#board-write-form').dataSource.view().length;	
+						var pager = common.ui.pager( $("#board-list-grid") );
+						var page = pager.page();
+						var totalPages = pager.totalPages();		
+						if( this.baord.index > 0 && (this.board.index - 1) >= 0 )
+							$this.set("hasPrevious", true); 
+						else 
+							$this.set("hasPrevious", false); 							
+						if( ($this.board.index + 1 ) < pageSize && (pageSize - this.board.index ) > 0 )
+							$this.set("hasNext", true); 
+						else 
+							$this.set("hasNext", false); 	
+						//$this.set("hasPreviousPage", page > 1 );				
+						//$this.set("hasNextPage", totalPages > page  );		
+						$this.set("page", page );			
+						$this.set("pageSize", pageSize );																	
 					},
 					setSource : function(source){
 						var $this = this;
@@ -801,7 +832,130 @@
 		}
 				
 	
+	<!---- 공지게시판 답글쓰기 폼 ---->	
+		function writeNoticeReply(source){
+			var renderTo = $('#notice-reply-form');
+			if(!renderTo.data("model")){
+				var observable =  common.ui.observable({
+					notice : new common.ui.data.community.Board(),
+					editable : false,
+					propertyDataSource : new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
+					save : function(e){
+						var $this = this;
+						console.log(kendo.stringify($this.notice));
+						common.ui.ajax(
+							'<@spring.url "/data/podo/board/writeReply.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.notice ),
+								contentType : "application/json",
+								success : function(response){
+									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");
+								},
+								fail: function(){								
+									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									common.ui.grid($('#notice-list-grid')).dataSource.read();
+									common.ui.grid($('#notice-list-grid')).refresh();
+									$this.close();
+								}
+							});	
+							return false;
+					},
+					setSource : function(source){
+						var $this = this;
+						source.copy($this.notice);
+					},
+					close : function(){
+						renderTo.fadeOut(function(e){ 
+							$("#notice-list-grid").fadeIn();
+						});
+					}
+				});			
+				renderTo.data("model", observable);		
+				common.ui.bind( renderTo, observable );
+			}
+			renderTo.data("model").setSource(source);	
+				if(!renderTo.is(':visible'))
+			{
+				renderTo.fadeIn();
+			}		
+		}
 		
+				
+	<!---- QnA게시판 답글쓰기 폼 ---->	
+		function writeQnaReply(source){
+			var renderTo = $('#qna-reply-form');
+			if(!renderTo.data("model")){
+				var observable =  common.ui.observable({
+					qna : new common.ui.data.community.QnaBoard(),
+					editable : false,
+					propertyDataSource : new kendo.data.DataSource({
+						batch: true,
+						data : [],
+						schema: {
+                            model: common.ui.data.Property
+                        }
+					}),
+					save : function(e){
+						var $this = this;
+						console.log(kendo.stringify($this.qna));
+						common.ui.ajax(
+							'<@spring.url "/data/podo/board/writeReply.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.qna ),
+								contentType : "application/json",
+								success : function(response){
+									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");
+								},
+								fail: function(){								
+									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									common.ui.grid($('#qna-list-grid')).dataSource.read();
+									common.ui.grid($('#qna-list-grid')).refresh();
+									$this.close();
+								}
+							});	
+							return false;
+					},
+					setSource : function(source){
+						var $this = this;
+						source.copy($this.qna);
+					},
+					close : function(){
+						renderTo.fadeOut(function(e){ 
+							$("#qna-list-grid").fadeIn();
+						});
+					}
+				});			
+				renderTo.data("model", observable);		
+				common.ui.bind( renderTo, observable );
+			}
+			renderTo.data("model").setSource(source);	
+				if(!renderTo.is(':visible'))
+			{
+				renderTo.fadeIn();
+			}		
+		}
 
 		</script>
 		<style>
@@ -915,8 +1069,16 @@
 			a:hover{color:#2E2E2E;}
 			a:visited{color:#2E2E2E;}
 			a:active{color:white;}
+			.preBtn, .nextBtn { color: lightgray; position:relative; }
+			.preBtn:hover, .nextBtn:hover { color: black; }
+			.preBtn:visited, .nextBtn:visited { color: lightgray; }
+			.preBtn:active, .nextBtn:active { color: black; }
+			.preBtn { left: -140px; top: 310px; }
+			.nextBtn { left: 1140px; top: 310px; }
+			.BoardViewBtn {  margin-top: -35px; }
 		</style>
 		</#compress>
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
 	</head>
 	<body id="doc" class="bg-white">
 		<!--<div class="page-loader"></div>-->
@@ -948,8 +1110,11 @@
 								<div id="board-list-grid"></div>
 							</div>
 							<div id="board-write-form" style="display: none;">
+								<div class="BoardViewBtn" data-bind="invisible:editable">
+								 	<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="click: preView"></i>
+						 			<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="click: nextView"></i>
+								</div>
 							<form id="writeForm" action="#">
-								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
 								<table class="tb_writeForm">
 						            <tr>
 						                <td class="input_title bottom" >
@@ -982,11 +1147,9 @@
 				                    </tr>
 						            <tr>
 						                <td colspan="6" id="lastTd" >
-						                	
 						                	<div data-bind="html:board.content, invisible:editable, writable" style="height:350px; padding: 5px; white-space:pre; overflow:auto;"></div>
-						                	
-						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" 
-						                		data-role="editor"
+						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;" 
+						                		data-role="editor" 
 							                    data-tools="['bold',
 							                                   'italic',
 							                                   'underline',
@@ -994,7 +1157,8 @@
 							                                   'justifyLeft',
 							                                   'justifyCenter',
 							                                   'justifyRight',
-							                                   'justifyFull']"                                   
+							                                   'justifyFull',
+							                                   'insertImage']"                                   
 						                		data-bind="value:board.content, visible:editable"></textarea>
 						                </td>
 						            </tr>
@@ -1014,15 +1178,6 @@
 								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate, visible:editable">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, visible:editable">취소</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, invisible:editable">목록</button>
-						    	<br/><br/>
-						    	<div>
-								    <nav>
-									  <ul class="pager">
-									    <li><a href="#" style="border-radius: 4px" data-bind="click:preBoard, invisible:editable"><</a></li>&nbsp;&nbsp;
-									    <li><a href="#" style="border-radius: 4px" data-bind="click:nextBoard, invisible:editable">></a></li>
-									  </ul>
-									</nav>
-								</div>
 						    </form>
 						 </div>
 						 <div id="board-reply-form" style="display: none;">
@@ -1059,7 +1214,18 @@
 				                    </tr>
 						            <tr>
 						                <td colspan="6" id="lastTd" >
-						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" required data-bind="value:board.content"></textarea>
+						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;" 
+						                		data-role="editor"
+							                    data-tools="['bold',
+							                                   'italic',
+							                                   'underline',
+							                                   'strikethrough',
+							                                   'justifyLeft',
+							                                   'justifyCenter',
+							                                   'justifyRight',
+							                                   'justifyFull',
+							                                   'insertImage']"   
+						                		data-bind="value:board.content"></textarea>
 						                </td>
 						            </tr>
 						             <tr>
@@ -1070,8 +1236,8 @@
 						                	<input type="file" data-bind="value: board.image, visible:editable"/>
 						                </td>
 						            </tr>
-								</table><br/>
-								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:save">확인</button>
+								</table>
+								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close">취소</button>
 						    </form>
 						 </div>
@@ -1082,8 +1248,11 @@
 							<div id="notice-list-grid"></div>
 						</div>
 						<div id="notice-write-form" style="display: none;">
-							<form id="noticeForm" action="#">
-								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
+							<div class="BoardViewBtn" data-bind="invisible:editable">
+								<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="click: previous"></i>
+							 	<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="click: next"></i>
+							 </div>
+							 <form id="noticeForm" action="#">
 								<table id="tb_noticeForm">
 						            <tr>
 						                <td class="notice_title bottom" >
@@ -1117,7 +1286,18 @@
 						            <tr>
 						                <td colspan="6" id="lastTd" >
 						                	<div data-bind="text:notice.content, invisible:editable" style="height:350px; padding: 5px; white-space:pre; overflow:auto;"></div>
-						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" required data-bind="value:notice.content, visible:editable"></textarea>
+						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;" 
+						                		data-role="editor"
+							                    data-tools="['bold',
+							                                   'italic',
+							                                   'underline',
+							                                   'strikethrough',
+							                                   'justifyLeft',
+							                                   'justifyCenter',
+							                                   'justifyRight',
+							                                   'justifyFull',
+							                                   'insertImage']"   
+						                		data-bind="value:notice.content, visible:editable"></textarea>
 						                </td>
 						            </tr>
 						             <tr>
@@ -1136,15 +1316,6 @@
 								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate, visible:editable">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, visible:editable">취소</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, invisible:editable">목록</button>
-						    	<br/><br/>
-						    	<div>
-								    <nav>
-									  <ul class="pager">
-									    <li><a href="#" style="border-radius: 4px" data-bind="click:preBoard, invisible:editable"><</a></li>&nbsp;&nbsp;
-									    <li><a href="#" style="border-radius: 4px" data-bind="click:nextBoard, invisible:editable">></a></li>
-									  </ul>
-									</nav>
-								</div>
 						    </form>
 						 </div>
 						 <div id="notice-reply-form" style="display: none;">
@@ -1181,7 +1352,18 @@
 				                    </tr>
 						            <tr>
 						                <td colspan="6" id="lastTd" >
-						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" required data-bind="value:notice.content"></textarea>
+						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;"
+						                		data-role="editor"
+							                    data-tools="['bold',
+							                                   'italic',
+							                                   'underline',
+							                                   'strikethrough',
+							                                   'justifyLeft',
+							                                   'justifyCenter',
+							                                   'justifyRight',
+							                                   'justifyFull',
+							                                   'insertImage']"   
+						                	 	data-bind="value:notice.content"></textarea>
 						                </td>
 						            </tr>
 						             <tr>
@@ -1204,8 +1386,11 @@
 							<div id="qna-list-grid"></div>
 						</div>
 						<div id="qna-write-form" style="display: none;">
+							<div class="BoardViewBtn" data-bind="invisible:editable">
+								<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="click: previous"></i>
+							 	<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="click: next"></i>
+							</div>
 							<form id="qnaForm" action="#">
-								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
 								<table id="tb_qnaForm">
 									<tr>
 										<td class="qna_title">
@@ -1248,7 +1433,18 @@
 						            <tr>
 						                <td colspan="6" id="lastTd" >
 						                	<div data-bind="text:qna.content, invisible:editable" style="height:350px; padding: 5px; white-space:pre; overflow:auto;"></div>
-						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" required data-bind="value:qna.content, visible:editable"></textarea>
+						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;" 
+						                		data-role="editor"
+							                    data-tools="['bold',
+							                                   'italic',
+							                                   'underline',
+							                                   'strikethrough',
+							                                   'justifyLeft',
+							                                   'justifyCenter',
+							                                   'justifyRight',
+							                                   'justifyFull',
+							                                   'insertImage']"   
+						                		data-bind="value:qna.content, visible:editable"></textarea>
 						                </td>
 						            </tr>
 						             <tr>
@@ -1267,15 +1463,6 @@
 								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate, visible:editable">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, visible:editable">취소</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, invisible:editable">목록</button>
-						    	<br/><br/>
-						    	<div>
-								    <nav>
-									  <ul class="pager">
-									    <li><a href="#" style="border-radius: 4px"data-bind="click:preBoard, invisible:editable"><</a></li>&nbsp;&nbsp;
-									    <li><a href="#" style="border-radius: 4px"data-bind="click:nextBoard, invisible:editable">></a></li>
-									  </ul>
-									</nav>
-								</div>
 						    </form>
 						 </div>
 						 <div id="qna-reply-form" style="display: none;">
@@ -1320,7 +1507,18 @@
 				                    </tr>
 						            <tr>
 						                <td colspan="6" id="lastTd" >
-						                	<textarea id="content" rows="20" style="width: 100%; border : none; padding: 5px; resize: none;" required data-bind="value:qna.content"></textarea>
+						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;" 
+						                		data-role="editor"
+							                    data-tools="['bold',
+							                                   'italic',
+							                                   'underline',
+							                                   'strikethrough',
+							                                   'justifyLeft',
+							                                   'justifyCenter',
+							                                   'justifyRight',
+							                                   'justifyFull',
+							                                   'insertImage']"   
+						                		data-bind="value:qna.content"></textarea>
 						                </td>
 						            </tr>
 						             <tr>
