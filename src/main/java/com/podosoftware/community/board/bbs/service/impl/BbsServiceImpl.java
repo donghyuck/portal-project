@@ -23,37 +23,33 @@ public class BbsServiceImpl implements BbsService {
 	
 	private Log log = LogFactory.getLog(BbsServiceImpl.class);
 	
-	private BoardDao listDao;
+	private BoardDao boardDao;
 	
 	private Cache boardCache;
-	
-	
 	
 	public void setBoardCache(Cache boardCache) {
 		this.boardCache = boardCache;
 	}
 
-
-	public void setlistDao(BoardDao listDao) {
-		this.listDao = listDao;
+	public void setboardDao(BoardDao boardDao) {
+		this.boardDao = boardDao;
 	}
-	
 
 	@Override
 	public Integer countBoardList(DataSourceRequest dataSourceRequest) {
-		return listDao.countBoardList(dataSourceRequest);
+		return boardDao.countBoardList(dataSourceRequest);
 	}
 
 	@Override
 	public List<Board> getBoardList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
-		List<Long> nos = listDao.getBoardNo(dataSourceRequest, startIndex, maxResults);
+		List<Long> nos = boardDao.getBoardNo(dataSourceRequest, startIndex, maxResults);
 		List<Board> list = new ArrayList<Board>(nos.size());
 		for(Long board_no : nos){
 			Board board = new DefaultBoard();
 			if( boardCache.get(board_no) != null ){
 				board = (DefaultBoard) boardCache.get(board_no).getObjectValue();			
 			} else {
-				board = listDao.getBoardListByNo(dataSourceRequest, board_no);
+				board = boardDao.getBoardListByNo(dataSourceRequest, board_no);
 				boardCache.put(new Element(board_no, board));
 			}
 			list.add(board);
@@ -66,9 +62,9 @@ public class BbsServiceImpl implements BbsService {
 		boolean isNewBoard = board.getBoardNo() <= 0L;
 		
 		if(isNewBoard) {
-			listDao.createBoard(board);
+			boardDao.createBoard(board);
 		} else {
-			listDao.updateBoard(board);
+			boardDao.updateBoard(board);
 		}
 		
 		if(boardCache != null) {
@@ -81,7 +77,7 @@ public class BbsServiceImpl implements BbsService {
 		if(boardCache.get(board.getBoardNo()) != null) {
 			boardCache.remove(board.getBoardNo());
 		}
-		listDao.delete(board);
+		boardDao.delete(board);
 	}
 
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
@@ -89,7 +85,7 @@ public class BbsServiceImpl implements BbsService {
 		if(boardCache.get(board.getBoardNo()) != null) {
 			boardCache.remove(board.getBoardNo());
 		}
-		listDao.updateReadCount(board);
+		boardDao.updateReadCount(board);
 	}
 	
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
@@ -97,12 +93,12 @@ public class BbsServiceImpl implements BbsService {
 		if(boardCache.get(qna.getBoardNo()) != null) {
 			boardCache.remove(qna.getBoardNo());
 		}
-		listDao.updateQnaReadCount(qna);
+		boardDao.updateQnaReadCount(qna);
 	}
 
 	@Override
 	public List<QnaBoard> getQnaList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
-		List<Long> qnaNos = listDao.getBoardNo(dataSourceRequest, startIndex, maxResults);
+		List<Long> qnaNos = boardDao.getBoardNo(dataSourceRequest, startIndex, maxResults);
 		List<QnaBoard> qnaList = new ArrayList<QnaBoard>(qnaNos.size());
 		
 		for(Long qna_no : qnaNos) {
@@ -110,7 +106,7 @@ public class BbsServiceImpl implements BbsService {
 			if(boardCache.get(qna_no) != null) {
 				qna = (DefaultQnaBoard) boardCache.get(qna_no).getObjectValue();
 			} else {
-				qna = listDao.getQnaListByNo(dataSourceRequest, qna_no);
+				qna = boardDao.getQnaListByNo(dataSourceRequest, qna_no);
 				boardCache.put(new Element(qna_no, qna));
 			}
 			qnaList.add(qna);
@@ -123,9 +119,9 @@ public class BbsServiceImpl implements BbsService {
 		boolean isNewQna = qna.getBoardNo() <= 0L;
 		
 		if(isNewQna) {
-			listDao.createQnaBoard(qna);
+			boardDao.createQnaBoard(qna);
 		} else {
-			listDao.updateQnaBoard(qna);
+			boardDao.updateQnaBoard(qna);
 		}		
 		if(boardCache != null) {
 			boardCache.remove(qna.getBoardNo());
@@ -134,17 +130,8 @@ public class BbsServiceImpl implements BbsService {
 
 	@Override
 	public void writeReply(Board board) {
-		listDao.createReply(board);
+		boardDao.createReply(board);
 	}
 
-	@Override
-	public void getNextBoard(Board board) {
-		long nextBoardNo = listDao.getNextBoardNo(board);
-	}
-
-	@Override
-	public void getPreBoard(Board board) {
-		
-	}
 
 }

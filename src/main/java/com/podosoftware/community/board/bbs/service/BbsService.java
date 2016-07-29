@@ -29,8 +29,4 @@ public interface BbsService {
 
 	public void writeReply(Board board);
 
-	public void getNextBoard(Board board);
-
-	public void getPreBoard(Board board);
-
 }

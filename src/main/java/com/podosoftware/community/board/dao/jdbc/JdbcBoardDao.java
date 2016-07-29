@@ -301,11 +301,5 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 
 	}
 
-	@Override
-	public long getNextBoardNo(Board board) {
-		return getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.GET_NEXT_BOARD_NO").getSql(),
-				new SqlParameterValue(Types.VARCHAR, board.getBoardCode()),
-				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()), Long.class);
-	}
 
 }

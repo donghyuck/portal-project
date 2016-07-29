@@ -59,6 +59,5 @@ public interface BoardDao {
 	
 	public void createReply(Board board);
 
-	public long getNextBoardNo(Board board);
 
 }

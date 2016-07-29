@@ -41,32 +41,24 @@ public class PodoCommunityDataController {
 	private Log log = LogFactory.getLog(PodoCommunityDataController.class);
 	
 	@Inject
-	@Qualifier("listService")
-	private BbsService listService;
-	
+	@Qualifier("bbsService")
+	private BbsService bbsService;
 	
 	@Inject
 	@Qualifier("memberService")
 	private MemberService memberService;
 
-	
-	
-	public void setListService(BbsService listService) {
-		this.listService = listService;
+	public void setbbsService(BbsService bbsService) {
+		this.bbsService = bbsService;
 	}
-	
-		
 	
 	public MemberService getMemberService() {
 		return memberService;
 	}
 
-
-
 	public void setMemberService(MemberService memberService) {
 		this.memberService = memberService;
 	}
-
 
 
 	@RequestMapping(value = "/hello.json", method = { RequestMethod.POST, RequestMethod.GET })
@@ -80,7 +72,7 @@ public class PodoCommunityDataController {
 		return map;
     }
 	
-	@RequestMapping(value = "/list.json", method = RequestMethod.GET)
+	@RequestMapping(value = "/member/list.json", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Member> getMemberList(@RequestParam(value = "search", required = false) String search, NativeWebRequest request) throws Exception {
 		
@@ -92,7 +84,7 @@ public class PodoCommunityDataController {
 		
 	}
 	
-	@RequestMapping(value = "/list/search.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "/member/list/search.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public List<Member> getMemberSearchList(
 			@RequestBody architecture.ee.web.model.DataSourceRequest dataSourceRequest,
@@ -109,7 +101,7 @@ public class PodoCommunityDataController {
 		return memberService.getMemberList();
 	}
 	
-	@RequestMapping(value = "/list/find.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "/member/list/find.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public ItemList findMemberSearchList(
 			@RequestBody architecture.ee.web.model.DataSourceRequest dataSourceRequest) throws Exception {
@@ -124,7 +116,7 @@ public class PodoCommunityDataController {
 	}
 	
 	
-	@RequestMapping(value = "/list/update.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "/member/list/update.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public Member updateMemberInfo(
 			@RequestBody Member member,
@@ -134,7 +126,7 @@ public class PodoCommunityDataController {
 		return member;
 	}
 	
-	@RequestMapping(value = "/list/create.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "/member/list/create.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public Member createMember(
 			@RequestBody Member member,
@@ -144,86 +136,69 @@ public class PodoCommunityDataController {
 		return member;
 	}
 
-	@RequestMapping(value = "/board/listView.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = {"/board/free/list.json", "/board/notice/list.json"}, method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public ItemList getBoardList(@RequestBody DataSourceRequest dataSourceRequest) throws Exception {
 		int total = 0;
 		List<Board> items;
 		
-		total = listService.countBoardList(dataSourceRequest);
-		items = listService.getBoardList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
+		total = bbsService.countBoardList(dataSourceRequest);
+		items = bbsService.getBoardList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
 		return new ItemList(items, total);
 	}
 	
-	@RequestMapping(value = "/board/qnaListView.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "/board/qna/list.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public ItemList getQnaBoardList(@RequestBody DataSourceRequest dataSourceRequest) throws Exception {
 		int total = 0;
 		List<QnaBoard> items;
 		
-		total = listService.countBoardList(dataSourceRequest);
-		items = listService.getQnaList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
+		total = bbsService.countBoardList(dataSourceRequest);
+		items = bbsService.getQnaList(dataSourceRequest, dataSourceRequest.getSkip(), dataSourceRequest.getPageSize());
 		return new ItemList(items, total);
 	}
 	
-	@RequestMapping(value = "/board/write.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = {"/board/free/write.json", "/board/notice/write.json"}, method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public Board write(@RequestBody DefaultBoard board) throws Exception {
-		listService.write(board);
+		bbsService.write(board);
 		return board;
 	}
 	
-	@RequestMapping(value = "/board/delete.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = {"/board/free/delete.json", "/board/notice/delete.json", "/board/qna/delete.json"}, method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public Result delete(@RequestBody DefaultBoard board) throws Exception {
-		listService.delete(board);
+		bbsService.delete(board);
 		return Result.newResult();
 	}
 	
-	/**
-	 *  AJAX 통신은 특성상 반듯이 데이터가 있어야 합니다.
-	 */
-	
-	@RequestMapping(value = "/board/updateReadCount.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = {"/board/free/updateReadCount.json", "/board/notice/updateReadCount.json"}, method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public Result updateReadCount(@RequestBody DefaultBoard board) throws Exception {
-		listService.updateReadCount(board);
+		bbsService.updateReadCount(board);
 		return Result.newResult();
 	}
 	
 	@RequestMapping(value = "/board/qna/write.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public QnaBoard qnaWrite(@RequestBody DefaultQnaBoard qna) throws Exception {
-		listService.qnaWrite(qna);
+		bbsService.qnaWrite(qna);
 		return qna;
 	}
 	
-	@RequestMapping(value = "/board/updateQnaReadCount.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "/board/qna/updateReadCount.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public Result updateQnaReadCount(@RequestBody DefaultQnaBoard qna) throws Exception {
-		listService.updateQnaReadCount(qna);
+		bbsService.updateQnaReadCount(qna);
 		return Result.newResult();
 	}
 	
 	@RequestMapping(value = "/board/writeReply.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public Board writeReply(@RequestBody DefaultBoard board) throws Exception {
-		listService.writeReply(board);
+		bbsService.writeReply(board);
 		return board;
 	}
-	
-	@RequestMapping(value = "/board/nextBoard.json", method = { RequestMethod.POST, RequestMethod.GET })
-	@ResponseBody
-	public Board getNextBoard(@RequestBody DefaultBoard board) throws Exception {
-		listService.getNextBoard(board);
-		return board;
-	}
-	
-	@RequestMapping(value = "/board/preBoard.json", method = { RequestMethod.POST, RequestMethod.GET })
-	@ResponseBody
-	public Board getPreBoard(@RequestBody DefaultBoard board) throws Exception {
-		listService.getPreBoard(board);
-		return board;
-	}
+
 	
 }
