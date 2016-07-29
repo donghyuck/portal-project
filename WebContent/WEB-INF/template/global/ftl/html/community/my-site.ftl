@@ -55,10 +55,10 @@
 			'<@spring.url "/js/common.pages/common.personalized.js"/>',
 			
 			'<@spring.url "/js/ace/ace.js"/>',
+			'<@spring.url "/js/common.ui/common.ui.editor.js"/>',
 			'<@spring.url "/js/common.pages/common.code-editor.js"/>'			
 			],			
 			complete: function() {		
-								
 				<#if RequestParameters['id']?? >
 					var	webSiteId = ${ TextUtils.parseLong( RequestParameters['siteId'] ) } ;
 				</#if>				
@@ -69,12 +69,7 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								getSiteListView().dataSource.read();
-								/*
-								alert( currentUser.hasRole('ROLE_ADMIN') || currentUser.hasRole('ROLE_SYSTEM') );
-								if( !currentUser.anonymous ){		
-									$("#announce-selector label.btn").last().removeClass("disabled");									 
-								}
-								
+																
 								common.ui.data.permissions({
 									data : {
 										objectType : 30,
@@ -85,7 +80,7 @@
 										console.log( common.ui.stringify( data ) );
 									}
 								});
-								*/
+								
 							} 
 						}						
 					},
@@ -195,6 +190,7 @@
 			if(! common.ui.exists(renderTo) ){			
 				var grid = common.ui.grid(renderTo, {
 					autoBind : true,
+					height: '100%',
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/page/list.json?output=json" />', type:'POST', contentType : 'application/json' },
@@ -528,6 +524,7 @@
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();
 				var observable = new common.ui.observable({ 
+				
 					announce : new common.ui.data.Announce(),
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
@@ -550,8 +547,6 @@
 							read: { url:'<@spring.url "/secure/data/mgmt/website/announce/list.json"/>', type: 'POST', contentType : 'application/json'  },
 							parameterMap: function (options, type){
 								options.objectId = getSelectedSite().webSiteId ;
-								options.startDate = observable.startDate.toJSON();
-								options.endDate = observable.endDate.toJSON();
 								return common.ui.stringify( options );
 							}
 						},					
@@ -562,18 +557,20 @@
 						},
 						batch: false,
 						pageSize: 15,
-						serverPaging: true,
-						serverFiltering: true,
-						serverSorting: true
+						serverPaging: false,
+						serverFiltering: false,
+						serverSorting: false
 					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 공지 추가 </button></div>'),
 					columns: [
 						{ field: "announceId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
 						{ field: "subject", title: "제목", width: 350, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}},					
-						{ field: "subject", title: "소스", width: 80, headerAttributes: { "class": "table-header-cell", style: "text-align: center"},	template: '# if (objectType == 30) { # <span class="badge badge-blue">웹사이트</span>	# }else{ # <span class="badge badge-red">회사</span># } #	' },					
 						{ field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template:'<img width="25" height="25" class="img-circle no-margin" src="#: authorPhotoUrl() #" style="margin-right:10px;"> #if ( user.nameVisible ) {# #: user.name # #} else{ # #: user.username # #}#' },
-						{ field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
-						{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],
+						{ field: "startDate",  title: "시작일", width: 120,  format:"{0:yyyy.MM.dd HH:mm}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+						{ field: "endDate", title: "종료일", width: 120,  format:"{0:yyyy.MM.dd HH:mm}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } }, 
+						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary rounded btn-selectable" data-action="edit" data-object-id="#= announceId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>' }	
+						
+					],
 					filterable: true,
 					sortable: true,
 					resizable: true,
@@ -608,8 +605,7 @@
 										
 			}
 		}
-		
-		
+				
 		function createAnnouncementEditor( source ){
 			var renderTo = $("#my-site-announcement-view");
 			var collapseOptions = $('#my-site-announcement-view-options');
@@ -626,22 +622,54 @@
 					}),
 					setSource : function(source){
 						var $that = this;
-						source.copy($that.announce);	
+						source.copy($that.announce);							
 						
-						$that.set("editable", $that.announce.announceId > 0 ? true : false );	
-											
+						$that.set("editable", $that.announce.announceId > 0 ? true : false );
+						
 						$that.propertyDataSource.read();				
-						$that.propertyDataSource.data($that.announce.properties);	
-											
-						//collapseOptions.collapse('hide')
+						$that.propertyDataSource.data($that.announce.properties);																		
+						collapseOptions.collapse('hide');	
+					},
+					saveOrUpdate: function(){
+						var $this = this;
+						if( $this.announce.subject.length == 0 || $this.announce.body.length == 0 ){
+								common.ui.notification().show(
+									{	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},
+									"error"
+								);
+							return false;	
+						}
+						if( $this.announce.startDate >= $this.announce.endDate  ){
+							common.ui.notification().show(
+								{	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	},
+								"error"
+							);		
+							return false;
+						}	
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/website/announce/update.json"/>',
+							{
+								data : kendo.stringify( $this.announce ),
+								contentType : "application/json",
+								success : function(response){										
+									common.ui.grid( $('#my-site-announcement-grid') ).dataSource.read();									
+									$this.close();
+								},
+								fail: function(){								
+									common.ui.notification().show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								}
+						});	
 						
-						if( !$that.editable ){
-						//	$that.page.set("template", "");				
-						}						
-						//$that.set("fileContent", "");
-						//switchery.setPosition();
-						
-						console.log( common.ui.stringify($that.announce) );
+						return false;													
 					},
 					close:function(){
 						renderTo.fadeOut(function(e){ 
@@ -650,8 +678,51 @@
 					}
 				});	
 				renderTo.data("model", observable);		
-				common.ui.bind( renderTo, observable );
-				
+				common.ui.bind( renderTo, observable );		
+								
+				var editor = $('#announcement-html-editor');	
+				editor.kendoEditor({
+					tools : [
+					'bold', 
+					'italic', 
+					"underline",
+		            "strikethrough",
+		            
+		            "justifyLeft",
+		            "justifyCenter",
+		            "justifyRight",
+		            "justifyFull",
+		            
+					'insertUnorderedList', 
+					'insertOrderedList',
+					
+					"createTable",
+		            "addColumnLeft",
+		            "addColumnRight",
+		            "addRowAbove",
+		            "addRowBelow",
+		            "deleteRow",
+		            "deleteColumn",
+		            "foreColor",
+		            "backColor",
+		            {	
+						name: "viewHtml",
+						exec: function(e){
+							var editor = $(this).data("kendoEditor");
+							var ace = common.ui.editor.ace( $('#announcement-code-editor') , {
+								'change' : function(e){
+									editor.value( ace.value() );
+								}
+							});
+							//ace.title("");
+							ace.value( editor.value() );
+							ace.show();
+							return false;
+						}
+					}
+					]
+				});
+						
 				collapseOptions.on('shown.bs.collapse', function () {
 					$('#my-site-announcement-view-options-btn').text("고급설정 숨기기 .. ");
 				});
@@ -662,217 +733,6 @@
 			renderTo.data("model").setSource( source );	
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn(); 				
-		}	
-		
-		
-		
-		
-		function createNoticeEditorSection(source){
-			var renderTo = $("#my-notice-edit");		
-			if( !renderTo.data("model")){
-				var model =  common.ui.observable({ 
-					notice : new common.ui.data.Announce(),
-					new: true,
-					visible : true,
-					update : function(e){						
-						var $this = this, 
-						btn = $(e.target);						
-						btn.button('loading');
-						
-						if( $this.notice.subject.length == 0 || $this.notice.body.length == 0 ){
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},
-								"error"
-							);
-							return ;
-						}
-						if( $this.notice.startDate >= $this.notice.endDate  ){
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	},
-								"error"
-							);							
-							return ;
-						}
-						common.ui.ajax(
-							'<@spring.url "/data/announce/update.json"/>',
-							{
-								data : kendo.stringify( $this.notice ),
-								contentType : "application/json",
-								success : function(response){									
-									common.ui.grid($("#my-notice-grid")).dataSource.read();
-									$this.close();
-								},
-								fail: function(){								
-									common.ui.notification({
-										hide:function(e){
-											btn.button('reset');
-										}
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									btn.button('reset');
-								}
-							});	
-					},
-					close : function(e){
-						renderTo.fadeOut("slow", function(e){
-							$("#my-notice-view").fadeIn();
-						});
-					},	
-				});	
-				kendo.bind( renderTo, model);
-				renderTo.data("model", model);	
-				var bodyEditor =  $("#notice-editor-body" );
-				createEditor( "notice-editor" , bodyEditor, { modal : false , appendTo: $("#my-notice-editor-code"), tab: $("#my-notice-editor-tabs"), useWrapMode : true } );
-			}	
-			
-			if( source ){
-				source.copy( renderTo.data("model").notice );				
-				if( source.announceId === 0 ){
-					renderTo.data("model").set("notice.objectType", common.ui.buttonGroup($("#notice-source-list")).value); 
-					renderTo.data("model").set("new", false); 
-				}else{
-					renderTo.data("model").set("new", false); 					
-				} 
-			}
-			
-			$("#my-notice-view").fadeOut( "slow", function(e){
-				renderTo.fadeIn();
-			} );
-		}		
-
-		
-		
-		
-		function createNoticeSection(){			
-			var renderTo = $("#my-notice-grid");
-			if( !common.ui.exists(renderTo)){
-				var now = new Date();			
-				var model = new common.ui.observable({ 
-					notice : new common.ui.data.Announce(),
-					visible : false,
-					edit : function(e){
-						e.stopPropagation();
-						//common.ui.scroll.top($("website-notice"));
-						createNoticeEditorSection(this.notice);	
-					},
-					create : function(e){
-						var empty = new common.ui.data.Announce()
-						createNoticeEditorSection(empty);
-					},
-					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
-					endDate : now,
-					startDateChange: function(e) {
-						var $this = this;
-						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
-						var eDatePicker = $("#noticeEndDatePicker").data("kendoDatePicker");						
-						if( $this.startDate ){
-							eDatePicker.min($this.startDate);
-						} else if ($this.endDate) {
-							sDatePicker.max( $this.endDate );
-						} else {
-							$this.endDate = new Date(now.getFullYear(), now.getMonth(), now.getDay());
-							sDatePicker.max( $this.endDate );
-							eDatePicker.min( $this.endDate );
-						}
-					},
-					endDateChange:function(e){
-						var $this = this;
-						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
-						var eDatePicker = $("#noticeEndDatePicker").data("kendoDatePicker");		
-						if( $this.endDate ){
-							sDatePicker.max($this.endDate);
-						}else if ($this.startDate){
-							eDatePicker.min($this.startDate);
-						}else{
-							$this.endDate = new Date(now.getFullYear(), now.getMonth(), now.getDay());
-							sDatePicker.max( $this.endDate );
-							eDatePicker.min( $this.endDate );							
-						}
-					},
-					refresh : function(e){
-						common.ui.grid(renderTo).dataSource.read();					
-					}	
-				});
-				common.ui.bind($("#my-notice-list, #my-notice-view"), model );	
-				var noticeSourceList = common.ui.buttonGroup(
-					$("#notice-source-list"),
-					{
-						change: function(e){						
-							common.ui.grid(renderTo).dataSource.read({objectType:e.value});
-						}
-					}
-				);
-				common.ui.grid( renderTo, {
-					dataSource: {
-						serverFiltering: false,
-						transport: { 
-							read: { url:'<@spring.url "/data/announce/list.json"/>', type: 'POST' },
-							parameterMap: function (options, type){
-								return {objectType: common.ui.defined(options.objectType) ? options.objectType :noticeSourceList.value , startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() }						
-							}
-						},					
-						schema: {
-							total: "totalCount",
-							data: "announces",
-							model: common.ui.data.Announce
-						},
-						batch: false,
-						pageSize: 15,
-						serverPaging: false,
-						serverFiltering: false,
-						serverSorting: false
-					},
-					columns: [
-						{ field: "announceId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
-						{ field: "subject", title: "제목", width: 350, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}},					
-						{ field: "subject", title: "소스", width: 80, headerAttributes: { "class": "table-header-cell", style: "text-align: center"},	template: '# if (objectType == 30) { # <span class="badge badge-blue">웹사이트</span>	# }else{ # <span class="badge badge-red">회사</span># } #	' },					
-						{ field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template:'<img width="25" height="25" class="img-circle no-margin" src="#: authorPhotoUrl() #" style="margin-right:10px;"> #if ( user.nameVisible ) {# #: user.name # #} else{ # #: user.username # #}#' },
-						{ field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
-						{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],
-					filterable: true,
-					sortable: true,
-					resizable: true,
-					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-					selectable: 'row',
-					height: '100%',
-					change: function(e) {                    
-						var selectedCells = this.select();                 
-						if( selectedCells.length > 0){ 
-							var selectedCell = this.dataItem( selectedCells ); 
-							selectedCell.copy( model.notice );
-							if( $("#my-notice-edit").is(":visible") ){
-								$("#my-notice-edit").fadeOut(function(){
-									$("#my-notice-view").fadeIn();		
-								});
-							}
-							model.set("visible", true);														
-	 					} 						
-					},
-					dataBound: function(e){		
-						//$("button.btn-page-control-group").attr("disabled", "disabled");
-						model.set("visible", false);							
-						
-					}			
-				} );	
-			}		
 		}
 		
 		-->
@@ -895,10 +755,12 @@
 		    text-align: center;
 		}
 		
+		
+		
 		.k-grid-content .k-state-selected {
-		    color: #fff;
-		    background-color: #428bca;
-		    border-color: #428bca;		
+		    color: #787878;
+		    background-color: #e5e5e5;
+		    /* border-color: #34aadc; */	
     	}
 		
 		.k-grid .k-selectable td > .btn-selectable, .k-grid .k-selectable tr[aria-selected="false"] > td .btn-selectable, .k-grid .k-selectable td > a.btn-selectable, .k-grid .k-selectable tr[aria-selected="false"] > td a.btn-selectable{
@@ -950,107 +812,13 @@
 		    left: 65px;
 		    font-size: 1.2em;
 		    line-height: 50px;		
-		}
-					
-		.k-datepicker.text-md  > span.k-state-default {
-			height:36px;
-		}	
-			
-				
+		}					
 		
-		.dialog__content {
-			width : 100%;
-			max-width: none;				
-			background: #fff;
-			padding: 4em;
-			top: 0;
-			left: 0;
-			position: absolute;
-			height: 100%!important;
-			text-align: inherit;
+		table.k-editor{
+		    border-right: 0;
+		    border-left: 0;
+		    border-bottom: 0;		
 		}
-
-		.dialog .ace_editor {
-			display : none;
-		}
-				
-		.dialog.dialog--open .ace_editor {
-			display : block;
-		}
-					
-		.acc-v1	.panel-default {
-			border-color: #bbb;
-		}
-		
-		#my-page-view {
-			position: relative;
-		}
-						
-		.k-grid tr > td  .btn-group {
-			-webkit-animation-duration: 1s;
-			animation-duration: 1s;
-			-webkit-animation-fill-mode: both;
-			animation-fill-mode: both;		
-			cursor: not-allowed;
-			pointer-events: none;			
-			opacity: 0;
-			visibility: hidden;						
-		}
-
-		.k-grid tr[aria-selected=true] > td  .btn-group {
-			opacity: 1;
-			visibility: visible;
-			cursor: pointer;
-			pointer-events: auto;				
-			-webkit-animation-name: fadeInRight;
-			animation-name: fadeInRight;	
-		}
-		
-		.k-grid tr[aria-selected=false] > td  .btn-group {
-			opacity: 1;
-			visibility: visible;
-			cursor: pointer;
-			pointer-events: auto;				
-			-webkit-animation-name: fadeOutRight;
-			animation-name: fadeOutRight;	
-		}
-		
-		.btn[disabled]{
-			cursor: not-allowed;
-			pointer-events: auto;		
-		} 
-		
-		#my-page 	span.back,  #my-notice-edit 	span.back {
-			top:inherit;
-			left:inherit;
-		}
-		
-		#my-page-view .k-editor, #my-site-notice .k-editor {
-			border:0px;
-		}
-		
-		.sky-form fieldset {
-			background: #fff;
-		}
-		
-		
-		#my-notice-grid .k-grid-content {
-			height:530px;
-		}
-		
-
-		
-		#my-notice-listview.k-listview .k-state-selected
-		{
-			background : #F5F5F5;
-			color: #585f69;
-		}	
-		.breadcrumbs-v3 p {
-		  color: #fff;
-		  font-size: 24px;
-		  font-weight: 200;
-		  margin-bottom: 0;
-		}			
 		
 		</style>   	
 		</#compress>
@@ -1094,7 +862,7 @@
 											</div>
 										</div>
 									</div>
-									<div id="my-site-web-page-grid" class=" m-t-md"></div>
+									<div id="my-site-web-page-grid" class="no-border m-t-md"></div>
 								</div>									
 								<div id="my-site-web-page-view" style="display:none;">
 									<div class="ibox page-editor" style="display:none;">
@@ -1106,8 +874,7 @@
 										 </div>
 									</div>
 									<div class="ibox page-detail">
-										<span class="back" style="position:relative;" data-bind="click:close"></span>
-										<i class="icon-svg-btn no-padding icon-svg icon-svg-md basic-color-source-code" data-bind="click:openTemplateEditor" ></i>
+										<span class="back" style="position:relative;" data-bind="click:close"></span>										
 					                    <div class="ibox-content no-padding">					
 											<!-- sky-form -->	
 											<form action="#" class="sky-form">
@@ -1127,26 +894,30 @@
 															<div class="note">콘텐츠 타입을 입력하세요. 예) text/html;charset=UTF-8</div>
 														</section>
 														<section class="col col-6">
-															<h2 class="label">로케일
-																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right disabled"><span class="btn-label icon fa fa fa-search"></span> 검색</button>
-															</h2>
-															<label class="input">
-																<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
+															<h2 class="label">로케일</h2>
+															<label class="input">																
+																<input type="text" class="form-control" data-bind="value: page.locale">
 															</label>
+															
 															<div class="note">로케일 코드 값을 입력하세요. 예) en, ko_KR.</div>
 														</section>
 													</div>		
 													<div class="row">														
 														<section class="col col-6">
 															<h2 class="label">템플릿									
-																<button type="button" class="btn btn-xs btn-labeled btn-success rounded pull-right" data-bind="click:openTemplateFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>									
-															</h2>	
+																<button type="button" class="btn btn-xs btn-labeled btn-primary rounded pull-right" data-bind="click:openTemplateEditor" >
+																	<span class="btn-label icon fa fa-code"></span> 템플릿 소스 보기
+																</button>									
+															</h2>																
 															<label class="input">
-																<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">	
+																<i class="icon-append fa fa-search" data-bind="click:openTemplateFinder"></i>
+																<input type="text" placeholder="템플릿 파일을 검색합니다." data-bind="value: page.template">
 															</label>
 															<label class="checkbox"><input type="checkbox" name="checkbox-inline" data-bind="checked: page.customized" ><i></i>사용자정의 템플릿 사용</label>							
 														</section>
-														<section class="col col-6"></section>
+														<section class="col col-6">
+															
+														</section>
 													</div>								
 												</fieldset>
 												<fieldset>
@@ -1163,25 +934,29 @@
 														</label>
 														<div class="note">간략하게 페이지를 기술하세요.</div>
 													</section>
-													<section>
-														<h2 class="label">페이지 사용 여부 (<span data-bind="text:page.enabled"></span>)</h2>
-														<input type="checkbox" name="enabled-switcher" 
-															data-class="switcher-primary" role="switcher" 
-															data-bind="checked:page.enabled, events:{change:onChange}" >														
-													</section>	
+													<div class="row">
+														<section class="col-sm-6">														
+															<h2 class="label">페이지 사용 여부 (<span data-bind="text:page.enabled"></span>)</h2>
+															<input type="checkbox" name="enabled-switcher" 
+																data-class="switcher-primary" role="switcher" 
+																data-bind="checked:page.enabled, events:{change:onChange}" >														
+														</section>
+													</div>
 												</fieldset>		
-												<fieldset>	
+												<fieldset class="bg-gray">	
 													<div class="collapse" id="my-site-web-page-view-options">
 													<section>
 														  <h2 class="label">매뉴설정</h2>	
 														  <div class="note m-b-md">검색 버튼을 클릭하여 관련 메뉴를 선택하여 주세요.</div>
-														  <button type="button" class="btn btn-xs btn-labeled btn-success rounded" data-bind="click:openMenuFinder" ><span class="btn-label icon fa fa-search"></span> 검색</button>	
+														  <button type="button" class="btn btn-xs btn-labeled btn-primary rounded" data-bind="click:openMenuFinder" >
+														  	<span class="btn-label icon fa fa-search"></span> 메뉴 검색 
+														  </button>	
 													</section>
 													<section>	  													  
 														  <h2 class="label">속성</h2>
 														  <div class="note m-b-md">고급 사용자가 아니면 직접 수정하지 마세요.</div>
 														  <div data-role="grid"
-															class="no-border"
+															class=""
 														    data-scrollable="true"
 														    data-editable="true"
 														    data-toolbar="['create', 'cancel']"
@@ -1200,8 +975,8 @@
 													</div>							
 												</fieldset>												
 												<footer class="text-right">
-													<button type="submit" class="btn btn-flat btn-primary" data-bind="click:saveOrUpdate">저 장</button>
-													<button type="button" class="btn btn-flat btn-default btn-outline" data-bind="click:close">취 소</button>
+													<button type="submit" class="btn btn-flat btn-primary rounded" data-bind="click:saveOrUpdate">저 장</button>
+													<button type="button" class="btn btn-flat btn-default btn-outline rounded" data-bind="click:close">취 소</button>
 												</footer>
 											</form>
 											<!-- /.sky-form -->
@@ -1217,20 +992,7 @@
 							<div class="tab-pane fade" id="my-site-announcement">
 								<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>								
 								<div id="my-site-announcement-list" class="search-block-v2">
-									<div class="container">										
-										<div class="col-md-8 col-md-offset-2">
-											<div class="period-wrapper">
-											<label for="announcement-start-date" class="select-period">시작일</label>
-											<input id="announcement-start-date" name="startDate" data-role="datepicker" data-bind="value: startDate, events:{change:startChange}" class="text-md" />	 
-											</div>
-											<span> ~ </span>	
-											<div class="period-wrapper">
-											<label for="announcement-end-date" class="select-period">종료일</label>
-											<input id="announcement-end-date" name="endDate" data-role="datepicker" data-bind="value: endDate, events:{change:endChange}" class="text-md"/>	
-											</div>
-										</div>
-									</div>
-									<div id="my-site-announcement-grid" class="m-t-md"></div>
+									<div id="my-site-announcement-grid" class="no-border m-t-md"></div>
 								</div>	
 								<div id="my-site-announcement-view" style="display:none;">
 									<div class="ibox announcement-detail">
@@ -1249,36 +1011,27 @@
 														<label class="label">공지 기간</label>
 														<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
 														<div class="note"><i class="fa fa-info text-danger"></i> 지정된 기간 동안만 이벤트 및 공지가 보여집니다.</div>
-													</section>	
-													<section>
-													
-													<textarea data-role="editor"
-								                      data-tools="['bold',
-								                                   'italic',
-								                                   'underline',
-								                                   'strikethrough',
-								                                   'justifyLeft',
-								                                   'justifyCenter',
-								                                   'justifyRight',
-								                                   'justifyFull']"
-								                      data-bind="value:announce.body"
-								                      style="height: 200px;"></textarea>
-													
-													</section>
+													</section>													
 												</fieldset>		
-												<fieldset>	
+																																		
+														<textarea id="announcement-html-editor" 
+									                      data-bind="value:announce.body"
+									                      style="height: 200px;"></textarea>
+												
+												<fieldset class="bg-gray">	
 													<div class="collapse" id="my-site-announcement-view-options">
 													<section>	  													  
 														  <h2 class="label">속성</h2>
 														  <div class="note m-b-md">고급 사용자가 아니면 직접 수정하지 마세요.</div>
 														  <div data-role="grid"
-															class="no-border"
+															class=""
 														    data-scrollable="true"
 														    data-editable="true"
 														    data-toolbar="['create', 'cancel']"
 														    data-columns="[{ 'field': 'name', 'width': 270 , 'title':'이름'},{ 'field': 'value', 'title':'값' },{ 'command': ['destroy'], 'title': '&nbsp;', 'width': '200px' }]"
 														    data-bind="source:propertyDataSource, visible:editable"
-														    style="min-height:300px"></div>																								
+														    style="min-height:300px"></div>
+														    																						
 													</section>	
 													</div>
 													<a id="my-site-announcement-view-options-btn" class="btn btn-outline rounded" 
@@ -1291,8 +1044,8 @@
 													</div>							
 												</fieldset>												
 												<footer class="text-right">
-													<button type="submit" class="btn btn-flat btn-primary" data-bind="click:saveOrUpdate">저 장</button>
-													<button type="button" class="btn btn-flat btn-default btn-outline" data-bind="click:close">취 소</button>
+													<button type="submit" class="btn btn-flat btn-primary rounded" data-bind="click:saveOrUpdate">저 장</button>
+													<button type="button" class="btn btn-flat btn-default btn-outline rounded" data-bind="click:close">취 소</button>
 												</footer>
 											</form>
 											<!-- /.sky-form -->
@@ -1315,7 +1068,10 @@
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->				
 		</div>	
-		<div id="preview-window"/>
+		
+		<div id="preview-window"></div>
+		<div id="announcement-code-editor"></div>
+		
 		<div id="my-template-finder-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-template-finder-modal-label">
 			<div class="modal-dialog"  role="document">
 				<div class="modal-content">
@@ -1327,12 +1083,13 @@
 						<div class="template-tree"></div>
 					</div>
 					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'> 선택</button>					
-						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary btn-flat rounded" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'> 선택</button>					
+						<button type="button" class="btn btn-default btn-flat rounded" data-dismiss="modal">닫기</button>
 					</div>					
 				</div>
 			</div>	
 		</div>
+		
 		<div id="my-menu-finder-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-menu-finder-modal-label">
 			<div class="modal-dialog"  role="document">
 				<div class="modal-content">
@@ -1344,8 +1101,8 @@
 						<div class="menu-tree"></div>
 					</div>
 					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'> 선택</button>					
-						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary btn-flat rounded" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'> 선택</button>					
+						<button type="button" class="btn btn-default btn-flat rounded" data-dismiss="modal">닫기</button>
 					</div>					
 				</div>
 			</div>	
@@ -1404,8 +1161,8 @@
 					<div class="template-tree"></div>
 				</div>
 				<div class="modal-footer">					
-					<button type="button" class="btn btn-primary btn-flat btn-sm" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
-					<button type="button" class="btn btn-default btn-flat btn-sm" data-dismiss="modal">닫기</button>
+					<button type="button" class="btn btn-primary btn-flat btn-sm rounded" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
+					<button type="button" class="btn btn-default btn-flat btn-sm rounded" data-dismiss="modal">닫기</button>
 				</div>					
 			</div>
 		</div>
