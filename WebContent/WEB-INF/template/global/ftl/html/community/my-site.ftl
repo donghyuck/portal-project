@@ -523,8 +523,7 @@
 			var renderTo = $("#my-site-announcement-grid");
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();
-				var observable = new common.ui.observable({ 
-				
+				var observable = new common.ui.observable({ 				
 					announce : new common.ui.data.Announce(),
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
@@ -534,19 +533,22 @@
 						$("#announcement-end-date").data("kendoDatePicker").min($that.startDate);	
 						common.ui.grid( renderTo ).dataSource.read();					
 					},
+					selectedTarget : 'all',
 					endChange:function(e){
 						var $that = this;
 						$("#announcement-start-date").data("kendoDatePicker").max($that.endDate);
 						$("#announcement-end-date").data("kendoDatePicker").min($that.startDate);							
 						common.ui.grid( renderTo ).dataSource.read();
 					}					
-				});				
+				});	
+							
 				var grid = common.ui.grid( renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/website/announce/list.json"/>', type: 'POST', contentType : 'application/json'  },
+							read: { url:'<@spring.url "/secure/data/mgmt/site/announce/list.json"/>', type: 'POST', contentType : 'application/json'  },
 							parameterMap: function (options, type){
 								options.objectId = getSelectedSite().webSiteId ;
+								options.data = { 'target': observable.selectedTarget };
 								return common.ui.stringify( options );
 							}
 						},					
@@ -586,6 +588,7 @@
 				} );					
 				
 				common.ui.bind($("#my-site-announcement-list"), observable );
+				
 				renderTo.on("click","[data-action=edit],[data-action=create]", function(e){	
 					var $this = $(this);	
 					var objectId = $this.data("object-id");		
@@ -622,32 +625,33 @@
 					}),
 					setSource : function(source){
 						var $that = this;
-						source.copy($that.announce);							
-						
-						$that.set("editable", $that.announce.announceId > 0 ? true : false );
-						
+						source.copy($that.announce);	
+						$that.set("editable", $that.announce.announceId > 0 ? true : false );						
 						$that.propertyDataSource.read();				
-						$that.propertyDataSource.data($that.announce.properties);																		
+						$that.propertyDataSource.data($that.announce.properties);	
+																							
 						collapseOptions.collapse('hide');	
 					},
-					saveOrUpdate: function(){
+					saveOrUpdate: function(e){
+						e.preventDefault();				
 						var $this = this;
+						
+						if (validator.validate()) {
+						
+						
+						}
+						
+						/**
 						if( $this.announce.subject.length == 0 || $this.announce.body.length == 0 ){
-								common.ui.notification().show(
-									{	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},
-									"error"
-								);
+							common.ui.notification().show({	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},"error");
 							return false;	
 						}
 						if( $this.announce.startDate >= $this.announce.endDate  ){
-							common.ui.notification().show(
-								{	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	},
-								"error"
-							);		
+							common.ui.notification().show({	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	}, "error");		
 							return false;
 						}	
 						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/website/announce/update.json"/>',
+							'<@spring.url "/secure/data/mgmt/site/announce/update.json"/>',
 							{
 								data : kendo.stringify( $this.announce ),
 								contentType : "application/json",
@@ -656,10 +660,7 @@
 									$this.close();
 								},
 								fail: function(){								
-									common.ui.notification().show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
+									common.ui.notification().show({	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},"error");	
 								},
 								requestStart : function(){
 									kendo.ui.progress(renderTo, true);
@@ -668,8 +669,7 @@
 									kendo.ui.progress(renderTo, false);
 								}
 						});	
-						
-						return false;													
+						**/													
 					},
 					close:function(){
 						renderTo.fadeOut(function(e){ 
@@ -677,9 +677,16 @@
 						});
 					}
 				});	
+				
+				
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );		
-								
+				
+				
+				var validator = renderTo.find("form").kendoValidator({
+					errorTemplate: "<p class='text-danger text-normal'>#=message#</p>"
+				}).data('kendoValidator');		
+						
 				var editor = $('#announcement-html-editor');	
 				editor.kendoEditor({
 					tools : [
@@ -992,6 +999,16 @@
 							<div class="tab-pane fade" id="my-site-announcement">
 								<h4><small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>								
 								<div id="my-site-announcement-list" class="search-block-v2">
+									
+									<div class="btn-group btn-group-sm" data-toggle="buttons">
+										<label class="btn btn-danger rounded-left active">
+											<input type="radio" name="announce-source"  value="all" data-bind="checked: selectedTarget" ><i class="fa fa-user"></i> 전체
+										</label>
+										<label class="btn  btn-danger rounded-right">
+											<input type="radio" name="announce-source"  value="active" data-bind="checked: selectedTarget" ><i class="fa fa-globe"></i> 진행중
+										</label>
+									</div>		
+											
 									<div id="my-site-announcement-grid" class="no-border m-t-md"></div>
 								</div>	
 								<div id="my-site-announcement-view" style="display:none;">
@@ -999,24 +1016,27 @@
 										<span class="back" style="position:relative;" data-bind="click:close"></span>
 										<div class="ibox-content no-padding">					
 											<!-- sky-form -->	
-											<form action="#" class="sky-form">
+											<form class="sky-form">
 												<fieldset class="bg-gray">
 													<section>
 														<h2 class="label">제목</h2>
 														<label class="input">
-															<input type="text" class="form-control" data-bind="value:announce.subject" placeholder="제목" >
+															<input type="text" class="form-control" data-bind="value:announce.subject" 
+																placeholder="제목" 
+																required validationMessage="제목을 입력하세요." >
 														</label>
 													</section>		
 													<section>
 														<label class="label">공지 기간</label>
-														<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
-														<div class="note"><i class="fa fa-info text-danger"></i> 지정된 기간 동안만 이벤트 및 공지가 보여집니다.</div>
+														<input data-role="datetimepicker" data-bind="value:announce.startDate" data-type="date" required="required" > ~ <input data-role="datetimepicker" data-bind="value:announce.endDate" data-type="date" data-greaterdate-field="announce.startDate" data-greaterdate-msg='종료일은 반듯이 시작일 이후이여야 합니다.' >
+														<div class="note"><i class="fa fa-info"></i> 지정된 기간 동안만 이벤트 및 공지가 보여집니다.</div>
 													</section>													
 												</fieldset>		
 																																		
 														<textarea id="announcement-html-editor" 
 									                      data-bind="value:announce.body"
-									                      style="height: 200px;"></textarea>
+									                      style="height: 400px;" >
+									                      </textarea>
 												
 												<fieldset class="bg-gray">	
 													<div class="collapse" id="my-site-announcement-view-options">

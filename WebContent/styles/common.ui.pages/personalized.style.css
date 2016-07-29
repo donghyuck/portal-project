@@ -2756,7 +2756,7 @@ li.poll-option span.progress-label {
 
 .modal-dialog .modal-header .close {
 	right: 0px;
-	top: 4px;
+	top: 3px;
 }
 
 .modal-dialog .modal-header  [data-dialog-settings], .modal-dialog .modal-header  [data-modal-settings] {

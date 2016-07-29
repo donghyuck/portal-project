@@ -16,6 +16,18 @@ body {
 }
 
 /*------------------------------------*/
+/* Editor   */
+/*------------------------------------*/
+.modal-header .modal-tools {	
+	display: block;
+    margin-top: 0;
+    margin-right: 50px;
+    position: absolute;
+    padding: 0;
+    right: 0;	
+}
+
+/*------------------------------------*/
 /* 1. COMMON UI User Navigation Bar   */
 /*------------------------------------*/
 .header .navbar .nav>li>.u-accounts {
