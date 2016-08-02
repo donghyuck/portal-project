@@ -598,7 +598,8 @@
 	        writeDate: { type: "date" },
 	        writingRef: { type: "number" },
 	        writingSeq: { type: "number" },
-	        writingLevel: { type: "number" }
+	        writingLevel: { type: "number" },
+	        index: {type: "number" }
 	    },
 	    formattedWriteDate : function() {
 			return kendo.toString(this.get("writeDate"), "yyyy/MM/dd");
@@ -616,6 +617,7 @@
 	    	target.set("writingRef", this.get("writingRef"));
 	    	target.set("writingSeq", this.get("writingSeq"));
 	    	target.set("writingLevel", this.get("writingLevel"));
+	    	target.set("index", this.get("index"));
 	    } 
 	});
 	
@@ -635,7 +637,8 @@
 	        writingSeq: { type: "number" },
 	        writingLevel: { type: "number" },
 	        type: { type: "string", defaultValue:"질문" },
-	        category: { type: "string" }
+	        category: { type: "string" },
+	        index: { type: "number", defualtValue:0 }
 	    },
 	    formattedWriteDate : function() {
 			return kendo.toString(this.get("writeDate"), "yyyy/MM/dd");
@@ -655,6 +658,7 @@
 	    	target.set("writingLevel", this.get("writingLevel"));
 	    	target.set("type", this.get("type"));
 	    	target.set("category", this.get("category"));
+	    	target.set("index", this.get("index"));
 	    } 
 	});
 	
