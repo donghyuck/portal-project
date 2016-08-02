@@ -72,6 +72,7 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 			b.setWritingRef(rs.getLong("writing_ref"));
 			b.setWritingSeq(rs.getLong("writing_seq"));
 			b.setWritingLevel(rs.getInt("writing_level"));
+			b.setIndex(rs.getInt("index"));
 			return b;
 		}
 	}
@@ -93,6 +94,7 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 			q.setWritingRef(rs.getLong("writing_ref"));
 			q.setWritingSeq(rs.getLong("writing_seq"));
 			q.setWritingLevel(rs.getInt("writing_level"));
+			q.setIndex(rs.getInt("index"));
 			q.setType(rs.getString("type"));
 			q.setCategory(rs.getString("category"));
 			return q;
@@ -180,17 +182,15 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 	@Override
 	public List<Long> getBoardNo(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
 		return getExtendedJdbcTemplate().queryScrollable(
-				getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.SELECT_BOARD_NO", dataSourceRequest.getData())
-						.getSql(),
+				getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.SELECT_BOARD_NO", dataSourceRequest.getData()).getSql(),
 				startIndex, maxResults, new Object[] {}, new int[] {}, Long.class);
 	}
 
 	@Override
 	public Board getBoardListByNo(DataSourceRequest dataSourceRequest, Long no) {
-		return getExtendedJdbcTemplate()
-				.queryForObject(
+		return getExtendedJdbcTemplate().queryForObject(
 						getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.SELECT_BOARD_BY_NO",
-								dataSourceRequest.getData()).getSql(),
+						dataSourceRequest.getData()).getSql(),
 						boardRowMapper, new SqlParameterValue(Types.NUMERIC, no));
 	}
 
@@ -199,7 +199,7 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 		try {
 			return getExtendedJdbcTemplate().queryForObject(
 					getBoundSqlWithAdditionalParameter("PORTAL_CUSTOM.SELECT_QNA_BOARD_BY_NO",
-							dataSourceRequest.getData()).getSql(),
+					dataSourceRequest.getData()).getSql(),
 					qnaBoardRowMapper, new SqlParameterValue(Types.NUMERIC, no));
 		} catch (EmptyResultDataAccessException e) {
 			return null;
