@@ -44,8 +44,10 @@ public class BbsServiceImpl implements BbsService {
 	public List<Board> getBoardList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
 		List<Long> nos = boardDao.getBoardNo(dataSourceRequest, startIndex, maxResults);
 		List<Board> list = new ArrayList<Board>(nos.size());
+		
 		for(Long board_no : nos){
 			Board board = new DefaultBoard();
+			
 			if( boardCache.get(board_no) != null ){
 				board = (DefaultBoard) boardCache.get(board_no).getObjectValue();			
 			} else {

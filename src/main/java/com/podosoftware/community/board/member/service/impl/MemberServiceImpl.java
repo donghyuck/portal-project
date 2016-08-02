@@ -20,18 +20,16 @@ public class MemberServiceImpl implements MemberService {
 
 	private Log log = LogFactory.getLog(MemberServiceImpl.class);
 	
-	private BoardDao listDao;
+	private BoardDao boardDao;
 	
 	private Cache memberCache;
-	
-	
 
-	public BoardDao getListDao() {
-		return listDao;
+	public BoardDao getboardDao() {
+		return boardDao;
 	}
 
-	public void setListDao(BoardDao listDao) {
-		this.listDao = listDao;
+	public void setboardDao(BoardDao boardDao) {
+		this.boardDao = boardDao;
 	}
 
 	public Cache getMemberCache() {
@@ -44,12 +42,12 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<Member> getMemberList() {
-		return listDao.getMemberList();
+		return boardDao.getMemberList();
 	}
 	
 	@Override
 	public List<Member> getMemberList(String search) {
-		return listDao.getSearchMemberList(search);
+		return boardDao.getSearchMemberList(search);
 	}
 
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
@@ -59,35 +57,35 @@ public class MemberServiceImpl implements MemberService {
 			memberCache.remove(member.getId());
 		}
 		
-		listDao.updateMemberInfo(member);
+		boardDao.updateMemberInfo(member);
 	}
 
 	@Override
 	public List<Member> findMemberList(DataSourceRequest dataSourceRequest, int startIndex, int maxResults) {
 		
-		List<Long> ids = listDao.findMemberIDs(dataSourceRequest, startIndex, maxResults);
+		List<Long> ids = boardDao.findMemberIDs(dataSourceRequest, startIndex, maxResults);
 		List<Member> list = new ArrayList<Member>(ids.size());
 		for(Long id : ids ){
 			Member member ;
 			if( memberCache.get(id) != null ){ //cache가 들어있으면
 				member = (Member) memberCache.get(id).getObjectValue(); //가져오고				
 			}else{ //cache가 비어있으면
-				member = listDao.getMemberById(id); //db통신해서 넣어준다.
+				member = boardDao.getMemberById(id); //db통신해서 넣어준다.
 				memberCache.put(new Element(id, member));
 			}
 			list.add(member);
 		}		
-		return list; //listDao.findMemberList(dataSourceRequest, startIndex, maxResults);
+		return list; //boardDao.findMemberList(dataSourceRequest, startIndex, maxResults);
 	}
 
 	@Override
 	public Integer countMemberList(DataSourceRequest dataSourceRequest) {		
-		return listDao.countMemberList(dataSourceRequest);
+		return boardDao.countMemberList(dataSourceRequest);
 	}
 
 	@Override
 	public void createMember(Member member) {
-		listDao.createMember(member);
+		boardDao.createMember(member);
 	}
 
 }

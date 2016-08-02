@@ -72,7 +72,6 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 			b.setWritingRef(rs.getLong("writing_ref"));
 			b.setWritingSeq(rs.getLong("writing_seq"));
 			b.setWritingLevel(rs.getInt("writing_level"));
-			b.setIndex(rs.getInt("index"));
 			return b;
 		}
 	}
@@ -94,7 +93,6 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 			q.setWritingRef(rs.getLong("writing_ref"));
 			q.setWritingSeq(rs.getLong("writing_seq"));
 			q.setWritingLevel(rs.getInt("writing_level"));
-			q.setIndex(rs.getInt("index"));
 			q.setType(rs.getString("type"));
 			q.setCategory(rs.getString("category"));
 			return q;
