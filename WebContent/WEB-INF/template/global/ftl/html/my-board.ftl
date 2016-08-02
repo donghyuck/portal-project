@@ -92,8 +92,7 @@
                             serverFiltering: true,
                             pageSize: 10
                         },
-                        //selectable: "row",
-                        autoBind:true,
+                        autoBind: true,
                         height: 545,
                         pageable: {
                        		pageSize: 10,
@@ -107,12 +106,33 @@
                         	{ title: "작성일", field: "writeDate", width: 150, format:"{0:yyyy/MM/dd}" },
                         	{ title: "조회수", field: "readCount", width: 100 }
                         ],
+                        change: function(e) {
+                        	var data = common.ui.grid($('#board-list-grid')).dataSource.view();
+                        	var current_index = this.select().index();
+                        	var total_index = common.ui.grid($('#board-list-grid')).dataSource.view().length - 1;
+                        	var list_view_pager = common.ui.pager($(".k-grid-pager"));
+                        	var item = data[current_index];
+                        },
                         dataBound: function(e) {
 							var $this = this;
+							var renderTo = $("#board-write-form");
+							if(renderTo.data('model') && renderTo.is(":visible")){
+								var list_view_pager = common.ui.pager($(".k-grid-pager"));
+								var data = common.ui.grid($('#board-list-grid')).dataSource.view();
+								if(renderTo.data("model").page > list_view_pager.page()){
+									var item = data[renderTo.data("model").pageSize - 1];
+									item.set("index", renderTo.data("model").pageSize - 1);
+									writeBoard(item);
+								} else {
+									var item = data[0];
+									item.set("index", 0);
+									writeBoard(item);
+								}
+							}
 						}
                     });
                     
-                    renderTo.on('click', '[data-action=view]', function(e){
+                  /*  renderTo.on('click', '[data-action=view]', function(e){
                     	var $this = $(this);
                    		var objectId = $this.data("object-id");	
                    		var item = common.ui.grid(renderTo).dataSource.get(objectId);
@@ -121,7 +141,7 @@
                    			writeBoard(item);
                    		});
                     	
-                    });                
+                    });  */       
                         
                     renderTo.on('click', '[data-action=create]', function(e){
                     	var $this = $(this);
@@ -141,6 +161,16 @@
                    		});                    	
                     });
                     
+                    renderTo.on('click', '[data-action=view]', function(e){
+                    	var index = $(this).closest("[data-uid]").index();
+                    	var data = common.ui.grid(renderTo).dataSource.view();
+                    	var item = data[index];
+                    	item.set("index", index);
+                    	console.log(common.ui.stringify(item));
+                    	renderTo.fadeOut(function(e){
+                   			writeBoard(item);
+                   		});
+                    });
                     
                <!----- 공지사항 게시판 그리드 ------>
                		var noticeRenderTo = $('#notice-list-grid');
@@ -308,8 +338,8 @@
 			var renderTo = $('#board-write-form');
 			if(!renderTo.data("model")){
 				var observable =  common.ui.observable({
-					board : new common.ui.data.community.Board(),
-					editable : false,
+					board: new common.ui.data.community.Board(),
+					editable: false,
 					propertyDataSource : new kendo.data.DataSource({
 						batch: true,
 						data : [],
@@ -317,10 +347,16 @@
                             model: common.ui.data.Property
                         }
 					}),
-					edit:function(){
+					page: 0,
+					pageSize: 0,
+					hasPreviousPage: false,
+					hasNextPage: false,
+					hasPrevious: false,
+					hasNext: false,
+					edit: function(){
 						this.set('editable', true);
 					},
-					reply : function(e){
+					reply: function(e){
 						var $this = $(this);
                     	var objectId = $this.data("object-id");	
 						var newBoardReply ;
@@ -338,7 +374,7 @@
                    		});
 						
 					},
-					saveOrUpdate : function(e){
+					saveOrUpdate: function(e){
 						var $this = this;
 						console.log(kendo.stringify($this.board));
 						common.ui.ajax(
@@ -366,7 +402,7 @@
 							});	
 							return false;
 					},
-					delete : function(source){
+					delete: function(source){
 						var $this = this;
 						console.log(kendo.stringify($this.board));
 						conf = confirm("이 글을 정말 삭제하시겠습니까?");
@@ -395,55 +431,64 @@
 							});	
 						}
 					},
-					page:0,
-					pageSize:0,
-					hasPreviousPage: false,
-					hasNextPage: false,
-					hasPrevious: false,
-					hasNext: false,
-					preView : function(){
+					preView: function(){
 						var $this = this;
 						if( $this.hasPrevious ){
 							var index = $this.board.index - 1;
-							var data = $('#board-write-form').dataSource.view();					
+							var data = common.ui.grid($('#board-list-grid')).dataSource.view();					
 							var item = data[index];				
 							item.set("index", index );
 							writeBoard(item);		
 						}
 					},
-					nextView : function(){
+					nextView: function(){
 						var $this = this;						
 						if( $this.hasNext ){
 							var index = $this.board.index + 1;
-							var data = $('#board-write-form').dataSource.view();					
+							var data =  common.ui.grid($('#board-list-grid')).dataSource.view();					
 							var item = data[index];		
-							item.set("index", index );
+							item.set("index", index);
 							writeBoard(item);					
+						}
+					},
+					prePage: function(){
+						var $this = this;
+						if($this.hasPreviousPage){
+							var pager = common.ui.pager($(".k-grid-pager"));
+							pager.page($this.page - 1);
+						}
+					},
+					nextPage: function(){
+						var $this = this;
+						if($this.hasNextPage){
+							var pager = common.ui.pager($(".k-grid-pager"));
+							pager.page($this.page + 1);
 						}
 					},
 					setPagination: function(){
 						var $this = this;
-						var pageSize = $('#board-write-form').dataSource.view().length;	
-						var pager = common.ui.pager( $("#board-list-grid") );
+						var pageSize = common.ui.grid($('#board-list-grid')).dataSource.view().length;	
+						var pager = common.ui.pager($(".k-grid-pager"));
 						var page = pager.page();
 						var totalPages = pager.totalPages();		
-						if( this.baord.index > 0 && (this.board.index - 1) >= 0 )
+						if( $this.board.index > 0 && ($this.board.index - 1) >= 0 )
 							$this.set("hasPrevious", true); 
 						else 
 							$this.set("hasPrevious", false); 							
-						if( ($this.board.index + 1 ) < pageSize && (pageSize - this.board.index ) > 0 )
+						if( ($this.board.index + 1) < pageSize && (pageSize - $this.board.index) > 0 )
 							$this.set("hasNext", true); 
 						else 
 							$this.set("hasNext", false); 	
-						//$this.set("hasPreviousPage", page > 1 );				
-						//$this.set("hasNextPage", totalPages > page  );		
+						$this.set("hasPreviousPage", page > 1 );				
+						$this.set("hasNextPage", totalPages > page  );		
 						$this.set("page", page );			
 						$this.set("pageSize", pageSize );																	
 					},
-					setSource : function(source){
+					setSource: function(source){
 						var $this = this;
 						source.copy($this.board);
 						$this.set('editable', ($this.board.boardNo > 0 ? false : true ));
+						$this.setPagination();
 						if($this.board.boardNo > 0) {
 							common.ui.ajax(
 							'<@spring.url "/data/podo/board/free/updateReadCount.json?output=json" />',
@@ -466,7 +511,7 @@
 							});	
 						}
 					},
-					close : function(){
+					close: function(){
 						renderTo.fadeOut(function(e){ 
 							$("#board-list-grid").fadeIn();
 							common.ui.grid($('#board-list-grid')).dataSource.read();
@@ -1111,8 +1156,10 @@
 							</div>
 							<div id="board-write-form" style="display: none;">
 								<div class="BoardViewBtn" data-bind="invisible:editable">
-								 	<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="click: preView"></i>
-						 			<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="click: nextView"></i>
+								 	<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
+						 			<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
+						 			<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPreviousPage, click: prePage"></i>
+						 			<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNextPage, click: nextPage"></i>
 								</div>
 							<form id="writeForm" action="#">
 								<table class="tb_writeForm">
@@ -1285,7 +1332,7 @@
 				                    </tr>
 						            <tr>
 						                <td colspan="6" id="lastTd" >
-						                	<div data-bind="text:notice.content, invisible:editable" style="height:350px; padding: 5px; white-space:pre; overflow:auto;"></div>
+						                	<div data-bind="html:notice.content, invisible:editable" style="height:350px; padding: 5px; white-space:pre; overflow:auto;"></div>
 						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;" 
 						                		data-role="editor"
 							                    data-tools="['bold',
@@ -1432,7 +1479,7 @@
 				                    </tr>
 						            <tr>
 						                <td colspan="6" id="lastTd" >
-						                	<div data-bind="text:qna.content, invisible:editable" style="height:350px; padding: 5px; white-space:pre; overflow:auto;"></div>
+						                	<div data-bind="html:qna.content, invisible:editable" style="height:350px; padding: 5px; white-space:pre; overflow:auto;"></div>
 						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;" 
 						                		data-role="editor"
 							                    data-tools="['bold',
