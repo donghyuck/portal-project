@@ -16,6 +16,7 @@ public class DefaultBoard implements Board {
 	private long writingRef; // 원본글
 	private long writingSeq; // 답변글
 	private int writingLevel; // 레벨
+	private int index;
 
 	public String getBoardCode() {
 		return boardCode;
@@ -112,5 +113,14 @@ public class DefaultBoard implements Board {
 	public void setWritingLevel(int writingLevel) {
 		this.writingLevel = writingLevel;
 	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+	
 
 }

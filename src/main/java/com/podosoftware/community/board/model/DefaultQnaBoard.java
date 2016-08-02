@@ -5,7 +5,6 @@ public class DefaultQnaBoard extends DefaultBoard implements QnaBoard {
 	private String type;
 	private String category;
 	
-	
 	public String getType() {
 		return type;
 	}

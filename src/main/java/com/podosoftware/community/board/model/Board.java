@@ -51,5 +51,9 @@ public interface Board {
 	public int getWritingLevel();
 
 	public void setWritingLevel(int writingLevel);
+	
+	public int getIndex();
+
+	public void setIndex(int index);
 
 }
