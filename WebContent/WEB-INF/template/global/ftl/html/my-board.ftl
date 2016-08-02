@@ -212,21 +212,41 @@
                         	{ title: "작성일", field: "writeDate", width: 150, format:"{0:yyyy/MM/dd}" },
                         	{ title: "조회수", field: "readCount", width: 100 }
                         ],
+                        change: function(e) {
+                        	var data = common.ui.grid($('#notice-list-grid')).dataSource.view();
+                        	var current_index = this.select().index();
+                        	var total_index = common.ui.grid($('#notice-list-grid')).dataSource.view().length - 1;
+                        	var list_view_pager = common.ui.pager($(".k-grid-pager"));
+                        	var item = data[current_index];
+                        },
                         dataBound: function(e) {
 							var $this = this;
+							var renderTo = $("#notice-write-form");
+							if(renderTo.data("model") && renderTo.is(":visible")){
+								var list_view_pager = common.ui.pager($(".k-grid-pager"));
+								var data = common.ui.grid($('#notice-list-grid')).dataSource.view();
+								if(renderTo.data("model").page > list_view_pager.page()){
+									var item = data[renderTo.data("model").pageSize - 1];
+									item.set("index", renderTo.data("model").pageSize - 1);
+									writeNotice(item);
+								} else {
+									var item = data[0];
+									item.set("index", 0);
+									writeNotice(item);
+								}
+							}
 						}
                     });
                     
-                    noticeRenderTo.on('click' , '[data-action=view]' , function(e){
-                    	var $this = $(this);	
-                   		var objectId = $this.data("object-id");	
-                   		var item = common.ui.grid(noticeRenderTo).dataSource.get(objectId);
-                   		console.log(objectId);
-                   		console.log(common.ui.stringify(item));
-                   		noticeRenderTo.fadeOut(function(e){
+                    noticeRenderTo.on('click', '[data-action=view]', function(e){
+                    	var index = $(this).closest("[data-uid]").index();
+                    	var data = common.ui.grid(noticeRenderTo).dataSource.view();
+                    	var item = data[index];
+                    	item.set("index", index);
+                    	console.log(common.ui.stringify(item));
+                    	noticeRenderTo.fadeOut(function(e){
                    			writeNotice(item);
                    		});
-                    	
                     });
                     
                     noticeRenderTo.on('click', '[data-action=create]', function(e){
@@ -292,21 +312,41 @@
                         	{ title: "작성일", field: "writeDate", width: 120, format:"{0:yyyy/MM/dd}" },
                         	{ title: "조회수", field: "readCount", width: 80 }
                         ],
+                        change: function(e) {
+                        	var data = common.ui.grid($('#qna-list-grid')).dataSource.view();
+                        	var current_index = this.select().index();
+                        	var total_index = common.ui.grid($('#qna-list-grid')).dataSource.view().length - 1;
+                        	var list_view_pager = common.ui.pager($(".k-grid-pager"));
+                        	var item = data[current_index];
+                        },
                         dataBound: function(e) {
 							var $this = this;
+							var renderTo = $("#qna-write-form");
+							if(renderTo.data('model') && renderTo.is(":visible")){
+								var list_view_pager = common.ui.pager($(".k-grid-pager"));
+								var data = common.ui.grid($('#qna-list-grid')).dataSource.view();
+								if(renderTo.data("model").page > list_view_pager.page()){
+									var item = data[renderTo.data("model").pageSize - 1];
+									item.set("index", renderTo.data("model").pageSize - 1);
+									writeQna(item);
+								} else {
+									var item = data[0];
+									item.set("index", 0);
+									writeQna(item);
+								}
+							}
 						}
                     });
                     
-                     qnaRenderTo.on('click' , '[data-action=view]' , function(e){
-                    	var $this = $(this);	
-                   		var objectId = $this.data("object-id");	
-                   		var item = common.ui.grid(qnaRenderTo).dataSource.get(objectId);
-                   		console.log(objectId);
-                   		console.log(common.ui.stringify(item));
-                   		qnaRenderTo.fadeOut(function(e){
+                    qnaRenderTo.on('click', '[data-action=view]', function(e){
+                    	var index = $(this).closest("[data-uid]").index();
+                    	var data = common.ui.grid(qnaRenderTo).dataSource.view();
+                    	var item = data[index];
+                    	item.set("index", index);
+                    	console.log(common.ui.stringify(item));
+                    	qnaRenderTo.fadeOut(function(e){
                    			writeQna(item);
                    		});
-                    	
                     });
                     
                     qnaRenderTo.on('click', '[data-action=create]', function(e){
@@ -437,7 +477,7 @@
 							var index = $this.board.index - 1;
 							var data = common.ui.grid($('#board-list-grid')).dataSource.view();					
 							var item = data[index];				
-							item.set("index", index );
+							item.set("index", index);
 							writeBoard(item);		
 						}
 					},
@@ -445,7 +485,7 @@
 						var $this = this;						
 						if( $this.hasNext ){
 							var index = $this.board.index + 1;
-							var data =  common.ui.grid($('#board-list-grid')).dataSource.view();					
+							var data = common.ui.grid($('#board-list-grid')).dataSource.view();					
 							var item = data[index];		
 							item.set("index", index);
 							writeBoard(item);					
@@ -453,14 +493,14 @@
 					},
 					prePage: function(){
 						var $this = this;
-						if($this.hasPreviousPage){
+						if( $this.hasPreviousPage ){
 							var pager = common.ui.pager($(".k-grid-pager"));
 							pager.page($this.page - 1);
 						}
 					},
 					nextPage: function(){
 						var $this = this;
-						if($this.hasNextPage){
+						if( $this.hasNextPage ){
 							var pager = common.ui.pager($(".k-grid-pager"));
 							pager.page($this.page + 1);
 						}
@@ -479,20 +519,30 @@
 							$this.set("hasNext", true); 
 						else 
 							$this.set("hasNext", false); 	
-						$this.set("hasPreviousPage", page > 1 );				
-						$this.set("hasNextPage", totalPages > page  );		
-						$this.set("page", page );			
-						$this.set("pageSize", pageSize );																	
+						if( ($this.board.index + 1) >= pageSize && totalPages > page )
+							$this.set("hasNextPage", true);
+						else
+							$this.set("hasNextPage", false);
+						if( ($this.board.index - 1) < 0 && page > 1 )
+							$this.set("hasPreviousPage", true);
+						else 
+							$this.set("hasPreviousPage", false);
+						
+						//$this.set("hasPreviousPage", page > 1 );				
+						//$this.set("hasNextPage", totalPages > page );		
+						$this.set("page", page);			
+						$this.set("pageSize", pageSize);																	
 					},
 					setSource: function(source){
 						var $this = this;
 						source.copy($this.board);
 						$this.set('editable', ($this.board.boardNo > 0 ? false : true ));
 						$this.setPagination();
-						if($this.board.boardNo > 0) {
+					/*	if($this.board.boardNo > 0) {
 							common.ui.ajax(
 							'<@spring.url "/data/podo/board/free/updateReadCount.json?output=json" />',
 							{
+								async : false,
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
 								success : function(response){
@@ -509,7 +559,8 @@
 								complete : function(e){
 								}
 							});	
-						}
+							return false;
+						}*/
 					},
 					close: function(){
 						renderTo.fadeOut(function(e){ 
@@ -543,6 +594,12 @@
                             model: common.ui.data.Property
                         }
 					}),
+					page: 0,
+					pageSize: 0,
+					hasPreviousPage: false,
+					hasNextPage: false,
+					hasPrevious: false,
+					hasNext: false,
 					edit:function(){
 						this.set('editable', true);
 					},
@@ -589,19 +646,81 @@
 									common.ui.grid($('#notice-list-grid')).refresh();											
 									$this.close();
 								}
-							}
-						);	
+							});	
 						return false;	
+					},
+					preView: function(){
+						var $this = this;
+						if( $this.hasPrevious ){
+							var index = $this.notice.index - 1;
+							var data = common.ui.grid($('#notice-list-grid')).dataSource.view();					
+							var item = data[index];				
+							item.set("index", index);
+							writeNotice(item);		
+						}
+					},
+					nextView: function(){
+						var $this = this;						
+						if( $this.hasNext ){
+							var index = $this.notice.index + 1;
+							var data =  common.ui.grid($('#notice-list-grid')).dataSource.view();					
+							var item = data[index];		
+							item.set("index", index);
+							writeNotice(item);					
+						}
+					},
+					prePage: function(){
+						var $this = this;
+						if($this.hasPreviousPage){
+							var pager = common.ui.pager($(".k-grid-pager"));
+							pager.page($this.page - 1);
+						}
+					},
+					nextPage: function(){
+						var $this = this;
+						if($this.hasNextPage){
+							var pager = common.ui.pager($(".k-grid-pager"));
+							pager.page($this.page + 1);
+						}
+					},
+					setPagination: function(){
+						var $this = this;
+						var pageSize = common.ui.grid($('#notice-list-grid')).dataSource.view().length;	
+						var pager = common.ui.pager($(".k-grid-pager"));
+						var page = pager.page();
+						var totalPages = pager.totalPages();		
+						if( $this.notice.index > 0 && ($this.notice.index - 1) >= 0 )
+							$this.set("hasPrevious", true); 
+						else 
+							$this.set("hasPrevious", false); 							
+						if( ($this.notice.index + 1) < pageSize && (pageSize - $this.notice.index) > 0 )
+							$this.set("hasNext", true); 
+						else 
+							$this.set("hasNext", false); 	
+						if( ($this.notice.index + 1) >= pageSize && totalPages > page )
+							$this.set("hasNextPage", true);
+						else
+							$this.set("hasNextPage", false);
+						if( ($this.notice.index - 1) < 0 && page > 1 )
+							$this.set("hasPreviousPage", true);
+						else 
+							$this.set("hasPreviousPage", false);
+						
+						//$this.set("hasPreviousPage", page > 1 );				
+						//$this.set("hasNextPage", totalPages > page  );		
+						$this.set("page", page);			
+						$this.set("pageSize", pageSize);																	
 					},
 					setSource : function(source){
 						var $this = this;
-						//console.log($this.notice);
 						source.copy($this.notice);
 						$this.set('editable', ($this.notice.boardNo > 0 ? false : true ));
-						if($this.notice.boardNo > 0) {
+						$this.setPagination();
+						/*if($this.notice.boardNo > 0) {
 							common.ui.ajax(
 								'<@spring.url "/data/podo/board/notice/updateReadCount.json?output=json" />',
 								{
+									//async : false,
 									data : kendo.stringify( $this.notice ),
 									contentType : "application/json",
 									success : function(response){
@@ -618,7 +737,8 @@
 									complete : function(e){
 									}
 								});	
-						}
+							return false;
+						}*/
 					},
 					delete: function(source){
 						var $this = this;
@@ -687,6 +807,12 @@
                             model: common.ui.data.Property
                         }
 					}),
+					page: 0,
+					pageSize: 0,
+					hasPreviousPage: false,
+					hasNextPage: false,
+					hasPrevious: false,
+					hasNext: false,
 					edit:function(){
 						this.set('editable', true);
 					},
@@ -735,18 +861,81 @@
 									common.ui.grid($('#qna-list-grid')).refresh();														
 									$this.close();
 								}
-							}
-						);	
+							});	
 						return false;	
+					},
+					preView: function(){
+						var $this = this;
+						if( $this.hasPrevious ){
+							var index = $this.qna.index - 1;
+							var data = common.ui.grid($('#qna-list-grid')).dataSource.view();					
+							var item = data[index];				
+							item.set("index", index );
+							writeQna(item);		
+						}
+					},
+					nextView: function(){
+						var $this = this;						
+						if( $this.hasNext ){
+							var index = $this.qna.index + 1;
+							var data = common.ui.grid($('#qna-list-grid')).dataSource.view();					
+							var item = data[index];		
+							item.set("index", index);
+							writeQna(item);					
+						}
+					},
+					prePage: function(){
+						var $this = this;
+						if( $this.hasPreviousPage ){
+							var pager = common.ui.pager($(".k-grid-pager"));
+							pager.page($this.page - 1);
+						}
+					},
+					nextPage: function(){
+						var $this = this;
+						if( $this.hasNextPage ){
+							var pager = common.ui.pager($(".k-grid-pager"));
+							pager.page($this.page + 1);
+						}
+					},
+					setPagination: function(){
+						var $this = this;
+						var pageSize = common.ui.grid($('#qna-list-grid')).dataSource.view().length;	
+						var pager = common.ui.pager($(".k-grid-pager"));
+						var page = pager.page();
+						var totalPages = pager.totalPages();		
+						if( $this.qna.index > 0 && ($this.qna.index - 1) >= 0 )
+							$this.set("hasPrevious", true); 
+						else 
+							$this.set("hasPrevious", false); 							
+						if( ($this.qna.index + 1) < pageSize && (pageSize - $this.qna.index) > 0 )
+							$this.set("hasNext", true); 
+						else 
+							$this.set("hasNext", false); 	
+						if( ($this.qna.index + 1) >= pageSize && totalPages > page )
+							$this.set("hasNextPage", true);
+						else
+							$this.set("hasNextPage", false);
+						if( ($this.qna.index - 1) < 0 && page > 1 )
+							$this.set("hasPreviousPage", true);
+						else 
+							$this.set("hasPreviousPage", false);
+						
+						//$this.set("hasPreviousPage", page > 1 );				
+						//$this.set("hasNextPage", totalPages > page  );		
+						$this.set("page", page );			
+						$this.set("pageSize", pageSize );																	
 					},
 					setSource : function(source){
 						var $this = this;
 						source.copy($this.qna);
 						$this.set('editable', ($this.qna.boardNo > 0 ? false : true ));
-						if($this.qna.boardNo > 0) {
+						$this.setPagination();
+						/*if($this.qna.boardNo > 0) {
 							common.ui.ajax(
 								'<@spring.url "/data/podo/board/qna/updateReadCount.json?output=json" />',
 								{
+									//async : false,
 									data : kendo.stringify( $this.qna ),
 									contentType : "application/json",
 									success : function(response){	
@@ -762,8 +951,9 @@
 									},
 									complete : function(e){
 									}
-								});	
-						}
+								});
+							return false;	
+						}*/
 					},
 					delete: function(source){
 						var $this = this;
@@ -1159,8 +1349,8 @@
 								<div class="BoardViewBtn" data-bind="invisible:editable">
 								 	<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
 						 			<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
-						 			<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPreviousPage, click: prePage"></i>
-						 			<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNextPage, click: nextPage"></i>
+						 			<i title="이전페이지" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPreviousPage, click: prePage"></i>
+						 			<i title="다음페이지" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNextPage, click: nextPage"></i>
 								</div>
 							<form id="writeForm" action="#">
 								<table class="tb_writeForm">
@@ -1297,8 +1487,10 @@
 						</div>
 						<div id="notice-write-form" style="display: none;">
 							<div class="BoardViewBtn" data-bind="invisible:editable">
-								<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="click: previous"></i>
-							 	<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="click: next"></i>
+								<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
+						 		<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
+						 		<i title="이전페이지" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPreviousPage, click: prePage"></i>
+						 		<i title="다음페이지" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNextPage, click: nextPage"></i>
 							 </div>
 							 <form id="noticeForm" action="#">
 								<table id="tb_noticeForm">
@@ -1435,8 +1627,10 @@
 						</div>
 						<div id="qna-write-form" style="display: none;">
 							<div class="BoardViewBtn" data-bind="invisible:editable">
-								<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="click: previous"></i>
-							 	<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="click: next"></i>
+								<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
+						 		<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
+						 		<i title="이전페이지" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPreviousPage, click: prePage"></i>
+						 		<i title="다음페이지" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNextPage, click: nextPage"></i>
 							</div>
 							<form id="qnaForm" action="#">
 								<table id="tb_qnaForm">
