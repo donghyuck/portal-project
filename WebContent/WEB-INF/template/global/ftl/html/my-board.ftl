@@ -1002,6 +1002,7 @@
 			}		
 		}
 
+
 		</script>
 		<style>
 			#board-list-grid td,
