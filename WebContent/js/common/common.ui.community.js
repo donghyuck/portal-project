@@ -597,7 +597,7 @@
 	        image: { type: "string" },
 	        writeDate: { type: "date" },
 	        writingRef: { type: "number", defualtValue:0 },
-	        writingSeq: { type: "number", defualtValue:1 },
+	        writingSeq: { type: "number", defualtValue:0 },
 	        writingLevel: { type: "number", defualtValue:0 },
 	        index: {type: "number", defualtValue:0 }
 	    },
@@ -634,7 +634,7 @@
 	        image: { type: "string" },
 	        writeDate: { type: "date" },
 	        writingRef: { type: "number", defualtValue:0 },
-	        writingSeq: { type: "number", defualtValue:1 },
+	        writingSeq: { type: "number", defualtValue:0 },
 	        writingLevel: { type: "number", defualtValue:0 },
 	        type: { type: "string", defaultValue:"질문" },
 	        category: { type: "string" },
