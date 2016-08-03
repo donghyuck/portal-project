@@ -193,11 +193,18 @@ public class PodoCommunityDataController {
 		return Result.newResult();
 	}
 	
-	@RequestMapping(value = "/board/writeReply.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = "/board/free/writeReply.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public Board writeReply(@RequestBody DefaultBoard board) throws Exception {
 		bbsService.writeReply(board);
 		return board;
+	}
+	
+	@RequestMapping(value = "/board/qna/writeReply.json", method = { RequestMethod.POST, RequestMethod.GET })
+	@ResponseBody
+	public Board writeQnaReply(@RequestBody DefaultQnaBoard qna) throws Exception {
+		//bbsService.writeQnaReply(qna);
+		return qna;
 	}
 
 	
