@@ -399,16 +399,15 @@
 						this.set('editable', true);
 					},
 					reply: function(e){
-						var $this = $(this);
-                    	var objectId = $this.data("object-id");	
-						var newBoardReply ;
-						if( objectId > 0){
-							newBoardReply = common.ui.grid($('#board-list-grid')).dataSource.get(objectId);
-						}else{
-							newBoardReply = new common.ui.data.community.Board();
-							newBoardReply.boardCode = 'B002';
-							newBoardReply.boardName = 'notice';
-						}
+						var $this = $(this)
+						var writingRef = document.getElementById("boardNo");
+						var newBoardReply;
+						
+						newBoardReply = new common.ui.data.community.Board();
+						newBoardReply.boardCode = 'B002';
+						newBoardReply.boardName = 'notice';
+						newBoardReply.writingRef = writingRef.getAttribute("data-value");
+
 	                   	$('#board-write-form').fadeOut(function(e){
                    			$('#board-reply-form').fadeIn();
                    			console.log(common.ui.stringify(newBoardReply));
@@ -605,24 +604,6 @@
 					hasNext: false,
 					edit:function(){
 						this.set('editable', true);
-					},
-					reply : function(e){
-						var $this = $(this);
-                    	var objectId = $this.data("object-id");	
-						var newNoticeReply ;
-						if( objectId > 0){
-							newNoticeReply = common.ui.grid($('#notice-list-grid')).dataSource.get(objectId);
-						}else{
-							newNoticeReply = new common.ui.data.community.Board();
-							newNoticeReply.boardCode = 'B002';
-							newNoticeReply.boardName = 'notice';
-						}
-	                   	$('#notice-write-form').fadeOut(function(e){
-                   			$('#notice-reply-form').fadeIn();
-                   			console.log(common.ui.stringify(newNoticeReply));
-                   			writeNoticeReply(newNoticeReply);
-                   		});
-						
 					},
 					saveOrUpdate: function(e){
 						var $this = this;
@@ -832,6 +813,8 @@
 							newQnaReply = new common.ui.data.community.QnaBoard();
 							newQnaReply.boardCode = 'B003';
 							newQnaReply.boardName = 'qna';
+							newQnaReply.type = '답변';
+							newQnaReply.writer = '관리자';
 						}
 	                   	$('#qna-write-form').fadeOut(function(e){
                    			$('#qna-reply-form').fadeIn();
@@ -1073,68 +1056,6 @@
 		}
 				
 	
-	<!---- 공지게시판 답글쓰기 폼 ---->	
-		function writeNoticeReply(source){
-			var renderTo = $('#notice-reply-form');
-			if(!renderTo.data("model")){
-				var observable =  common.ui.observable({
-					notice : new common.ui.data.community.Board(),
-					editable : false,
-					propertyDataSource : new kendo.data.DataSource({
-						batch: true,
-						data : [],
-						schema: {
-                            model: common.ui.data.Property
-                        }
-					}),
-					save : function(e){
-						var $this = this;
-						console.log(kendo.stringify($this.notice));
-						common.ui.ajax(
-							'<@spring.url "/data/podo/board/writeReply.json?output=json" />' , 
-							{
-								data : kendo.stringify( $this.notice ),
-								contentType : "application/json",
-								success : function(response){
-									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");
-								},
-								fail: function(){								
-									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									common.ui.grid($('#notice-list-grid')).dataSource.read();
-									common.ui.grid($('#notice-list-grid')).refresh();
-									$this.close();
-								}
-							});	
-							return false;
-					},
-					setSource : function(source){
-						var $this = this;
-						source.copy($this.notice);
-					},
-					close : function(){
-						renderTo.fadeOut(function(e){ 
-							$("#notice-list-grid").fadeIn();
-						});
-					}
-				});			
-				renderTo.data("model", observable);		
-				common.ui.bind( renderTo, observable );
-			}
-			renderTo.data("model").setSource(source);	
-				if(!renderTo.is(':visible'))
-			{
-				renderTo.fadeIn();
-			}		
-		}
-		
 				
 	<!---- QnA게시판 답글쓰기 폼 ---->	
 		function writeQnaReply(source){
@@ -1434,6 +1355,7 @@
 						 </div>
 						 <div id="board-reply-form" style="display: none;">
 							<form id="replyForm" action="#">
+								<input type="hidden" id="boardNo" data-bind="value: board.boardNo"/>
 								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
 								<table class="tb_writeForm">
 						            <tr>
@@ -1566,71 +1488,9 @@
 								</table><br/>
 								<button type="button" class="btn btn-danger" style="float: left; border-radius: 5px" data-bind="click:delete , invisible:editable">삭제</button>
 								<button type="button" class="btn btn-primary" style="float: left; border-radius: 5px" data-bind="click:edit , invisible:editable">수정</button>
-								<button type="button" class="btn btn-success" style="float: left; border-radius: 5px" data-bind="click:reply , invisible:editable">답글</button>
 								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate, visible:editable">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, visible:editable">취소</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close, invisible:editable">목록</button>
-						    </form>
-						 </div>
-						 <div id="notice-reply-form" style="display: none;">
-							<form id="noticeReplyForm" action="#">
-								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
-								<table id="tb_noticeForm">
-						            <tr>
-						                <td class="notice_title bottom" >
-						                	제목
-						                </td>
-						                <td colspan="5" class="bottom">
-						                	<input type="text" class="formInput" data-bind="value: notice.title" required/>
-						                </td>
-						            </tr>
-						            <tr>
-						            	<td class="notice_title" >
-						                	작성자
-						                </td>
-				                        <td class="formTd">
-				                            <input type="text" class="formInput" data-bind="value: notice.writer" readonly/>
-				                        </td>
-				                        <td class="notice_title" >
-						                	작성일
-						                </td>
-				                        <td class="formTd">
-				                            <input type="text" class="formInput" data-bind="value: notice.formattedWriteDate" readonly/>
-				                        </td>
-				                        <td class="notice_title" >
-						                	조회수
-						                </td>
-				                        <td class="formTd"> 
-				                            <input type="text" class="formInput" data-bind="value: notice.readCount" readonly size="4"/>
-				                        </td>
-				                    </tr>
-						            <tr>
-						                <td colspan="6" id="lastTd" >
-						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;"
-						                		data-role="editor"
-							                    data-tools="['bold',
-							                                   'italic',
-							                                   'underline',
-							                                   'strikethrough',
-							                                   'justifyLeft',
-							                                   'justifyCenter',
-							                                   'justifyRight',
-							                                   'justifyFull',
-							                                   'insertImage']"   
-						                	 	data-bind="value:notice.content"></textarea>
-						                </td>
-						            </tr>
-						             <tr>
-						                <td class="notice_title bottom">
-						                	첨부파일
-						                </td>
-						                <td colspan="5" class="bottom">
-						                	<input type="file" data-bind="value: board.image"/>
-						                </td>
-						            </tr>
-								</table><br/>
-								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate">확인</button>
-								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close">취소</button>
 						    </form>
 						 </div>
 					</div>
