@@ -158,7 +158,7 @@
 			writing_seq, 
 			writing_level,
 			board_code)
-		VALUES (?, ?, ?, ?, ?, 0, ? , SYSDATE, ?, 0, 0, ?)
+		VALUES (?, ?, ?, ?, ?, 0, ? , SYSDATE, ?, ?, ?, ?)
     </sql-query>
      
      <sql-query name="UPDATE_BOARD"
@@ -229,5 +229,23 @@
 		AND
 			board_no = ? 
      ]]></sql-query>
+     
+     <sql-query name="INSERT_BOARD_REPLY"
+    	description="게시판 새 답글 등록">	
+		INSERT INTO TB_BOARD( 
+			board_name, 
+			board_no, 
+			writer, 
+			title, 
+			content, 
+			read_count, 
+			image, 
+			write_date, 
+			writing_ref, 
+			writing_seq, 
+			writing_level,
+			board_code)
+		VALUES (?, ?, ?, ?, ?, 0, ? , SYSDATE, ?, ?, ?, ?)
+    </sql-query>
     
 </sqlset>
