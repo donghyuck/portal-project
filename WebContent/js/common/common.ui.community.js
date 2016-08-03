@@ -596,10 +596,10 @@
 	        readCount: { type: "number" },
 	        image: { type: "string" },
 	        writeDate: { type: "date" },
-	        writingRef: { type: "number" },
-	        writingSeq: { type: "number" },
-	        writingLevel: { type: "number" },
-	        index: {type: "number" }
+	        writingRef: { type: "number", defualtValue:0 },
+	        writingSeq: { type: "number", defualtValue:1 },
+	        writingLevel: { type: "number", defualtValue:0 },
+	        index: {type: "number", defualtValue:0 }
 	    },
 	    formattedWriteDate : function() {
 			return kendo.toString(this.get("writeDate"), "yyyy/MM/dd");
@@ -633,9 +633,9 @@
 	        readCount: { type: "number" },
 	        image: { type: "string" },
 	        writeDate: { type: "date" },
-	        writingRef: { type: "number" },
-	        writingSeq: { type: "number" },
-	        writingLevel: { type: "number" },
+	        writingRef: { type: "number", defualtValue:0 },
+	        writingSeq: { type: "number", defualtValue:1 },
+	        writingLevel: { type: "number", defualtValue:0 },
 	        type: { type: "string", defaultValue:"질문" },
 	        category: { type: "string" },
 	        index: { type: "number", defualtValue:0 }
