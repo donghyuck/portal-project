@@ -399,14 +399,15 @@
 						this.set('editable', true);
 					},
 					reply: function(e){
-						var $this = $(this)
-						var writingRef = document.getElementById("boardNo");
+						var $this = $(this);
 						var newBoardReply;
+						var originBoard;
+						
 						
 						newBoardReply = new common.ui.data.community.Board();
 						newBoardReply.boardCode = 'B002';
 						newBoardReply.boardName = 'notice';
-						newBoardReply.writingRef = writingRef.getAttribute("data-value");
+						//newBoardReply.writingRef = originBoard.boardNo;
 
 	                   	$('#board-write-form').fadeOut(function(e){
                    			$('#board-reply-form').fadeIn();
@@ -1011,7 +1012,7 @@
 						var $this = this;
 						console.log(kendo.stringify($this.board));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/writeReply.json?output=json" />' , 
+							'<@spring.url "/data/podo/board/free/writeReply.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
@@ -1075,7 +1076,7 @@
 						var $this = this;
 						console.log(kendo.stringify($this.qna));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/writeReply.json?output=json" />' , 
+							'<@spring.url "/data/podo/board/qna/writeReply.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.qna ),
 								contentType : "application/json",
@@ -1288,6 +1289,7 @@
 						 			<i title="다음페이지" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNextPage, click: nextFreePage"></i>
 								</div>
 							<form id="writeForm" action="#">
+							<input type="text" id="boardNo" data-bind="value: board.boardNo"/>
 								<table class="tb_writeForm">
 						            <tr>
 						                <td class="input_title bottom" >
@@ -1355,7 +1357,7 @@
 						 </div>
 						 <div id="board-reply-form" style="display: none;">
 							<form id="replyForm" action="#">
-								<input type="hidden" id="boardNo" data-bind="value: board.boardNo"/>
+								<input type="text" data-bind="value: board.boardNo"/>
 								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
 								<table class="tb_writeForm">
 						            <tr>
