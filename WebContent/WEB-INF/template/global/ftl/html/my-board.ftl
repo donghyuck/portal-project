@@ -110,14 +110,14 @@
                         	var data = common.ui.grid($('#board-list-grid')).dataSource.view();
                         	var current_index = this.select().index();
                         	var total_index = common.ui.grid($('#board-list-grid')).dataSource.view().length - 1;
-                        	var list_view_pager = common.ui.pager($(".k-grid-pager"));
+                        	var list_view_pager = common.ui.pager($("#free-grid-pager"));
                         	var item = data[current_index];
                         },
                         dataBound: function(e) {
 							var $this = this;
 							var renderTo = $("#board-write-form");
 							if(renderTo.data('model') && renderTo.is(":visible")){
-								var list_view_pager = common.ui.pager($(".k-grid-pager"));
+								var list_view_pager = common.ui.pager($("#free-grid-pager"));
 								var data = common.ui.grid($('#board-list-grid')).dataSource.view();
 								if(renderTo.data("model").page > list_view_pager.page()){
 									var item = data[renderTo.data("model").pageSize - 1];
@@ -216,14 +216,14 @@
                         	var data = common.ui.grid($('#notice-list-grid')).dataSource.view();
                         	var current_index = this.select().index();
                         	var total_index = common.ui.grid($('#notice-list-grid')).dataSource.view().length - 1;
-                        	var list_view_pager = common.ui.pager($(".k-grid-pager"));
+                        	var list_view_pager = common.ui.pager($("#notice-grid-pager"));
                         	var item = data[current_index];
                         },
                         dataBound: function(e) {
 							var $this = this;
 							var renderTo = $("#notice-write-form");
-							if(renderTo.data("model") && renderTo.is(":visible")){
-								var list_view_pager = common.ui.pager($(".k-grid-pager"));
+							if(renderTo.data('model') && renderTo.is(":visible")){
+								var list_view_pager = common.ui.pager($("#notice-grid-pager"));
 								var data = common.ui.grid($('#notice-list-grid')).dataSource.view();
 								if(renderTo.data("model").page > list_view_pager.page()){
 									var item = data[renderTo.data("model").pageSize - 1];
@@ -293,7 +293,7 @@
                                 data: "items",
                                 total: "totalCount"
                             },
-                            serverPaging:true,
+                            serverPaging: true,
                             serverFiltering: true,
                             pageSize: 10
                         },
@@ -316,14 +316,14 @@
                         	var data = common.ui.grid($('#qna-list-grid')).dataSource.view();
                         	var current_index = this.select().index();
                         	var total_index = common.ui.grid($('#qna-list-grid')).dataSource.view().length - 1;
-                        	var list_view_pager = common.ui.pager($(".k-grid-pager"));
+                        	var list_view_pager = common.ui.pager($("#qna-grid-pager"));
                         	var item = data[current_index];
                         },
                         dataBound: function(e) {
 							var $this = this;
 							var renderTo = $("#qna-write-form");
-							if(renderTo.data('model') && renderTo.is(":visible")){
-								var list_view_pager = common.ui.pager($(".k-grid-pager"));
+							if(renderTo.data("model") && renderTo.is(":visible")){
+								var list_view_pager = common.ui.pager($("#qna-grid-pager"));
 								var data = common.ui.grid($('#qna-list-grid')).dataSource.view();
 								if(renderTo.data("model").page > list_view_pager.page()){
 									var item = data[renderTo.data("model").pageSize - 1];
@@ -375,6 +375,8 @@
 		
 	<!---- 자유게시판 쓰기/수정/삭제 폼 ---->	
 		function writeBoard(source){
+			$('#board-list-grid > .k-grid-pager').attr("id", "free-grid-pager");
+			
 			var renderTo = $('#board-write-form');
 			if(!renderTo.data("model")){
 				var observable =  common.ui.observable({
@@ -491,24 +493,24 @@
 							writeBoard(item);					
 						}
 					},
-					prePage: function(){
+					preFreePage: function(){
 						var $this = this;
 						if( $this.hasPreviousPage ){
-							var pager = common.ui.pager($(".k-grid-pager"));
+							var pager = common.ui.pager($("#free-grid-pager"));
 							pager.page($this.page - 1);
 						}
 					},
-					nextPage: function(){
+					nextFreePage: function(){
 						var $this = this;
 						if( $this.hasNextPage ){
-							var pager = common.ui.pager($(".k-grid-pager"));
+							var pager = common.ui.pager($("#free-grid-pager"));
 							pager.page($this.page + 1);
 						}
 					},
 					setPagination: function(){
 						var $this = this;
 						var pageSize = common.ui.grid($('#board-list-grid')).dataSource.view().length;	
-						var pager = common.ui.pager($(".k-grid-pager"));
+						var pager = common.ui.pager($("#free-grid-pager"));
 						var page = pager.page();
 						var totalPages = pager.totalPages();		
 						if( $this.board.index > 0 && ($this.board.index - 1) >= 0 )
@@ -581,6 +583,7 @@
 		
 	<!---- 공지게시판 쓰기/수정/삭제 폼 ---->		
 		function writeNotice(source){
+			$('#notice-list-grid > .k-grid-pager').attr("id", "notice-grid-pager");
 			
 			var renderTo = $('#notice-write-form');
 			if(!renderTo.data("model")){
@@ -669,24 +672,24 @@
 							writeNotice(item);					
 						}
 					},
-					prePage: function(){
+					preNoticePage: function(){
 						var $this = this;
-						if($this.hasPreviousPage){
-							var pager = common.ui.pager($(".k-grid-pager"));
+						if( $this.hasPreviousPage ){
+							var pager = common.ui.pager($("#notice-grid-pager"));
 							pager.page($this.page - 1);
 						}
 					},
-					nextPage: function(){
+					nextNoticePage: function(){
 						var $this = this;
-						if($this.hasNextPage){
-							var pager = common.ui.pager($(".k-grid-pager"));
+						if( $this.hasNextPage ){
+							var pager = common.ui.pager($("#notice-grid-pager"));
 							pager.page($this.page + 1);
 						}
 					},
 					setPagination: function(){
 						var $this = this;
 						var pageSize = common.ui.grid($('#notice-list-grid')).dataSource.view().length;	
-						var pager = common.ui.pager($(".k-grid-pager"));
+						var pager = common.ui.pager($("#notice-grid-pager"));
 						var page = pager.page();
 						var totalPages = pager.totalPages();		
 						if( $this.notice.index > 0 && ($this.notice.index - 1) >= 0 )
@@ -791,10 +794,13 @@
 
 	<!---- QnA게시판 쓰기/수정/삭제 폼 ---->		
 		function writeQna(source){
+			$('#qna-list-grid > .k-grid-pager').attr("id", "qna-grid-pager");
+			
 			var data = ["수업", "학적", "유학/연수/교류", "교직", "장학/융자", "학생생활상담", "기타"];
 			$("#dropdownlist").kendoDropDownList({
 				dataSource: data
 			});
+			
 			var renderTo = $('#qna-write-form');
 			if(!renderTo.data("model")){
 				var observable =  common.ui.observable({
@@ -870,7 +876,7 @@
 							var index = $this.qna.index - 1;
 							var data = common.ui.grid($('#qna-list-grid')).dataSource.view();					
 							var item = data[index];				
-							item.set("index", index );
+							item.set("index", index);
 							writeQna(item);		
 						}
 					},
@@ -884,24 +890,24 @@
 							writeQna(item);					
 						}
 					},
-					prePage: function(){
+					preQnaPage: function(){
 						var $this = this;
 						if( $this.hasPreviousPage ){
-							var pager = common.ui.pager($(".k-grid-pager"));
+							var pager = common.ui.pager($("#qna-grid-pager"));
 							pager.page($this.page - 1);
 						}
 					},
-					nextPage: function(){
+					nextQnaPage: function(){
 						var $this = this;
 						if( $this.hasNextPage ){
-							var pager = common.ui.pager($(".k-grid-pager"));
+							var pager = common.ui.pager($("#qna-grid-pager"));
 							pager.page($this.page + 1);
 						}
 					},
 					setPagination: function(){
 						var $this = this;
 						var pageSize = common.ui.grid($('#qna-list-grid')).dataSource.view().length;	
-						var pager = common.ui.pager($(".k-grid-pager"));
+						var pager = common.ui.pager($("#qna-grid-pager"));
 						var page = pager.page();
 						var totalPages = pager.totalPages();		
 						if( $this.qna.index > 0 && ($this.qna.index - 1) >= 0 )
@@ -1305,13 +1311,21 @@
 			a:hover{color:#2E2E2E;}
 			a:visited{color:#2E2E2E;}
 			a:active{color:white;}
-			.preBtn, .nextBtn { color: lightgray; position:relative; }
-			.preBtn:hover, .nextBtn:hover { color: black; }
-			.preBtn:visited, .nextBtn:visited { color: lightgray; }
-			.preBtn:active, .nextBtn:active { color: black; }
-			.preBtn { left: -140px; top: 310px; }
-			.nextBtn { left: 1140px; top: 310px; }
-			.BoardViewBtn {  margin-top: -35px; }
+			.BoardViewBtn i { 
+				display: block;
+				color: white;
+				background: lightgray; 
+				position:fixed; 
+				top: 50%;
+				width: 40px;
+    			height: 160px;
+    			line-height: 160px;
+			}
+			.BoardViewBtn i:hover { color: white; width: 60px; background: black;}
+			.BoardViewBtn i:visited { color: white; }
+			.BoardViewBtn i:active { color: white; }
+			.BoardViewBtn .preBtn { left: 0; }
+			.BoardViewBtn .nextBtn { right: 0; }
 		</style>
 		</#compress>
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
@@ -1347,10 +1361,10 @@
 							</div>
 							<div id="board-write-form" style="display: none;">
 								<div class="BoardViewBtn" data-bind="invisible:editable">
-								 	<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
-						 			<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
-						 			<i title="이전페이지" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPreviousPage, click: prePage"></i>
-						 			<i title="다음페이지" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNextPage, click: nextPage"></i>
+								 	<i title="이전글" class="xi-angle-left-thin xi-3x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
+						 			<i title="다음글" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
+						 			<i title="이전페이지" class="xi-angle-left-thin xi-3x preBtn" data-bind="visible: hasPreviousPage, click: preFreePage"></i>
+						 			<i title="다음페이지" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNextPage, click: nextFreePage"></i>
 								</div>
 							<form id="writeForm" action="#">
 								<table class="tb_writeForm">
@@ -1427,7 +1441,7 @@
 						                	제목
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="text" class="formInput" data-bind="value: board.title" required/>
+						                	<input type="text" class="formInput" data-bind="value: board.title"/>
 						                </td>
 						            </tr>
 						            <tr>
@@ -1471,7 +1485,7 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="file" data-bind="value: board.image, visible:editable"/>
+						                	<input type="file" data-bind="value: board.image"/>
 						                </td>
 						            </tr>
 								</table>
@@ -1487,10 +1501,10 @@
 						</div>
 						<div id="notice-write-form" style="display: none;">
 							<div class="BoardViewBtn" data-bind="invisible:editable">
-								<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
-						 		<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
-						 		<i title="이전페이지" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPreviousPage, click: prePage"></i>
-						 		<i title="다음페이지" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNextPage, click: nextPage"></i>
+								<i title="이전글" class="xi-angle-left-thin xi-3x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
+						 		<i title="다음글" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
+						 		<i title="이전페이지" class="xi-angle-left-thin xi-3x preBtn" data-bind="visible: hasPreviousPage, click: preNoticePage"></i>
+						 		<i title="다음페이지" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNextPage, click: nextNoticePage"></i>
 							 </div>
 							 <form id="noticeForm" action="#">
 								<table id="tb_noticeForm">
@@ -1627,10 +1641,10 @@
 						</div>
 						<div id="qna-write-form" style="display: none;">
 							<div class="BoardViewBtn" data-bind="invisible:editable">
-								<i title="이전글" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
-						 		<i title="다음글" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
-						 		<i title="이전페이지" class="xi-angle-left-thin xi-5x preBtn" data-bind="visible: hasPreviousPage, click: prePage"></i>
-						 		<i title="다음페이지" class="xi-angle-right-thin xi-5x nextBtn" data-bind="visible: hasNextPage, click: nextPage"></i>
+								<i title="이전글" class="xi-angle-left-thin xi-3x preBtn" data-bind="visible: hasPrevious, click: preView"></i>
+						 		<i title="다음글" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNext, click: nextView"></i>
+						 		<i title="이전페이지" class="xi-angle-left-thin xi-3x preBtn" data-bind="visible: hasPreviousPage, click: preQnaPage"></i>
+						 		<i title="다음페이지" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNextPage, click: nextQnaPage"></i>
 							</div>
 							<form id="qnaForm" action="#">
 								<table id="tb_qnaForm">
