@@ -132,7 +132,7 @@ public class BbsServiceImpl implements BbsService {
 
 	@Override
 	public void writeReply(Board board) {
-		boardDao.createReply(board);
+		boardDao.writeReply(board);
 	}
 
 

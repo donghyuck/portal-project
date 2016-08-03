@@ -206,10 +206,10 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 
 	@Override
 	public void createBoard(Board board) {
-		if (board.getBoardCode().equals("B001")) { // 글번호 시퀀스
+		if(board.getBoardCode().equals("B001")) { // 글번호 시퀀스
 			long nextId = getNextId("PODO_FREE_BOARD");
 			board.setBoardNo(nextId);
-		} else if (board.getBoardCode().equals("B002")) {
+		} else if(board.getBoardCode().equals("B002")) {
 			long nextId = getNextId("PODO_NOTICE_BOARD");
 			board.setBoardNo(nextId);
 		}
@@ -221,6 +221,8 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 				new SqlParameterValue(Types.VARCHAR, board.getContent()),
 				new SqlParameterValue(Types.VARCHAR, board.getImage()),
 				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
+				new SqlParameterValue(Types.NUMERIC, board.getWritingSeq()),
+				new SqlParameterValue(Types.NUMERIC, board.getWritingLevel()),
 				new SqlParameterValue(Types.VARCHAR, board.getBoardCode()));
 	}
 
@@ -295,8 +297,26 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 	}
 
 	@Override
-	public void createReply(Board board) {
-
+	public void writeReply(Board board) {
+		if (board.getBoardCode().equals("B001")) { // 글번호 시퀀스
+			long nextId = getNextId("PODO_FREE_BOARD");
+			board.setBoardNo(nextId);
+		} else if (board.getBoardCode().equals("B002")) {
+			long nextId = getNextId("PODO_NOTICE_BOARD");
+			board.setBoardNo(nextId);
+		}
+		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.INSERT_BOARD_REPLY").getSql(),
+				new SqlParameterValue(Types.VARCHAR, board.getBoardName()),
+				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
+				new SqlParameterValue(Types.VARCHAR, board.getWriter()),
+				new SqlParameterValue(Types.VARCHAR, board.getTitle()),
+				new SqlParameterValue(Types.VARCHAR, board.getContent()),
+				new SqlParameterValue(Types.VARCHAR, board.getImage()),
+				new SqlParameterValue(Types.NUMERIC, board.getWritingRef()),
+				new SqlParameterValue(Types.NUMERIC, board.getWritingSeq()),
+				new SqlParameterValue(Types.NUMERIC, board.getWritingLevel()),
+				new SqlParameterValue(Types.VARCHAR, board.getBoardCode()));
+	
 	}
 
 

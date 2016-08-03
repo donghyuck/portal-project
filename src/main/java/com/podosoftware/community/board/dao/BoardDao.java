@@ -48,16 +48,12 @@ public interface BoardDao {
 	public void updateReadCount(Board board);
 	
 	public void updateQnaReadCount(QnaBoard qna);
-
 	
 	public void createQnaBoard(QnaBoard qna);
 
-	
 	public void updateQnaBoard(QnaBoard qna);
 
-	
-	
-	public void createReply(Board board);
+	public void writeReply(Board board);
 
 
 }
