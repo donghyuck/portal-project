@@ -11,7 +11,7 @@ public class DefaultBoard implements Board {
 	private Date writeDate;
 	private String content;
 	private String title;
-	private String image;
+	private String attachFile;
 	private int readCount;
 	private long writingRef; // 원본글
 	private long writingSeq; // 답변글
@@ -74,12 +74,12 @@ public class DefaultBoard implements Board {
 		this.title = title;
 	}
 
-	public String getImage() {
-		return image;
+	public String getAttachFile() {
+		return attachFile;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setAttachFile(String attachFile) {
+		this.attachFile = attachFile;
 	}
 
 	public int getReadCount() {

@@ -64,7 +64,7 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 			b.setBoardName(rs.getString("board_name"));
 			b.setBoardNo(rs.getLong("board_no"));
 			b.setContent(rs.getString("content"));
-			b.setImage(rs.getString("image"));
+			b.setAttachFile(rs.getString("attachfile"));
 			b.setTitle(rs.getString("title"));
 			b.setReadCount(rs.getInt("read_count"));
 			b.setWriteDate(rs.getDate("write_date"));
@@ -85,7 +85,7 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 			q.setBoardName(rs.getString("board_name"));
 			q.setBoardNo(rs.getLong("board_no"));
 			q.setContent(rs.getString("content"));
-			q.setImage(rs.getString("image"));
+			q.setAttachFile(rs.getString("attachfile"));
 			q.setTitle(rs.getString("title"));
 			q.setReadCount(rs.getInt("read_count"));
 			q.setWriteDate(rs.getDate("write_date"));
@@ -219,7 +219,7 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 				new SqlParameterValue(Types.VARCHAR, board.getWriter()),
 				new SqlParameterValue(Types.VARCHAR, board.getTitle()),
 				new SqlParameterValue(Types.VARCHAR, board.getContent()),
-				new SqlParameterValue(Types.VARCHAR, board.getImage()),
+				new SqlParameterValue(Types.VARCHAR, board.getAttachFile()),
 				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
 				new SqlParameterValue(Types.NUMERIC, board.getWritingSeq()),
 				new SqlParameterValue(Types.NUMERIC, board.getWritingLevel()),
@@ -231,7 +231,7 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.UPDATE_BOARD").getSql(),
 				new SqlParameterValue(Types.VARCHAR, board.getTitle()),
 				new SqlParameterValue(Types.VARCHAR, board.getContent()),
-				new SqlParameterValue(Types.VARCHAR, board.getImage()),
+				new SqlParameterValue(Types.VARCHAR, board.getAttachFile()),
 				new SqlParameterValue(Types.VARCHAR, board.getBoardCode()),
 				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()));
 	}
@@ -268,7 +268,7 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 				new SqlParameterValue(Types.VARCHAR, qna.getWriter()),
 				new SqlParameterValue(Types.VARCHAR, qna.getTitle()),
 				new SqlParameterValue(Types.VARCHAR, qna.getContent()),
-				new SqlParameterValue(Types.VARCHAR, qna.getImage()),
+				new SqlParameterValue(Types.VARCHAR, qna.getAttachFile()),
 				new SqlParameterValue(Types.NUMERIC, qna.getBoardNo()),
 				new SqlParameterValue(Types.VARCHAR, qna.getBoardCode()));
 
@@ -285,7 +285,7 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.UPDATE_BOARD").getSql(),
 				new SqlParameterValue(Types.VARCHAR, qna.getTitle()),
 				new SqlParameterValue(Types.VARCHAR, qna.getContent()),
-				new SqlParameterValue(Types.VARCHAR, qna.getImage()),
+				new SqlParameterValue(Types.VARCHAR, qna.getAttachFile()),
 				new SqlParameterValue(Types.VARCHAR, qna.getBoardCode()),
 				new SqlParameterValue(Types.NUMERIC, qna.getBoardNo()));
 
@@ -305,13 +305,21 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 			long nextId = getNextId("PODO_NOTICE_BOARD");
 			board.setBoardNo(nextId);
 		}
+		
+		if(board.getWritingRef() > 0) {
+			getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.UPDATE_BOARD_REPLY_SEQ").getSql(),
+					new SqlParameterValue(Types.NUMERIC, board.getWritingRef()),
+					new SqlParameterValue(Types.NUMERIC, board.getWritingSeq()));
+			board.setWritingSeq(board.getWritingSeq()+1);
+			board.setWritingLevel(board.getWritingLevel()+1);
+		}
 		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.INSERT_BOARD_REPLY").getSql(),
 				new SqlParameterValue(Types.VARCHAR, board.getBoardName()),
 				new SqlParameterValue(Types.NUMERIC, board.getBoardNo()),
 				new SqlParameterValue(Types.VARCHAR, board.getWriter()),
 				new SqlParameterValue(Types.VARCHAR, board.getTitle()),
 				new SqlParameterValue(Types.VARCHAR, board.getContent()),
-				new SqlParameterValue(Types.VARCHAR, board.getImage()),
+				new SqlParameterValue(Types.VARCHAR, board.getAttachFile()),
 				new SqlParameterValue(Types.NUMERIC, board.getWritingRef()),
 				new SqlParameterValue(Types.NUMERIC, board.getWritingSeq()),
 				new SqlParameterValue(Types.NUMERIC, board.getWritingLevel()),

@@ -32,9 +32,9 @@ public interface Board {
 
 	public void setTitle(String title);
 
-	public String getImage();
+	public String getAttachFile();
 
-	public void setImage(String image);
+	public void setAttachFile(String attachFile);
 
 	public int getReadCount();
 
