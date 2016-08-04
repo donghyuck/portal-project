@@ -594,7 +594,7 @@
 	        title: { type: "string" },
 	        content: { type: "string" },
 	        readCount: { type: "number" },
-	        image: { type: "string" },
+	        attachfile: { type: "string" },
 	        writeDate: { type: "date" },
 	        writingRef: { type: "number" },
 	        writingSeq: { type: "number", defualtValue:0 },
@@ -612,7 +612,7 @@
 	    	target.set("title", this.get("title"));	
 	    	target.set("content", this.get("content"));
 	    	target.set("readCount", this.get("readCount"));
-	    	target.set("image", this.get("image"));
+	    	target.set("attachfile", this.get("attachfile"));
 	    	target.set("writeDate", this.get("writeDate"));
 	    	target.set("writingRef", this.get("writingRef"));
 	    	target.set("writingSeq", this.get("writingSeq"));
@@ -631,7 +631,7 @@
 	        title: { type: "string" },
 	        content: { type: "string" },
 	        readCount: { type: "number" },
-	        image: { type: "string" },
+	        attachfile: { type: "string" },
 	        writeDate: { type: "date" },
 	        writingRef: { type: "number", defualtValue:0 },
 	        writingSeq: { type: "number", defualtValue:0 },
@@ -651,7 +651,7 @@
 	    	target.set("title", this.get("title"));	
 	    	target.set("content", this.get("content"));
 	    	target.set("readCount", this.get("readCount"));
-	    	target.set("image", this.get("image"));
+	    	target.set("attachfile", this.get("attachfile"));
 	    	target.set("writeDate", this.get("writeDate"));
 	    	target.set("writingRef", this.get("writingRef"));
 	    	target.set("writingSeq", this.get("writingSeq"));

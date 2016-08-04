@@ -20,7 +20,7 @@
 		<parameterMapping name="writeDate" column="writeDate" javaType="Timestamp" />	
 		<parameterMapping name="content" column="content" javaType="string" />
 		<parameterMapping name="title" column="title" javaType="string" />
-		<parameterMapping name="image" column="image" javaType="string" />
+		<parameterMapping name="attachfile" column="attachfile" javaType="string" />
 		<parameterMapping name="readCount" column="readCount" javaType="int" />
 		<parameterMapping name="writingRef" column="writingRef" javaType="long" />
 		<parameterMapping name="writingSeq" column="writingSeq" javaType="long" />
@@ -125,7 +125,7 @@
     	AND board_name = '${boardName}'
     	</#if>
     ]]></dynamic><![CDATA[		
-    	ORDER BY writing_ref DESC, writing_seq, writing_level ASC
+    	ORDER BY writing_ref DESC, writing_seq ASC
     ]]></sql-query>
     
      <sql-query name="SELECT_BOARD_BY_NO"
@@ -152,7 +152,7 @@
 			title, 
 			content, 
 			read_count, 
-			image, 
+			attachfile, 
 			write_date, 
 			writing_ref, 
 			writing_seq, 
@@ -167,7 +167,7 @@
 		SET
 			title = ?,
 			content = ?,
-			image = ?,
+			attachfile = ?,
 			write_date = SYSDATE
 		WHERE
 			board_code = ?
@@ -195,7 +195,7 @@
 		SELECT 
 			  b.board_code, b.board_name, b.board_no, 
        	 	  b.title, b.writer, b.content, b.write_date,
-       		  b.read_count, b.image, b.writing_ref,
+       		  b.read_count, b.attachfile, b.writing_ref,
        		  b.writing_seq, b.writing_level, q.type, q.category
 		FROM  TB_BOARD b, TB_BOARD_QNA q
 		WHERE b.board_no = q.board_no
@@ -239,7 +239,7 @@
 			title, 
 			content, 
 			read_count, 
-			image, 
+			attachfile, 
 			write_date, 
 			writing_ref, 
 			writing_seq, 
@@ -247,5 +247,17 @@
 			board_code)
 		VALUES (?, ?, ?, ?, ?, 0, ? , SYSDATE, ?, ?, ?, ?)
     </sql-query>
+    
+    <sql-query name="UPDATE_BOARD_REPLY_SEQ"
+    	description="게시판 답변글 seq업데이트"><![CDATA[		
+		UPDATE TB_BOARD
+		SET
+			writing_seq = writing_seq + 1
+		WHERE
+			writing_ref = ?
+		AND
+			writing_seq > ?
+     ]]></sql-query>
+    
     
 </sqlset>

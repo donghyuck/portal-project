@@ -101,7 +101,7 @@
                     	toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 100 },
-                        	{ title: "제목", field: "title", template: "#for( i=0;i<data.writingLevel;i++){#&nbsp;#}#<a href='\\#' data-object-id='#= data.boardNo#' data-action='view'>#= title #</a>" },
+                        	{ title: "제목", field: "title", template: "#for(i=0; i<data.writingLevel; i++){#&nbsp;&nbsp;#}if(data.writingSeq>0){#RE: #}#<a href='\\#' data-object-id='#= data.boardNo#' data-action='view'>#= title#</a>" }, //<img src="/images/board/bbs_icon_reply2.png"/>
                         	{ title: "작성자", field: "writer", width: 150 },
                         	{ title: "작성일", field: "writeDate", width: 150, format:"{0:yyyy/MM/dd}" },
                         	{ title: "조회수", field: "readCount", width: 100 }
@@ -115,20 +115,6 @@
                         },
                         dataBound: function(e) {
 							var $this = this;
-							var renderTo = $("#board-write-form");
-							if(renderTo.data('model') && renderTo.is(":visible")){
-								var list_view_pager = common.ui.pager($("#free-grid-pager"));
-								var data = common.ui.grid($('#board-list-grid')).dataSource.view();
-								if(renderTo.data("model").page > list_view_pager.page()){
-									var item = data[renderTo.data("model").pageSize - 1];
-									item.set("index", renderTo.data("model").pageSize - 1);
-									writeBoard(item);
-								} else {
-									var item = data[0];
-									item.set("index", 0);
-									writeBoard(item);
-								}
-							}
 						}
                     });
                     
@@ -221,20 +207,6 @@
                         },
                         dataBound: function(e) {
 							var $this = this;
-							var renderTo = $("#notice-write-form");
-							if(renderTo.data('model') && renderTo.is(":visible")){
-								var list_view_pager = common.ui.pager($("#notice-grid-pager"));
-								var data = common.ui.grid($('#notice-list-grid')).dataSource.view();
-								if(renderTo.data("model").page > list_view_pager.page()){
-									var item = data[renderTo.data("model").pageSize - 1];
-									item.set("index", renderTo.data("model").pageSize - 1);
-									writeNotice(item);
-								} else {
-									var item = data[0];
-									item.set("index", 0);
-									writeNotice(item);
-								}
-							}
 						}
                     });
                     
@@ -269,7 +241,6 @@
                     });
                     
                     
-                   
                    
  			 <!----- QnA 게시판 그리드 ------>
                		var qnaRenderTo = $('#qna-list-grid');
@@ -321,25 +292,6 @@
                         },
                         dataBound: function(e) {
 							var $this = this;
-							var renderTo = $("#qna-write-form");
-							
-							console.log('bound');
-							/**
-							if(renderTo.data("model") && renderTo.is(":visible")){
-								var list_view_pager = common.ui.pager($("#qna-grid-pager"));
-								var data = common.ui.grid($('#qna-list-grid')).dataSource.view();
-								if(renderTo.data("model").page > list_view_pager.page()){
-									var item = data[renderTo.data("model").pageSize - 1];
-									item.set("index", renderTo.data("model").pageSize - 1);
-									writeQna(item);
-								} else {
-									var item = data[0];
-									item.set("index", 0);
-									writeQna(item);
-								}
-							}
-							return false;
-							*/
 						}
                     });
                     
@@ -350,8 +302,6 @@
                     	item.set("index", index);
                     	console.log(common.ui.stringify(item));
                     	qnaRenderTo.fadeOut(function(e){
-                    		console.log('view!!!');
-                    		
                    			writeQna(item);
                    		});
                     });
@@ -370,7 +320,6 @@
 	                   	qnaRenderTo.fadeOut(function(e){
                    			$('#qna-write-form').fadeIn();
                    			//console.log(common.ui.stringify(newQna));
-                   			console.log('create!!!');
                    			writeQna(newQna);
                    		});
                     	
@@ -408,22 +357,19 @@
 					},
 					reply: function(e){
 						var $this = $(this);
-						var newBoardReply;
-						//var originBoard;
-
-						//var writingRef = document.getElementById("boardNo");
-						//var newBoardReply;
-						// $this.board ;
-						/**
-						newBoardReply = new common.ui.data.community.Board();
+						var newBoardReply = new common.ui.data.community.Board();
 						newBoardReply.boardCode = 'B001';
 						newBoardReply.boardName = 'free';
-						//newBoardReply.writingRef = ;
-						*/
+						newBoardReply.title = $('#board-write-form').data('model').get('board.title');
+						newBoardReply.writingRef = $('#board-write-form').data('model').get('board.writingRef');
+						newBoardReply.writingSeq = $('#board-write-form').data('model').get('board.writingSeq');
+						newBoardReply.writingLevel = $('#board-write-form').data('model').get('board.writingLevel');
+
 	                   	$('#board-write-form').fadeOut(function(e){
                    			$('#board-reply-form').fadeIn();
-                   			//console.log(common.ui.stringify(newBoardReply));
-                   			writeBoardReply($this.board);
+                   			console.log(common.ui.stringify(newBoardReply));
+                   			writeBoardReply(newBoardReply); 
+                   			/* $this.board */
                    		});
 						
 					},
@@ -436,7 +382,7 @@
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
 								success : function(response){
-									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");
+									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다." },"success");
 								},
 								fail: function(){								
 									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
@@ -541,8 +487,6 @@
 						else 
 							$this.set("hasPreviousPage", false);
 						
-						//$this.set("hasPreviousPage", page > 1 );				
-						//$this.set("hasNextPage", totalPages > page );		
 						$this.set("page", page);			
 						$this.set("pageSize", pageSize);																	
 					},
@@ -555,12 +499,12 @@
 							common.ui.ajax(
 							'<@spring.url "/data/podo/board/free/updateReadCount.json?output=json" />',
 							{
-								async : false,
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
 								success : function(response){
-									//common.ui.grid($('#board-list-grid')).refresh();
-									source.set('index', (source.get('index') + 1) )
+									var newReadCount = source.get('readCount') + 1;
+									source.set('readCount', newReadCount );
+									$this.board.set('readCount', newReadCount);
 								},
 								fail: function(){								
 								},
@@ -702,8 +646,6 @@
 						else 
 							$this.set("hasPreviousPage", false);
 						
-						//$this.set("hasPreviousPage", page > 1 );				
-						//$this.set("hasNextPage", totalPages > page  );		
 						$this.set("page", page);			
 						$this.set("pageSize", pageSize);																	
 					},
@@ -712,15 +654,16 @@
 						source.copy($this.notice);
 						$this.set('editable', ($this.notice.boardNo > 0 ? false : true ));
 						$this.setPagination();
-						/*if($this.notice.boardNo > 0) {
+						if($this.notice.boardNo > 0) {
 							common.ui.ajax(
 								'<@spring.url "/data/podo/board/notice/updateReadCount.json?output=json" />',
 								{
-									//async : false,
 									data : kendo.stringify( $this.notice ),
 									contentType : "application/json",
 									success : function(response){
-										common.ui.grid($('#notice-list-grid')).refresh();
+										var newReadCount = source.get('readCount') + 1;
+										source.set('readCount', newReadCount );
+										$this.notice.set('readCount', newReadCount);
 									},
 									fail: function(){								
 									},
@@ -733,8 +676,7 @@
 									complete : function(e){
 									}
 								});	
-							return false;
-						}*/
+						}
 					},
 					delete: function(source){
 						var $this = this;
@@ -749,7 +691,6 @@
 								success : function(response){	
 									common.ui.notification().show({ title:null, message: "글이 삭제되었습니다." },"success");								
 									common.ui.grid($('#notice-list-grid')).dataSource.read();	
-									common.ui.grid($('#notice-list-grid')).refresh();
 								},
 								fail: function(){								
 								},
@@ -761,7 +702,6 @@
 								},
 								complete : function(e){
 									common.ui.grid($('#notice-list-grid')).dataSource.read();
-									common.ui.grid($('#notice-list-grid')).refresh();														
 									$this.close();
 								}
 							});	
@@ -789,8 +729,8 @@
 		function writeQna(source){
 			$('#qna-list-grid > .k-grid-pager').attr("id", "qna-grid-pager");			
 			var renderTo = $('#qna-write-form');
-			if(!renderTo.data("model")){
 			
+			if(!renderTo.data("model")){
 				$("#dropdownlist").kendoDropDownList({
 					dataSource: ["수업", "학적", "유학/연수/교류", "교직", "장학/융자", "학생생활상담", "기타"]
 				});
@@ -826,6 +766,9 @@
 							newQnaReply.boardName = 'qna';
 							newQnaReply.type = '답변';
 							newQnaReply.writer = '관리자';
+							newQnaReply.writingRef = $('#qna-write-form').data('model').get('qna.writingRef');
+							newQnaReply.writingSeq = $('#qna-write-form').data('model').get('qna.writingSeq');
+							newQnaReply.writingLevel = $('#qna-write-form').data('model').get('qna.writingLevel');
 						}
 	                   	$('#qna-write-form').fadeOut(function(e){
                    			$('#qna-reply-form').fadeIn();
@@ -845,7 +788,6 @@
 								success : function(response){
 									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
 									common.ui.grid($('#qna-list-grid')).dataSource.read();	
-									//common.ui.grid($('#qna-list-grid')).refresh();	
 								},
 								fail: function(){								
 									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
@@ -857,8 +799,7 @@
 									kendo.ui.progress(renderTo, false);
 								},
 								complete : function(e){
-									common.ui.grid($('#qna-list-grid')).dataSource.read();	
-									common.ui.grid($('#qna-list-grid')).refresh();														
+									common.ui.grid($('#qna-list-grid')).dataSource.read();
 									$this.close();
 								}
 							});	
@@ -923,8 +864,6 @@
 						else 
 							$this.set("hasPreviousPage", false);
 						
-						//$this.set("hasPreviousPage", page > 1 );				
-						//$this.set("hasNextPage", totalPages > page  );		
 						$this.set("page", page );			
 						$this.set("pageSize", pageSize );																	
 					},
@@ -935,15 +874,12 @@
 						$this.setPagination();
 						
 						if($this.qna.boardNo > 0) {
-						console.log('count!!');
 							common.ui.ajax(
 								'<@spring.url "/data/podo/board/qna/updateReadCount.json?output=json" />',
 								{
 									data : kendo.stringify( $this.qna ),
 									contentType : "application/json",
 									success : function(response){	
-										
-										//common.ui.grid($('#qna-list-grid')).refresh();
 										var newReadCount = source.get('readCount') + 1;
 										source.set('readCount', newReadCount );
 										$this.qna.set('readCount', newReadCount);
@@ -1003,7 +939,6 @@
 				common.ui.bind( renderTo, observable );
 			}
 			
-			console.log('set source !!');
 			renderTo.data("model").setSource(source);	
 				if(!renderTo.is(':visible'))
 			{
@@ -1030,7 +965,7 @@
 						var $this = this;
 						console.log(kendo.stringify($this.reply));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/writeReply.json?output=json" />' , 
+							'<@spring.url "/data/podo/board/free/writeReply.json?output=json" />' , 
 							{
 								data : kendo.stringify($this.reply),
 								contentType : "application/json",
@@ -1048,13 +983,13 @@
 								},
 								complete : function(e){
 									common.ui.grid($('#board-list-grid')).dataSource.read();
-									common.ui.grid($('#board-list-grid')).refresh();
 									$this.close();
 								}
 							});	
 							return false;
 					},
-					setSource : function(source){
+					setSource: function(source){
+						/**
 						var $this = this, newBoard = $this.board ;
 						newBoard.boardCode = source.boardCode;
 						newBoard.boardName = source.boardName;
@@ -1062,6 +997,9 @@
 						newBoard.set('title',"") ;
 						newBoard.set('content',"") ;
 						newBoard.set('writeDate', new Date()) ;
+						*/
+						var $this = this;
+						source.copy($this.reply);
 					},
 					close: function(){
 						renderTo.fadeOut(function(e){ 
@@ -1099,7 +1037,7 @@
 						var $this = this;
 						console.log(kendo.stringify($this.qna));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/writeReply.json?output=json" />' , 
+							'<@spring.url "/data/podo/board/qna/writeReply.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.qna ),
 								contentType : "application/json",
@@ -1364,8 +1302,8 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<span data-bind="text:board.image, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" data-bind="value: board.image, visible:editable"/>
+						                	<span data-bind="text:board.attachfile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
+						                	<input type="file" class="formInput" data-bind="value: board.attachfile, visible:editable"/>
 						                </td>
 						            </tr>
 								</table>
@@ -1386,7 +1324,7 @@
 						                	제목
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="text" class="formInput" data-bind="value: reply.title"/>
+						                	<span style="font-size: 14px; padding: 5px;" readonly>RE:</span><input type="text" style="width: 924px;" class="formInput" data-bind="value: reply.title"/>
 						                </td>
 						            </tr>
 						            <tr>
@@ -1430,7 +1368,7 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="file" data-bind="value: reply.image"/>
+						                	<input type="file" data-bind="value: reply.attachfile"/>
 						                </td>
 						            </tr>
 								</table>
@@ -1504,8 +1442,8 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<span data-bind="text:notice.image, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" data-bind="value: board.image, visible:editable"/>
+						                	<span data-bind="text:notice.attachfile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
+						                	<input type="file" class="formInput" data-bind="value: notice.attachfile, visible:editable"/>
 						                </td>
 						            </tr>
 								</table><br/>
@@ -1591,8 +1529,8 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<span data-bind="text:qna.image, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" class="formInput" data-bind="value: qna.image, visible:editable"/>
+						                	<span data-bind="text:qna.attachfile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
+						                	<input type="file" class="formInput" data-bind="value: qna.attachfile, visible:editable"/>
 						                </td>
 						            </tr>
 								</table><br/>
@@ -1621,7 +1559,7 @@
 						                	제목
 						                </td>
 						                <td colspan="5" style="border-top:1px solid lightgray" class="bottom">
-						                	<input type="text" class="formInput" data-bind="value: qna.title" required/>
+						                	<input type="text" class="formInput" data-bind="value: qna.title"/>
 						                </td>
 						            </tr>
 						            <tr>
@@ -1665,7 +1603,7 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="file" class="formInput" data-bind="value: qna.image"/>
+						                	<input type="file" class="formInput" data-bind="value: qna.attachfile"/>
 						                </td>
 						            </tr>
 								</table><br/>
