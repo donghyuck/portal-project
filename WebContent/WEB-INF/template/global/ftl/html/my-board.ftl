@@ -401,13 +401,12 @@
 					reply: function(e){
 						var $this = $(this);
 						var newBoardReply;
-						var originBoard;
-						
-						
+						//var originBoard;
+
 						newBoardReply = new common.ui.data.community.Board();
-						newBoardReply.boardCode = 'B002';
-						newBoardReply.boardName = 'notice';
-						//newBoardReply.writingRef = originBoard.boardNo;
+						newBoardReply.boardCode = 'B001';
+						newBoardReply.boardName = 'free';
+						//newBoardReply.writingRef = ;
 
 	                   	$('#board-write-form').fadeOut(function(e){
                    			$('#board-reply-form').fadeIn();
@@ -999,7 +998,7 @@
 			var renderTo = $('#board-reply-form');
 			if(!renderTo.data("model")){
 				var observable =  common.ui.observable({
-					board : new common.ui.data.community.Board(),
+					reply : new common.ui.data.community.Board(),
 					editable : false,
 					propertyDataSource : new kendo.data.DataSource({
 						batch: true,
@@ -1008,16 +1007,16 @@
                             model: common.ui.data.Property
                         }
 					}),
-					save : function(e){
+					save: function(e){
 						var $this = this;
-						console.log(kendo.stringify($this.board));
+						console.log(kendo.stringify($this.reply));
 						common.ui.ajax(
 							'<@spring.url "/data/podo/board/free/writeReply.json?output=json" />' , 
 							{
-								data : kendo.stringify( $this.board ),
+								data : kendo.stringify($this.reply),
 								contentType : "application/json",
 								success : function(response){
-									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");
+									common.ui.notification().show({ title:null, message: "작성하신 답변이 저장되었습니다."	},"success");
 								},
 								fail: function(){								
 									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
@@ -1036,11 +1035,11 @@
 							});	
 							return false;
 					},
-					setSource : function(source){
+					setSource: function(source){
 						var $this = this;
-						source.copy($this.board);
+						source.copy($this.reply);
 					},
-					close : function(){
+					close: function(){
 						renderTo.fadeOut(function(e){ 
 							$("#board-list-grid").fadeIn();
 						});
@@ -1357,7 +1356,7 @@
 						 </div>
 						 <div id="board-reply-form" style="display: none;">
 							<form id="replyForm" action="#">
-								<input type="text" data-bind="value: board.boardNo"/>
+								<input type="text" data-bind="value: reply.boardNo"/>
 								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
 								<table class="tb_writeForm">
 						            <tr>
@@ -1365,7 +1364,7 @@
 						                	제목
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="text" class="formInput" data-bind="value: board.title"/>
+						                	<input type="text" class="formInput" data-bind="value: reply.title"/>
 						                </td>
 						            </tr>
 						            <tr>
@@ -1373,19 +1372,19 @@
 						                	작성자
 						                </td>
 				                        <td class="formTd">
-				                            <input type="text" class="formInput" data-bind="value: board.writer" readonly/>
+				                            <input type="text" class="formInput" data-bind="value: reply.writer" readonly/>
 				                        </td>
 				                        <td class="input_title" >
 						                	작성일
 						                </td>
 				                        <td class="formTd">
-				                            <input type="text" class="formInput" data-bind="value: board.formattedWriteDate" readonly/>
+				                            <input type="text" class="formInput" data-bind="value: reply.formattedWriteDate" readonly/>
 				                        </td>
 				                        <td class="input_title" >
 						                	조회수
 						                </td>
 				                        <td class="formTd"> 
-				                            <input type="text" class="formInput" data-bind="value: board.readCount" readonly size="4"/>
+				                            <input type="text" class="formInput" data-bind="value: reply.readCount" readonly size="4"/>
 				                        </td>
 				                    </tr>
 						            <tr>
@@ -1401,7 +1400,7 @@
 							                                   'justifyRight',
 							                                   'justifyFull',
 							                                   'insertImage']"   
-						                		data-bind="value:board.content"></textarea>
+						                		data-bind="value: reply.content"></textarea>
 						                </td>
 						            </tr>
 						             <tr>
@@ -1409,11 +1408,11 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="file" data-bind="value: board.image"/>
+						                	<input type="file" data-bind="value: reply.image"/>
 						                </td>
 						            </tr>
 								</table>
-								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate">확인</button>
+								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:save">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close">취소</button>
 						    </form>
 						 </div>
