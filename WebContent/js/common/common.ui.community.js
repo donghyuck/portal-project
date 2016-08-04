@@ -596,7 +596,7 @@
 	        readCount: { type: "number" },
 	        image: { type: "string" },
 	        writeDate: { type: "date" },
-	        writingRef: { type: "number", defualtValue:0 },
+	        writingRef: { type: "number" },
 	        writingSeq: { type: "number", defualtValue:0 },
 	        writingLevel: { type: "number", defualtValue:0 },
 	        index: {type: "number", defualtValue:0 }

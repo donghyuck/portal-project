@@ -101,7 +101,7 @@
                     	toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 100 },
-                        	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo#' data-action='view'>#= title #</a>" },
+                        	{ title: "제목", field: "title", template: "#for( i=0;i<data.writingLevel;i++){#&nbsp;#}#<a href='\\#' data-object-id='#= data.boardNo#' data-action='view'>#= title #</a>" },
                         	{ title: "작성자", field: "writer", width: 150 },
                         	{ title: "작성일", field: "writeDate", width: 150, format:"{0:yyyy/MM/dd}" },
                         	{ title: "조회수", field: "readCount", width: 100 }
@@ -322,6 +322,9 @@
                         dataBound: function(e) {
 							var $this = this;
 							var renderTo = $("#qna-write-form");
+							
+							console.log('bound');
+							/**
 							if(renderTo.data("model") && renderTo.is(":visible")){
 								var list_view_pager = common.ui.pager($("#qna-grid-pager"));
 								var data = common.ui.grid($('#qna-list-grid')).dataSource.view();
@@ -335,6 +338,8 @@
 									writeQna(item);
 								}
 							}
+							return false;
+							*/
 						}
                     });
                     
@@ -345,6 +350,8 @@
                     	item.set("index", index);
                     	console.log(common.ui.stringify(item));
                     	qnaRenderTo.fadeOut(function(e){
+                    		console.log('view!!!');
+                    		
                    			writeQna(item);
                    		});
                     });
@@ -362,7 +369,8 @@
 						}
 	                   	qnaRenderTo.fadeOut(function(e){
                    			$('#qna-write-form').fadeIn();
-                   			console.log(common.ui.stringify(newQna));
+                   			//console.log(common.ui.stringify(newQna));
+                   			console.log('create!!!');
                    			writeQna(newQna);
                    		});
                     	
@@ -403,15 +411,19 @@
 						var newBoardReply;
 						//var originBoard;
 
+						//var writingRef = document.getElementById("boardNo");
+						//var newBoardReply;
+						// $this.board ;
+						/**
 						newBoardReply = new common.ui.data.community.Board();
 						newBoardReply.boardCode = 'B001';
 						newBoardReply.boardName = 'free';
 						//newBoardReply.writingRef = ;
-
+						*/
 	                   	$('#board-write-form').fadeOut(function(e){
                    			$('#board-reply-form').fadeIn();
-                   			console.log(common.ui.stringify(newBoardReply));
-                   			writeBoardReply(newBoardReply);
+                   			//console.log(common.ui.stringify(newBoardReply));
+                   			writeBoardReply($this.board);
                    		});
 						
 					},
@@ -539,7 +551,7 @@
 						source.copy($this.board);
 						$this.set('editable', ($this.board.boardNo > 0 ? false : true ));
 						$this.setPagination();
-					/*	if($this.board.boardNo > 0) {
+						if($this.board.boardNo > 0) {
 							common.ui.ajax(
 							'<@spring.url "/data/podo/board/free/updateReadCount.json?output=json" />',
 							{
@@ -547,7 +559,8 @@
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
 								success : function(response){
-									common.ui.grid($('#board-list-grid')).refresh();
+									//common.ui.grid($('#board-list-grid')).refresh();
+									source.set('index', (source.get('index') + 1) )
 								},
 								fail: function(){								
 								},
@@ -560,8 +573,7 @@
 								complete : function(e){
 								}
 							});	
-							return false;
-						}*/
+						}
 					},
 					close: function(){
 						renderTo.fadeOut(function(e){ 
@@ -775,15 +787,14 @@
 
 	<!---- QnA게시판 쓰기/수정/삭제 폼 ---->		
 		function writeQna(source){
-			$('#qna-list-grid > .k-grid-pager').attr("id", "qna-grid-pager");
-			
-			var data = ["수업", "학적", "유학/연수/교류", "교직", "장학/융자", "학생생활상담", "기타"];
-			$("#dropdownlist").kendoDropDownList({
-				dataSource: data
-			});
-			
+			$('#qna-list-grid > .k-grid-pager').attr("id", "qna-grid-pager");			
 			var renderTo = $('#qna-write-form');
 			if(!renderTo.data("model")){
+			
+				$("#dropdownlist").kendoDropDownList({
+					dataSource: ["수업", "학적", "유학/연수/교류", "교직", "장학/융자", "학생생활상담", "기타"]
+				});
+			
 				var observable =  common.ui.observable({
 					qna : new common.ui.data.community.QnaBoard(),
 					editable : false,
@@ -834,7 +845,7 @@
 								success : function(response){
 									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");	
 									common.ui.grid($('#qna-list-grid')).dataSource.read();	
-									common.ui.grid($('#qna-list-grid')).refresh();
+									//common.ui.grid($('#qna-list-grid')).refresh();	
 								},
 								fail: function(){								
 									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
@@ -860,6 +871,7 @@
 							var data = common.ui.grid($('#qna-list-grid')).dataSource.view();					
 							var item = data[index];				
 							item.set("index", index);
+							console.log('per');
 							writeQna(item);		
 						}
 					},
@@ -870,6 +882,7 @@
 							var data = common.ui.grid($('#qna-list-grid')).dataSource.view();					
 							var item = data[index];		
 							item.set("index", index);
+							console.log('next');
 							writeQna(item);					
 						}
 					},
@@ -920,15 +933,20 @@
 						source.copy($this.qna);
 						$this.set('editable', ($this.qna.boardNo > 0 ? false : true ));
 						$this.setPagination();
-						/*if($this.qna.boardNo > 0) {
+						
+						if($this.qna.boardNo > 0) {
+						console.log('count!!');
 							common.ui.ajax(
 								'<@spring.url "/data/podo/board/qna/updateReadCount.json?output=json" />',
 								{
-									//async : false,
 									data : kendo.stringify( $this.qna ),
 									contentType : "application/json",
 									success : function(response){	
-										common.ui.grid($('#qna-list-grid')).refresh();
+										
+										//common.ui.grid($('#qna-list-grid')).refresh();
+										var newReadCount = source.get('readCount') + 1;
+										source.set('readCount', newReadCount );
+										$this.qna.set('readCount', newReadCount);
 									},
 									fail: function(){								
 									},
@@ -941,8 +959,7 @@
 									complete : function(e){
 									}
 								});
-							return false;	
-						}*/
+						};
 					},
 					delete: function(source){
 						var $this = this;
@@ -985,6 +1002,8 @@
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
 			}
+			
+			console.log('set source !!');
 			renderTo.data("model").setSource(source);	
 				if(!renderTo.is(':visible'))
 			{
@@ -1011,7 +1030,7 @@
 						var $this = this;
 						console.log(kendo.stringify($this.reply));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/free/writeReply.json?output=json" />' , 
+							'<@spring.url "/data/podo/board/writeReply.json?output=json" />' , 
 							{
 								data : kendo.stringify($this.reply),
 								contentType : "application/json",
@@ -1035,9 +1054,14 @@
 							});	
 							return false;
 					},
-					setSource: function(source){
-						var $this = this;
-						source.copy($this.reply);
+					setSource : function(source){
+						var $this = this, newBoard = $this.board ;
+						newBoard.boardCode = source.boardCode;
+						newBoard.boardName = source.boardName;
+						newBoard.writingRef = source.boardNo;
+						newBoard.set('title',"") ;
+						newBoard.set('content',"") ;
+						newBoard.set('writeDate', new Date()) ;
 					},
 					close: function(){
 						renderTo.fadeOut(function(e){ 
@@ -1075,7 +1099,7 @@
 						var $this = this;
 						console.log(kendo.stringify($this.qna));
 						common.ui.ajax(
-							'<@spring.url "/data/podo/board/qna/writeReply.json?output=json" />' , 
+							'<@spring.url "/data/podo/board/writeReply.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.qna ),
 								contentType : "application/json",
@@ -1288,7 +1312,6 @@
 						 			<i title="다음페이지" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNextPage, click: nextFreePage"></i>
 								</div>
 							<form id="writeForm" action="#">
-							<input type="text" id="boardNo" data-bind="value: board.boardNo"/>
 								<table class="tb_writeForm">
 						            <tr>
 						                <td class="input_title bottom" >
@@ -1356,7 +1379,6 @@
 						 </div>
 						 <div id="board-reply-form" style="display: none;">
 							<form id="replyForm" action="#">
-								<input type="text" data-bind="value: reply.boardNo"/>
 								<div><span class="back" style="position:relative;" data-bind="click:close"></span></div>
 								<table class="tb_writeForm">
 						            <tr>
@@ -1667,4 +1689,4 @@
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<!-- ./END TEMPLATE -->
 	</body>    
-</html>fade
+</html>
