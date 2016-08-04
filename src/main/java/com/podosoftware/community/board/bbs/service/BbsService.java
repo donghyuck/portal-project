@@ -29,4 +29,6 @@ public interface BbsService {
 
 	public void writeReply(Board board);
 
+	public void writeQnaReply(DefaultQnaBoard qna);
+
 }

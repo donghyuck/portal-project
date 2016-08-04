@@ -327,5 +327,36 @@ public class JdbcBoardDao extends ExtendedJdbcDaoSupport implements BoardDao {
 	
 	}
 
+	@Override
+	public void writeQnaReply(DefaultQnaBoard qna) {
+		long nextId = getNextId("PODO_QNA_BOARD");
+		qna.setBoardNo(nextId);
+		
+		if(qna.getWritingRef() > 0) {
+			getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.UPDATE_BOARD_REPLY_SEQ").getSql(),
+					new SqlParameterValue(Types.NUMERIC, qna.getWritingRef()),
+					new SqlParameterValue(Types.NUMERIC, qna.getWritingSeq()));
+			qna.setWritingSeq(qna.getWritingSeq()+1);
+			qna.setWritingLevel(qna.getWritingLevel()+1);
+		}
+		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.INSERT_BOARD_REPLY").getSql(),
+				new SqlParameterValue(Types.VARCHAR, qna.getBoardName()),
+				new SqlParameterValue(Types.NUMERIC, qna.getBoardNo()),
+				new SqlParameterValue(Types.VARCHAR, qna.getWriter()),
+				new SqlParameterValue(Types.VARCHAR, qna.getTitle()),
+				new SqlParameterValue(Types.VARCHAR, qna.getContent()),
+				new SqlParameterValue(Types.VARCHAR, qna.getAttachFile()),
+				new SqlParameterValue(Types.NUMERIC, qna.getWritingRef()),
+				new SqlParameterValue(Types.NUMERIC, qna.getWritingSeq()),
+				new SqlParameterValue(Types.NUMERIC, qna.getWritingLevel()),
+				new SqlParameterValue(Types.VARCHAR, qna.getBoardCode()));
+
+		getExtendedJdbcTemplate().update(getBoundSql("PORTAL_CUSTOM.INSERT_QNA_BOARD").getSql(),
+				new SqlParameterValue(Types.VARCHAR, qna.getType()),
+				new SqlParameterValue(Types.VARCHAR, qna.getCategory()),
+				new SqlParameterValue(Types.VARCHAR, qna.getBoardCode()),
+				new SqlParameterValue(Types.NUMERIC, qna.getBoardNo()));
+	}
+
 
 }

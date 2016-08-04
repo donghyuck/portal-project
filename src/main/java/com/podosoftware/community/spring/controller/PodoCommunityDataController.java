@@ -203,7 +203,7 @@ public class PodoCommunityDataController {
 	@RequestMapping(value = "/board/qna/writeReply.json", method = { RequestMethod.POST, RequestMethod.GET })
 	@ResponseBody
 	public Board writeQnaReply(@RequestBody DefaultQnaBoard qna) throws Exception {
-		//bbsService.writeQnaReply(qna);
+		bbsService.writeQnaReply(qna);
 		return qna;
 	}
 

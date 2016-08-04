@@ -135,5 +135,11 @@ public class BbsServiceImpl implements BbsService {
 		boardDao.writeReply(board);
 	}
 
+	@Override
+	public void writeQnaReply(DefaultQnaBoard qna) {
+		boardDao.writeQnaReply(qna);
+		
+	}
+
 
 }

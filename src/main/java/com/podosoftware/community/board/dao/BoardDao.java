@@ -3,6 +3,7 @@ package com.podosoftware.community.board.dao;
 import java.util.List;
 
 import com.podosoftware.community.board.model.Board;
+import com.podosoftware.community.board.model.DefaultQnaBoard;
 import com.podosoftware.community.board.model.Member;
 import com.podosoftware.community.board.model.QnaBoard;
 
@@ -55,5 +56,6 @@ public interface BoardDao {
 
 	public void writeReply(Board board);
 
+	public void writeQnaReply(DefaultQnaBoard qna);
 
 }
