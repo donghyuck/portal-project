@@ -594,7 +594,7 @@
 	        title: { type: "string" },
 	        content: { type: "string" },
 	        readCount: { type: "number" },
-	        attachfile: { type: "string" },
+	        attachFile: { type: "string" },
 	        writeDate: { type: "date" },
 	        writingRef: { type: "number" },
 	        writingSeq: { type: "number", defualtValue:0 },
@@ -612,7 +612,7 @@
 	    	target.set("title", this.get("title"));	
 	    	target.set("content", this.get("content"));
 	    	target.set("readCount", this.get("readCount"));
-	    	target.set("attachfile", this.get("attachfile"));
+	    	target.set("attachFile", this.get("attachFile"));
 	    	target.set("writeDate", this.get("writeDate"));
 	    	target.set("writingRef", this.get("writingRef"));
 	    	target.set("writingSeq", this.get("writingSeq"));
@@ -631,9 +631,9 @@
 	        title: { type: "string" },
 	        content: { type: "string" },
 	        readCount: { type: "number" },
-	        attachfile: { type: "string" },
+	        attachFile: { type: "string" },
 	        writeDate: { type: "date" },
-	        writingRef: { type: "number", defualtValue:0 },
+	        writingRef: { type: "number" },
 	        writingSeq: { type: "number", defualtValue:0 },
 	        writingLevel: { type: "number", defualtValue:0 },
 	        type: { type: "string", defaultValue:"질문" },
@@ -651,7 +651,7 @@
 	    	target.set("title", this.get("title"));	
 	    	target.set("content", this.get("content"));
 	    	target.set("readCount", this.get("readCount"));
-	    	target.set("attachfile", this.get("attachfile"));
+	    	target.set("attachFile", this.get("attachFile"));
 	    	target.set("writeDate", this.get("writeDate"));
 	    	target.set("writingRef", this.get("writingRef"));
 	    	target.set("writingSeq", this.get("writingSeq"));

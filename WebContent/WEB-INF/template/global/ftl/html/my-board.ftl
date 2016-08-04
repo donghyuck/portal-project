@@ -278,7 +278,7 @@
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 80 },
                         	{ title: "분류", field: "category", width: 130 },
-                        	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo #' data-action='view'>#= title #</a>" },
+                        	{ title: "제목", field: "title", template: "#for(i=0; i<data.writingLevel; i++){#&nbsp;&nbsp;#}if(data.writingSeq>0){#RE: #}#<a href='\\#' data-object-id='#= data.boardNo #' data-action='view'>#= title #</a>" },
                         	{ title: "작성자", field: "writer", width: 120 },
                         	{ title: "작성일", field: "writeDate", width: 120, format:"{0:yyyy/MM/dd}" },
                         	{ title: "조회수", field: "readCount", width: 80 }
@@ -754,7 +754,7 @@
 					edit:function(){
 						this.set('editable', true);
 					},
-					reply : function(e){
+					reply: function(e){
 						var $this = $(this);
                     	var objectId = $this.data("object-id");	
 						var newQnaReply ;
@@ -766,6 +766,8 @@
 							newQnaReply.boardName = 'qna';
 							newQnaReply.type = '답변';
 							newQnaReply.writer = '관리자';
+							newQnaReply.title = $('#qna-write-form').data('model').get('qna.title');
+							newQnaReply.category = $('#qna-write-form').data('model').get('qna.category');
 							newQnaReply.writingRef = $('#qna-write-form').data('model').get('qna.writingRef');
 							newQnaReply.writingSeq = $('#qna-write-form').data('model').get('qna.writingSeq');
 							newQnaReply.writingLevel = $('#qna-write-form').data('model').get('qna.writingLevel');
@@ -1024,7 +1026,7 @@
 			var renderTo = $('#qna-reply-form');
 			if(!renderTo.data("model")){
 				var observable =  common.ui.observable({
-					qna : new common.ui.data.community.QnaBoard(),
+					reply : new common.ui.data.community.QnaBoard(),
 					editable : false,
 					propertyDataSource : new kendo.data.DataSource({
 						batch: true,
@@ -1033,16 +1035,16 @@
                             model: common.ui.data.Property
                         }
 					}),
-					save : function(e){
+					save: function(e){
 						var $this = this;
-						console.log(kendo.stringify($this.qna));
+						console.log(kendo.stringify($this.reply));
 						common.ui.ajax(
 							'<@spring.url "/data/podo/board/qna/writeReply.json?output=json" />' , 
 							{
-								data : kendo.stringify( $this.qna ),
+								data : kendo.stringify( $this.reply ),
 								contentType : "application/json",
 								success : function(response){
-									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다."	},"success");
+									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다." },"success");
 								},
 								fail: function(){								
 									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
@@ -1055,7 +1057,6 @@
 								},
 								complete : function(e){
 									common.ui.grid($('#qna-list-grid')).dataSource.read();
-									common.ui.grid($('#qna-list-grid')).refresh();
 									$this.close();
 								}
 							});	
@@ -1063,7 +1064,7 @@
 					},
 					setSource : function(source){
 						var $this = this;
-						source.copy($this.qna);
+						source.copy($this.reply);
 					},
 					close : function(){
 						renderTo.fadeOut(function(e){ 
@@ -1302,8 +1303,8 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<span data-bind="text:board.attachfile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" class="formInput" data-bind="value: board.attachfile, visible:editable"/>
+						                	<span data-bind="text:board.attachFile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
+						                	<input type="file" class="formInput" data-bind="value: board.attachFile, visible:editable"/>
 						                </td>
 						            </tr>
 								</table>
@@ -1324,7 +1325,7 @@
 						                	제목
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<span style="font-size: 14px; padding: 5px;" readonly>RE:</span><input type="text" style="width: 924px;" class="formInput" data-bind="value: reply.title"/>
+						                	<span style="font-size: 14px; padding-left: 10px;" readonly>RE:</span><input type="text" style="width: 924px;" class="formInput" data-bind="value: reply.title"/>
 						                </td>
 						            </tr>
 						            <tr>
@@ -1368,7 +1369,7 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="file" data-bind="value: reply.attachfile"/>
+						                	<input type="file" class="formInput" data-bind="value: reply.attachFile"/>
 						                </td>
 						            </tr>
 								</table>
@@ -1442,8 +1443,8 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<span data-bind="text:notice.attachfile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" class="formInput" data-bind="value: notice.attachfile, visible:editable"/>
+						                	<span data-bind="text:notice.attachFile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
+						                	<input type="file" class="formInput" data-bind="value: notice.attachFile, visible:editable"/>
 						                </td>
 						            </tr>
 								</table><br/>
@@ -1529,8 +1530,8 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<span data-bind="text:qna.attachfile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" class="formInput" data-bind="value: qna.attachfile, visible:editable"/>
+						                	<span data-bind="text:qna.attachFile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
+						                	<input type="file" class="formInput" data-bind="value: qna.attachFile, visible:editable"/>
 						                </td>
 						            </tr>
 								</table><br/>
@@ -1551,7 +1552,7 @@
 											유형
 										</td>
 										<td colspan="5" style="padding-left: 10px">
-											<input type="text" class="formInput" data-bind="value: qna.category" readonly/>
+											<input type="text" class="formInput" data-bind="value: reply.category" readonly/>
 										</td>
 									</tr>
 						            <tr>
@@ -1559,7 +1560,7 @@
 						                	제목
 						                </td>
 						                <td colspan="5" style="border-top:1px solid lightgray" class="bottom">
-						                	<input type="text" class="formInput" data-bind="value: qna.title"/>
+						                	<span style="font-size: 14px; padding-left: 10px;" readonly>RE:</span><input type="text" style="width: 924px;" class="formInput" data-bind="value: reply.title"/>
 						                </td>
 						            </tr>
 						            <tr>
@@ -1567,24 +1568,24 @@
 						                	작성자
 						                </td>
 				                        <td class="formTd">
-				                            <input type="text" class="formInput" data-bind="value: qna.writer" readonly/>
+				                            <input type="text" class="formInput" data-bind="value: reply.writer" readonly/>
 				                        </td>
 				                        <td class="qna_title" >
 						                	작성일
 						                </td>
 				                        <td class="formTd">
-				                            <input type="text" class="formInput" data-bind="value: qna.formattedWriteDate" readonly/>
+				                            <input type="text" class="formInput" data-bind="value: reply.formattedWriteDate" readonly/>
 				                        </td>
 				                        <td class="qna_title" >
 						                	조회수
 						                </td>
 				                        <td class="formTd"> 
-				                            <input type="text" class="formInput" data-bind="value: qna.readCount" readonly size="4"/>
+				                            <input type="text" class="formInput" data-bind="value: reply.readCount" readonly size="4"/>
 				                        </td>
 				                    </tr>
 						            <tr>
 						                <td colspan="6" id="lastTd" >
-						                	<textarea id="content" style="width: 100%; height:350px; border : none; padding: 5px; resize: none;" 
+						                	<textarea id="content" style="width: 100%; height: 350px; border: none; padding: 5px; resize: none;" 
 						                		data-role="editor"
 							                    data-tools="['bold',
 							                                   'italic',
@@ -1595,7 +1596,7 @@
 							                                   'justifyRight',
 							                                   'justifyFull',
 							                                   'insertImage']"   
-						                		data-bind="value:qna.content"></textarea>
+						                		data-bind="value: reply.content"></textarea>
 						                </td>
 						            </tr>
 						             <tr>
@@ -1603,11 +1604,11 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="file" class="formInput" data-bind="value: qna.attachfile"/>
+						                	<input type="file" class="formInput" data-bind="value: reply.attachFile"/>
 						                </td>
 						            </tr>
 								</table><br/>
-								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:saveOrUpdate">확인</button>
+								<button type="button" class="btn btn-info btn-md" style="float: right; border-radius: 5px" data-bind="click:save">확인</button>
 								<button type="button" class="btn btn-warning btn-md" style="float: right; border-radius: 5px" data-bind="click:close">취소</button>
 						    </form>
 						 </div>

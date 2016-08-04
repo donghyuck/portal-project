@@ -208,7 +208,7 @@
     	]]></dynamic>
     	ORDER BY b.writing_ref DESC, b.writing_seq, b.writing_level ASC
    	</sql-query>
-    
+     
     <sql-query name="INSERT_QNA_BOARD"
     	description="qna게시판 새글 등록">	
 		INSERT INTO TB_BOARD_QNA( 
