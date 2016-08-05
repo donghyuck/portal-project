@@ -373,17 +373,44 @@
                    		});
 						
 					},
+					files : new kendo.data.DataSource({
+                            type: "POST",
+                            transport: {
+                                read: {
+                                	url: "<@spring.url "/data/podo/board/files/list.json?output=json" />",
+                                	type:'POST'/*, 
+                                	contentType : 'application/json'*/
+                                }
+                            },
+                            schema: {
+                                model: common.ui.data.Attachment
+                            }
+                    }),                        
 					saveOrUpdate: function(e){
 						var $this = this;
+						
 						console.log(kendo.stringify($this.board));
-						$this.upload();
+						
+						//$this.upload();
+						
 						common.ui.ajax(
 							'<@spring.url "/data/podo/board/free/write.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.board ),
 								contentType : "application/json",
 								success : function(response){
+								
+									console.log(kendo.stringify(response));
+									
+									var objectType = 200;
+									var objectId = response.boardNo ;
+									
+									if( observable.board.boardNo < 1 )
+										observable.board.set('boardNo', objectId);
+									renderTo.find('form').submit();	
+																	
 									common.ui.notification().show({ title:null, message: "작성하신 글이 저장되었습니다." },"success");
+									
 								},
 								fail: function(){								
 									common.ui.notification().show({	title:null, message: "글 저장중 오류가 발생되었습니다. 시스템 운영자에게 문의하여 주십시오."	},"warning");	
@@ -401,22 +428,7 @@
 							});	
 							return false;
 					},
-					upload: function(e){
-						//if( !common.ui.exists($('#attach-files')) ){
-							common.ui.upload(
-							$("#attach-files"),
-							{
-								multiple: false,
-								async: {
-									saveUrl: '<@spring.url "/data/podo/board/fileUpload.json?output=json" />',
-									autoUpload: false
-								},
-								success: function(e){
-									common.ui.grid($('#board-list-grid')).dataSource.read();
-								}
-							});
-					//	}
-					},
+					
 					delete: function(source){
 						var $this = this;
 						console.log(kendo.stringify($this.board));
@@ -512,6 +524,7 @@
 						$this.set('editable', ($this.board.boardNo > 0 ? false : true ));
 						$this.setPagination();
 						if($this.board.boardNo > 0) {
+							$this.files.read({'boardNo': $this.board.boardNo });
 							common.ui.ajax(
 							'<@spring.url "/data/podo/board/free/updateReadCount.json?output=json" />',
 							{
@@ -544,6 +557,9 @@
 				});			
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
+				
+				var upload = renderTo.find('[data-action=upload]').kendoUpload();
+				
 			}
 			renderTo.data("model").setSource(source);	
 				if(!renderTo.is(':visible'))
@@ -1266,7 +1282,7 @@
 						 			<i title="이전페이지" class="xi-angle-left-thin xi-3x preBtn" data-bind="visible: hasPreviousPage, click: preFreePage"></i>
 						 			<i title="다음페이지" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNextPage, click: nextFreePage"></i>
 								</div>
-							<form id="writeForm" action="#" method="post">
+							<form id="writeForm" action="<@spring.url "/data/podo/board/files/upload.json" />" method="post">
 								<table class="tb_writeForm">
 						            <tr>
 						                <td class="input_title bottom" >
@@ -1319,8 +1335,19 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<span data-bind="text:board.attachFile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" id="attach-files" data-role="upload" data-value-field="board.attachFile" data-bind="visible:editable"/>
+						                	<!--<span data-bind="text:board.attachFile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>-->
+						                	<input type="hidden" name="boardNo" data-bind="value:board.boardNo"/>
+											<div data-role="grid"
+															 data-auto-bind="false"
+											                 data-editable="false"
+											                 data-columns="[
+											                                 { 'field': 'name', title: '이름', 'width': 270 , template:'<a href=\'/data/podo/board/files/download/\#= data.attachmentId \#\' target=\'_blank;\'>\#: name \#</a>' },
+											                                 { 'field': 'size', title: '크기' },
+											                              ]"
+											                 data-bind="source:files"
+											                 style="min-height: 100px"></div>						                	
+						                	<input type="file" name="files" data-action="upload" data-bind="visible:editable"/>
+						                	
 						                </td>
 						            </tr>
 								</table>
