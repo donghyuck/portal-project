@@ -376,6 +376,7 @@
 					saveOrUpdate: function(e){
 						var $this = this;
 						console.log(kendo.stringify($this.board));
+						$this.upload();
 						common.ui.ajax(
 							'<@spring.url "/data/podo/board/free/write.json?output=json" />' , 
 							{
@@ -395,11 +396,26 @@
 								},
 								complete : function(e){
 									common.ui.grid($('#board-list-grid')).dataSource.read();
-									common.ui.grid($('#board-list-grid')).refresh();
 									$this.close();
 								}
 							});	
 							return false;
+					},
+					upload: function(e){
+						//if( !common.ui.exists($('#attach-files')) ){
+							common.ui.upload(
+							$("#attach-files"),
+							{
+								multiple: false,
+								async: {
+									saveUrl: '<@spring.url "/data/podo/board/fileUpload.json?output=json" />',
+									autoUpload: false
+								},
+								success: function(e){
+									common.ui.grid($('#board-list-grid')).dataSource.read();
+								}
+							});
+					//	}
 					},
 					delete: function(source){
 						var $this = this;
@@ -1250,7 +1266,7 @@
 						 			<i title="이전페이지" class="xi-angle-left-thin xi-3x preBtn" data-bind="visible: hasPreviousPage, click: preFreePage"></i>
 						 			<i title="다음페이지" class="xi-angle-right-thin xi-3x nextBtn" data-bind="visible: hasNextPage, click: nextFreePage"></i>
 								</div>
-							<form id="writeForm" action="#">
+							<form id="writeForm" action="#" method="post">
 								<table class="tb_writeForm">
 						            <tr>
 						                <td class="input_title bottom" >
@@ -1304,7 +1320,7 @@
 						                </td>
 						                <td colspan="5" class="bottom">
 						                	<span data-bind="text:board.attachFile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" class="formInput" data-bind="value: board.attachFile, visible:editable"/>
+						                	<input type="file" id="attach-files" data-role="upload" data-value-field="board.attachFile" data-bind="visible:editable"/>
 						                </td>
 						            </tr>
 								</table>
@@ -1369,7 +1385,7 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="file" class="formInput" data-bind="value: reply.attachFile"/>
+						                	<input type="file" id="attach-files" data-role="upload" data-value-field="reply.attachFile" data-bind="visible:editable"/>
 						                </td>
 						            </tr>
 								</table>
@@ -1444,7 +1460,7 @@
 						                </td>
 						                <td colspan="5" class="bottom">
 						                	<span data-bind="text:notice.attachFile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" class="formInput" data-bind="value: notice.attachFile, visible:editable"/>
+						                	<input type="file" id="attach-files" data-role="upload" data-value-field="notice.attachFile" data-bind="visible:editable"/>
 						                </td>
 						            </tr>
 								</table><br/>
@@ -1531,7 +1547,7 @@
 						                </td>
 						                <td colspan="5" class="bottom">
 						                	<span data-bind="text:qna.attachFile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>
-						                	<input type="file" class="formInput" data-bind="value: qna.attachFile, visible:editable"/>
+						                	<input type="file" id="attach-files" data-role="upload" data-value-field="qna.attachFile" data-bind="visible:editable"/>
 						                </td>
 						            </tr>
 								</table><br/>
@@ -1604,7 +1620,7 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="file" class="formInput" data-bind="value: reply.attachFile"/>
+						                	<input type="file" id="attach-files" data-role="upload" data-value-field="reply.attachFile" data-bind="visible:editable"/>
 						                </td>
 						            </tr>
 								</table><br/>
