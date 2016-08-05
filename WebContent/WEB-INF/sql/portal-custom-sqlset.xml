@@ -4,7 +4,6 @@
     <version>2.0</version>
     <description>사용자 정의 쿼리...</description>
 
-
     <row-mapper name="PODO_MEMBER_ROWMAPPER" class="com.podosoftware.community.list.domain.Member" >		
 		<parameterMapping name="id" column="id" javaType="int" />	
 		<parameterMapping name="name" column="name" javaType="string" />	
