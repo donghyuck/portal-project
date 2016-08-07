@@ -1,5 +1,7 @@
 package com.podosoftware.community.spring.controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.NativeWebRequest;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.podosoftware.community.board.bbs.service.BbsService;
 import com.podosoftware.community.board.member.service.MemberService;
+import com.podosoftware.community.board.model.AttachFile;
 import com.podosoftware.community.board.model.Board;
 import com.podosoftware.community.board.model.DefaultBoard;
 import com.podosoftware.community.board.model.DefaultQnaBoard;
@@ -29,6 +33,7 @@ import architecture.common.user.SecurityHelper;
 import architecture.common.user.User;
 import architecture.common.util.StringUtils;
 import architecture.ee.exception.NotFoundException;
+import architecture.ee.web.attachment.Attachment;
 import architecture.ee.web.model.DataSourceRequest;
 import architecture.ee.web.model.DataSourceRequest.FilterDescriptor;
 import architecture.ee.web.model.ItemList;
@@ -207,5 +212,4 @@ public class PodoCommunityDataController {
 		return qna;
 	}
 
-	
 }
