@@ -69,12 +69,9 @@
 			}).data("kendoValidator");			
 		
 			renderTo.find("form").submit(function(e) {		
-				event.preventDefault();	
-				console.log("--------");			
+				event.preventDefault();		
 				//var btn = renderTo.find("button[data-action='signin']");
-				if( validator.validate() ){
-					//btn.button('loading');
-					
+				if( validator.validate() ){					
 					if( $("#signin-status").is(":visible") ){
 						$("#signin-status").fadeOut();
 					}
@@ -97,8 +94,7 @@
 									</#if>	
 								} 	
 							},
-							complete: function(jqXHR, textStatus ){					
-								//btn.button('reset');
+							complete: function(jqXHR, textStatus ){
 								common.ui.progress(renderTo, false);		
 							}	
 						}

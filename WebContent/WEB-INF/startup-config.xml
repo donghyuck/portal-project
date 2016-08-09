@@ -179,19 +179,38 @@ bnNlPg==</file>
 	<!--  database setting  -->	
 	<database>
 		<default>
-		<!-- 
+			<!-- 
 			<jndiDataSourceProvider>
 				<jndiName></jndiName>
 			</jndiDataSourceProvider>
-			-->
 			<oracleDataSourceProvider>
 				<driverClassName>oracle.jdbc.pool.OracleDataSource</driverClassName>
 				<url> jdbc:oracle:thin:@//222.122.63.153:1521/IRDS</url>
 				<user>u_portal</user>
 				<password>inkium</password>
 				<connectionCachingEnabled>true</connectionCachingEnabled>
+			</oracleDataSourceProvider> -->
+			
+			<pooledDataSourceProvider>
+				<driverClassName>oracle.jdbc.OracleDriver</driverClassName>
+				<url>jdbc:oracle:thin:@//222.122.63.153:1521/IRDS</url>
+				<username>u_portal</username>
+				<password>inkium</password>
+				<maxIdle>2</maxIdle>
+				<maxActive>2</maxActive>
+			</pooledDataSourceProvider>
+						
+			<!-- 
+			<oracleDataSourceProvider>
+				<driverClassName>oracle.jdbc.pool.OracleDataSource</driverClassName>
+				<url> jdbc:oracle:thin:@//222.122.47.196:1521/PODODB</url>
+				<user>u_portal</user>
+				<password>podoq23$</password>
+				<connectionCachingEnabled>true</connectionCachingEnabled>
 			</oracleDataSourceProvider>
+				-->		
 		</default>
+		<!-- 
 		<external>
 			<oracleDataSourceProvider>
 				<driverClassName>oracle.jdbc.pool.OracleDataSource</driverClassName>
@@ -200,7 +219,8 @@ bnNlPg==</file>
 				<password>inkium</password>
 				<connectionCachingEnabled>true</connectionCachingEnabled>
 			</oracleDataSourceProvider>
-		</external>		
+		</external>
+		-->		
 	</database>
 		
 </startup-config>

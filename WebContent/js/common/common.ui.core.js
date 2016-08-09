@@ -1975,6 +1975,7 @@
 		}	
 	}
 	
+	
 		var ExtImageBrowser = Widget.extend({
 			init : function(element, options) {
 				var that = this;
@@ -2593,6 +2594,8 @@
 		}
 	});
 })(jQuery);
+
+
 
 /**
  * extEditorPopup widget
