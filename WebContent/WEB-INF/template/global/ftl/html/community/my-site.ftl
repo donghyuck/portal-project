@@ -60,7 +60,7 @@
 			],			
 			complete: function() {		
 				<#if RequestParameters['id']?? >
-					var	webSiteId = ${ TextUtils.parseLong( RequestParameters['siteId'] ) } ;
+				var	webSiteId = ${ TextUtils.parseLong( RequestParameters['siteId'] ) } ;
 				</#if>				
 				common.ui.setup({
 					features:{
@@ -480,19 +480,34 @@
 		<!-- ============================== -->
 		<!-- TEMPLATE EDITOR		        -->
 		<!-- ============================== -->		
-		function createTemplateEditor(source){			
-			var renderTo = $("#my-site-web-page-view");			
-			if( renderTo.find(".page-editor").is(":visible") ){
-				renderTo.find(".page-editor").fadeOut( function(e){			
-					renderTo.find(".page-detail").fadeIn();
+		function createTemplateEditor(source){	
+			var renderTo = 	$('#ftl-code-editor');
+			if(!common.ui.exists(renderTo)){
+				console.log("creating ftl code editor");
+				common.ui.editor.ace( $('#template-code-editor') , {
+					'mode' : "ace/mode/ftl",
+					'change' : function(e){
+						editor.value( ace.value() );
+				    }
 				});				
-			}else{			
-				createTemplateSourceEditor($("#template-source-editor"), source);
-				renderTo.find(".page-detail").fadeOut( function(e){			
-					renderTo.find(".page-editor").fadeIn();
-				});				
-			}	
+			}
+			var ace = common.ui.editor.ace( $('#template-code-editor') );
+			ace.title(source.page.template||"");			
+			ace.value( source.get("fileContent")  );
+			if( !source.get("fileContent") && source.page.template  ){
+				common.ui.ajax(
+				"<@spring.url "/secure/data/mgmt/template/get.json?output=json" />" , 
+				{
+					data : { path:  common.endsWith( source.page.template, ".ftl") ? source.page.template :  source.page.template + ".ftl" , customized: source.customized },
+					success : function(response){
+						source.set("fileContent", response.fileContent )
+						ace.value( source.get("fileContent")  );	
+					}
+				}); 				
+			}				
+			ace.show();		
 		}		
+
 		
 		function createTemplateSourceEditor(renderTo, data){
 			if( renderTo.contents().length == 0 ){			
@@ -627,18 +642,12 @@
 						source.copy($that.announce);	
 						$that.set("editable", $that.announce.announceId > 0 ? true : false );						
 						$that.propertyDataSource.read();				
-						$that.propertyDataSource.data($that.announce.properties);	
-																							
+						$that.propertyDataSource.data($that.announce.properties);			
 						collapseOptions.collapse('hide');	
 					},
 					saveOrUpdate: function(e){
 						e.preventDefault();				
 						var $this = this;
-						
-						if (validator.validate()) {
-						
-						
-						}
 						
 						/**
 						if( $this.announce.subject.length == 0 || $this.announce.body.length == 0 ){
@@ -1090,7 +1099,7 @@
 		
 		<div id="preview-window"></div>
 		<div id="announcement-code-editor"></div>
-		
+		<div id="template-code-editor"></div>
 		<div id="my-template-finder-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-template-finder-modal-label">
 			<div class="modal-dialog"  role="document">
 				<div class="modal-content">
