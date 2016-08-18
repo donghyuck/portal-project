@@ -166,7 +166,7 @@
 		},
 		_progress:function(toggle){
 			var element = this.element;
-			kendo.ui.progress(this._modals, toggle);
+			kendo.ui.progress(element.find(MODAL), toggle);
 		},
         _error: function() {
             this._progress(false);
