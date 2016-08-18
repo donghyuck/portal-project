@@ -193,7 +193,8 @@
 				 item = data[0];
 				 if( item.fileContent){
 					 that.editor.setValue(item.fileContent);
-				 }			 
+				 }
+				 that._progress(false);
 			 })
              .bind(PROGRESS, that._progressHandler)
              .bind(ERROR, that._errorHandler);		
