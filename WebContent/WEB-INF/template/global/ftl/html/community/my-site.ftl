@@ -481,33 +481,31 @@
 		<!-- TEMPLATE EDITOR		        -->
 		<!-- ============================== -->		
 		function createTemplateEditor(source){	
-			var renderTo = 	$('#ftl-code-editor');
+			var renderTo = 	$('#template-code-editor');
 			if(!common.ui.exists(renderTo)){
-				console.log("creating ftl code editor");
-				common.ui.editor.ace( $('#template-code-editor') , {
-					'mode' : "ace/mode/ftl",
-					'change' : function(e){
-						editor.value( ace.value() );
+				common.ui.editor.ace( $('#template-code-editor') , {		
+					editable : false,
+					dataSource:{						
+						transport: {
+							 read: {
+							 	url: "<@spring.url "/secure/data/mgmt/template/get.json?output=json" />"						 
+							 }
+						}
+					},
+					mode: "ace/mode/ftl",
+					apply: function(e){
+						console.log( "-----------");
 				    }
 				});				
 			}
+			
 			var ace = common.ui.editor.ace( $('#template-code-editor') );
-			ace.title(source.page.template||"");			
-			ace.value( source.get("fileContent")  );
-			if( !source.get("fileContent") && source.page.template  ){
-				common.ui.ajax(
-				"<@spring.url "/secure/data/mgmt/template/get.json?output=json" />" , 
-				{
-					data : { path:  common.endsWith( source.page.template, ".ftl") ? source.page.template :  source.page.template + ".ftl" , customized: source.customized },
-					success : function(response){
-						source.set("fileContent", response.fileContent )
-						ace.value( source.get("fileContent")  );	
-					}
-				}); 				
-			}				
+			ace.title(source.page.template||"");				
+			if( source.page.template  ){
+				ace.dataSource.read({ path:common.endsWith( source.page.template, ".ftl") ? source.page.template :  source.page.template + ".ftl" , customized: source.customized });
+			}
 			ace.show();		
 		}		
-
 		
 		function createTemplateSourceEditor(renderTo, data){
 			if( renderTo.contents().length == 0 ){			
@@ -724,14 +722,24 @@
 						name: "viewHtml",
 						exec: function(e){
 							var editor = $(this).data("kendoEditor");
-							var ace = common.ui.editor.ace( $('#announcement-code-editor') , {
+							var ace = common.ui.editor.ace( $('#html-code-editor') , {
 								'change' : function(e){
 									editor.value( ace.value() );
 								}
 							});
-							//ace.title("");
 							ace.value( editor.value() );
 							ace.show();
+							return false;
+						}
+					},
+					{	
+						name: "insertImage",
+						exec: function(e){
+							var editor = $(this).data("kendoEditor");
+							var imagebroswer = common.ui.editor.imagebroswer( $('#html-imagebroswer') , {
+								title : "이미지 삽입"
+							});							
+							imagebroswer.show();
 							return false;
 						}
 					}
@@ -1098,8 +1106,11 @@
 		</div>	
 		
 		<div id="preview-window"></div>
-		<div id="announcement-code-editor"></div>
+		
+		<div id="html-code-editor"></div>
+		<div id="html-imagebroswer"></div>
 		<div id="template-code-editor"></div>
+		
 		<div id="my-template-finder-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-template-finder-modal-label">
 			<div class="modal-dialog"  role="document">
 				<div class="modal-content">
