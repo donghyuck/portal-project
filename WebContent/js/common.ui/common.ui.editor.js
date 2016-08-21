@@ -282,9 +282,9 @@
 				  + "  <div role='tabpanel' class='tab-pane' id='#= uid #-tab3'>"
 				  + "   <h5 ><i class='fa fa-link'></i><strong>URL</strong>&nbsp;<small>이미지 URL 경로를 입력하세요.</small></h5>"
 				  + "	<div class='form-group'>"
-				  + "		<input type='url' class='form-control' placeholder='URL 입력'>"
+				  + "		<input type='url' class='custom-img-url form-control' placeholder='URL 입력'>"
 				  + "	</div>"
-				  + " 	<img class='img-preview img-responsive hide' />"
+				  + " 	<img class='custom-img-preview img-responsive' />"
 				  + "  </div>"
 				  + "</div>"
 				  +"</div>"
@@ -375,10 +375,11 @@
         	template = kendo.template(templates.modal2);       
         	that.modal = $(template(that.options))
         	.appendTo(that.element)
-        	.find('input[type=url]').on( 'change', function() {
+        	.find('input[type=url].custom-img-url').on( 'change', function() {
 				var url = $(this);
-				var img = $('#' + options.uid + '-tab3').children('img');
+				//var img = $('#' + options.uid + '-tab3').children('img');
 				console.log('img changed');
+				var img = that.element.find('img.custom-img-preview');
 				if (url.val().length > 0) {
 					img.attr('src', url.val()).load(
 						function() {	
