@@ -284,7 +284,7 @@
 				  + "	<div class='form-group'>"
 				  + "		<input type='url' class='form-control' placeholder='URL 입력'>"
 				  + "	</div>"
-				  + " 	<img class='img-responsive hide' />"
+				  + " 	<img class='img-preview img-responsive hide' />"
 				  + "  </div>"
 				  + "</div>"
 				  +"</div>"
@@ -378,14 +378,16 @@
         	.find('input[type=url]').on( 'change', function() {
 				var url = $(this);
 				var img = $('#' + options.uid + '-tab3').children('img');
+				
 				if (url.val().length > 0) {
 					url.attr('src', url.val()).load(
 						function() {	
 						
 						}).error(function(){
 														
-						}));
+						});
 				}
+				
         	});	
         },
         _dataSource: function() {
