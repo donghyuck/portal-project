@@ -35,6 +35,7 @@
 	MODAL = '.modal',
 	MODAL_HEADER = '.modal-header',
 	MODAL_TITLE = '.modal-title',
+	MODAL_BODY = '.modal-body',
 	DataSource = kendo.data.DataSource,
 	progress = kendo.ui.progress,
 	isLocalUrl = kendo.isLocalUrl;	
@@ -271,14 +272,20 @@
 				  + "<div class='modal-body'>"
 				  + "<div class='tab-v1'>"
 				  + "<ul class='nav nav-tabs' role='tablist'>"
-				  + "  <li role='presentation'><a href='\\##= uid #-tab1' aria-controls='#= uid #-tab1' role='tab' data-toggle='tab'> 업로드 </a></li>"
-				  + "  <li role='presentation'><a href='\\##= uid #-tab2' aria-controls='#= uid #-tab2' role='tab' data-toggle='tab'> MY 드라이버 </a></li>"
-				  + "  <li role='presentation'><a href='\\##= uid #-tab3' aria-controls='#= uid #-tab3' role='tab' data-toggle='tab'> URL 에서 선택</a></li>"
+				  + "  <li role='presentation'><a href='\\##= uid #-tab1' aria-controls='#= uid #-tab1' role='tab' data-toggle='tab' class='rounded-top'> 업로드 </a></li>"
+				  + "  <li role='presentation'><a href='\\##= uid #-tab2' aria-controls='#= uid #-tab2' role='tab' data-toggle='tab' class='rounded-top'> MY 드라이버 </a></li>"
+				  + "  <li role='presentation'><a href='\\##= uid #-tab3' aria-controls='#= uid #-tab3' role='tab' data-toggle='tab' class='rounded-top'> URL 에서 선택</a></li>"
 				  + "</ul>"
 				  + "<div class='tab-content'>"
 				  + "  <div role='tabpanel' class='tab-pane' id='#= uid #-tab1'>...</div>"
 				  + "  <div role='tabpanel' class='tab-pane' id='#= uid #-tab2'>...</div>"
-				  + "  <div role='tabpanel' class='tab-pane' id='#= uid #-tab3'>...</div>"
+				  + "  <div role='tabpanel' class='tab-pane' id='#= uid #-tab3'>"
+				  + "   <h5 ><i class='fa fa-link'></i><strong>URL</strong>&nbsp;<small>이미지 URL 경로를 입력하세요.</small></h5>"
+				  + "	<div class='form-group'>"
+				  + "		<input type='url' class='form-control' placeholder='URL 입력'>"
+				  + "	</div>"
+				  + " 	<img class='img-responsive hide' />"
+				  + "  </div>"
 				  + "</div>"
 				  +"</div>"
 				  +"</div>"
@@ -301,8 +308,7 @@
             
             that.element.addClass("imagebrowser");
             
-            console.log();
-            
+            that._dataSource();
             that.refresh();
 		},
 		options: {
@@ -310,14 +316,20 @@
             title : "Image Browser",
             modal: true,
             uid : guid(),
+            transport: {},
             fileTypes: "*.png,*.gif,*.jpg,*.jpeg"
         },
         events: [ERROR, CHANGE, APPLY],
         refresh: function() {
             var that = this;
-            that._createModal();
+            that._modal();
             
             
+        },
+        _dataSource: function(){
+        	
+        	
+        	
         },
         title : function(title){
 			var that = this,
@@ -337,26 +349,44 @@
 		show : function() {
 			var that = this,
 			options = this.options;
+			
 			if(options.modal){
-				that._modals().modal('show');
+				that.element.find( MODAL_BODY +' ul.nav-tabs a').first().click();
+				that.element.children(MODAL).modal('show');
 			}			
 		},
 		close : function() {
 			var that = this,
 			options = this.options;
 			if(options.modal){
-				that.value("");
-				that._modals().modal('hide');
+				that.element.children(MODAL).modal('hide');
 			}
+		},
+		_tabs : function(){
+			var that = this;
 		},
 		_modals : function() {
 			var that = this;
-			return that.element.children('.modal');
+			return that.element.children(MODAL);
 		},
-        _createModal : function() {
+		_modal : function() {
         	var that = this,
-        	 template = kendo.template(templates.modal2)
-        	 $(template(that.options)).appendTo(that.element);
+        	options = this.options,
+        	template = kendo.template(templates.modal2);       
+        	that.modal = $(template(that.options))
+        	.appendTo(that.element)
+        	.find('input[type=url]').on( 'change', function() {
+				var url = $(this);
+				var img = $('#' + options.uid + '-tab3').children('img');
+				if (url.val().length > 0) {
+					url.attr('src', url.val()).load(
+						function() {	
+						
+						}).error(function(){
+														
+						}));
+				}
+        	});	
         },
         _dataSource: function() {
         	
