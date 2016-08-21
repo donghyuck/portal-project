@@ -378,7 +378,7 @@
         	.find('input[type=url]').on( 'change', function() {
 				var url = $(this);
 				var img = $('#' + options.uid + '-tab3').children('img');
-				
+				console.log('img changed');
 				if (url.val().length > 0) {
 					url.attr('src', url.val()).load(
 						function() {	
