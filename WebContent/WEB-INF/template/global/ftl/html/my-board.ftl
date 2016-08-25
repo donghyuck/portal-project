@@ -1,6 +1,10 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
 <head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 		<#assign page = action.getPage() >
 		<title><>${page.title}</title>
 		<#compress>		
@@ -62,7 +66,7 @@
 					jobs:jobs
 				});	
 				var currentUser = new common.ui.data.User();
-				console.log( common.ui.stringify(currentUser));	
+				console.log(common.ui.stringify(currentUser));	
 				$(".tab-v1").find(".nav-tabs a[data-toggle=tab]:first").tab('show');
 				
 				<!----- 자유 게시판 그리드 ------>
@@ -88,7 +92,7 @@
                                 data: "items",
                                 total: "totalCount"
                             },
-                            serverPaging:true,
+                            serverPaging: true,
                             serverFiltering: true,
                             pageSize: 10
                         },
@@ -101,7 +105,7 @@
                     	toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-danger rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 100 },
-                        	{ title: "제목", field: "title", template: "#for(i=0; i<data.writingLevel; i++){#&nbsp;&nbsp;#}if(data.writingSeq>0){#RE: #}#<a href='\\#' data-object-id='#= data.boardNo#' data-action='view'>#= title#</a>" }, //<img src="/images/board/bbs_icon_reply2.png"/>
+                        	{ title: "제목", field: "title", template: "#for(i=0; i<data.writingLevel; i++){#&nbsp;&nbsp;#}if(data.writingSeq>0){#RE: #}#<a href='\\#' data-object-id='#= data.boardNo#' data-action='view'>#= title#</a>"},
                         	{ title: "작성자", field: "writer", width: 150 },
                         	{ title: "작성일", field: "writeDate", width: 150, format:"{0:yyyy/MM/dd}" },
                         	{ title: "조회수", field: "readCount", width: 100 }
@@ -139,6 +143,7 @@
 							newBoard = new common.ui.data.community.Board();
 							newBoard.boardCode = 'B001';
 							newBoard.boardName = 'free';
+							newBoard.writer = getCurrentUser().name;
 						}
 	                   	renderTo.fadeOut(function(e){
                    			$('#board-write-form').fadeIn();
@@ -157,7 +162,6 @@
                    			writeBoard(item);
                    		});
                     });
-                    
                <!----- 공지사항 게시판 그리드 ------>
                		var noticeRenderTo = $('#notice-list-grid');
                     var noticeGrid = noticeRenderTo.kendoGrid({
@@ -171,7 +175,7 @@
                                 },
                                 parameterMap: function (options, type){	
                                 	options.boardCode = 'B002';		
-                                	options.boardName = 'notice';						
+                                	options.boardName = 'notice';
 									return common.ui.stringify( options );
 								}
                             },
@@ -190,7 +194,7 @@
                        		pageSize: 10,
     						refresh: true
                         },
-                        toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-primary rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>'),					
+                        toolbar: kendo.template('#if(!getCurrentUser().userId == 1){#<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-primary rounded" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 글쓰기 </button></div>#}#'),					
                         columns: [
                         	{ title: "글번호", field: "boardNo", width: 100 },
                         	{ title: "제목", field: "title", template: "<a href='\\#' data-object-id='#= data.boardNo #' data-action='view'>#= title #</a>" },
@@ -231,6 +235,7 @@
 							newNotice = new common.ui.data.community.Board();
 							newNotice.boardCode = 'B002';
 							newNotice.boardName = 'notice';
+							newNotice.writer = getCurrentUser().name;
 						}
 	                   	noticeRenderTo.fadeOut(function(e){
                    			$('#notice-write-form').fadeIn();
@@ -316,6 +321,7 @@
 							newQna = new common.ui.data.community.QnaBoard();
 							newQna.boardCode = 'B003';
 							newQna.boardName = 'qna';
+							newQna.writer = getCurrentUser().name;
 						}
 	                   	qnaRenderTo.fadeOut(function(e){
                    			$('#qna-write-form').fadeIn();
@@ -373,13 +379,13 @@
                    		});
 						
 					},
-					files : new kendo.data.DataSource({
+					files: new kendo.data.DataSource({
                             type: "POST",
                             transport: {
                                 read: {
                                 	url: "<@spring.url "/data/podo/board/files/list.json?output=json" />",
                                 	type:'POST'/*, 
-                                	contentType : 'application/json'*/
+                                	contentType: 'application/json'*/
                                 }
                             },
                             schema: {
@@ -388,10 +394,7 @@
                     }),                        
 					saveOrUpdate: function(e){
 						var $this = this;
-						
 						console.log(kendo.stringify($this.board));
-						
-						//$this.upload();
 						
 						common.ui.ajax(
 							'<@spring.url "/data/podo/board/free/write.json?output=json" />' , 
@@ -428,7 +431,6 @@
 							});	
 							return false;
 					},
-					
 					delete: function(source){
 						var $this = this;
 						console.log(kendo.stringify($this.board));
@@ -1022,6 +1024,19 @@
 							});	
 							return false;
 					},
+					files: new kendo.data.DataSource({
+                            type: "POST",
+                            transport: {
+                                read: {
+                                	url: "<@spring.url "/data/podo/board/files/list.json?output=json" />",
+                                	type:'POST'/*, 
+                                	contentType: 'application/json'*/
+                                }
+                            },
+                            schema: {
+                                model: common.ui.data.Attachment
+                            }
+                    }),      
 					setSource: function(source){
 						/**
 						var $this = this, newBoard = $this.board ;
@@ -1043,6 +1058,8 @@
 				});			
 				renderTo.data("model", observable);		
 				common.ui.bind( renderTo, observable );
+				
+				var upload = renderTo.find('[data-action=upload]').kendoUpload();
 			}
 			renderTo.data("model").setSource(source);	
 				if(!renderTo.is(':visible'))
@@ -1114,7 +1131,9 @@
 			}		
 		}
 
-
+		var currentPage = document.location.href; 
+		var top = (screen.height)/2;
+		var left = document.body.clientWidth/2;
 		</script>
 		<style>
 			#board-list-grid td,
@@ -1242,6 +1261,7 @@
 			.BoardViewBtn i:active { color: white; }
 			.BoardViewBtn .preBtn { left: 0; }
 			.BoardViewBtn .nextBtn { right: 0; }
+			#attachment-list > .k-grid-content { min-height: 100%; }
 		</style>
 		</#compress>
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
@@ -1261,8 +1281,34 @@
 					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if>	${ navigator.title }</h1>					
 				</div><!--/end container-->
 			</div>
-			</#if>	
+			</#if>
+			<!--  facebook like button Start -->
+			<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+ 				var js, fjs = d.getElementsByTagName(s)[0];
+ 				if (d.getElementById(id)) return;
+ 				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1756417417930051";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+			<!-- facebook like button End -->	
+			
 			<div class="container content" style="min-height:450px;">
+			<!--  SNS 좋아요/공유하기 버튼  Start -->
+				<div class="shareBtn" style="margin: 10px; float: right">
+					<div class="fb-like" data-href="https://www.facebook.com/podosw/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+					<a href="http://line.me/R/msg/text/?LINE%20it%21%0d%0ahttp%3a%2f%2fline%2enaver%2ejp%2f"><img src="../images/sns_naver_line.png" width="30" height="30" alt="LINE it!" /></a>
+					<a href="#" onclick="javascript:window.open('http://share.naver.com/web/shareView.nhn?url=http://www.podosw.com&title=%ed%8f%ac%eb%8f%84%ec%86%8c%ed%94%84%ed%8a%b8%ec%9b%a8%ec%96%b4+%ea%b3%b5%ec%9c%a0%ed%95%98%ea%b8%b0',
+ 						'naversharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=460');return false;" target="_blank" alt="Share on Naver" ><img src="../images/sns_naver_blog.png"></a>		
+ 					<a href="#" onclick="javascript:window.open('https://www.facebook.com/dialog/share?app_id=1756417417930051&display=popup&href=http://www.podosw.com',
+ 						'facebooksharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Facebook" ><img src="../images/sns_facebook.png" width="30" height="30"></a>		
+					<a id="kakao-link-btn" href="javascript:;"><img src="//dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" width="30" height="30"/></a>
+					<a href="#" onclick="javascript:window.open('https://story.kakao.com/share?url=http://www.podosw.com',
+ 						'kakaostorysharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Kakaostory" ><img src="../images/sns_kakaostory.png" width="30" height="30"></a>
+					<a href="#" onclick="javascript:window.open('https://twitter.com/intent/tweet?text=포도소프트웨어 게시판&url=' + currentPage, 
+						'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Twitter" ><img src="../images/sns_twitter.png" width="30" height="30"></a>	
+				</div><br/><br/>
+			<!--  SNS 좋아요/공유하기 버튼  End -->
 				<div class="tab-v1">
 					<ul class="nav nav-tabs" style="margin-bottom: 50px;">
 						<li><a href="#freeBoard" data-toggle="tab" class="m-l-sm rounded-top">자유게시판</a></li>
@@ -1337,17 +1383,15 @@
 						                <td colspan="5" class="bottom">
 						                	<!--<span data-bind="text:board.attachFile, invisible:editable" style="border: none; width: 100%; padding: 10px; font-size: 14px"></span>-->
 						                	<input type="hidden" name="boardNo" data-bind="value:board.boardNo"/>
-											<div data-role="grid"
+											<div data-role="grid" id="attachment-list"
 															 data-auto-bind="false"
 											                 data-editable="false"
 											                 data-columns="[
-											                                 { 'field': 'name', title: '이름', 'width': 270 , template:'<a href=\'/data/podo/board/files/download/\#= data.attachmentId \#\' target=\'_blank;\'>\#: name \#</a>' },
-											                                 { 'field': 'size', title: '크기' },
+											                                 { 'field': 'name', title: '이름', template:'<a href=\'/data/podo/board/files/download/\#= data.attachmentId \#\' target=\'_blank;\'>\#: name \#</a>' },
+											                                 { 'field': 'size', title: '크기', 'width': 270 },
 											                              ]"
-											                 data-bind="source:files"
-											                 style="min-height: 100px"></div>						                	
+											                 data-bind="source:files"></div>						                	
 						                	<input type="file" name="files" data-action="upload" data-bind="visible:editable"/>
-						                	
 						                </td>
 						            </tr>
 								</table>
@@ -1412,7 +1456,16 @@
 						                	첨부파일
 						                </td>
 						                <td colspan="5" class="bottom">
-						                	<input type="file" id="attach-files" data-role="upload" data-value-field="reply.attachFile" data-bind="visible:editable"/>
+						                	<input type="hidden" name="boardNo" data-bind="value:board.boardNo"/>
+											<div data-role="grid" id="attachment-list"
+															 data-auto-bind="false"
+											                 data-editable="false"
+											                 data-columns="[
+											                                 { 'field': 'name', title: '이름', template:'<a href=\'/data/podo/board/files/download/\#= data.attachmentId \#\' target=\'_blank;\'>\#: name \#</a>' },
+											                                 { 'field': 'size', title: '크기', 'width': 270 },
+											                              ]"
+											                 data-bind="source:files"></div>						                	
+						                	<input type="file" name="files" data-action="upload" data-bind="visible:editable"/>
 						                </td>
 						            </tr>
 								</table>
@@ -1667,7 +1720,6 @@
 <!-- ./END FOOTER -->				
 </div>									
 <!-- START TEMPLATE -->			
-   
 	<#include "/html/common/common-homepage-templates.ftl" >
 	<!-- ./END TEMPLATE -->
 	</body>    
