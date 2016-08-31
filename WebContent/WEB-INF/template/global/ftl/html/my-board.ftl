@@ -1282,6 +1282,7 @@
 				</div><!--/end container-->
 			</div>
 			</#if>
+			
 			<!--  facebook like button Start -->
 			<div id="fb-root"></div>
 			<script>(function(d, s, id) {
@@ -1294,6 +1295,7 @@
 			<!-- facebook like button End -->	
 			
 			<div class="container content" style="min-height:450px;">
+			
 			<!--  SNS 좋아요/공유하기 버튼  Start -->
 				<div class="shareBtn" style="margin: 10px; float: right">
 					<div class="fb-like" data-href="https://www.facebook.com/podosw/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
@@ -1309,6 +1311,7 @@
 						'twittersharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" alt="Share on Twitter" ><img src="../images/sns_twitter.png" width="30" height="30"></a>	
 				</div><br/><br/>
 			<!--  SNS 좋아요/공유하기 버튼  End -->
+			
 				<div class="tab-v1">
 					<ul class="nav nav-tabs" style="margin-bottom: 50px;">
 						<li><a href="#freeBoard" data-toggle="tab" class="m-l-sm rounded-top">자유게시판</a></li>
