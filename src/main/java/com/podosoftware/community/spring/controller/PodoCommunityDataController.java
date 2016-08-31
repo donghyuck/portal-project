@@ -30,7 +30,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.podosoftware.community.board.bbs.service.BbsService;
 import com.podosoftware.community.board.member.service.MemberService;
-import com.podosoftware.community.board.model.AttachFile;
 import com.podosoftware.community.board.model.Board;
 import com.podosoftware.community.board.model.DefaultBoard;
 import com.podosoftware.community.board.model.DefaultQnaBoard;
