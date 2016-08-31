@@ -590,7 +590,7 @@
 	    	boardCode: { type: "string" },
 	    	boardName: { type: "string" },
 	        boardNo: { type: "number", defaultValue:0 },
-	        writer: { type: "string", defaultValue:"관리자" },
+	        writer: { type: "string" },
 	        title: { type: "string" },
 	        content: { type: "string" },
 	        readCount: { type: "number" },
@@ -599,7 +599,7 @@
 	        writingRef: { type: "number" },
 	        writingSeq: { type: "number", defualtValue:0 },
 	        writingLevel: { type: "number", defualtValue:0 },
-	        index: {type: "number", defualtValue:0 }
+	        index: { type: "number", defualtValue:0 }
 	    },
 	    formattedWriteDate : function() {
 			return kendo.toString(this.get("writeDate"), "yyyy/MM/dd");
@@ -627,7 +627,7 @@
 	    	boardCode: { type: "string" },
 	    	boardName: { type: "string" },
 	        boardNo: { type: "number", defaultValue:0 },
-	        writer: { type: "string", defaultValue:"학생1" },
+	        writer: { type: "string" },
 	        title: { type: "string" },
 	        content: { type: "string" },
 	        readCount: { type: "number" },
